@@ -1,0 +1,30 @@
+export const jobSupportLinks = [
+  { label: 'Front-End / Full-Stack Development', href: '/frontend-fullstack-job-support/' },
+  { label: 'Backend & Enterprise (.NET + Node)', href: '/backend-enterprise-job-support/' },
+  { label: 'Java Technology Stack', href: '/java-technologies-job-support/' },
+  { label: 'Databases & Data Platforms', href: '/databases-data-platforms-job-support/' },
+  { label: 'Cloud Technologies', href: '/cloud-technologies-job-support/' },
+  { label: 'DevOps & Automation', href: '/devops-job-support/' },
+  { label: 'Testing & Quality Engineering', href: '/testing-quality-engineering-job-support/' },
+  { label: 'AI / Machine Learning & Data', href: '/ai-ml-job-support/' },
+  { label: 'Digital Analytics & Marketing Tech', href: '/digital-analytics-job-support/' },
+  { label: 'Cybersecurity & AppSec', href: '/cybersecurity-job-support/' },
+  { label: 'React Job Support', href: '/react-job-support/' },
+  { label: 'Angular Job Support', href: '/angular-job-support/' },
+  { label: 'React Native Job Support', href: '/react-native-job-support/' },
+  { label: 'Node.js Job Support', href: '/node-job-support/' },
+  { label: 'Python Job Support', href: '/python-job-support/' },
+  { label: 'AWS Job Support', href: '/aws-job-support/' },
+  { label: '.NET Job Support', href: '/dotnet-job-support/' },
+];
+
+export const mainNavLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Job Support', href: '#', dropdown: jobSupportLinks },
+  { label: 'Interview Questions', href: '/interviews/' },
+  { label: 'Technologies', href: '/#tech' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Contact', href: '/#contact' },
+];
