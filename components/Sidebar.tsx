@@ -9,7 +9,10 @@ export default function Sidebar() {
 
   return (
     <aside style={{ fontSize: '0.875rem' }}>
-      <div className="card" style={{ padding: '1.25rem', marginBottom: '1.25rem' }}>
+      <div
+        className="card sidebar-career-services"
+        style={{ padding: '1.25rem', marginBottom: '1.25rem' }}
+      >
         <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--pts-text)', marginBottom: '0.75rem' }}>
           Career Support Services
         </h3>
@@ -75,6 +78,10 @@ export default function Sidebar() {
           color: var(--pts-accent-hover);
         }
         @media (max-width: 768px) {
+          /* Inner pages: redundant on small screens (long pages + bottom CTAs); keep Job Support categories */
+          .sidebar-career-services {
+            display: none !important;
+          }
           .sidebar-toggle { display: block !important; }
           .sidebar-links:not(.expanded) { display: none !important; }
         }
