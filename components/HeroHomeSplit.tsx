@@ -180,12 +180,8 @@ export default function HeroHomeSplit() {
             flex-direction: column;
             min-height: 0;
             width: 100%;
-          }
-          /* Space between stacked hero (copy + dashboard) and dark feature bar on small screens */
-          @media (max-width: 1023px) {
-            .hero-split-inner {
-              gap: clamp(1.5rem, 5vw, 2.5rem);
-            }
+            /* space before dark trust strip — was only <1024px; iPad landscape (≥1024) had none */
+            gap: clamp(1.35rem, 4vw, 2.5rem);
           }
           /* Fills space above the trust bar and vertically centers the grid — no mint gap under copy */
           .hero-split-center {

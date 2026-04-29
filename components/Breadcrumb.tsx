@@ -37,17 +37,22 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
         }}
       >
         <ol
+          className="bc-trail"
           style={{
             width: '100%',
             maxWidth: 'var(--pts-content-max)',
             margin: '0 auto',
             display: 'flex',
-            flexWrap: 'wrap',
+            flexWrap: 'nowrap',
             alignItems: 'center',
             gap: '0 0.3rem',
             listStyle: 'none',
             fontSize: '0.8rem',
             color: 'var(--pts-text-subtle)',
+            overflowX: 'auto',
+            overflowY: 'hidden',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarGutter: 'stable',
           }}
         >
           {items.map((item, i) => {
@@ -55,7 +60,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
             return (
               <li
                 key={i}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', flexShrink: 0 }}
               >
                 {i > 0 && (
                   <span aria-hidden style={{ color: 'var(--pts-border-strong)', userSelect: 'none' }}>
@@ -72,10 +77,15 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                     style={{
                       color: isLast ? 'var(--pts-text-muted)' : 'var(--pts-text-subtle)',
                       fontWeight: isLast ? 500 : 400,
-                      maxWidth: '22ch',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
                       whiteSpace: 'nowrap',
+                      ...(isLast
+                        ? {
+                            /* one line with trail; scroll parent .bc-trail if long */
+                            maxWidth: 'min(70vw, 40rem)',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                          }
+                        : {}),
                     }}
                   >
                     {item.label}

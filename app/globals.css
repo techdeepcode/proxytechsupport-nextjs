@@ -281,6 +281,14 @@ a:hover {
     font-size: 0.75rem;
   }
 
+  /* Breadcrumb links: global 44px touch floor makes crumbs + current-page span misalign; keep one compact line */
+  nav[aria-label="Breadcrumb"] a {
+    min-height: unset;
+    display: inline-flex;
+    align-items: center;
+    padding-block: 0.2rem;
+  }
+
   /* Footer: don't let 'span 2' overflow a single-column grid */
   .footer-about-col {
     grid-column: span 1 !important;
