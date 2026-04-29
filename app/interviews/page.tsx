@@ -9,10 +9,9 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { defaultOgImage } from '@/lib/site-seo';
 
 const canonical = 'https://proxytechsupport.com/interviews/';
-const pageTitle = 'Interview Questions | Proxy Tech Support';
-/** Short description (legacy interview-index + current long-form intro) */
+const pageTitle = 'IT Interview Questions – Real Technical Questions & Answers';
 const shortDescription =
-  'Real interview questions and answers to prepare for IT job interviews. Learn from real-world scenarios.';
+  'Real IT interview questions captured from live technical rounds for USA, UK & Canada roles. Java, Python, React, DevOps, AWS & more. Struggling to clear interviews? Get expert help.';
 const longP1 =
   'Real interview discussions collected daily while supporting developers in live projects, job support sessions, and proxy interview assistance across USA, UK, Canada, and Australia.';
 const longP2 =
@@ -52,6 +51,36 @@ export default async function InterviewsPage() {
       <TopBar />
       <Navbar />
       <main style={{ width: '100%', maxWidth: 'var(--pts-content-max)', margin: '0 auto', padding: '3rem 1rem', background: 'var(--pts-bg)', minHeight: '60vh' }}>
+        {/* Interview support banner */}
+        <div style={{
+          background: 'linear-gradient(135deg, #030f0f 0%, #03624c 100%)',
+          borderRadius: '12px',
+          padding: '1.25rem 1.5rem',
+          marginBottom: '2rem',
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '1rem',
+        }}>
+          <div>
+            <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00df82', marginBottom: '0.25rem' }}>Live Expert Help</p>
+            <p style={{ fontSize: '0.97rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.35, margin: 0 }}>
+              Struggling to clear interviews? Get real-time expert coaching — USA, UK, Canada &amp; worldwide.
+            </p>
+          </div>
+          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+            <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20interview%20support" target="_blank" rel="noopener noreferrer"
+              style={{ display:'inline-flex', alignItems:'center', gap:'0.35rem', background:'#25D366', color:'#fff', fontWeight:700, fontSize:'0.85rem', padding:'0.6rem 1.1rem', borderRadius:'50px', textDecoration:'none' }}>
+              Get Instant Help
+            </a>
+            <a href="/interview-support-global/"
+              style={{ display:'inline-flex', alignItems:'center', gap:'0.35rem', background:'rgba(255,255,255,0.12)', color:'#fff', fontWeight:600, fontSize:'0.85rem', padding:'0.6rem 1.1rem', borderRadius:'50px', textDecoration:'none', border:'1px solid rgba(255,255,255,0.3)' }}>
+              Learn More →
+            </a>
+          </div>
+        </div>
+
         <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 700, color: 'var(--pts-text)', marginBottom: '1rem' }}>
           Interview Questions
         </h1>

@@ -64,7 +64,17 @@ export default async function InterviewPostPage({ params }: Props) {
         url={url}
         type="Article"
       />
-      <PostLayout title={interview.title} content={interview.content} date={interview.date} />
+      <PostLayout
+        title={interview.title}
+        content={interview.content}
+        date={interview.date}
+        showInterviewBanner
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Interview Questions', href: '/interviews/' },
+          { label: interview.title },
+        ]}
+      />
     </>
   );
 }

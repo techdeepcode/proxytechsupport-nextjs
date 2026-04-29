@@ -52,15 +52,8 @@ export default function HomePage() {
     <>
       <HomeStructuredData />
       <TopBar />
-      <div
-        style={{
-          background: 'var(--pts-bg)',
-          paddingBottom: 'clamp(1.25rem, 3.5vw, 2rem)',
-        }}
-      >
-        <Navbar />
-        <HeroHomeSplit />
-      </div>
+      <Navbar />
+      <HeroHomeSplit />
       <main>
         <TechSection />
         <ServicesSection />

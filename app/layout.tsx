@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import SiteAnalytics, { GoogleTagManagerNoscript } from '@/components/SiteAnalytics';
+import MobileBottomCTA from '@/components/MobileBottomCTA';
 import {
   HOME_HTML_TITLE,
   HOME_META_DESCRIPTION,
@@ -62,6 +63,7 @@ export default function RootLayout({
         <SiteAnalytics />
         <GoogleTagManagerNoscript />
         {children}
+        <MobileBottomCTA />
       </body>
     </html>
   );

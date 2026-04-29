@@ -47,3 +47,34 @@ export const defaultOgImage = {
   height: OG_IMAGE_HEIGHT,
   alt: `${SITE_NAME} — IT job support and interview assistance`,
 };
+
+/** Generate consistent Metadata for SEO landing pages from a config object. */
+export function landingPageMetadata(config: {
+  title: string;
+  description: string;
+  canonical: string;
+  keywords?: string[];
+}) {
+  return {
+    title: config.title,
+    description: config.description,
+    keywords: config.keywords,
+    alternates: { canonical: config.canonical },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: 'website' as const,
+      title: config.title,
+      description: config.description,
+      url: config.canonical,
+      siteName: SITE_NAME,
+      locale: 'en_US',
+      images: [defaultOgImage],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: config.title,
+      description: config.description,
+      images: [defaultOgImage.url],
+    },
+  };
+}

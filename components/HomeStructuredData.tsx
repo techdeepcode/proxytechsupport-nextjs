@@ -17,7 +17,7 @@ const organization = {
   },
   sameAs: [
     'https://www.linkedin.com/company/proxy-tech-support/',
-    'https://www.facebook.com/proxytechjobsupport/',
+    'https://www.facebook.com/proxytechsupport',
     'https://x.com/proxyjobsupport',
   ],
   address: {

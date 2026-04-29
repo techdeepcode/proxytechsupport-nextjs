@@ -15,7 +15,7 @@ export type PostData = {
   keywords?: string;
 };
 
-const postsDirectory = path.join(process.cwd(), '../proxytechsupport-legacy/_posts');
+const postsDirectory = path.join(process.cwd(), 'content/posts');
 
 function getSlugFromFilename(filename: string): string {
   const withoutExt = filename.replace(/\.md$/, '');
@@ -36,7 +36,9 @@ async function parsePost(filename: string): Promise<PostData> {
 
   const slug = getSlugFromFilename(filename);
   const date = data.date
-    ? String(data.date).substring(0, 10)
+    ? (data.date instanceof Date
+        ? data.date.toISOString().substring(0, 10)
+        : String(data.date).substring(0, 10))
     : getDateFromFilename(filename);
 
   const processed = await remark().use(remarkHtml).process(content);

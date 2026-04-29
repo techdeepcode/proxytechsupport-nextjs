@@ -102,7 +102,7 @@ export default function WhatsAppFloat() {
         </div>
       )}
 
-      <div style={{ position: 'fixed', bottom: '1.5rem', right: '1.5rem', zIndex: 1000 }}>
+      <div className="wa-float-root" style={{ position: 'fixed', bottom: '1.5rem', right: '1.5rem', zIndex: 1000 }}>
         <div
           style={{
             position: 'absolute',

@@ -449,6 +449,54 @@ export default function HeroHomeSplit() {
               animation: none;
             }
           }
+
+          /* ── Mobile hero overrides (≤768px) ── */
+          @media (max-width: 768px) {
+            /* Let hero shrink to content height — no forced full-screen */
+            .hero-banner-stack {
+              min-height: unset !important;
+            }
+            /* Reduce top padding so H1 hits above-the-fold immediately */
+            .hero-split-section {
+              padding-top: 1.5rem !important;
+            }
+            /* Hide the dashboard card — too heavy for mobile above-the-fold */
+            .hero-split-dashboard {
+              display: none !important;
+            }
+            /* Full-width CTA buttons, stacked, easy to tap */
+            .hero-split-btns {
+              flex-direction: column;
+              gap: 0.6rem;
+            }
+            .hero-btn-wa,
+            .hero-btn-white,
+            .hero-btn-muted {
+              width: 100%;
+              justify-content: center;
+              min-height: 52px;
+              font-size: 1rem;
+              border-radius: 12px;
+            }
+            /* Trust pills: wrap tighter */
+            .hero-pill-tag {
+              font-size: 0.75rem;
+              padding: 0.3rem 0.65rem;
+            }
+            /* Compact trust pill row spacing */
+            .hero-subline-copy {
+              gap: 0.6rem;
+            }
+            /* Reduce H1 bottom margin */
+            .hero-h1-serif.hero-h1-stack {
+              margin-bottom: 0.85rem !important;
+            }
+            /* Tighter pain list */
+            .hero-subline-pains {
+              padding-top: 0.45rem;
+              padding-bottom: 0.45rem;
+            }
+          }
         `}</style>
 
         <div className="hero-split-inner">

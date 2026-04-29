@@ -13,7 +13,7 @@ export type InterviewData = {
   layout?: string;
 };
 
-const interviewsDirectory = path.join(process.cwd(), '../proxytechsupport-legacy/_interviews');
+const interviewsDirectory = path.join(process.cwd(), 'content/interviews');
 
 async function parseInterview(filename: string): Promise<InterviewData> {
   const filePath = path.join(interviewsDirectory, filename);
@@ -24,7 +24,9 @@ async function parseInterview(filename: string): Promise<InterviewData> {
   const slug = filename.replace(/\.md$/, '');
 
   const date = data.date
-    ? String(data.date).substring(0, 10)
+    ? (data.date instanceof Date
+        ? data.date.toISOString().substring(0, 10)
+        : String(data.date).substring(0, 10))
     : (filename.match(/^(\d{4}-\d{2}-\d{2})/)?.[1] || '');
 
   const processed = await remark().use(remarkHtml).process(content);

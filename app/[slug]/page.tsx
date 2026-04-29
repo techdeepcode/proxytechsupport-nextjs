@@ -5,6 +5,10 @@ import PostLayout from '@/components/PostLayout';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import { defaultOgImage } from '@/lib/site-seo';
 
+/** Job-support service pages are canonical at /:slug/ (root). */
+const isJobSupportSlug = (slug: string) =>
+  slug.includes('job-support') || slug.includes('job-help');
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -49,12 +53,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function SlugPage({ params }: Props) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
   const url = `https://proxytechsupport.com/${slug}/`;
+
+  const breadcrumbs = isJobSupportSlug(slug)
+    ? [
+        { label: 'Home', href: '/' },
+        { label: 'Job Support', href: '/#services' },
+        { label: post.title },
+      ]
+    : [
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: post.title },
+      ];
 
   return (
     <>
@@ -65,7 +81,13 @@ export default async function BlogPostPage({ params }: Props) {
         url={url}
         type="BlogPosting"
       />
-      <PostLayout title={post.title} content={post.content} date={post.date} />
+      <PostLayout
+        title={post.title}
+        content={post.content}
+        date={post.date}
+        breadcrumbs={breadcrumbs}
+        showInterviewBanner={isJobSupportSlug(slug)}
+      />
     </>
   );
 }
