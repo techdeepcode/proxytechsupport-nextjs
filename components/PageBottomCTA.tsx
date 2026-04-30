@@ -1,3 +1,5 @@
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
+
 const WA_GREEN = '#25D366';
 
 /** Compact WhatsApp CTA for inner pages (blog, interviews, articles). */
@@ -42,7 +44,7 @@ export default function PageBottomCTA() {
 
         <a
           className="page-bottom-cta-wa"
-          href="https://wa.me/919660614469"
+          href={WHATSAPP_ME_URL}
           target="_blank"
           rel="noopener noreferrer"
           style={{

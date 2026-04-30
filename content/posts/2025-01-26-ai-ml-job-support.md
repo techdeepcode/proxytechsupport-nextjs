@@ -55,4 +55,4 @@ AI and ML move faster than any other field in software. New model architectures,
 
 ### Get AI/ML Help Now
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20AI%2FML%20job%20support) · [Data Engineering Support](/data-engineer-python-job-support/) · [Python Job Support](/python-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Data Engineering Support](/data-engineer-python-job-support/) · [Python Job Support](/python-job-support/)

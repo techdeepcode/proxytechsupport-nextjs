@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import PageBottomCTA from '@/components/PageBottomCTA';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { defaultOgImage } from '@/lib/site-seo';
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 const canonical = 'https://proxytechsupport.com/interviews/';
 const pageTitle = 'IT Interview Questions – Real Technical Questions & Answers';
@@ -50,9 +51,14 @@ export default async function InterviewsPage() {
     <>
       <TopBar />
       <Navbar />
-      <main style={{ width: '100%', maxWidth: 'var(--pts-content-max)', margin: '0 auto', padding: '3rem 1rem', background: 'var(--pts-bg)', minHeight: '60vh' }}>
+      <main
+        className="pts-listing-main"
+        style={{ width: '100%', maxWidth: 'var(--pts-content-max)', margin: '0 auto', padding: '3rem 1rem', background: 'var(--pts-bg)', minHeight: '60vh' }}
+      >
         {/* Interview support banner */}
-        <div style={{
+        <div
+          className="pts-listing-hero-banner"
+          style={{
           background: 'linear-gradient(135deg, #030f0f 0%, #03624c 100%)',
           borderRadius: '12px',
           padding: '1.25rem 1.5rem',
@@ -62,7 +68,8 @@ export default async function InterviewsPage() {
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '1rem',
-        }}>
+        }}
+        >
           <div>
             <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00df82', marginBottom: '0.25rem' }}>Live Expert Help</p>
             <p style={{ fontSize: '0.97rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.35, margin: 0 }}>
@@ -70,7 +77,7 @@ export default async function InterviewsPage() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20interview%20support" target="_blank" rel="noopener noreferrer"
+            <a href={WHATSAPP_ME_URL} target="_blank" rel="noopener noreferrer"
               style={{ display:'inline-flex', alignItems:'center', gap:'0.35rem', background:'#25D366', color:'#fff', fontWeight:700, fontSize:'0.85rem', padding:'0.6rem 1.1rem', borderRadius:'50px', textDecoration:'none' }}>
               Get Instant Help
             </a>

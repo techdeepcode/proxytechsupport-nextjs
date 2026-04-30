@@ -78,4 +78,4 @@ We have helped developers successfully navigate technical interviews with:
 - Vienna-based fintech and banking technology firms
 - Austrian manufacturing companies running SAP and .NET systems
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20for%20Australia) · [Global Job Support](/proxy-interview-support-job-support-global/) · [Interview Support](/interview-support-global/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Global Job Support](/proxy-interview-support-job-support-global/) · [Interview Support](/interview-support-global/)

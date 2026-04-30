@@ -1,3 +1,5 @@
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
+
 const TEAL = 'var(--pts-accent)';
 const NAVY_DEEP = 'var(--pts-dark)';
 
@@ -171,7 +173,7 @@ export default function ContactCTA() {
             Call Now
           </a>
           <a
-            href="https://wa.me/919660614469"
+            href={WHATSAPP_ME_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="contact-cta-btn-ghost"

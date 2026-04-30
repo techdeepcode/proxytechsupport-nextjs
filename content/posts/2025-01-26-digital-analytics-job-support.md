@@ -77,4 +77,4 @@ Digital analytics sits at the intersection of data, marketing, and engineering �
 
 ### Get Analytics Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20digital%20analytics%20job%20support) · [Data Engineering Support](/data-engineer-python-job-support/) · [Databases Support](/databases-data-platforms-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Data Engineering Support](/data-engineer-python-job-support/) · [Databases Support](/databases-data-platforms-job-support/)

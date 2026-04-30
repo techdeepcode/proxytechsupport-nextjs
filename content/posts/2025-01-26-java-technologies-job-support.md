@@ -67,4 +67,4 @@ Java enterprise development is not just one technology — it is an entire ecosy
 
 ### Get Java Stack Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20Java%20technology%20stack%20support) · [Java Job Support](/java-job-support/) · [DevOps Job Support](/devops-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Java Job Support](/java-job-support/) · [DevOps Job Support](/devops-job-support/)

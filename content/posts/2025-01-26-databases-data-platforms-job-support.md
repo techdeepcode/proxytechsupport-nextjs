@@ -80,4 +80,4 @@ A slow query, a broken migration, a Snowflake credit explosion — database prob
 
 ### Get Database Help Now
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20database%20job%20support) · [Data Engineer Support](/data-engineer-python-job-support/) · [Cloud Technologies Support](/cloud-technologies-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Data Engineer Support](/data-engineer-python-job-support/) · [Cloud Technologies Support](/cloud-technologies-job-support/)

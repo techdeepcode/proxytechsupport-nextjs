@@ -1,3 +1,5 @@
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
+
 type Props = {
   variant?: 'light' | 'legacyDark';
 };
@@ -132,7 +134,7 @@ export default function Hero({ variant = 'light' }: Props) {
               CALL NOW
             </a>
             <a
-              href="https://wa.me/919660614469"
+              href={WHATSAPP_ME_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hero-legacy-btn-wa"
@@ -234,7 +236,7 @@ export default function Hero({ variant = 'light' }: Props) {
             Call Now
           </a>
           <a
-            href="https://wa.me/919660614469"
+            href={WHATSAPP_ME_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn-wa"

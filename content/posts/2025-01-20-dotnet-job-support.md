@@ -56,4 +56,4 @@ The .NET ecosystem evolves fast. .NET 8, minimal APIs, Blazor Server vs. WebAsse
 
 ### Get .NET Help Now
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20.NET%20job%20support) · [Java Job Support](/java-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Java Job Support](/java-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)

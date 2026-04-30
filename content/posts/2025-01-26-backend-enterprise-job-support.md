@@ -64,4 +64,4 @@ Enterprise backends are complex beasts — distributed systems, legacy integrati
 
 ### Get Backend Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20backend%20enterprise%20job%20support) · [Java Job Support](/java-job-support/) · [.NET Job Support](/dotnet-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Java Job Support](/java-job-support/) · [.NET Job Support](/dotnet-job-support/)

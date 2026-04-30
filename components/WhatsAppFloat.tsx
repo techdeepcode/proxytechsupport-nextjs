@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 export default function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
@@ -77,7 +78,7 @@ export default function WhatsAppFloat() {
           </p>
 
           <a
-            href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20job%20support%20or%20interview%20proxy%20help"
+            href={WHATSAPP_ME_URL}
             target="_blank"
             rel="noopener noreferrer"
             style={{

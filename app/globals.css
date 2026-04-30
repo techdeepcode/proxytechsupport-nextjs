@@ -281,6 +281,35 @@ a:hover {
     font-size: 0.75rem;
   }
 
+  /* Detail pages: less gap under breadcrumb before hero / article (override Breadcrumb inline padding) */
+  nav[aria-label="Breadcrumb"] {
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.3rem !important;
+  }
+
+  /* PostLayout: remove sidebar column so row-gap (inline 2rem) does not leave a gap above the article */
+  .post-layout-main .post-sidebar {
+    display: none !important;
+  }
+
+  .post-layout-inner {
+    padding-top: 0.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .post-layout-preface-banner {
+    margin-bottom: 0.45rem !important;
+  }
+
+  .pts-listing-main {
+    padding-top: 1.1rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .pts-listing-hero-banner {
+    margin-bottom: 0.75rem !important;
+  }
+
   /* Breadcrumb links: global 44px touch floor makes crumbs + current-page span misalign; keep one compact line */
   nav[aria-label="Breadcrumb"] a {
     min-height: unset;
@@ -304,6 +333,11 @@ a:hover {
   p {
     line-height: 1.7;
   }
+}
+
+/* PostLayout: space under the green CTA above the article title (wider viewports) */
+.post-layout-preface-banner {
+  margin-bottom: 1.75rem;
 }
 
 /* WhatsApp float pulse animation */

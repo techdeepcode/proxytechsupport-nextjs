@@ -117,6 +117,6 @@ If you encounter related issues or the fix does not work in a different environm
 
 ## Get a Session Booked
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20job%20support) to book your next session. First session often within the hour.
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) to book your next session. First session often within the hour.
 
 Related: [Benefits of Real-Time Job Support](/real-time-it-job-support-benefits/) · [Java Job Support](/java-job-support/) · [DevOps Support](/devops-job-support/)

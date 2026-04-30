@@ -54,4 +54,4 @@ Cloud infrastructure powers every modern application — and misconfigurations c
 
 ### Get Cloud Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20cloud%20technologies%20job%20support) · [AWS Job Support](/aws-job-support/) · [DevOps Job Support](/devops-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [AWS Job Support](/aws-job-support/) · [DevOps Job Support](/devops-job-support/)

@@ -61,4 +61,4 @@ Security engineering requires both deep technical knowledge and the ability to t
 
 ### Get Security Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20cybersecurity%20job%20support) · [Cloud Technologies Support](/cloud-technologies-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Cloud Technologies Support](/cloud-technologies-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)

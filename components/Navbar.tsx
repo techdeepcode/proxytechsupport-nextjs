@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect, type CSSProperties } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 import { mainNavLinks, jobSupportLinks, locationNavLinks } from '@/data/navigation';
 import { SITE_NAME } from '@/lib/site-seo';
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 function BriefcaseIcon() {
   return (
@@ -50,11 +52,23 @@ export default function Navbar({ variant = 'light' }: Props) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [mobileOpen]);
+
+  /** Above portal panel (2101) so the bar + ✕/☰ stay visible on legacy iOS when the sheet overlaps the row. */
+  const navStackZ = mobileOpen ? 4000 : 1000;
+
   const navStyle: CSSProperties = dark
     ? {
         position: 'sticky',
         top: 0,
-        zIndex: 1000,
+        zIndex: navStackZ,
         background: scrolled ? 'var(--pts-nav-bg-scrolled)' : 'var(--pts-nav-bg)',
         backdropFilter: scrolled ? 'blur(10px)' : 'none',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
@@ -64,7 +78,7 @@ export default function Navbar({ variant = 'light' }: Props) {
     : {
         position: 'sticky',
         top: 0,
-        zIndex: 1000,
+        zIndex: navStackZ,
         background: 'var(--pts-bg)',
         borderBottom: '1px solid var(--pts-border)',
         boxShadow: scrolled ? '0 2px 12px rgba(0,0,0,0.06)' : 'none',
@@ -297,7 +311,7 @@ export default function Navbar({ variant = 'light' }: Props) {
             Call Now
           </a>
           <a
-            href="https://wa.me/919660614469"
+            href={WHATSAPP_ME_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="nav-cta-wa"
@@ -326,15 +340,24 @@ export default function Navbar({ variant = 'light' }: Props) {
         {/* ── Mobile hamburger ─────────────────────────────────────────── */}
         <button
           type="button"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => setMobileOpen((o) => !o)}
           style={{
             display: 'none',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
             fontSize: '1.5rem',
+            lineHeight: 1,
             color: dark ? '#ffffff' : 'var(--pts-text)',
             padding: '0.25rem',
+            touchAction: 'manipulation',
+            WebkitTapHighlightColor: 'transparent',
+            position: 'relative',
+            zIndex: 2,
+            minWidth: 44,
+            minHeight: 44,
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
           className="mobile-menu-btn"
           aria-label="Toggle menu"
@@ -344,17 +367,26 @@ export default function Navbar({ variant = 'light' }: Props) {
         </button>
       </div>
 
-      {/* ── Mobile drawer ──────────────────────────────────────────────── */}
-      {mobileOpen && (
-        <div
-          style={{
-            background: dark ? 'var(--pts-nav-bg)' : 'var(--pts-bg)',
-            borderTop: dark ? '1px solid rgba(255,255,255,0.1)' : '1px solid var(--pts-border)',
-            padding: '0.75rem 1rem 1.25rem',
-            maxHeight: '80vh',
-            overflowY: 'auto',
-          }}
-        >
+      {/* Mobile menu: portal + fixed layers — legacy WebKit (e.g. iPhone 7) clips in-flow drawers under sticky nav */}
+      {typeof document !== 'undefined' &&
+        mobileOpen &&
+        createPortal(
+          <>
+            <button
+              type="button"
+              className="pts-mobile-nav-backdrop"
+              aria-label="Close menu"
+              onClick={() => setMobileOpen(false)}
+            />
+            <div
+              className="pts-mobile-nav-panel"
+              style={{
+                background: dark ? 'var(--pts-nav-bg)' : 'var(--pts-bg)',
+                borderTop: dark ? '1px solid rgba(255,255,255,0.1)' : '1px solid var(--pts-border)',
+                padding: '0.75rem 1rem 1.25rem',
+                paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom, 0px))',
+              }}
+            >
           {/* Home */}
           <Link
             href="/"
@@ -557,7 +589,7 @@ export default function Navbar({ variant = 'light' }: Props) {
               📞 Call Now
             </a>
             <a
-              href="https://wa.me/919660614469"
+              href={WHATSAPP_ME_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -575,8 +607,10 @@ export default function Navbar({ variant = 'light' }: Props) {
               💬 WhatsApp
             </a>
           </div>
-        </div>
-      )}
+            </div>
+          </>,
+          document.body,
+        )}
 
       <style>{`
         .nav-job-support-btn:hover {
@@ -602,7 +636,34 @@ export default function Navbar({ variant = 'light' }: Props) {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .nav-cta-row { display: none !important; }
-          .mobile-menu-btn { display: block !important; }
+          .mobile-menu-btn { display: inline-flex !important; }
+        }
+        .pts-mobile-nav-backdrop {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: var(--pts-sticky-header-offset);
+          bottom: 0;
+          border: none;
+          padding: 0;
+          margin: 0;
+          background: rgba(3, 15, 15, 0.45);
+          z-index: 2100;
+          cursor: pointer;
+          touch-action: manipulation;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .pts-mobile-nav-panel {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: var(--pts-sticky-header-offset);
+          bottom: 0;
+          z-index: 2101;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.12);
+          touch-action: manipulation;
         }
       `}</style>
     </nav>

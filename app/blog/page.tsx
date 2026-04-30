@@ -74,7 +74,6 @@ export default async function BlogPage() {
         <div style={{ marginBottom: '2.5rem' }}>
           <ActionBanner
             headline="Need real-time IT job support or interview help? Our experts are available 24/7 — USA, UK, Canada & worldwide."
-            waMessage="Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help"
           />
         </div>
 

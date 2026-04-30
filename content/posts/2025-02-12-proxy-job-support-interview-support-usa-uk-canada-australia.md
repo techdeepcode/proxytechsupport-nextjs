@@ -89,4 +89,4 @@ AEST/AWST coverage. Common Australian support requests:
 3. **Join the session** via screen share
 4. **Problem resolved** — you continue your work
 
-[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20job%20support) · [Interview Support Global](/interview-support-global/) · [All Services](/proxy-job-support/)
+[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Interview Support Global](/interview-support-global/) · [All Services](/proxy-job-support/)

@@ -102,7 +102,7 @@ Machine Learning, NLP, Data Science, Python AI Projects
 ## Get Started Today
 
 Website: https://proxytechsupport.com  
-WhatsApp / Call: [+91 96606 14469](https://wa.me/919660614469)  
+WhatsApp / Call: [+91 96606 14469](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help)  
 
 ---
 

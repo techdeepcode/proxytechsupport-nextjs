@@ -75,4 +75,4 @@ Quality engineering is no longer just about writing test cases — it is about b
 
 ### Get QA Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20testing%20job%20support) · [DevOps Job Support](/devops-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [DevOps Job Support](/devops-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)

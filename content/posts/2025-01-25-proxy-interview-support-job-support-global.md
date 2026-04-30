@@ -75,4 +75,4 @@ Our global support team covers:
 4. **Real-time session** – our engineer works alongside you
 5. **Post-session follow-up** – questions answered, resources shared
 
-[Get Global Support Now](https://wa.me/919660614469?text=Hi%2C%20I%20need%20global%20job%20support)
+[Get Global Support Now](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help)

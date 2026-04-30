@@ -60,4 +60,4 @@ Most issues are resolved within **30–60 minutes**.
 - **Confidential** – your employer never knows
 - **Pay per session** – no long-term contracts
 
-[Contact us on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20Java%20job%20support) or explore our [DevOps job support](/devops-job-support/) and [Python job support](/python-job-support/) services.
+[Contact us on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) or explore our [DevOps job support](/devops-job-support/) and [Python job support](/python-job-support/) services.

@@ -70,4 +70,4 @@ Our **QA automation job support** is available around the clock across all major
 
 ## Get QA Automation Help Now
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20QA%20automation%20job%20support) · [Testing & QE Support](/testing-quality-engineering-job-support/) · [DevOps Support](/devops-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Testing & QE Support](/testing-quality-engineering-job-support/) · [DevOps Support](/devops-job-support/)

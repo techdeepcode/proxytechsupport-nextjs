@@ -129,6 +129,6 @@ If you are applying for roles in the USA, UK, or Canada and struggling to get sh
 - **LinkedIn profile rewrite** – headline, About, experience section, skill keywords
 - **Combined package** – resume + LinkedIn optimised together for your target market
 
-[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20resume%20and%20LinkedIn%20help) to get started.
+[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) to get started.
 
 Related: [Interview Mentoring for IT Professionals](/blog/interview-mentoring-for-it-professionals/) · [Proxy Interview Support](/proxy-interview-support/)

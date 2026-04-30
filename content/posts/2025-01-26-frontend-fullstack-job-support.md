@@ -64,4 +64,4 @@ Modern frontend development is an entire engineering discipline on its own — a
 
 ### Get Fullstack Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20fullstack%20job%20support) · [React Job Support](/react-job-support/) · [Node.js Job Support](/node-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [React Job Support](/react-job-support/) · [Node.js Job Support](/node-job-support/)

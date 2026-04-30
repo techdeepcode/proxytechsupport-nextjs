@@ -147,4 +147,4 @@ increment() {
 
 ## Get Angular Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20Angular%20job%20support) · [Angular Job Support](/angular-job-support/) · [Frontend Fullstack Support](/frontend-fullstack-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Angular Job Support](/angular-job-support/) · [Frontend Fullstack Support](/frontend-fullstack-job-support/)

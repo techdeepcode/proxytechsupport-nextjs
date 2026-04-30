@@ -1,12 +1,12 @@
 'use client';
 
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
+
 interface ActionBannerProps {
   label?: string;
   headline?: string;
-  waMessage?: string;
 }
 
-const WA_BASE = 'https://wa.me/919660614469?text=';
 const CALL = 'tel:+919660614469';
 
 function WAIcon() {
@@ -28,7 +28,6 @@ function PhoneIcon() {
 export default function ActionBanner({
   label = 'Expert Help Available',
   headline = 'Need real-time IT job support or interview help? Our experts are available 24/7 — USA, UK, Canada & worldwide.',
-  waMessage = 'Hi%2C%20I%20need%20expert%20help',
 }: ActionBannerProps) {
   return (
     <div
@@ -68,7 +67,7 @@ export default function ActionBanner({
 
       <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
         <a
-          href={`${WA_BASE}${waMessage}`}
+          href={WHATSAPP_ME_URL}
           target="_blank"
           rel="noopener noreferrer"
           style={{

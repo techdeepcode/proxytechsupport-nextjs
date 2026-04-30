@@ -104,4 +104,4 @@ The simplest way is to send a WhatsApp message describing your need. Include:
 
 We will confirm availability within minutes.
 
-[WhatsApp Us Now](https://wa.me/919660614469?text=Hi%2C%20I%20need%20job%20support)
+[WhatsApp Us Now](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help)

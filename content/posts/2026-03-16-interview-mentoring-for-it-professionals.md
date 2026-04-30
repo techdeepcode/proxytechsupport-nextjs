@@ -90,6 +90,6 @@ Most developers who complete a full mentoring package (6–8 sessions) report:
 
 ## Get Started with Interview Mentoring
 
-[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20interview%20mentoring) to book your first diagnostic session.
+[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) to book your first diagnostic session.
 
 Related: [Resume & LinkedIn Optimisation](/blog/resume-linkedin-optimization-for-developers/) · [Interview Support Global](/interview-support-global/)

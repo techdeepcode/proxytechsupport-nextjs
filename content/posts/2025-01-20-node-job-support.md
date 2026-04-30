@@ -58,4 +58,4 @@ Node.js powers fast, scalable backends — but event loop blocking, callback hel
 
 ### Contact Us
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20Node.js%20job%20support) · [React Job Support](/react-job-support/) · [Python Job Support](/python-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [React Job Support](/react-job-support/) · [Python Job Support](/python-job-support/)

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { faqs } from '@/data/faqs';
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -138,7 +139,7 @@ export default function FAQ() {
             Everything you need to know before getting started with our support services.
           </p>
           <div className="faq-cta-stack">
-            <a className="faq-cta-primary" href="https://wa.me/919660614469" target="_blank" rel="noopener noreferrer">
+            <a className="faq-cta-primary" href={WHATSAPP_ME_URL} target="_blank" rel="noopener noreferrer">
               Ask on WhatsApp <span aria-hidden>→</span>
             </a>
             <a className="faq-cta-secondary" href="mailto:support@proxytechsupport.com">

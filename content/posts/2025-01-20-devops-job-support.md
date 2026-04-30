@@ -57,4 +57,4 @@ DevOps is where development meets operations — and where things break in the m
 
 ### Get DevOps Help Now
 
-[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20DevOps%20job%20support) · [AWS Job Support](/aws-job-support/) · [Cloud Technologies Support](/cloud-technologies-job-support/)
+[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [AWS Job Support](/aws-job-support/) · [Cloud Technologies Support](/cloud-technologies-job-support/)

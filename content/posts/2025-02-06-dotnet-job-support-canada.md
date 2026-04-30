@@ -64,4 +64,4 @@ We are available from 6 AM to midnight across all Canadian time zones.
 
 ### Get .NET Help in Canada
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20.NET%20job%20support%20in%20Canada) · [.NET Job Support](/dotnet-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [.NET Job Support](/dotnet-job-support/) · [Backend Enterprise Support](/backend-enterprise-job-support/)

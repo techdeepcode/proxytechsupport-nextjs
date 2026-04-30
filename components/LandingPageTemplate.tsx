@@ -6,6 +6,7 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import LandingFAQ from '@/components/LandingFAQ';
 import ActionBanner from '@/components/ActionBanner';
 import type { LandingPageConfig } from '@/data/landing-pages';
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 // ─── Breadcrumb derivation ────────────────────────────────────────────────────
 
@@ -45,7 +46,10 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
   return [home, { label: 'Developer Support' }, { label: shortTitle }];
 }
 
-const WA_LINK = 'https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help';
+function isGeoLandingPage(config: LandingPageConfig): boolean {
+  return config.slug in GEO_LABELS;
+}
+
 const CALL_LINK = 'tel:+919660614469';
 
 // ─── SVG helpers ────────────────────────────────────────────────────────────
@@ -87,7 +91,7 @@ function BulletArrow() {
 function CTAButtons({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
   return (
     <div className="lp-cta-row">
-      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="lp-btn-wa">
+      <a href={WHATSAPP_ME_URL} target="_blank" rel="noopener noreferrer" className="lp-btn-wa">
         <WAIcon />
         Get Instant Help Now
       </a>
@@ -144,6 +148,8 @@ export default function LandingPageTemplate({ config }: Props) {
     areaServed: ['US', 'GB', 'CA', 'AU', 'DE', 'SG', 'NZ', 'EU'],
     serviceType: 'IT Job Support and Proxy Interview Assistance',
   };
+
+  const geoHero = isGeoLandingPage(config);
 
   return (
     <>
@@ -207,6 +213,75 @@ export default function LandingPageTemplate({ config }: Props) {
         .lp-trust-item { display:flex; flex-direction:column; gap:0.15rem; }
         .lp-trust-stat { font-size:1.55rem; font-weight:800; color:var(--pts-accent); line-height:1; }
         .lp-trust-label { font-size:0.78rem; color:rgba(255,255,255,0.55); font-weight:500; letter-spacing:0.04em; }
+
+        /* Geo location pages: hero + metrics side-by-side on desktop */
+        .lp-hero-inner--geo-split {
+          display:grid;
+          gap:clamp(1.35rem,3vw,2.25rem);
+          align-items:start;
+          grid-template-columns:1fr;
+        }
+        @media(min-width:1024px){
+          .lp-hero-inner--geo-split{
+            grid-template-columns:minmax(0,1fr) minmax(270px,360px);
+            column-gap:clamp(1.75rem,3vw,2.75rem);
+          }
+          .lp-hero-inner--geo-split .lp-hero-copy-col .lp-hero-h1{ max-width:none; }
+          .lp-hero-inner--geo-split .lp-hero-copy-col .lp-hero-tagline,
+          .lp-hero-inner--geo-split .lp-hero-copy-col .lp-hero-pain,
+          .lp-hero-inner--geo-split .lp-hero-copy-col .lp-hero-variant{ max-width:42rem; }
+        }
+        .lp-hero-metrics-card{
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:0.75rem;
+          padding:1.2rem 1rem;
+          border-radius:16px;
+          border:1px solid rgba(255,255,255,0.14);
+          background:rgba(255,255,255,0.05);
+          box-shadow:inset 0 1px 0 rgba(255,255,255,0.07);
+          align-self:start;
+        }
+        @media(min-width:1024px){
+          .lp-hero-metrics-card{
+            position:sticky;
+            top:calc(var(--pts-sticky-header-offset) + 0.5rem);
+            padding:1.35rem 1.15rem;
+            gap:0.85rem;
+          }
+        }
+        .lp-hero-metrics-card .lp-trust-item{
+          text-align:center;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          padding:0.7rem 0.4rem;
+          border-radius:10px;
+          background:rgba(0,0,0,0.22);
+          border:1px solid rgba(255,255,255,0.08);
+        }
+        .lp-hero-metrics-card .lp-trust-stat{ font-size:1.35rem; line-height:1.15; }
+        .lp-hero-metrics-card .lp-trust-label{ font-size:0.72rem; color:rgba(255,255,255,0.55); font-weight:500; line-height:1.2; }
+        /* Desktop: match main homepage hero dashboard (HeroHomeSplit) cell scale */
+        @media(min-width:1024px){
+          .lp-hero-metrics-card .lp-trust-item{
+            min-height:5.25rem;
+            padding:1.05rem 0.55rem;
+          }
+          .lp-hero-metrics-card .lp-trust-stat{
+            font-size:1.28rem;
+            line-height:1.15;
+          }
+          .lp-hero-metrics-card .lp-trust-label{
+            font-size:0.68rem;
+            color:rgba(255,255,255,0.48);
+            font-weight:500;
+            letter-spacing:0.02em;
+            line-height:1.25;
+            margin-top:0.4rem;
+          }
+        }
 
         /* ── Shared section containers ────────────── */
         /* position:relative + z-index:0 keeps sections below the sticky nav (z-index:1000) */
@@ -366,7 +441,7 @@ export default function LandingPageTemplate({ config }: Props) {
         /* ── Mobile overrides (≤768px) ──────────────────────────────── */
         @media(max-width:768px){
           /* Compact hero padding — H1 visible above the fold */
-          .lp-hero { padding:1.75rem 1rem 2rem !important; }
+          .lp-hero { padding:0.95rem 1rem 2rem !important; }
 
           /* Full-width, easy-tap CTA buttons */
           .lp-cta-row { flex-direction:column; gap:0.55rem; }
@@ -393,6 +468,8 @@ export default function LandingPageTemplate({ config }: Props) {
           /* Trust strip stacks 2-up */
           .lp-trust-strip { gap:1rem 2rem; }
           .lp-trust-stat { font-size:1.25rem; }
+          .lp-hero-metrics-card { padding:1rem 0.85rem; gap:0.65rem; }
+          .lp-hero-metrics-card .lp-trust-stat { font-size:1.2rem; }
         }
       `}</style>
 
@@ -402,23 +479,37 @@ export default function LandingPageTemplate({ config }: Props) {
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="lp-hero">
-        <div className="lp-hero-inner">
-          <p className="lp-hero-eyebrow"><span aria-hidden>✦</span> Expert IT Job Support &amp; Proxy Interview Assistance</p>
-          <h1 className="lp-hero-h1">{config.h1}</h1>
-          <p className="lp-hero-tagline">{config.tagline}</p>
-          <p className="lp-hero-pain">{config.painIntro}</p>
-          {config.heroVariant && (
-            <p className="lp-hero-variant">{config.heroVariant}</p>
-          )}
-          <CTAButtons variant="dark" />
-          <div className="lp-trust-strip" aria-label="Trust indicators">
-            {trustItems.map((t) => (
-              <div key={t.stat} className="lp-trust-item">
-                <span className="lp-trust-stat">{t.stat}</span>
-                <span className="lp-trust-label">{t.label}</span>
+        <div className={`lp-hero-inner${geoHero ? ' lp-hero-inner--geo-split' : ''}`}>
+          <div className="lp-hero-copy-col">
+            <p className="lp-hero-eyebrow"><span aria-hidden>✦</span> Expert IT Job Support &amp; Proxy Interview Assistance</p>
+            <h1 className="lp-hero-h1">{config.h1}</h1>
+            <p className="lp-hero-tagline">{config.tagline}</p>
+            <p className="lp-hero-pain">{config.painIntro}</p>
+            {config.heroVariant && (
+              <p className="lp-hero-variant">{config.heroVariant}</p>
+            )}
+            <CTAButtons variant="dark" />
+            {!geoHero && (
+              <div className="lp-trust-strip" aria-label="Trust indicators">
+                {trustItems.map((t) => (
+                  <div key={t.stat} className="lp-trust-item">
+                    <span className="lp-trust-stat">{t.stat}</span>
+                    <span className="lp-trust-label">{t.label}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
+          {geoHero && (
+            <aside className="lp-hero-metrics-card" aria-label="Trust indicators">
+              {trustItems.map((t) => (
+                <div key={t.stat} className="lp-trust-item">
+                  <span className="lp-trust-stat">{t.stat}</span>
+                  <span className="lp-trust-label">{t.label}</span>
+                </div>
+              ))}
+            </aside>
+          )}
         </div>
       </section>
 
@@ -509,7 +600,7 @@ export default function LandingPageTemplate({ config }: Props) {
                 <p className="lp-eyebrow">Proxy &amp; Interview Support</p>
                 <h2 className="lp-proxy-h2">{config.proxySection.title}</h2>
                 <p className="lp-proxy-intro">{config.proxySection.intro}</p>
-                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="lp-proxy-cta">
+                <a href={WHATSAPP_ME_URL} target="_blank" rel="noopener noreferrer" className="lp-proxy-cta">
                   <WAIcon size={16} />
                   Get Proxy Support Now
                 </a>
@@ -543,7 +634,6 @@ export default function LandingPageTemplate({ config }: Props) {
         <div className="lp-inner">
           <ActionBanner
             headline="Need real-time IT job support or interview help? Our experts are available 24/7 — USA, UK, Canada & worldwide."
-            waMessage="Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help"
           />
         </div>
       </section>
@@ -558,7 +648,7 @@ export default function LandingPageTemplate({ config }: Props) {
               <p style={{ fontSize: '0.95rem', color: 'var(--pts-text-subtle)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
                 Everything you need to know before getting started with job support or interview assistance.
               </p>
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="lp-btn-wa" style={{ display: 'inline-flex', fontSize: '0.9rem' }}>
+              <a href={WHATSAPP_ME_URL} target="_blank" rel="noopener noreferrer" className="lp-btn-wa" style={{ display: 'inline-flex', fontSize: '0.9rem' }}>
                 <WAIcon />
                 Ask on WhatsApp
               </a>

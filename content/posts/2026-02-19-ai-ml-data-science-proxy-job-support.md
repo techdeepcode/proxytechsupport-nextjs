@@ -91,4 +91,4 @@ The generative AI landscape is moving faster than any documentation can keep up 
 - Developers adding AI/LLM features to existing applications
 - Researchers transitioning to industry ML roles
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20AI%20ML%20data%20science%20job%20support) · [AI/ML Job Support](/ai-ml-job-support/) · [Python Job Support](/python-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [AI/ML Job Support](/ai-ml-job-support/) · [Python Job Support](/python-job-support/)

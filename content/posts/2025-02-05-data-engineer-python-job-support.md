@@ -64,4 +64,4 @@ Modern data engineering means building reliable, scalable pipelines that ingest,
 
 ### Get Data Engineering Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20data%20engineering%20job%20support) · [Python Job Support](/python-job-support/) · [Databases Support](/databases-data-platforms-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Python Job Support](/python-job-support/) · [Databases Support](/databases-data-platforms-job-support/)

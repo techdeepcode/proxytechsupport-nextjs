@@ -60,4 +60,4 @@ Building a cross-platform mobile app sounds simple until you hit a platform-spec
 
 ### Get React Native Help
 
-[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20React%20Native%20job%20support) · [React Job Support](/react-job-support/) · [Frontend Fullstack Support](/frontend-fullstack-job-support/)
+[WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [React Job Support](/react-job-support/) · [Frontend Fullstack Support](/frontend-fullstack-job-support/)

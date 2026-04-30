@@ -56,4 +56,4 @@ Our React job support clients are typically:
 
 Reach out via WhatsApp for instant response. Most React sessions run **30–90 minutes** and leave you with working code plus an understanding of what went wrong.
 
-[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20React%20job%20support) · [Java Job Support](/java-job-support/) · [Node.js Job Support](/node-job-support/)
+[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) · [Java Job Support](/java-job-support/) · [Node.js Job Support](/node-job-support/)

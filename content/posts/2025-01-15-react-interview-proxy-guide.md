@@ -81,6 +81,6 @@ It is NOT a shortcut for someone who has never worked with React. Interview prox
 
 ## Get Started
 
-[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20React%20interview%20proxy%20support) to discuss your upcoming interview. We are available 24/7 across US, UK, Canada, and Australia time zones.
+[Chat on WhatsApp](https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help) to discuss your upcoming interview. We are available 24/7 across US, UK, Canada, and Australia time zones.
 
 Related: [Interview Mentoring for IT Professionals](/blog/interview-mentoring-for-it-professionals/) · [React Job Support](/react-job-support/)

@@ -6,6 +6,7 @@ import PageBottomCTA from '@/components/PageBottomCTA';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Sidebar from '@/components/Sidebar';
 import ActionBanner from '@/components/ActionBanner';
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 interface PostLayoutProps {
   title: string;
@@ -15,16 +16,6 @@ interface PostLayoutProps {
   showInterviewBanner?: boolean;
   /** Breadcrumb trail for this page. If omitted no breadcrumb is rendered. */
   breadcrumbs?: BreadcrumbItem[];
-}
-
-function InterviewBanner() {
-  return (
-    <div style={{ marginBottom: '1.75rem' }}>
-      <ActionBanner
-        waMessage="Hi%2C%20I%20need%20interview%20support"
-      />
-    </div>
-  );
 }
 
 function InlineInterviewCTA() {
@@ -51,7 +42,7 @@ function InlineInterviewCTA() {
         </a>
       </p>
       <a
-        href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20interview%20support"
+        href={WHATSAPP_ME_URL}
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -123,8 +114,9 @@ export default function PostLayout({ title, content, date, showInterviewBanner, 
       <TopBar />
       <Navbar />
       {breadcrumbs && breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} />}
-      <main style={{ background: 'var(--pts-bg)', minHeight: '60vh' }}>
+      <main className="post-layout-main" style={{ background: 'var(--pts-bg)', minHeight: '60vh' }}>
         <div
+          className="post-layout-inner"
           style={{
             width: '100%',
             maxWidth: 'var(--pts-content-max)',
@@ -137,7 +129,11 @@ export default function PostLayout({ title, content, date, showInterviewBanner, 
           }}
         >
           <article>
-            {showInterviewBanner && <InterviewBanner />}
+            {showInterviewBanner && (
+              <div className="post-layout-preface-banner">
+                <ActionBanner />
+              </div>
+            )}
 
             <h1
               style={{

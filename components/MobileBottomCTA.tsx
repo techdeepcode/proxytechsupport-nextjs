@@ -3,6 +3,8 @@
  * Replaces the floating WhatsApp button on small screens for easier tapping.
  * Uses safe-area-inset-bottom so it stays clear of iOS home indicator.
  */
+import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
+
 export default function MobileBottomCTA() {
   return (
     <>
@@ -63,7 +65,7 @@ export default function MobileBottomCTA() {
       `}</style>
       <div className="mob-cta-bar" role="navigation" aria-label="Quick contact">
         <a
-          href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help"
+          href={WHATSAPP_ME_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="mob-cta-wa"
