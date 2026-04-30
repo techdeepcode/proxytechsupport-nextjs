@@ -457,9 +457,44 @@ export default function HeroHomeSplit() {
             .hero-split-section {
               padding-top: 1.5rem !important;
             }
-            /* Hide the dashboard card — too heavy for mobile above-the-fold */
-            .hero-split-dashboard {
-              display: none !important;
+            /* Single column: copy then metrics card (compact, still readable) */
+            .hero-split-grid {
+              grid-template-columns: 1fr;
+              gap: 1.15rem;
+            }
+            .hero-split-dashboard > div:first-child {
+              padding: 0.85rem 0.95rem 1rem !important;
+            }
+            .hero-split-dashboard > div:first-child > p:first-of-type {
+              margin-bottom: 0.6rem !important;
+              font-size: 0.58rem !important;
+            }
+            .hero-split-dashboard > div:first-child > div:nth-child(2) {
+              gap: 0.5rem !important;
+            }
+            .hero-split-dashboard > div:first-child > div:nth-child(2) > div {
+              min-height: 4.1rem !important;
+              padding: 0.6rem 0.35rem !important;
+            }
+            .hero-split-dashboard > div:first-child > div:nth-child(2) > div > div:first-child {
+              font-size: 1.12rem !important;
+            }
+            .hero-split-dashboard > div:first-child > div:nth-child(2) > div > div:last-child {
+              font-size: 0.62rem !important;
+              margin-top: 0.28rem !important;
+            }
+            .hero-split-dashboard > div:last-child {
+              padding: 0.85rem 0.95rem 1rem !important;
+            }
+            .hero-split-dashboard > div:last-child > div:first-child {
+              margin-bottom: 0.65rem !important;
+              padding: 0.65rem 0.85rem !important;
+            }
+            .hero-split-dashboard > div:last-child > div:first-child > div:nth-child(2) > div:first-child {
+              font-size: 0.84rem !important;
+            }
+            .hero-split-dashboard > div:last-child > div:first-child > div:nth-child(2) > div:last-child {
+              font-size: 0.72rem !important;
             }
             /* Full-width CTA buttons, stacked, easy to tap */
             .hero-split-btns {
