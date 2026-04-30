@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, type CSSProperties } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,8 +38,11 @@ type Props = {
 };
 
 export default function Navbar({ variant = 'light' }: Props) {
+  const navRef = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  /** Measured from TopBar + nav (px). Fixed 7rem was wrong when TopBar wraps → gap + short panel on iOS. */
+  const [mobileMenuTopPx, setMobileMenuTopPx] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState<'jobSupport' | 'locations' | null>(null);
   const [mobileJobOpen, setMobileJobOpen] = useState(false);
   const [mobileLocOpen, setMobileLocOpen] = useState(false);
@@ -60,6 +63,47 @@ export default function Navbar({ variant = 'light' }: Props) {
       document.body.style.overflow = prevOverflow;
     };
   }, [mobileOpen]);
+
+  useLayoutEffect(() => {
+    if (!mobileOpen || typeof document === 'undefined') {
+      setMobileMenuTopPx(null);
+      return;
+    }
+    const measure = () => {
+      const nav = navRef.current;
+      const topbar = document.querySelector('[data-pts-topbar]');
+      let bottom = 0;
+      if (topbar instanceof HTMLElement) {
+        bottom = Math.max(bottom, topbar.getBoundingClientRect().bottom);
+      }
+      if (nav) {
+        bottom = Math.max(bottom, nav.getBoundingClientRect().bottom);
+      }
+      setMobileMenuTopPx(Math.max(0, Math.ceil(bottom)));
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    window.addEventListener('orientationchange', measure);
+    const vv = window.visualViewport;
+    vv?.addEventListener('resize', measure);
+    vv?.addEventListener('scroll', measure);
+    return () => {
+      window.removeEventListener('resize', measure);
+      window.removeEventListener('orientationchange', measure);
+      vv?.removeEventListener('resize', measure);
+      vv?.removeEventListener('scroll', measure);
+    };
+  }, [mobileOpen]);
+
+  const mobileOverlayPosition: CSSProperties | undefined =
+    mobileMenuTopPx != null
+      ? {
+          top: mobileMenuTopPx,
+          height: `calc(100dvh - ${mobileMenuTopPx}px)`,
+          maxHeight: `calc(100svh - ${mobileMenuTopPx}px)`,
+          bottom: 'auto',
+        }
+      : undefined;
 
   /** Above portal panel (2101) so the bar + ✕/☰ stay visible on legacy iOS when the sheet overlaps the row. */
   const navStackZ = mobileOpen ? 4000 : 1000;
@@ -112,7 +156,7 @@ export default function Navbar({ variant = 'light' }: Props) {
   };
 
   return (
-    <nav style={navStyle}>
+    <nav ref={navRef} style={navStyle}>
       <div
         style={{
           width: '100%',
@@ -377,10 +421,12 @@ export default function Navbar({ variant = 'light' }: Props) {
               className="pts-mobile-nav-backdrop"
               aria-label="Close menu"
               onClick={() => setMobileOpen(false)}
+              style={mobileOverlayPosition}
             />
             <div
               className="pts-mobile-nav-panel"
               style={{
+                ...mobileOverlayPosition,
                 background: dark ? 'var(--pts-nav-bg)' : 'var(--pts-bg)',
                 borderTop: dark ? '1px solid rgba(255,255,255,0.1)' : '1px solid var(--pts-border)',
                 padding: '0.75rem 1rem 1.25rem',
@@ -661,6 +707,7 @@ export default function Navbar({ variant = 'light' }: Props) {
           bottom: 0;
           z-index: 2101;
           overflow-y: auto;
+          overscroll-behavior: contain;
           -webkit-overflow-scrolling: touch;
           box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.12);
           touch-action: manipulation;

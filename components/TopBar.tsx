@@ -9,6 +9,7 @@ export default function TopBar({ variant = 'legacyDark' }: Props) {
   if (variant === 'legacyDark') {
     return (
       <div
+        data-pts-topbar
         style={{
           background: 'var(--pts-topbar-bg)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
@@ -42,6 +43,7 @@ export default function TopBar({ variant = 'legacyDark' }: Props) {
 
   return (
     <div
+      data-pts-topbar
       style={{
         background: 'var(--pts-forest)',
         borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
