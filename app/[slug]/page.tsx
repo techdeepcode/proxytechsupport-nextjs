@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllPostSlugs, getPostBySlug } from '@/lib/posts';
+import { getCanonicalUrlForPost } from '@/lib/post-canonical';
 import PostLayout from '@/components/PostLayout';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import { defaultOgImage } from '@/lib/site-seo';
 
-/** Job-support service pages are canonical at /:slug/ (root). */
 const isJobSupportSlug = (slug: string) =>
   slug.includes('job-support') || slug.includes('job-help');
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlug(slug);
   if (!post) return {};
 
-  const canonical = `https://proxytechsupport.com/${slug}/`;
+  const canonical = getCanonicalUrlForPost(post);
   const title = `${post.title} | Proxy Tech Support`;
   const published = post.date ? `${post.date}T12:00:00.000Z` : undefined;
 
@@ -58,7 +58,8 @@ export default async function SlugPage({ params }: Props) {
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const url = `https://proxytechsupport.com/${slug}/`;
+  const Article = post.Article;
+  const url = getCanonicalUrlForPost(post);
 
   const breadcrumbs = isJobSupportSlug(slug)
     ? [
@@ -83,11 +84,12 @@ export default async function SlugPage({ params }: Props) {
       />
       <PostLayout
         title={post.title}
-        content={post.content}
         date={post.date}
         breadcrumbs={breadcrumbs}
         showInterviewBanner={isJobSupportSlug(slug)}
-      />
+      >
+        <Article />
+      </PostLayout>
     </>
   );
 }

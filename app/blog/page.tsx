@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
+import { getPostPublicHref } from '@/lib/post-canonical';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -40,13 +41,9 @@ export const metadata: Metadata = {
   },
 };
 
-/**
- * Job-support service pages live at their root canonical URL /:slug/.
- * Pure blog articles (no "job-support" in slug) live at /blog/:slug/.
- */
-function getPostUrl(slug: string) {
-  const isJobSupport = slug.includes('job-support') || slug.includes('job-help');
-  return isJobSupport ? `/${slug}/` : `/blog/${slug}/`;
+/** Uses each post's permalink when set (matches indexed URLs). */
+function getPostUrl(post: Awaited<ReturnType<typeof getAllPosts>>[number]) {
+  return getPostPublicHref(post);
 }
 
 export default async function BlogPage() {
@@ -79,7 +76,7 @@ export default async function BlogPage() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {posts.map((post) => {
-            const href = getPostUrl(post.slug);
+            const href = getPostUrl(post);
             return (
               <article
                 key={post.slug}

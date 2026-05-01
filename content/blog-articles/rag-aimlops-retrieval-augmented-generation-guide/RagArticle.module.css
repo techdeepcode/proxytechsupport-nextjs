@@ -1,0 +1,544 @@
+/* Scoped to RAG guide — matches site tokens, richer than plain .post-content tables */
+
+.ragArticle {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--pts-text-muted);
+}
+
+.ragArticle p {
+  margin-bottom: 1rem;
+}
+
+.ragArticle h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 800;
+  color: var(--pts-text);
+  margin: 2.25rem 0 0.85rem;
+  padding-top: 1rem;
+  border-top: 3px solid var(--pts-accent);
+  scroll-margin-top: 6rem;
+}
+
+.ragArticle h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--pts-forest);
+  margin: 1.5rem 0 0.6rem;
+  scroll-margin-top: 6rem;
+}
+
+.ragArticle ul,
+.ragArticle ol {
+  margin: 0.75rem 0 1.1rem 1.35rem;
+  padding: 0;
+}
+
+.ragArticle li {
+  margin-bottom: 0.45rem;
+}
+
+.ragArticle a {
+  color: var(--pts-forest);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ragArticle a:hover {
+  color: var(--pts-accent-hover);
+}
+
+/* —— Metrics —— */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem;
+  margin: 1.5rem 0 1.75rem;
+}
+
+.metricCard {
+  background: linear-gradient(145deg, #ffffff 0%, var(--pts-tech-header) 100%);
+  border: 1px solid var(--pts-border);
+  border-radius: 12px;
+  padding: 1.1rem 1rem;
+  text-align: center;
+  box-shadow: var(--pts-shadow-lp);
+  position: relative;
+  overflow: hidden;
+}
+
+.metricCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pts-forest), var(--pts-accent));
+}
+
+.metricValue {
+  display: block;
+  font-size: clamp(1.55rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--pts-forest);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.metricLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--pts-text-subtle);
+  margin-top: 0.45rem;
+  line-height: 1.35;
+}
+
+.metricsNote {
+  font-size: 0.78rem;
+  color: var(--pts-text-subtle);
+  margin: -0.5rem 0 1.25rem;
+}
+
+/* —— TOC —— */
+.toc {
+  background: var(--pts-card-bg);
+  border: 1px solid var(--pts-border);
+  border-left: 4px solid var(--pts-forest);
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.tocTitle {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  color: var(--pts-text-subtle);
+  margin-bottom: 0.65rem;
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.toc li {
+  margin-bottom: 0.35rem;
+}
+
+/* —— Tables —— */
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border-radius: 12px;
+  border: 1px solid var(--pts-border);
+  box-shadow: var(--pts-shadow-lp);
+  background: var(--pts-card-bg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  min-width: 520px;
+}
+
+.table thead th {
+  background: var(--pts-forest);
+  color: #fff;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.table tbody td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--pts-border);
+  vertical-align: top;
+}
+
+.table tbody tr:nth-child(even) td {
+  background: rgba(3, 98, 76, 0.04);
+}
+
+.table tbody tr:hover td {
+  background: rgba(0, 223, 130, 0.06);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table .good {
+  color: #047857;
+  font-weight: 600;
+}
+
+.table .warn {
+  color: #b45309;
+  font-weight: 600;
+}
+
+/* —— Callouts —— */
+.callout {
+  background: linear-gradient(135deg, rgba(0, 223, 130, 0.09) 0%, rgba(232, 250, 244, 0.9) 100%);
+  border: 1px solid rgba(0, 223, 130, 0.25);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* —— RAG = three sectors (replaces low-contrast dark callout) —— */
+.definitionStrip {
+  margin: 1.35rem 0 1.5rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--pts-border);
+  box-shadow: var(--pts-shadow-lp);
+  background: var(--pts-card-bg);
+}
+
+.definitionIntro {
+  padding: 0.9rem 1.1rem;
+  background: linear-gradient(90deg, rgba(3, 98, 76, 0.08), rgba(0, 223, 130, 0.06));
+  border-bottom: 1px solid var(--pts-border);
+}
+
+.definitionIntro strong {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pts-forest);
+  margin-bottom: 0.35rem;
+}
+
+.definitionIntro span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pts-text);
+}
+
+.definitionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+}
+
+.defSectorRetrieve,
+.defSectorAugment,
+.defSectorGenerate {
+  padding: 1rem 1.1rem;
+  min-height: 5.5rem;
+  border-right: 1px solid var(--pts-border);
+}
+
+.defSectorGenerate {
+  border-right: none;
+}
+
+@media (max-width: 640px) {
+  .defSectorRetrieve,
+  .defSectorAugment,
+  .defSectorGenerate {
+    border-right: none;
+    border-bottom: 1px solid var(--pts-border);
+  }
+
+  .defSectorGenerate {
+    border-bottom: none;
+  }
+}
+
+.defSectorRetrieve {
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.12) 0%, #fff 65%);
+  border-top: 4px solid #0ea5e9;
+}
+
+.defSectorAugment {
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.12) 0%, #fff 65%);
+  border-top: 4px solid #8b5cf6;
+}
+
+.defSectorGenerate {
+  background: linear-gradient(180deg, rgba(0, 223, 130, 0.18) 0%, #fff 65%);
+  border-top: 4px solid var(--pts-accent);
+}
+
+.defSectorLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.defSectorRetrieve .defSectorLabel {
+  color: #0369a1;
+}
+
+.defSectorAugment .defSectorLabel {
+  color: #6d28d9;
+}
+
+.defSectorGenerate .defSectorLabel {
+  color: var(--pts-forest);
+}
+
+.defSector p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--pts-text-muted);
+}
+
+/* —— Code sample: Stack Overflow–style single panel (no per-line backgrounds) —— */
+.soBlock {
+  margin: 1rem 0;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f6f8fa;
+  box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+}
+
+.soHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #d0d7de;
+  background: #f6f8fa;
+  font-size: 0.72rem;
+  color: #656d76;
+}
+
+.soFilename {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.soLang {
+  flex-shrink: 0;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.soBody {
+  margin: 0;
+  padding: 0.65rem 0;
+  background: #f6f8fa;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  overflow-x: auto;
+  color: #24292f;
+}
+
+.soRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 0.75rem;
+  background: transparent;
+}
+
+.soLn {
+  flex: 0 0 auto;
+  min-width: 2.75ch;
+  padding-right: 1em;
+  text-align: right;
+  color: #8c959f;
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.soCode {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: #24292f;
+  background: transparent !important;
+  white-space: pre;
+  display: block;
+}
+
+/* Syntax tokens — light snippet surface (GitHub / Stack Overflow–style) */
+.tokKw {
+  color: #cf222e;
+  font-weight: 600;
+}
+
+.tokStr {
+  color: #0a3069;
+}
+
+.tokComm {
+  color: #57606a;
+  font-style: italic;
+}
+
+.tokNum {
+  color: #0550ae;
+}
+
+.tokArrow {
+  color: #8250df;
+  font-weight: 600;
+}
+
+.tokDiagBox {
+  color: #116329;
+  font-weight: 600;
+}
+/* —— Steps —— */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 1rem 0 1.25rem;
+  padding: 0;
+}
+
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.85rem;
+  padding: 1rem 1.1rem;
+  background: var(--pts-card-bg);
+  border: 1px solid var(--pts-border);
+  border-radius: 10px;
+}
+
+.steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pts-accent);
+  color: var(--pts-on-accent);
+  font-weight: 800;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+.stepBody strong {
+  color: var(--pts-text);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.stepBody span {
+  font-size: 0.88rem;
+  color: var(--pts-text-subtle);
+}
+
+/* —— Use-case grid —— */
+.useGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.useCard {
+  border: 1px solid var(--pts-border);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--pts-card-bg);
+  box-shadow: var(--pts-shadow-lp);
+}
+
+.useCardIcon {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+  line-height: 1;
+}
+
+.useCard h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--pts-text);
+  margin: 0 0 0.35rem;
+}
+
+.useCard p {
+  font-size: 0.82rem;
+  color: var(--pts-text-subtle);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* —— FAQ —— */
+.faqItem {
+  border-bottom: 1px solid var(--pts-border);
+  padding: 1rem 0;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQ {
+  font-weight: 800;
+  color: var(--pts-text);
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.faqA {
+  font-size: 0.9rem;
+  color: var(--pts-text-muted);
+  margin: 0;
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid var(--pts-border);
+  margin: 2rem 0;
+}
+
+.takeaways {
+  background: linear-gradient(180deg, var(--pts-tech-header) 0%, #fff 60%);
+  border: 1px solid var(--pts-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.35rem;
+  margin: 1.5rem 0;
+}
+
+.takeaways h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.cta {
+  margin-top: 1.5rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  background: rgba(0, 223, 130, 0.1);
+  border: 1px solid rgba(0, 223, 130, 0.3);
+  font-size: 0.92rem;
+}

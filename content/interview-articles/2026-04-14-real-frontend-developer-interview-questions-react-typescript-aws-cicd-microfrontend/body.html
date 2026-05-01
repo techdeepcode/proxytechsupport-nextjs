@@ -1,0 +1,302 @@
+<h2>Real Enterprise Frontend Interview Questions – Today's Round</h2>
+<p>These are real questions asked during a live frontend developer interview discussion.<br>
+Questions focus on real production experience, architecture thinking, performance, CI/CD, AWS, React ecosystem, and enterprise development practices.</p>
+<hr>
+<h3>1) Introduce yourself</h3>
+<p>10+ years of experience building enterprise web applications using React, TypeScript, Node, and cloud platforms. Strong focus on scalable UI architecture, reusable components, API integrations, CI/CD pipelines, and performance optimization in production systems.</p>
+<hr>
+<h3>2) React Native — which version and experience?</h3>
+<p>Worked with React Native across 0.6x–0.7x range in production apps for Android and iOS. Built screens, handled Redux state, async flows, API integrations, and optimized rendering performance for mobile environments.</p>
+<hr>
+<h3>3) When was the last time you used React Native?</h3>
+<p>Last used actively in production around 2022 in a mobile automotive-scale application where components, navigation, and state workflows were built and maintained.</p>
+<hr>
+<h3>4) Experience with micro frontend module federation &#x26; challenges?</h3>
+<p>Worked with domain-driven UI modules deployed independently.<br>
+Biggest challenges:</p>
+<ul>
+<li>state sharing across modules</li>
+<li>dependency version conflicts</li>
+<li>auth token sync</li>
+<li>performance from multiple bundles</li>
+</ul>
+<p>Solution:</p>
+<ul>
+<li>shell-level orchestration</li>
+<li>minimal shared global state</li>
+<li>event-driven communication</li>
+</ul>
+<hr>
+<h3>5) Module Federation – explain briefly</h3>
+<p>Allows independent frontend applications to share modules at runtime.<br>
+Host loads remote apps dynamically, enabling independent deployment and team ownership without rebuilding the entire system.</p>
+<hr>
+<h3>6) React functional vs class components</h3>
+<p>Functional components use hooks for state and lifecycle.<br>
+Class components rely on lifecycle methods and internal state.<br>
+Functional components provide:</p>
+<ul>
+<li>cleaner code</li>
+<li>reusable logic</li>
+<li>better TypeScript integration</li>
+<li>improved performance control</li>
+</ul>
+<hr>
+<h3>7) What are Hooks?</h3>
+<p>Hooks allow functional components to manage:</p>
+<ul>
+<li>state</li>
+<li>lifecycle</li>
+<li>side effects</li>
+<li>performance</li>
+</ul>
+<p>Examples:
+useState, useEffect, useMemo, useCallback, useContext.</p>
+<hr>
+<h3>8) Hooks vs functional component — what capability added?</h3>
+<p>Functional component = UI rendering function.<br>
+Hooks = add state, lifecycle, reusable logic, performance optimization.</p>
+<hr>
+<h3>9) Handling complex state in large applications</h3>
+<p>Approach:</p>
+<ul>
+<li>local state → hooks</li>
+<li>feature state → reducer</li>
+<li>global state → Redux Toolkit</li>
+<li>server state → React Query</li>
+</ul>
+<p>Focus on predictable state architecture and performance.</p>
+<hr>
+<h3>10) Repair Order Details module using React + TS</h3>
+<p>Built domain-driven UI with:</p>
+<ul>
+<li>order header</li>
+<li>service items</li>
+<li>workflow status</li>
+<li>approval logic</li>
+</ul>
+<p>TypeScript used for strict data contracts.<br>
+React used for dynamic rendering and workflow-driven UI.</p>
+<hr>
+<h3>11) Why React? Why TypeScript?</h3>
+<p>React:</p>
+<ul>
+<li>component-based</li>
+<li>interactive UI</li>
+<li>scalable architecture</li>
+</ul>
+<p>TypeScript:</p>
+<ul>
+<li>strong typing</li>
+<li>fewer runtime errors</li>
+<li>maintainability</li>
+</ul>
+<hr>
+<h3>12) AWS experience &#x26; deployment involvement</h3>
+<p>Used:</p>
+<ul>
+<li>S3 + CloudFront for hosting</li>
+<li>Cognito for auth</li>
+<li>CloudWatch monitoring</li>
+</ul>
+<p>CI/CD pipeline built artifacts and deployed automatically.</p>
+<hr>
+<h3>13) API security handling</h3>
+<p>Layered approach:</p>
+<ul>
+<li>JWT/OAuth authentication</li>
+<li>RBAC authorization</li>
+<li>HTTPS enforcement</li>
+<li>payload validation</li>
+<li>rate limiting</li>
+<li>logging and monitoring</li>
+</ul>
+<hr>
+<h3>14) REST vs GraphQL</h3>
+<p>REST:</p>
+<ul>
+<li>resource-based</li>
+<li>multiple endpoints</li>
+<li>simpler</li>
+</ul>
+<p>GraphQL:</p>
+<ul>
+<li>client-driven queries</li>
+<li>single endpoint</li>
+<li>avoids over/under fetching</li>
+</ul>
+<hr>
+<h3>15) GraphQL caching</h3>
+<p>Handled via:</p>
+<ul>
+<li>client-side normalization</li>
+<li>resolver-level caching</li>
+<li>persisted queries</li>
+<li>Redis/in-memory cache</li>
+</ul>
+<hr>
+<h3>16) Code review approach</h3>
+<p>Focus areas:</p>
+<ul>
+<li>architecture alignment</li>
+<li>readability</li>
+<li>performance impact</li>
+<li>state flow</li>
+<li>security</li>
+<li>tests</li>
+<li>production readiness</li>
+</ul>
+<hr>
+<h3>17) PR review — local vs GitHub?</h3>
+<p>Small PR → GitHub UI review<br>
+Complex PR → pull locally, run app, validate behavior</p>
+<hr>
+<h3>18) Merge conflicts — how handled?</h3>
+<p>Resolve locally, analyze logic from both sides, merge intent not lines, test app, validate flows.</p>
+<hr>
+<h3>19) Cherry pick in Git</h3>
+<p>Move specific commit from one branch to another without merging entire branch. Used for hotfixes and selective changes.</p>
+<hr>
+<h3>20) GitHub Actions — core components</h3>
+<ul>
+<li>workflows</li>
+<li>events</li>
+<li>jobs</li>
+<li>runners</li>
+<li>steps</li>
+<li>actions</li>
+<li>secrets</li>
+</ul>
+<p>Used for build, test, deploy automation.</p>
+<hr>
+<h3>21) Passing secrets in workflows</h3>
+<p>Use encrypted GitHub secrets, injected at runtime, never stored in code. Prefer IAM roles / OIDC for enterprise security.</p>
+<hr>
+<h3>22) Secret deleted by team member — how handled?</h3>
+<ul>
+<li>restore secret</li>
+<li>rotate credentials</li>
+<li>check audit logs</li>
+<li>restrict permissions</li>
+<li>move to centralized vault</li>
+</ul>
+<hr>
+<h3>23) How to manage secrets intact?</h3>
+<p>Centralize in:</p>
+<ul>
+<li>AWS Secrets Manager</li>
+<li>Azure Key Vault</li>
+<li>HashiCorp Vault</li>
+</ul>
+<p>Use IAM roles and governance.</p>
+<hr>
+<h3>24) Performance improvement experience</h3>
+<p>Steps followed:</p>
+<ul>
+<li>identify bottleneck</li>
+<li>reduce re-renders</li>
+<li>lazy loading</li>
+<li>API optimization</li>
+<li>caching</li>
+<li>bundle optimization</li>
+</ul>
+<hr>
+<h3>25) Infinite render / page refresh issue</h3>
+<p>Caused by:</p>
+<ul>
+<li>state loop</li>
+<li>useEffect dependency loop</li>
+<li>redirect logic</li>
+<li>auth token validation loop</li>
+</ul>
+<p>Debug via React profiler + network tab.</p>
+<hr>
+<h3>26) useEffect-related refresh issues</h3>
+<p>Incorrect dependencies cause:
+render → effect → state update → render loop.</p>
+<hr>
+<h3>27) Test coverage in project</h3>
+<p>Covered:</p>
+<ul>
+<li>unit</li>
+<li>component</li>
+<li>integration</li>
+<li>E2E</li>
+<li>regression</li>
+</ul>
+<p>Focus on business-critical workflows.</p>
+<hr>
+<h3>28) Other testing types beyond unit</h3>
+<ul>
+<li>integration</li>
+<li>E2E</li>
+<li>regression</li>
+<li>performance</li>
+<li>accessibility</li>
+<li>smoke</li>
+</ul>
+<hr>
+<h3>29) Testing pyramid</h3>
+<p>Base: unit tests<br>
+Middle: integration<br>
+Top: E2E</p>
+<p>Balance ensures speed + stability.</p>
+<hr>
+<h3>30) E2E vs Integration</h3>
+<p>Integration:</p>
+<ul>
+<li>module interaction</li>
+</ul>
+<p>E2E:</p>
+<ul>
+<li>full user journey</li>
+</ul>
+<hr>
+<h3>31) Material UI experience &#x26; customization challenges</h3>
+<p>Worked on:</p>
+<ul>
+<li>tables</li>
+<li>forms</li>
+<li>dialogs</li>
+<li>navigation</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>theme overrides</li>
+<li>performance</li>
+<li>styling conflicts</li>
+</ul>
+<hr>
+<h3>32) Storybook — what is it?</h3>
+<p>Tool for building and documenting UI components in isolation.<br>
+Used for:</p>
+<ul>
+<li>reusable component libraries</li>
+<li>UI documentation</li>
+<li>visual testing</li>
+<li>design consistency</li>
+</ul>
+<hr>
+<h2>Closing</h2>
+<p>These questions reflect real enterprise frontend interviews focusing on architecture, production experience, and system thinking rather than theoretical knowledge.</p>
+<p>Practical exposure to React, TypeScript, AWS, CI/CD, performance, and testing remains critical for modern frontend roles.</p>
+<hr>
+<h1>Need Real Frontend Interview Support?</h1>
+<p>If you are preparing for:</p>
+<ul>
+<li>React Developer roles</li>
+<li>TypeScript &#x26; Frontend Architecture interviews</li>
+<li>Micro Frontend &#x26; Module Federation discussions</li>
+<li>AWS Frontend Deployment (S3, CloudFront, CI/CD)</li>
+<li>GitHub Actions &#x26; DevOps-integrated frontend roles</li>
+<li>Performance optimization &#x26; debugging rounds</li>
+<li>Testing strategy (Unit, Integration, E2E) interviews</li>
+<li>API integration, GraphQL &#x26; REST architecture discussions</li>
+</ul>
+<p>for opportunities in <strong>USA, UK, Canada or Australia</strong></p>
+<p><strong>Website:</strong> <a href="https://proxytechsupport.com">https://proxytechsupport.com</a><br>
+<strong>WhatsApp:</strong> +91 96606 14469</p>
+<p>We provide real interview discussion support, practical preparation, and production-based frontend scenario training based on actual enterprise interviews.</p>
+<p>Prepare with real questions.<br>
+Think in architecture.<br>
+Answer with production confidence.</p>

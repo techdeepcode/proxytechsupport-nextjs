@@ -1,17 +1,16 @@
 import type { Metadata } from 'next';
-import { notFound, permanentRedirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { getAllPostSlugs, getPostBySlug } from '@/lib/posts';
+import { getCanonicalUrlForPost } from '@/lib/post-canonical';
 import PostLayout from '@/components/PostLayout';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import { defaultOgImage } from '@/lib/site-seo';
 
 /**
- * Job-support service pages are canonical at /:slug/ (root level).
- * If a legacy /blog/:slug/ URL arrives for one of these, we 308-redirect
- * it back to the root so rankings stay at the correct canonical URL.
- *
- * Pure blog articles (no "job-support" in slug) ARE canonical here at
- * /blog/:slug/ and are rendered normally.
+ * Duplicate URLs: many posts are reachable at both /blog/:slug/ and /:slug/
+ * (static export cannot rely on HTTP redirects on GitHub Pages).
+ * We render full content here and in app/[slug]/page.tsx and set the same
+ * canonical URL (from meta.permalink when present) on both.
  */
 const isJobSupportSlug = (slug: string) =>
   slug.includes('job-support') || slug.includes('job-help');
@@ -22,20 +21,15 @@ type Props = {
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
-  // Static export (`output: 'export'`): emit every slug so legacy /blog/:slug/ URLs
-  // that point at job-support posts still get HTML redirect pages to /:slug/.
   return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  // Metadata is irrelevant for slugs that will redirect
-  if (isJobSupportSlug(slug)) return {};
-
   const post = await getPostBySlug(slug);
   if (!post) return {};
 
-  const canonical = `https://proxytechsupport.com/blog/${slug}/`;
+  const canonical = getCanonicalUrlForPost(post);
   const title = `${post.title} | Proxy Tech Support`;
   const published = post.date ? `${post.date}T12:00:00.000Z` : undefined;
 
@@ -67,16 +61,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogArticlePage({ params }: Props) {
   const { slug } = await params;
-
-  // Job-support pages belong at root level — redirect legacy /blog/:slug/ hits
-  if (isJobSupportSlug(slug)) {
-    permanentRedirect(`/${slug}/`);
-  }
-
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const url = `https://proxytechsupport.com/blog/${slug}/`;
+  const Article = post.Article;
+  const url = getCanonicalUrlForPost(post);
 
   const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -95,11 +84,12 @@ export default async function BlogArticlePage({ params }: Props) {
       />
       <PostLayout
         title={post.title}
-        content={post.content}
         date={post.date}
         breadcrumbs={breadcrumbs}
-        showInterviewBanner
-      />
+        showInterviewBanner={isJobSupportSlug(slug)}
+      >
+        <Article />
+      </PostLayout>
     </>
   );
 }

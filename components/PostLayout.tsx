@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Breadcrumb, { type BreadcrumbItem } from '@/components/Breadcrumb';
@@ -6,14 +7,23 @@ import PageBottomCTA from '@/components/PageBottomCTA';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Sidebar from '@/components/Sidebar';
 import ActionBanner from '@/components/ActionBanner';
+import BlogArticleShell from '@/components/BlogArticleShell';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 interface PostLayoutProps {
   title: string;
-  content: string;
+  /** Legacy HTML string (unused when children are passed). */
+  content?: string;
+  /** Rich article body (preferred). */
+  children?: ReactNode;
   date?: string;
   /** If true, shows an interview-specific monetization banner above the article. */
   showInterviewBanner?: boolean;
+  /**
+   * Interview listing pages use plain HTML Article components; wrap in the same card shell as blog posts.
+   * Do not set for blog posts — their Article already includes BlogArticleShell when needed.
+   */
+  wrapWithBlogShell?: boolean;
   /** Breadcrumb trail for this page. If omitted no breadcrumb is rendered. */
   breadcrumbs?: BreadcrumbItem[];
 }
@@ -59,7 +69,7 @@ function InlineInterviewCTA() {
           whiteSpace: 'nowrap',
         }}
       >
-        Talk to Expert
+        Talk to Expert Now
       </a>
     </div>
   );
@@ -108,7 +118,15 @@ function BlogInternalLinks() {
   );
 }
 
-export default function PostLayout({ title, content, date, showInterviewBanner, breadcrumbs }: PostLayoutProps) {
+export default function PostLayout({
+  title,
+  content,
+  children,
+  date,
+  showInterviewBanner,
+  wrapWithBlogShell,
+  breadcrumbs,
+}: PostLayoutProps) {
   return (
     <>
       <TopBar />
@@ -152,7 +170,15 @@ export default function PostLayout({ title, content, date, showInterviewBanner, 
               </p>
             )}
 
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="post-content">
+              {wrapWithBlogShell ? (
+                <BlogArticleShell>
+                  {children ?? <div dangerouslySetInnerHTML={{ __html: content || '' }} />}
+                </BlogArticleShell>
+              ) : (
+                (children ?? <div dangerouslySetInnerHTML={{ __html: content || '' }} />)
+              )}
+            </div>
 
             {showInterviewBanner && <InlineInterviewCTA />}
             {!showInterviewBanner && <BlogInternalLinks />}

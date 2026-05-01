@@ -50,6 +50,14 @@ function isGeoLandingPage(config: LandingPageConfig): boolean {
   return config.slug in GEO_LABELS;
 }
 
+/** Geo pages + USA tech landings + country-specific proxy pages — same hero layout with metrics on the right (desktop). */
+function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
+  if (isGeoLandingPage(config)) return true;
+  if (/-job-support-usa$/.test(config.slug)) return true;
+  if (/^proxy-interview-(usa|uk|canada)$/.test(config.slug)) return true;
+  return false;
+}
+
 const CALL_LINK = 'tel:+919660614469';
 
 // ─── SVG helpers ────────────────────────────────────────────────────────────
@@ -97,7 +105,7 @@ function CTAButtons({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
       </a>
       <a href={CALL_LINK} className={variant === 'dark' ? 'lp-btn-call-dark' : 'lp-btn-call-light'}>
         <PhoneIcon />
-        Talk to Expert in 5 Minutes
+        Talk to Expert Now
       </a>
     </div>
   );
@@ -149,7 +157,7 @@ export default function LandingPageTemplate({ config }: Props) {
     serviceType: 'IT Job Support and Proxy Interview Assistance',
   };
 
-  const geoHero = isGeoLandingPage(config);
+  const locationHero = useLocationHeroMetricsAside(config);
 
   return (
     <>
@@ -214,7 +222,7 @@ export default function LandingPageTemplate({ config }: Props) {
         .lp-trust-stat { font-size:1.55rem; font-weight:800; color:var(--pts-accent); line-height:1; }
         .lp-trust-label { font-size:0.78rem; color:rgba(255,255,255,0.55); font-weight:500; letter-spacing:0.04em; }
 
-        /* Geo location pages: hero + metrics side-by-side on desktop */
+        /* Location-based landing pages: hero + metrics side-by-side on desktop */
         .lp-hero-inner--geo-split {
           display:grid;
           gap:clamp(1.35rem,3vw,2.25rem);
@@ -479,7 +487,7 @@ export default function LandingPageTemplate({ config }: Props) {
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="lp-hero">
-        <div className={`lp-hero-inner${geoHero ? ' lp-hero-inner--geo-split' : ''}`}>
+        <div className={`lp-hero-inner${locationHero ? ' lp-hero-inner--geo-split' : ''}`}>
           <div className="lp-hero-copy-col">
             <p className="lp-hero-eyebrow"><span aria-hidden>✦</span> Expert IT Job Support &amp; Proxy Interview Assistance</p>
             <h1 className="lp-hero-h1">{config.h1}</h1>
@@ -489,7 +497,7 @@ export default function LandingPageTemplate({ config }: Props) {
               <p className="lp-hero-variant">{config.heroVariant}</p>
             )}
             <CTAButtons variant="dark" />
-            {!geoHero && (
+            {!locationHero && (
               <div className="lp-trust-strip" aria-label="Trust indicators">
                 {trustItems.map((t) => (
                   <div key={t.stat} className="lp-trust-item">
@@ -500,7 +508,7 @@ export default function LandingPageTemplate({ config }: Props) {
               </div>
             )}
           </div>
-          {geoHero && (
+          {locationHero && (
             <aside className="lp-hero-metrics-card" aria-label="Trust indicators">
               {trustItems.map((t) => (
                 <div key={t.stat} className="lp-trust-item">
@@ -691,6 +699,7 @@ export default function LandingPageTemplate({ config }: Props) {
             <div className="lp-related-row">
               {[
                 { label: 'Interview Questions', href: '/interviews/' },
+                { label: 'Agentic AI & RAG Support', href: '/agentic-ai-rag-mlops-job-support-usa/' },
                 { label: 'Java Job Support', href: '/java-technologies-job-support/' },
                 { label: 'DevOps Job Support', href: '/devops-job-support/' },
                 { label: 'React Job Support', href: '/react-job-support/' },

@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/posts';
+import { getCanonicalUrlForPost } from '@/lib/post-canonical';
 import { getAllInterviews } from '@/lib/interviews';
+import { getCanonicalInterviewUrl } from '@/lib/interview-canonical';
 import { allLandingPages } from '@/data/landing-pages';
 
 /** Required so `output: 'export'` can emit `/sitemap.xml` at build time. */
@@ -33,9 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => {
-    const isJobSupport =
-      post.slug.includes('job-support') || post.slug.includes('job-help');
-    const url = isJobSupport ? `${BASE}/${post.slug}/` : `${BASE}/blog/${post.slug}/`;
+    const url = getCanonicalUrlForPost(post);
     const last =
       post.date && post.date.length >= 10 ? post.date : today;
     return {
@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const interviewRoutes: MetadataRoute.Sitemap = interviews.map((i) => {
     const last = i.date && i.date.length >= 10 ? i.date : today;
     return {
-      url: `${BASE}/interviews/${i.slug}/`,
+      url: getCanonicalInterviewUrl(i.slug),
       lastModified: last,
       changeFrequency: 'weekly' as const,
       priority: prio('0.7'),

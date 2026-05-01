@@ -873,6 +873,136 @@ export const devopsJobSupportUSA: LandingPageConfig = {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+export const agenticAiRagMlopsJobSupportUSA: LandingPageConfig = {
+  slug: 'agentic-ai-rag-mlops-job-support-usa',
+  title:
+    'Agentic AI, RAG & MLOps Job Support USA – LLM, LangChain, Vector DB & Production AI Engineering Help',
+  description:
+    'Real-time Agentic AI, RAG, LLM & MLOps job support for USA roles. Expert help with LangChain, vector databases, retrieval pipelines, agents, evals, LLMOps, and live proxy interview support for AI/ML engineers. Same-day start.',
+  canonical: `${BASE_URL}/agentic-ai-rag-mlops-job-support-usa/`,
+  keywords: [
+    'Agentic AI job support USA',
+    'RAG job support USA',
+    'MLOps job support',
+    'LLM job support USA',
+    'LangChain job support',
+    'vector database job support',
+    'retrieval augmented generation support',
+    'AI engineer job support USA',
+    'ML engineer interview proxy',
+    'LLMOps production support',
+    'embedding pipeline support',
+    'FAISS Pinecone Weaviate support',
+    'agentic workflows job help',
+    'GenAI enterprise support',
+    'Hugging Face transformers support',
+    'model deployment job support',
+    'AI/ML proxy interview USA',
+  ],
+  h1: 'Agentic AI, RAG & MLOps Job Support & Proxy Interview Help USA',
+  tagline:
+    'Live support for Agentic AI systems, RAG pipelines, LLM apps, vector search, LangChain/LlamaIndex, evals, guardrails, and MLOps — plus proxy interviews for AI/ML engineer roles.',
+  painIntro:
+    'Blocked on a RAG pipeline that will not retrieve the right chunks? Agent loops misbehaving in production? MLOps debt piling up — monitoring, drift, retraining, or LLM cost blowouts — or a high-stakes Agentic AI / ML systems interview at a US company? Our AI/ML specialists step in the same day with hands-on job support and interview coaching.',
+  heroVariant:
+    'US teams are shipping Agentic AI features, enterprise RAG copilots, and production LLM services faster than ever. That means real work on embeddings, re-ranking, tool use, memory, observability, safety, and reliable MLOps — not slide decks. Whether you are tuning retrieval for domain-specific documents, hardening an agent workflow, fixing latency in your inference stack, or preparing for a senior AI/ML or MLOps loop, we provide confidential real-time help during your hours and live proxy guidance when interview pressure is highest.',
+  geoLine:
+    'Serving AI/ML engineers, data scientists, and platform teams across USA, UK, Canada, Australia, Europe, Singapore, and New Zealand.',
+  timezoneNote: 'Aligned with US Eastern, Central, Mountain, and Pacific working hours — urgent coverage available.',
+  techSnippet:
+    'Python, PyTorch, Hugging Face, OpenAI/Azure/Open-source LLMs, LangChain, LlamaIndex, vector DBs (FAISS, Pinecone, Weaviate, pgvector), FastAPI, Kubernetes, Docker, MLflow, observability, CI/CD for models, guardrails and evals.',
+  highlights: [
+    {
+      title: 'RAG & Retrieval Engineering',
+      description:
+        'Chunking, embedding strategies, hybrid search, re-ranking, citation-quality context, metadata filters, and debugging hallucinations and empty retrievals in production RAG.',
+    },
+    {
+      title: 'Agentic AI & Tool-Using Agents',
+      description:
+        'Multi-step agents, planners, memory, tool routing, structured outputs, failure recovery, and safer patterns for enterprise automation and copilots.',
+    },
+    {
+      title: 'MLOps, LLMOps & Production LLMs',
+      description:
+        'Model serving, versioning, A/B and shadow deployments, latency/cost trade-offs, monitoring, drift, eval harnesses, and release hygiene for GenAI services.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'Do you provide real-time job support for Agentic AI and RAG systems in the USA?',
+      answer:
+        'Yes. We join your working hours and help live — debugging retrieval quality, agent workflows, prompt/chaining issues, API integration, vector DB queries, re-ranking, latency, and production incidents on LLM-powered features for US employers and US-market products.',
+    },
+    {
+      question: 'Can you help with MLOps and LLMOps for models and LLMs in production?',
+      answer:
+        'Absolutely. We support packaging and deploying models, batch and online inference, experiment tracking, monitoring, alerting, rollback strategies, cost controls, GPU/CPU sizing, Kubernetes/Docker setups, and CI/CD patterns suited to ML and GenAI services.',
+    },
+    {
+      question: 'Which RAG and Agentic AI stacks do you cover?',
+      answer:
+        'Common stacks include Python, LangChain, LlamaIndex, Hugging Face, OpenAI-compatible APIs, Azure OpenAI, vector stores such as Pinecone, Weaviate, FAISS, Milvus, and pgvector, plus re-rankers and typical enterprise auth and data-governance constraints.',
+    },
+    {
+      question: 'Do you offer proxy interview support for AI, ML, and MLOps roles?',
+      answer:
+        'Yes. We provide discreet live guidance during technical rounds focused on RAG design, LLM trade-offs, evaluation methodology, scaling inference, MLOps maturity, and system design for AI products — calibrated to US hiring bar expectations.',
+    },
+    {
+      question: 'How fast can I get Agentic AI or RAG support?',
+      answer:
+        'Most engagements start the same day you reach out. Share your stack, repo or error context, and time zone — we match you with an AI/ML expert who has shipped similar systems.',
+    },
+    {
+      question: 'Is this only for USA, or also UK, Canada, and remote global teams?',
+      answer:
+        'This page highlights USA hiring and time zones, but we routinely support developers remotely across UK, Canada, Australia, EU, and APAC on Agentic AI, RAG, and MLOps delivery.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Where Agentic AI, RAG & MLOps Job Support Moves the Needle',
+    cases: [
+      'RAG answers are generic, off-domain, or missing citations — need retrieval and prompt fixes fast',
+      'Agent runs away with tool calls, loops, or unsafe outputs — need guardrails and tighter control flow',
+      'Embedding or chunking changes broke relevance — need a methodical eval and rollback plan',
+      'Inference latency or token cost spiked after a model or routing change — need profiling and architecture tuning',
+      'Interview loop for Senior AI/ML, Applied Scientist, or MLOps — need live proxy and system-design reps',
+      'Greenfield copilot: from POC to hardened internal rollout with monitoring and auditability',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for Agentic AI, RAG & MLOps Roles',
+    intro:
+      'US AI hiring often mixes deep retrieval/LLM knowledge with production sense — security, evals, cost, and reliability. We help you present crisp trade-offs and structured answers under time pressure.',
+    points: [
+      'Live support during RAG architecture and failure-mode questions (retrieval, grounding, hallucinations)',
+      'Structured narratives for agent design, tool use, memory, and human-in-the-loop patterns',
+      'MLOps/LLMOps scenarios: deployment, monitoring, drift, incident response, and responsible release',
+      'Mock sessions for FAANG-style, unicorn, and enterprise AI product interviews',
+      'Same-day expert pairing for urgent on-the-job deadlines on GenAI features',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in USA', href: '/job-support-usa/' },
+      { label: 'IT job support in UK', href: '/job-support-uk/' },
+    ],
+    techLinks: [
+      { label: 'AI / ML & Data job support', href: '/ai-ml-job-support/' },
+      { label: 'Python job support', href: '/python-job-support/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+    blogLink: {
+      label: 'RAG & MLOps deep-dive (guide)',
+      href: '/blog/rag-aimlops-retrieval-augmented-generation-guide/',
+    },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const interviewSupportGlobal: LandingPageConfig = {
   slug: 'interview-support-global',
   title: 'Global Interview Support & Proxy Help – IT Experts',
@@ -1800,6 +1930,7 @@ export const allLandingPages: LandingPageConfig[] = [
   javaJobSupportUSA,
   nodejsJobSupportUSA,
   devopsJobSupportUSA,
+  agenticAiRagMlopsJobSupportUSA,
   interviewSupportGlobal,
   strugglingInJob,
   productionIssueSupport,

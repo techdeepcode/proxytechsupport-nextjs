@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllInterviewSlugs, getInterviewBySlug } from '@/lib/interviews';
+import { getCanonicalInterviewUrl } from '@/lib/interview-canonical';
 import PostLayout from '@/components/PostLayout';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import { defaultOgImage } from '@/lib/site-seo';
@@ -19,13 +20,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const interview = await getInterviewBySlug(slug);
   if (!interview) return {};
 
-  const canonical = `https://proxytechsupport.com/interviews/${slug}/`;
+  const canonical = getCanonicalInterviewUrl(interview.slug);
   const title = `${interview.title} | Proxy Tech Support`;
   const published = interview.date ? `${interview.date}T12:00:00.000Z` : undefined;
 
   return {
     title,
     description: interview.description,
+    ...(interview.keywords
+      ? { keywords: interview.keywords.split(',').map((k) => k.trim()) }
+      : {}),
     alternates: { canonical },
     robots: { index: true, follow: true },
     openGraph: {
@@ -53,7 +57,8 @@ export default async function InterviewPostPage({ params }: Props) {
   const interview = await getInterviewBySlug(slug);
   if (!interview) notFound();
 
-  const url = `https://proxytechsupport.com/interviews/${slug}/`;
+  const Article = interview.Article;
+  const url = getCanonicalInterviewUrl(interview.slug);
 
   return (
     <>
@@ -66,15 +71,17 @@ export default async function InterviewPostPage({ params }: Props) {
       />
       <PostLayout
         title={interview.title}
-        content={interview.content}
         date={interview.date}
         showInterviewBanner
+        wrapWithBlogShell
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Interview Questions', href: '/interviews/' },
           { label: interview.title },
         ]}
-      />
+      >
+        <Article />
+      </PostLayout>
     </>
   );
 }

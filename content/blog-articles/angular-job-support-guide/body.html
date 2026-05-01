@@ -1,0 +1,103 @@
+<h2>Angular Job Support Guide</h2>
+<p>Angular is a comprehensive framework — and that comprehensiveness is both its strength and its complexity. This guide covers the areas where developers most often need expert help, along with practical approaches to solving common problems.</p>
+<hr>
+<h2>RxJS Mastery</h2>
+<p>RxJS is the most common source of confusion for Angular developers. The key insight: <strong>observables are lazy</strong>. Nothing happens until you subscribe.</p>
+<h3>The Operators You Must Know</h3>
+<p><strong>switchMap</strong> — cancels the previous inner observable when a new value arrives. Use for HTTP calls triggered by user input (e.g., search autocomplete).</p>
+<pre><code class="language-typescript">this.searchControl.valueChanges.pipe(
+  debounceTime(300),
+  distinctUntilChanged(),
+  switchMap(query => this.apiService.search(query))
+).subscribe(results => this.results = results);
+</code></pre>
+<p><strong>mergeMap</strong> — subscribes to all inner observables concurrently. Use when order does not matter (e.g., parallel API calls).</p>
+<p><strong>concatMap</strong> — queues inner observables. Use when order matters (e.g., sequential form submissions).</p>
+<p><strong>exhaustMap</strong> — ignores new values while an inner observable is active. Use for login buttons to prevent double-submission.</p>
+<h3>Memory Leak Prevention</h3>
+<p>Every subscription you open manually must be closed. Common approaches:</p>
+<pre><code class="language-typescript">// Option 1: takeUntilDestroyed (Angular 16+)
+this.apiService.getData().pipe(
+  takeUntilDestroyed(this.destroyRef)
+).subscribe(data => this.data = data);
+
+// Option 2: async pipe in template (no manual unsubscribe needed)
+// data$ | async
+</code></pre>
+<hr>
+<h2>NgRx State Management</h2>
+<h3>When to Use NgRx</h3>
+<p>NgRx adds complexity. Use it when:</p>
+<ul>
+<li>Multiple components share the same state</li>
+<li>State changes need to be tracked and debuggable</li>
+<li>You need time-travel debugging or server-side state synchronisation</li>
+</ul>
+<p>For simpler cases, Angular Signals or a plain service with BehaviorSubject is often sufficient.</p>
+<h3>Store Setup Best Practices</h3>
+<ul>
+<li>Use <strong>createFeature</strong> (Angular 15+) to co-locate reducers, selectors, and state</li>
+<li>Keep reducers pure — no side effects</li>
+<li>Use <strong>Effects</strong> for all side effects (API calls, localStorage, routing)</li>
+<li>Prefer <strong>entity adapter</strong> for collections — it handles normalisation automatically</li>
+</ul>
+<h3>Common NgRx Mistakes</h3>
+<ul>
+<li>Dispatching actions inside selectors (never do this)</li>
+<li>Storing derived state that could be a selector</li>
+<li>Not using <code>createActionGroup</code> — leads to inconsistent action naming</li>
+<li>Forgetting to handle the error action in effects</li>
+</ul>
+<hr>
+<h2>Reactive Forms Deep Dive</h2>
+<h3>Dynamic Forms with FormArray</h3>
+<pre><code class="language-typescript">get skills(): FormArray {
+  return this.profileForm.get('skills') as FormArray;
+}
+
+addSkill() {
+  this.skills.push(this.fb.group({
+    name: ['', Validators.required],
+    level: ['beginner']
+  }));
+}
+</code></pre>
+<h3>Async Validators</h3>
+<pre><code class="language-typescript">usernameAvailable(): AsyncValidatorFn {
+  return (control: AbstractControl): Observable&#x3C;ValidationErrors | null> => {
+    return this.userService.checkUsername(control.value).pipe(
+      map(available => available ? null : { usernameTaken: true }),
+      catchError(() => of(null))
+    );
+  };
+}
+</code></pre>
+<hr>
+<h2>Angular 17+ Features</h2>
+<p><strong>Signals</strong> — Angular's new reactive primitive, replacing BehaviorSubject in most component-level cases:</p>
+<pre><code class="language-typescript">count = signal(0);
+doubleCount = computed(() => this.count() * 2);
+
+increment() {
+  this.count.update(c => c + 1);
+}
+</code></pre>
+<p><strong>Control Flow</strong> — new <code>@if</code>, <code>@for</code>, <code>@switch</code> template syntax replaces <code>*ngIf</code>, <code>*ngFor</code>:</p>
+<pre><code class="language-html">@for (item of items; track item.id) {
+  &#x3C;app-item [data]="item" />
+} @empty {
+  &#x3C;p>No items found.&#x3C;/p>
+}
+</code></pre>
+<hr>
+<h2>Performance Optimisation</h2>
+<ul>
+<li>Use <strong>OnPush</strong> change detection on all components — it alone can cut change detection cycles by 70%</li>
+<li>Use <strong>trackBy</strong> (or <code>track</code> in the new control flow) in all lists</li>
+<li>Lazy-load feature modules — never import everything in AppModule</li>
+<li>Use <strong>pure pipes</strong> instead of methods in templates</li>
+<li>Profile with Angular DevTools — check for unnecessary renders</li>
+</ul>
+<hr>
+<h2>Get Angular Help</h2>
+<p><a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20IT%20job%20support%20or%20interview%20help">WhatsApp</a> · <a href="/angular-job-support/">Angular Job Support</a> · <a href="/frontend-fullstack-job-support/">Frontend Fullstack Support</a></p>
