@@ -86,6 +86,7 @@ export default async function BlogArticlePage({ params }: Props) {
         title={post.title}
         date={post.date}
         breadcrumbs={breadcrumbs}
+        showTopActionBanner
         showInterviewBanner={isJobSupportSlug(slug)}
       >
         <Article />

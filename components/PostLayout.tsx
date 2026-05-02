@@ -17,7 +17,9 @@ interface PostLayoutProps {
   /** Rich article body (preferred). */
   children?: ReactNode;
   date?: string;
-  /** If true, shows an interview-specific monetization banner above the article. */
+  /** Green ActionBanner above the title (same component as interview detail pages). */
+  showTopActionBanner?: boolean;
+  /** If true, shows the inline interview CTA block after the article instead of blog internal links. */
   showInterviewBanner?: boolean;
   /**
    * Interview listing pages use plain HTML Article components; wrap in the same card shell as blog posts.
@@ -89,9 +91,12 @@ function BlogInternalLinks() {
       </p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
         {[
-          { label: 'Java Job Support', href: '/java-job-support-usa/' },
-          { label: 'DevOps Job Support', href: '/devops-job-support-usa/' },
+          { label: 'AWS Job Support', href: '/aws-job-support/' },
+          { label: 'Python Job Support', href: '/python-job-support/' },
+          { label: 'React Job Support', href: '/react-job-support/' },
           { label: 'Node.js Job Support', href: '/nodejs-job-support-usa/' },
+          { label: '.NET Job Support', href: '/dotnet-job-support/' },
+          { label: 'Java Job Support', href: '/java-job-support-usa/' },
           { label: 'Interview Support', href: '/interview-support-global/' },
           { label: 'Struggling in Job?', href: '/struggling-in-job-developer-help/' },
         ].map((link) => (
@@ -123,10 +128,12 @@ export default function PostLayout({
   content,
   children,
   date,
+  showTopActionBanner,
   showInterviewBanner,
   wrapWithBlogShell,
   breadcrumbs,
 }: PostLayoutProps) {
+  const showExpertBanner = showTopActionBanner || showInterviewBanner;
   return (
     <>
       <TopBar />
@@ -147,7 +154,7 @@ export default function PostLayout({
           }}
         >
           <article>
-            {showInterviewBanner && (
+            {showExpertBanner && (
               <div className="post-layout-preface-banner">
                 <ActionBanner />
               </div>

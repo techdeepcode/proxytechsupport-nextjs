@@ -85,23 +85,24 @@ export default function ContactCTA() {
           justify-content: center;
           margin-bottom: 2rem;
         }
-        .contact-cta-btn-call {
+        .contact-cta-btn-wa {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          background: #ffffff;
-          color: var(--pts-on-accent);
+          background: #25d366;
+          color: #ffffff;
           padding: 0.85rem 1.75rem;
           border-radius: 50px;
-          font-weight: 600;
+          font-weight: 700;
           font-size: 0.95rem;
           text-decoration: none;
           border: none;
-          transition: transform 0.2s, box-shadow 0.2s;
+          transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
         }
-        .contact-cta-btn-call:hover {
+        .contact-cta-btn-wa:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+          filter: brightness(1.05);
         }
         .contact-cta-btn-ghost {
           display: inline-flex;
@@ -168,18 +169,18 @@ export default function ContactCTA() {
         </p>
 
         <div className="contact-cta-btns">
-          <a href="tel:+919660614469" className="contact-cta-btn-call">
-            <PhoneIcon color="var(--pts-on-accent)" />
-            Call Now
-          </a>
           <a
             href={WHATSAPP_ME_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="contact-cta-btn-ghost"
+            className="contact-cta-btn-wa"
           >
             <WhatsAppIcon color="#ffffff" />
             WhatsApp Now
+          </a>
+          <a href="tel:+919660614469" className="contact-cta-btn-ghost">
+            <PhoneIcon color="#ffffff" />
+            Call Now
           </a>
           <a href="mailto:support@proxytechsupport.com" className="contact-cta-btn-ghost">
             <MailIcon color="#ffffff" />

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SocialIcons from '@/components/SocialIcons';
+import { jobSupportLinks } from '@/data/navigation';
 
 const locationLinks = [
   { label: 'Job Support USA', href: '/job-support-usa/' },
@@ -10,16 +11,6 @@ const locationLinks = [
   { label: 'Job Support Germany', href: '/job-support-germany/' },
   { label: 'Job Support Singapore', href: '/job-support-singapore/' },
   { label: 'Job Support New Zealand', href: '/job-support-newzealand/' },
-];
-
-const techLinks = [
-  { label: 'Java Job Support', href: '/java-job-support-usa/' },
-  { label: 'Node.js Job Support', href: '/nodejs-job-support-usa/' },
-  { label: 'DevOps Job Support', href: '/devops-job-support-usa/' },
-  { label: 'React Job Support', href: '/react-job-support/' },
-  { label: 'Python Job Support', href: '/python-job-support/' },
-  { label: 'AWS Job Support', href: '/aws-job-support/' },
-  { label: '.NET Job Support', href: '/dotnet-job-support/' },
 ];
 
 const serviceLinks = [
@@ -173,7 +164,7 @@ export default function Footer() {
 
           <div>
             <FooterHeading>Job Support by Technology</FooterHeading>
-            <FooterLinks links={techLinks} />
+            <FooterLinks links={jobSupportLinks} />
           </div>
 
           <div>

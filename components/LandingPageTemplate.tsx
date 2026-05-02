@@ -6,6 +6,7 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import LandingFAQ from '@/components/LandingFAQ';
 import ActionBanner from '@/components/ActionBanner';
 import type { LandingPageConfig } from '@/data/landing-pages';
+import { jobSupportLinks } from '@/data/navigation';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 // ─── Breadcrumb derivation ────────────────────────────────────────────────────
@@ -700,10 +701,7 @@ export default function LandingPageTemplate({ config }: Props) {
               {[
                 { label: 'Interview Questions', href: '/interviews/' },
                 { label: 'Agentic AI & RAG Support', href: '/agentic-ai-rag-mlops-job-support-usa/' },
-                { label: 'Java Job Support', href: '/java-technologies-job-support/' },
-                { label: 'DevOps Job Support', href: '/devops-job-support/' },
-                { label: 'React Job Support', href: '/react-job-support/' },
-                { label: 'AWS Job Support', href: '/aws-job-support/' },
+                ...jobSupportLinks,
                 { label: 'Proxy Interview Support', href: '/proxy-interview-support/' },
                 { label: 'Read Our Blog', href: '/blog/' },
               ].map((l) => (
