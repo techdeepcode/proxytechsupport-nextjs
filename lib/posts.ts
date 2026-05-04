@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react';
 import { blogArticleEntries } from '@/content/blog-articles';
+import type { ArticleFaq } from '@/components/ArticleStructuredData';
 
 export type PostData = {
   slug: string;
@@ -9,6 +10,10 @@ export type PostData = {
   layout?: string;
   permalink?: string;
   keywords?: string;
+  /** Optional topic label for TechArticle `about` / `teaches` schema fields. */
+  about?: string;
+  /** Optional FAQs to emit as FAQPage JSON-LD alongside the article schema. */
+  faqs?: ArticleFaq[];
   /** Server Component that renders the article body (HTML/TSX). */
   Article: ComponentType;
 };
@@ -24,6 +29,8 @@ function toPostData(): PostData[] {
     keywords: meta.keywords?.trim() ? meta.keywords : undefined,
     layout: 'blog',
     permalink: meta.permalink?.trim() ? meta.permalink.trim() : undefined,
+    about: (meta as Record<string, unknown>).about as string | undefined,
+    faqs: (meta as Record<string, unknown>).faqs as ArticleFaq[] | undefined,
     Article,
   }));
 }

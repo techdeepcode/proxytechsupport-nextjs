@@ -1,7 +1,11 @@
 // ─── Technology job support links (existing — used in Navbar + Sidebar) ────
+// Items with hidden: true are kept for SEO / direct linking but excluded from menus.
 
 export const jobSupportLinks = [
-  { label: 'AI / Machine Learning & Data', href: '/ai-ml-job-support/' },
+  { label: 'Agentic AI & Machine Learning Job Support', href: '/agentic-ai-ml-job-support/' },
+  { label: 'AI Workflow Automation & Pipeline Engineering', href: '/ai-workflow-automation-pipeline-job-support/' },
+  { label: 'Data Science Job Support', href: '/data-science-job-support/' },
+  { label: 'AI / Machine Learning & Data', href: '/ai-ml-job-support/', hidden: true },
   { label: 'DevOps & Automation', href: '/devops-job-support/' },
   { label: 'Cloud Technologies', href: '/cloud-technologies-job-support/' },
   { label: 'AWS Job Support', href: '/aws-job-support/' },

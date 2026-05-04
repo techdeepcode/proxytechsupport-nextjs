@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { technologies } from '@/data/technologies';
 import TechCategoryIcon from '@/components/TechCategoryIcons';
 
@@ -75,6 +76,21 @@ export default function TechSection() {
             inset 0 1px 0 rgba(255, 255, 255, 0.75);
         }
 
+        .tech-card-glass--linked {
+          cursor: pointer;
+          transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        a:hover .tech-card-glass--linked {
+          box-shadow: 0 6px 28px rgba(var(--pts-forest-rgb), 0.18);
+          transform: translateY(-2px);
+        }
+        .tech-card-cta {
+          display: inline-block;
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--pts-forest);
+          letter-spacing: 0.02em;
+        }
         .tech-grid {
           display: grid;
           width: 100%;
@@ -103,27 +119,39 @@ export default function TechSection() {
         </div>
 
         <div className="tech-grid">
-          {technologies.map((tech) => (
-            <article key={tech.id} className="pts-card-glass">
-              <div className="tech-card-glass__head">
-                <div style={{ flexShrink: 0, marginTop: '0.08rem' }}>
-                  <TechCategoryIcon id={tech.icon} />
+          {technologies.filter((tech) => !tech.hidden).map((tech) => {
+            const card = (
+              <article className={`pts-card-glass${tech.href ? ' tech-card-glass--linked' : ''}`}>
+                <div className="tech-card-glass__head">
+                  <div style={{ flexShrink: 0, marginTop: '0.08rem' }}>
+                    <TechCategoryIcon id={tech.icon} />
+                  </div>
+                  <h3 className="tech-card-glass__title">{tech.title}</h3>
                 </div>
-                <h3 className="tech-card-glass__title">{tech.title}</h3>
-              </div>
 
-              <div className="tech-card-glass__body">
-                {tech.description && <p className="tech-card-glass__desc">{tech.description}</p>}
-                <div className="tech-pills">
-                  {tech.tags.map((tag, i) => (
-                    <span key={`${tech.id}-${i}-${tag}`} className="tech-pill">
-                      {tag}
-                    </span>
-                  ))}
+                <div className="tech-card-glass__body">
+                  {tech.description && <p className="tech-card-glass__desc">{tech.description}</p>}
+                  <div className="tech-pills">
+                    {tech.tags.map((tag, i) => (
+                      <span key={`${tech.id}-${i}-${tag}`} className="tech-pill">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  {tech.href && (
+                    <div style={{ marginTop: '0.85rem' }}>
+                      <span className="tech-card-cta">Get Support →</span>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+            return tech.href ? (
+              <Link key={tech.id} href={tech.href} style={{ textDecoration: 'none', display: 'block' }}>
+                {card}
+              </Link>
+            ) : card;
+          })}
         </div>
       </div>
     </section>

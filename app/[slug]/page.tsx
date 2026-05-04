@@ -80,7 +80,9 @@ export default async function SlugPage({ params }: Props) {
         description={post.description}
         datePublished={post.date}
         url={url}
-        type="BlogPosting"
+        type={isJobSupportSlug(slug) ? 'TechArticle' : 'BlogPosting'}
+        about={post.about}
+        faqs={post.faqs}
       />
       <PostLayout
         title={post.title}

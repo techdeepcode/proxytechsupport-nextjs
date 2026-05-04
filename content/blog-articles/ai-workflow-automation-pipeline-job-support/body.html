@@ -1,0 +1,394 @@
+<h1>AI Workflow Automation &amp; Pipeline Engineering Job Support – 2026</h1>
+<p>The DevOps landscape of 2026 is fundamentally AI-augmented. Pipelines now write themselves, agents deploy infrastructure, and AIOps platforms self-heal before on-call engineers are paged. Whether you are building AI-powered CI/CD, orchestrating multi-step ML workflows, managing GitOps at scale, or integrating LLM capabilities into your platform engineering stack, our <strong>AI Workflow Automation &amp; Pipeline Engineering job support</strong> delivers live, expert help via screen share — resolving your blocker in real time.</p>
+
+<hr>
+
+<h2>AI-Powered CI/CD Pipelines (2026)</h2>
+
+<h3>GitHub Actions with AI</h3>
+<ul>
+  <li><strong>GitHub Copilot for Actions</strong> – natural language workflow generation, AI-suggested step fixes, GitHub Actions extensions</li>
+  <li><strong>GitHub Copilot Workspace</strong> – agentic end-to-end coding + PR + CI pipeline execution in a single session</li>
+  <li>Reusable workflows, composite actions, and matrix strategy with <code>include/exclude</code> expressions</li>
+  <li>OIDC-based keyless authentication to AWS/Azure/GCP — no long-lived secrets</li>
+  <li>GitHub Environments, deployment protection rules, and required reviewers</li>
+  <li>GitHub Actions self-hosted runners on Kubernetes (Actions Runner Controller v0.9+)</li>
+  <li>Artifact attestation (sigstore/cosign) for supply chain security</li>
+</ul>
+
+<h3>GitLab CI/CD with AI (GitLab Duo)</h3>
+<ul>
+  <li><strong>GitLab Duo AI</strong> – pipeline generation from natural language, root cause analysis on failing jobs</li>
+  <li>GitLab CI DAG pipelines, <code>needs:</code> dependencies, directed acyclic job graphs</li>
+  <li>GitLab Environments, Auto DevOps, and Review Apps for pull-based deployments</li>
+  <li>GitLab Security dashboards — SAST, DAST, dependency scanning with AI remediation</li>
+  <li>GitLab Runners on Kubernetes with autoscaling fleet manager</li>
+</ul>
+
+<h3>Dagger.io (0.11+) — Programmable CI/CD</h3>
+<ul>
+  <li>Pipeline-as-Code in Python, Go, TypeScript — portable across GitHub Actions, GitLab, Jenkins, local</li>
+  <li>Dagger Functions and Dagger Modules for reusable pipeline primitives</li>
+  <li>Dagger Cloud — cache sharing, pipeline visualization, and distributed trace debugging</li>
+  <li>AI-integrated Dagger pipelines: calling OpenAI/Anthropic APIs as pipeline steps</li>
+  <li>Containerized test environments with deterministic builds and cache hit rates</li>
+</ul>
+
+<h3>Other CI/CD Platforms</h3>
+<ul>
+  <li><strong>Azure DevOps Pipelines</strong> – YAML multi-stage pipelines, deployment groups, environments, GitHub integration</li>
+  <li><strong>CircleCI</strong> – orbs ecosystem, resource classes, config AI assistant, test splitting</li>
+  <li><strong>Buildkite</strong> – agent-based CI, elastic CI on AWS/GCP, pipelines as code</li>
+  <li><strong>Tekton Pipelines (Kubernetes-native)</strong> – Tasks, Pipelines, PipelineRuns, Triggers</li>
+  <li><strong>Jenkins X</strong> – cloud-native CI/CD with GitOps workflows on Kubernetes</li>
+</ul>
+
+<hr>
+
+<h2>Workflow Orchestration Engines</h2>
+
+<h3>Apache Airflow 2.10+</h3>
+<ul>
+  <li>TaskFlow API with <code>@task</code> decorator, XCom, dynamic task mapping (<code>expand()</code>)</li>
+  <li>AI/ML task operators: <code>OpenAITriggerBatchOperator</code>, custom LLM pipeline tasks</li>
+  <li>Airflow on Kubernetes: <code>KubernetesPodOperator</code>, executor tuning (Celery vs K8s)</li>
+  <li>Astronomer Astro (managed Airflow) — deployment environments, CI/CD sync, usage metrics</li>
+  <li>Data-aware scheduling, dataset-triggered DAGs for event-driven pipelines</li>
+  <li>Connections, variables, secrets backends (AWS Secrets Manager, HashiCorp Vault)</li>
+</ul>
+
+<h3>Prefect 3.x</h3>
+<ul>
+  <li>Flows and tasks: retries, caching, concurrency limits, tags-based routing</li>
+  <li>Prefect Workers and Work Pools — Docker, Kubernetes, ECS, Cloud Run worker types</li>
+  <li>Automations: event-triggered flow runs, state change hooks, deployment promotions</li>
+  <li>Prefect Deployments with <code>prefect.yaml</code>, CI/CD integration via GitHub Actions</li>
+  <li>Prefect Cloud — dashboards, SLA monitoring, audit logs, RBAC</li>
+  <li>AI workflow integration: chaining LangChain/CrewAI agents as Prefect tasks</li>
+</ul>
+
+<h3>Dagster 1.x (Asset-Based Orchestration)</h3>
+<ul>
+  <li>Software-defined assets (SDAs): <code>@asset</code>, asset groups, freshness policies</li>
+  <li>Asset checks for data quality validation inline with pipeline execution</li>
+  <li>Partitioned assets for time-based and category-based backfilling</li>
+  <li>Dagster+ (cloud) — branch deployments for isolated pipeline testing in CI</li>
+  <li>Embedded ELT with Airbyte, dbt, Fivetran, Sling integrations</li>
+  <li>Sensors and schedules: reactive pipelines triggered by external events or new data</li>
+</ul>
+
+<h3>Temporal.io — Durable Workflow Execution</h3>
+<ul>
+  <li>Workflows and Activities in Python, Go, Java, TypeScript — durable execution guarantee</li>
+  <li>Long-running agentic AI workflows with retry logic, heartbeats, timeouts</li>
+  <li>Temporal Cloud — multi-region namespaces, MTLS, export to S3</li>
+  <li>Child workflows, signals, queries — human-in-the-loop approvals in AI pipelines</li>
+  <li>Temporal Nexus (2025) — cross-namespace service calls, microservice composition</li>
+</ul>
+
+<h3>n8n 1.x — Visual AI Workflow Automation</h3>
+<ul>
+  <li>AI Agent nodes with LangChain integration, tool calling, memory components</li>
+  <li>HTTP Request, webhook triggers, and 400+ integrations (Slack, Jira, GitHub, AWS)</li>
+  <li>n8n self-hosted on Docker/Kubernetes with PostgreSQL backend</li>
+  <li>Custom nodes with TypeScript, credential management, environment variables</li>
+  <li>AI-generated workflow creation from natural language (n8n AI builder)</li>
+</ul>
+
+<h3>Other Orchestration Tools</h3>
+<ul>
+  <li><strong>Apache Kafka + Kafka Streams / Faust</strong> – event-driven workflow triggers for real-time AI pipelines</li>
+  <li><strong>AWS Step Functions</strong> – state machines with Bedrock AI actions, Express Workflows for high-throughput</li>
+  <li><strong>Azure Logic Apps Standard</strong> – stateful workflows + Azure AI Services integration</li>
+  <li><strong>Google Cloud Workflows</strong> – YAML/JSON workflow steps with Vertex AI callbacks</li>
+  <li><strong>Windmill.dev</strong> – open-source scripts + flows + apps, self-hosted alternative to n8n</li>
+</ul>
+
+<hr>
+
+<h2>MLOps &amp; AI Pipeline Engineering</h2>
+
+<h3>Kubeflow Pipelines 2.x</h3>
+<ul>
+  <li>Pipeline SDK v2: components, <code>@dsl.component</code>, <code>@dsl.pipeline</code>, artifact passing</li>
+  <li>KFP Compiled IR (Intermediate Representation) — platform-agnostic pipeline specs</li>
+  <li>Kubeflow on AWS (via Kubeflow on EKS), GCP (Vertex AI Pipelines backend), Azure</li>
+  <li>Model registry integration, experiment tracking, run comparison</li>
+  <li>Katib (hyperparameter tuning) and KServe (model serving) as pipeline sinks</li>
+</ul>
+
+<h3>ZenML 0.70+ — Stack-Agnostic MLOps</h3>
+<ul>
+  <li>Pipelines, steps, and artifacts — fully annotated with metadata for reproducibility</li>
+  <li>Stack components: orchestrators (Kubeflow, Airflow, SageMaker), artifact stores, experiment trackers</li>
+  <li>ZenML Pro — cloud dashboard, role-based access, secrets management</li>
+  <li>Model Control Plane — model versioning, stage promotion (staging → production)</li>
+  <li>LLMOps pipelines: RAG ingestion, embedding pipelines, evaluation pipelines as ZenML steps</li>
+</ul>
+
+<h3>AWS SageMaker Pipelines</h3>
+<ul>
+  <li>Step types: Processing, Training, Tuning, Evaluation, Model, RegisterModel, Transform, Condition</li>
+  <li>SageMaker Experiments integration — tracking pipeline runs as experiments</li>
+  <li>SageMaker Model Registry — approval workflows, model versions, deployment automation</li>
+  <li>SageMaker Clarify — bias detection and explainability as pipeline steps</li>
+  <li>SageMaker Pipelines + EventBridge for event-driven re-training triggers</li>
+</ul>
+
+<h3>Vertex AI Pipelines (Google Cloud)</h3>
+<ul>
+  <li>KFP-based pipelines on managed Vertex infrastructure — no cluster management</li>
+  <li>Vertex AI Vizier for hyperparameter optimization as pipeline step</li>
+  <li>Vertex AI Model Registry and model monitoring for drift detection</li>
+  <li>Gemini 2.0 Flash as reasoning step within Vertex AI pipeline DAGs</li>
+  <li>Vertex AI Feature Store v2 — online/offline serving integrated into training pipelines</li>
+</ul>
+
+<hr>
+
+<h2>GitOps &amp; AI-Driven Deployment Automation</h2>
+
+<h3>ArgoCD 2.12+ — Declarative GitOps</h3>
+<ul>
+  <li>ApplicationSets: Git generator, cluster generator, matrix generator for multi-cluster deployments</li>
+  <li>Argo CD Image Updater — automated container image version promotion to Git</li>
+  <li>Argo Rollouts: Blue/Green, Canary, AB analysis with Prometheus/Datadog metrics</li>
+  <li>ArgoCD Notifications: Slack, Teams, PagerDuty hooks on deployment events</li>
+  <li>Multi-tenancy with Projects, RBAC, SSO (OIDC/LDAP)</li>
+  <li>Argo Workflows for DAG-based CI/CD — container-native workflow execution</li>
+</ul>
+
+<h3>Flux CD 2.x — GitOps Toolkit</h3>
+<ul>
+  <li>Source Controller, Kustomize Controller, Helm Controller, Notification Controller</li>
+  <li>OCI artifact support — pushing Flux manifests as container images</li>
+  <li>Flagger for progressive delivery: Canary, A/B testing, Blue/Green with Istio/Linkerd</li>
+  <li>Flux Bootstrap with GitHub/GitLab, automated reconciliation loop</li>
+  <li>Multi-tenancy with Flux tenants, namespace isolation, policy enforcement</li>
+</ul>
+
+<h3>Agentic DevOps — AI-Driven Automation</h3>
+<ul>
+  <li><strong>Amazon Q Developer</strong> – AI agent that reads AWS environments, writes IaC, applies changes, debugs deployments</li>
+  <li><strong>GitHub Copilot for CLI</strong> – natural language shell commands, Git operations, pipeline fixes</li>
+  <li><strong>Ansible Lightspeed (IBM watsonx)</strong> – AI-generated Ansible playbooks from task descriptions</li>
+  <li><strong>Pulumi AI / Pulumi Copilot</strong> – natural language to Pulumi TypeScript/Python IaC programs</li>
+  <li>Custom AI DevOps agents using LangGraph + shell tool calling for automated deployments</li>
+  <li>AI-powered runbook automation: incident detection → root cause analysis → automated remediation</li>
+</ul>
+
+<hr>
+
+<h2>Infrastructure as Code with AI Assistance</h2>
+
+<h3>Terraform / OpenTofu</h3>
+<ul>
+  <li><strong>Terraform 1.9+</strong> – ephemeral resources, provider functions, import blocks, checks</li>
+  <li><strong>OpenTofu 1.8+</strong> – open-source Terraform fork, provider-defined functions, encryption</li>
+  <li><strong>HashiCorp HCP Terraform</strong> – AI-assisted plan summaries, drift detection, no-code modules</li>
+  <li>AI-generated HCL with GitHub Copilot, Amazon Q Developer, and Claude</li>
+  <li>Terraform CDK (CDKTF) — IaC in TypeScript/Python with constructs</li>
+  <li>Terragrunt for DRY Terraform configurations at scale</li>
+</ul>
+
+<h3>Pulumi (2026)</h3>
+<ul>
+  <li>Pulumi Automation API — programmatic infrastructure stacks from Python/Go/TS code</li>
+  <li>Pulumi ESC (Environments, Secrets, Configuration) — centralized secrets management</li>
+  <li>Pulumi Insights — AI-powered infrastructure search, compliance, and cost analysis</li>
+  <li>Pulumi Copilot — conversational IaC generation and troubleshooting</li>
+</ul>
+
+<h3>Ansible 10.x</h3>
+<ul>
+  <li>Ansible Automation Platform 2.5 — controller, hub, Event-Driven Ansible (EDA)</li>
+  <li><strong>Event-Driven Ansible</strong> – rulebooks triggered by AIOps events (Dynatrace, PagerDuty webhooks)</li>
+  <li>Ansible Lightspeed — AI playbook generation from natural language in VS Code</li>
+  <li>Collections ecosystem, custom modules, and integration with Terraform/Kubernetes</li>
+</ul>
+
+<h3>AWS CDK / Azure Bicep / Google Cloud Deployment Manager</h3>
+<ul>
+  <li>AWS CDK v2 (TypeScript/Python) — L2/L3 constructs, CDK Pipelines for self-mutating CI/CD</li>
+  <li>AWS CDK Aspects, Nag security checks, snapshot testing with <code>jest</code></li>
+  <li>Azure Bicep 0.29+ — modules, user-defined types, AI-assisted authoring with Copilot</li>
+  <li>Crossplane — Kubernetes-native IaC, Compositions, CompositeResourceDefinitions</li>
+</ul>
+
+<hr>
+
+<h2>AIOps — Intelligent Monitoring &amp; Observability</h2>
+
+<h3>Datadog AI (Bits AI)</h3>
+<ul>
+  <li><strong>Bits AI Assistant</strong> – natural language queries across logs, metrics, traces, incidents</li>
+  <li>Watchdog AI – anomaly detection across infrastructure, APM, and log volumes</li>
+  <li>Datadog LLM Observability — tracing LLM calls, cost tracking, prompt/response logging</li>
+  <li>CI Visibility — pipeline performance, flaky test detection, bottleneck analysis</li>
+  <li>Workflows automation: triggered remediation actions from Datadog monitors</li>
+</ul>
+
+<h3>Dynatrace Davis AI</h3>
+<ul>
+  <li>Causal AI root cause analysis — topology-aware problem detection without alert fatigue</li>
+  <li>Davis CoPilot — AI assistant for query writing (DQL), dashboard creation, incident response</li>
+  <li>Grail (Dynatrace lakehouse) — unified logs, traces, metrics, events with DQL</li>
+  <li>AutomationEngine — Davis-triggered automation with JavaScript/Python scripts</li>
+  <li>OpenPipeline for log ingestion and transformation at petabyte scale</li>
+</ul>
+
+<h3>Grafana Stack (2026)</h3>
+<ul>
+  <li><strong>Grafana 11+</strong> – scene-based dashboards, AI-assisted panel creation, alerting v2</li>
+  <li><strong>Grafana Beyla</strong> – eBPF-based auto-instrumentation for HTTP/gRPC without code changes</li>
+  <li>Loki 3.x – structured metadata (OTEL labels), volume queries, query acceleration</li>
+  <li>Tempo 2.x – TraceQL, metrics-from-traces, streaming search</li>
+  <li>Grafana k6 AI – AI-generated load test scripts, cloud execution with SLO analysis</li>
+  <li>Grafana OnCall — escalation chains, mobile app, Slack/Teams integration</li>
+</ul>
+
+<h3>Other AIOps Platforms</h3>
+<ul>
+  <li><strong>New Relic AI</strong> – AI assistant for NRQL, error grouping, SLO management</li>
+  <li><strong>PagerDuty AIOps</strong> – event intelligence, noise reduction, automated triage</li>
+  <li><strong>Elastic Observability 8.x</strong> – ESQL, AI assistant, SLO tracking, infrastructure profiling</li>
+  <li><strong>OpenTelemetry 1.x</strong> – unified traces/metrics/logs/profiles, OTLP protocol, Collector 0.100+</li>
+</ul>
+
+<hr>
+
+<h2>Kubernetes &amp; Container Orchestration for AI Workloads</h2>
+<ul>
+  <li><strong>Kubernetes 1.32</strong> – sidecar containers (GA), structured authentication, in-place pod resize</li>
+  <li><strong>KEDA 2.15+</strong> – ScaledObjects for event-driven autoscaling: Kafka, SQS, Prometheus, custom metrics</li>
+  <li><strong>Karpenter 1.x</strong> – node autoscaling with GPU-aware scheduling, spot interruption handling</li>
+  <li><strong>NVIDIA GPU Operator 24.x</strong> – automated GPU driver/plugin installation in K8s, MIG partitioning</li>
+  <li><strong>KubeAI</strong> – Kubernetes-native LLM serving with Ollama/vLLM backends, model auto-loading</li>
+  <li><strong>Helm 3.16+</strong> – OCI charts, schema validation, <code>helm test</code>, Helmfile for multi-release management</li>
+  <li>Service mesh: <strong>Istio 1.23+ / Linkerd 2.15+</strong> – mTLS, traffic splitting for Canary, ambient mode (Istio)</li>
+  <li>Policy: <strong>Kyverno 1.12+</strong> – admission control, image verification (cosign), generate/mutate rules</li>
+</ul>
+
+<hr>
+
+<h2>Platform Engineering &amp; Internal Developer Platforms (IDP)</h2>
+<ul>
+  <li><strong>Backstage 1.30+</strong> – software catalog, TechDocs, AI-powered scaffolder templates, AI search plugin</li>
+  <li><strong>Port.io</strong> – self-service internal developer portal, scorecards, Gitops actions, AI agents</li>
+  <li><strong>Cortex (Stripe-originated)</strong> – service catalog, ownership tracking, SLO enforcement</li>
+  <li><strong>Humanitec Platform Orchestrator</strong> – dynamic environment configuration, driver-based IaC abstraction</li>
+  <li><strong>Kratix</strong> – platform-as-a-product with Kubernetes promises and GitOps delivery</li>
+  <li>Golden path templates, developer self-service portals, paved road toolchain design</li>
+  <li>Platform SRE practices: cognitive load reduction, developer experience (DX) metrics (DORA, SPACE)</li>
+</ul>
+
+<hr>
+
+<h2>DevSecOps AI — Security in AI Pipelines</h2>
+<ul>
+  <li><strong>Snyk AI</strong> – AI-suggested fixes for SAST, SCA (software composition analysis), IaC issues</li>
+  <li><strong>GitHub Advanced Security + Copilot Autofix</strong> – one-click AI remediation for CodeQL findings</li>
+  <li><strong>Wiz</strong> – cloud security posture management, AI-powered risk prioritization, pipeline integration</li>
+  <li><strong>Semgrep AI (Semgrep Managed Scans)</strong> – pattern-based SAST with AI triage and false-positive reduction</li>
+  <li><strong>Trivy 0.55+</strong> – container image, filesystem, IaC, SBOM scanning in CI pipelines</li>
+  <li>SLSA (Supply chain Levels for Software Artifacts) — provenance generation, attestation, verification</li>
+  <li>Sigstore / Cosign — keyless image signing, SBOM attestation in GitHub Actions / Tekton</li>
+  <li>AI model security: model card auditing, adversarial robustness testing, AI Bill of Materials (AI BOM)</li>
+</ul>
+
+<hr>
+
+<h2>LLMOps — Deploying &amp; Operating AI Applications in Production</h2>
+<ul>
+  <li><strong>LangServe / FastAPI</strong> – deploying LangChain chains as REST endpoints with streaming</li>
+  <li><strong>BentoML 1.3+</strong> – model packaging, serving (HTTP/gRPC), Yatai for K8s deployment</li>
+  <li><strong>Ray Serve 2.x</strong> – scalable model serving on Ray cluster, batching, replicas, autoscaling</li>
+  <li><strong>Triton Inference Server 24.x</strong> – multi-framework model serving (TensorRT, ONNX, PyTorch)</li>
+  <li><strong>KServe 0.14+</strong> – Kubernetes-native model serving, InferenceService, canary rollouts</li>
+  <li><strong>Seldon Core 2.x</strong> – model deployment, drift detection, explainability, multi-armbandit experiments</li>
+  <li>LLM gateway: <strong>LiteLLM Proxy</strong> – centralized routing, budget limits, semantic caching, fallbacks</li>
+  <li>Prompt management &amp; versioning: <strong>Langfuse 3.x</strong>, <strong>PromptLayer</strong>, <strong>Agenta</strong></li>
+  <li>A/B testing LLM variants: <strong>Evidently AI</strong> online evaluation, Phoenix/Arize drift monitoring</li>
+</ul>
+
+<hr>
+
+<h2>Common Issues We Resolve in Real Time</h2>
+<ul>
+  <li>Airflow DAG import errors — circular imports, missing dependencies, task concurrency deadlocks</li>
+  <li>Prefect deployment failing to pick up work — worker pool config, infrastructure block mismatch</li>
+  <li>Dagster asset materialization stuck — resource config, I/O manager type mismatch, partitions</li>
+  <li>Temporal workflow timeouts — activity heartbeat config, schedule-to-close vs start-to-close</li>
+  <li>GitHub Actions OIDC auth to AWS failing — trust policy conditions, thumbprint list</li>
+  <li>ArgoCD app stuck in <code>OutOfSync</code> — diffing hook jobs, server-side apply conflicts, CRD drift</li>
+  <li>Dagger pipeline cache miss on every run — cache key invalidation, layer ordering</li>
+  <li>Kubeflow pipeline component not finding artifact path — PVC mount, artifact passing schema mismatch</li>
+  <li>Kubernetes GPU pod stuck in <code>Pending</code> — taint/toleration, GPU operator version, MIG config</li>
+  <li>Terraform state lock not releasing — backend config, <code>force-unlock</code> procedure</li>
+  <li>Datadog alert flapping — threshold tuning, anomaly detection seasonality, composite monitor setup</li>
+  <li>Ray Serve model deployment failing OOM — num_replicas, ray_actor_options memory config</li>
+  <li>n8n workflow stuck on AI Agent node — tool definition schema, credential scope, timeout</li>
+</ul>
+
+<hr>
+
+<h2>Who Uses This Service</h2>
+<ul>
+  <li>DevOps engineers building AI-enhanced CI/CD pipelines and deployment automation</li>
+  <li>ML platform engineers managing MLOps infrastructure on Kubeflow, SageMaker, or Vertex AI</li>
+  <li>Site reliability engineers (SREs) integrating AIOps for intelligent alerting and auto-remediation</li>
+  <li>Platform engineers building internal developer platforms with Backstage or Port</li>
+  <li>Data engineers orchestrating AI data pipelines on Airflow, Prefect, or Dagster</li>
+  <li>LLMOps engineers deploying and monitoring LLM-powered applications in production</li>
+  <li>Cloud architects designing AI-workload-optimised Kubernetes clusters</li>
+  <li>DevSecOps engineers integrating AI-powered security scanning into CI/CD</li>
+</ul>
+
+<hr>
+
+<h2>Proxy Job Support for AI Pipeline &amp; DevOps Engineers</h2>
+<p>Our <strong>AI workflow automation proxy job support</strong> puts a senior pipeline engineer directly inside your working session — screen share, live debugging, hands-on fixing. If your Airflow DAG is failing in production at 2 AM, your ArgoCD application is stuck before a release, or your Kubeflow pipeline component keeps silently failing, our <strong>proxy support</strong> resolves it immediately — not hours later via a ticket queue.</p>
+<h3>What AI Pipeline Proxy Support Covers</h3>
+<ul>
+  <li><strong>Production incident proxy response</strong> — immediate screen-share support for broken Airflow, Prefect, Dagster, or Temporal workflows in live production environments</li>
+  <li><strong>CI/CD proxy job support</strong> — GitHub Actions pipeline failures, Dagger.io cache miss issues, GitLab Duo CI/CD breakages — resolved live alongside your team</li>
+  <li><strong>MLOps pipeline proxy help</strong> — Kubeflow Pipelines SDK v2 errors, SageMaker Pipeline step failures, Vertex AI Pipeline artifact issues — fixed during your sprint</li>
+  <li><strong>GitOps proxy support</strong> — ArgoCD OutOfSync issues, Flux CD reconciliation failures, Helm upgrade breakages — real-time resolution before release windows close</li>
+  <li><strong>Kubernetes proxy job support</strong> — GPU pod scheduling issues, KEDA ScaledObject misconfigurations, Karpenter node provisioning failures — live diagnosis and fix</li>
+  <li><strong>AIOps proxy assistance</strong> — Datadog monitor configuration, Dynatrace DQL query writing, Grafana dashboard build — done with you on screen share</li>
+  <li><strong>IaC proxy support</strong> — Terraform state lock issues, Pulumi stack drift, Ansible playbook failures — expert pair-working through complex infrastructure problems</li>
+</ul>
+<p>Our <strong>DevOps proxy job support</strong> is available 24/7 for production emergencies — US Eastern, Central, Mountain, Pacific, UK GMT/BST, Canada, Australia, Singapore, India time zones all covered.</p>
+
+<hr>
+
+<h2>Interview Proxy Support for DevOps, ML Platform &amp; SRE Roles</h2>
+<p>DevOps, ML platform engineer, and SRE interviews in 2026 are technically grueling — system design for distributed CI/CD, Kubernetes architecture deep-dives, GitOps design patterns, AIOps observability design, IaC best practices, and LLMOps deployment discussions. Our <strong>DevOps interview proxy support</strong> provides discreet, expert guidance in real time during your live technical interview so you perform at the level the role demands.</p>
+<h3>AI Pipeline &amp; DevOps Interview Proxy — What We Cover</h3>
+<ul>
+  <li><strong>CI/CD system design proxy</strong> — pipeline architecture for multi-service monorepos, branching strategies, deployment patterns, release gates, feature flags</li>
+  <li><strong>Kubernetes interview proxy help</strong> — cluster design, node autoscaling (Karpenter vs. CA), KEDA event-driven scaling, GPU workload scheduling, service mesh decisions</li>
+  <li><strong>MLOps system design proxy</strong> — pipeline orchestration comparison (Airflow vs. Prefect vs. Dagster vs. Temporal), model registry design, drift monitoring, retraining triggers</li>
+  <li><strong>GitOps interview proxy</strong> — ArgoCD vs. Flux CD trade-offs, ApplicationSet patterns, Argo Rollouts Canary strategy, progressive delivery design, multi-cluster fleet management</li>
+  <li><strong>AIOps architecture proxy support</strong> — observability stack design (Prometheus/Grafana/Loki/Tempo vs. Datadog vs. Dynatrace), alerting philosophy, SLO/SLI/error budget design</li>
+  <li><strong>IaC interview proxy help</strong> — Terraform vs. Pulumi vs. CDK trade-offs, module structure, state management, drift detection, policy-as-code with OPA/Kyverno</li>
+  <li><strong>Platform engineering interview proxy</strong> — IDP design with Backstage/Port, golden paths, developer experience metrics (DORA, SPACE), cognitive load reduction</li>
+  <li><strong>LLMOps deployment proxy</strong> — model serving architecture (vLLM vs. TensorRT-LLM vs. KServe), LLM gateway design, prompt versioning, cost/latency trade-offs</li>
+  <li><strong>Live coding proxy support</strong> — Terraform HCL, Kubernetes YAML, Python Prefect/Dagster code, Dockerfile optimization — real-time hints during coding rounds</li>
+</ul>
+<h3>Companies Where Our DevOps Interview Proxy Has Helped</h3>
+<p>Our <strong>DevOps and ML platform interview proxy support</strong> has helped engineers clear technical interviews at major cloud providers (AWS, Google Cloud, Azure engineering teams), large-scale SaaS companies, leading fintechs, AI-native companies, and top-tier US/UK tech consultancies. We tailor our <strong>proxy interview assistance</strong> to the specific system design format, tech stack, and seniority level of the role.</p>
+<h3>How DevOps &amp; Pipeline Interview Proxy Works</h3>
+<ol>
+  <li>Contact us on WhatsApp with interview details — company, role (DevOps / ML platform / SRE / platform engineer), date, and technology focus</li>
+  <li>Expert matching — senior engineer with relevant domain (Kubernetes, MLOps, AIOps, IaC, platform engineering)</li>
+  <li>Pre-interview briefing — align on your background, the role JD, and expected system design topics</li>
+  <li>Real-time <strong>proxy interview guidance</strong> during your live session — discreet, professional, comprehensive</li>
+  <li>Post-interview follow-up for additional rounds or negotiation</li>
+</ol>
+
+<hr>
+
+<h2>Get AI Pipeline Proxy Job Support or Interview Proxy Help Now</h2>
+<p>Live <strong>proxy job support</strong> and <strong>interview proxy assistance</strong> for DevOps, ML platform, and SRE engineers — from Airflow production fixes to Kubernetes interview coaching and LLMOps deployment proxy support. 24/7 availability. Same-day start.</p>
+<p><a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20AI%20pipeline%20proxy%20job%20support%20or%20interview%20proxy%20help">WhatsApp for Proxy Support Now</a> · <a href="/agentic-ai-ml-job-support/">Agentic AI &amp; ML Support</a> · <a href="/devops-job-support/">DevOps &amp; Automation</a> · <a href="/proxy-interview-support/">Proxy Interview Support</a> · <a href="/cloud-technologies-job-support/">Cloud Technologies</a></p>

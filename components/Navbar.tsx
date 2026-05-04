@@ -238,7 +238,7 @@ export default function Navbar({ variant = 'light' }: Props) {
                   </button>
                   {openDropdown === 'jobSupport' && (
                     <div style={{ ...dropdownPanel, minWidth: '280px' }}>
-                      {jobSupportLinks.map((item) => (
+                      {jobSupportLinks.filter((item) => !item.hidden).map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
@@ -500,7 +500,7 @@ export default function Navbar({ variant = 'light' }: Props) {
             </button>
             {mobileJobOpen && (
               <div style={{ paddingBottom: '0.5rem' }}>
-                {jobSupportLinks.map((item) => (
+                {jobSupportLinks.filter((item) => !item.hidden).map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}

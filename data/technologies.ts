@@ -9,7 +9,10 @@ export type TechIconId =
   | 'chart'
   | 'shield'
   | 'crm'
-  | 'java';
+  | 'java'
+  | 'brain'
+  | 'flask'
+  | 'pipeline';
 
 export type Technology = {
   id: string;
@@ -17,12 +20,78 @@ export type Technology = {
   icon: TechIconId;
   tags: string[];
   description?: string;
+  href?: string;
+  hidden?: boolean;
 };
 
 export const technologies: Technology[] = [
   {
+    id: 'agentic-ai',
+    icon: 'brain',
+    href: '/agentic-ai-ml-job-support/',
+    title: 'Agentic AI & Machine Learning',
+    description: 'Production-grade support for agentic AI systems, RAG pipelines, LLMs, and deep learning infrastructure in 2026.',
+    tags: [
+      'LangGraph & AutoGen Agents',
+      'CrewAI & OpenAI Agents SDK',
+      'RAG — Advanced & Agentic',
+      'GPT-5.5 / GPT-5.4 / o3 / o4-mini',
+      'Claude Opus 4.7 / Gemini 3.1 Pro',
+      'Llama 4 Maverick & Scout',
+      'PyTorch 2.5 & Hugging Face',
+      'Fine-Tuning: LoRA / QLoRA / DPO',
+      'vLLM / TensorRT-LLM / Ollama',
+      'MLflow 2.x / W&B / DVC',
+      'Vector DBs: Pinecone / Qdrant / Weaviate',
+      'RAGAS / DeepEval / LangSmith',
+    ],
+  },
+  {
+    id: 'ai-workflow',
+    icon: 'pipeline',
+    href: '/ai-workflow-automation-pipeline-job-support/',
+    title: 'AI Workflow Automation & Pipeline Engineering',
+    description: 'Expert support for AI-powered CI/CD, MLOps pipelines, AIOps, GitOps, and LLMOps DevOps toolchains in 2026.',
+    tags: [
+      'Airflow 2.10 / Prefect 3 / Dagster 1',
+      'Temporal.io Durable Workflows',
+      'Dagger.io Programmable CI/CD',
+      'GitHub Actions AI / GitLab Duo',
+      'ArgoCD 2.12 / Flux CD 2 GitOps',
+      'Kubeflow Pipelines 2 / ZenML',
+      'AIOps: Datadog Bits AI / Dynatrace Davis',
+      'Kubernetes 1.32 + KEDA + Karpenter',
+      'Terraform / OpenTofu / Pulumi AI',
+      'Platform Engineering: Backstage / Port',
+      'LLMOps: LangServe / Ray Serve / BentoML',
+      'DevSecOps AI: Snyk / GitHub Copilot Autofix',
+    ],
+  },
+  {
+    id: 'data-science',
+    icon: 'flask',
+    href: '/data-science-job-support/',
+    title: 'Data Science (AI-Era)',
+    description: 'Deep data science support covering Python stack, classical ML, big data, causal inference, and AI-integrated analytics.',
+    tags: [
+      'pandas 2.x & Polars 1.x',
+      'scikit-learn 1.5 / XGBoost / LightGBM',
+      'Feature Engineering & SHAP',
+      'EDA & Statistical Testing',
+      'Spark 3.5 & Databricks 15.x',
+      'Time Series: Prophet / statsforecast',
+      'Causal Inference: DoWhy / EconML',
+      'NLP: spaCy / BERTopic / BERT',
+      'dbt / Airflow / Prefect',
+      'Tableau / Power BI / Superset',
+      'AutoML: AutoGluon / FLAML',
+      'Synthetic Data: CTGAN / ydata',
+    ],
+  },
+  {
     id: 'ai',
     icon: 'cpu',
+    hidden: true,
     title: 'AI / Machine Learning & Data',
     tags: [
       'AI Engineer',

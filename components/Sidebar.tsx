@@ -24,7 +24,7 @@ export default function Sidebar() {
         </h3>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          {jobSupportLinks.map((link) => (
+          {jobSupportLinks.filter((link) => !link.hidden).map((link) => (
             <Link key={link.href} href={link.href} className="sidebar-nav-link">
               {link.label}
             </Link>

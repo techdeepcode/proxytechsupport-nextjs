@@ -98,6 +98,35 @@ export default function TechCategoryIcon({ id }: Props) {
           <path d="M8 9h8M8 12h5" strokeWidth={1.25} />
         </svg>
       );
+    case 'brain':
+      return (
+        <svg {...c} viewBox="0 0 24 24" aria-hidden>
+          <path d="M9.5 2a2.5 2.5 0 010 5H9a5 5 0 00-5 5 4 4 0 004 4h.5a2.5 2.5 0 010 5" />
+          <path d="M14.5 2a2.5 2.5 0 000 5H15a5 5 0 015 5 4 4 0 01-4 4h-.5a2.5 2.5 0 000 5" />
+          <path d="M12 7v10M9 12h6" />
+        </svg>
+      );
+    case 'flask':
+      return (
+        <svg {...c} viewBox="0 0 24 24" aria-hidden>
+          <path d="M9 3h6M9 3v7l-5 9a1 1 0 00.9 1.5h14.2A1 1 0 0020 19l-5-9V3" />
+          <path d="M7.5 15h9" />
+          <circle cx="10" cy="17.5" r="0.75" fill={ICON} stroke="none" />
+          <circle cx="14" cy="18.5" r="0.75" fill={ICON} stroke="none" />
+        </svg>
+      );
+    case 'pipeline':
+      return (
+        <svg {...c} viewBox="0 0 24 24" aria-hidden>
+          <circle cx="5" cy="6" r="2" />
+          <circle cx="19" cy="6" r="2" />
+          <circle cx="5" cy="18" r="2" />
+          <circle cx="19" cy="18" r="2" />
+          <path d="M7 6h10M7 18h10M5 8v8M19 8v8" />
+          <circle cx="12" cy="12" r="2" />
+          <path d="M7 6l3.5 6M16.5 6L13 12M7 18l3.5-6M16.5 18L13 12" strokeWidth={1.1} />
+        </svg>
+      );
     default:
       return (
         <svg {...c} viewBox="0 0 24 24" aria-hidden>

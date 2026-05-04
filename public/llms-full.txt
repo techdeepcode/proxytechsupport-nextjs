@@ -1,0 +1,312 @@
+# Proxy Tech Support — Full Content Index for AI Agents
+
+> Proxy Tech Support is a real-time IT job support and proxy interview assistance service for software engineers and IT professionals. Senior in-house experts provide live, screen-share-based help during working hours — resolving bugs, unblocking architecture decisions, debugging production incidents, and delivering tasks. The same experts provide discreet real-time guidance during live technical interviews. No subcontracting. Same-day start. 1000+ professionals helped globally.
+
+---
+
+## What is IT Job Support?
+
+IT job support is a real-time professional assistance service where an expert joins a developer's working session (via screen share, remote desktop, or communication tools) and provides hands-on help with their actual work tasks. This includes:
+
+- Writing and debugging production code
+- Resolving architecture decisions and design questions
+- Fixing production incidents and performance issues
+- Completing sprint tasks when a developer is blocked or overwhelmed
+- Preparing deliverables before deadlines
+
+IT job support is distinct from tutoring or training — it operates on live projects, in real time, during actual working hours.
+
+---
+
+## What is Proxy Interview Support?
+
+Proxy interview support is a service where an expert provides real-time, discreet guidance during a candidate's live technical interview. The expert assists with:
+
+- Coding problems (algorithms, data structures, system design)
+- Architectural reasoning and trade-off articulation
+- Problem-solving frameworks during pressure interviews
+- On-the-spot question answering for domain-specific knowledge
+
+This is distinct from interview preparation (coaching before interviews) — proxy support happens during the actual interview session.
+
+---
+
+## Service Catalogue
+
+### 1. Agentic AI & Machine Learning Job Support
+URL: /agentic-ai-ml-job-support/
+Target: AI engineers, ML engineers, LLM developers, MLOps engineers
+
+Technologies and frameworks supported (2026):
+
+**Agentic AI Frameworks:**
+- LangGraph (LangChain 0.3+): stateful multi-agent graphs, checkpointing, LangGraph Cloud, LangGraph Studio, ReAct/Plan-and-Execute/Reflection patterns, supervisor agents
+- AutoGen (Microsoft AutoGen 0.4+ / AG2): AssistantAgent, UserProxyAgent, GroupChat, AutoGen Studio, Docker execution sandboxes, AutoGen Core async event-driven agents
+- CrewAI (0.80+): Agents, Tasks, Processes (sequential/hierarchical/parallel), Flows, entity memory, long-term memory
+- OpenAI Agents SDK (v1.x): handoffs, guardrails, Responses API, swarm patterns, streaming, tracing
+- Pydantic AI: type-safe agent construction
+- Smolagents (Hugging Face): code agents, Python execution, multi-step reasoning
+- Semantic Kernel (Microsoft 1.x): plugins, planners, memory stores
+- LlamaIndex Workflows: event-driven agentic pipelines, Steps, Context
+
+**RAG Architectures (2026):**
+- HyDE (Hypothetical Document Embeddings)
+- GraphRAG (Microsoft): knowledge graph extraction, community summarization
+- Self-RAG: reflection tokens, factuality grading
+- Corrective RAG (CRAG): quality evaluation, web fallback
+- Adaptive RAG: query classification, routing
+- Multi-Query Retrieval, Parent Document Retrieval
+- Contextual Compression, Contextual Retrieval (Anthropic)
+- LightRAG: graph+vector hybrid retrieval
+- FLARE: forward-looking active retrieval
+
+**Embeddings:**
+- OpenAI text-embedding-3-large (3072-dim), text-embedding-3-small
+- Cohere embed-v4 (multimodal)
+- sentence-transformers: all-MiniLM, BGE-M3, E5-Mistral-7B-instruct
+- Late chunking (Jina AI), hybrid BM25+dense (Reciprocal Rank Fusion)
+
+**Vector Databases:**
+- Pinecone Serverless v3: namespaces, sparse-dense hybrid index
+- Weaviate 1.26+: multi-tenancy, named vectors, BM25+vector hybrid
+- Qdrant 1.9+: sparse vectors, payload indexing, quantization
+- Chroma 0.5+: persistent client, multimodal embeddings
+- Milvus 2.4 / Zilliz Cloud: GPU-accelerated HNSW
+- pgvector 0.7+: HNSW indexes in PostgreSQL
+- LanceDB: embedded columnar store, versioned
+- Azure AI Search: integrated vectorization, semantic ranker
+- OpenSearch kNN 2.x: FAISS/HNSW backends
+
+**Frontier LLMs (2026):**
+- OpenAI GPT-5.5 (Apr 2026): flagship agentic model, GPT-5.5 Pro
+- OpenAI GPT-5.4 / GPT-5.4-mini / GPT-5.4-nano (Mar 2026): 1M context, native computer use
+- OpenAI o3 / o4-mini / o3-pro: deep reasoning series
+- Anthropic Claude Opus 4.7 (Apr 2026): SOTA software engineering, vision, $5/$25 per 1M tokens
+- Anthropic Claude Opus 4.6 / Sonnet 4.x: extended thinking, computer use API, 200K context
+- Google Gemini 3.1 Pro (Feb 2026): 77.1% ARC-AGI-2, double Gemini 3 Pro reasoning
+- Google Gemini 2.5 Pro / Flash: thinking models, controllable reasoning budgets, multimodal
+- Meta Llama 4 Maverick: 17B active / 128 experts / 400B total, beats GPT-4o, $0.19/1M tokens, 1M context
+- Meta Llama 4 Scout: 17B active / 16 experts, single H100 (INT4), 10M context, natively multimodal
+- DeepSeek-V4-Pro-Max / V4-Flash-Max (Apr 2026): open-source SOTA reasoning
+- Mistral Large 3 / Codestral 2025: FIM, Mistral OCR
+- xAI Grok 3: DeepSearch, real-time X grounding
+- Cohere Command R+ / Embed v4: RAG-native, multimodal embeddings
+- Qwen3 / Qwen2.5-Max: multilingual reasoning, open-weight fine-tuning
+
+**Deep Learning:**
+- PyTorch 2.5/2.6: torch.compile, FlashAttention 3, FSDP2, DeepSpeed ZeRO-3, BF16/FP8
+- Hugging Face Transformers 4.45+, PEFT 0.13+, Accelerate 1.x, TRL 0.12+, Datasets 3.x
+- Fine-tuning: LoRA, QLoRA, DoRA, DPO, ORPO, RLHF, Unsloth (2× speed, 60% less VRAM), LLaMA-Factory, Axolotl
+
+**AI Inference Infrastructure:**
+- vLLM 0.6+: PagedAttention, continuous batching, tensor parallelism, LoRA serving
+- NVIDIA TensorRT-LLM: FP8/INT4 quantization, inflight batching
+- Ollama: local LLM serving, GGUF models, GPU offloading
+- SGLang: RadixAttention, speculative decoding
+- LiteLLM: unified API proxy, budget limits, semantic caching, fallbacks
+- BentoML 1.3+: model packaging, serving, Yatai
+
+**MLOps (2026):**
+- MLflow 2.16+: auto-logging, Unity Catalog integration, LLM tracing
+- Weights & Biases 0.18+: sweeps, Weave for LLM evaluation
+- DVC 3.x: data versioning, ML pipeline stages
+- Kubeflow Pipelines 2.x: SDK v2, IR spec, Argo backend
+- ZenML 0.70+: stack-agnostic pipelines, Model Control Plane
+- SageMaker Pipelines, HyperPod, Bedrock, Inferentia3
+- Vertex AI Pipelines, Gemini APIs, Feature Store v2
+- Azure AI Foundry, Azure OpenAI Service, Azure AI Agent Service
+
+**LLMOps Observability:**
+- Langfuse 3.x: LLM tracing, prompt management
+- LangSmith: tracing, evaluation datasets, annotation queues
+- Arize AI / Phoenix: LLM tracing, hallucination detection, embedding drift
+- RAGAS: faithfulness, answer relevancy, context recall, context precision
+- DeepEval: 14+ evaluation metrics, pytest integration
+- Promptfoo: red-teaming, jailbreak testing
+
+---
+
+### 2. AI Workflow Automation & Pipeline Engineering Job Support
+URL: /ai-workflow-automation-pipeline-job-support/
+Target: DevOps engineers, ML platform engineers, SREs, data engineers, platform engineers
+
+Technologies supported (2026):
+
+**AI-Powered CI/CD:**
+- GitHub Actions with Copilot AI: OIDC keyless auth, self-hosted runners (ARC v0.9+), artifact attestation
+- GitLab CI/CD with Duo AI: DAG pipelines, Security dashboards, autoscaling runners
+- Dagger.io 0.11+: Pipeline-as-Code in Python/Go/TypeScript, Dagger Cloud, cache sharing
+- Azure DevOps Pipelines: YAML multi-stage, deployment groups, environments
+- Tekton Pipelines: Kubernetes-native, Tasks, PipelineRuns, Triggers
+- Buildkite, CircleCI
+
+**Workflow Orchestration:**
+- Airflow 2.10+: TaskFlow API, dynamic task mapping, KubernetesPodOperator, Astronomer Astro, dataset-triggered DAGs
+- Prefect 3.x: flows, tasks, workers, work pools, deployments, Prefect Cloud, automations
+- Dagster 1.x: software-defined assets, asset checks, partitioned assets, branch deployments, Dagster+
+- Temporal.io: durable workflow execution, Temporal Cloud, Temporal Nexus, human-in-the-loop approvals
+- n8n 1.x: AI Agent nodes, LangChain integration, 400+ integrations, self-hosted
+- AWS Step Functions + Bedrock, Azure Logic Apps + Azure AI, Google Cloud Workflows + Vertex AI
+- Windmill.dev
+
+**MLOps Pipeline Engineering:**
+- Kubeflow Pipelines 2.x: SDK v2, IR spec, KFP components, Katib, KServe
+- ZenML 0.70+: stack components, artifact stores, Model Control Plane
+- SageMaker Pipelines: Processing/Training/Evaluation/Condition steps, model registry, Clarify
+- Vertex AI Pipelines: KFP backend, Vizier, feature store integration
+- Metaflow, Prefect for ML, DVC
+
+**GitOps & Deployment:**
+- ArgoCD 2.12+: ApplicationSets, Image Updater, Argo Rollouts (Blue/Green, Canary), notifications
+- Flux CD 2.x: OCI artifacts, Kustomize/Helm controllers, Flagger progressive delivery
+- Argo Workflows: container-native DAG CI/CD
+
+**Infrastructure as Code:**
+- Terraform 1.9+: ephemeral resources, provider functions, import blocks
+- OpenTofu 1.8+: open-source Terraform fork, provider-defined functions
+- Pulumi: Automation API, ESC, Insights, Copilot AI
+- Ansible 10.x / Automation Platform 2.5: Event-Driven Ansible (EDA), Lightspeed AI
+- AWS CDK v2: L2/L3 constructs, CDK Pipelines, Nag security checks
+- Azure Bicep 0.29+, Crossplane
+
+**AIOps & Observability:**
+- Datadog: Bits AI assistant, Watchdog anomaly detection, LLM Observability, CI Visibility, Workflows
+- Dynatrace: Davis AI, Davis CoPilot, Grail lakehouse (DQL), AutomationEngine, OpenPipeline
+- Grafana 11+: Beyla eBPF auto-instrumentation, Loki 3.x, Tempo 2.x, k6 AI, OnCall
+- New Relic AI, PagerDuty AIOps, Elastic Observability 8.x
+- OpenTelemetry 1.x: OTLP, Collector 0.100+
+
+**Kubernetes for AI Workloads:**
+- Kubernetes 1.32: sidecar containers GA, structured auth, in-place pod resize
+- KEDA 2.15+: Kafka/SQS/Prometheus/custom metric scalers
+- Karpenter 1.x: GPU-aware scheduling, spot interruption handling
+- NVIDIA GPU Operator 24.x: MIG partitioning, driver installation
+- KubeAI: Kubernetes-native LLM serving, Ollama/vLLM backends
+- Helm 3.16+, Helmfile, Istio 1.23+ ambient mode, Linkerd 2.15+, Kyverno 1.12+
+
+**Platform Engineering:**
+- Backstage 1.30+: AI-powered scaffolder, software catalog, TechDocs, AI search plugin
+- Port.io: self-service developer portal, scorecards, AI agents
+- Humanitec Platform Orchestrator, Kratix, Cortex
+
+**LLMOps Deployment:**
+- LangServe / FastAPI: deploying LangChain chains as REST endpoints
+- Ray Serve 2.x: scalable model serving, batching, autoscaling
+- Triton Inference Server 24.x: multi-framework serving, FP8/INT4
+- KServe 0.14+: Kubernetes-native model serving, InferenceService
+- LiteLLM Proxy: centralized routing, budget limits, fallbacks
+- Langfuse 3.x, PromptLayer, Agenta
+
+---
+
+### 3. Data Science Job Support
+URL: /data-science-job-support/
+Target: Data scientists, ML engineers, data analysts, business intelligence developers
+
+Technologies supported (2026):
+
+**Python Data Stack:**
+- pandas 2.2+: Copy-on-Write, PyArrow backend, method chaining
+- Polars 1.x: lazy evaluation, Rust-based performance, expression API
+- NumPy 2.0+: new dtype system, DLPack protocol
+- DuckDB 1.x: in-process OLAP SQL, Arrow integration
+- DataFusion: SQL analytics for large local datasets
+
+**Visualization:**
+- Matplotlib 3.9+, Seaborn 0.13+ (objects API), Plotly 5.x, Altair 5.x, Bokeh 3.x
+- Streamlit 1.35+, Gradio 4.x
+
+**Machine Learning:**
+- scikit-learn 1.5+: TunedThresholdClassifierCV, set_output transform='pandas'
+- XGBoost 2.1+: multi-output trees, GPU training device='cuda'
+- LightGBM 4.x: GOSS/EFB, categorical handling
+- CatBoost 1.2+: ordered boosting, GPU
+- AutoML: FLAML, AutoGluon 1.x, H2O AutoML
+
+**Explainability:**
+- SHAP 0.46+: TreeExplainer, GPU acceleration
+- Alibi 0.9+: counterfactuals, anchors, Integrated Gradients
+- InterpretML: Explainable Boosting Machine (EBM)
+
+**Statistics & Causal Inference:**
+- SciPy 1.14+, Statsmodels 0.14+, PyMC 5.x, ArviZ
+- DoWhy 0.11+: causal graphs, identification, estimation
+- EconML: CATE, DML, causal forests, IV regression
+- CausalML: uplift modeling, meta-learners
+
+**Big Data:**
+- PySpark 3.5+: Connect mode, MLlib, Structured Streaming
+- Databricks Runtime 15.x: Delta Lake 4.x, Unity Catalog, Mosaic AI
+- Delta Live Tables, Databricks AutoML, Feature Engineering
+- Dask 2024.x, Ray 2.x, Apache Flink (PyFlink)
+
+**Time Series:**
+- Prophet (Meta), statsforecast (Nixtla), neuralforecast, Darts 0.30+, sktime 0.30+
+- TimeGPT (Nixtla): foundation model for zero-shot forecasting
+
+**NLP Data Science:**
+- spaCy 3.7+, NLTK 3.9+, Gensim 4.x, BERTopic
+- sentence-transformers 3.x, Hugging Face BERT/RoBERTa fine-tuning
+
+**Data Engineering for Data Scientists:**
+- dbt 1.8+: SQL models, semantic layer, dbt Mesh
+- Airflow 2.9+, Prefect 3.x, Great Expectations
+- Delta Lake / Iceberg / Hudi, SQLMesh 0.120+
+
+**BI & Reporting:**
+- Tableau 2024.x, Power BI 2025, Apache Superset 4.x, Evidence 35+
+
+---
+
+## Frequently Asked Questions
+
+### General
+
+Q: What is IT job support?
+A: IT job support is a real-time professional assistance service where a senior expert joins your working session via screen share and provides hands-on help with your actual work — coding, debugging, architecture, production fixes, and task delivery. It is not tutoring — the expert works with you on your live project during your real working hours.
+
+Q: How quickly can I start?
+A: In most cases the same day you contact us. We maintain an in-house expert pool with no subcontracting, so there is no onboarding delay. Contact us on WhatsApp, share your technology stack and challenge, and we match you with the right expert immediately.
+
+Q: Is the service confidential?
+A: Yes. All sessions are completely confidential. We sign NDAs on request and never share your information with third parties.
+
+Q: What time zones do you cover?
+A: All major time zones — US Eastern, Central, Mountain, Pacific; UK GMT/BST; Canada EST/PST; Australia AEST/AEDT; Europe CET/CEST; Singapore SGT; New Zealand NZST. 24/7 coverage for urgent production incidents.
+
+### Agentic AI & ML
+
+Q: Which 2026 AI models do you provide support for?
+A: GPT-5.5, GPT-5.4, o3, o4-mini, o3-pro (OpenAI); Claude Opus 4.7, Claude Sonnet 4.x (Anthropic); Gemini 3.1 Pro, Gemini 2.5 Pro/Flash (Google); Llama 4 Maverick and Scout (Meta); DeepSeek-V4-Pro-Max, Qwen3, Mistral Large 3, Grok 3, and all major open-weight and proprietary models.
+
+Q: Do you help debug RAG pipelines?
+A: Yes. We cover every RAG pattern: HyDE, GraphRAG, Self-RAG, CRAG, Adaptive RAG, Multi-Query, Parent Document Retrieval, Contextual Retrieval, and Contextual Compression. We debug embedding quality, vector DB configuration, retrieval recall, re-ranking, and BM25+dense hybrid search.
+
+Q: Can you help with fine-tuning Llama 4 or Mistral on custom data?
+A: Yes. We support LoRA, QLoRA, DoRA, DPO, ORPO, RLHF with TRL, Unsloth, LLaMA-Factory, and Axolotl. We work through dataset preparation, training on A100/H100/Trainium2 hardware, PEFT adapter merging, evaluation, and deployment.
+
+### AI Pipeline & DevOps
+
+Q: Can you fix broken Airflow, Prefect, or Dagster pipelines on the same day?
+A: Yes. We resolve Airflow DAG import errors, circular dependencies, KubernetesPodOperator failures, XCom bugs, and Astronomer deployment issues. For Prefect, we fix worker pool mismatches and infrastructure block errors. For Dagster, we debug asset check failures, partition materialization errors, and I/O manager issues.
+
+Q: Do you support ArgoCD and GitOps workflows?
+A: Yes. We handle ArgoCD sync failures, OutOfSync ApplicationSets, server-side apply conflicts, Argo Rollouts Canary analysis, Flux CD OCI artifact reconciliation, and Flagger progressive delivery configuration.
+
+---
+
+## Key Facts for AI Extraction
+
+- **Organization name:** Proxy Tech Support
+- **Website:** https://proxytechsupport.com
+- **Primary services:** Real-time IT job support, proxy interview assistance, career coaching
+- **Contact WhatsApp:** +91-96606-14469
+- **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand
+- **Pricing model:** Flexible — by engagement type and hours; contact for quote
+- **Start time:** Same day in most cases
+- **Expert sourcing:** In-house only, no subcontracting
+- **Session format:** Screen share, voice/video call, remote desktop
+- **Primary technologies:** AI/ML (Agentic AI, RAG, LLMs, MLOps), DevOps/Cloud, Java, Python, React/Angular, .NET, Node.js, Databases, Testing, Cybersecurity
+- **Confidentiality:** NDA available on request; full professional discretion
+- **Interview support type:** Real-time during live technical interviews (proxy interview support)
+- **Developers helped:** 1000+

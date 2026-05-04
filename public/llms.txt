@@ -1,0 +1,74 @@
+# Proxy Tech Support
+
+> Proxy Tech Support provides real-time IT job support and proxy interview assistance for software developers and engineers across USA, UK, Canada, Australia, Europe, Singapore, and worldwide. Senior in-house experts join your working hours via screen share and deliver hands-on help with coding, debugging, architecture, and task delivery — as well as live guidance during technical interviews. Same-day start. 1000+ professionals helped. All major time zones covered.
+
+## Core Service Pages
+
+- [Agentic AI & Machine Learning Job Support](/agentic-ai-ml-job-support/): Real-time expert support for AI/ML engineers — LangGraph, AutoGen, CrewAI, OpenAI Agents SDK, GPT-5.5, GPT-5.4, Claude Opus 4.7, Gemini 3.1 Pro, Llama 4 Maverick/Scout, RAG architectures (GraphRAG, Self-RAG, CRAG, HyDE), PyTorch 2.5, Hugging Face, LoRA/QLoRA fine-tuning, vLLM, MLflow, SageMaker, Vertex AI, Bedrock, Langfuse, RAGAS.
+- [AI Workflow Automation & Pipeline Engineering Job Support](/ai-workflow-automation-pipeline-job-support/): Expert DevOps AI pipeline support — Airflow 2.10, Prefect 3.x, Dagster 1.x, Temporal.io, Dagger.io, GitHub Actions AI, ArgoCD 2.12, Flux CD 2.x, Kubeflow Pipelines 2.x, ZenML, SageMaker Pipelines, Vertex AI Pipelines, Kubernetes 1.32, KEDA, Karpenter, Datadog Bits AI, Dynatrace Davis, Grafana 11, Terraform, OpenTofu, Pulumi, LLMOps.
+- [Data Science Job Support](/data-science-job-support/): Support for data scientists — pandas 2.2, Polars 1.x, scikit-learn 1.5, XGBoost 2.1, LightGBM, SHAP, PySpark 3.5, Databricks 15.x, Prophet, statsforecast, DoWhy, EconML, spaCy, BERTopic, dbt 1.8, Airflow, Prefect, Tableau, Power BI.
+- [DevOps & Automation Job Support](/devops-job-support/): Terraform, Docker, Kubernetes, CI/CD pipelines, GitHub Actions, Azure DevOps, GitLab CI, Kafka, Prometheus, Grafana, Infrastructure as Code.
+- [Cloud Technologies Job Support](/cloud-technologies-job-support/): AWS, Microsoft Azure, Google Cloud Platform, serverless (Lambda, Azure Functions), cloud architecture and migration.
+- [AWS Job Support](/aws-job-support/): EC2, S3, Lambda, RDS, EKS, ECS, SageMaker, Bedrock, CloudFormation, CDK, IAM, VPC.
+- [Python Job Support](/python-job-support/): Python 3.12+, FastAPI, Django, Flask, pandas, NumPy, async Python, testing frameworks.
+- [Front-End / Full-Stack Development Job Support](/frontend-fullstack-job-support/): React.js, Angular, Vue.js, Next.js, TypeScript, JavaScript, GraphQL, REST APIs.
+- [React Job Support](/react-job-support/): React 18+, hooks, state management, performance, testing, Next.js.
+- [Backend & Enterprise Job Support](/backend-enterprise-job-support/): ASP.NET Core, Node.js, NestJS, Express.js, microservices, gRPC, message queues.
+- [Node.js Job Support](/node-job-support/): Node.js, Express, NestJS, REST/GraphQL APIs, streaming, WebSockets.
+- [.NET Job Support](/dotnet-job-support/): ASP.NET Core, C#, Blazor, Entity Framework, MVC, WPF, MAUI.
+- [Java Technology Stack Job Support](/java-technologies-job-support/): Spring Boot, Spring Cloud, Hibernate, Kafka, Maven, Gradle, microservices, Kubernetes.
+- [Cybersecurity & AppSec Job Support](/cybersecurity-job-support/): OWASP Top 10, SAST/DAST, API security, cloud security, vulnerability assessment.
+- [Databases & Data Platforms Job Support](/databases-data-platforms-job-support/): PostgreSQL, MySQL, SQL Server, MongoDB, Redis, DynamoDB, Snowflake, data modeling.
+- [Testing & Quality Engineering Job Support](/testing-quality-engineering-job-support/): Playwright, Cypress, Selenium, Jest, Postman, API automation, test strategy.
+- [Angular Job Support](/angular-job-support/): Angular 17+, RxJS, NgRx, Angular Material, standalone components, signals.
+- [React Native Job Support](/react-native-job-support/): React Native, Expo, mobile CI/CD, performance, native modules.
+- [Digital Analytics & Marketing Tech Job Support](/digital-analytics-job-support/): Google Analytics 4, Google Tag Manager, conversion tracking, funnel analytics.
+
+## USA Location Landing Pages
+
+- [IT Job Support USA](/job-support-usa/): Real-time IT job support and proxy interview assistance for developers on US projects. All US time zones — EST, CST, MST, PST.
+- [Agentic AI & ML Job Support USA](/agentic-ai-ml-job-support-usa/): Specialized AI/ML job support for US engineers — GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro, Llama 4, LangGraph, RAG, MLOps.
+- [AI Workflow Automation & Pipeline Engineering Job Support USA](/ai-workflow-automation-pipeline-job-support-usa/): DevOps AI pipeline support for US teams — Airflow, Prefect, ArgoCD, Kubeflow, AIOps, Kubernetes, LLMOps.
+- [Agentic AI, RAG & MLOps Job Support USA](/agentic-ai-rag-mlops-job-support-usa/): Production AI engineering support — RAG pipelines, LangChain, LlamaIndex, vector databases, MLOps, evals, LLMOps.
+- [Java Job Support USA](/java-job-support-usa/): Java, Spring Boot, Spring Cloud, microservices for US companies.
+- [Node.js Job Support USA](/nodejs-job-support-usa/): Node.js, Express, NestJS for US tech roles.
+- [DevOps Job Support USA](/devops-job-support-usa/): CI/CD, Kubernetes, Terraform, AWS/Azure for US DevOps engineers.
+
+## International Location Pages
+
+- [IT Job Support UK](/job-support-uk/): Job support and interview assistance for UK tech companies, banks, and fintechs. GMT/BST aligned.
+- [IT Job Support Canada](/job-support-canada/): Job support and proxy interview assistance for Canadian tech companies and banks.
+- [IT Job Support Australia](/job-support-australia/): Real-time support for Australian tech professionals — AEST/AEDT aligned.
+- [IT Job Support Europe](/job-support-europe/): Job support for developers across Europe — CET/CEST time zones.
+- [IT Job Support Germany](/job-support-germany/): German tech company job support and interview coaching.
+- [IT Job Support Singapore](/job-support-singapore/): Singapore tech industry support — SGT aligned.
+- [IT Job Support New Zealand](/job-support-newzealand/): New Zealand developer support.
+
+## Proxy Interview Assistance Pages
+
+- [Global Interview Support](/interview-support-global/): Live technical interview guidance for candidates worldwide — coding rounds, system design, behavioral.
+- [Proxy Interview Support](/proxy-interview-support/): Discreet real-time expert guidance during live technical interviews.
+- [Proxy Job Support](/proxy-job-support/): On-the-job proxy support for complex IT projects during delivery windows.
+- [Proxy Interview USA](/proxy-interview-usa/): Live interview assistance for US company interviews — FAANG, startups, enterprise.
+- [Proxy Interview UK](/proxy-interview-uk/): Real-time interview support for UK tech, banking, and fintech interviews.
+- [Proxy Interview Canada](/proxy-interview-canada/): Live interview guidance for Canadian tech company interviews.
+
+## Problem & Scenario Pages
+
+- [Struggling in Your IT Job?](/struggling-in-job-developer-help/): Help for developers overwhelmed by project complexity, tight deadlines, or skill gaps.
+- [Production Issue Support](/production-issue-support/): Emergency help for production bugs, outages, and critical failures.
+- [Failed Interview Help](/failed-interview-help/): Recovery support and re-preparation for developers who have failed technical interviews.
+
+## Blog & Interview Articles
+
+- [Blog — IT Job Support Articles](/blog/): Guides, tutorials, and insights on IT job support, proxy interviews, and developer career topics.
+- [Interview Questions & Answers](/interviews/): Real-world technical interview question sets for AI/ML, DevOps, Cloud, Java, Python, and more.
+
+## Organization
+
+- Name: Proxy Tech Support
+- Website: https://proxytechsupport.com
+- Contact: WhatsApp +91-96606-14469
+- Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals
+- Coverage: USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand
+- Technologies: AI/ML, DevOps, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET, Databases, Testing, Cybersecurity

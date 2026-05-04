@@ -1,0 +1,268 @@
+<h1>Data Science Job Support 2026 – AI-Driven Analytics, Python Stack &amp; Production ML</h1>
+<p>Data science in 2026 is deeply intertwined with AI — every data scientist now works at the intersection of classical statistics, machine learning, and generative AI tooling. Whether you are building predictive models, designing feature pipelines, running causal experiments, or transitioning into AI-powered analytics, our <strong>Data Science job support</strong> connects you with a senior data scientist in real time for live screen-share help, pair programming, and complete problem resolution.</p>
+
+<hr>
+
+<h2>Python Data Science Stack (2026)</h2>
+
+<h3>Core Data Manipulation</h3>
+<ul>
+  <li><strong>pandas 2.2+</strong> – Copy-on-Write semantics, PyArrow backend, nullable dtypes, method chaining with <code>.pipe()</code></li>
+  <li><strong>Polars 1.x</strong> – lazy evaluation, Rust-based performance, expression API, streaming large datasets</li>
+  <li><strong>NumPy 2.0+</strong> – new dtype system, <code>numpy.strings</code>, copy-on-write arrays, DLPack protocol</li>
+  <li><strong>PyArrow 16+</strong> – columnar in-memory format, Parquet, IPC streaming, ADBC database connectivity</li>
+  <li>DataFusion (Python bindings) – SQL analytics engine for large local datasets</li>
+  <li>DuckDB 1.x – in-process OLAP SQL engine, Arrow integration, Parquet/JSON/CSV queries</li>
+</ul>
+
+<h3>Data Visualization</h3>
+<ul>
+  <li><strong>Matplotlib 3.9+</strong> – custom colormaps, subfigure layouts, publication-quality plots</li>
+  <li><strong>Seaborn 0.13+</strong> – statistical plots, <code>objects</code> API (ggplot2-style layer composition)</li>
+  <li><strong>Plotly 5.x / Plotly Express</strong> – interactive dashboards, choropleth maps, 3D plots</li>
+  <li><strong>Altair 5.x (Vega-Altair)</strong> – declarative grammar of graphics, data transformation API</li>
+  <li><strong>Bokeh 3.x</strong> – server-side streaming, custom widgets, JavaScript callbacks</li>
+  <li><strong>Streamlit 1.35+</strong> – rapid ML dashboards, real-time model demos, LLM-powered apps</li>
+  <li><strong>Gradio 4.x</strong> – AI demo interfaces, Spaces deployment, multimodal inputs</li>
+</ul>
+
+<h3>Statistical Computing</h3>
+<ul>
+  <li><strong>SciPy 1.14+</strong> – hypothesis testing, statistical distributions, optimization, signal processing</li>
+  <li><strong>Statsmodels 0.14+</strong> – OLS/WLS regression, GLMs, ARIMA, VAR, panel data models</li>
+  <li><strong>Pingouin</strong> – ANOVA, correlation, effect sizes, Bayesian t-tests</li>
+  <li><strong>PyMC 5.x</strong> – probabilistic programming, MCMC (NUTS sampler), Bayesian inference</li>
+  <li><strong>ArviZ</strong> – Bayesian model visualization and diagnostics</li>
+</ul>
+
+<hr>
+
+<h2>Machine Learning (Classical &amp; Gradient Boosting)</h2>
+
+<h3>Scikit-learn 1.5+</h3>
+<ul>
+  <li>Pipelines: <code>ColumnTransformer</code>, <code>FeatureUnion</code>, custom transformers with <code>set_output(transform='pandas')</code></li>
+  <li>Model selection: <code>GridSearchCV</code>, <code>RandomizedSearchCV</code>, <code>HalvingGridSearchCV</code></li>
+  <li>Ensemble methods: <code>VotingClassifier</code>, <code>StackingClassifier</code>, <code>BaggingRegressor</code></li>
+  <li>New in 1.5: <code>TunedThresholdClassifierCV</code>, <code>FixedThresholdClassifier</code> for decision thresholds</li>
+  <li>Feature importance: permutation importance, SHAP integration, partial dependence plots</li>
+  <li>Calibration curves, isotonic regression, Platt scaling for probability calibration</li>
+</ul>
+
+<h3>Gradient Boosting Frameworks</h3>
+<ul>
+  <li><strong>XGBoost 2.1+</strong> – multi-output trees, DART booster, GPU training (<code>device='cuda'</code>), PySpark integration</li>
+  <li><strong>LightGBM 4.x</strong> – GOSS/EFB algorithms, categorical feature handling, parallelism modes</li>
+  <li><strong>CatBoost 1.2+</strong> – native categoricals, ordered boosting, GPU training, model analysis</li>
+  <li><strong>HistGradientBoostingClassifier</strong> (sklearn) – fast native implementation with missing value support</li>
+  <li>AutoML: <strong>FLAML</strong>, <strong>AutoGluon 1.x</strong>, <strong>H2O AutoML</strong> – automated model selection and stacking</li>
+</ul>
+
+<h3>Explainability &amp; Interpretability</h3>
+<ul>
+  <li><strong>SHAP 0.46+</strong> – TreeExplainer, DeepExplainer, GPU acceleration, waterfall/beeswarm plots</li>
+  <li><strong>LIME</strong> – local approximation for any black-box model</li>
+  <li><strong>Alibi 0.9+</strong> – counterfactuals, anchors, Integrated Gradients, CFRL</li>
+  <li><strong>InterpretML</strong> – Explainable Boosting Machine (EBM), SHAP, Morris sensitivity</li>
+</ul>
+
+<hr>
+
+<h2>Feature Engineering &amp; Data Preprocessing</h2>
+<ul>
+  <li>Target encoding, leave-one-out encoding, CatBoost encoder (category_encoders)</li>
+  <li>Feature selection: <code>SelectFromModel</code>, RFE, Boruta, mRMR (minimum redundancy maximum relevance)</li>
+  <li>Imbalanced data: SMOTE, ADASYN, combination over/under sampling (imbalanced-learn 0.12)</li>
+  <li>Outlier detection: Isolation Forest, LOF, DBSCAN, PyOD 2.x (60+ algorithms)</li>
+  <li>Dimensionality reduction: UMAP 0.5, t-SNE, PCA, Kernel PCA, ISOMAP</li>
+  <li>Time-based feature engineering: lag features, rolling statistics, Fourier transforms, tsfresh</li>
+  <li>Feature stores integration: Feast, Databricks Feature Engineering, Hopsworks</li>
+</ul>
+
+<hr>
+
+<h2>Exploratory Data Analysis (EDA)</h2>
+<ul>
+  <li><strong>ydata-profiling 4.x (ex-Pandas Profiling)</strong> – automated EDA reports with correlations, missing values, distributions</li>
+  <li><strong>Sweetviz</strong> – visual EDA comparison between train/test splits</li>
+  <li><strong>D-Tale</strong> – interactive pandas GUI with custom column builds</li>
+  <li>Correlation analysis: Pearson, Spearman, Kendall, Cramér's V for categorical features</li>
+  <li>Missing value analysis: MCAR/MAR/MNAR diagnosis, imputation strategies (KNNImputer, IterativeImputer)</li>
+  <li>Distribution fitting: scipy.stats, fitter library, Q-Q plots</li>
+</ul>
+
+<hr>
+
+<h2>Natural Language Processing (NLP) Data Science</h2>
+<ul>
+  <li><strong>spaCy 3.7+</strong> – NER, POS tagging, dependency parsing, custom components, trained pipelines</li>
+  <li><strong>NLTK 3.9+</strong> – tokenization, stemming, WordNet, corpus tools</li>
+  <li><strong>Gensim 4.x</strong> – Word2Vec, FastText, LDA topic modeling, Doc2Vec</li>
+  <li><strong>BERTopic</strong> – dynamic topic modeling with embedding clusters, hierarchical topics</li>
+  <li><strong>sentence-transformers 3.x</strong> – semantic similarity, clustering, information retrieval</li>
+  <li>Text classification with fine-tuned BERT/RoBERTa/DistilBERT via Hugging Face Transformers</li>
+  <li>Named entity recognition pipelines, relation extraction, text classification datasets</li>
+  <li>LLM-powered NLP: using GPT-4o / Claude for entity extraction, summarization, classification</li>
+</ul>
+
+<hr>
+
+<h2>Time Series Analysis &amp; Forecasting</h2>
+<ul>
+  <li><strong>Prophet (Meta)</strong> – additive/multiplicative seasonality, holiday effects, uncertainty intervals</li>
+  <li><strong>statsforecast (Nixtla)</strong> – ARIMA, ETS, Theta, MSTL – 50× faster than statsmodels</li>
+  <li><strong>neuralforecast (Nixtla)</strong> – N-BEATS, N-HiTS, PatchTST, TFT with PyTorch Lightning</li>
+  <li><strong>Darts 0.30+</strong> – unified API for statistical and deep learning forecasters</li>
+  <li><strong>sktime 0.30+</strong> – sklearn-compatible time series classification, regression, forecasting</li>
+  <li><strong>Kats (Meta)</strong> – trend detection, changepoint detection, anomaly detection</li>
+  <li><strong>TimeGPT (Nixtla)</strong> – foundation model for zero-shot time series forecasting via API</li>
+  <li>ARIMA, SARIMA, SARIMAX, VAR, VECM, GARCH models with statsmodels</li>
+</ul>
+
+<hr>
+
+<h2>Causal Inference &amp; A/B Testing</h2>
+<ul>
+  <li><strong>DoWhy 0.11+</strong> – causal graph specification, identification, estimation, refutation</li>
+  <li><strong>EconML (Microsoft)</strong> – CATE estimation with DML, causal forests, IV regression</li>
+  <li><strong>CausalML (Uber)</strong> – uplift modeling, propensity scoring, CATE meta-learners</li>
+  <li><strong>Pyro / Stan</strong> – probabilistic causal modeling with MCMC and VI</li>
+  <li>A/B test design: sample size calculation, MDE, power analysis, sequential testing (always-valid inference)</li>
+  <li>Observational study methods: propensity score matching, IPW, doubly robust estimation</li>
+  <li>Switchback experiments and synthetic control for marketplace/platform teams</li>
+</ul>
+
+<hr>
+
+<h2>Big Data &amp; Distributed Data Science</h2>
+
+<h3>Apache Spark &amp; Databricks</h3>
+<ul>
+  <li><strong>PySpark 3.5+</strong> – DataFrames, Spark SQL, MLlib, Structured Streaming, Connect mode</li>
+  <li><strong>Databricks Runtime 15.x (LTS)</strong> – Delta Lake 4.x, Unity Catalog, Photon engine</li>
+  <li><strong>Delta Live Tables</strong> – declarative ETL with streaming/batch, data quality expectations</li>
+  <li><strong>Databricks AutoML</strong> – glass-box automated ML with explainability notebooks</li>
+  <li><strong>MLflow on Databricks</strong> – managed tracking, Unity Catalog model registry, serving endpoints</li>
+  <li><strong>Mosaic AI (Databricks)</strong> – compound AI systems, agent frameworks, LLM fine-tuning on GPU clusters</li>
+</ul>
+
+<h3>Other Distributed Frameworks</h3>
+<ul>
+  <li><strong>Dask 2024.x</strong> – parallel pandas/NumPy on multi-core/cluster, Dask-ML, Dask-cuDF (GPU)</li>
+  <li><strong>Ray 2.x / Ray Data</strong> – distributed data preprocessing, Ray Train, Tune, Serve integration</li>
+  <li><strong>Apache Flink (PyFlink)</strong> – stateful stream processing for real-time feature computation</li>
+  <li><strong>DuckDB + Ibis</strong> – DataFrame API over DuckDB/BigQuery/Snowflake with unified syntax</li>
+</ul>
+
+<hr>
+
+<h2>Data Science in the AI Era – Gen AI Integration</h2>
+<ul>
+  <li>Using LLMs for data preprocessing: entity resolution, address normalization, schema mapping</li>
+  <li>AI-powered EDA with <strong>ydata-synthetic</strong>, <strong>CTGAN</strong>, <strong>TVAE</strong> for synthetic data generation</li>
+  <li>Embedding-based feature engineering: using sentence-transformers/OpenAI embeddings as ML features</li>
+  <li><strong>Marimo</strong> – reactive Python notebooks replacing Jupyter, built for reproducible data science</li>
+  <li><strong>Julius AI / Code Interpreter</strong> – AI-assisted analysis with GPT-4 code execution</li>
+  <li>LLM judges for evaluation: using Claude/GPT to evaluate model outputs in lieu of human labels</li>
+  <li>Multimodal data science: image + tabular fusion models with Vision Transformers</li>
+</ul>
+
+<hr>
+
+<h2>Data Engineering Foundations for Data Scientists</h2>
+<ul>
+  <li><strong>Apache Airflow 2.9+</strong> – DAG authoring, dynamic tasks, TaskFlow API, Astronomer deployment</li>
+  <li><strong>Prefect 3.x</strong> – flow/task orchestration, deployments, managed workers</li>
+  <li><strong>dbt (data build tool) 1.8+</strong> – SQL models, tests, documentation, semantic layer, dbt Mesh</li>
+  <li><strong>Great Expectations / Soda</strong> – data quality validation, expectation suites, checkpoints</li>
+  <li><strong>Iceberg / Delta Lake / Hudi</strong> – ACID-compliant data lake table formats, time travel</li>
+  <li><strong>SQLMesh 0.120+</strong> – SQL-first transformation framework with state management</li>
+</ul>
+
+<hr>
+
+<h2>BI &amp; Reporting Integration</h2>
+<ul>
+  <li><strong>Tableau 2024.x</strong> – Python + R integration via TabPy/Rserve, Viz Extensions, Pulse AI</li>
+  <li><strong>Power BI (2025)</strong> – Python/R visuals, Copilot AI insights, Fabric integration, DAX optimization</li>
+  <li><strong>Apache Superset 4.x</strong> – open-source dashboards with Jinja SQL, dynamic filters</li>
+  <li><strong>Metabase 0.50+</strong> – no-code analytics, SQL editor, embedding</li>
+  <li><strong>Evidence 35+</strong> – code-driven BI with Markdown + SQL, git-native</li>
+</ul>
+
+<hr>
+
+<h2>Common Data Science Issues We Resolve</h2>
+<ul>
+  <li>Model not generalizing — diagnosing overfitting vs underfitting, learning curves, validation strategy</li>
+  <li>Feature leakage in time-series cross-validation causing unrealistically high accuracy</li>
+  <li>Class imbalance — why SMOTE hurts certain models and when to use <code>class_weight</code> instead</li>
+  <li>Pandas performance issues — vectorizing loops, using <code>.apply()</code> correctly, switching to Polars</li>
+  <li>PySpark skew — diagnosing data skew, salting keys, adaptive query execution</li>
+  <li>SHAP values not matching domain intuition — collinearity, interaction effects</li>
+  <li>Databricks job failures — notebook vs job cluster config, library conflicts, Unity Catalog permissions</li>
+  <li>XGBoost/LightGBM GPU training not using GPU — driver version, tree method config</li>
+  <li>Time series forecasting underperforming — seasonality detection, exogenous variable integration</li>
+  <li>A/B test statistical significance issues — SUTVA violations, multiple testing correction</li>
+  <li>Prophet model failing with irregular time series — regressors, custom seasonalities</li>
+  <li>MLflow logging not capturing model artifacts — flavor issues, pip environment conflicts</li>
+</ul>
+
+<hr>
+
+<h2>Who Uses Our Data Science Job Support</h2>
+<ul>
+  <li>Data scientists stuck on production ML deployments and pipeline issues</li>
+  <li>Analysts transitioning to full data science roles who need ML framework depth</li>
+  <li>ML engineers who need statistical expertise for model evaluation and causal analysis</li>
+  <li>Professionals preparing for data science interviews at top tech and finance companies</li>
+  <li>Data engineers expanding into ML feature engineering and model serving</li>
+  <li>PhD / research scientists adapting academic workflows to production data science</li>
+  <li>BI developers moving into Python-based data science and predictive analytics</li>
+</ul>
+
+<hr>
+
+<h2>Proxy Job Support for Data Scientists</h2>
+<p>Our <strong>Data Science proxy job support</strong> service provides live, hands-on help during your actual working hours — not generic advice. A senior data scientist joins your screen share session and works directly on your pandas pipeline, scikit-learn model, Spark job, or Databricks notebook alongside you. If you are stuck on a production ML issue, a feature engineering problem, or a time series model that will not converge, our <strong>proxy support</strong> resolves it in real time before your deadline.</p>
+<h3>What Data Science Proxy Support Covers</h3>
+<ul>
+  <li><strong>Live task proxy help</strong> — stuck on a Jupyter notebook, a failing XGBoost pipeline, or a PySpark skew issue? We work through it with you during your working hours</li>
+  <li><strong>Production ML proxy support</strong> — model accuracy degraded in production? We diagnose drift, data quality issues, feature distribution shifts, and schema mismatches live</li>
+  <li><strong>Databricks proxy job support</strong> — Delta Live Tables failures, Unity Catalog permission errors, MLflow model registration issues — resolved via screen share</li>
+  <li><strong>Sprint delivery proxy assistance</strong> — data science task tickets behind schedule? We pair-work with you to close deliverables before sprint end</li>
+  <li><strong>Stakeholder presentation proxy prep</strong> — help structuring SHAP explanations, causal analysis results, or A/B test findings for non-technical audiences</li>
+</ul>
+<p>Our <strong>data science proxy job support</strong> is available same-day across all major time zones — US ET/PT, UK GMT/BST, Canada EST/PST, Australia AEST, Singapore SGT, India IST.</p>
+
+<hr>
+
+<h2>Interview Proxy Support for Data Scientist Roles</h2>
+<p>Data science technical interviews in 2026 span a wide range — take-home case studies, live coding in pandas/scikit-learn/SQL, ML system design questions, statistical reasoning, A/B test design, and deep-dive discussions on causal inference and model evaluation. Our <strong>data science interview proxy support</strong> provides discreet, real-time expert guidance during your live interview session, ensuring you can demonstrate the full depth that top data science teams expect.</p>
+<h3>Data Science Interview Proxy — What We Cover</h3>
+<ul>
+  <li><strong>Live Python coding proxy help</strong> — pandas transformations, NumPy operations, scikit-learn pipeline implementations, SQL analytical queries during coding rounds</li>
+  <li><strong>ML case study proxy support</strong> — framing the problem, choosing the right model, feature engineering rationale, evaluation strategy, and business impact framing</li>
+  <li><strong>Statistical reasoning proxy assistance</strong> — hypothesis tests, confidence intervals, p-value interpretation, power analysis, Bayesian vs. frequentist framing under interview pressure</li>
+  <li><strong>A/B testing interview proxy help</strong> — experiment design, sample size calculation, SUTVA violations, novelty effects, multiple testing correction — explained clearly in real time</li>
+  <li><strong>Causal inference interview proxy</strong> — DoWhy, propensity scoring, DML, uplift modeling — guiding you through causal reasoning questions during live data science interviews</li>
+  <li><strong>ML system design proxy</strong> — recommendation systems, fraud detection pipelines, churn prediction architectures, real-time feature serving, model monitoring design</li>
+  <li><strong>XGBoost / LightGBM proxy support</strong> — hyperparameter tuning rationale, feature importance interpretation, SHAP value explanations during live technical screens</li>
+  <li><strong>Time series interview proxy</strong> — seasonality decomposition, model selection (ARIMA vs. Prophet vs. N-BEATS), forecasting evaluation metrics</li>
+</ul>
+<h3>Companies Where Our Data Science Interview Proxy Has Helped</h3>
+<p>Our <strong>data science interview proxy support</strong> has helped candidates clear technical interviews at major tech companies (Google, Meta, Amazon, Apple, Microsoft), leading fintechs and banks (Goldman Sachs, JPMorgan, Stripe, Revolut), top data science consultancies, and AI-native startups building analytics products. We calibrate proxy assistance to the exact company format — take-home assignment debrief, live HackerRank session, or multi-round interview panel.</p>
+<h3>How Data Science Interview Proxy Works</h3>
+<ol>
+  <li>Message us on WhatsApp with your interview details — company, role, date, tech focus (Python, SQL, ML, stats)</li>
+  <li>Expert matching — data scientist with relevant domain experience (fintech, e-commerce, healthcare, SaaS)</li>
+  <li>Pre-interview briefing — alignment on your background and the specific data science interview format</li>
+  <li>Real-time <strong>proxy interview assistance</strong> during your live session — discreet expert guidance as questions come</li>
+  <li>Post-interview prep for follow-up rounds, offer negotiation, or alternative opportunities</li>
+</ol>
+
+<hr>
+
+<h2>Get Data Science Proxy Job Support or Interview Proxy Help Now</h2>
+<p>Live <strong>proxy job support</strong> and <strong>interview proxy assistance</strong> for data scientists — from pandas and scikit-learn debugging to causal inference interview coaching and Databricks production fixes. Same-day start. All time zones.</p>
+<p><a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20Data%20Science%20proxy%20job%20support%20or%20interview%20proxy%20help">WhatsApp for Proxy Support Now</a> · <a href="/agentic-ai-ml-job-support/">Agentic AI &amp; ML Support</a> · <a href="/python-job-support/">Python Job Support</a> · <a href="/proxy-interview-support/">Proxy Interview Support</a> · <a href="/databases-data-platforms-job-support/">Databases &amp; Data Platforms</a></p>
