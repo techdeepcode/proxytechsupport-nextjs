@@ -467,10 +467,8 @@ export default function HeroHomeSplit() {
           }
           .hero-gis-strip {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem 0.85rem;
+            flex-direction: column;
+            gap: 0.65rem;
             margin: 0 0 1.1rem;
             padding: 0.65rem 0.95rem;
             border-radius: 12px;
@@ -483,6 +481,14 @@ export default function HeroHomeSplit() {
             box-shadow:
               0 2px 8px rgba(var(--pts-forest-rgb), 0.08),
               inset 0 1px 0 rgba(255,255,255,0.8);
+          }
+          @media (min-width: 540px) {
+            .hero-gis-strip {
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              gap: 0.5rem 0.85rem;
+            }
           }
           .hero-gis-inner {
             display: flex;
@@ -511,11 +517,12 @@ export default function HeroHomeSplit() {
           .hero-gis-action {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.4rem;
             flex-shrink: 0;
-            padding: 0.38rem 0.85rem;
+            padding: 0.5rem 0.85rem;
             border-radius: 999px;
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             font-weight: 700;
             color: #fff;
             background: var(--pts-forest);
@@ -525,6 +532,9 @@ export default function HeroHomeSplit() {
             transition: background-color 0.15s ease;
           }
           .hero-gis-action:hover { background: #166534; color: #fff; }
+          @media (max-width: 539px) {
+            .hero-gis-action { width: 100%; }
+          }
 
           /* ── Mobile hero overrides (≤768px) ── */
           @media (max-width: 768px) {
