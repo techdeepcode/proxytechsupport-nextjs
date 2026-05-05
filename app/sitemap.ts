@@ -21,11 +21,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const [posts, interviews] = await Promise.all([getAllPosts(), getAllInterviews()]);
 
+  const getInterviewScheduledRoutes: MetadataRoute.Sitemap = [
+    { url: `${BASE}/get-interview-scheduled/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
+    { url: `${BASE}/get-interview-scheduled-usa/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
+    { url: `${BASE}/get-interview-scheduled-uk/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
+    { url: `${BASE}/get-interview-scheduled-canada/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
+    { url: `${BASE}/get-interview-scheduled-australia/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
+    { url: `${BASE}/get-interview-scheduled-ireland/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-germany/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-netherlands/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-sweden/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-denmark/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-finland/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-norway/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-switzerland/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-austria/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-belgium/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-spain/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-portugal/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-new-zealand/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-singapore/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled-hong-kong/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+  ];
+
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE}/`, lastModified: today, changeFrequency: 'weekly', priority: prio('1.0') },
     { url: `${BASE}/blog/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
     { url: `${BASE}/interviews/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
     { url: `${BASE}/technologies/`, lastModified: today, changeFrequency: 'monthly', priority: prio('0.3') },
+    ...getInterviewScheduledRoutes,
     ...allLandingPages.map((p) => ({
       url: p.canonical,
       lastModified: today,

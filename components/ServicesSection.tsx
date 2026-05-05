@@ -91,7 +91,7 @@ export default function ServicesSection() {
             Career <span className="pts-landing-title__accent">Support</span> Services
           </h2>
           <p style={{ color: 'var(--pts-text-muted)', fontSize: '1rem', lineHeight: 1.65, maxWidth: '100%' }}>
-            From resume optimization to interview success — we support developers and IT professionals at every stage of their job search.
+            From profile engineering to interview success — we support developers and IT professionals at every stage of their job search journey.
           </p>
         </div>
 

@@ -41,15 +41,15 @@ export type CareerServiceIconId = 'document' | 'chat';
 export const careerServices = [
   {
     id: 'resume',
-    title: 'Resume + LinkedIn Optimization',
+    title: 'Profile Engineering + LinkedIn Optimization',
     description:
-      'ATS-optimized resumes and LinkedIn profiles crafted by industry experts to maximize your visibility to recruiters and hiring managers.',
+      'We do not offer basic profile writing. We focus on profile engineering and recruiter visibility optimization to help professionals get interview calls. Industry-specific positioning crafted to maximize your visibility to recruiters and hiring managers.',
     icon: 'document' as CareerServiceIconId,
     features: [
-      'ATS-friendly resume formatting',
-      'Keyword optimization for your domain',
-      'LinkedIn headline & summary rewrite',
-      'Profile visibility improvements',
+      'Industry-specific profile positioning',
+      'High-intent keyword alignment for your domain',
+      'LinkedIn headline & summary engineering',
+      'Recruiter visibility optimization',
     ],
   },
   {
@@ -68,7 +68,7 @@ export const careerServices = [
 ];
 
 export const careerFlowSteps = [
-  { id: 'resume', label: 'Resume Builder / Optimization', icon: 'editDoc' as const },
+  { id: 'resume', label: 'Profile Engineering / Optimization', icon: 'editDoc' as const },
   { id: 'linkedin', label: 'LinkedIn Optimization', icon: 'linkedin' as const },
   { id: 'mentoring', label: 'Interview Mentoring', icon: 'mentoring' as const },
   { id: 'proxy', label: 'Live Interview Proxy During Call', icon: 'headset' as const },

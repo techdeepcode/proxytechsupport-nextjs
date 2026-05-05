@@ -9,6 +9,7 @@ import Stats from '@/components/Stats';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import ContactCTA from '@/components/ContactCTA';
+import GetInterviewScheduledSection from '@/components/GetInterviewScheduledSection';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import HomeStructuredData from '@/components/HomeStructuredData';
@@ -60,6 +61,7 @@ export default function HomePage() {
         <HowItWorks />
         <Stats />
         <Testimonials />
+        <GetInterviewScheduledSection />
         <FAQ />
         <ContactCTA />
       </main>

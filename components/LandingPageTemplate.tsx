@@ -673,6 +673,7 @@ export default function LandingPageTemplate({ config }: Props) {
           <div className="lp-inner">
             <p className="lp-related-label">Related Services &amp; Pages</p>
             <div className="lp-related-row">
+              <a href="/get-interview-scheduled/" className="lp-related-link">Get Interview Scheduled</a>
               {config.relatedLinks.geoLinks.map((l) => (
                 <a key={l.href} href={l.href} className="lp-related-link">{l.label}</a>
               ))}
@@ -699,6 +700,7 @@ export default function LandingPageTemplate({ config }: Props) {
             <p className="lp-related-label">Explore More Services</p>
             <div className="lp-related-row">
               {[
+                { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
                 { label: 'Interview Questions', href: '/interviews/' },
                 { label: 'Agentic AI & RAG Support', href: '/agentic-ai-rag-mlops-job-support-usa/' },
                 ...jobSupportLinks,

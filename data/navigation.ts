@@ -47,17 +47,25 @@ export const allLocationLinks = [
   { label: 'Job Support New Zealand', href: '/job-support-newzealand/' },
 ];
 
+// ─── Interview nav links (used in Navbar Interview dropdown) ─────────────────
+
+export const interviewNavLinks = [
+  { label: 'Interview Proxy', href: '/proxy-interview-support/' },
+  { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+  { label: 'Interview Questions', href: '/interviews/' },
+];
+
 // ─── Main navigation ────────────────────────────────────────────────────────
 
 /**
  * Main nav items. `dropdownType` signals the Navbar to render a dropdown.
- * The Navbar imports jobSupportLinks / locationNavLinks directly.
+ * The Navbar imports jobSupportLinks / locationNavLinks / interviewNavLinks directly.
  */
 export const mainNavLinks = [
   { label: 'Home', href: '/' },
   { label: 'Job Support', href: '#', dropdownType: 'jobSupport' as const },
   { label: 'Locations', href: '#', dropdownType: 'locations' as const },
-  { label: 'Interview Questions', href: '/interviews/' },
+  { label: 'Interview', href: '#', dropdownType: 'interview' as const },
   { label: 'Technologies', href: '/#tech' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/#contact' },

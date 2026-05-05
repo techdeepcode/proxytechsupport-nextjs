@@ -4,7 +4,7 @@ import { useState, useEffect, useLayoutEffect, useRef, type CSSProperties } from
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
-import { mainNavLinks, jobSupportLinks, locationNavLinks } from '@/data/navigation';
+import { mainNavLinks, jobSupportLinks, locationNavLinks, interviewNavLinks } from '@/data/navigation';
 import { SITE_NAME } from '@/lib/site-seo';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
@@ -43,9 +43,10 @@ export default function Navbar({ variant = 'light' }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   /** Measured from TopBar + nav (px). Fixed 7rem was wrong when TopBar wraps → gap + short panel on iOS. */
   const [mobileMenuTopPx, setMobileMenuTopPx] = useState<number | null>(null);
-  const [openDropdown, setOpenDropdown] = useState<'jobSupport' | 'locations' | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<'jobSupport' | 'locations' | 'interview' | null>(null);
   const [mobileJobOpen, setMobileJobOpen] = useState(false);
   const [mobileLocOpen, setMobileLocOpen] = useState(false);
+  const [mobileInterviewOpen, setMobileInterviewOpen] = useState(false);
 
   const dark = variant === 'legacyDark';
 
@@ -290,6 +291,59 @@ export default function Navbar({ variant = 'light' }: Props) {
                   {openDropdown === 'locations' && (
                     <div style={{ ...dropdownPanel, minWidth: '220px' }}>
                       {locationNavLinks.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          style={dropdownLink}
+                          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pts-section-alt)'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            /* ── Interview dropdown ── */
+            if (link.dropdownType === 'interview') {
+              return (
+                <div
+                  key={link.label}
+                  style={{ position: 'relative' }}
+                  onMouseEnter={() => setOpenDropdown('interview')}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <button
+                    type="button"
+                    className="nav-interview-btn"
+                    style={{
+                      background: 'transparent',
+                      border: '1.5px solid var(--pts-forest)',
+                      cursor: 'pointer',
+                      padding: '0.38rem 0.9rem',
+                      fontSize: '0.86rem',
+                      fontWeight: 600,
+                      color: dark ? '#ffffff' : 'var(--pts-forest)',
+                      fontFamily: 'inherit',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      borderRadius: '9999px',
+                      transition: 'background 0.2s, color 0.2s',
+                    }}
+                  >
+                    <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                    {link.label}
+                    <ChevronDown />
+                  </button>
+                  {openDropdown === 'interview' && (
+                    <div style={{ ...dropdownPanel, minWidth: '240px' }}>
+                      {interviewNavLinks.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
@@ -591,9 +645,78 @@ export default function Navbar({ variant = 'light' }: Props) {
             )}
           </div>
 
+          {/* Interview accordion */}
+          <div style={{ borderBottom: '1px solid var(--pts-border)' }}>
+            <button
+              type="button"
+              onClick={() => setMobileInterviewOpen(!mobileInterviewOpen)}
+              style={{
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0.65rem 0',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                fontSize: '0.92rem',
+                fontWeight: 600,
+                color: dark ? '#ffffff' : 'var(--pts-forest)',
+              }}
+              aria-expanded={mobileInterviewOpen}
+            >
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span
+                  style={{
+                    border: '1.5px solid var(--pts-forest)',
+                    borderRadius: '9999px',
+                    padding: '0.2rem 0.75rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                    fontSize: '0.86rem',
+                    color: dark ? '#ffffff' : 'var(--pts-forest)',
+                  }}
+                >
+                  Interview
+                </span>
+              </span>
+              <span
+                style={{
+                  color: dark ? '#ffffff' : 'var(--pts-text-muted)',
+                  fontSize: '0.8rem',
+                  transform: mobileInterviewOpen ? 'rotate(180deg)' : 'none',
+                  transition: 'transform 0.2s',
+                }}
+              >
+                ▾
+              </span>
+            </button>
+            {mobileInterviewOpen && (
+              <div style={{ paddingBottom: '0.5rem' }}>
+                {interviewNavLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    style={{
+                      display: 'block',
+                      padding: '0.38rem 0 0.38rem 0.85rem',
+                      fontSize: '0.875rem',
+                      color: dark ? 'rgba(255,255,255,0.88)' : 'var(--pts-text-muted)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Remaining plain links */}
           {[
-            { label: 'Interview Questions', href: '/interviews/' },
             { label: 'Technologies', href: '/#tech' },
             { label: 'Blog', href: '/blog/' },
             { label: 'Contact', href: '/#contact' },
@@ -663,6 +786,10 @@ export default function Navbar({ variant = 'light' }: Props) {
           background: var(--pts-accent-hover) !important;
         }
         .nav-locations-btn:hover {
+          background: var(--pts-forest) !important;
+          color: #ffffff !important;
+        }
+        .nav-interview-btn:hover {
           background: var(--pts-forest) !important;
           color: #ffffff !important;
         }
