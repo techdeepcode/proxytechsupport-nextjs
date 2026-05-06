@@ -100,12 +100,12 @@ function geoFaqs(country: string, timezone: string): LandingFaqItem[] {
     {
       question: 'How quickly can I get started?',
       answer:
-        'In most cases we can start the same day you contact us. Since we maintain an in-house expert pool with no sub-contracting, there is no onboarding delay. Reach out on WhatsApp and we will discuss your requirements and assign the right expert immediately.',
+        'In most cases we can start the same day you contact us. Since we maintain an in-house expert team with no sub-contracting, there is no onboarding delay. Reach out on WhatsApp and we will discuss your requirements and assign the right in-house expert immediately.',
     },
     {
       question: 'Do you provide proxy interview support — real-time guidance during live interviews?',
       answer:
-        `Yes. Our proxy interview support service provides real-time, discreet guidance during your live technical interview. Our expert joins your session and helps you think through coding problems, structure system design answers, and handle pressure rounds — giving you the confidence to perform at your best. This service has helped 1000+ developers land roles across ${country}, USA, UK, and globally.`,
+        `Yes. Our proxy interview support service provides real-time, discreet guidance during your live technical interview. Our in-house expert joins your session and helps you think through coding problems, structure system design answers, and handle pressure rounds — giving you the confidence to perform at your best. This service has helped 1000+ developers land roles across ${country}, USA, UK, and globally.`,
     },
     {
       question: 'Is the service confidential?',
@@ -141,7 +141,7 @@ function techFaqs(tech: string, examples: string): LandingFaqItem[] {
     {
       question: 'How do I get started?',
       answer:
-        'Message us on WhatsApp or call us. Share your technology stack and current challenge. We will match you with the right expert and you can be up and running the same day.',
+        'Message us on WhatsApp or call us. Share your technology stack and current challenge. We will assign the right in-house expert to your case and you can be up and running the same day.',
     },
   ];
 }
@@ -873,6 +873,231 @@ export const devopsJobSupportUSA: LandingPageConfig = {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+export const dotnetJobSupportUSA: LandingPageConfig = {
+  slug: 'dotnet-job-support-usa',
+  title: '.NET Job Support & Proxy Interview Help USA',
+  description:
+    'Struggling with .NET in the USA? Get real-time in-house expert help for C#, ASP.NET Core, Entity Framework & Azure. Proxy interview support for .NET roles. Same-day start.',
+  canonical: `${BASE_URL}/dotnet-job-support-usa/`,
+  keywords: [
+    '.NET job support USA', 'C# job support USA', 'ASP.NET Core support USA',
+    '.NET proxy interview support', '.NET developer support USA', 'Entity Framework job support',
+    'Azure .NET support', '.NET interview help USA', 'C# developer USA support',
+  ],
+  h1: '.NET Job Support & Proxy Interview Assistance USA',
+  tagline: 'Live C#, ASP.NET Core, and Azure support for .NET developers in USA — plus in-house expert proxy interview coaching for .NET and Microsoft stack roles.',
+  painIntro:
+    'Struggling with your .NET project in the USA? ASP.NET Core middleware issues, Entity Framework query performance, Azure deployment failures, or a .NET technical interview coming up — our in-house .NET specialists are available to jump in immediately.',
+  heroVariant:
+    '.NET and the Microsoft technology stack remain dominant across US enterprises — from banking and insurance platforms to cloud-native Azure microservices at Fortune 500 companies. Whether you are fighting ASP.NET Core configuration issues, Entity Framework migration failures, Azure DevOps pipeline breakdowns, or preparing for a senior .NET developer interview at a US company, our in-house .NET experts provide real-time job support during your working hours and live proxy interview guidance when the pressure is highest.',
+  geoLine: 'Serving .NET developers across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
+  timezoneNote: 'Available during all US time zones: EST, CST, MST, and PST.',
+  techSnippet: 'Our .NET experts cover C#, ASP.NET Core, Entity Framework Core, Blazor, MAUI, SignalR, Azure, SQL Server, microservices, REST APIs, and CQRS/MediatR patterns.',
+  highlights: [
+    {
+      title: 'ASP.NET Core & C# Support',
+      description: 'Real-time help with ASP.NET Core, C#, Entity Framework Core, Web APIs, SignalR, Blazor, dependency injection, middleware pipelines, and authentication flows.',
+    },
+    {
+      title: '.NET Proxy Interview Coaching',
+      description: 'Live guidance during .NET technical interviews — C# deep dives, ASP.NET Core architecture, SOLID principles, system design, and Azure-specific interview questions.',
+    },
+    {
+      title: '.NET Azure & Cloud Support',
+      description: 'Azure App Service, Azure Functions, Azure SQL, Service Bus, AKS, and Azure DevOps — expert help when your cloud-based .NET systems hit issues.',
+    },
+  ],
+  faqs: techFaqs('.NET', 'C#, ASP.NET Core, Entity Framework, Azure, SQL Server, microservices, and REST APIs'),
+  useCasesSection: {
+    title: 'Common .NET Situations We Help With',
+    cases: [
+      'Debugging ASP.NET Core middleware pipeline and dependency injection configuration issues',
+      'Fixing Entity Framework Core migration failures, N+1 queries, and transaction problems',
+      'Resolving Azure deployment failures, App Service configuration, and pipeline errors',
+      'Handling C# async/await deadlocks, memory leaks, and performance bottlenecks in production',
+      'Preparing for senior .NET developer interviews at US banks, insurers, and tech firms',
+      'Real-time proxy interview guidance during live .NET system design and coding rounds',
+    ],
+  },
+  proxySection: {
+    title: '.NET Proxy Interview Support — Live Interview Guidance',
+    intro:
+      '.NET technical interviews at US companies are demanding — covering C# internals, ASP.NET Core architecture, SOLID design, Azure cloud patterns, and distributed systems. Our in-house .NET experts provide real-time, discreet guidance during your live interview so you can demonstrate the depth US hiring teams expect.',
+    points: [
+      'Live guidance during C# coding rounds — LINQ, async/await, generics, and OOP patterns',
+      'Real-time support during ASP.NET Core architecture and system design discussions',
+      'Help explaining Entity Framework, CQRS, MediatR, and clean architecture in interviews',
+      'Mock .NET interview sessions calibrated to US enterprise, banking, and cloud-first formats',
+      'On-the-job .NET job support for US-client project delivery and Azure production coverage',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in USA', href: '/job-support-usa/' },
+      { label: 'IT job support in UK', href: '/job-support-uk/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const reactJobSupportUSA: LandingPageConfig = {
+  slug: 'react-job-support-usa',
+  title: 'React Job Support & Proxy Interview Help USA',
+  description:
+    'Struggling with React in the USA? Get real-time in-house expert help for React, Redux, Next.js, TypeScript & AWS. Proxy interview support for React/frontend roles. Same-day start.',
+  canonical: `${BASE_URL}/react-job-support-usa/`,
+  keywords: [
+    'React job support USA', 'React developer support USA', 'Next.js job support USA',
+    'React proxy interview support', 'React interview help USA', 'Redux job support',
+    'TypeScript React support USA', 'frontend job support USA', 'React developer USA',
+  ],
+  h1: 'React Job Support & Proxy Interview Assistance USA',
+  tagline: 'Live React, Next.js, and TypeScript support for frontend developers in USA — plus in-house expert proxy interview coaching for React and frontend roles.',
+  painIntro:
+    'Is your React project causing you stress? State management nightmares, Next.js rendering confusion, TypeScript errors you cannot decode, or a frontend technical interview at a US company coming up — our in-house React specialists will jump in immediately.',
+  heroVariant:
+    'React dominates frontend engineering at US companies — from high-traffic consumer applications at FAANG to enterprise dashboards at Fortune 500 firms. Whether you are wrestling with Next.js App Router complexity, Redux Toolkit state management issues, React performance bottlenecks, or preparing for a senior frontend interview at a US tech company, our in-house React experts provide real-time job support during your working hours and live proxy interview guidance when you need it most.',
+  geoLine: 'Serving React developers across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
+  timezoneNote: 'Available during all US time zones: EST, CST, MST, and PST.',
+  techSnippet: 'Our React experts cover React 18+, Next.js, TypeScript, Redux Toolkit, React Query, Zustand, Vite, Webpack, GraphQL, REST APIs, and AWS/Vercel deployments.',
+  highlights: [
+    {
+      title: 'React & Next.js Support',
+      description: 'Real-time help with React hooks, component architecture, Next.js App Router, server components, TypeScript, state management, and rendering performance issues.',
+    },
+    {
+      title: 'React Proxy Interview Coaching',
+      description: 'Live guidance during frontend technical interviews — React internals, virtual DOM, hooks deep dives, performance optimization, and system design for frontend.',
+    },
+    {
+      title: 'Frontend Performance & Deployment',
+      description: 'Bundle optimization, lazy loading, Core Web Vitals fixes, Vercel and AWS deployments, and CI/CD pipeline issues for React applications — resolved fast.',
+    },
+  ],
+  faqs: techFaqs('React', 'Next.js, TypeScript, Redux Toolkit, React Query, Vite, GraphQL, and frontend system design'),
+  useCasesSection: {
+    title: 'Common React Situations We Help With',
+    cases: [
+      'Debugging React hooks dependency issues, stale closures, and infinite re-render loops',
+      'Fixing Next.js hydration errors, App Router data fetching problems, and SSR/CSR mismatches',
+      'Resolving Redux Toolkit state management and selector performance issues',
+      'Handling React application performance — bundle size, code splitting, and memoization',
+      'Preparing for senior React/frontend interviews at US FAANG, startups, and enterprise companies',
+      'Real-time proxy interview guidance during live React system design and coding rounds',
+    ],
+  },
+  proxySection: {
+    title: 'React Proxy Interview Support — Live Interview Guidance',
+    intro:
+      'Frontend and React interviews at US companies are rigorous — testing React internals, performance patterns, TypeScript expertise, system design, and browser fundamentals. Our in-house React experts provide real-time, discreet guidance during your live interview so you can demonstrate the frontend depth US engineering teams demand.',
+    points: [
+      'Live guidance during React coding rounds — hooks, closures, async patterns, and DOM manipulation',
+      'Real-time support during frontend system design and component architecture discussions',
+      'Help explaining virtual DOM, reconciliation, fiber architecture, and rendering strategies',
+      'Mock React interview sessions calibrated to FAANG, US startup, and enterprise frontend formats',
+      'On-the-job React job support for US-client product delivery and production bug coverage',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in USA', href: '/job-support-usa/' },
+      { label: 'IT job support in UK', href: '/job-support-uk/' },
+    ],
+    techLinks: [
+      { label: 'Node.js job support USA', href: '/nodejs-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const cloudJobSupportUSA: LandingPageConfig = {
+  slug: 'cloud-job-support-usa',
+  title: 'Cloud Job Support & Proxy Interview Help USA',
+  description:
+    'Struggling with Cloud in the USA? Real-time in-house expert help for AWS, Azure, GCP, Terraform, Kubernetes & cloud architecture. Proxy interview support for cloud engineer roles.',
+  canonical: `${BASE_URL}/cloud-job-support-usa/`,
+  keywords: [
+    'cloud job support USA', 'AWS job support USA', 'Azure job support USA',
+    'GCP job support USA', 'cloud engineer support USA', 'Terraform job support USA',
+    'cloud architect support USA', 'cloud proxy interview support', 'cloud interview help USA',
+  ],
+  h1: 'Cloud Job Support & Proxy Interview Assistance USA',
+  tagline: 'Live AWS, Azure, GCP, and Terraform support for cloud engineers in USA — plus in-house expert proxy interview coaching for cloud architect and cloud engineer roles.',
+  painIntro:
+    'Is your cloud infrastructure causing problems? AWS EKS issues, Azure networking failures, GCP permissions errors, Terraform state drift, or a cloud architect interview at a US company coming up — our in-house cloud engineers are available 24/7 to resolve critical issues.',
+  heroVariant:
+    'Cloud engineering is one of the most in-demand and highest-paying disciplines in US tech. AWS, Azure, and GCP skills are required at virtually every US company — from FAANG to Fortune 500 to cloud-native startups. Whether you are managing a production AWS incident at 3 AM, building Terraform modules for a complex multi-account setup, troubleshooting Azure networking, or preparing for a cloud architect interview at a US company, our in-house cloud engineers provide real-time job support and live proxy interview guidance around the clock.',
+  geoLine: 'Serving cloud engineers across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
+  timezoneNote: 'Available 24/7 — essential for US cloud on-call engineers and cloud architects.',
+  techSnippet: 'Our cloud experts cover AWS (EC2, EKS, Lambda, RDS, S3, IAM, VPC), Azure (AKS, App Service, Functions, SQL, AD), GCP (GKE, Cloud Run, BigQuery), Terraform, and Kubernetes.',
+  highlights: [
+    {
+      title: 'AWS, Azure & GCP Support',
+      description: 'Real-time help with AWS, Azure, and GCP infrastructure — compute, networking, storage, IAM, databases, serverless, and production incident resolution.',
+    },
+    {
+      title: 'Cloud Proxy Interview Coaching',
+      description: 'Live guidance during cloud architect and cloud engineer interviews — well-architected framework, cost optimization, security, high availability, and cloud design patterns.',
+    },
+    {
+      title: 'Terraform & IaC Support',
+      description: 'Terraform state management, module design, plan/apply failures, Terragrunt, and infrastructure-as-code best practices for multi-account AWS and Azure environments.',
+    },
+  ],
+  faqs: techFaqs('Cloud', 'AWS, Azure, GCP, Terraform, Kubernetes, serverless, IAM, VPC, and cloud architecture'),
+  useCasesSection: {
+    title: 'Common Cloud Situations We Help With',
+    cases: [
+      'Resolving AWS EKS cluster failures, node group scaling issues, and Kubernetes networking problems',
+      'Fixing Azure AD authentication failures, networking misconfiguration, and AKS deployment issues',
+      'Debugging Terraform state lock, import errors, provider version conflicts, and drift issues',
+      'Handling AWS IAM permission boundary errors, cross-account access, and SCP misconfigurations',
+      'Preparing for cloud architect certification interviews and cloud engineer roles at US companies',
+      'Real-time proxy interview guidance during live cloud architecture and design interviews',
+    ],
+  },
+  proxySection: {
+    title: 'Cloud Proxy Interview Support — Live Interview Guidance',
+    intro:
+      'Cloud architect and cloud engineer interviews at US companies test deep knowledge of infrastructure design, security, cost optimization, and real-world production experience. Our in-house cloud experts provide real-time, discreet guidance during your live interview so you can demonstrate the cloud architecture depth US hiring teams demand.',
+    points: [
+      'Live guidance during cloud architecture design discussions — VPC, IAM, multi-region, HA',
+      'Real-time support during Terraform, IaC, and infrastructure design interview questions',
+      'Help explaining AWS Well-Architected Framework, Azure landing zones, and GCP best practices',
+      'Mock cloud architect interview sessions for AWS SA, Azure Solutions Architect, and GCP roles',
+      'On-call cloud job support for US production environments — 24/7 AWS, Azure, and GCP coverage',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in USA', href: '/job-support-usa/' },
+      { label: 'IT job support in UK', href: '/job-support-uk/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Agentic AI & ML job support USA', href: '/agentic-ai-ml-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const agenticAiRagMlopsJobSupportUSA: LandingPageConfig = {
   slug: 'agentic-ai-rag-mlops-job-support-usa',
   title:
@@ -952,7 +1177,7 @@ export const agenticAiRagMlopsJobSupportUSA: LandingPageConfig = {
     {
       question: 'How fast can I get Agentic AI or RAG support?',
       answer:
-        'Most engagements start the same day you reach out. Share your stack, repo or error context, and time zone — we match you with an AI/ML expert who has shipped similar systems.',
+        'Most engagements start the same day you reach out. Share your stack, repo or error context, and time zone — our in-house AI/ML expert who has shipped similar systems is ready to assist.',
     },
     {
       question: 'Is this only for USA, or also UK, Canada, and remote global teams?',
@@ -1041,12 +1266,12 @@ export const interviewSupportGlobal: LandingPageConfig = {
     {
       question: 'What is proxy interview support — and how does it work?',
       answer:
-        'Proxy interview support means our expert joins your live technical interview session in real-time and provides discreet guidance — helping you think through coding problems, structure system design answers, and handle pressure questions with confidence. The process is completely confidential and has helped 1000+ developers land roles at top companies across USA, UK, Canada, and globally.',
+        'Proxy interview support means our in-house expert joins your live technical interview session in real-time and provides discreet guidance — helping you think through coding problems, structure system design answers, and handle pressure questions with confidence. The process is completely confidential and has helped 1000+ developers land roles at top companies across USA, UK, Canada, and globally.',
     },
     {
       question: 'Which technologies do you cover for interviews?',
       answer:
-        'We cover all major IT technologies: Java, Python, JavaScript, React, Angular, Node.js, .NET, AWS, Azure, DevOps, Data Science, Machine Learning, Salesforce, SAP, QA/Testing, and many more. We match you with an expert who specializes in your exact technology and interview format.',
+        'We cover all major IT technologies: Java, Python, JavaScript, React, Angular, Node.js, .NET, AWS, Azure, DevOps, Data Science, Machine Learning, Salesforce, SAP, QA/Testing, and many more. Our in-house expert specializes in your exact technology and interview format.',
     },
     {
       question: 'Do you offer mock interview sessions?',
@@ -1056,7 +1281,7 @@ export const interviewSupportGlobal: LandingPageConfig = {
     {
       question: 'Is interview support available for all countries?',
       answer:
-        'Yes. We support candidates interviewing for roles in USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand, and globally. We align with your interview time zone so you always have an expert available when your interview is scheduled.',
+        'Yes. We support candidates interviewing for roles in USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand, and globally. We align with your interview time zone so you always have an in-house expert available when your interview is scheduled.',
     },
     {
       question: 'Is this service fully confidential?',
@@ -1078,7 +1303,7 @@ export const interviewSupportGlobal: LandingPageConfig = {
   proxySection: {
     title: 'What Is Proxy Interview Support?',
     intro:
-      'Proxy interview support is real-time expert assistance during your live technical interview. Our expert joins your session and provides discreet, professional guidance — helping you navigate coding problems, structure complex system design answers, and maintain calm under pressure. This is different from interview coaching or preparation: it is live support when you need it most.',
+      'Proxy interview support is real-time in-house expert assistance during your live technical interview. Our in-house expert joins your session and provides discreet, professional guidance — helping you navigate coding problems, structure complex system design answers, and maintain calm under pressure. This is different from interview coaching or preparation: it is live support when you need it most.',
     points: [
       'Expert available in real-time during your scheduled technical interview',
       'Guidance through coding problems, algorithm thinking, and implementation steps',
@@ -1129,7 +1354,7 @@ export const strugglingInJob: LandingPageConfig = {
   highlights: [
     {
       title: 'Daily Job Support & Proxy Assistance',
-      description: 'An expert joins your working session daily — helping you write code, fix bugs, understand requirements, and deliver tasks on time.',
+      description: 'Our in-house expert joins your working session daily — helping you write code, fix bugs, understand requirements, and deliver tasks on time.',
     },
     {
       title: 'Sprint & Deadline Recovery',
@@ -1164,7 +1389,7 @@ export const strugglingInJob: LandingPageConfig = {
     {
       question: 'How quickly can you start helping me?',
       answer:
-        'Same day in most cases. Contact us on WhatsApp, describe your situation, and we will match you with the right expert immediately. No lengthy sign-up processes, no delays.',
+        'Same day in most cases. Contact us on WhatsApp, describe your situation, and our in-house expert is assigned immediately. No lengthy sign-up processes, no delays.',
     },
   ],
   useCasesSection: {
@@ -1181,7 +1406,7 @@ export const strugglingInJob: LandingPageConfig = {
   proxySection: {
     title: 'Proxy Job Support — Real-Time Expert Assistance in Your Role',
     intro:
-      'Proxy job support means having an expert available in real-time during your working hours — not just for advice, but to actively help you code, debug, and deliver. Think of it as a trusted senior developer who is always available when you are stuck, helping you perform at a level that meets or exceeds your employer\'s expectations.',
+      'Proxy job support means having an in-house expert available in real-time during your working hours — not just for advice, but to actively help you code, debug, and deliver. Think of it as a trusted senior developer who is always available when you are stuck, helping you perform at a level that meets or exceeds your employer\'s expectations.',
     points: [
       'Real-time coding assistance during your working hours — write code together, not alone',
       'Expert available during client calls or technical presentations for discreet backup',
@@ -1230,7 +1455,7 @@ export const productionIssueSupport: LandingPageConfig = {
   highlights: [
     {
       title: '24/7 Emergency Response',
-      description: 'Production does not keep business hours. Neither do we. Contact us any time and get an expert on your problem within minutes — day, night, or weekend.',
+      description: 'Production does not keep business hours. Neither do we. Contact us any time and get one of our in-house experts on your problem within minutes — day, night, or weekend.',
     },
     {
       title: 'Root Cause Analysis',
@@ -1238,14 +1463,14 @@ export const productionIssueSupport: LandingPageConfig = {
     },
     {
       title: 'All Technologies Covered',
-      description: 'Java, Node.js, Python, .NET, React, AWS, Kubernetes, databases — whatever your stack, we have an expert who has resolved similar incidents before.',
+      description: 'Java, Node.js, Python, .NET, React, AWS, Kubernetes, databases — whatever your stack, we have an in-house expert who has resolved similar incidents before.',
     },
   ],
   faqs: [
     {
       question: 'How quickly can you respond to a production emergency?',
       answer:
-        'We aim to respond within minutes. Contact us on WhatsApp for the fastest response. Once you describe the issue and share access details, we will have an expert working on it immediately — available 24/7, including weekends and holidays.',
+        'We aim to respond within minutes. Contact us on WhatsApp for the fastest response. Once you describe the issue and share access details, our in-house expert will be working on it immediately — available 24/7, including weekends and holidays.',
     },
     {
       question: 'What production issues do you handle?',
@@ -1284,11 +1509,11 @@ export const productionIssueSupport: LandingPageConfig = {
     intro:
       'Sometimes a production issue is beyond what one developer can resolve alone — especially under pressure with management watching. Our experts act as proxy support: joining your session, analyzing the issue alongside you, and providing the technical firepower needed to resolve it fast.',
     points: [
-      'Real-time pair debugging — an expert works alongside you throughout the incident',
+      'Real-time pair debugging — our in-house expert works alongside you throughout the incident',
       'Calm, structured incident response to keep you focused and effective under pressure',
       'Post-resolution root cause analysis and documentation support',
       'Available 24/7 across USA, UK, Canada, Australia, Europe, Singapore, and New Zealand',
-      'No SLA delays — direct contact via WhatsApp for immediate expert assignment',
+      'No SLA delays — direct contact via WhatsApp for immediate in-house expert deployment',
     ],
   },
   relatedLinks: {
@@ -1356,7 +1581,7 @@ export const failedInterviewHelp: LandingPageConfig = {
     {
       question: 'Can you provide live proxy support during my next interview?',
       answer:
-        'Yes. Our proxy interview support service provides real-time, discreet guidance during your next live interview. Our expert will be available throughout your session, helping you navigate coding problems, structure system design answers, and maintain composure under pressure.',
+        'Yes. Our proxy interview support service provides real-time, discreet guidance during your next live interview. Our in-house expert will be available throughout your session, helping you navigate coding problems, structure system design answers, and maintain composure under pressure.',
     },
     {
       question: 'What if I failed a system design interview specifically?',
@@ -1366,7 +1591,7 @@ export const failedInterviewHelp: LandingPageConfig = {
     {
       question: 'What technologies do you cover for interview recovery?',
       answer:
-        'All major IT technologies: Java, Python, JavaScript, React, Angular, Node.js, .NET, AWS, Azure, DevOps, Data Science, Machine Learning, and many more. We match you with an expert who has experience with your exact interview format and target company type.',
+        'All major IT technologies: Java, Python, JavaScript, React, Angular, Node.js, .NET, AWS, Azure, DevOps, Data Science, Machine Learning, and many more. Our in-house expert has direct experience with your exact interview format and target company type.',
     },
   ],
   useCasesSection: {
@@ -1383,7 +1608,7 @@ export const failedInterviewHelp: LandingPageConfig = {
   proxySection: {
     title: 'Live Proxy Interview Support for Your Next Attempt',
     intro:
-      'After recovering through preparation, many of our clients choose to have an expert in their corner during the actual next interview — providing real-time proxy support to ensure they perform at their absolute best when it counts.',
+      'After recovering through preparation, many of our clients choose to have our in-house expert in their corner during the actual next interview — providing real-time proxy support to ensure they perform at their absolute best when it counts.',
     points: [
       'Expert available in real-time during your next scheduled technical interview',
       'Live guidance through coding problems, algorithm selection, and implementation',
@@ -1425,9 +1650,9 @@ export const proxyInterviewSupport: LandingPageConfig = {
   h1: 'Proxy Interview Support – Real-Time Expert Guidance During Your Live IT Interview',
   tagline: 'A trusted expert in your corner during every technical interview — coding rounds, system design, and behavioral sessions.',
   painIntro:
-    'Every developer has faced that moment — the interview question you did not expect, the algorithm you almost remember, the system design you can visualize but cannot articulate. Our proxy interview support puts an expert beside you in real-time when it matters most.',
+    'Every developer has faced that moment — the interview question you did not expect, the algorithm you almost remember, the system design you can visualize but cannot articulate. Our proxy interview support puts an in-house expert beside you in real-time when it matters most.',
   heroVariant:
-    'Proxy interview support means our expert is available in real-time during your scheduled technical interview — providing discreet, professional guidance as you navigate coding problems, system design discussions, and behavioral rounds. This is not interview coaching (though we offer that too) — this is live expert presence during the actual interview, helping you demonstrate your true capability under pressure. Our service has helped 1000+ developers across USA, UK, Canada, Australia, Europe, and Singapore land roles they would not have landed alone.',
+    'Proxy interview support means our in-house expert is available in real-time during your scheduled technical interview — providing discreet, professional guidance as you navigate coding problems, system design discussions, and behavioral rounds. This is not interview coaching (though we offer that too) — this is live in-house expert presence during the actual interview, helping you demonstrate your true capability under pressure. Our service has helped 1000+ developers across USA, UK, Canada, Australia, Europe, and Singapore land roles they would not have landed alone.',
   geoLine: 'Proxy interview support available globally — USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
   timezoneNote: 'Available across all time zones — we align with your scheduled interview time.',
   techSnippet: 'Proxy interview support for Java, Python, React, Node.js, AWS, DevOps, Data Science, .NET, and 50+ other IT technology interview formats.',
@@ -1449,17 +1674,17 @@ export const proxyInterviewSupport: LandingPageConfig = {
     {
       question: 'What exactly is proxy interview support?',
       answer:
-        'Proxy interview support is a service where our expert is available in real-time during your live technical interview. They provide discreet guidance — helping you think through coding problems, structure system design answers, and handle pressure questions. The process is fully confidential and has helped thousands of developers worldwide land their target roles.',
+        'Proxy interview support is a service where our in-house expert is available in real-time during your live technical interview. They provide discreet guidance — helping you think through coding problems, structure system design answers, and handle pressure questions. The process is fully confidential and has helped thousands of developers worldwide land their target roles.',
     },
     {
       question: 'How does the real-time guidance work during my interview?',
       answer:
-        'You connect with our expert before your interview. During the interview, our expert is available via a secondary channel — they can see what you see and provide real-time hints, guidance, and suggestions. The exact setup depends on your interview format (video call, online IDE, etc.) and we will discuss the specifics when you contact us.',
+        'You connect with our in-house expert before your interview. During the interview, our in-house expert is available via a secondary channel — they can see what you see and provide real-time hints, guidance, and suggestions. The exact setup depends on your interview format (video call, online IDE, etc.) and we will discuss the specifics when you contact us.',
     },
     {
       question: 'Is this service available for all technology stacks?',
       answer:
-        'Yes. We provide proxy interview support for Java, Python, React, Angular, Node.js, .NET, AWS, Azure, DevOps, Data Science, Machine Learning, Salesforce, and 50+ other technologies. We match you with an expert who has been through the exact type of interview process you are facing.',
+        'Yes. We provide proxy interview support for Java, Python, React, Angular, Node.js, .NET, AWS, Azure, DevOps, Data Science, Machine Learning, Salesforce, and 50+ other technologies. Our in-house expert has been through the exact type of interview process you are facing.',
     },
     {
       question: 'Do you also offer job support alongside interview support?',
@@ -1489,7 +1714,7 @@ export const proxyInterviewSupport: LandingPageConfig = {
       'We keep the process simple, professional, and confidential. From your first contact to post-interview debrief, our goal is to give you the best possible chance of landing the role.',
     points: [
       'Contact us via WhatsApp — share your interview date, company type, and technology stack',
-      'We match you with an expert who specializes in your exact interview format',
+      'Our in-house expert specializes in your exact interview format',
       'Pre-interview briefing to align on your background, target role, and expected questions',
       'Real-time expert availability during your live interview for discreet guidance',
       'Post-interview debrief to assess performance and prepare for any follow-up rounds',
@@ -1524,9 +1749,9 @@ export const proxyJobSupport: LandingPageConfig = {
     'job support developer', 'proxy coding support',
   ],
   h1: 'Proxy Job Support – Real-Time Expert Help During Your IT Working Hours',
-  tagline: 'An expert developer working alongside you during your working hours — so you always deliver, always perform.',
+  tagline: 'Our in-house expert developer working alongside you during your working hours — so you always deliver, always perform.',
   painIntro:
-    'Proxy job support means having a senior expert available in real-time during your working hours — helping you code, debug, deliver, and perform at a level that meets your employer\'s expectations.',
+    'Proxy job support means having a senior in-house expert available in real-time during your working hours — helping you code, debug, deliver, and perform at a level that meets your employer\'s expectations.',
   heroVariant:
     'Whether you are new to a role, working with an unfamiliar technology stack, managing too many tasks, or simply dealing with a technically demanding project that is beyond your current experience level — proxy job support provides the expert backup you need to succeed. Our in-house developers work alongside you during your US, UK, Canadian, Australian, or European working hours, ensuring you always have expert firepower when you need it most.',
   geoLine: 'Proxy job support available for developers across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
@@ -1535,7 +1760,7 @@ export const proxyJobSupport: LandingPageConfig = {
   highlights: [
     {
       title: 'Real-Time Coding Assistance',
-      description: 'An expert writes code alongside you, helps debug complex issues, and ensures your daily deliverables always meet quality expectations.',
+      description: 'Our in-house expert writes code alongside you, helps debug complex issues, and ensures your daily deliverables always meet quality expectations.',
     },
     {
       title: 'Task & Sprint Delivery Support',
@@ -1543,7 +1768,7 @@ export const proxyJobSupport: LandingPageConfig = {
     },
     {
       title: 'Production & Emergency Backup',
-      description: 'When production breaks during your shift, our expert jumps in immediately — investigating, debugging, and resolving the incident with you.',
+      description: 'When production breaks during your shift, our in-house expert jumps in immediately — investigating, debugging, and resolving the incident with you.',
     },
   ],
   faqs: [
@@ -1555,12 +1780,12 @@ export const proxyJobSupport: LandingPageConfig = {
     {
       question: 'How is this different from regular job support?',
       answer:
-        'Proxy job support goes beyond advice — our expert actively works alongside you in real-time. We join your working session, look at your code and environment, and provide hands-on help rather than just guidance. The result is that you consistently deliver work that meets your employer\'s expectations.',
+        'Proxy job support goes beyond advice — our in-house expert actively works alongside you in real-time. We join your working session, look at your code and environment, and provide hands-on help rather than just guidance. The result is that you consistently deliver work that meets your employer\'s expectations.',
     },
     {
       question: 'Which technologies do you cover?',
       answer:
-        'We cover 50+ technologies: Java, Spring Boot, Python, Django, React, Angular, Node.js, .NET, AWS, Azure, GCP, DevOps (Docker, Kubernetes, Jenkins), Data Science, Machine Learning, Salesforce, SAP, and more. We match you with an expert in your exact stack.',
+        'We cover 50+ technologies: Java, Spring Boot, Python, Django, React, Angular, Node.js, .NET, AWS, Azure, GCP, DevOps (Docker, Kubernetes, Jenkins), Data Science, Machine Learning, Salesforce, SAP, and more. Our in-house expert is assigned based on your exact stack.',
     },
     {
       question: 'Is proxy job support confidential?',
@@ -1593,7 +1818,7 @@ export const proxyJobSupport: LandingPageConfig = {
       'Available during your working hours across all time zones',
       'Hands-on code participation — not just advice, but real implementation help',
       'Confidential service with NDA available — your employer will never know',
-      'Same-day start in most cases — immediate expert assignment with no delays',
+      'Same-day start in most cases — in-house expert deployed immediately with no delays',
     ],
   },
   relatedLinks: {
@@ -1671,7 +1896,7 @@ export const proxyInterviewUSA: LandingPageConfig = {
     {
       question: 'How quickly can you set up proxy support for an upcoming US interview?',
       answer:
-        'Contact us as soon as you have an interview scheduled. We can set up a session within hours for urgent requests. Ideally, reach out 24-48 hours before your interview so we have time for a pre-interview briefing and to match you with the right expert.',
+        'Contact us as soon as you have an interview scheduled. We can set up a session within hours for urgent requests. Ideally, reach out 24-48 hours before your interview so we have time for a pre-interview briefing and to assign the right in-house expert to your case.',
     },
   ],
   useCasesSection: {
@@ -1688,10 +1913,10 @@ export const proxyInterviewUSA: LandingPageConfig = {
   proxySection: {
     title: 'How Our US Proxy Interview Support Works',
     intro:
-      'We make the process as smooth and stress-free as possible. Our goal is for you to walk into your US tech interview knowing you have an expert available — so you can focus on performing rather than panicking.',
+      'We make the process as smooth and stress-free as possible. Our goal is for you to walk into your US tech interview knowing you have an in-house expert available — so you can focus on performing rather than panicking.',
     points: [
       'Contact us with your interview details — company, role level, date, and technology stack',
-      'Expert matching — we assign a specialist with experience in that company\'s interview format',
+      'In-house specialist assigned — with direct experience in that company\'s interview format',
       'Pre-interview briefing — we align on your background, strengths, and likely question areas',
       'Real-time availability during your interview — discreet, professional guidance throughout',
       'Post-interview debrief — performance review and preparation for follow-up rounds',
@@ -1792,7 +2017,7 @@ export const proxyInterviewUK: LandingPageConfig = {
       'We understand UK interview culture — the formats, the expectations, and what UK tech employers look for. Our proxy support is calibrated specifically to help you succeed in the UK market.',
     points: [
       'Contact us with your UK interview details — company, role, date, and technology stack',
-      'Expert matching — specialist with UK tech market and company-type experience',
+      'In-house specialist — with UK tech market and company-type experience',
       'Pre-interview briefing — alignment on your background and UK-specific interview expectations',
       'Real-time expert availability during your UK interview for discreet, professional guidance',
       'Post-interview support for any follow-up rounds or negotiation preparation',
@@ -1893,7 +2118,7 @@ export const proxyInterviewCanada: LandingPageConfig = {
       'We understand the Canadian tech landscape — the major employers, their interview styles, and what Canadian engineering teams look for. Our proxy support is calibrated specifically to maximize your success in the Canadian market.',
     points: [
       'Contact us with your Canadian interview details — company, role level, date, and technology stack',
-      'Expert matching — specialist with Canadian tech market experience assigned to your case',
+      'In-house specialist — with Canadian tech market experience, assigned to your case',
       'Pre-interview briefing — alignment on your background and Canadian employer expectations',
       'Real-time expert availability during your live interview for discreet professional guidance',
       'Post-interview debrief and preparation support for any follow-up rounds',
@@ -2026,7 +2251,7 @@ export const agenticAiMlJobSupportUSA: LandingPageConfig = {
     {
       question: 'How quickly can I get Agentic AI job support?',
       answer:
-        'Most engagements start the same day. Contact us on WhatsApp, share your stack and current blocker, and we will match you with an expert who has shipped similar agentic AI or ML systems. We cover all US time zones — Eastern, Central, Mountain, and Pacific.',
+        'Most engagements start the same day. Contact us on WhatsApp, share your stack and current blocker, and our in-house expert who has shipped similar agentic AI or ML systems will be on it immediately. We cover all US time zones — Eastern, Central, Mountain, and Pacific.',
     },
   ],
   useCasesSection: {

@@ -84,7 +84,7 @@ export const howItWorksSteps = [
   {
     number: 2,
     title: 'Discussion',
-    description: 'We discuss your needs, timeline, and match you with the right expert.',
+    description: 'We discuss your needs, timeline, and assign the right in-house expert to your case.',
   },
   {
     number: 3,

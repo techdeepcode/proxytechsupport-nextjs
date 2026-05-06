@@ -1125,7 +1125,7 @@ export default function GetInterviewScheduledPage() {
               { label: 'Interview Scheduled — Canada', href: '/get-interview-scheduled-canada/' },
               { label: 'Interview Scheduled — Germany', href: '/get-interview-scheduled-germany/' },
               { label: 'Interview Scheduled — Singapore', href: '/get-interview-scheduled-singapore/' },
-              { label: 'Interview Questions', href: '/interviews/' },
+              { label: 'Interview Questions', href: '/interview-questions/' },
               { label: 'Blog', href: '/blog/' },
             ].map((l) => (
               <a key={l.href} href={l.href} className="gis-related-link">{l.label}</a>

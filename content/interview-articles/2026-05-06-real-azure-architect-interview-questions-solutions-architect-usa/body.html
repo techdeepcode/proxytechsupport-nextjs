@@ -1,0 +1,103 @@
+<h1>Real Azure Solutions Architect Interview Questions and Answers — USA Roles</h1>
+<p>These are real interview questions asked in Azure Solutions Architect and Azure Cloud Architect roles at USA companies. Answers reflect real production architecture experience across enterprise Azure environments.</p>
+<hr>
+<h2>Tell me about yourself</h2>
+<p>Have 7+ years experience in cloud architecture with focus on Microsoft Azure.<br>
+Designed and delivered enterprise Azure solutions for banking, healthcare, and SaaS companies.<br>
+Expertise in Azure infrastructure, networking, identity, security, and cost optimization.<br>
+Strong in Terraform, AKS, Azure DevOps, and enterprise landing zone design.</p>
+<hr>
+<h2>What Azure projects have you delivered?</h2>
+<p>Designed enterprise Azure landing zone for a 500-person financial services company.<br>
+Built HIPAA-compliant Azure platform for healthcare application serving 2M+ users.<br>
+Led migration of on-premise SQL Server workloads to Azure SQL Managed Instance.<br>
+Designed multi-region AKS platform handling 10,000+ concurrent API requests.</p>
+<hr>
+<h2>What is an Azure Landing Zone?</h2>
+<p>Azure Landing Zone is a pre-configured, secure, scalable environment for running workloads in Azure.<br>
+Covers management groups, subscriptions, networking, identity, security, and governance.<br>
+Based on Azure Cloud Adoption Framework (CAF) principles.<br>
+Provides consistent foundation so teams can deploy workloads safely without reinventing the wheel.</p>
+<hr>
+<h2>How do you design Azure networking for enterprise?</h2>
+<p>Use hub-and-spoke topology — central hub VNet with shared services, spoke VNets per workload.<br>
+Hub contains firewall (Azure Firewall), VPN/ExpressRoute gateway, and DNS resolvers.<br>
+Spokes peered to hub — no spoke-to-spoke direct peering without routing through hub.<br>
+Use private endpoints to keep service traffic on Azure backbone.<br>
+Implement NSGs at subnet level and Azure Firewall for east-west and north-south control.</p>
+<hr>
+<h2>What is the difference between NSG and Azure Firewall?</h2>
+<p>NSG operates at layer 4 — controls traffic using IP, port, and protocol rules per subnet or NIC.<br>
+Azure Firewall operates at layer 7 — can inspect and filter based on FQDN, URLs, and threat intelligence.<br>
+NSGs are stateful and cheap — use for basic subnet-level controls.<br>
+Azure Firewall is centralized and more expensive — use for cross-VNet traffic and internet egress control.<br>
+Best practice: use both in layered security — NSGs at subnet, Azure Firewall at hub.</p>
+<hr>
+<h2>How do you design identity and access for Azure enterprise?</h2>
+<p>Use Azure Active Directory (Entra ID) as central identity provider.<br>
+Implement PIM — Privileged Identity Management — for just-in-time privileged access.<br>
+Use managed identities for Azure resources — eliminates service account passwords.<br>
+Apply RBAC at lowest scope needed — resource group or resource, not subscription level.<br>
+Enforce MFA and Conditional Access policies for all human identities accessing Azure.</p>
+<hr>
+<h2>What is Private Endpoint and when do you use it?</h2>
+<p>Private Endpoint assigns a private IP from your VNet to an Azure PaaS service (Storage, SQL, Key Vault).<br>
+Traffic stays on Azure backbone — does not traverse public internet.<br>
+Use for any PaaS service handling sensitive data in enterprise environments.<br>
+Pair with Private DNS Zones to ensure DNS resolution routes to private IP correctly.<br>
+Disable public access on services once private endpoint is in place.</p>
+<hr>
+<h2>How do you handle multi-region architecture on Azure?</h2>
+<p>Use paired Azure regions for disaster recovery — Microsoft guarantees region updates are staggered.<br>
+Use Azure Front Door for global traffic routing, WAF, and failover between regions.<br>
+Replicate data with geo-redundant storage, Azure SQL geo-replication, or Cosmos DB multi-region writes.<br>
+Design applications as stateless so they can fail over to secondary region without data loss.<br>
+Test failover regularly with Azure Site Recovery or custom runbooks.</p>
+<hr>
+<h2>How do you design AKS for enterprise?</h2>
+<p>Use separate node pools for system and user workloads.<br>
+Enable Azure CNI for pod-level networking with private IPs from the VNet.<br>
+Use workload identity (federated credentials) instead of service principals for pod access to Azure resources.<br>
+Place AKS API server in private mode — accessible only via private endpoint.<br>
+Use Azure Policy add-on to enforce governance on AKS pods and containers.</p>
+<hr>
+<h2>How do you approach Azure cost optimization?</h2>
+<p>Right-size VMs using Azure Advisor recommendations and usage metrics.<br>
+Use Reserved Instances for predictable workloads — up to 72% savings over pay-as-you-go.<br>
+Use Spot VMs for batch and fault-tolerant workloads.<br>
+Implement auto-shutdown for non-production environments.<br>
+Use Azure Cost Management budgets and alerts with tag-based showback per team or product.</p>
+<hr>
+<h2>How do you implement security in Azure?</h2>
+<p>Enable Microsoft Defender for Cloud across all subscriptions for posture management and threat detection.<br>
+Use Key Vault for secrets, certificates, and keys — never store secrets in code or config files.<br>
+Enable diagnostic logs and send to centralized Log Analytics or SIEM (Microsoft Sentinel).<br>
+Apply Azure Policy to enforce compliance — allowed regions, required tags, encryption at rest.<br>
+Conduct regular security reviews using Secure Score recommendations in Defender for Cloud.</p>
+<hr>
+<h2>How do you use Terraform with Azure?</h2>
+<p>Use AzureRM provider — declare all resources as code for consistency and auditability.<br>
+Store Terraform state in Azure Storage Account with state locking via Azure Blob leases.<br>
+Organize code into reusable modules — one per resource type or service pattern.<br>
+Use workspaces or separate state files per environment (dev, staging, prod).<br>
+Integrate Terraform plan and apply into Azure DevOps pipelines with manual approval gates for production.</p>
+<hr>
+<h2>What is Azure Monitor and how do you use it?</h2>
+<p>Azure Monitor collects metrics and logs from Azure resources, VMs, and applications.<br>
+Use Log Analytics workspace to query logs with KQL (Kusto Query Language).<br>
+Set up alerts for critical conditions — high CPU, failed deployments, security events.<br>
+Use Application Insights for APM — tracking request rates, failures, and dependencies.<br>
+Build dashboards in Azure Monitor or export data to Grafana for custom visualization.</p>
+<hr>
+<h2>How do you migrate workloads to Azure?</h2>
+<p>Use Azure Migrate for assessment — discovers on-premise servers and estimates costs and sizing.<br>
+Rehost (lift-and-shift) using Azure Site Recovery for quick migration with minimal risk.<br>
+Replatform workloads to PaaS (e.g., SQL Server → Azure SQL MI) for managed service benefits.<br>
+Refactor critical applications over time to cloud-native patterns (containers, serverless).<br>
+Always test failback and run parallel workloads before cutting over production traffic.</p>
+<hr>
+<h2>Need Real-Time Azure Architect Interview Support?</h2>
+<p>If you are preparing for Azure Solutions Architect, Azure Cloud Architect, or Azure DevOps Engineer roles in USA, UK, Canada or Australia:</p>
+<p><strong>Website:</strong> <a href="https://proxytechsupport.com">https://proxytechsupport.com</a><br>
+<strong>WhatsApp:</strong> +91 96606 14469</p>
+<p>We provide real interview discussion support, Azure architecture scenario coaching, and hands-on preparation based on actual enterprise Azure architect interviews across USA companies.</p>

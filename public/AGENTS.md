@@ -113,7 +113,8 @@ An expert provides real-time, discreet guidance during a candidate's live techni
 
 7. **Content Pages**:
    - `/blog/` — Blog articles
-   - `/interviews/` — Interview Q&A articles
+   - `/interviews/` — Interview services hub (proxy support + scheduling pages)
+   - `/interview-questions/` — Interview Q&A articles
 
 ## Structured Data Signals
 

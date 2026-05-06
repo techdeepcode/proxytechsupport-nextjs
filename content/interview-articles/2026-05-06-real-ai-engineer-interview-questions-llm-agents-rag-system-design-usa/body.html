@@ -1,0 +1,111 @@
+<h1>Real AI Engineer Interview Questions and Answers — LLM, Agents, RAG, System Design (USA Roles)</h1>
+<p>These are real interview questions asked in AI Engineer roles at USA companies — covering LLM integration, agentic systems, RAG pipelines, prompt engineering, and AI system design. Answers reflect real production experience, not textbook definitions.</p>
+<hr>
+<h2>Tell me about yourself</h2>
+<p>Have 5+ years experience in AI and ML engineering with focus on production LLM systems and generative AI.<br>
+Built and deployed RAG pipelines, agentic workflows, and LLM-powered features at scale.<br>
+Strong in Python, LangChain, LlamaIndex, vector databases, and cloud platforms (AWS, GCP).<br>
+Focused on building reliable, low-latency AI systems that deliver measurable business value.</p>
+<hr>
+<h2>What projects have you worked on?</h2>
+<p>Built enterprise RAG system for customer support automation handling millions of queries.<br>
+Developed multi-agent workflow for internal knowledge management and document processing.<br>
+Created LLM-powered code review assistant integrated into CI/CD pipeline.<br>
+Built real-time recommendation and personalization system using embedding models.</p>
+<hr>
+<h2>Explain a recent AI project in detail</h2>
+<p>Built RAG-based enterprise search across 2M+ internal documents.<br>
+Chunked and embedded documents using OpenAI embeddings stored in Pinecone.<br>
+Query pipeline: user input → query rewriting → vector search → reranking → LLM synthesis.<br>
+Reduced average query response time to under 2 seconds with 85%+ relevance score.</p>
+<hr>
+<h2>What is RAG and why do you use it over fine-tuning?</h2>
+<p>RAG — Retrieval-Augmented Generation — retrieves relevant context at query time before LLM generation.<br>
+Preferred over fine-tuning for dynamic, frequently updated knowledge bases.<br>
+Fine-tuning bakes knowledge into model weights — expensive and becomes stale quickly.<br>
+RAG allows real-time data updates without retraining and provides source attribution for trust.</p>
+<hr>
+<h2>How do you handle hallucinations in LLM systems?</h2>
+<p>Implement RAG to ground responses in retrieved factual context.<br>
+Use prompt guardrails and explicit instructions to stay within retrieved content.<br>
+Add output validation layers — fact checking, confidence scoring, and fallback responses.<br>
+Monitor production outputs with automated evaluation pipelines using LLM-as-judge patterns.</p>
+<hr>
+<h2>What chunking strategy do you use for RAG?</h2>
+<p>Use semantic chunking based on document structure — paragraphs, sections, headings.<br>
+Avoid fixed-size chunking which cuts across semantic boundaries.<br>
+Add metadata to each chunk — source document, section, date — for post-retrieval filtering.<br>
+Typical chunk size 256–512 tokens with 10–15% overlap for context continuity.</p>
+<hr>
+<h2>How do you improve RAG retrieval quality?</h2>
+<p>Use hybrid search — combine dense vector similarity with sparse BM25 keyword search.<br>
+Apply reranking with cross-encoder models (Cohere Rerank, BGE Reranker) after initial retrieval.<br>
+Use query expansion and HyDE — hypothetical document embeddings — for better query alignment.<br>
+Evaluate retrieval with precision@k, recall@k, and MRR metrics using curated test sets.</p>
+<hr>
+<h2>What embedding models have you used?</h2>
+<p>Used OpenAI text-embedding-3-large for general enterprise search.<br>
+Used BGE-M3 and E5-large for multilingual and domain-specific use cases.<br>
+Evaluated models using MTEB benchmark for retrieval tasks.<br>
+For latency-sensitive cases used smaller models like text-embedding-3-small with quantization.</p>
+<hr>
+<h2>What vector databases have you used?</h2>
+<p>Used Pinecone for managed production deployments with high availability and metadata filtering.<br>
+Used Weaviate for hybrid search combining vector and keyword search natively.<br>
+Used FAISS for local development and testing at scale.<br>
+Used pgvector for embedding storage when already on PostgreSQL to reduce infrastructure complexity.</p>
+<hr>
+<h2>What is an agentic AI system?</h2>
+<p>AI system where an LLM acts as a reasoning engine that plans and executes multi-step tasks.<br>
+Agent decides which tools to call, in what order, based on a given goal.<br>
+Tools can be APIs, databases, code executors, search engines, or other agents.<br>
+Frameworks: LangGraph, AutoGen, CrewAI, LlamaIndex Workflows.</p>
+<hr>
+<h2>How do you handle agent reliability and error recovery?</h2>
+<p>Implement retry logic with exponential backoff for tool call failures.<br>
+Use structured output parsing with strict schema validation at each step.<br>
+Add checkpointing — save agent state after each successful step for resumability.<br>
+Build human-in-the-loop interrupts for high-stakes or ambiguous decisions.<br>
+Monitor tool call success rates and LLM output quality in production with tracing.</p>
+<hr>
+<h2>How do you evaluate LLM system quality?</h2>
+<p>Use automated evaluation with LLM-as-judge frameworks — Ragas, DeepEval, TruLens.<br>
+Evaluate RAG pipelines on faithfulness, answer relevance, and context precision.<br>
+Build regression test sets from real production queries and expert-labeled gold responses.<br>
+Track evaluation metrics in CI/CD to catch quality regressions before deployment.</p>
+<hr>
+<h2>How do you manage LLM costs at scale?</h2>
+<p>Cache frequently requested responses using semantic caching — GPTCache, Redis with embeddings.<br>
+Route simple queries to smaller models (GPT-4o-mini) and complex ones to larger models.<br>
+Implement prompt compression to reduce input token count without losing meaning.<br>
+Monitor cost per query and set budget alerts at team and feature level.</p>
+<hr>
+<h2>How do you ensure security and privacy in LLM applications?</h2>
+<p>Never include PII in prompts unless necessary — strip or anonymize before sending to LLM.<br>
+Implement prompt injection detection and input sanitization layers.<br>
+Use private model deployments (Azure OpenAI, Bedrock) for sensitive enterprise data.<br>
+Log all LLM inputs and outputs for audit trails with appropriate data retention policies.</p>
+<hr>
+<h2>How do you design an AI system for high availability?</h2>
+<p>Use multiple LLM provider fallbacks — OpenAI, Azure OpenAI, Bedrock — with automatic failover.<br>
+Implement async processing with queues (SQS, Pub/Sub) for non-real-time workloads.<br>
+Cache deterministic responses and use circuit breakers for downstream service calls.<br>
+Design stateless inference services deployable on Kubernetes with horizontal autoscaling.</p>
+<hr>
+<h2>What observability tools do you use for AI systems?</h2>
+<p>Use LangSmith and Langfuse for LLM tracing, prompt versioning, and evaluation.<br>
+Use Datadog and Grafana for infrastructure-level monitoring — latency, error rates, token usage.<br>
+Instrument all LLM calls with trace IDs for end-to-end request tracing.<br>
+Build custom dashboards for business metrics — query success rate, user satisfaction, cost per session.</p>
+<hr>
+<h2>What prompt engineering techniques do you use?</h2>
+<p>Chain-of-thought prompting for complex reasoning tasks.<br>
+Few-shot examples for consistent output formatting and domain-specific responses.<br>
+System prompt separation from user content to reduce prompt injection risk.<br>
+Structured output prompting with JSON schema enforcement for downstream parsing.</p>
+<hr>
+<h2>Need Real-Time AI Engineer Interview Support?</h2>
+<p>If you are preparing for AI Engineer, ML Engineer, or LLM roles in USA, UK, Canada or Australia:</p>
+<p><strong>Website:</strong> <a href="https://proxytechsupport.com">https://proxytechsupport.com</a><br>
+<strong>WhatsApp:</strong> +91 96606 14469</p>
+<p>We provide real-time interview support, AI system design coaching, and hands-on preparation based on actual enterprise AI engineering interviews across USA companies.</p>

@@ -701,7 +701,7 @@ export default function LandingPageTemplate({ config }: Props) {
             <div className="lp-related-row">
               {[
                 { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
-                { label: 'Interview Questions', href: '/interviews/' },
+                { label: 'Interview Questions', href: '/interview-questions/' },
                 { label: 'Agentic AI & RAG Support', href: '/agentic-ai-rag-mlops-job-support-usa/' },
                 ...jobSupportLinks,
                 { label: 'Proxy Interview Support', href: '/proxy-interview-support/' },

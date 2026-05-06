@@ -48,6 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/`, lastModified: today, changeFrequency: 'weekly', priority: prio('1.0') },
     { url: `${BASE}/blog/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
     { url: `${BASE}/interviews/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/interview-questions/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
     { url: `${BASE}/technologies/`, lastModified: today, changeFrequency: 'monthly', priority: prio('0.3') },
     ...getInterviewScheduledRoutes,
     ...allLandingPages.map((p) => ({

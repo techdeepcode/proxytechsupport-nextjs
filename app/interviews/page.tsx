@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { getAllInterviews } from '@/lib/interviews';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -10,13 +8,9 @@ import { defaultOgImage } from '@/lib/site-seo';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 const canonical = 'https://proxytechsupport.com/interviews/';
-const pageTitle = 'IT Interview Questions – Real Technical Questions & Answers';
+const pageTitle = 'Interview Services – Proxy Interview Support & Scheduling Help';
 const shortDescription =
-  'Real IT interview questions captured from live technical rounds for USA, UK & Canada roles. Java, Python, React, DevOps, AWS & more. Struggling to clear interviews? Get expert help.';
-const longP1 =
-  'Real interview discussions collected daily while supporting developers in live projects, job support sessions, and proxy interview assistance across USA, UK, Canada, and Australia.';
-const longP2 =
-  'These are not theory-based interview questions. They are captured from real interview calls, technical rounds, and hiring discussions exactly as they happened, then structured to help other developers understand what companies are really asking today.';
+  'Explore interview services: proxy interview support, get interview scheduled support, and country-specific interview help. Need technical interview prep? View real interview questions.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -44,9 +38,46 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function InterviewsPage() {
-  const interviews = await getAllInterviews();
+const interviewServiceCards = [
+  {
+    title: 'Proxy Interview Support',
+    description: 'Real-time in-house expert support during live technical interviews for coding rounds, system design, and pressure scenarios.',
+    href: '/proxy-interview-support/',
+    cta: 'Explore Proxy Support →',
+  },
+  {
+    title: 'Get Interview Scheduled',
+    description: 'Profile engineering and recruiter visibility optimization to help you get more interview calls in the USA and global markets.',
+    href: '/get-interview-scheduled/',
+    cta: 'Get Interview Calls →',
+  },
+  {
+    title: 'Interview Support Global',
+    description: 'End-to-end interview guidance for developers targeting USA, UK, Canada, Australia, Europe, and other international markets.',
+    href: '/interview-support-global/',
+    cta: 'View Global Support →',
+  },
+  {
+    title: 'Proxy Interview USA',
+    description: 'Country-focused interview support with timing, expectations, and live technical guidance calibrated for USA interview formats.',
+    href: '/proxy-interview-usa/',
+    cta: 'Open USA Interview Support →',
+  },
+  {
+    title: 'Proxy Interview UK',
+    description: 'Structured proxy interview support for UK-based technical rounds and hiring patterns.',
+    href: '/proxy-interview-uk/',
+    cta: 'Open UK Interview Support →',
+  },
+  {
+    title: 'Proxy Interview Canada',
+    description: 'Interview assistance for Canadian engineering roles with focused preparation and live round support.',
+    href: '/proxy-interview-canada/',
+    cta: 'Open Canada Interview Support →',
+  },
+];
 
+export default function InterviewsPage() {
   return (
     <>
       <TopBar />
@@ -73,7 +104,7 @@ export default async function InterviewsPage() {
           <div>
             <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00df82', marginBottom: '0.25rem' }}>Live Expert Help</p>
             <p style={{ fontSize: '0.97rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.35, margin: 0 }}>
-              Struggling to clear interviews? Get real-time expert coaching — USA, UK, Canada &amp; worldwide.
+              Interview support services for USA, UK, Canada &amp; worldwide.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
@@ -81,47 +112,39 @@ export default async function InterviewsPage() {
               style={{ display:'inline-flex', alignItems:'center', gap:'0.35rem', background:'#25D366', color:'#fff', fontWeight:700, fontSize:'0.85rem', padding:'0.6rem 1.1rem', borderRadius:'50px', textDecoration:'none' }}>
               Get Instant Help
             </a>
-            <a href="/interview-support-global/"
+            <a href="/interview-questions/"
               style={{ display:'inline-flex', alignItems:'center', gap:'0.35rem', background:'rgba(255,255,255,0.12)', color:'#fff', fontWeight:600, fontSize:'0.85rem', padding:'0.6rem 1.1rem', borderRadius:'50px', textDecoration:'none', border:'1px solid rgba(255,255,255,0.3)' }}>
-              Learn More →
+              Interview Questions →
             </a>
           </div>
         </div>
 
         <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 700, color: 'var(--pts-text)', marginBottom: '1rem' }}>
-          Interview Questions
+          Interview Services
         </h1>
-        <p style={{ color: 'var(--pts-text-muted)', marginBottom: '0.75rem', lineHeight: 1.7 }}>{longP1}</p>
-        <p style={{ color: 'var(--pts-text-muted)', marginBottom: '2.5rem', lineHeight: 1.7 }}>{longP2}</p>
+        <p style={{ color: 'var(--pts-text-muted)', marginBottom: '0.75rem', lineHeight: 1.7 }}>
+          High-stakes technical interview coming up? Our in-house experts support you before and during live interview rounds so you can perform with confidence, clarity, and speed.
+        </p>
+        <p style={{ color: 'var(--pts-text-muted)', marginBottom: '2.5rem', lineHeight: 1.7 }}>
+          Choose your interview service below — proxy interview support, interview scheduling help, and country-focused interview support for USA, UK, Canada, and global roles.
+        </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          {interviews.map((interview) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+          {interviewServiceCards.map((service) => (
             <article
-              key={interview.slug}
+              key={service.href}
               className="card"
               style={{ padding: '1.5rem' }}
             >
               <h2 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--pts-text)', marginBottom: '0.4rem' }}>
-                <Link href={`/interviews/${interview.slug}/`} style={{ color: 'var(--pts-text)', textDecoration: 'none' }}>
-                  {interview.title}
-                </Link>
+                <a href={service.href} style={{ color: 'var(--pts-text)', textDecoration: 'none' }}>{service.title}</a>
               </h2>
-              {interview.date && (
-                <p style={{ fontSize: '0.8rem', color: 'var(--pts-text-subtle)', marginBottom: '0.5rem' }}>
-                  {new Date(interview.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                </p>
-              )}
-              {interview.description && (
-                <p style={{ fontSize: '0.9rem', color: 'var(--pts-text-muted)', marginBottom: '0.75rem', lineHeight: 1.6 }}>
-                  {interview.description}
-                </p>
-              )}
-              <Link
-                href={`/interviews/${interview.slug}/`}
-                style={{ color: 'var(--pts-accent)', fontWeight: 600, fontSize: '0.9rem' }}
-              >
-                Read More →
-              </Link>
+              <p style={{ fontSize: '0.9rem', color: 'var(--pts-text-muted)', marginBottom: '0.75rem', lineHeight: 1.6 }}>
+                {service.description}
+              </p>
+              <a href={service.href} style={{ color: 'var(--pts-accent)', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}>
+                {service.cta}
+              </a>
             </article>
           ))}
         </div>

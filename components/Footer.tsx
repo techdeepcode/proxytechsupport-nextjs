@@ -24,7 +24,7 @@ const serviceLinks = [
 
 const resourceLinks = [
   { label: 'Blog', href: '/blog/' },
-  { label: 'Interview Questions', href: '/interviews/' },
+  { label: 'Interview Questions', href: '/interview-questions/' },
   { label: 'Technologies', href: '/#tech' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Contact', href: '/#contact' },

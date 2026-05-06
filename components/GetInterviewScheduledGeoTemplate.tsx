@@ -676,7 +676,7 @@ export default function GetInterviewScheduledGeoTemplate({ config }: Props) {
               { label: 'Job Support Canada', href: '/job-support-canada/' },
               { label: 'Job Support Australia', href: '/job-support-australia/' },
               { label: 'Job Support Europe', href: '/job-support-europe/' },
-              { label: 'Interview Questions', href: '/interviews/' },
+              { label: 'Interview Questions', href: '/interview-questions/' },
               { label: 'Blog', href: '/blog/' },
             ].map((l) => (<a key={l.href} href={l.href} className="gg-related-link">{l.label}</a>))}
           </div>

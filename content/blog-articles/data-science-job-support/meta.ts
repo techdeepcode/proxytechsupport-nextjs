@@ -25,7 +25,7 @@ export const meta = {
     },
     {
       q: "How do I get started with Data Science job support?",
-      a: "Contact us via WhatsApp (+91-96606-14469). Share your data science stack, dataset context, and current challenge. We match you with an expert data scientist immediately and can start the same day. We cover all US, UK, Canada, Australia, and Asia-Pacific time zones.",
+      a: "Contact us via WhatsApp (+91-96606-14469). Share your data science stack, dataset context, and current challenge. Our in-house expert data scientist is ready immediately and can start the same day. We cover all US, UK, Canada, Australia, and Asia-Pacific time zones.",
     },
   ],
 } as const;

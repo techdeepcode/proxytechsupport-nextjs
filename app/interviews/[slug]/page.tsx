@@ -76,7 +76,7 @@ export default async function InterviewPostPage({ params }: Props) {
         wrapWithBlogShell
         breadcrumbs={[
           { label: 'Home', href: '/' },
-          { label: 'Interview Questions', href: '/interviews/' },
+          { label: 'Interview Questions', href: '/interview-questions/' },
           { label: interview.title },
         ]}
       >

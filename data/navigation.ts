@@ -52,7 +52,7 @@ export const allLocationLinks = [
 export const interviewNavLinks = [
   { label: 'Interview Proxy', href: '/proxy-interview-support/' },
   { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
-  { label: 'Interview Questions', href: '/interviews/' },
+  { label: 'Interview Questions', href: '/interview-questions/' },
 ];
 
 // ─── Main navigation ────────────────────────────────────────────────────────

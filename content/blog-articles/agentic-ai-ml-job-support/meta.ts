@@ -25,7 +25,7 @@ export const meta = {
     },
     {
       q: "How do I get started with Agentic AI or ML job support?",
-      a: "Contact us via WhatsApp (+91-96606-14469) or call. Share your AI/ML stack, current blocker, and time zone. We match you with a senior AI engineer who has shipped similar systems and can start the same day. We cover all US, UK, Canada, Australia, and Asia-Pacific time zones.",
+      a: "Contact us via WhatsApp (+91-96606-14469) or call. Share your AI/ML stack, current blocker, and time zone. Our in-house senior AI engineer who has shipped similar systems will be on it the same day. We cover all US, UK, Canada, Australia, and Asia-Pacific time zones.",
     },
   ],
 } as const;

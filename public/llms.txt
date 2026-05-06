@@ -62,7 +62,8 @@
 ## Blog & Interview Articles
 
 - [Blog — IT Job Support Articles](/blog/): Guides, tutorials, and insights on IT job support, proxy interviews, and developer career topics.
-- [Interview Questions & Answers](/interviews/): Real-world technical interview question sets for AI/ML, DevOps, Cloud, Java, Python, and more.
+- [Interview Services](/interviews/): Proxy interview support, get interview scheduled support, and country-specific interview assistance.
+- [Interview Questions & Answers](/interview-questions/): Real-world technical interview question sets for AI/ML, DevOps, Cloud, Java, Python, and more.
 
 ## Organization
 
