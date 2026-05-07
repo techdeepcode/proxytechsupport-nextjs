@@ -32,6 +32,8 @@ export interface LandingRelatedLinks {
   blogLink?: LandingRelatedLink;
   problemLink: LandingRelatedLink;
   proxyLink: LandingRelatedLink;
+  /** Additive Canada-specific links — rendered after existing links without replacing them. */
+  canadaLinks?: LandingRelatedLink[];
 }
 
 export interface LandingPageConfig {
@@ -331,6 +333,12 @@ export const jobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
+      { label: 'IT job support Vancouver', href: '/it-job-support-vancouver/' },
+      { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
+      { label: 'Canada IT job support guide', href: '/blog/real-time-it-job-support-interview-proxy-usa-uk-canada-australia/' },
+    ],
   },
 };
 
@@ -718,6 +726,9 @@ export const javaJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Java job support Canada', href: '/java-job-support-canada/' },
+    ],
   },
 };
 
@@ -793,6 +804,9 @@ export const nodejsJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Node.js job support Canada', href: '/nodejs-job-support-canada/' },
+    ],
   },
 };
 
@@ -868,6 +882,9 @@ export const devopsJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
+    ],
   },
 };
 
@@ -1018,6 +1035,9 @@ export const reactJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'React job support Canada', href: '/react-job-support-canada/' },
+    ],
   },
 };
 
@@ -1093,6 +1113,9 @@ export const cloudJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
+    ],
   },
 };
 
@@ -2519,6 +2542,21 @@ export const devopsJobSupportCanada: LandingPageConfig = {
       answer:
         'Same day in most cases. Contact us on WhatsApp with your technology stack and challenge — we assign the right in-house DevOps expert to your case immediately. For production emergencies, we respond within minutes.',
     },
+    {
+      question: 'Do you support DevOps engineers on remote Canadian contract engagements?',
+      answer:
+        'Yes. We work with DevOps engineers on remote contracts across Canada — including Corp-to-Corp, T4, and agency contracts at Canadian banks, telecoms, and enterprises. Our real-time DevOps support helps you deliver confidently across EST through PST contract working hours. We cover CI/CD, Kubernetes, Terraform, and cloud operations for the full duration of your Canadian contract.',
+    },
+    {
+      question: 'Can you assist during live production outages or on-call DevOps incidents in Canada?',
+      answer:
+        'Absolutely. Canadian DevOps engineers on on-call rotations rely on us for live production firefighting — Kubernetes pod crashes, Jenkins pipeline failures, Terraform drift, and AWS/Azure service disruptions. We respond within minutes when contacted on WhatsApp and can join a live screen share to help resolve critical incidents during Canadian on-call windows.',
+    },
+    {
+      question: 'Do you support weekend DevOps interview preparation for Canadian roles?',
+      answer:
+        'Yes. Weekends are one of the most popular times for DevOps interview preparation. We schedule mock interview sessions, CI/CD architecture deep dives, Kubernetes design discussions, and system design practice over weekends — fully aligned with your Canadian timezone whether you are in EST, MST, or PST. We tailor sessions to the specific Canadian employer you are targeting.',
+    },
   ],
   useCasesSection: {
     title: 'DevOps Situations We Help Canadian Engineers Solve',
@@ -2555,6 +2593,10 @@ export const devopsJobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling in your DevOps job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read DevOps engineering articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'DevOps job support — expert article', href: '/devops-job-support/' },
+      { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
+    ],
   },
 };
 
@@ -2624,6 +2666,21 @@ export const cloudJobSupportCanada: LandingPageConfig = {
       answer:
         'Same day. Contact us on WhatsApp with your cloud platform and challenge — we assign the right in-house cloud expert immediately. For production cloud incidents we respond within minutes.',
     },
+    {
+      question: 'Do you support new immigrants and PR holders starting cloud roles in Canada?',
+      answer:
+        'Yes. A significant portion of our Canadian cloud clients are skilled professionals who have recently immigrated or obtained Canadian PR. We help you ramp up quickly to Canadian cloud environments, understand local employer expectations (PIPEDA, OSFI, data residency), and prepare comprehensively for Canadian cloud architect and cloud engineer interviews — regardless of your previous country of work experience.',
+    },
+    {
+      question: 'Can you help with AWS Canada (ca-central-1) or Azure Canada regions-specific configurations?',
+      answer:
+        'Yes. Canadian cloud deployments often require data residency in AWS ca-central-1 or Azure Canada Central/East regions for PIPEDA compliance and OSFI financial institution guidelines. Our cloud experts are familiar with these Canadian-specific cloud deployment requirements and can help you configure compliant, performant cloud environments that meet Canadian regulatory standards.',
+    },
+    {
+      question: 'Do you offer evening and weekend cloud support for Canadian IT professionals?',
+      answer:
+        'Yes. We are available outside regular business hours for Canadian cloud clients — evenings for planned maintenance windows, weekends for major cloud migration cutover events, and on-call for production cloud incidents. Whether you are in Toronto EST or Vancouver PST, we align with your Canadian working schedule.',
+    },
   ],
   useCasesSection: {
     title: 'Cloud Challenges We Help Canadian Engineers Resolve',
@@ -2660,6 +2717,10 @@ export const cloudJobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling in your cloud role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read cloud engineering articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Cloud technologies job support guide', href: '/cloud-technologies-job-support/' },
+      { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
+    ],
   },
 };
 
@@ -2729,6 +2790,21 @@ export const reactJobSupportCanada: LandingPageConfig = {
       answer:
         'Same day. Message us on WhatsApp with your React challenge or interview details — we match you with the right in-house React expert and you can start immediately.',
     },
+    {
+      question: 'Do you support weekend React interview preparation for Canadian tech roles?',
+      answer:
+        'Yes. Weekend sessions are popular for React interview preparation. We run mock technical rounds, React deep-dive sessions, Next.js architecture discussions, and coding practice over weekends — covering everything from hooks internals to React performance patterns expected at Canadian employers like Shopify, FreshBooks, and Wealthsimple. Sessions available in all Canadian time zones.',
+    },
+    {
+      question: 'Can you help React developers with WCAG accessibility requirements for Canadian government projects?',
+      answer:
+        'Yes. Canadian government digital services — federal (CRA, Services Canada) and provincial (Ontario Digital Service, BC Digital) — require WCAG 2.1 AA compliance in React applications. Our experts help you implement accessible React components, use ARIA attributes correctly, handle keyboard navigation, and meet the specific accessibility standards required for Canadian government digital projects.',
+    },
+    {
+      question: 'Do you support React developers on Canadian banking and financial dashboard applications?',
+      answer:
+        'Yes. Canadian fintech and banking React dashboards have specific challenges — high data volume performance, real-time market data rendering, strict Content Security Policy requirements, and complex multi-tenant architectures. We have helped React developers at Canadian fintechs (Wealthsimple, FreshBooks) and bank digital teams resolve complex performance, security, and state management issues.',
+    },
   ],
   useCasesSection: {
     title: 'React Situations We Help Canadian Developers Solve',
@@ -2765,6 +2841,10 @@ export const reactJobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling as a frontend developer?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read frontend engineering articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'React developer job support article', href: '/react-job-support/' },
+      { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
+    ],
   },
 };
 
@@ -2834,6 +2914,21 @@ export const javaJobSupportCanada: LandingPageConfig = {
       answer:
         'Same day in most cases. Contact us on WhatsApp with your Java challenge — we match you with the right in-house Java expert and you can be up and running immediately.',
     },
+    {
+      question: 'Can you help Java developers new to Canadian banking with no prior local experience?',
+      answer:
+        'Yes. This is one of the most common scenarios we support. Many Java professionals join Canadian banks from abroad and find the codebase significantly different — legacy systems with decades of domain history, strict code review standards, OSFI-compliant security requirements, and complex legacy integration layers. Our experts help you get productive quickly and confidently navigate Canadian enterprise Java environments from day one.',
+    },
+    {
+      question: 'Do you support Java developers dealing with PR processing gaps or resume gaps in Canada?',
+      answer:
+        'Yes. Many Canadian PR applicants face employment gaps during their immigration process. We help you stay technically sharp during this period — keeping your Java and Spring Boot skills current, working through practical coding exercises, and preparing comprehensively for interviews at Canadian companies so you are ready to land your next role immediately when your work authorization is confirmed.',
+    },
+    {
+      question: 'Do you provide Java support during EST evening hours for Toronto and Ontario bank developers?',
+      answer:
+        'Absolutely. Evening EST hours are popular for Canadian bank Java developers who need to prepare for next-day deliveries or complete work after office hours. We are available throughout Toronto and Ontario EST evenings — for job support, Spring Boot debugging, architecture discussions, or Java interview coaching before a critical Canadian employer interview.',
+    },
   ],
   useCasesSection: {
     title: 'Java Situations We Help Canadian Developers Solve',
@@ -2870,6 +2965,10 @@ export const javaJobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling in your Java job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read Java developer articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Java developer job support guide', href: '/java-job-support/' },
+      { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
+    ],
   },
 };
 
@@ -2939,6 +3038,21 @@ export const pythonJobSupportCanada: LandingPageConfig = {
       answer:
         'Same day. Contact us on WhatsApp with your Python challenge — we assign the right in-house Python expert to your case immediately.',
     },
+    {
+      question: 'Do you support Python data scientists transitioning into Canadian banking and finance sectors?',
+      answer:
+        'Yes. Many Python data scientists joining Canadian banks (RBC, TD, Scotiabank, CIBC, BMO) find the environment very different from consumer tech or academia — strict data governance, model risk management frameworks, OSFI-compliant ML deployment, and heavily regulated data pipelines. Our experts help you navigate these Canadian financial sector-specific Python and data science requirements and get productive quickly.',
+    },
+    {
+      question: 'Can you help with weekend Python and data science interview preparation in Canada?',
+      answer:
+        'Yes. Weekend Python interview sessions are in high demand across our Canadian client base. We run mock coding rounds, Pandas data manipulation exercises, ML case study discussions, and system design sessions over weekends — calibrated to the specific Canadian company you are targeting, from Toronto AI startups to Montreal research-adjacent firms to Vancouver data engineering teams.',
+    },
+    {
+      question: 'Do you provide Python support for developers across Toronto, Vancouver, Montreal, and Calgary?',
+      answer:
+        'Yes. We support Python developers across all major Canadian tech hubs: EST hours in Toronto and Montreal, PST in Vancouver, and MST in Calgary. Whether you are working on Django at a Toronto fintech, AI/ML at a Montreal research company, data engineering at a Vancouver startup, or Python automation at a Calgary energy firm, our experts provide timezone-aligned real-time support.',
+    },
   ],
   useCasesSection: {
     title: 'Python Challenges We Help Canadian Developers Solve',
@@ -2975,6 +3089,10 @@ export const pythonJobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling in your Python role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read Python developer articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Python developer job support article', href: '/python-job-support/' },
+      { label: 'IT job support Vancouver', href: '/it-job-support-vancouver/' },
+    ],
   },
 };
 
@@ -3044,6 +3162,21 @@ export const aiMlJobSupportCanada: LandingPageConfig = {
       answer:
         'Same day. Contact us on WhatsApp with your AI/ML challenge — we match you with the right in-house ML expert immediately. For urgent production model issues, we respond within minutes.',
     },
+    {
+      question: 'Do you support AI/ML engineers working at Canadian research labs or Mila-affiliated companies?',
+      answer:
+        "Yes. Canada has a world-class AI research ecosystem — Vector Institute in Toronto, Mila in Montreal, and the University of Waterloo AI groups. Companies adjacent to these institutes (Cohere, Waabi, Borealis AI, Layer6) have high technical standards. Our in-house ML experts understand the academic-to-production AI intersection and provide precise support for ML engineering challenges in Canada's research-adjacent AI sector.",
+    },
+    {
+      question: 'Can you assist during live production AI system incidents in Canada?',
+      answer:
+        'Absolutely. Production AI incidents — model accuracy degradation, inference latency spikes, LLM output quality drops, RAG retrieval failures, and MLOps pipeline breakdowns — require immediate expert response. We are available for live screen shares and collaborative debugging during Canadian business hours and after-hours for critical production AI system incidents.',
+    },
+    {
+      question: 'Do you support weekend AI interview preparation for ML roles at Canadian companies?',
+      answer:
+        'Yes. ML engineer and data scientist interview preparation is highly in demand on weekends. We run ML coding rounds, ML system design sessions, case study discussions, and LLM/RAG architecture reviews on Saturdays and Sundays — tailored to the specific Canadian AI company or bank AI team you are targeting, fully aligned with Canadian EST/PST time zones.',
+    },
   ],
   useCasesSection: {
     title: 'AI/ML Situations We Help Canadian Engineers Solve',
@@ -3080,6 +3213,10 @@ export const aiMlJobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling in your AI/ML role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read AI/ML engineering articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'AI/ML job support guide', href: '/ai-ml-job-support/' },
+      { label: 'IT job support Montreal', href: '/it-job-support-montreal/' },
+    ],
   },
 };
 
@@ -3149,6 +3286,21 @@ export const nodejsJobSupportCanada: LandingPageConfig = {
       answer:
         'Same day. Contact us on WhatsApp with your challenge and we assign the right in-house Node.js expert immediately.',
     },
+    {
+      question: 'Do you support Node.js contractors on remote Canadian project engagements?',
+      answer:
+        'Yes. We work with many Node.js contractors working remotely on Canadian projects — both T4 and Corp-to-Corp arrangements at Canadian banks, fintechs, and enterprises. Our real-time Node.js support helps you deliver confidently across EST, CST, and PST Canadian time zones. We cover Express, NestJS, microservices, and API development for the full duration of your Canadian contract.',
+    },
+    {
+      question: 'Can you help Node.js developers navigate Canadian fintech compliance in API design?',
+      answer:
+        'Yes. Canadian fintech API development has specific constraints — PCI-DSS compliance for payment APIs, FINTRAC regulatory requirements, Open Banking Framework alignment, and provincial data residency rules. Our Node.js experts help you design and implement APIs that meet Canadian financial compliance requirements without sacrificing performance or developer experience.',
+    },
+    {
+      question: 'Do you support evening and weekend Node.js interview preparation for Canadian roles?',
+      answer:
+        'Yes. Many Node.js developers in Canada prefer evening or weekend interview prep sessions. We run mock backend technical rounds, API design exercises, NestJS architecture discussions, and event loop deep dives — calibrated to Canadian employers like Shopify, Wealthsimple, FreshBooks, and global companies with Canadian backend engineering teams.',
+    },
   ],
   useCasesSection: {
     title: 'Node.js Situations We Help Canadian Developers Solve',
@@ -3185,6 +3337,10 @@ export const nodejsJobSupportCanada: LandingPageConfig = {
     problemLink: { label: 'Struggling as a backend developer?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read backend engineering articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Node.js developer job support article', href: '/node-job-support/' },
+      { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
+    ],
   },
 };
 
@@ -3256,6 +3412,21 @@ export const itJobSupportToronto: LandingPageConfig = {
       answer:
         'Same day. Contact us on WhatsApp with your technology stack and challenge — we assign the right in-house expert and you can start immediately.',
     },
+    {
+      question: 'Do you support Indian IT professionals and new immigrants navigating Toronto\'s tech job market?',
+      answer:
+        "Yes. A significant portion of our Toronto clients are professionals who have recently arrived in Canada, obtained their PR, or are applying to Toronto roles internationally. We understand the specific challenges — adapting to Canadian enterprise culture, meeting the 'Canadian experience' expectation at banks and enterprises, and navigating Toronto's competitive interview processes. Our support is calibrated specifically to help you succeed in the Toronto market.",
+    },
+    {
+      question: 'Can you help me prepare for a Toronto bank technical interview over the weekend?',
+      answer:
+        'Absolutely. Weekend interview preparation sessions are among the most popular services for Toronto clients. We run mock technical rounds calibrated to RBC, TD, Scotiabank, CIBC, and BMO interview formats — covering Java/Spring Boot architecture, system design, data structures, and behavioral preparation. Sessions are available in Toronto EST on both Saturday and Sunday.',
+    },
+    {
+      question: 'Do you provide live production support for Toronto-based IT professionals during EST hours?',
+      answer:
+        'Yes. Real-time production support is one of our core services for Toronto clients. Whether you face a critical Java production issue before a Toronto morning standup, an AWS incident affecting a Canadian bank system, or a DevOps pipeline failure before a release window — we respond immediately and join your live environment to help resolve the issue within Toronto EST business hours.',
+    },
   ],
   useCasesSection: {
     title: 'Toronto IT Scenarios We Help Developers Navigate',
@@ -3292,6 +3463,11 @@ export const itJobSupportToronto: LandingPageConfig = {
     problemLink: { label: 'Struggling in your Toronto IT role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
+      { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
+      { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
+    ],
   },
 };
 
@@ -3361,6 +3537,21 @@ export const itJobSupportVancouver: LandingPageConfig = {
       answer:
         'Same day. Contact us on WhatsApp with your challenge — we match you with the right in-house expert and you can start immediately.',
     },
+    {
+      question: 'Do you support developers transitioning from H-1B to Canadian PR working in Vancouver?',
+      answer:
+        "Yes. Many Vancouver tech professionals are navigating the transition from US H-1B status to Canadian PR — facing interview pressure, market adaptation, and the need to demonstrate skills in a new environment. We provide both real-time job support to keep your current Vancouver project on track and intensive interview preparation for your next Canadian role in gaming, AI, cloud, or enterprise tech.",
+    },
+    {
+      question: 'Do you provide weekend interview preparation for Vancouver gaming studio and tech roles?',
+      answer:
+        "Yes. Vancouver's gaming and tech sectors attract highly competitive candidates. We provide weekend mock interview sessions tailored to Vancouver game studio formats (EA, Activision, Ubisoft), AI and tech startup technical assessments, and general software engineering rounds for Vancouver-based roles. Sessions are available in Vancouver PST on both Saturday and Sunday.",
+    },
+    {
+      question: 'Can you help Vancouver developers with morning standup preparation and sprint delivery pressure?',
+      answer:
+        'Yes. Vancouver PST hours mean your morning standup aligns with early afternoon in EST. We provide pre-standup job support sessions to help you prepare status updates, resolve overnight blockers, and plan your technical approach before your team meeting — available from early Vancouver morning hours across all Vancouver tech stacks.',
+    },
   ],
   useCasesSection: {
     title: 'Vancouver IT Scenarios We Help Developers Navigate',
@@ -3397,6 +3588,11 @@ export const itJobSupportVancouver: LandingPageConfig = {
     problemLink: { label: 'Struggling in your Vancouver IT role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'React job support Canada', href: '/react-job-support-canada/' },
+      { label: 'AI/ML job support Canada', href: '/ai-ml-job-support-canada/' },
+      { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
+    ],
   },
 };
 
@@ -3466,6 +3662,21 @@ export const itJobSupportCalgary: LandingPageConfig = {
       answer:
         'Same day. Message us on WhatsApp with your challenge and we assign the right expert immediately.',
     },
+    {
+      question: 'Do you provide specialized support for Calgary energy sector IT professionals?',
+      answer:
+        "Yes. Calgary's energy sector (Suncor, Cenovus, TC Energy, Enbridge, ARC Resources) has unique IT challenges — operational technology integration, IoT sensor data pipelines, SAP integration, and large-scale data engineering for operational analytics. Our experts have experience with energy-sector IT environments and can help you resolve challenges specific to Calgary's energy industry technology landscape.",
+    },
+    {
+      question: 'Do you support weekend interview preparation for Calgary enterprise and cloud roles?',
+      answer:
+        'Yes. We provide weekend mock interview sessions for Calgary roles — including enterprise architect interviews, cloud engineer technical rounds, and data engineering assessments for energy sector positions. Sessions are available in Calgary MST time zone on both Saturday and Sunday, covering the technical skills most valued by Calgary employers.',
+    },
+    {
+      question: 'Do you align with Calgary MST business hours for job support and production coverage?',
+      answer:
+        'Yes. We are fully aligned with Calgary Mountain Standard Time (MST) and MDT business hours. Whether you need job support before a Calgary morning standup, help during a production incident in the afternoon, or interview coaching in the evening, our experts are available throughout Calgary working hours for both job support and interview preparation services.',
+    },
   ],
   useCasesSection: {
     title: 'Calgary IT Scenarios We Help Developers Navigate',
@@ -3502,6 +3713,11 @@ export const itJobSupportCalgary: LandingPageConfig = {
     problemLink: { label: 'Struggling in your Calgary IT role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
+      { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
+      { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
+    ],
   },
 };
 
@@ -3571,6 +3787,21 @@ export const itJobSupportMontreal: LandingPageConfig = {
       answer:
         'Same day. Contact us on WhatsApp with your challenge — we assign the right expert immediately.',
     },
+    {
+      question: 'Do you support Montreal AI/ML engineers working at Mila-affiliated research companies?',
+      answer:
+        "Yes. Montreal is home to Mila, one of the world's most prominent AI research institutes. Companies adjacent to Mila — including Element AI (now ServiceNow), Coveo, Dialogue, Lightspeed, and many deep-tech startups — have high ML and AI engineering standards. Our in-house ML experts understand Montreal's AI research-to-production workflow and can provide precise technical guidance for roles in Montreal's AI ecosystem.",
+    },
+    {
+      question: 'Can you help Montreal game developers prepare for interviews at Ubisoft, Warner Bros., or Behaviour Interactive?',
+      answer:
+        'Yes. Montreal has one of the world\'s highest concentrations of game studios. Technical interviews at Ubisoft Montreal, Warner Bros. Games, and Behaviour Interactive cover C++, game engine architecture, rendering systems, network programming, and game systems design. We provide real-time proxy interview guidance during these technical sessions and live job support for game development projects.',
+    },
+    {
+      question: 'Do you offer weekend interview preparation for Montreal tech, AI, and gaming roles?',
+      answer:
+        'Yes. Weekend sessions are fully available for Montreal clients in EST time zone. We provide mock technical rounds for Montreal AI companies, game studio interviews, telecom tech positions, and enterprise engineering roles — all calibrated to the specific Montreal employer type and sector you are targeting, on both Saturday and Sunday.',
+    },
   ],
   useCasesSection: {
     title: 'Montreal IT Scenarios We Help Developers Navigate',
@@ -3607,6 +3838,11 @@ export const itJobSupportMontreal: LandingPageConfig = {
     problemLink: { label: 'Struggling in your Montreal IT role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    canadaLinks: [
+      { label: 'Node.js job support Canada', href: '/nodejs-job-support-canada/' },
+      { label: 'Python job support Canada', href: '/python-job-support-canada/' },
+      { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
+    ],
   },
 };
 

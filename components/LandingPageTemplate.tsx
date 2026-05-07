@@ -160,10 +160,62 @@ export default function LandingPageTemplate({ config }: Props) {
 
   const locationHero = useLocationHeroMetricsAside(config);
 
+  const CANADA_SLUGS = new Set([
+    'job-support-canada', 'proxy-interview-canada', 'get-interview-scheduled-canada',
+    'devops-job-support-canada', 'cloud-job-support-canada', 'react-job-support-canada',
+    'java-job-support-canada', 'python-job-support-canada', 'ai-ml-job-support-canada',
+    'nodejs-job-support-canada',
+    'it-job-support-toronto', 'it-job-support-vancouver', 'it-job-support-calgary', 'it-job-support-montreal',
+  ]);
+
+  const CITY_AREA: Record<string, string> = {
+    'it-job-support-toronto': 'Toronto',
+    'it-job-support-vancouver': 'Vancouver',
+    'it-job-support-calgary': 'Calgary',
+    'it-job-support-montreal': 'Montreal',
+  };
+
+  const isCanadaPage = CANADA_SLUGS.has(config.slug);
+  const primaryCity = CITY_AREA[config.slug];
+
+  const canadaServiceSchema = isCanadaPage ? {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: config.title,
+    description: config.description,
+    provider: {
+      '@type': 'Organization',
+      name: 'Proxy Tech Support',
+      url: 'https://proxytechsupport.com',
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Canada', sameAs: 'https://en.wikipedia.org/wiki/Canada' },
+      ...(primaryCity
+        ? [{ '@type': 'City', name: primaryCity }]
+        : [
+            { '@type': 'City', name: 'Toronto', containedInPlace: { '@type': 'AdministrativeArea', name: 'Ontario' } },
+            { '@type': 'City', name: 'Vancouver', containedInPlace: { '@type': 'AdministrativeArea', name: 'British Columbia' } },
+            { '@type': 'City', name: 'Calgary', containedInPlace: { '@type': 'AdministrativeArea', name: 'Alberta' } },
+            { '@type': 'City', name: 'Montreal', containedInPlace: { '@type': 'AdministrativeArea', name: 'Quebec' } },
+          ]),
+    ],
+    serviceType: [
+      'IT Job Support Canada',
+      'Proxy Interview Assistance Canada',
+      'Interview Support Canada',
+      'DevOps Support Canada',
+      'AI ML Support Canada',
+      'Cloud Support Canada',
+    ],
+  } : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      {canadaServiceSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(canadaServiceSchema) }} />
+      )}
 
       <style>{`
         /* ── CTA buttons ───────────────────────────── */
@@ -691,6 +743,9 @@ export default function LandingPageTemplate({ config }: Props) {
                   {config.relatedLinks.blogLink.label}
                 </a>
               )}
+              {config.relatedLinks.canadaLinks?.map((l) => (
+                <a key={l.href} href={l.href} className="lp-related-link">{l.label}</a>
+              ))}
             </div>
           </div>
         </nav>
