@@ -2451,6 +2451,1167 @@ export const aiWorkflowAutomationJobSupportUSA: LandingPageConfig = {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ═══════════════════════════════════════════════════════════════════════════
+// CANADA – TECHNOLOGY JOB SUPPORT PAGES
+// ═══════════════════════════════════════════════════════════════════════════
+
+export const devopsJobSupportCanada: LandingPageConfig = {
+  slug: 'devops-job-support-canada',
+  title: 'DevOps Job Support Canada – CI/CD, Kubernetes & Cloud Help',
+  description:
+    'Struggling with DevOps in Canada? Real-time expert support for CI/CD, Kubernetes, AWS/Azure, Terraform, Jenkins. DevOps proxy interview assistance for Canadian roles. Same-day start.',
+  canonical: `${BASE_URL}/devops-job-support-canada/`,
+  keywords: [
+    'DevOps job support Canada', 'DevOps engineer support Canada', 'Kubernetes support Canada',
+    'CI/CD help Canada', 'AWS DevOps Canada', 'Azure DevOps Canada', 'Terraform support Canada',
+    'DevOps proxy interview Canada', 'DevOps job help Canada',
+  ],
+  h1: 'DevOps Job Support Canada – Real-Time CI/CD, Kubernetes & Cloud Expert Assistance',
+  tagline: 'Live DevOps support and interview guidance for Canadian IT professionals — CI/CD, Kubernetes, AWS, Azure, Terraform, and more across EST to PST.',
+  painIntro:
+    'Is your Canadian DevOps project overwhelming you? Pipeline failures before a release, Kubernetes pods crashing in production, Terraform state conflicts, or an upcoming DevOps technical interview at a Canadian tech company — our in-house DevOps engineers jump in immediately.',
+  heroVariant:
+    "Canada's DevOps market is heating up — from RBC and Scotiabank modernizing their banking infrastructure to AI-focused startups in Toronto and Vancouver adopting cloud-native DevOps at scale. Whether you are managing multi-region AWS deployments for a Canadian enterprise, troubleshooting Kubernetes ingress failures on GKE, or preparing for a DevOps technical interview at a Canadian tech firm, our in-house experts cover all Canadian time zones and bring deep hands-on experience with the exact tools Canadian employers use.",
+  geoLine: 'Supporting DevOps engineers across Canada, USA, UK, Australia, Europe, and Singapore.',
+  timezoneNote: 'Available across Canadian EST, CST, MST, and PST working hours.',
+  techSnippet:
+    'We cover the full Canadian DevOps stack: AWS, Azure, GCP, Kubernetes, Docker, Jenkins, GitHub Actions, GitLab CI, Terraform, Ansible, ArgoCD, Prometheus, Grafana, and more.',
+  highlights: [
+    {
+      title: 'CI/CD Pipeline Support for Canadian Projects',
+      description:
+        'Real-time debugging of Jenkins, GitHub Actions, GitLab CI, and Azure DevOps pipelines used by Canadian enterprise and startup clients.',
+    },
+    {
+      title: 'Kubernetes & Container Orchestration',
+      description:
+        'Expert help with Kubernetes cluster configuration, pod failures, ingress setup, Helm charts, and multi-environment deployments for Canadian cloud environments.',
+    },
+    {
+      title: 'DevOps Proxy Interview Canada',
+      description:
+        'Live guidance during DevOps technical interviews at Canadian companies — CI/CD architecture, Kubernetes design, cloud infrastructure, and IaC questions.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What DevOps technologies do you support for Canadian projects?',
+      answer:
+        'We support the full DevOps stack used across Canadian enterprise and startup environments: AWS, Azure, GCP, Kubernetes, Docker, Jenkins, GitHub Actions, GitLab CI/CD, Azure DevOps, Terraform, Ansible, ArgoCD, Helm, Prometheus, Grafana, ELK stack, and more. Whether your Canadian employer uses AWS-heavy stacks like Shopify or Azure-heavy stacks like the major Canadian banks, we have the right expert available.',
+    },
+    {
+      question: 'Can you help with DevOps production incidents during Canadian business hours?',
+      answer:
+        'Absolutely. Production firefighting is one of our core specialties. We have helped Canadian DevOps engineers resolve critical Kubernetes crashes, failed Jenkins deployments, Terraform state issues, and AWS/Azure service outages — often responding within minutes of being contacted. We cover EST, CST, MST, and PST Canadian time zones.',
+    },
+    {
+      question: 'Do you provide DevOps proxy interview support for Canadian roles?',
+      answer:
+        'Yes. Our experts provide real-time, discreet guidance during DevOps technical interviews at Canadian companies including Shopify, RBC, TD, Scotiabank, Rogers, Bell, OpenText, and global companies with Canadian engineering hubs. We cover CI/CD design, Kubernetes architecture, cloud infrastructure, IaC, and SRE-style interview questions.',
+    },
+    {
+      question: 'How do Canadian DevOps interviews differ from US interviews?',
+      answer:
+        'Canadian DevOps interviews at global companies with Canadian offices (Amazon, Google, Microsoft) are similar to US formats. At home-grown Canadian companies like Shopify or the major banks, expect more emphasis on practical problem-solving, real-world scenario debugging, and hybrid-cloud and compliance-aware infrastructure. Banking-sector interviews (RBC, TD, Scotiabank) often focus on mainframe modernization and OSFI-compliant deployment pipelines. We tailor our guidance to the specific Canadian employer.',
+    },
+    {
+      question: 'How quickly can I get DevOps support for a Canadian project?',
+      answer:
+        'Same day in most cases. Contact us on WhatsApp with your technology stack and challenge — we assign the right in-house DevOps expert to your case immediately. For production emergencies, we respond within minutes.',
+    },
+  ],
+  useCasesSection: {
+    title: 'DevOps Situations We Help Canadian Engineers Solve',
+    cases: [
+      'Kubernetes pods crashing in production on AWS EKS or Azure AKS for a Canadian enterprise client',
+      'Jenkins or GitHub Actions pipeline failing before a critical release window at a Canadian company',
+      'Terraform state corruption or drift issues on AWS or Azure environments used by Canadian banks',
+      'ArgoCD GitOps sync failures preventing deployment updates on Canadian Kubernetes clusters',
+      'Azure DevOps build agent configuration and self-hosted runner issues for Canadian project teams',
+      'Preparing for DevOps technical interviews at Shopify, RBC, TD, Rogers, or other Canadian employers',
+    ],
+  },
+  proxySection: {
+    title: 'DevOps Proxy Interview Support for Canadian Roles',
+    intro:
+      'Canadian DevOps interviews — from Shopify to RBC to global companies with Canadian offices — test deep practical knowledge of CI/CD, Kubernetes, cloud infrastructure, and site reliability. Our experts provide real-time, confidential guidance during your live interview so you can demonstrate the depth Canadian hiring teams expect.',
+    points: [
+      'Live guidance during CI/CD design and pipeline architecture questions for Canadian employer interviews',
+      'Real-time support during Kubernetes and container orchestration discussions for senior Canadian DevOps roles',
+      'Expert help with AWS, Azure, and GCP cloud infrastructure design questions common in Canadian interviews',
+      'IaC discussion support — Terraform, Ansible, Pulumi — for Canadian enterprise and startup roles',
+      'On-the-job DevOps support for Canadian project delivery across EST to PST business hours',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Canada', href: '/job-support-canada/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    techLinks: [
+      { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
+      { label: 'Java job support Canada', href: '/java-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your DevOps job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read DevOps engineering articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const cloudJobSupportCanada: LandingPageConfig = {
+  slug: 'cloud-job-support-canada',
+  title: 'Cloud Job Support Canada – AWS, Azure & GCP Help for Canadian Roles',
+  description:
+    'Struggling with cloud projects in Canada? Real-time AWS, Azure & GCP job support for Canadian IT professionals. Cloud proxy interview assistance for Canadian tech roles. Start same-day.',
+  canonical: `${BASE_URL}/cloud-job-support-canada/`,
+  keywords: [
+    'cloud job support Canada', 'AWS support Canada', 'Azure support Canada', 'GCP support Canada',
+    'cloud engineer support Canada', 'AWS job help Canada', 'Azure DevOps Canada',
+    'cloud proxy interview Canada', 'cloud architect support Canada',
+  ],
+  h1: 'Cloud Job Support Canada – AWS, Azure & GCP Expert Assistance for Canadian Projects',
+  tagline: 'Real-time cloud engineering support and interview guidance for IT professionals on Canadian AWS, Azure, and GCP projects — EST to PST covered.',
+  painIntro:
+    'Is your Canadian cloud project stressing you out? AWS service limits hit, Azure resource misconfigured, GCP billing surprises, or an upcoming cloud architect interview at a Canadian company — our in-house cloud engineers respond immediately.',
+  heroVariant:
+    "Canadian cloud adoption is accelerating across every sector. The big Canadian banks (RBC, TD, Scotiabank, CIBC) are mid-way through massive cloud migrations. Canadian telecoms (Rogers, Bell, Telus) are building cloud-native 5G infrastructure. Shopify runs one of the world's most demanding cloud platforms. Whether you are managing AWS infrastructure for a Canadian financial institution, architecting Azure solutions for a Canadian enterprise, or preparing for a cloud architect interview at a top Canadian employer, our experts cover the full cloud stack used by Canadian companies.",
+  geoLine: 'Supporting cloud engineers across Canada, USA, UK, Australia, Europe, and Singapore.',
+  timezoneNote: 'Available across all Canadian time zones: EST, CST, MST, and PST.',
+  techSnippet:
+    'Full cloud stack coverage: AWS (EC2, EKS, Lambda, RDS, S3, CloudFormation), Azure (AKS, Functions, SQL, DevOps, AD), GCP (GKE, BigQuery, Cloud Run), Terraform, CDK, and multi-cloud architectures.',
+  highlights: [
+    {
+      title: 'AWS Support for Canadian Projects',
+      description:
+        'Expert real-time help with AWS services used heavily by Canadian enterprises: EKS, Lambda, RDS, S3, VPC, IAM, CloudFormation, and AWS Canada (Central) region configurations.',
+    },
+    {
+      title: 'Azure Support for Canadian Enterprise',
+      description:
+        'Live support for Azure services critical to Canadian businesses: AKS, Azure DevOps, Azure AD, Azure SQL, Functions, and government/banking-compliant Azure Canada East deployments.',
+    },
+    {
+      title: 'Cloud Interview Guidance for Canadian Roles',
+      description:
+        'Real-time proxy interview support during cloud architect and cloud engineer interviews at Canadian banks, telecoms, and tech companies.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What cloud platforms do you support for Canadian projects?',
+      answer:
+        "We provide expert support for all three major cloud platforms used by Canadian companies: AWS (the dominant cloud in Canada), Azure (preferred by many Canadian enterprises and banks for Microsoft ecosystem alignment), and GCP (growing in Canadian AI/ML and data engineering projects). We also support multi-cloud and hybrid-cloud architectures common in large Canadian enterprises.",
+    },
+    {
+      question: 'Can you help with cloud compliance requirements for Canadian industries?',
+      answer:
+        "Yes. Canadian cloud projects often have specific compliance requirements — PIPEDA (Canada's federal privacy law), provincial privacy laws, OSFI guidelines for financial institutions, and government cloud data residency requirements. Our experts are familiar with AWS Canada (Central) and Azure Canada regions and can help you architect compliant solutions.",
+    },
+    {
+      question: 'Do you provide cloud proxy interview support for Canadian roles?',
+      answer:
+        'Yes. We provide real-time, discreet guidance during cloud architect and cloud engineer interviews at major Canadian employers — Canadian banks (RBC, TD, CIBC, Scotiabank), telecoms (Rogers, Bell, Telus), and tech companies (Shopify, OpenText, Hootsuite). We also support interviews at global cloud-heavy companies with Canadian offices.',
+    },
+    {
+      question: 'Can you help with cloud certification preparation alongside job support?',
+      answer:
+        'Yes. Beyond job support, we help with AWS Solutions Architect, AWS Developer, Azure Administrator, AZ-104, AZ-305, and Google Cloud Associate/Professional exam preparation through hands-on practice sessions and mock technical interviews calibrated to the certification level.',
+    },
+    {
+      question: 'How quickly can you start cloud support for a Canadian project?',
+      answer:
+        'Same day. Contact us on WhatsApp with your cloud platform and challenge — we assign the right in-house cloud expert immediately. For production cloud incidents we respond within minutes.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Cloud Challenges We Help Canadian Engineers Resolve',
+    cases: [
+      'AWS EKS cluster networking issues affecting a multi-region Canadian enterprise deployment',
+      'Azure Active Directory federation and SSO configuration for Canadian bank enterprise applications',
+      'GCP BigQuery performance and cost optimization for Canadian data engineering projects',
+      'AWS Lambda cold start and performance issues in Canadian fintech serverless applications',
+      'Multi-cloud architecture design for Canadian organizations with both AWS and Azure environments',
+      'Preparing for cloud architect interviews at Canadian financial institutions and tech companies',
+    ],
+  },
+  proxySection: {
+    title: 'Cloud Proxy Interview Support for Canadian Roles',
+    intro:
+      'Cloud architect and cloud engineer interviews at Canadian companies test deep practical knowledge of cloud services, architecture design, cost optimization, and security. Our experts provide real-time, confidential guidance during your live interview — calibrated to the specific Canadian employer and cloud platform.',
+    points: [
+      'Live guidance during cloud architecture design discussions for Canadian enterprise and banking roles',
+      'Real-time support during AWS or Azure technical interviews for Canadian cloud engineer positions',
+      'Help with cloud cost optimization and FinOps questions common in Canadian enterprise interviews',
+      'Security and compliance architecture guidance for Canadian cloud infrastructure interviews',
+      'On-the-job cloud support for Canadian project delivery across all Canadian time zones',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Canada', href: '/job-support-canada/' },
+      { label: 'Cloud job support USA', href: '/cloud-job-support-usa/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
+      { label: 'AI/ML job support Canada', href: '/ai-ml-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your cloud role?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read cloud engineering articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const reactJobSupportCanada: LandingPageConfig = {
+  slug: 'react-job-support-canada',
+  title: 'React Job Support Canada – Frontend & Next.js Help for Canadian Roles',
+  description:
+    'Struggling with React in Canada? Real-time expert help for React, Next.js, TypeScript, Redux. React proxy interview support for Canadian tech roles. EST to PST. Start same-day.',
+  canonical: `${BASE_URL}/react-job-support-canada/`,
+  keywords: [
+    'React job support Canada', 'React developer support Canada', 'Next.js support Canada',
+    'React proxy interview Canada', 'frontend job support Canada', 'TypeScript support Canada',
+    'React interview help Canada', 'React developer help Canada',
+  ],
+  h1: 'React Job Support Canada – Expert React & Next.js Help for Canadian Frontend Developers',
+  tagline: 'Live React, Next.js, and TypeScript support plus proxy interview guidance for frontend developers on Canadian projects — EST to PST covered.',
+  painIntro:
+    'Is your React project in Canada spiraling out of control? Performance issues, complex state management bugs, Next.js SSR/ISR confusion, or an upcoming React technical interview at a Canadian company — our React experts step in immediately.',
+  heroVariant:
+    "React is the dominant frontend framework across Canada's tech landscape — from Shopify's massive merchant-facing applications to Canadian fintech dashboards, government digital services, and startup product companies in Toronto and Vancouver. Canadian companies increasingly demand React expertise combined with TypeScript, Next.js, and cloud deployment knowledge. Whether you are debugging a complex Redux state flow, optimizing React performance for a Canadian e-commerce platform, or preparing for a React technical interview at a top Canadian employer, our experts provide real-time job support and live interview guidance.",
+  geoLine: 'Supporting React developers across Canada, USA, UK, Australia, Europe, and Singapore.',
+  timezoneNote: 'Available across all Canadian time zones: EST, CST, MST, and PST.',
+  techSnippet:
+    'Full React ecosystem support: React 18/19, Next.js App Router, TypeScript, Redux Toolkit, React Query, Zustand, Tailwind CSS, Material UI, Vite, webpack, Jest, and Cypress.',
+  highlights: [
+    {
+      title: 'React & Next.js Support for Canadian Projects',
+      description:
+        "Expert real-time help with React 18/19, Next.js App Router, TypeScript, Redux Toolkit, React Query, and frontend architecture used by Canadian product companies.",
+    },
+    {
+      title: 'React Performance & Production Debugging',
+      description:
+        'Help with React performance optimization, bundle size reduction, rendering issues, and production bugs affecting Canadian client-facing applications.',
+    },
+    {
+      title: 'React Proxy Interview Canada',
+      description:
+        'Live guidance during React and frontend technical interviews at Canadian companies — component design, state management, performance questions, and system design for frontend roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What React technologies do you support for Canadian projects?',
+      answer:
+        "We cover the complete React ecosystem used by Canadian companies: React 18 and 19, Next.js (App Router and Pages Router), TypeScript, Redux Toolkit, React Query, Zustand, Context API, React Native, Tailwind CSS, Material UI, Chakra UI, Vite, webpack, Jest, React Testing Library, and Cypress. We also support React deployments on AWS (Amplify, S3+CloudFront), Azure Static Web Apps, and Vercel.",
+    },
+    {
+      question: 'Can you help with React performance issues in production Canadian applications?',
+      answer:
+        'Yes. Performance is one of the most common React challenges. We help with unnecessary re-renders, bundle size bloat, lazy loading, code splitting, memoization, React.memo, useMemo/useCallback, Lighthouse score improvements, and Core Web Vitals optimization — all critical for Canadian e-commerce and product company applications.',
+    },
+    {
+      question: 'Do you provide React proxy interview support for Canadian roles?',
+      answer:
+        'Yes. We provide real-time, discreet guidance during React technical interviews at Canadian companies including Shopify, FreshBooks, Wave, Wealthsimple, and other Toronto/Vancouver tech companies, plus global companies with Canadian offices. We cover component design, state management architecture, performance optimization questions, and frontend system design.',
+    },
+    {
+      question: 'Can you support React developers working on government digital services in Canada?',
+      answer:
+        'Yes. Many Canadian government digital services projects use React — federal (CRA, Services Canada) and provincial (Ontario Digital Service, BC Digital). Our experts understand the accessibility standards (WCAG 2.1 AA), bilingual requirements, and performance constraints common in Canadian government React applications.',
+    },
+    {
+      question: 'How quickly can you start React support for a Canadian project?',
+      answer:
+        'Same day. Message us on WhatsApp with your React challenge or interview details — we match you with the right in-house React expert and you can start immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'React Situations We Help Canadian Developers Solve',
+    cases: [
+      'Next.js App Router hydration errors and SSR/ISR configuration issues for Canadian e-commerce platforms',
+      'React state management complexity — Redux vs. Zustand decision and migration for Canadian product teams',
+      'React performance optimization — removing unnecessary re-renders in data-heavy Canadian fintech dashboards',
+      'TypeScript type errors and complex generic type issues in enterprise Canadian React codebases',
+      'React component architecture and design pattern questions for senior frontend roles in Canada',
+      'Preparing for React technical interviews at Shopify, Wealthsimple, FreshBooks, and other Canadian tech companies',
+    ],
+  },
+  proxySection: {
+    title: 'React Proxy Interview Support for Canadian Roles',
+    intro:
+      'Canadian React interviews — from Shopify to fintech startups to government digital services — test component design, state management depth, performance awareness, and modern React patterns. Our experts provide real-time, confidential guidance during your live interview.',
+    points: [
+      'Live guidance during React component design and architecture discussions for Canadian interviews',
+      'Real-time support during Next.js, TypeScript, and state management technical questions',
+      'Help with React performance and optimization questions common in senior Canadian frontend interviews',
+      'Guidance for React system design questions — frontend architecture for large-scale Canadian applications',
+      'On-the-job React job support for Canadian project delivery across all time zones',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Canada', href: '/job-support-canada/' },
+      { label: 'React job support USA', href: '/react-job-support/' },
+    ],
+    techLinks: [
+      { label: 'Node.js job support Canada', href: '/nodejs-job-support-canada/' },
+      { label: 'Python job support Canada', href: '/python-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling as a frontend developer?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read frontend engineering articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const javaJobSupportCanada: LandingPageConfig = {
+  slug: 'java-job-support-canada',
+  title: 'Java Job Support Canada – Spring Boot, Microservices & Banking Help',
+  description:
+    'Struggling with Java in Canada? Real-time expert help for Spring Boot, microservices, Hibernate, banking Java systems. Java proxy interview support for Canadian roles. Start same-day.',
+  canonical: `${BASE_URL}/java-job-support-canada/`,
+  keywords: [
+    'Java job support Canada', 'Spring Boot support Canada', 'Java developer support Canada',
+    'Java proxy interview Canada', 'microservices support Canada', 'Java interview help Canada',
+    'Java banking support Canada', 'Java real-time support Canada',
+  ],
+  h1: 'Java Job Support Canada – Real-Time Spring Boot, Microservices & Enterprise Java Help',
+  tagline: 'Live Java coding support, Spring Boot debugging, microservices guidance, and proxy interview coaching for Java developers on Canadian projects — EST to PST.',
+  painIntro:
+    'Drowning in your Java project at a Canadian company? Spring Boot configuration issues, Hibernate transaction chaos, Kafka consumer lag in a Canadian banking system, or an upcoming Java technical interview — our in-house Java experts respond immediately.',
+  heroVariant:
+    "Java is the backbone of Canada's banking and enterprise technology. RBC, TD, Scotiabank, CIBC, and BMO all run massive Java-based backend systems. Major Canadian enterprises use Java Spring Boot microservices for everything from insurance claims processing to telecom billing systems. Whether you are a Java developer struggling with a complex Spring Cloud microservices setup for a Canadian bank, debugging Kafka messaging in a Canadian fintech, or preparing for a Java technical interview at a Canadian financial institution, our in-house Java specialists provide both real-time job support and live proxy interview guidance.",
+  geoLine: 'Supporting Java developers across Canada, USA, UK, Australia, Europe, and Singapore.',
+  timezoneNote: 'Available across all Canadian time zones: EST, CST, MST, and PST.',
+  techSnippet:
+    'Full Java ecosystem support: Spring Boot 3.x, Spring Cloud, Spring Security, JPA/Hibernate, Maven, Gradle, Kafka, RabbitMQ, REST APIs, microservices, JVM tuning, and AWS/Azure Java deployments.',
+  highlights: [
+    {
+      title: 'Java & Spring Boot for Canadian Banking Systems',
+      description:
+        'Expert support for Java microservices architectures used by Canadian banks and fintech companies — Spring Boot, Spring Cloud, Spring Security, OAuth2, and API gateways.',
+    },
+    {
+      title: 'Java Production & Microservices Debugging',
+      description:
+        'Real-time help with Spring Boot failures, Hibernate N+1 issues, Kafka consumer problems, and JVM performance in Canadian enterprise production environments.',
+    },
+    {
+      title: 'Java Proxy Interview Canada',
+      description:
+        'Live guidance during Java technical interviews at Canadian banks, telecoms, and tech companies — core Java deep dives, Spring architecture, microservices design, and DSA coding rounds.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Java technologies do you support for Canadian projects?',
+      answer:
+        'We cover the full Java stack used by Canadian enterprises: Java 17/21, Spring Boot 3.x, Spring MVC, Spring Security, Spring Cloud (Gateway, Config, Eureka), JPA, Hibernate, Maven, Gradle, Kafka, RabbitMQ, REST APIs, GraphQL, Docker, Kubernetes, and both AWS and Azure Java deployments. We have specific expertise in Java systems used by Canadian banks and insurance companies.',
+    },
+    {
+      question: 'Can you help with Java issues in Canadian banking and financial systems?',
+      answer:
+        'Yes. Banking-sector Java applications have unique challenges — transaction consistency, audit trail requirements, high-availability clustering, legacy integration with mainframe systems, and strict security requirements. Our experts have helped Java developers at Canadian banks and insurance companies resolve complex production issues while meeting their compliance constraints.',
+    },
+    {
+      question: 'Do you provide Java proxy interview support for Canadian roles?',
+      answer:
+        'Yes. We provide real-time, discreet guidance during Java technical interviews at major Canadian employers — RBC, TD, Scotiabank, CIBC, BMO, Sun Life, Manulife, Rogers, Bell, OpenText, and global companies with Canadian Java engineering teams. We cover core Java, Spring Boot, microservices design, system design, and DSA coding rounds.',
+    },
+    {
+      question: 'Can you support Java developers who are new to Canadian banking systems?',
+      answer:
+        'Yes. Many Indian professionals joining Canadian banks find the enterprise Java codebase very different from their previous experience — legacy code, complex domain models, strict coding standards, and multiple integration layers. Our experts help you get productive quickly and confidently navigate Canadian enterprise Java environments.',
+    },
+    {
+      question: 'How quickly can I get Java support for a Canadian project?',
+      answer:
+        'Same day in most cases. Contact us on WhatsApp with your Java challenge — we match you with the right in-house Java expert and you can be up and running immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Java Situations We Help Canadian Developers Solve',
+    cases: [
+      'Debugging complex Spring Boot auto-configuration and bean injection issues in Canadian bank systems',
+      'Fixing Hibernate lazy-loading, N+1 queries, and transaction management in Canadian enterprise applications',
+      'Resolving Kafka consumer lag and message ordering issues in Canadian fintech data pipelines',
+      'Java microservices communication failures in Spring Cloud-based Canadian banking platforms',
+      'JVM memory leak and GC pressure issues in high-traffic Canadian enterprise Java applications',
+      'Preparing for Java technical interviews at RBC, TD, Scotiabank, CIBC, Sun Life, and Manulife',
+    ],
+  },
+  proxySection: {
+    title: 'Java Proxy Interview Support for Canadian Roles',
+    intro:
+      'Java technical interviews at Canadian banks and enterprises are demanding — core Java depth, Spring Boot architecture, microservices design, distributed systems, and DSA coding rounds. Our Java experts provide real-time, confidential guidance during your live interview so you can demonstrate the depth Canadian hiring teams expect.',
+    points: [
+      'Live guidance during Java coding rounds — arrays, linked lists, trees, graphs, DP in Java',
+      'Real-time support during Spring Boot, microservices, and cloud architecture discussions',
+      'Help explaining JVM internals, concurrency, and garbage collection in Canadian banking interviews',
+      'Mock Java interview sessions calibrated to Canadian bank and enterprise interview formats',
+      'On-the-job Java job support for Canadian financial services and enterprise project delivery',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Canada', href: '/job-support-canada/' },
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
+      { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your Java job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read Java developer articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const pythonJobSupportCanada: LandingPageConfig = {
+  slug: 'python-job-support-canada',
+  title: 'Python Job Support Canada – Django, FastAPI, AI/ML & Data Science Help',
+  description:
+    'Struggling with Python in Canada? Real-time expert help for Django, FastAPI, data science, AI/ML, and automation. Python proxy interview support for Canadian roles. Start same-day.',
+  canonical: `${BASE_URL}/python-job-support-canada/`,
+  keywords: [
+    'Python job support Canada', 'Python developer support Canada', 'Django support Canada',
+    'FastAPI support Canada', 'Python data science Canada', 'Python proxy interview Canada',
+    'Python interview help Canada', 'AI ML Python Canada',
+  ],
+  h1: 'Python Job Support Canada – Real-Time Django, FastAPI, Data Science & AI/ML Help',
+  tagline: 'Live Python coding support, data science guidance, and proxy interview coaching for Python developers on Canadian projects — EST to PST covered.',
+  painIntro:
+    'Is your Python project in Canada stalling? Django ORM headaches, FastAPI async complexity, Pandas performance on large datasets, or an upcoming Python technical interview at a Canadian data or AI company — our Python experts respond immediately.',
+  heroVariant:
+    "Python has become the language of choice for Canada's booming AI and data science sector. Toronto, Montreal, and Vancouver host some of North America's most innovative AI research labs and startups. Canadian banks use Python for risk modeling, fraud detection, and data engineering. Government agencies use Python for open data pipelines and analytics. Whether you are a Python developer working on a data engineering pipeline for a Canadian bank, an AI/ML engineer at a Toronto startup, or a Django developer maintaining a Canadian SaaS product, our in-house Python experts provide real-time job support and proxy interview guidance.",
+  geoLine: 'Supporting Python developers across Canada, USA, UK, Australia, Europe, and Singapore.',
+  timezoneNote: 'Available across all Canadian time zones: EST, CST, MST, and PST.',
+  techSnippet:
+    'Full Python support: Django, FastAPI, Flask, Pandas, NumPy, scikit-learn, TensorFlow, PyTorch, PySpark, SQLAlchemy, Celery, Redis, AWS Lambda with Python, and data engineering tools.',
+  highlights: [
+    {
+      title: 'Python Web & API Support for Canada',
+      description:
+        'Expert real-time help with Django, FastAPI, Flask, REST APIs, SQLAlchemy, and Python web application issues in Canadian SaaS and enterprise environments.',
+    },
+    {
+      title: 'Data Science & AI/ML Python Support',
+      description:
+        'Hands-on help with Pandas, NumPy, scikit-learn, PyTorch, TensorFlow, and data pipeline issues in Canadian AI startups, research labs, and enterprise analytics teams.',
+    },
+    {
+      title: 'Python Proxy Interview Canada',
+      description:
+        'Live guidance during Python technical interviews at Canadian data, AI, and tech companies — coding rounds, algorithm problems, data science case studies, and system design.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Python technologies do you support for Canadian projects?',
+      answer:
+        'We cover the full Python ecosystem used in Canada: Django 4.x/5.x, FastAPI, Flask, Pandas, NumPy, scikit-learn, PyTorch, TensorFlow, Keras, PySpark, Airflow, dbt, SQLAlchemy, Alembic, Celery, Redis, and Python deployments on AWS (Lambda, EC2, SageMaker), Azure (Azure ML, Azure Functions), and GCP (BigQuery, Vertex AI). We also support Python automation, scripting, and DevOps tooling.',
+    },
+    {
+      question: 'Can you help with Python data engineering for Canadian bank and fintech projects?',
+      answer:
+        'Yes. Canadian banks and fintech companies heavily use Python for data engineering — ETL pipelines, data validation, risk modeling, fraud detection, and regulatory reporting. Our experts have helped Python data engineers at Canadian financial institutions resolve Airflow DAG failures, Pandas memory issues, PySpark optimization challenges, and SQLAlchemy query performance problems.',
+    },
+    {
+      question: 'Do you provide Python proxy interview support for Canadian data science and AI roles?',
+      answer:
+        "Yes. We provide real-time, discreet guidance during Python interviews at Canadian AI companies, data teams, and tech companies. We cover coding rounds (algorithms, data structures), data science case studies, machine learning system design, and Python-specific technical questions. Toronto's AI ecosystem — Cohere, Layer6 (TD), and many startups — regularly interviews for Python/ML roles.",
+    },
+    {
+      question: 'Can you help with Python coding rounds in Canadian technical interviews?',
+      answer:
+        'Absolutely. Canadian tech company Python interviews often include LeetCode-style coding problems, data manipulation challenges with Pandas, SQL queries, and sometimes machine learning case studies. Our experts provide real-time, discreet guidance during these sessions to help you perform at your best.',
+    },
+    {
+      question: 'How quickly can you start Python support for a Canadian project?',
+      answer:
+        'Same day. Contact us on WhatsApp with your Python challenge — we assign the right in-house Python expert to your case immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Python Challenges We Help Canadian Developers Solve',
+    cases: [
+      'Django ORM complex queries, N+1 problems, and database migration issues for Canadian SaaS applications',
+      'FastAPI async programming bugs, dependency injection issues, and Pydantic validation errors',
+      'Pandas memory and performance issues on large datasets for Canadian bank data engineering teams',
+      'Airflow DAG failures, task dependencies, and scheduler issues for Canadian data pipeline teams',
+      'Python AI/ML model deployment issues on AWS SageMaker or Azure ML for Canadian AI startups',
+      'Preparing for Python technical interviews at Canadian AI companies, banks, and product companies',
+    ],
+  },
+  proxySection: {
+    title: 'Python Proxy Interview Support for Canadian Roles',
+    intro:
+      "Canada's growing AI and data science ecosystem demands strong Python expertise. Interviews at Canadian AI startups, data teams at banks, and Python-heavy product companies test algorithmic thinking, data manipulation skills, ML knowledge, and system design. Our experts provide real-time, confidential guidance during your live interview.",
+    points: [
+      'Live guidance during Python coding rounds — data structures, algorithms, string manipulation problems',
+      'Real-time support during data science case studies and ML system design discussions',
+      'Help with Pandas and SQL data manipulation questions in Canadian data engineering interviews',
+      'AI/ML interview support — model selection, evaluation metrics, deployment architecture',
+      'On-the-job Python support for Canadian data and AI project delivery across all time zones',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Canada', href: '/job-support-canada/' },
+      { label: 'Python job support globally', href: '/python-job-support/' },
+    ],
+    techLinks: [
+      { label: 'AI/ML job support Canada', href: '/ai-ml-job-support-canada/' },
+      { label: 'Java job support Canada', href: '/java-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your Python role?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read Python developer articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const aiMlJobSupportCanada: LandingPageConfig = {
+  slug: 'ai-ml-job-support-canada',
+  title: 'AI/ML Job Support Canada – Machine Learning & Data Science Expert Help',
+  description:
+    'Struggling in your AI/ML role in Canada? Real-time expert support for machine learning, LLMs, MLOps, data science. AI interview proxy support for Canadian tech roles. Start same-day.',
+  canonical: `${BASE_URL}/ai-ml-job-support-canada/`,
+  keywords: [
+    'AI ML job support Canada', 'machine learning support Canada', 'data science job support Canada',
+    'LLM support Canada', 'MLOps support Canada', 'AI interview proxy Canada',
+    'AI engineer support Canada', 'NLP support Canada',
+  ],
+  h1: 'AI/ML Job Support Canada – Real-Time Machine Learning, LLM & MLOps Expert Guidance',
+  tagline: 'Live AI/ML engineering support and proxy interview coaching for machine learning professionals on Canadian AI projects — EST to PST covered.',
+  painIntro:
+    'Is your AI/ML project in Canada hitting walls? Model accuracy dropping in production, LLM hallucination issues, MLOps pipeline failures, RAG retrieval quality problems, or an upcoming ML engineer interview at a Canadian AI company — our in-house ML experts respond immediately.',
+  heroVariant:
+    "Canada is a global hub for AI research and commercial AI development. Toronto's Vector Institute, Montreal's Mila, and the Universities of Toronto, Waterloo, and McGill produce world-class AI talent. Canadian companies — from Cohere to Layer6 (TD Bank) to Borealis AI (RBC) — are applying cutting-edge ML in production. The Canadian banking, telecom, and healthcare sectors are aggressively investing in AI. Whether you are an ML engineer struggling with model deployment on AWS SageMaker, a data scientist dealing with feature drift, or preparing for an ML engineer interview at a leading Canadian AI company, our experts provide real-time job support and live interview guidance.",
+  geoLine: 'Supporting AI/ML engineers across Canada, USA, UK, Australia, Europe, and Singapore.',
+  timezoneNote: 'Available across all Canadian time zones: EST, CST, MST, and PST.',
+  techSnippet:
+    'Full AI/ML stack: PyTorch, TensorFlow, scikit-learn, Hugging Face, LangChain, RAG architectures, MLflow, Airflow, SageMaker, Azure ML, Vertex AI, and production ML systems.',
+  highlights: [
+    {
+      title: 'LLM & Generative AI Support for Canada',
+      description:
+        'Expert help with LLM fine-tuning, RAG pipelines, prompt engineering, LangChain agents, embedding models, and production AI application issues in Canadian AI companies.',
+    },
+    {
+      title: 'MLOps & Production ML Support',
+      description:
+        'Real-time assistance with MLOps pipeline failures, model drift, SageMaker/Azure ML issues, experiment tracking with MLflow, and model monitoring in Canadian ML production systems.',
+    },
+    {
+      title: 'AI/ML Proxy Interview Canada',
+      description:
+        'Live guidance during ML engineer and data science interviews at Canadian AI companies, banks, and tech firms — model design, coding rounds, ML system design, and case studies.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What AI/ML technologies do you support for Canadian projects?',
+      answer:
+        'We support the full AI/ML stack used in Canadian AI applications: PyTorch, TensorFlow, Keras, scikit-learn, Hugging Face Transformers, LangChain, LlamaIndex, RAG architectures, ChromaDB, Pinecone, Weaviate, MLflow, Kubeflow, Airflow, Prefect, AWS SageMaker, Azure ML, Vertex AI, and production model serving with TorchServe, TensorFlow Serving, and FastAPI.',
+    },
+    {
+      question: 'Can you help with LLM and generative AI projects in Canada?',
+      answer:
+        'Yes. LLM and generative AI support is one of our fastest-growing specialties. We help with RAG pipeline quality issues (retrieval accuracy, context window management, chunking strategy), LLM fine-tuning (LoRA, QLoRA, instruction tuning), prompt engineering, LangChain agent failures, and production AI application deployment. We understand the specific challenges faced by Canadian AI companies working with these technologies.',
+    },
+    {
+      question: 'Do you provide AI/ML proxy interview support for Canadian roles?',
+      answer:
+        'Yes. We provide real-time, discreet guidance during ML engineer, data scientist, and AI engineer interviews at Canadian AI companies and research-adjacent organizations — Cohere, Waabi, Borealis AI (RBC), Layer6 (TD), and the growing Toronto, Montreal, and Vancouver AI ecosystems. We cover ML coding rounds, model design, MLOps system design, and ML case studies.',
+    },
+    {
+      question: 'Can you help AI/ML engineers new to Canadian banking sector projects?',
+      answer:
+        'Yes. Canadian banks are heavily investing in AI — fraud detection, credit scoring, personalization, and regulatory document processing. Banking AI projects have unique constraints: model explainability requirements, fairness and bias auditing, strict data governance, and regulatory approval processes. Our experts help AI/ML engineers understand and navigate these Canadian financial sector-specific requirements.',
+    },
+    {
+      question: 'How quickly can you start AI/ML support for a Canadian project?',
+      answer:
+        'Same day. Contact us on WhatsApp with your AI/ML challenge — we match you with the right in-house ML expert immediately. For urgent production model issues, we respond within minutes.',
+    },
+  ],
+  useCasesSection: {
+    title: 'AI/ML Situations We Help Canadian Engineers Solve',
+    cases: [
+      'RAG pipeline retrieval quality issues — document chunking, embedding model selection, vector store optimization',
+      'Production ML model accuracy degradation and feature drift in Canadian bank fraud detection systems',
+      'MLOps pipeline failures on AWS SageMaker or Azure ML for Canadian enterprise AI projects',
+      'LangChain agent failures — tool invocation errors, prompt chaining issues, memory management',
+      'LLM fine-tuning quality problems — overfitting, catastrophic forgetting, evaluation metric design',
+      'Preparing for ML engineer and data science interviews at Cohere, Layer6 TD, Borealis AI, and Canadian AI startups',
+    ],
+  },
+  proxySection: {
+    title: 'AI/ML Proxy Interview Support for Canadian Roles',
+    intro:
+      "Canada's top AI employers — from research-adjacent companies like Cohere to applied AI teams at banks and telecoms — run rigorous ML engineer interviews covering coding, ML theory, system design, and case studies. Our in-house ML experts provide real-time, confidential guidance during your live interview.",
+    points: [
+      'Live guidance during ML coding rounds — Python, NumPy, Pandas, algorithm problems',
+      'Real-time support during ML system design — training pipelines, model serving, monitoring architecture',
+      'Help with ML case studies — model selection, feature engineering, evaluation strategy questions',
+      'LLM and RAG architecture discussion support for senior Canadian AI engineering interviews',
+      'On-the-job ML support for Canadian AI project delivery across all Canadian time zones',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Canada', href: '/job-support-canada/' },
+      { label: 'Agentic AI & ML job support USA', href: '/agentic-ai-ml-job-support-usa/' },
+    ],
+    techLinks: [
+      { label: 'Python job support Canada', href: '/python-job-support-canada/' },
+      { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your AI/ML role?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read AI/ML engineering articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const nodejsJobSupportCanada: LandingPageConfig = {
+  slug: 'nodejs-job-support-canada',
+  title: 'Node.js Job Support Canada – Express, NestJS & Backend Help',
+  description:
+    'Struggling with Node.js in Canada? Real-time expert help for Express, NestJS, APIs, microservices. Node.js proxy interview support for Canadian tech roles. Start same-day.',
+  canonical: `${BASE_URL}/nodejs-job-support-canada/`,
+  keywords: [
+    'Node.js job support Canada', 'NodeJS support Canada', 'Express support Canada',
+    'NestJS support Canada', 'Node.js proxy interview Canada', 'backend job support Canada',
+    'Node.js developer help Canada', 'TypeScript Node Canada',
+  ],
+  h1: 'Node.js Job Support Canada – Expert Express, NestJS & Backend Help for Canadian Developers',
+  tagline: 'Live Node.js, Express, and NestJS support plus proxy interview coaching for backend developers on Canadian projects — EST to PST.',
+  painIntro:
+    'Is your Node.js project in Canada causing stress? Async/await bugs in production, NestJS module configuration issues, Express middleware order problems, or an upcoming Node.js backend interview at a Canadian tech company — our Node.js experts respond immediately.',
+  heroVariant:
+    "Node.js powers a significant portion of Canada's backend infrastructure — from Shopify's commerce APIs to Canadian fintech microservices, government API gateways, and startup product backends. TypeScript + Node.js is now the standard for many Canadian backend teams. Whether you are a Node.js developer troubleshooting a NestJS dependency injection issue for a Canadian SaaS company, debugging an async performance bottleneck, or preparing for a Node.js backend interview at a Canadian tech employer, our experts provide real-time job support and live interview guidance.",
+  geoLine: 'Supporting Node.js developers across Canada, USA, UK, Australia, Europe, and Singapore.',
+  timezoneNote: 'Available across all Canadian time zones: EST, CST, MST, and PST.',
+  techSnippet:
+    'Full Node.js ecosystem: Express.js, NestJS, Fastify, TypeScript, REST/GraphQL APIs, socket.io, Prisma, TypeORM, MongoDB, Redis, RabbitMQ, Kafka, Docker, and AWS/Azure Node.js deployments.',
+  highlights: [
+    {
+      title: 'Node.js & NestJS Support for Canadian Projects',
+      description:
+        'Expert real-time help with Node.js, Express, NestJS, TypeScript, REST APIs, GraphQL, Prisma, and backend microservices used by Canadian product and enterprise teams.',
+    },
+    {
+      title: 'Node.js Production Debugging & Performance',
+      description:
+        'Help with async/await issues, event loop blocking, memory leaks, API performance, and production incidents in Canadian Node.js application environments.',
+    },
+    {
+      title: 'Node.js Proxy Interview Canada',
+      description:
+        'Live guidance during Node.js backend technical interviews at Canadian tech companies — API design, async programming, microservices architecture, and coding rounds.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Node.js technologies do you support for Canadian projects?',
+      answer:
+        'We cover the complete Node.js stack used by Canadian companies: Express.js, NestJS, Fastify, TypeScript (ts-node, tsx), REST and GraphQL APIs, socket.io, Prisma, TypeORM, Mongoose, MongoDB, PostgreSQL, MySQL, Redis, RabbitMQ, Kafka, Bull/BullMQ job queues, and Node.js deployments on AWS (Lambda, EC2, ECS, Beanstalk), Azure (App Service, Functions, AKS), and Docker/Kubernetes.',
+    },
+    {
+      question: 'Can you help with NestJS-specific issues for Canadian enterprise projects?',
+      answer:
+        'Yes. NestJS is increasingly popular in Canadian backend development. Common NestJS issues we resolve include circular dependency injection, module encapsulation problems, Guards and Interceptors configuration, TypeORM integration, Prisma schema management, and NestJS monorepo challenges. We have helped teams at Canadian SaaS companies and fintech startups resolve complex NestJS architectural issues.',
+    },
+    {
+      question: 'Do you provide Node.js proxy interview support for Canadian roles?',
+      answer:
+        'Yes. We provide real-time, discreet guidance during Node.js technical interviews at Canadian tech companies. We cover event loop internals, async programming patterns, REST API design, GraphQL schema design, microservices communication patterns, and coding rounds in JavaScript/TypeScript. Common Canadian employers for Node.js roles include Shopify, FreshBooks, Wealthsimple, and global companies with Canadian Node.js teams.',
+    },
+    {
+      question: 'Can you help with Node.js microservices for Canadian banking or fintech?',
+      answer:
+        'Yes. Canadian fintech companies increasingly use Node.js microservices for payment APIs, notification services, and customer-facing features. Our experts help with message queue integration (Kafka, RabbitMQ), service discovery, API gateway configuration, and security patterns for Canadian financial applications.',
+    },
+    {
+      question: 'How quickly can you start Node.js support for a Canadian project?',
+      answer:
+        'Same day. Contact us on WhatsApp with your challenge and we assign the right in-house Node.js expert immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Node.js Situations We Help Canadian Developers Solve',
+    cases: [
+      'NestJS circular dependency injection and module configuration issues in Canadian product backends',
+      'Express.js middleware order bugs and API security configuration for Canadian fintech applications',
+      'Node.js async event loop blocking causing performance degradation in Canadian SaaS applications',
+      'TypeORM or Prisma migration failures and query optimization for Canadian PostgreSQL databases',
+      'Node.js microservices Kafka consumer group issues in Canadian banking event-driven architectures',
+      'Preparing for Node.js backend interviews at Shopify, FreshBooks, Wealthsimple, and other Canadian employers',
+    ],
+  },
+  proxySection: {
+    title: 'Node.js Proxy Interview Support for Canadian Roles',
+    intro:
+      'Canadian Node.js backend interviews test async programming mastery, API design, microservices patterns, and coding proficiency. Our experts provide real-time, confidential guidance during your live interview so you demonstrate the depth Canadian backend teams expect.',
+    points: [
+      'Live guidance during Node.js coding rounds — JavaScript/TypeScript algorithm problems',
+      'Real-time support during API design and microservices architecture discussions',
+      'Help with Node.js internals questions — event loop, streams, cluster mode',
+      'NestJS and Express architecture design support for senior Canadian backend interviews',
+      'On-the-job Node.js support for Canadian project delivery across all time zones',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Canada', href: '/job-support-canada/' },
+      { label: 'Node.js job support USA', href: '/nodejs-job-support-usa/' },
+    ],
+    techLinks: [
+      { label: 'React job support Canada', href: '/react-job-support-canada/' },
+      { label: 'Java job support Canada', href: '/java-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling as a backend developer?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read backend engineering articles', href: '/blog/' },
+  },
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+// CANADA – CITY LANDING PAGES
+// ═══════════════════════════════════════════════════════════════════════════
+
+export const itJobSupportToronto: LandingPageConfig = {
+  slug: 'it-job-support-toronto',
+  title: 'IT Job Support Toronto – Proxy Interview & Developer Help in Toronto',
+  description:
+    'Need IT job support in Toronto? Real-time developer help & proxy interview assistance for Toronto tech roles. Banking, fintech, AI, Shopify ecosystem. EST hours. Start same-day.',
+  canonical: `${BASE_URL}/it-job-support-toronto/`,
+  keywords: [
+    'IT job support Toronto', 'proxy interview Toronto', 'developer support Toronto',
+    'Toronto tech job help', 'interview assistance Toronto', 'Java support Toronto',
+    'Toronto fintech developer help', 'AI job support Toronto',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Toronto',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals working on Toronto tech projects — banking, fintech, AI, and startup sectors covered.',
+  painIntro:
+    "Working in Toronto's competitive tech market and feeling the pressure? Whether you are on a fintech sprint in the Financial District, an AI project near the Vector Institute, or a banking migration at a Bay Street institution — our experts provide immediate real-time job support and proxy interview guidance.",
+  heroVariant:
+    "Toronto is Canada's largest tech hub and one of North America's fastest-growing technology markets. It's home to the country's largest financial institutions (RBC, TD, Scotiabank, CIBC, BMO), a thriving AI ecosystem anchored by the Vector Institute, and an increasingly global startup scene in the Waterfront Innovation Centre and MaRS Discovery District. Toronto tech professionals face unique pressures — high cost of living means every job matters, competition from both local and internationally-relocated talent is fierce, and employers expect candidates ready to hit the ground running. Whether you need daily job support on a Toronto project or proxy interview assistance for a critical Toronto tech role, our experts provide immediate, confidential help.",
+  geoLine: 'Supporting Toronto-based developers and IT professionals across Canada including Vancouver, Calgary, and Montreal.',
+  timezoneNote: 'Fully aligned with Toronto EST (Eastern Standard Time) and EDT working hours.',
+  techSnippet:
+    "We support all Toronto tech stacks: Java, Python, React, Node.js, .NET, AWS, Azure, Kubernetes, AI/ML, and fintech-specific technologies used by Toronto's banking and tech sectors.",
+  highlights: [
+    {
+      title: 'Toronto Banking & Fintech Tech Support',
+      description:
+        "Real-time job support for developers on Java, Python, and cloud projects at Toronto's major financial institutions — RBC, TD, Scotiabank, CIBC, BMO, and Toronto fintech companies.",
+    },
+    {
+      title: 'Toronto AI & Startup Project Support',
+      description:
+        'Expert help for developers at Toronto AI companies, MaRS startups, and tech firms near the Vector Institute — Python, ML, LLMs, React, and cloud-native stacks.',
+    },
+    {
+      title: 'Toronto Interview Proxy Support',
+      description:
+        'Live guidance during technical interviews at Toronto employers — coding rounds, system design, and behavioral sessions for roles from junior to senior.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Toronto companies and sectors do you provide IT job support for?',
+      answer:
+        "We support developers working at or interviewing for roles at Toronto's largest employers: major Canadian banks (RBC, TD, Scotiabank, CIBC, BMO), Toronto fintechs (Wealthsimple, Mogo, Borrowell, Brim Financial), global tech companies with Toronto offices (Google, Amazon, Microsoft, Shopify), AI companies near Vector Institute (Cohere, Layer6, Waabi, Ada), and Toronto's growing startup and scale-up scene at MaRS and the Waterfront Innovation Centre.",
+    },
+    {
+      question: 'Do you provide proxy interview support for Toronto tech roles?',
+      answer:
+        "Yes. We provide real-time, discreet guidance during technical interviews at Toronto companies. Toronto's interview formats range from structured technical assessments at the big banks to pair programming at startups to algorithm-heavy rounds at global tech companies with Toronto offices. We tailor our proxy support to the specific Toronto employer and role.",
+    },
+    {
+      question: "Can you help Indian professionals adapting to Toronto's tech market?",
+      answer:
+        "Yes. A significant portion of our clients are Indian professionals who have recently arrived in Toronto, are on Canadian PR, or are applying to Toronto jobs from abroad. We understand the specific challenges — adapting to Canadian enterprise culture, meeting Canadian-experience expectations, and navigating Toronto's banking and tech sector interview formats. Our support is calibrated to help you succeed in the Toronto market specifically.",
+    },
+    {
+      question: 'What time zone do you cover for Toronto clients?',
+      answer:
+        'We are fully aligned with Toronto EST/EDT (Eastern Time Zone) business hours. Whether you need job support before a 9 AM Toronto standup, real-time guidance during a lunchtime interview, or late-evening help before a next-day release, we are available throughout Toronto working hours.',
+    },
+    {
+      question: 'How quickly can I start IT job support for a Toronto project?',
+      answer:
+        'Same day. Contact us on WhatsApp with your technology stack and challenge — we assign the right in-house expert and you can start immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Toronto IT Scenarios We Help Developers Navigate',
+    cases: [
+      "Java backend development at a Toronto bank — complex legacy integrations, strict coding standards, and high-stakes deliveries",
+      'Python and AI engineering at a Toronto AI startup near the Vector Institute — LLM applications, RAG pipelines, and model serving',
+      'React frontend development at a Toronto fintech — performance optimization, TypeScript, and API integration',
+      'DevOps and cloud engineering for a Toronto enterprise — AWS or Azure migrations, Kubernetes deployments, CI/CD pipelines',
+      'Sprint delivery pressure at a Toronto Agile team — resolving technical blockers before daily standups',
+      'Technical interview preparation for a coveted Toronto tech role at a bank, AI company, or global tech firm',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for Toronto Tech Roles',
+    intro:
+      "Toronto is one of Canada's most competitive tech markets. Interview processes at Toronto banks, AI companies, and global tech firms are rigorous and multi-stage. Our experts provide real-time, confidential proxy interview guidance so you can perform at your peak for Toronto's most sought-after tech roles.",
+    points: [
+      'Live guidance during coding rounds for Toronto bank, fintech, and tech company interviews',
+      'Real-time support during system design sessions for senior Toronto engineering roles',
+      'Help with behavioral interview preparation for Toronto employer culture and expectations',
+      'Mock interview sessions calibrated to Toronto-specific employer formats (banks, startups, global tech)',
+      'On-the-job support for Toronto project delivery across EST business hours',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Canada', href: '/job-support-canada/' },
+      { label: 'IT job support Vancouver', href: '/it-job-support-vancouver/' },
+    ],
+    techLinks: [
+      { label: 'Java job support Canada', href: '/java-job-support-canada/' },
+      { label: 'AI/ML job support Canada', href: '/ai-ml-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your Toronto IT role?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const itJobSupportVancouver: LandingPageConfig = {
+  slug: 'it-job-support-vancouver',
+  title: 'IT Job Support Vancouver – Proxy Interview & Developer Help in Vancouver',
+  description:
+    'Need IT job support in Vancouver? Real-time developer help & proxy interview assistance for Vancouver tech roles. Gaming, AI, cloud, tech startups. PST hours. Start same-day.',
+  canonical: `${BASE_URL}/it-job-support-vancouver/`,
+  keywords: [
+    'IT job support Vancouver', 'proxy interview Vancouver', 'developer support Vancouver',
+    'Vancouver tech job help', 'interview assistance Vancouver', 'Python support Vancouver',
+    'Vancouver tech developer help', 'React job support Vancouver',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Vancouver',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals working on Vancouver tech projects — gaming, AI, cloud, and tech startup sectors covered.',
+  painIntro:
+    "Working in Vancouver's tech scene and feeling the pressure? Whether you are at a game studio in False Creek, an AI company in Yaletown, or a growing tech startup in Gastown — our experts provide immediate real-time job support and proxy interview guidance.",
+  heroVariant:
+    "Vancouver is Canada's Pacific technology hub — home to a thriving gaming industry (Electronic Arts, Activision, Ubisoft, Nintendo), a growing AI and cloud-native startup scene, and a unique gateway position bridging Canadian and Asia-Pacific markets. Vancouver's PST time zone means working hours overlap with the US West Coast, creating both opportunities and pressures for developers. The city's tech talent pool is diverse and international, and competition for high-value roles is intense. Whether you are a developer at a Vancouver game studio, a Python engineer at a Yaletown AI startup, or a cloud architect at a Vancouver enterprise, our experts provide real-time job support and proxy interview guidance calibrated to Vancouver's unique tech market.",
+  geoLine: 'Supporting Vancouver-based developers and IT professionals across Canada including Toronto, Calgary, and Montreal.',
+  timezoneNote: 'Fully aligned with Vancouver PST (Pacific Standard Time) and PDT working hours.',
+  techSnippet:
+    'We support all Vancouver tech stacks: Python, React, C++/Unreal/Unity for gaming, Node.js, AWS, GCP, Kubernetes, AI/ML, and cloud-native technologies used by Vancouver companies.',
+  highlights: [
+    {
+      title: 'Vancouver Gaming & Interactive Media Support',
+      description:
+        'Real-time job support for developers at Vancouver game studios — C++, Python, Unreal Engine, Unity, game server backend, and cloud gaming infrastructure.',
+    },
+    {
+      title: 'Vancouver AI & Startup Tech Support',
+      description:
+        'Expert help for developers at Vancouver AI companies, Yaletown startups, and cloud-native firms — Python, ML, React, Node.js, GCP, and AWS stacks.',
+    },
+    {
+      title: 'Vancouver Interview Proxy Support',
+      description:
+        'Live guidance during technical interviews at Vancouver employers — gaming companies, AI startups, and tech firms with unique Vancouver-style interview formats.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Vancouver tech sectors and companies do you support?',
+      answer:
+        'We support developers working at Vancouver gaming companies (EA Canada, Activision/Blizzard, Ubisoft Vancouver, Nintendo Canada, Larian Studios), Vancouver AI and tech startups, cloud-native companies, and global tech companies with Vancouver offices (Amazon, SAP, Microsoft). We also support developers at Vancouver enterprises and BC government digital services.',
+    },
+    {
+      question: 'Do you provide proxy interview support for Vancouver tech roles?',
+      answer:
+        "Yes. Vancouver's tech interviews vary significantly by sector — game studios often involve technical art tests, coding challenges, and engine-specific questions, while startup and SaaS companies run more traditional software engineering rounds. We tailor our proxy support to the specific Vancouver employer and industry context.",
+    },
+    {
+      question: "Can you help developers adapting to Vancouver's tech culture from other countries?",
+      answer:
+        "Yes. Vancouver's tech workforce is highly international — many professionals come from India, China, and the US. We specifically help professionals navigate Vancouver's tech interview culture, Canadian workplace expectations, and the specific interview formats used by Vancouver gaming studios, AI companies, and enterprise tech firms.",
+    },
+    {
+      question: 'What time zone do you cover for Vancouver clients?',
+      answer:
+        'We are fully aligned with Vancouver PST/PDT (Pacific Time Zone) working hours. Whether you need job support before a 9 AM Vancouver standup, real-time guidance during an afternoon interview, or late-evening help for a next-day delivery, we are available throughout Vancouver working hours.',
+    },
+    {
+      question: 'How quickly can I start IT job support for a Vancouver project?',
+      answer:
+        'Same day. Contact us on WhatsApp with your challenge — we match you with the right in-house expert and you can start immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Vancouver IT Scenarios We Help Developers Navigate',
+    cases: [
+      'Game server backend development at a Vancouver game studio — C++, Python, real-time systems, and cloud gaming infrastructure',
+      'Python and AI/ML engineering at a Vancouver startup — LLM applications, computer vision, and ML deployment on GCP or AWS',
+      'React or Node.js development at a Vancouver SaaS company — API integration, TypeScript, and cloud deployments',
+      'DevOps and Kubernetes at a Vancouver tech company — GCP, AWS, CI/CD, and container orchestration',
+      'Cross-timezone project coordination between Vancouver PST and Canadian EST teams',
+      'Technical interview preparation for a sought-after Vancouver gaming or tech role',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for Vancouver Tech Roles',
+    intro:
+      "Vancouver's tech interview landscape is diverse — from game studio technical tests to startup engineering challenges to enterprise solution design. Our experts provide real-time, confidential proxy interview guidance calibrated to Vancouver's specific employer types and sectors.",
+    points: [
+      'Live guidance during coding rounds for Vancouver gaming, AI, and tech company interviews',
+      'Real-time support during system design sessions for senior Vancouver engineering roles',
+      'Help with game studio-specific technical questions — engine architecture, performance, networking',
+      'Mock interview sessions calibrated to Vancouver employer formats and culture',
+      'On-the-job support for Vancouver project delivery across PST business hours',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Canada', href: '/job-support-canada/' },
+      { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
+    ],
+    techLinks: [
+      { label: 'Python job support Canada', href: '/python-job-support-canada/' },
+      { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your Vancouver IT role?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const itJobSupportCalgary: LandingPageConfig = {
+  slug: 'it-job-support-calgary',
+  title: 'IT Job Support Calgary – Proxy Interview & Developer Help in Calgary',
+  description:
+    'Need IT job support in Calgary? Real-time developer help & proxy interview assistance for Calgary tech roles. Energy sector, fintech, cloud, enterprise. MST hours. Start same-day.',
+  canonical: `${BASE_URL}/it-job-support-calgary/`,
+  keywords: [
+    'IT job support Calgary', 'proxy interview Calgary', 'developer support Calgary',
+    'Calgary tech job help', 'interview assistance Calgary', 'Java support Calgary',
+    'Calgary energy sector tech help', 'Python job support Calgary',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Calgary',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals working on Calgary tech projects — energy sector, enterprise, and cloud covered.',
+  painIntro:
+    'Working on a Calgary IT project and under pressure? Whether you are on an energy sector data platform, a fintech application, or an enterprise digital transformation project — our experts provide immediate real-time job support and proxy interview guidance.',
+  heroVariant:
+    "Calgary is emerging as a significant Canadian tech hub, with a unique character shaped by its energy sector heritage and growing diversification into tech. Calgary's IT landscape spans energy companies (Suncor, Cenovus, TC Energy) undergoing digital transformation, a growing fintech sector, government tech, and an increasingly vibrant startup scene. MST time zone alignment with both the US Mountain time zone and the Canadian Prairies makes Calgary developers part of a unique mid-continental tech market. Whether you are a data engineer working on energy sector analytics, a cloud developer at a Calgary startup, or an enterprise developer at a Calgary corporation, our experts provide real-time job support and proxy interview assistance.",
+  geoLine: 'Supporting Calgary-based developers and IT professionals across Canada including Toronto, Vancouver, and Montreal.',
+  timezoneNote: 'Fully aligned with Calgary MST (Mountain Standard Time) and MDT working hours.',
+  techSnippet:
+    'We support all Calgary tech stacks: Python for data engineering, Java for enterprise applications, React, Node.js, AWS, Azure, Kubernetes, and energy-sector-specific technologies.',
+  highlights: [
+    {
+      title: 'Calgary Energy Sector Tech Support',
+      description:
+        'Real-time job support for IT professionals at Calgary energy companies — data engineering, IoT platforms, Python analytics, and SAP integration support.',
+    },
+    {
+      title: 'Calgary Enterprise & Government Tech Support',
+      description:
+        'Expert help for developers at Calgary enterprises, Alberta government, and growing tech companies — Java, .NET, cloud migrations, and enterprise architecture.',
+    },
+    {
+      title: 'Calgary Interview Proxy Support',
+      description:
+        'Live guidance during technical interviews at Calgary employers — energy sector, enterprise, and tech company interview formats.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Calgary tech sectors and companies do you provide support for?',
+      answer:
+        "We support developers at Calgary energy companies (Suncor, Cenovus, TC Energy, Enbridge, ARC Resources), Calgary fintech and insurance firms, Alberta government digital services, and Calgary's growing tech startup ecosystem. We also support developers at global companies with Calgary offices.",
+    },
+    {
+      question: 'Do you understand energy-sector IT challenges specific to Calgary?',
+      answer:
+        'Yes. Calgary energy companies have unique IT environments — large-scale data engineering for operational analytics, IoT sensor data pipelines, SAP integration, legacy system modernization, and cloud migration of specialized energy industry applications. Our experts can help with these energy-sector-specific IT challenges.',
+    },
+    {
+      question: 'Do you provide proxy interview support for Calgary roles?',
+      answer:
+        'Yes. Calgary tech interview formats vary by sector — energy companies often focus on data engineering, SQL, and Python skills, while enterprise tech roles require architecture and design pattern knowledge. We tailor our proxy interview guidance to the specific Calgary employer and role.',
+    },
+    {
+      question: 'What time zone do you cover for Calgary clients?',
+      answer:
+        'We are fully aligned with Calgary MST/MDT (Mountain Time Zone) working hours. We are available for job support throughout Calgary business hours, whether you need help before morning standups or during afternoon production incidents.',
+    },
+    {
+      question: 'How quickly can I start IT job support for a Calgary project?',
+      answer:
+        'Same day. Message us on WhatsApp with your challenge and we assign the right expert immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Calgary IT Scenarios We Help Developers Navigate',
+    cases: [
+      'Python data engineering at a Calgary energy company — pipeline optimization, SQL, and cloud analytics',
+      'Java enterprise development at a Calgary corporation — complex integrations, Spring Boot, and SAP',
+      'Cloud migration support for a Calgary company moving from on-premise to AWS or Azure',
+      'React or .NET frontend/backend development at a Calgary enterprise or government project',
+      'DevOps automation for a Calgary IT team — CI/CD pipelines, Kubernetes, and infrastructure as code',
+      'Technical interview preparation for roles at Calgary energy companies, enterprises, and tech firms',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for Calgary Tech Roles',
+    intro:
+      "Calgary's tech interviews span energy sector data roles, enterprise software engineering, and startup technical positions. Our experts provide real-time, confidential proxy interview guidance calibrated to Calgary's specific sectors and employer types.",
+    points: [
+      'Live guidance during coding and technical assessment rounds for Calgary employer interviews',
+      'Real-time support during data engineering and SQL technical discussions for Calgary energy roles',
+      'Help with enterprise architecture and integration questions for Calgary corporate tech roles',
+      'Mock interview sessions calibrated to Calgary employer expectations and sector context',
+      'On-the-job support for Calgary project delivery across MST business hours',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Canada', href: '/job-support-canada/' },
+      { label: 'IT job support Vancouver', href: '/it-job-support-vancouver/' },
+    ],
+    techLinks: [
+      { label: 'Python job support Canada', href: '/python-job-support-canada/' },
+      { label: 'Java job support Canada', href: '/java-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your Calgary IT role?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const itJobSupportMontreal: LandingPageConfig = {
+  slug: 'it-job-support-montreal',
+  title: 'IT Job Support Montreal – Proxy Interview & Developer Help in Montreal',
+  description:
+    'Need IT job support in Montreal? Real-time developer help & proxy interview assistance for Montreal tech roles. AI research, gaming, telecom, bilingual tech. EST hours. Start same-day.',
+  canonical: `${BASE_URL}/it-job-support-montreal/`,
+  keywords: [
+    'IT job support Montreal', 'proxy interview Montreal', 'developer support Montreal',
+    'Montreal tech job help', 'interview assistance Montreal', 'AI job support Montreal',
+    'Montreal gaming developer help', 'Python support Montreal',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Montreal',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals working on Montreal tech projects — AI research, gaming, telecom, and bilingual tech sectors covered.',
+  painIntro:
+    "Working in Montreal's dynamic tech scene and feeling pressure? Whether you are at an AI research lab near Mila, a gaming studio in Mile-Ex, or a telecom technology team at Bell or Videotron — our experts provide immediate real-time job support and proxy interview guidance.",
+  heroVariant:
+    "Montreal is one of Canada's most unique and rapidly growing tech cities. It's home to Mila (the world-renowned AI institute founded by Yoshua Bengio), a thriving gaming industry (Ubisoft Montreal, Warner Bros. Games, Behaviour Interactive), major telecom engineering (Bell, Videotron, Ericsson), and a growing startup ecosystem. Montreal offers a distinctive bilingual (French/English) tech environment, competitive salaries, and access to cutting-edge AI research. Whether you are a Python engineer at an AI research lab, a game developer at a Montreal studio, or a software developer navigating Montreal's bilingual tech market, our experts provide real-time job support and proxy interview assistance.",
+  geoLine: 'Supporting Montreal-based developers and IT professionals across Canada including Toronto, Vancouver, and Calgary.',
+  timezoneNote: 'Fully aligned with Montreal EST (Eastern Standard Time) and EDT working hours.',
+  techSnippet:
+    'We support all Montreal tech stacks: Python for AI/ML, C++/Unity/Unreal for gaming, Java and .NET for enterprise, React, Node.js, cloud platforms, and bilingual application development.',
+  highlights: [
+    {
+      title: 'Montreal AI Research & Startup Support',
+      description:
+        'Expert job support for Python, ML, and AI engineers at Montreal AI companies near Mila — LLMs, computer vision, NLP, and research-to-production ML pipelines.',
+    },
+    {
+      title: 'Montreal Gaming Industry Tech Support',
+      description:
+        'Real-time help for developers at Montreal game studios — C++, Unreal Engine, Unity, game server backend, and live services infrastructure.',
+    },
+    {
+      title: 'Montreal Interview Proxy Support',
+      description:
+        'Live guidance during technical interviews at Montreal employers — AI companies, game studios, telecom tech teams, and enterprise software roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Montreal tech sectors and companies do you provide support for?',
+      answer:
+        'We support developers at Montreal AI companies and research labs (Mila-affiliated companies, Element AI/ServiceNow, Coveo, Dialogue, Lightspeed), Montreal game studios (Ubisoft Montreal, Warner Bros. Games, Behaviour Interactive), telecom tech teams (Bell Canada, Videotron, Ericsson Montreal), and the broader Montreal startup ecosystem.',
+    },
+    {
+      question: 'Do you need to be bilingual (French/English) to support Montreal developers?',
+      answer:
+        'Our technical support is provided in English, which is the working language for most tech teams in Montreal even in bilingual organizations. We understand the Montreal context and help you navigate technical challenges regardless of language context.',
+    },
+    {
+      question: 'Do you provide proxy interview support for Montreal tech roles?',
+      answer:
+        "Yes. Montreal's tech interviews vary significantly by sector — AI companies run rigorous ML-focused technical interviews, game studios test domain-specific knowledge and C++ skills, and enterprise roles follow more traditional software engineering formats. We tailor our proxy support to the Montreal employer type and sector.",
+    },
+    {
+      question: "Can you help AI/ML professionals at Montreal research-adjacent companies?",
+      answer:
+        "Yes. Montreal's AI ecosystem — with Mila as its anchor — attracts specialized AI talent. Interviews at AI companies near Mila often involve ML theory, coding, and research discussion. We have in-house ML experts who understand the expectations at Montreal AI companies and can provide precise real-time guidance during technical interviews.",
+    },
+    {
+      question: 'How quickly can I start IT job support for a Montreal project?',
+      answer:
+        'Same day. Contact us on WhatsApp with your challenge — we assign the right expert immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Montreal IT Scenarios We Help Developers Navigate',
+    cases: [
+      'Python and AI/ML engineering at a Montreal AI company near Mila — LLM applications, NLP, and computer vision',
+      'C++ or Python game development at a Montreal studio — Ubisoft, Warner Bros., or indie studio projects',
+      'Java or .NET enterprise development at a Montreal corporation or telecom tech team',
+      'DevOps and cloud engineering for a Montreal company on AWS or Azure',
+      'React or Vue.js frontend development at a Montreal SaaS or e-commerce company',
+      'Technical interview preparation for roles at Montreal AI companies, game studios, and tech firms',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for Montreal Tech Roles',
+    intro:
+      "Montreal's tech interview landscape is as diverse as its tech sectors — AI research-quality ML interviews, creative and technical game studio assessments, enterprise architecture discussions, and startup engineering challenges. Our experts provide real-time, confidential proxy interview guidance calibrated to Montreal's specific employers.",
+    points: [
+      'Live guidance during ML and AI coding rounds for Montreal AI company and research lab interviews',
+      'Real-time support during game development technical assessments for Montreal studio roles',
+      'Help with system design and architecture discussions for senior Montreal engineering positions',
+      'Mock interview sessions calibrated to Montreal employer formats — AI, gaming, enterprise',
+      'On-the-job support for Montreal project delivery across EST business hours',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Canada', href: '/job-support-canada/' },
+      { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
+    ],
+    techLinks: [
+      { label: 'AI/ML job support Canada', href: '/ai-ml-job-support-canada/' },
+      { label: 'Python job support Canada', href: '/python-job-support-canada/' },
+    ],
+    problemLink: { label: 'Struggling in your Montreal IT role?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const allLandingPages: LandingPageConfig[] = [
   jobSupportUSA,
   jobSupportUK,
@@ -2475,4 +3636,17 @@ export const allLandingPages: LandingPageConfig[] = [
   proxyInterviewUSA,
   proxyInterviewUK,
   proxyInterviewCanada,
+  // ── Canada tech pages ──────────────────────────────────────────────────────
+  devopsJobSupportCanada,
+  cloudJobSupportCanada,
+  reactJobSupportCanada,
+  javaJobSupportCanada,
+  pythonJobSupportCanada,
+  aiMlJobSupportCanada,
+  nodejsJobSupportCanada,
+  // ── Canada city pages ──────────────────────────────────────────────────────
+  itJobSupportToronto,
+  itJobSupportVancouver,
+  itJobSupportCalgary,
+  itJobSupportMontreal,
 ];

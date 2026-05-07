@@ -82,6 +82,14 @@ import Article_resume_linkedin_optimization_for_developers from './resume-linked
 import { meta as meta_resume_linkedin_optimization_for_developers } from './resume-linkedin-optimization-for-developers/meta';
 import Article_ai_ml_data_science_proxy_job_support from './ai-ml-data-science-proxy-job-support/Article';
 import { meta as meta_ai_ml_data_science_proxy_job_support } from './ai-ml-data-science-proxy-job-support/meta';
+import Article_devops_job_support_canada_guide from './devops-job-support-canada-guide/Article';
+import { meta as meta_devops_job_support_canada_guide } from './devops-job-support-canada-guide/meta';
+import Article_react_developer_jobs_canada from './react-developer-jobs-canada/Article';
+import { meta as meta_react_developer_jobs_canada } from './react-developer-jobs-canada/meta';
+import Article_java_developer_canada_banking from './java-developer-canada-banking/Article';
+import { meta as meta_java_developer_canada_banking } from './java-developer-canada-banking/meta';
+import Article_ai_ml_engineer_jobs_canada from './ai-ml-engineer-jobs-canada/Article';
+import { meta as meta_ai_ml_engineer_jobs_canada } from './ai-ml-engineer-jobs-canada/meta';
 
 export const blogArticleEntries = [
   { meta: meta_agentic_ai_ml_job_support, Article: Article_agentic_ai_ml_job_support },
@@ -125,4 +133,8 @@ export const blogArticleEntries = [
   { meta: meta_interview_mentoring_for_it_professionals, Article: Article_interview_mentoring_for_it_professionals },
   { meta: meta_resume_linkedin_optimization_for_developers, Article: Article_resume_linkedin_optimization_for_developers },
   { meta: meta_ai_ml_data_science_proxy_job_support, Article: Article_ai_ml_data_science_proxy_job_support },
+  { meta: meta_devops_job_support_canada_guide, Article: Article_devops_job_support_canada_guide },
+  { meta: meta_react_developer_jobs_canada, Article: Article_react_developer_jobs_canada },
+  { meta: meta_java_developer_canada_banking, Article: Article_java_developer_canada_banking },
+  { meta: meta_ai_ml_engineer_jobs_canada, Article: Article_ai_ml_engineer_jobs_canada },
 ] as const;
