@@ -33,6 +33,34 @@
 - [Java Job Support USA](/java-job-support-usa/): Java, Spring Boot, Spring Cloud, microservices for US companies.
 - [Node.js Job Support USA](/nodejs-job-support-usa/): Node.js, Express, NestJS for US tech roles.
 - [DevOps Job Support USA](/devops-job-support-usa/): CI/CD, Kubernetes, Terraform, AWS/Azure for US DevOps engineers.
+- [React Job Support USA](/react-job-support-usa/): React 18+, Next.js, TypeScript, Redux for US frontend roles.
+- [Cloud Job Support USA](/cloud-job-support-usa/): AWS, Azure, GCP, Terraform for US cloud engineers and architects.
+- [.NET Job Support USA](/dotnet-job-support-usa/): C#, ASP.NET Core, Entity Framework, Azure for US .NET developers.
+- [Proxy Interview USA](/proxy-interview-usa/): Live interview assistance for US company interviews — FAANG, startups, enterprise.
+- [Get Interview Scheduled USA](/get-interview-scheduled-usa/): Schedule proxy interview support for US tech company interviews.
+
+## Canada Location Landing Pages
+
+- [IT Job Support Canada](/job-support-canada/): Real-time IT job support and proxy interview assistance for Canadian tech professionals. EST to PST covered — Toronto, Vancouver, Calgary, Montreal.
+- [Proxy Interview Canada](/proxy-interview-canada/): Live technical interview guidance for Canadian tech company interviews — banks, fintechs, AI companies, global tech with Canadian offices.
+- [Get Interview Scheduled Canada](/get-interview-scheduled-canada/): Schedule proxy interview support for Canadian tech company interviews.
+
+## Canada Technology-Specific Job Support Pages
+
+- [DevOps Job Support Canada](/devops-job-support-canada/): Real-time CI/CD, Kubernetes, AWS/Azure, Terraform, and Jenkins support for Canadian DevOps engineers. Proxy interview guidance for Canadian DevOps roles at Shopify, RBC, TD, Rogers, Bell. EST to PST covered.
+- [Cloud Job Support Canada](/cloud-job-support-canada/): AWS, Azure, and GCP support for Canadian cloud engineers — PIPEDA-compliant architectures, AWS ca-central-1 / Azure Canada regions expertise, cloud proxy interview guidance for Canadian employers. All Canadian time zones.
+- [React Job Support Canada](/react-job-support-canada/): React 18+, Next.js App Router, TypeScript, Redux, and React Native support for Canadian frontend developers — Shopify, FreshBooks, Wealthsimple, government digital services. EST to PST.
+- [Java Job Support Canada](/java-job-support-canada/): Spring Boot, Spring Cloud, microservices, and enterprise Java support for Canadian banking and enterprise developers — RBC, TD, Scotiabank, CIBC, BMO, Sun Life, Manulife stacks. EST to PST.
+- [Python Job Support Canada](/python-job-support-canada/): Django, FastAPI, data science, AI/ML, and data engineering Python support for Canadian developers — Toronto AI ecosystem, Montreal research labs, Vancouver data teams. All Canadian time zones.
+- [AI/ML Job Support Canada](/ai-ml-job-support-canada/): Machine learning, LLMs, RAG, MLOps, and generative AI support for Canadian AI engineers — Vector Institute (Toronto), Mila (Montreal), Cohere, Borealis AI (RBC), Layer6 (TD) ecosystem. EST to PST.
+- [Node.js Job Support Canada](/nodejs-job-support-canada/): Express, NestJS, TypeScript backend support for Canadian developers — Shopify, Canadian fintech APIs, remote contracts, Open Banking compliance. EST to PST.
+
+## Canada City-Specific Job Support Pages
+
+- [IT Job Support Toronto](/it-job-support-toronto/): Real-time developer support and proxy interview guidance for Toronto tech professionals — major banks (RBC, TD, Scotiabank, CIBC, BMO), AI companies near Vector Institute (Cohere, Waabi, Layer6), fintechs (Wealthsimple, FreshBooks), global tech companies with Toronto offices. EST aligned.
+- [IT Job Support Vancouver](/it-job-support-vancouver/): Developer support and proxy interview guidance for Vancouver tech professionals — gaming studios (EA Canada, Activision, Ubisoft Vancouver, Nintendo Canada), AI/tech startups (Yaletown, Gastown), cloud-native companies. PST aligned.
+- [IT Job Support Calgary](/it-job-support-calgary/): IT job support and proxy interview guidance for Calgary tech professionals — energy sector (Suncor, Cenovus, TC Energy, Enbridge), enterprise cloud migrations, data engineering. MST aligned.
+- [IT Job Support Montreal](/it-job-support-montreal/): Developer support and proxy interview guidance for Montreal tech professionals — AI research companies (Mila ecosystem, Element AI/ServiceNow, Coveo), gaming studios (Ubisoft Montreal, Warner Bros. Games, Behaviour Interactive), telecom tech (Bell Canada, Videotron). EST aligned.
 
 ## International Location Pages
 
@@ -72,4 +100,6 @@
 - Contact: WhatsApp +91-96606-14469
 - Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals
 - Coverage: USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand
+- Canada cities: Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
 - Technologies: AI/ML, DevOps, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET, Databases, Testing, Cybersecurity
+- Canada specialties: Banking Java systems (RBC/TD/Scotiabank), Canadian fintech APIs, PIPEDA-compliant cloud architectures, AI research ecosystem (Vector Institute Toronto, Mila Montreal), gaming industry (Vancouver, Montreal), energy sector tech (Calgary)

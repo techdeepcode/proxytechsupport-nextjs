@@ -258,6 +258,149 @@ Technologies supported (2026):
 
 ---
 
+## Canada Services — Technology Job Support
+
+### 4. DevOps Job Support Canada
+URL: /devops-job-support-canada/
+Target: DevOps engineers, SREs, platform engineers working on Canadian projects
+
+Canadian context: Canada's major banks (RBC, TD, Scotiabank, CIBC, BMO) are mid-way through large DevOps transformations. Canadian telecoms (Rogers, Bell, Telus) are modernizing CI/CD infrastructure. Shopify operates one of the most demanding cloud-native DevOps environments in North America.
+
+Technologies supported:
+- CI/CD: Jenkins, GitHub Actions, GitLab CI, Azure DevOps, Bitbucket Pipelines
+- Container orchestration: Kubernetes (EKS, AKS, GKE), Docker, Helm, ArgoCD, Flux CD
+- IaC: Terraform (AWS ca-central-1, Azure Canada East/Central), Ansible, Pulumi
+- Cloud: AWS Canada (Central), Azure Canada East/Central, GCP Canada regions
+- Observability: Prometheus, Grafana, Datadog, Dynatrace, ELK stack
+- Banking DevOps: OSFI-compliant deployment pipelines, change management, audit trails
+- Time zones: EST, CST, MST, PST — all Canadian time zones covered
+
+---
+
+### 5. Cloud Job Support Canada
+URL: /cloud-job-support-canada/
+Target: Cloud engineers, cloud architects, cloud consultants working on Canadian projects
+
+Canadian context: Canadian financial institutions (RBC, TD, CIBC, BMO, Scotiabank) are undergoing massive cloud migrations. PIPEDA (federal privacy law) and provincial privacy legislation impose data residency requirements. OSFI guidelines constrain cloud deployments in financial services. AWS ca-central-1 and Azure Canada regions are the primary regulated deployment targets.
+
+Technologies supported:
+- AWS: EC2, EKS, Lambda, RDS, S3, CloudFormation, CDK, IAM, VPC, ca-central-1 region specifics
+- Azure: AKS, Functions, SQL, AD, DevOps, Canada East/Central region compliance
+- GCP: GKE, BigQuery, Cloud Run, Vertex AI, Canadian data residency
+- Compliance: PIPEDA, OSFI guidelines, provincial privacy laws (PIPA Alberta/BC, LPRPDE Quebec), SOC2, FedRAMP equivalent
+- Multi-cloud: hybrid architectures common in Canadian enterprise (AWS + Azure)
+- Certifications: AWS Solutions Architect, AZ-104, AZ-305, GCP Professional Cloud Architect
+
+---
+
+### 6. React Job Support Canada
+URL: /react-job-support-canada/
+Target: React/frontend developers, Next.js developers working on Canadian projects
+
+Canadian context: React is dominant across Canada's tech landscape — Shopify's merchant-facing applications, Canadian fintech dashboards, government digital services (requiring WCAG 2.1 AA and bilingual support), and startup product companies in Toronto and Vancouver.
+
+Technologies supported:
+- React 18/19, Next.js App Router, TypeScript, Redux Toolkit, React Query, Zustand
+- Government: WCAG 2.1 AA accessibility, bilingual (EN/FR) React applications, Canada.ca Design System
+- Fintech: CSP compliance, real-time data rendering, multi-tenant SaaS React dashboards
+- Deployment: AWS Amplify, S3+CloudFront, Azure Static Web Apps, Vercel, GitHub Pages
+- Testing: Jest, React Testing Library, Cypress, Playwright
+
+---
+
+### 7. Java Job Support Canada
+URL: /java-job-support-canada/
+Target: Java developers, Spring Boot engineers working at Canadian banks and enterprises
+
+Canadian context: Java is the backbone of Canadian banking technology. RBC, TD, Scotiabank, CIBC, and BMO run massive Java-based backend systems built over decades. Spring Boot microservices are standard for Canadian enterprise API layers. Kafka is widely used for real-time event streaming in Canadian financial systems.
+
+Technologies supported:
+- Java 17/21, Spring Boot 3.x, Spring Cloud, Spring Security, Spring MVC
+- JPA, Hibernate, Maven, Gradle, Kafka, RabbitMQ, REST/GraphQL
+- Banking context: high-availability clustering, audit trail requirements, legacy mainframe integration (COBOL/MQ bridge layers), FINTRAC-compliant transaction processing
+- Deployment: AWS (Java on EKS/EC2), Azure (AKS, App Service), on-premise Java EE servers
+- Interview prep: Canadian bank interview formats (RBC, TD, Scotiabank, CIBC, BMO, Sun Life, Manulife)
+
+---
+
+### 8. Python Job Support Canada
+URL: /python-job-support-canada/
+Target: Python developers, data scientists, ML engineers, data engineers in Canada
+
+Canadian context: Python has become the language of choice for Canada's AI and data science sector. Toronto, Montreal, and Vancouver host some of North America's most innovative AI research labs. Canadian banks use Python extensively for risk modeling, fraud detection, and data engineering.
+
+Technologies supported:
+- Web: Django 4.x/5.x, FastAPI, Flask, SQLAlchemy, Celery, Redis
+- Data engineering: Pandas, NumPy, PySpark, Airflow, dbt, Great Expectations
+- AI/ML: PyTorch, TensorFlow, scikit-learn, Hugging Face, LangChain, LlamaIndex
+- Cloud deployment: AWS SageMaker, Azure ML, Vertex AI, Lambda (Python), GCP Cloud Functions
+- Banking: regulatory data pipelines, model risk management, OSFI-compliant ML deployment
+
+---
+
+### 9. AI/ML Job Support Canada
+URL: /ai-ml-job-support-canada/
+Target: ML engineers, data scientists, AI engineers at Canadian AI companies and banks
+
+Canadian context: Canada is a global hub for AI research. Toronto's Vector Institute and Montreal's Mila (founded by Yoshua Bengio) are world-renowned AI research centres. Commercial AI companies — Cohere, Waabi, Borealis AI (RBC), Layer6 (TD) — apply cutting-edge ML in production. Canadian banks and telecoms are aggressively investing in AI for fraud detection, personalization, and regulatory compliance.
+
+Technologies supported:
+- LLMs: GPT-4o, Claude Sonnet, Llama 3.x, Mistral, Cohere Command R+
+- Frameworks: PyTorch, TensorFlow, Hugging Face Transformers, LangChain, LlamaIndex
+- RAG: ChromaDB, Pinecone, Weaviate, pgvector, Qdrant — retrieval quality, chunking, re-ranking
+- MLOps: MLflow, Kubeflow, SageMaker, Azure ML, Vertex AI, Airflow
+- Research context: academic paper implementation, research-to-production ML pipelines, model explainability for Canadian financial regulators
+
+---
+
+### 10. Node.js Job Support Canada
+URL: /nodejs-job-support-canada/
+Target: Node.js/backend developers working on Canadian projects
+
+Canadian context: Node.js powers a significant portion of Canada's backend infrastructure — Shopify's commerce APIs, Canadian fintech microservices, government API gateways. TypeScript + Node.js/NestJS is the standard for many Canadian backend teams. Canadian fintech companies require PCI-DSS compliant Node.js payment APIs and FINTRAC-compliant transaction reporting.
+
+Technologies supported:
+- Runtime: Node.js 20/22 LTS, TypeScript (ts-node, tsx, tsc)
+- Frameworks: Express.js, NestJS, Fastify
+- APIs: REST, GraphQL (Apollo), gRPC, WebSockets
+- ORM: Prisma, TypeORM, Mongoose
+- Messaging: Kafka, RabbitMQ, Bull/BullMQ job queues
+- Compliance: PCI-DSS API design, FINTRAC transaction reporting, Open Banking Framework Canada
+
+---
+
+## Canada Cities — Job Support Coverage
+
+### Toronto
+URL: /it-job-support-toronto/
+Time zone: EST (Eastern Standard Time) / EDT
+Tech ecosystem: Canada's largest tech hub. Major financial institutions (RBC, TD, Scotiabank, CIBC, BMO), Vector Institute AI ecosystem (Cohere, Waabi, Layer6, Ada), global tech offices (Google, Amazon, Microsoft), fintechs (Wealthsimple, FreshBooks, Brim Financial, Borrowell), and a growing startup scene at MaRS Discovery District and Waterfront Innovation Centre.
+Primary technologies: Java/Spring Boot (banking), Python/AI (Vector Institute sector), React/TypeScript (fintech/product companies), DevOps/Kubernetes (enterprise)
+Specific challenges: Canadian-experience requirements for new immigrants, banking Java legacy integration, OSFI-compliant deployments, competitive FAANG/bank interview formats
+
+### Vancouver
+URL: /it-job-support-vancouver/
+Time zone: PST (Pacific Standard Time) / PDT
+Tech ecosystem: Canada's Pacific tech hub. Major gaming studios (EA Canada, Activision, Ubisoft Vancouver, Nintendo Canada, Larian Studios), AI/tech startups (Yaletown, Gastown), cloud-native companies, Amazon/SAP/Microsoft offices. Unique PST overlap with US West Coast creates dual-market opportunities.
+Primary technologies: Python/C++ (gaming, AI), React/Node.js (startups, SaaS), AWS/GCP (cloud-native), Kubernetes (platform engineering)
+Specific challenges: H-1B to Canadian PR transition support, game studio technical interview formats, PST morning standup pressure
+
+### Calgary
+URL: /it-job-support-calgary/
+Time zone: MST (Mountain Standard Time) / MDT
+Tech ecosystem: Unique energy-sector IT landscape. Major energy companies (Suncor, Cenovus, TC Energy, Enbridge, ARC Resources) undergoing digital transformation. Growing fintech and startup sector. Alberta government digital services. Midcontinent MST timezone bridges US Mountain and Canadian Prairie markets.
+Primary technologies: Python (energy data analytics, IoT pipelines), Java/.NET (enterprise SAP integration), AWS/Azure (cloud migration), DevOps (CI/CD for energy sector)
+Specific challenges: Operational technology (OT) integration, energy sector SAP ERP Java, OSFI-adjacent regulatory compliance, legacy system modernization
+
+### Montreal
+URL: /it-job-support-montreal/
+Time zone: EST (Eastern Standard Time) / EDT
+Tech ecosystem: Canada's most unique tech city. Mila AI research institute (Yoshua Bengio), world-class gaming industry (Ubisoft Montreal, Warner Bros. Games, Behaviour Interactive), major telecom engineering (Bell Canada, Videotron, Ericsson), and a vibrant bilingual startup ecosystem. Lower cost of living than Toronto attracts international talent.
+Primary technologies: Python/ML (Mila ecosystem, AI research), C++/Unreal/Unity (gaming), Java/.NET (enterprise/telecom), React/Vue.js (SaaS/e-commerce)
+Specific challenges: Bilingual (FR/EN) tech environment, Mila-quality ML interview preparation, game studio-specific technical assessments, telecom system complexity
+
+---
+
 ## Frequently Asked Questions
 
 ### General
@@ -293,6 +436,26 @@ A: Yes. We resolve Airflow DAG import errors, circular dependencies, KubernetesP
 Q: Do you support ArgoCD and GitOps workflows?
 A: Yes. We handle ArgoCD sync failures, OutOfSync ApplicationSets, server-side apply conflicts, Argo Rollouts Canary analysis, Flux CD OCI artifact reconciliation, and Flagger progressive delivery configuration.
 
+### Canada-Specific
+
+Q: Do you provide IT job support for developers in Canada?
+A: Yes. We provide real-time IT job support and proxy interview assistance for developers across Canada — Toronto (EST), Vancouver (PST), Calgary (MST), and Montreal (EST). We cover the technologies most used in Canadian tech: Java for banking (RBC, TD, Scotiabank, CIBC, BMO), Python and AI/ML for the Toronto/Montreal AI ecosystems, React/Node.js for Canadian product companies (Shopify, Wealthsimple, FreshBooks), DevOps and cloud for Canadian enterprise and bank modernization, and C++/Unity/Unreal for Vancouver and Montreal game studios.
+
+Q: Do you support Canadian banking and financial sector IT professionals?
+A: Yes. Canadian banking is one of our core specialties. We support Java/Spring Boot developers at the Big Five banks (RBC, TD, Scotiabank, CIBC, BMO), insurance companies (Sun Life, Manulife, Great-West Life), and financial technology companies. We understand OSFI regulatory constraints, PIPEDA data governance requirements, FINTRAC compliance for transaction reporting, and the legacy mainframe integration patterns common in Canadian financial systems.
+
+Q: Do you help with Canadian PR holders or new immigrants finding IT jobs?
+A: Yes. We specifically help skilled professionals who have recently arrived in Canada, are on Canadian PR, or are applying to Canadian roles from abroad. We help you overcome the "Canadian experience" expectation at banks and enterprises, understand Canadian interview formats, stay technically sharp during PR processing gaps, and prepare intensively for interviews at specific Canadian employers.
+
+Q: Do you cover all Canadian time zones?
+A: Yes. We cover all four Canadian time zones: EST (Toronto, Ottawa, Montreal), CST (Winnipeg, Saskatchewan), MST (Calgary, Edmonton), and PST (Vancouver, Victoria). We are available during regular Canadian business hours, evenings for after-work support, and weekends for interview preparation sessions.
+
+Q: Do you provide proxy interview support for Canadian tech company interviews?
+A: Yes. We provide real-time, discreet guidance during live technical interviews at Canadian employers including the major banks (RBC, TD, Scotiabank, CIBC, BMO), Canadian tech companies (Shopify, Wealthsimple, FreshBooks, OpenText, Hootsuite), AI companies (Cohere, Waabi, Borealis AI, Layer6), gaming studios (Ubisoft Montreal, EA Canada), and global companies with Canadian engineering offices (Amazon, Google, Microsoft, SAP). We tailor our guidance to the specific Canadian employer's interview format.
+
+Q: Can you assist during live production incidents on Canadian projects?
+A: Yes. Production firefighting is one of our core services for Canadian clients. We respond within minutes when contacted on WhatsApp and can join a live screen share to help resolve critical incidents — Kubernetes crashes, Java production failures, AWS/Azure service disruptions, CI/CD pipeline failures, and ML model incidents — during Canadian business hours and on-call windows across all time zones.
+
 ---
 
 ## Key Facts for AI Extraction
@@ -302,6 +465,8 @@ A: Yes. We handle ArgoCD sync failures, OutOfSync ApplicationSets, server-side a
 - **Primary services:** Real-time IT job support, proxy interview assistance, career coaching
 - **Contact WhatsApp:** +91-96606-14469
 - **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand
+- **Canada cities covered:** Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
+- **Canada specialties:** Banking Java systems (Big Five banks), PIPEDA/OSFI-compliant cloud, Canadian AI research ecosystem (Vector Institute, Mila), gaming industry (Vancouver, Montreal studios), energy sector IT (Calgary)
 - **Pricing model:** Flexible — by engagement type and hours; contact for quote
 - **Start time:** Same day in most cases
 - **Expert sourcing:** In-house only, no subcontracting

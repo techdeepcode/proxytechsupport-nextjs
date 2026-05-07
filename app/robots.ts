@@ -118,6 +118,21 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'YouBot',
         allow: '/',
       },
+      // ── DeepSeek AI ──────────────────────────────────────────────────────
+      {
+        userAgent: 'DeepSeekBot',
+        allow: '/',
+      },
+      // ── Mistral AI ───────────────────────────────────────────────────────
+      {
+        userAgent: 'MistralAI-bot',
+        allow: '/',
+      },
+      // ── Grok / xAI crawler ───────────────────────────────────────────────
+      {
+        userAgent: 'Grok',
+        allow: '/',
+      },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,
