@@ -9,6 +9,9 @@ export default function Sidebar() {
           Career Support Services
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <Link href="/get-interview-scheduled/" className="sidebar-nav-link">
+            Get Interview Scheduled
+          </Link>
           <Link href="/resume-linkedin-optimization-for-developers/" className="sidebar-nav-link">
             Resume &amp; LinkedIn Optimization
           </Link>
@@ -43,7 +46,7 @@ export default function Sidebar() {
         .sidebar-nav-link:hover {
           color: var(--pts-accent-hover);
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1023px) {
           /* Detailed pages (PostLayout): whole aside is duplicated vs nav/footer; hide on small screens */
           .post-layout-sidebar {
             display: none !important;

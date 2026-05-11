@@ -201,12 +201,12 @@ export default function PostLayout({
       <WhatsAppFloat />
 
       <style>{`
-        @media (max-width: 900px) {
-          main > div {
+        @media (max-width: 1023px) {
+          .post-layout-inner {
             grid-template-columns: 1fr !important;
           }
           .post-sidebar {
-            order: -1;
+            display: none !important;
           }
         }
       `}</style>
