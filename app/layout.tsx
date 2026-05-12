@@ -31,6 +31,16 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
+  alternates: {
+    canonical: 'https://proxytechsupport.com',
+    languages: {
+      'en-US': 'https://proxytechsupport.com',
+      'en-CA': 'https://proxytechsupport.com',
+      'en-GB': 'https://proxytechsupport.com',
+      'en-AU': 'https://proxytechsupport.com',
+      'x-default': 'https://proxytechsupport.com',
+    },
+  },
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
