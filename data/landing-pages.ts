@@ -34,6 +34,8 @@ export interface LandingRelatedLinks {
   proxyLink: LandingRelatedLink;
   /** Additive Canada-specific links — rendered after existing links without replacing them. */
   canadaLinks?: LandingRelatedLink[];
+  /** Additive non-Canada links rendered at the end of the related links row. */
+  additionalLinks?: LandingRelatedLink[];
 }
 
 export interface LandingPageConfig {
@@ -43,10 +45,25 @@ export interface LandingPageConfig {
   canonical: string;
   keywords: string[];
 
+  /** Per-page OG title override (falls back to title). */
+  ogTitle?: string;
+  /** Per-page OG description override (falls back to description). */
+  ogDescription?: string;
+  /** Per-page Twitter title override (falls back to title). */
+  twitterTitle?: string;
+  /** Per-page Twitter description override (falls back to description). */
+  twitterDescription?: string;
+
   h1: string;
   tagline: string;
+  /** Hero eyebrow badge text override (falls back to shared default). */
+  heroEyebrow?: string;
   /** Primary pain intro — visible in hero below tagline. */
   painIntro: string;
+  /** Urgency paragraph rendered between painIntro and heroVariant. */
+  heroUrgency?: string;
+  /** Urgency paragraph rendered after heroVariant (use when urgency should follow the full hero body). */
+  heroPostUrgency?: string;
   /** Second, country-specific hero paragraph (adds unique depth + long-tail signals). */
   heroVariant?: string;
   geoLine: string;
@@ -62,6 +79,11 @@ export interface LandingPageConfig {
 
   /** "Proxy Interview & Real-Time Assistance in [Country]" section. */
   proxySection?: LandingProxySection;
+
+  /** Per-page bottom CTA heading override. */
+  bottomCTAHeading?: string;
+  /** Per-page bottom CTA body text override. */
+  bottomCTABody?: string;
 
   /** Geo-specific internal cross-links (2 geo + 2 tech + 1 problem + 1 proxy + optional blog). */
   relatedLinks?: LandingRelatedLinks;
@@ -878,6 +900,8 @@ export const devopsJobSupportUSA: LandingPageConfig = {
     techLinks: [
       { label: 'Java job support USA', href: '/java-job-support-usa/' },
       { label: 'AWS job support', href: '/aws-job-support/' },
+      { label: 'SRE job support USA', href: '/sre-job-support-usa/' },
+      { label: 'SRE proxy interview support', href: '/sre-proxy-interview-support/' },
     ],
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
@@ -885,6 +909,129 @@ export const devopsJobSupportUSA: LandingPageConfig = {
     canadaLinks: [
       { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
     ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SRE Job Support USA
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const sreJobSupportUSA: LandingPageConfig = {
+  slug: 'sre-job-support-usa',
+  title: 'SRE Job Support USA – Real-Time Site Reliability Engineering Help',
+  description:
+    'Struggling with SRE responsibilities on a US project? Get real-time expert help from senior Site Reliability Engineers — SLO/SLI implementation, error budget tracking, incident response, observability stack setup, chaos engineering, toil automation, capacity planning, and production reliability engineering. Same-day start. USA time zones.',
+  canonical: `${BASE_URL}/sre-job-support-usa/`,
+  keywords: [
+    'SRE job support USA', 'site reliability engineering support USA', 'SRE help USA',
+    'SLO SLI implementation help', 'error budget tracking support', 'incident response support USA',
+    'observability job support', 'Prometheus Grafana support USA', 'OpenTelemetry support USA',
+    'chaos engineering support USA', 'toil reduction help', 'toil automation support',
+    'capacity planning support USA', 'on-call support USA', 'postmortem writing help',
+    'production reliability engineering support', 'distributed tracing support',
+    'PagerDuty support USA', 'reliability engineering job support',
+    'SRE on-call help', 'real-time SRE support', 'same-day SRE help',
+  ],
+  h1: 'SRE Job Support USA – Real-Time Expert Help for Site Reliability Engineering Work',
+  tagline: 'Senior Site Reliability Engineers available in real-time during your US working hours — SLO implementation, incident response, observability, chaos engineering, and toil automation handled alongside you.',
+  painIntro:
+    'Dropped into an SRE role and facing SLO targets you did not design, observability gaps nobody documented, on-call rotations with unclear escalation paths, and toil that nobody has ever prioritized reducing? SRE work at US tech companies is complex, often inherited, and rarely well-documented. Our senior SREs work alongside you in real-time during your working hours — from setting up multi-window burn rate alerts to facilitating a blameless postmortem to designing your first chaos experiment.',
+  heroVariant:
+    'SRE responsibilities at US tech companies span a wide range — and the gap between job description and day-one reality is often significant. You may inherit production systems with no SLOs, alerting built on gut feel rather than SLIs, runbooks that have not been updated in years, and a toil backlog nobody has ever measured. Or you may be at a company that is serious about reliability engineering but expects you to implement error budget policies, run chaos experiments, and own observability at scale from your first sprint. Our in-house SREs cover both scenarios — providing real-time expert support during your US working hours so you always have senior reliability engineering firepower available.',
+  geoLine: 'SRE job support for engineers working on US projects — also available for UK, Canada, Australia, and Europe time zones.',
+  timezoneNote: 'Available across US time zones — EST, CST, MST, PST — aligned with your on-call and working hours.',
+  techSnippet: 'SRE job support covering SLO/SLI/error budget implementation, Prometheus, Grafana, OpenTelemetry, distributed tracing (Jaeger, Tempo, Zipkin), PagerDuty, OpsGenie, Chaos Monkey, Gremlin, LitmusChaos, incident command frameworks, blameless postmortems, toil automation, capacity planning, load testing, multi-region failover, and production reliability architecture.',
+  highlights: [
+    {
+      title: 'SLO/SLI Implementation & Observability',
+      description: 'Real-time help setting up SLOs and SLIs in your actual production systems — SLI selection for your specific service type (latency percentiles, error rate definition, availability calculation), SLO configuration in Prometheus or Datadog, multi-window multi-burn-rate alerting rules, error budget dashboards in Grafana, and SLO reporting automation for engineering and product leadership. We work in your actual monitoring stack.',
+    },
+    {
+      title: 'Incident Response & On-Call Support',
+      description: 'Live expert help during actual production incidents — real-time root cause analysis, mitigation coordination, incident command facilitation, runbook execution under pressure, and postmortem writing after the incident is resolved. We also help you build the incident management infrastructure: severity classification frameworks, escalation policy design in PagerDuty or OpsGenie, on-call rotation structure, and alert deduplication to reduce on-call toil.',
+    },
+    {
+      title: 'Toil Automation & Reliability Engineering',
+      description: 'Hands-on help identifying and automating SRE toil in your environment — manual deployment scripts replaced with automation, repetitive alert response converted to runbook bots, manual capacity checks converted to dashboards and forecasting pipelines, and recurring incident categories addressed through permanent reliability fixes. We help you measure, prioritize, and reduce toil systematically.',
+    },
+    {
+      title: 'Chaos Engineering & Capacity Planning',
+      description: 'Expert support designing and running chaos experiments in your production or staging environment — steady-state hypothesis definition, blast radius scoping, dependency failure injection (Gremlin, LitmusChaos, or custom), and experiment analysis. Also covers capacity planning: demand forecasting from historical traffic data, load testing interpretation (k6, Locust, Gatling), headroom policy decisions, and traffic management under peak load.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What SRE tasks can you help with in real-time?',
+      answer:
+        'Our in-house SREs can help with any SRE work during your US working hours — setting up SLOs and SLIs in Prometheus or Datadog, building multi-burn-rate alert rules, creating Grafana error budget dashboards, writing blameless postmortems, designing on-call rotation policy in PagerDuty, automating toil with scripts or runbook bots, designing chaos experiments with Gremlin or LitmusChaos, capacity planning from traffic data, setting up distributed tracing with OpenTelemetry, and implementing multi-region failover for production systems.',
+    },
+    {
+      question: 'Can you help during an actual production incident?',
+      answer:
+        'Yes — live incident support is one of our most urgent use cases. Contact us when an incident is in progress and our SRE will be available in real-time for root cause analysis, mitigation coordination, incident command support, and post-incident runbook updates. For recurring incidents, we help you build the observability and reliability infrastructure that reduces MTTR and prevents recurrence.',
+    },
+    {
+      question: 'How is SRE job support different from DevOps job support?',
+      answer:
+        'SRE job support covers the reliability engineering layer — SLO/SLI design and implementation, error budget tracking, incident management systems, blameless postmortems, toil measurement and automation, chaos engineering, and capacity planning. DevOps job support covers the infrastructure and delivery layer — Kubernetes cluster management, Terraform IaC, CI/CD pipeline engineering, and GitOps. Many engineers need both at different points, and we can provide either.',
+    },
+    {
+      question: 'Can you help me build observability from scratch?',
+      answer:
+        'Yes. Many teams inherit systems with minimal observability. We help you design and implement a full observability stack — metrics with Prometheus and Grafana, distributed tracing with OpenTelemetry (Jaeger, Tempo, or Zipkin backend), structured logging pipelines, and alerting policy aligned with SLOs. We work in your actual infrastructure and leave you with a production-grade observability setup, not just advice.',
+    },
+    {
+      question: 'Do you help with toil reduction and SRE automation?',
+      answer:
+        'Yes. Toil reduction is central to SRE. We help you identify toil sources (repeated manual work, manual escalation steps, repetitive alert investigation), measure toil impact, prioritize automation opportunities, and implement the automation — runbook bots, alert correlation scripts, deployment validation scripts, and self-healing automation where appropriate. The goal is measurable reduction in on-call burden.',
+    },
+    {
+      question: 'How quickly can SRE job support start?',
+      answer:
+        'Same-day support is available for urgent situations — production incidents, on-call emergencies, or SRE deliverables due immediately. For planned SRE work (SLO implementation, chaos engineering programs, observability buildout), reaching out 24-48 hours in advance allows us to assign the SRE expert best matched to your specific tech stack and reliability engineering maturity.',
+    },
+  ],
+  useCasesSection: {
+    title: 'SRE Job Situations We Help With in Real-Time',
+    cases: [
+      'Implementing SLOs and SLIs for the first time in a system that has no reliability targets — SLI selection, SLO value setting, and multi-burn-rate alerting configuration in Prometheus and Grafana',
+      'Live production incident — real-time root cause analysis, mitigation coordination, incident command support, and blameless postmortem facilitation after the outage is resolved',
+      'Building error budget dashboards and SLO reporting for engineering and product leadership — Grafana dashboard design, automated weekly reliability reports, and error budget burn visualization',
+      'Reducing on-call toil — alert deduplication, PagerDuty escalation policy redesign, runbook automation, and incident response bot implementation to reduce manual response overhead',
+      'Designing and running your first chaos experiment — steady-state hypothesis definition, blast radius scoping, dependency failure injection with Gremlin or LitmusChaos, and experiment analysis',
+      'Setting up distributed tracing with OpenTelemetry across a microservices system — instrumentation strategy, trace sampling policy, backend selection (Jaeger, Tempo), and trace-to-log correlation',
+      'Capacity planning for a US product launch or traffic growth event — demand forecasting from historical data, load testing with k6 or Locust, headroom analysis, and scaling policy recommendations',
+      'Multi-region failover implementation — active-passive vs active-active decision support, DNS failover configuration, RPO/RTO validation, and failover runbook design for a US production system',
+    ],
+  },
+  proxySection: {
+    title: 'How Our SRE Job Support Works',
+    intro:
+      'We assign an in-house senior SRE — someone who has operated production systems at the reliability bar your US employer expects — to work alongside you during your working hours. This is real-time engineering support, not advice.',
+    points: [
+      'Contact us with your SRE situation — current challenge, tech stack, company type, and urgency level',
+      'In-house SRE assigned — matched to your specific observability stack, reliability engineering maturity, and US company type',
+      'Real-time availability during your US working hours (EST, CST, MST, PST) or on-call window',
+      'Live pair work on SLO implementation, incident response, observability setup, chaos engineering, or toil automation',
+      'Knowledge transfer built in — you understand what was built and why, so you can own it going forward',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent SRE Job Support for Your US Project?',
+  bottomCTABody:
+    'Real in-house Site Reliability Engineers available same-day for US production incidents, SLO implementation, observability buildout, on-call support, chaos engineering, and toil automation. No middlemen — direct expert assignment, US time zones.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in USA', href: '/job-support-usa/' },
+      { label: 'IT job support in UK', href: '/job-support-uk/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Cloud job support USA', href: '/cloud-job-support-usa/' },
+      { label: 'SRE proxy interview support', href: '/sre-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy job support', href: '/proxy-job-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
   },
 };
 
@@ -1239,6 +1386,8 @@ export const agenticAiRagMlopsJobSupportUSA: LandingPageConfig = {
     techLinks: [
       { label: 'AI / ML & Data job support', href: '/ai-ml-job-support/' },
       { label: 'Python job support', href: '/python-job-support/' },
+      { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'MLOps proxy interview support', href: '/mlops-proxy-interview-support/' },
     ],
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
@@ -1663,34 +1812,67 @@ export const proxyInterviewSupport: LandingPageConfig = {
   slug: 'proxy-interview-support',
   title: 'Proxy Interview Support – Live Expert IT Guidance',
   description:
-    'Get real-time proxy interview support during your live technical interview. Expert coding, system design & behavioral guidance. USA, UK, Canada, Australia & globally. 1000+ helped.',
+    'Get real-time proxy interview support during your live technical interview. Expert guidance for AI, ML, MLOps, LLMOps, RAG, DevOps, Kubernetes, Java, Spring Boot, React, .NET, Angular, AWS, Azure, Python, Cloud, Data Science, and enterprise IT roles across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand. 1000+ professionals helped. Same-day support available.',
   canonical: `${BASE_URL}/proxy-interview-support/`,
   keywords: [
     'proxy interview support', 'live interview guidance', 'real-time interview help',
     'technical interview proxy', 'proxy interview assistance', 'interview proxy service',
     'live coding interview help', 'system design interview support',
+    'proxy interview support USA', 'proxy interview support UK',
+    'proxy interview support Canada', 'proxy interview support Australia',
+    'proxy interview support Europe', 'proxy interview support global',
+    'AI interview proxy support', 'ML interview proxy support',
+    'MLOps interview proxy support', 'LLMOps interview support',
+    'RAG interview support', 'DevOps proxy interview support',
+    'Kubernetes interview support', 'Java proxy interview support',
+    'Spring Boot interview support', 'React proxy interview support',
+    '.NET proxy interview support', 'Angular interview support',
+    'AWS interview support', 'Azure interview support',
+    'Cloud architect interview support', 'Python interview support',
+    'Data Science interview support', 'Node.js interview support',
+    'agentic AI interview support', 'enterprise interview proxy support',
+    'proxy job support', 'real-time interview assistance',
+    'technical interview assistance', 'high-pressure interview support',
+    'production issue support', 'profile engineering',
   ],
+  ogTitle: 'Proxy Interview Support | Real-Time Expert IT Interview Guidance',
+  ogDescription:
+    'Get real-time proxy interview support for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, AWS, Cloud, and enterprise IT roles across USA, UK, Canada, Australia, Europe, and globally. Expert live technical interview assistance. 1000+ helped. Same-day support available.',
+  twitterTitle: 'Proxy Interview Support | Real-Time Expert IT Interview Guidance',
+  twitterDescription:
+    'Urgent proxy interview support for AI, ML, MLOps, DevOps, Java, React, .NET, AWS, and enterprise IT roles across USA, UK, Canada, Australia, and Europe. Live expert guidance during coding rounds, system design, and final interviews.',
+  heroEyebrow: 'Expert Proxy Interview Support & Real-Time Technical Interview Assistance',
   h1: 'Proxy Interview Support – Real-Time Expert Guidance During Your Live IT Interview',
-  tagline: 'A trusted expert in your corner during every technical interview — coding rounds, system design, and behavioral sessions.',
+  tagline: 'A trusted in-house expert beside you during every technical interview — coding rounds, system design, AI/ML architecture, DevOps rounds, and behavioral sessions.',
   painIntro:
-    'Every developer has faced that moment — the interview question you did not expect, the algorithm you almost remember, the system design you can visualize but cannot articulate. Our proxy interview support puts an in-house expert beside you in real-time when it matters most.',
+    'Every developer has faced that moment — the interview question you did not expect, the algorithm you almost remember, the AI architecture you can visualize but cannot articulate under pressure. Our proxy interview support puts an in-house expert beside you in real-time when it matters most.',
   heroVariant:
-    'Proxy interview support means our in-house expert is available in real-time during your scheduled technical interview — providing discreet, professional guidance as you navigate coding problems, system design discussions, and behavioral rounds. This is not interview coaching (though we offer that too) — this is live in-house expert presence during the actual interview, helping you demonstrate your true capability under pressure. Our service has helped 1000+ developers across USA, UK, Canada, Australia, Europe, and Singapore land roles they would not have landed alone.',
-  geoLine: 'Proxy interview support available globally — USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
-  timezoneNote: 'Available across all time zones — we align with your scheduled interview time.',
-  techSnippet: 'Proxy interview support for Java, Python, React, Node.js, AWS, DevOps, Data Science, .NET, and 50+ other IT technology interview formats.',
+    'Proxy interview support means our in-house expert is available in real-time during your scheduled technical interview — providing discreet, professional guidance as you navigate coding problems, system design discussions, AI/ML architecture rounds, DevOps interviews, and behavioral sessions. This is not interview coaching (though we offer that too) — this is live in-house expert presence during the actual interview, helping you demonstrate your true capability under pressure. Our service has helped 1000+ developers across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand land roles they would not have landed alone.',
+  heroPostUrgency:
+    "Interview tomorrow? Final round approaching? Production pressure making interview prep impossible? Don't let the pressure cost you a high-paying role. Our in-house experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, fully confidential.",
+  geoLine: 'Proxy interview support available globally — USA, UK, Canada, Australia, Europe, Germany, Ireland, Netherlands, Singapore, New Zealand, and worldwide.',
+  timezoneNote: 'Available across all time zones — we align with your exact interview schedule.',
+  techSnippet: 'Proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG, DevOps, Kubernetes, Cloud, AWS, Azure, GCP, Java, Spring Boot, Python, React, Angular, .NET, Node.js, Data Science, Cybersecurity, Salesforce, QA Automation, and 50+ enterprise IT interview formats.',
   highlights: [
     {
       title: 'Live Coding Round Support',
-      description: 'Real-time expert guidance during LeetCode-style coding rounds — algorithm selection, implementation hints, and step-by-step thinking support.',
+      description: 'Real-time expert guidance during LeetCode-style coding rounds — algorithm selection, data structure choices, complexity analysis, implementation hints, and step-by-step thinking support for Java, Python, React, .NET, and all major programming language interviews.',
     },
     {
-      title: 'System Design Interview Guidance',
-      description: 'Live help structuring system design answers — database choices, scalability, API design, and clear communication of architectural decisions.',
+      title: 'System Design & Architecture Interview Guidance',
+      description: 'Live help structuring system design answers — microservices architecture, database choices, scalability patterns, API design, cloud infrastructure, Kubernetes orchestration, and clear communication of architectural decisions under interviewer pressure.',
     },
     {
-      title: 'Behavioral & Technical Coaching',
-      description: 'Support during behavioral rounds and deep-dive technical discussions — helping you structure answers and communicate confidently under pressure.',
+      title: 'Behavioral & Technical Deep-Dive Support',
+      description: 'Support during behavioral rounds and deep technical discussions — helping you structure STAR-method answers, communicate confidently under pressure, and handle competency-based questions at US, UK, and Canada enterprise companies.',
+    },
+    {
+      title: 'AI/ML, DevOps & Cloud Interview Support',
+      description: 'Real-time proxy support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers — covering RAG pipeline design, LLM architecture, Kubernetes system design, AWS solution architecture, CI/CD pipeline discussions, and Agentic AI interview rounds.',
+    },
+    {
+      title: 'Enterprise & Specialist Technology Support',
+      description: 'Proxy interview support for Java/Spring Boot, React, Angular, .NET, Node.js, Python, Data Science, Cybersecurity, Salesforce, Dynamics 365, QA automation, and all enterprise technology interview formats at US, UK, and Canada firms.',
     },
   ],
   faqs: [
@@ -1707,7 +1889,7 @@ export const proxyInterviewSupport: LandingPageConfig = {
     {
       question: 'Is this service available for all technology stacks?',
       answer:
-        'Yes. We provide proxy interview support for Java, Python, React, Angular, Node.js, .NET, AWS, Azure, DevOps, Data Science, Machine Learning, Salesforce, and 50+ other technologies. Our in-house expert has been through the exact type of interview process you are facing.',
+        'Yes. We provide proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG pipelines, DevOps, Kubernetes, Cloud (AWS, Azure, GCP), Java, Spring Boot, Python, React, Angular, .NET, Node.js, Data Science, Cybersecurity, Salesforce, QA Automation, and 50+ other technologies. Our in-house expert has been through the exact type of interview process you are facing.',
     },
     {
       question: 'Do you also offer job support alongside interview support?',
@@ -1719,16 +1901,30 @@ export const proxyInterviewSupport: LandingPageConfig = {
       answer:
         'Completely confidential. We treat every engagement with full professional discretion. We sign NDAs on request and never share your information with any third party.',
     },
+    {
+      question: 'How quickly can I get proxy interview support?',
+      answer:
+        'Same-day support may be available for urgent interviews. Contact us on WhatsApp as soon as you have your interview scheduled. Ideally reach out 24-48 hours before for a proper pre-interview briefing and expert assignment. For truly urgent same-day requests, we do our best to accommodate based on expert availability.',
+    },
+    {
+      question: 'Do you support proxy interviews in UK, Canada, Australia and Europe?',
+      answer:
+        'Yes. We support proxy interview requests from professionals across USA, UK, Canada, Australia, Germany, Ireland, Netherlands, Singapore, New Zealand, and globally. Our experts cover all major time zones and are available 24/7 for urgent interview requests regardless of location.',
+    },
   ],
   useCasesSection: {
-    title: 'Interview Situations Where Proxy Support Helps Most',
+    title: 'Interview Situations Where Proxy Support Delivers Results',
     cases: [
-      'Coding rounds with unfamiliar algorithm patterns or time pressure challenges',
-      'System design interviews where structuring and communicating the answer is the challenge',
-      'Senior-level technical screens with deep-dive architecture and scalability questions',
-      'Interviews at companies with known difficult or unusual interview formats',
-      'Final-round interviews where the stakes are highest and nerves are hardest to manage',
-      'Non-native English speakers who need help articulating technical thinking clearly',
+      'Final round tomorrow — coding, system design, or architecture discussion with no room for error and a high-paying role on the line',
+      'AI/ML engineer interview — RAG pipeline design, LLM architecture, MLOps system design, Agentic AI orchestration, or model evaluation questions under live interviewer pressure',
+      'DevOps or Cloud architect round — Kubernetes design, AWS or Azure architecture, Terraform IaC, GitOps, or CI/CD pipeline questions with a senior interviewer',
+      'Java or Spring Boot enterprise interview — microservices design, Kafka architecture, Hibernate optimization, OAuth2, at a US bank, UK financial institution, or enterprise consulting firm',
+      'React, Angular, or .NET developer round — live coding, component architecture, state management, or API design under time pressure at a US or UK enterprise company',
+      'Coding rounds with unfamiliar algorithm patterns or time pressure challenges at FAANG or top tech companies',
+      'System design interview where structuring and communicating the answer clearly is the challenge, not just the technical knowledge',
+      'Non-native English speakers who need help articulating complex technical thinking clearly and confidently in English',
+      'Senior-level technical screens with deep-dive architecture and scalability questions you have not prepared for specifically',
+      'Final-round interview where the stakes are highest, nerves are at maximum, and one wrong answer feels like it could cost everything',
     ],
   },
   proxySection: {
@@ -1736,25 +1932,41 @@ export const proxyInterviewSupport: LandingPageConfig = {
     intro:
       'We keep the process simple, professional, and confidential. From your first contact to post-interview debrief, our goal is to give you the best possible chance of landing the role.',
     points: [
-      'Contact us via WhatsApp — share your interview date, company type, and technology stack',
-      'Our in-house expert specializes in your exact interview format',
+      'Contact us via WhatsApp — share your interview date, role level, company type, and technology stack for quick expert matching',
+      'Our in-house expert with direct experience in your exact interview format and technology stack is assigned to your case',
       'Pre-interview briefing to align on your background, target role, and expected questions',
       'Real-time expert availability during your live interview for discreet guidance',
       'Post-interview debrief to assess performance and prepare for any follow-up rounds',
     ],
   },
+  bottomCTAHeading: 'Need Urgent Proxy Interview Support?',
+  bottomCTABody:
+    "Don't let interview pressure cost you the role. Real in-house experts available 24/7 for proxy interview support across AI/ML, Agentic AI, MLOps, DevOps, Cloud, Java, React, .NET, Python, and all enterprise IT interview formats — USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.",
   relatedLinks: {
     geoLinks: [
       { label: 'IT job support in USA', href: '/job-support-usa/' },
       { label: 'IT job support globally', href: '/interview-support-global/' },
     ],
     techLinks: [
-      { label: 'Java proxy interview support', href: '/java-job-support-usa/' },
-      { label: 'DevOps interview support', href: '/devops-job-support-usa/' },
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Java proxy interview support', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+      { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'MLOps proxy interview support', href: '/mlops-proxy-interview-support/' },
+      { label: 'SRE proxy interview support', href: '/sre-proxy-interview-support/' },
     ],
     problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support UK', href: '/proxy-interview-uk/' },
+      { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
+      { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
+      { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
+      { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+    ],
   },
 };
 
@@ -1865,34 +2077,57 @@ export const proxyInterviewUSA: LandingPageConfig = {
   slug: 'proxy-interview-usa',
   title: 'Proxy Interview Support USA – Live Expert Help',
   description:
-    'Need proxy interview support in USA? Get real-time expert guidance during technical coding rounds, system design & behavioral interviews for US tech roles. 1000+ helped.',
+    'Get real-time proxy interview support in USA for IT professionals. Expert live technical interview assistance for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, Angular, AWS, Cloud, Python, and enterprise US tech roles. 1000+ professionals helped. Same-day support available.',
   canonical: `${BASE_URL}/proxy-interview-usa/`,
   keywords: [
     'proxy interview support USA', 'live interview help USA', 'proxy interview USA',
     'technical interview proxy USA', 'FAANG interview support', 'coding interview help USA',
     'system design interview support USA', 'real-time interview guidance USA',
+    'AI interview support USA', 'ML interview support USA', 'MLOps interview support USA',
+    'LLMOps interview support USA', 'RAG interview support USA',
+    'DevOps interview support USA', 'Kubernetes interview support USA',
+    'Java Spring Boot interview support USA', 'React interview support USA',
+    '.NET interview support USA', 'Angular interview support USA',
+    'AWS interview support USA', 'Cloud architect interview support USA',
+    'enterprise IT interview support USA', 'proxy job support USA',
+    'real-time interview assistance USA', 'agentic AI interview support USA',
+    'data science interview support USA', 'Node.js interview support USA',
+    'Python interview support USA', 'production issue support USA',
   ],
+  ogTitle: 'Proxy Interview Support USA | Real-Time Expert IT Interview Help',
+  ogDescription:
+    'Get real-time proxy interview support in USA for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, AWS, Cloud, and enterprise US tech roles. Expert live technical interview assistance. 1000+ helped. Same-day support available.',
+  twitterTitle: 'Proxy Interview Support USA | Real-Time Expert IT Interview Help',
+  twitterDescription:
+    'Urgent proxy interview support in USA for AI, ML, MLOps, DevOps, Java, React, .NET, AWS, and enterprise US tech roles. Live expert guidance during coding rounds, system design, and final interviews. Same-day support available.',
+  heroEyebrow: 'Expert Proxy Interview Support & Real-Time Interview Assistance USA',
   h1: 'Proxy Interview Support USA – Real-Time Expert Guidance During Your US Tech Interview',
-  tagline: 'Live expert help during your coding rounds, system design, and behavioral interviews for USA tech company roles.',
+  tagline: 'Live expert help during coding rounds, system design, AI/ML interviews, DevOps architecture rounds, and behavioral panels for USA tech company roles.',
   painIntro:
-    'Facing a high-stakes technical interview at a US tech company? FAANG coding rounds, system design marathons, or behavioral panels at US enterprises — our experts are available in real-time during your interview.',
+    "Facing a high-stakes technical interview at a US tech company? Whether it's a FAANG coding round, an enterprise Java or .NET architecture discussion, an AI/ML system design marathon, a DevOps Kubernetes round, or a final panel at a US bank or consulting firm — our in-house experts are available in real-time during your interview.",
+  heroUrgency:
+    "Interview tomorrow? Final round approaching? Don't let pressure cost you a high-paying US role. Our in-house experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support across all US time zones.",
   heroVariant:
-    "US tech companies run some of the world's most rigorous technical interview processes. From multi-round LeetCode sessions at FAANG companies to system design marathons at mid-size US tech firms and behavioral panels at enterprise corporations, the expectations are high and the competition is fierce. Our proxy interview support service puts a battle-tested expert beside you in real-time — available during your scheduled interview to provide discreet, professional guidance so you can perform at your absolute peak.",
+    "US tech companies run some of the world's most demanding technical interview processes. From multi-round LeetCode sessions at FAANG companies to system design marathons at mid-size US tech firms, AI/ML architecture rounds at enterprise companies, and behavioral panels at US financial institutions — the expectations are high and the competition is fierce. Our proxy interview support puts a battle-tested in-house expert beside you in real-time, providing discreet, professional guidance so you perform at your absolute peak.",
   geoLine: 'Serving developers preparing for US tech company interviews — and also supporting UK, Canada, Europe, Australia, and Singapore candidates.',
   timezoneNote: 'Available across all US time zones: EST, CST, MST, and PST — aligned with your interview schedule.',
-  techSnippet: 'Proxy interview support for Java, Python, React, Node.js, AWS, DevOps, Data Science, and all major US tech interview formats.',
+  techSnippet: 'Proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG, DevOps, Kubernetes, Cloud, AWS, Azure, Java, Spring Boot, Python, React, Angular, .NET, Node.js, Data Science, Cybersecurity, and all major US tech interview formats.',
   highlights: [
     {
-      title: 'FAANG & US Tech Coding Support',
-      description: 'Real-time guidance during LeetCode-style coding rounds — algorithm selection, complexity analysis, and step-by-step implementation help.',
+      title: 'FAANG & US Tech Company Coding Support',
+      description: 'Real-time guidance during LeetCode-style coding rounds at FAANG and top US tech companies — algorithm selection, data structure choices, complexity analysis, and step-by-step implementation help under live interviewer pressure.',
     },
     {
-      title: 'System Design Interview Help',
-      description: 'Live expert support during system design sessions for senior US engineering roles — scalability, database choices, API design, and trade-off discussions.',
+      title: 'System Design & Architecture Interview Help',
+      description: 'Live expert support during system design sessions for senior US engineering roles — scalability, microservices architecture, database choices, API design, cloud infrastructure decisions, and trade-off discussions with US interviewers.',
     },
     {
       title: 'Behavioral & Leadership Rounds',
-      description: 'Help structuring STAR-method answers for US behavioral interviews — Amazon leadership principles, Google core values, and enterprise competency frameworks.',
+      description: 'Help structuring STAR-method answers for US behavioral interviews — Amazon leadership principles, Google core values, enterprise competency frameworks, and conflict resolution scenarios at US financial and consulting firms.',
+    },
+    {
+      title: 'AI/ML, DevOps & Enterprise Interview Support',
+      description: 'Real-time proxy interview support for AI/ML engineers, DevOps architects, cloud engineers, Java developers, .NET engineers, React developers, and data scientists interviewing at US enterprise companies — banks, healthcare firms, insurance companies, consulting firms, and mid-size US tech companies.',
     },
   ],
   faqs: [
@@ -1904,7 +2139,7 @@ export const proxyInterviewUSA: LandingPageConfig = {
     {
       question: 'Can you support multiple interview rounds at the same company?',
       answer:
-        'Yes. We can support you through every stage of a US company\'s interview process — initial phone screen, technical coding rounds, system design, and final behavioral panels. Our experts will calibrate their guidance based on the specific round and expected depth at each stage.',
+        "Yes. We can support you through every stage of a US company's interview process — initial phone screen, technical coding rounds, system design, and final behavioral panels. Our experts will calibrate their guidance based on the specific round and expected depth at each stage.",
     },
     {
       question: 'Do you offer both proxy support and preparation coaching for US interviews?',
@@ -1921,16 +2156,29 @@ export const proxyInterviewUSA: LandingPageConfig = {
       answer:
         'Contact us as soon as you have an interview scheduled. We can set up a session within hours for urgent requests. Ideally, reach out 24-48 hours before your interview so we have time for a pre-interview briefing and to assign the right in-house expert to your case.',
     },
+    {
+      question: 'Do you support AI/ML, DevOps, and Cloud architect interviews in the USA?',
+      answer:
+        'Yes. We provide real-time proxy interview support for AI/ML engineers, MLOps engineers, DevOps architects, cloud engineers, and data scientists interviewing for US roles. Our experts cover RAG pipeline design, LLM architecture, Kubernetes system design, AWS solution architecture, CI/CD pipeline discussions, and enterprise AI architecture rounds at US tech companies, banks, and consulting firms.',
+    },
+    {
+      question: 'Do you support Java and enterprise developer interviews in the USA?',
+      answer:
+        'Yes. We provide proxy interview support for Java developers, Spring Boot engineers, .NET developers, React developers, Angular developers, and Node.js engineers interviewing at US enterprises including banks, healthcare companies, insurance firms, and consulting organizations. Our experts cover microservices architecture, system design, live coding, and behavioral rounds specific to US enterprise interview formats.',
+    },
   ],
   useCasesSection: {
     title: 'US Interview Situations Where Our Proxy Support Delivers',
     cases: [
-      'LeetCode hard problems in a timed coding round at a top US tech company',
-      'System design interview for a senior SWE or Staff Engineer role at a US firm',
-      'Amazon leadership principles behavioral round — structuring STAR answers under pressure',
-      'Google or Meta coding screen — two problems in 45 minutes with live interviewer',
-      'Final panel round where every question feels critical and the pressure is at maximum',
-      'US enterprise technical assessment — SQL, API design, or architecture problem-solving',
+      'Final round at a US tech company tomorrow — coding, system design, or architecture discussion with no room for error',
+      'AI/ML engineer interview — RAG pipeline design, LLM architecture, MLOps system design, or model evaluation questions under live pressure',
+      'DevOps or Cloud architect round — Kubernetes design, AWS architecture, Terraform IaC, or CI/CD pipeline questions with a senior US interviewer',
+      'Java or Spring Boot enterprise interview — microservices design, Kafka architecture, Hibernate optimization at a US bank or financial institution',
+      'React or .NET developer round at a US consulting or enterprise firm — live coding, component architecture, or API design under time pressure',
+      'US enterprise technical assessment — SQL optimization, REST API design, system architecture, or cloud migration problem-solving',
+      'Amazon, Google, or Meta coding screen — two LeetCode problems in 45 minutes with a live interviewer watching',
+      'Behavioral round at a US company — STAR-method answers for leadership, conflict resolution, and delivery under pressure questions',
+      'Senior developer panel round where every question feels critical and one weak answer could cost the role',
     ],
   },
   proxySection: {
@@ -1939,12 +2187,15 @@ export const proxyInterviewUSA: LandingPageConfig = {
       'We make the process as smooth and stress-free as possible. Our goal is for you to walk into your US tech interview knowing you have an in-house expert available — so you can focus on performing rather than panicking.',
     points: [
       'Contact us with your interview details — company, role level, date, and technology stack',
-      'In-house specialist assigned — with direct experience in that company\'s interview format',
+      "In-house specialist assigned — with direct experience in that company's interview format",
       'Pre-interview briefing — we align on your background, strengths, and likely question areas',
       'Real-time availability during your interview — discreet, professional guidance throughout',
       'Post-interview debrief — performance review and preparation for follow-up rounds',
     ],
   },
+  bottomCTAHeading: 'Need Urgent Proxy Interview Support in USA?',
+  bottomCTABody:
+    "Don't let interview pressure cost you a high-paying US role. Real in-house experts available 24/7 for proxy interview support across AI/ML, DevOps, Cloud, Java, React, .NET, Python, and all major US tech interview formats — USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.",
   relatedLinks: {
     geoLinks: [
       { label: 'IT job support in USA', href: '/job-support-usa/' },
@@ -1953,6 +2204,8 @@ export const proxyInterviewUSA: LandingPageConfig = {
     techLinks: [
       { label: 'Java job support USA', href: '/java-job-support-usa/' },
       { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Java Proxy Interview Support', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps Proxy Interview Support', href: '/devops-proxy-interview-support/' },
     ],
     problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
@@ -1966,86 +2219,120 @@ export const proxyInterviewUK: LandingPageConfig = {
   slug: 'proxy-interview-uk',
   title: 'Proxy Interview Support UK – Live Expert Help',
   description:
-    'Need proxy interview support in UK? Get real-time expert guidance during technical interviews for UK tech roles. Fintech, banking, startups. GMT/BST aligned. Start today.',
+    'Get real-time proxy interview support in UK for IT professionals. Expert live technical interview assistance for AI, ML, MLOps, LLMOps, RAG, DevOps, Kubernetes, Java, Spring Boot, React, .NET, Angular, AWS, Azure, Cloud, Python, and enterprise UK tech roles. 1000+ professionals helped. Same-day support available.',
   canonical: `${BASE_URL}/proxy-interview-uk/`,
   keywords: [
     'proxy interview support UK', 'live interview help UK', 'proxy interview UK',
     'technical interview proxy UK', 'coding interview help UK', 'UK fintech interview support',
     'system design interview UK', 'real-time interview guidance UK',
+    'AI interview proxy support', 'ML interview proxy support',
+    'MLOps interview proxy support', 'DevOps proxy interview support',
+    'Kubernetes interview support', 'Java proxy interview support',
+    'React proxy interview support', '.NET proxy interview support',
+    'AWS interview support', 'proxy job support', 'real-time interview assistance',
+    'same-day proxy interview support', 'UK banking interview support',
+    'Barclays interview support', 'HSBC technical interview help',
+    'Revolut interview support', 'NHS digital interview support',
+    'UK consulting interview support', 'Skilled Worker visa interview support',
   ],
+  ogTitle: 'Proxy Interview Support UK | Real-Time Expert IT Interview Help',
+  ogDescription:
+    'Get real-time proxy interview support in UK for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, AWS, Azure, and enterprise UK tech roles — fintech, banking, consulting. Expert live technical interview assistance. 1000+ helped. Same-day support available.',
+  twitterTitle: 'Proxy Interview Support UK | Real-Time Expert IT Interview Help',
+  twitterDescription:
+    'Urgent proxy interview support in UK for AI, ML, MLOps, DevOps, Java, React, .NET, AWS, and enterprise UK roles — Barclays, HSBC, Revolut, Deloitte UK. Live expert guidance during coding rounds, system design, and competency assessments. Same-day support available.',
+  heroEyebrow: 'Expert Proxy Interview Support & Real-Time Interview Assistance UK',
   h1: 'Proxy Interview Support UK – Real-Time Expert Guidance During UK Tech Interviews',
-  tagline: 'Live expert help during coding rounds, architecture discussions, and technical assessments for UK tech company roles.',
+  tagline: 'Live expert help during coding rounds, competency assessments, system design, AI/ML interviews, and technical walkthroughs for UK fintech, banking, and tech company roles — GMT/BST aligned.',
   painIntro:
-    'Facing a technical interview at a UK tech company, bank, or fintech? Our experts provide real-time, discreet proxy interview support — fully aligned with UK GMT/BST interview schedules.',
+    'Facing a technical interview at a UK bank, fintech, consulting firm, or government digital service? UK interviews are distinct — competency-based frameworks, pair programming rounds, regulated-domain architecture questions, and structured multi-stage panels are the norm. Our in-house experts understand the UK market and provide real-time, discreet proxy interview support aligned with your GMT or BST schedule.',
+  heroUrgency:
+    "Interview tomorrow? Final round approaching? Don't let pressure cost you a high-paying UK role. Our in-house experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support across GMT and BST.",
   heroVariant:
-    "UK tech interviews span a wide range of formats — from pair programming sessions at London startups to structured technical assessments at major UK banks and whiteboard architecture discussions at established tech companies. Our proxy interview support service provides real-time, professional guidance during your live interview — helping you navigate the specific formats and expectations of UK tech employers with confidence.",
-  geoLine: 'Serving developers preparing for UK tech company interviews — also supporting US, Canada, Europe, Australia, and Singapore candidates.',
+    "UK tech interviews demand a different kind of preparation. Barclays and HSBC run structured multi-round technical assessments with domain-specific architecture questions. Revolut, Monzo, and Starling favour fast-paced pair programming and system design under pressure. Deloitte UK, Accenture UK, and KPMG run competency-based technical panels alongside case-study rounds. NHS Digital and UK Government Digital Service interview for public-sector cloud and data engineering capabilities. Our proxy interview support service is calibrated to each of these UK-specific formats — putting an in-house expert beside you in real-time during the actual interview.",
+  geoLine: 'Serving developers preparing for UK tech company interviews — also supporting USA, Canada, Europe, Australia, and Singapore candidates.',
   timezoneNote: 'Fully aligned with UK GMT and BST working hours — available throughout your UK interview schedule.',
-  techSnippet: 'Proxy interview support for .NET, Java, React, Python, AWS, Azure, and all major UK tech interview formats including banking and fintech stacks.',
+  techSnippet: 'Proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG, DevOps, Kubernetes, Cloud, AWS, Azure, Java, Spring Boot, Python, React, Angular, .NET, Node.js, Data Science, Cybersecurity, and all major UK tech interview formats.',
   highlights: [
     {
       title: 'UK Fintech & Banking Interview Support',
-      description: 'Real-time expert guidance during technical interviews for UK financial services roles — trading systems, payment platforms, and regulatory-aware architectures.',
+      description: 'Real-time expert guidance during technical interviews at Barclays, HSBC, Lloyds, NatWest, Revolut, Monzo, and Starling — trading systems, payment platform architecture, cloud-native banking, regulatory-aware API design, and competency-based technical panels common in UK financial services.',
     },
     {
-      title: 'UK Startup & Tech Company Support',
-      description: 'Live help during pair programming, code review, and technical discussion rounds at London-based and remote-first UK tech companies.',
+      title: 'UK Consulting & Enterprise Assessment Support',
+      description: 'Live help during structured technical assessments and architecture discussions at Deloitte UK, Accenture UK, KPMG, PwC Tech, and large UK enterprises — covering Java, .NET, cloud migration, DevOps, and enterprise integration patterns in the UK consulting context.',
     },
     {
       title: 'Pair Programming & Code Assessment',
-      description: 'Real-time coding support during UK-style practical pair programming and take-home assessment walkthroughs.',
+      description: 'Real-time coding support during UK-style practical pair programming sessions, live code reviews, and take-home assessment walkthroughs — common at London startups, scale-ups, and remote-first UK tech companies.',
+    },
+    {
+      title: 'AI/ML, DevOps & Cloud Interview Support',
+      description: 'Real-time proxy support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers interviewing at UK tech companies and financial institutions — covering RAG pipeline design, LLM architecture, Kubernetes system design, AWS and Azure solution architecture, and CI/CD pipeline discussions relevant to UK enterprise and fintech roles.',
     },
   ],
   faqs: [
     {
       question: 'What UK companies and interview formats do you support?',
       answer:
-        'We have supported candidates at major UK banks (Barclays, HSBC, Lloyds, NatWest tech), UK fintechs (Revolut, Monzo, Starling), London-based startups and scale-ups, global tech companies with UK engineering hubs (Google London, Amazon UK, Meta UK), and many more. We understand the distinct interview formats used by UK employers.',
+        'We have supported candidates at major UK banks (Barclays, HSBC, Lloyds, NatWest tech), UK fintechs (Revolut, Monzo, Starling), UK consulting firms (Deloitte, Accenture, KPMG), NHS Digital, UK Government Digital Service, London-based startups and scale-ups, and global tech companies with UK engineering hubs (Google London, Amazon UK, Meta UK). We understand the distinct interview formats used by each type of UK employer.',
     },
     {
       question: 'How do UK tech interviews differ from US interviews?',
       answer:
-        'UK tech interviews often emphasize practical coding ability over algorithmic theory — pair programming sessions, code reviews, and realistic take-home assessments are common, especially at startups and fintechs. Large UK enterprises and global companies with UK offices tend to run more structured multi-stage processes. We tailor our proxy support to the specific format you are facing.',
+        'UK tech interviews often emphasize practical coding ability and competency-based frameworks over pure algorithmic theory. Pair programming sessions, structured code reviews, and realistic take-home assessments are common at UK startups and fintechs. UK banks and consulting firms run multi-stage competency panels alongside technical rounds. UK government digital roles often include domain-specific architecture and data questions. We tailor our proxy support to the specific format and employer you are facing.',
     },
     {
       question: 'Can you support interviews at UK banks and financial institutions?',
       answer:
-        'Yes. UK financial services interviews often include domain-specific questions about trading systems, regulatory compliance, data engineering, and API integration. We have experts with UK banking and fintech experience who can provide relevant, accurate real-time guidance.',
+        'Yes. UK financial services interviews often include domain-specific questions about trading systems, payment architecture, regulatory compliance (FCA, PRA), data engineering, and API integration. We have experts with direct UK banking and fintech experience who can provide accurate, relevant real-time guidance.',
+    },
+    {
+      question: 'Do you support AI/ML and DevOps interviews at UK companies?',
+      answer:
+        'Yes. We provide real-time proxy interview support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers interviewing at UK tech companies, banks, and consulting firms. Our experts cover RAG pipeline design, LLM architecture, Kubernetes system design, AWS and Azure architecture, CI/CD pipeline discussions, and enterprise AI architecture rounds specific to UK employer expectations.',
     },
     {
       question: 'Do you offer preparation alongside proxy support for UK interviews?',
       answer:
-        'Yes. We offer a combined preparation + live proxy support service — mock interview practice before your interview, followed by real-time expert guidance during the actual session. This is our most popular option for UK candidates preparing for senior roles.',
+        'Yes. We offer a combined preparation + live proxy support service — mock interview practice calibrated to the specific UK employer format, followed by real-time expert guidance during the actual session. This is our most popular option for UK candidates preparing for senior roles.',
     },
     {
       question: 'How quickly can you arrange proxy support for an upcoming UK interview?',
       answer:
-        'Contact us as soon as your interview is scheduled. We can arrange support within hours for urgent requests. Reaching out 24-48 hours in advance is ideal so we have time for a pre-interview briefing session.',
+        'Contact us as soon as your interview is scheduled. Same-day support may be available for urgent requests. Reaching out 24-48 hours in advance is ideal so we have time for a pre-interview briefing and expert assignment aligned with your GMT or BST interview time.',
     },
   ],
   useCasesSection: {
-    title: 'UK Interview Situations Where Our Proxy Support Helps',
+    title: 'UK Interview Situations Where Our Proxy Support Delivers',
     cases: [
-      'Pair programming interview at a London startup — live coding with interviewer watching',
-      'Technical assessment walkthrough at a UK bank or insurance company',
-      'System design interview for a senior role at a UK tech company or global firm with UK hub',
+      'Competency-based technical panel at Barclays, HSBC, or Lloyds — structured architecture and domain-knowledge questions specific to UK banking technology',
+      'Pair programming interview at a London fintech or startup — live coding with interviewer watching in real time',
+      'AI/ML engineer interview at a UK tech company or bank — RAG pipeline design, LLM architecture, MLOps system design under live interviewer pressure',
+      'DevOps or cloud architect round at a UK enterprise — Kubernetes design, AWS or Azure architecture, Terraform IaC, or CI/CD questions with a senior UK interviewer',
+      'Java or Spring Boot enterprise interview at a UK financial institution or consulting firm — microservices design, Kafka architecture, Hibernate optimization in a UK-regulated context',
+      'Technical assessment walkthrough at Deloitte UK, Accenture UK, or KPMG — case-led architecture discussion and coding under time pressure',
+      'System design interview for a senior role at a UK tech company or global firm with a UK engineering hub',
       'Architectural discussion round requiring knowledge of UK regulatory and enterprise contexts',
-      'Final interview panel at a UK company where competition is high and stakes are maximum',
+      'Final interview panel at a UK company where the Skilled Worker visa or Graduate visa role is contingent on this round',
       'Remote UK interview where the pressure of performing over video is compounded by nerves',
     ],
   },
   proxySection: {
     title: 'How Our UK Proxy Interview Support Works',
     intro:
-      'We understand UK interview culture — the formats, the expectations, and what UK tech employers look for. Our proxy support is calibrated specifically to help you succeed in the UK market.',
+      'We understand UK interview culture — the competency frameworks, the fintech-specific formats, the banking domain questions, and what UK tech employers look for at each level. Our proxy support is calibrated specifically to maximize your success in the UK market.',
     points: [
-      'Contact us with your UK interview details — company, role, date, and technology stack',
-      'In-house specialist — with UK tech market and company-type experience',
-      'Pre-interview briefing — alignment on your background and UK-specific interview expectations',
+      'Contact us with your UK interview details — company, role level, date, and technology stack',
+      'In-house specialist assigned — with UK tech market, fintech, or consulting experience relevant to your specific employer',
+      'Pre-interview briefing — alignment on your background, UK-specific interview expectations, and likely question areas',
       'Real-time expert availability during your UK interview for discreet, professional guidance',
-      'Post-interview support for any follow-up rounds or negotiation preparation',
+      'Post-interview support for any follow-up rounds or offer negotiation preparation',
     ],
   },
+  bottomCTAHeading: 'Need Urgent Proxy Interview Support in the UK?',
+  bottomCTABody:
+    "Don't let interview pressure cost you a high-paying UK role. Real in-house experts available 24/7 for proxy interview support across AI/ML, MLOps, DevOps, Cloud, Java, React, .NET, Python, and all major UK tech interview formats — fintech, banking, consulting, and government digital.",
   relatedLinks: {
     geoLinks: [
       { label: 'IT job support in UK', href: '/job-support-uk/' },
@@ -2054,10 +2341,17 @@ export const proxyInterviewUK: LandingPageConfig = {
     techLinks: [
       { label: '.NET job support', href: '/dotnet-job-support/' },
       { label: 'Java technologies job support', href: '/java-technologies-job-support/' },
+      { label: 'Java proxy interview support', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
     ],
     problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+    ],
   },
 };
 
@@ -2067,51 +2361,79 @@ export const proxyInterviewCanada: LandingPageConfig = {
   slug: 'proxy-interview-canada',
   title: 'Proxy Interview Support Canada – Expert Help',
   description:
-    'Get proxy interview support in Canada. Real-time expert guidance during technical interviews for Canadian tech roles. EST/PST available. 1000+ developers helped. Start today.',
+    'Get real-time proxy interview support in Canada for IT professionals. Expert live technical interview assistance for AI, ML, MLOps, LLMOps, RAG, DevOps, Kubernetes, Java, Spring Boot, React, .NET, Angular, AWS, Azure, Cloud, Python, and enterprise Canadian tech roles. 1000+ professionals helped. Same-day support available.',
   canonical: `${BASE_URL}/proxy-interview-canada/`,
   keywords: [
     'proxy interview support Canada', 'live interview help Canada', 'proxy interview Canada',
     'technical interview proxy Canada', 'coding interview help Canada',
     'Canadian tech interview support', 'real-time interview guidance Canada',
+    'AI interview proxy support', 'ML interview proxy support',
+    'MLOps interview proxy support', 'DevOps proxy interview support',
+    'Kubernetes interview support', 'Java proxy interview support',
+    'React proxy interview support', '.NET proxy interview support',
+    'AWS interview support', 'proxy job support', 'real-time interview assistance',
+    'same-day proxy interview support', 'RBC interview support',
+    'TD Bank technical interview help', 'Shopify interview support',
+    'Canadian banking interview support', 'Toronto tech interview support',
+    'Vancouver tech interview support', 'PR holder interview support Canada',
+    'LMIA job interview support', 'work permit interview help Canada',
   ],
+  ogTitle: 'Proxy Interview Support Canada | Real-Time Expert IT Interview Help',
+  ogDescription:
+    'Get real-time proxy interview support in Canada for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, AWS, Azure, and enterprise Canadian tech roles — banking, fintech, Shopify, Big 4. Expert live technical interview assistance. 1000+ helped. Same-day support available.',
+  twitterTitle: 'Proxy Interview Support Canada | Real-Time Expert IT Interview Help',
+  twitterDescription:
+    'Urgent proxy interview support in Canada for AI, ML, MLOps, DevOps, Java, React, .NET, AWS, and enterprise Canadian roles — RBC, TD, Shopify, Telus. Live expert guidance during coding rounds, system design, and technical panels. Same-day support available.',
+  heroEyebrow: 'Expert Proxy Interview Support & Real-Time Interview Assistance Canada',
   h1: 'Proxy Interview Support Canada – Real-Time Expert Guidance During Canadian Tech Interviews',
-  tagline: 'Live expert help during coding rounds, system design, and technical assessments for Canadian tech company roles — EST to PST.',
+  tagline: 'Live expert help during coding rounds, system design, AI/ML interviews, and technical assessments for Canadian banking, fintech, and tech company roles — EST to PST.',
   painIntro:
-    'Preparing for a technical interview at a Canadian tech company or an international company with Canadian offices? Our experts provide real-time, discreet proxy interview support across all Canadian time zones.',
+    'Preparing for a technical interview at a Canadian bank, tech company, or an international firm with major Canadian offices? Canadian interviews combine US-style technical rigour with domain-specific expectations from Canadian financial institutions, telecoms, and government-adjacent tech teams. Our in-house experts provide real-time, discreet proxy interview support aligned across all Canadian time zones — EST, CST, MST, and PST.',
+  heroUrgency:
+    "Interview tomorrow? Final round approaching? Don't let pressure cost you a high-paying Canadian role. Our in-house experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support across all Canadian time zones.",
   heroVariant:
-    "Canada's tech sector spans a vast range of employers — from Shopify and Hootsuite to the major Canadian banks (RBC, TD, Scotiabank), global tech companies with major Canadian engineering hubs (Amazon, Google, Microsoft Canada), and a growing startup scene in Toronto, Vancouver, and Montreal. Our proxy interview support service provides real-time expert guidance calibrated to the specific interview formats and expectations of Canadian tech employers.",
+    "Canada's tech sector is diverse and demanding. RBC, TD, and Scotiabank run multi-round technical panels with Java, Python, and cloud architecture at their core. Shopify interviews test engineering depth with live coding and system design in an e-commerce platform context. Telus and Bell assess cloud-native and DevOps capabilities alongside telecom domain knowledge. In Toronto's King West and Vancouver's tech corridors, startups run fast-paced pair programming and system design rounds. Our proxy interview support puts an in-house expert beside you during the actual interview — calibrated to the specific Canadian employer format you are facing.",
   geoLine: 'Serving developers preparing for Canadian tech company interviews — also supporting USA, UK, Australia, and global candidates.',
   timezoneNote: 'Available across all Canadian time zones: EST, CST, MST, and PST — aligned with your interview schedule.',
-  techSnippet: 'Proxy interview support for Java, Python, React, Node.js, AWS, Shopify stack, and all major Canadian tech interview formats.',
+  techSnippet: 'Proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG, DevOps, Kubernetes, Cloud, AWS, Azure, Java, Spring Boot, Python, React, Angular, .NET, Node.js, Shopify stack, Data Science, and all major Canadian tech interview formats.',
   highlights: [
     {
-      title: 'Canadian Tech & Startup Interviews',
-      description: 'Real-time guidance during technical rounds at Canadian tech companies — coding, system design, and behavioral sessions for roles from junior to senior.',
+      title: 'Canadian Banking & Fintech Interview Support',
+      description: 'Real-time expert guidance during technical interviews at RBC, TD Bank, Scotiabank, BMO, CIBC, and Canadian fintech companies — Java and Python backend systems, cloud migration (AWS/Azure), data engineering, API architecture, and domain-specific financial technology questions common in Canadian banking interviews.',
     },
     {
-      title: 'Canadian Banking & Fintech Support',
-      description: 'Live expert help during technical interviews at Canadian financial institutions — RBC, TD, Scotiabank, and Canadian fintech companies.',
+      title: 'Canadian Tech & Startup Interviews',
+      description: 'Live help during technical rounds at Shopify, Hootsuite, OpenText, Telus, Bell, and Toronto/Vancouver startup ecosystems — coding, system design, and behavioral sessions calibrated to the specific expectations of Canadian tech employers at each level.',
     },
     {
       title: 'Global Companies with Canadian Offices',
-      description: 'Support for interviews at Amazon, Google, Microsoft Canada — international company formats calibrated to Canadian engineering expectations.',
+      description: 'Support for interviews at Amazon Canada, Google Canada, Microsoft Canada, and Salesforce Canada — international technical formats (FAANG-style coding, system design, leadership rounds) contextualized for Canadian hiring expectations and PR/work permit holders.',
+    },
+    {
+      title: 'AI/ML, DevOps & Cloud Interview Support',
+      description: 'Real-time proxy support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers interviewing at Canadian tech companies and financial institutions — covering RAG pipeline design, LLM architecture, Kubernetes system design, AWS and Azure solution architecture, and CI/CD discussions relevant to Canadian enterprise and fintech roles.',
     },
   ],
   faqs: [
     {
       question: 'What Canadian companies and interview formats do you support?',
       answer:
-        'We have helped candidates navigate interviews at major Canadian employers including Shopify, RBC, TD Bank, Scotiabank, Rogers, Bell, OpenText, and many Toronto and Vancouver tech startups. We also support interviews at global companies hiring in Canada — Amazon, Google, Microsoft, and Salesforce Canada.',
+        'We have helped candidates navigate interviews at major Canadian employers including Shopify, RBC, TD Bank, Scotiabank, BMO, Rogers, Bell, Telus, OpenText, and many Toronto and Vancouver tech startups. We also support interviews at global companies with major Canadian offices — Amazon, Google, Microsoft, and Salesforce Canada.',
     },
     {
       question: 'How do Canadian tech interviews differ from US interviews?',
       answer:
-        'Canadian tech company interviews are generally similar to US formats, especially for companies with US parent organizations. Purely Canadian companies (banks, telecoms, home-grown tech) often place more emphasis on practical problem-solving and domain knowledge specific to Canadian industries. We tailor our proxy support accordingly.',
+        'Canadian tech company interviews are generally similar to US formats, especially for companies with US parent organizations. Purely Canadian companies — banks, telecoms, and home-grown tech — often place more emphasis on domain knowledge specific to Canadian industries (financial regulation, telecom infrastructure, e-commerce at Canadian scale). We tailor our proxy support to the specific format and employer you are facing.',
     },
     {
-      question: 'Can you support interviews at Canadian banks?',
+      question: 'Can you support interviews at Canadian banks and financial institutions?',
       answer:
-        'Yes. Canadian banking technical interviews often focus on Java and Python backend systems, data engineering, API development, and cloud migration (AWS/Azure). We have experts with Canadian financial services experience who can provide accurate, relevant real-time guidance.',
+        'Yes. Canadian banking technical interviews often focus on Java and Python backend systems, data engineering, API development, cloud migration (AWS/Azure), and regulatory-compliant architecture. We have experts with Canadian financial services experience who can provide accurate, relevant real-time guidance during your live interview.',
+    },
+    {
+      question: 'Do you support AI/ML and DevOps interviews at Canadian companies?',
+      answer:
+        'Yes. We provide real-time proxy interview support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers interviewing at Canadian tech companies, banks, and consulting firms. Our experts cover RAG pipeline design, LLM architecture, Kubernetes system design, AWS and Azure architecture, and CI/CD pipeline discussions specific to Canadian employer expectations.',
     },
     {
       question: 'Do you provide preparation alongside proxy support for Canadian interviews?',
@@ -2121,32 +2443,38 @@ export const proxyInterviewCanada: LandingPageConfig = {
     {
       question: 'How quickly can you arrange support for a Canadian interview?',
       answer:
-        'Contact us as soon as your interview is confirmed. We can arrange proxy support within hours for urgent requests. Reaching out 24-48 hours in advance is ideal for a proper pre-interview briefing.',
+        'Contact us as soon as your interview is confirmed. Same-day support may be available for urgent requests. Reaching out 24-48 hours in advance is ideal for a proper pre-interview briefing and expert assignment.',
     },
   ],
   useCasesSection: {
     title: 'Canadian Interview Situations Where Our Proxy Support Delivers',
     cases: [
-      'Technical coding round at Shopify, OpenText, or another major Canadian tech company',
-      'System design interview for a senior engineering role at a Canadian bank or fintech',
-      'Google or Amazon Canada technical screen — international format at a Canadian hiring hub',
-      'Startup technical assessment in Toronto or Vancouver tech scene',
-      'Multi-round panel interview where consistency across rounds is critical',
+      'Technical coding round at Shopify, OpenText, or another major Canadian tech company — live coding and system design in a Canadian e-commerce or enterprise context',
+      'AI/ML engineer interview at a Canadian bank or tech company — RAG pipeline design, LLM architecture, MLOps system design, or model evaluation questions under live interviewer pressure',
+      'DevOps or cloud architect round at RBC, TD, or Telus — Kubernetes design, AWS or Azure architecture, Terraform IaC, or CI/CD pipeline questions with a senior Canadian interviewer',
+      'Java or Spring Boot enterprise interview at a Canadian bank or consulting firm — microservices design, Kafka architecture, Hibernate optimization in a Canadian financial services context',
+      'System design interview for a senior engineering role at a Canadian bank or fintech — scalability, data architecture, and regulatory compliance discussion',
+      'Google Canada or Amazon Canada technical screen — FAANG-style format at a Canadian hiring hub for PR holders or work permit professionals',
+      'Startup technical assessment in Toronto\'s King West or Vancouver\'s tech scene — fast-paced pair programming and live architecture discussion',
+      'Multi-round panel interview where consistency across rounds is critical for an LMIA or PR-dependent role',
       'Remote interview for a Canadian tech role from anywhere in the world',
     ],
   },
   proxySection: {
     title: 'How Our Canadian Proxy Interview Support Works',
     intro:
-      'We understand the Canadian tech landscape — the major employers, their interview styles, and what Canadian engineering teams look for. Our proxy support is calibrated specifically to maximize your success in the Canadian market.',
+      'We understand the Canadian tech landscape — the major employers, their interview styles, Canadian domain expectations, and what Canadian engineering teams look for at each level. Our proxy support is calibrated specifically to maximize your success in the Canadian market.',
     points: [
       'Contact us with your Canadian interview details — company, role level, date, and technology stack',
-      'In-house specialist — with Canadian tech market experience, assigned to your case',
-      'Pre-interview briefing — alignment on your background and Canadian employer expectations',
+      'In-house specialist assigned — with Canadian tech market, banking, or fintech experience relevant to your specific employer',
+      'Pre-interview briefing — alignment on your background and Canadian employer-specific expectations',
       'Real-time expert availability during your live interview for discreet professional guidance',
       'Post-interview debrief and preparation support for any follow-up rounds',
     ],
   },
+  bottomCTAHeading: 'Need Urgent Proxy Interview Support in Canada?',
+  bottomCTABody:
+    "Don't let interview pressure cost you a high-paying Canadian role. Real in-house experts available 24/7 for proxy interview support across AI/ML, MLOps, DevOps, Cloud, Java, React, .NET, Python, and all major Canadian tech interview formats — banking, fintech, startup, and enterprise.",
   relatedLinks: {
     geoLinks: [
       { label: 'IT job support in Canada', href: '/job-support-canada/' },
@@ -2155,10 +2483,1123 @@ export const proxyInterviewCanada: LandingPageConfig = {
     techLinks: [
       { label: 'Java job support USA', href: '/java-job-support-usa/' },
       { label: 'Node.js job support USA', href: '/nodejs-job-support-usa/' },
+      { label: 'Java proxy interview support', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
     ],
     problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support UK', href: '/proxy-interview-uk/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Java Proxy Interview Support
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const javaProxyInterviewSupport: LandingPageConfig = {
+  slug: 'java-proxy-interview-support',
+  title: 'Java Proxy Interview Support – Live Expert Help for Java & Spring Boot Interviews',
+  description:
+    'Get real-time Java proxy interview support from senior Java and Spring Boot experts. Live guidance during Java technical interviews covering microservices, Kafka, Hibernate, JPA, Spring Security, OAuth2, JVM tuning, design patterns, and enterprise Java architecture. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/java-proxy-interview-support/`,
+  keywords: [
+    'Java proxy interview support', 'Spring Boot interview support', 'Java interview help',
+    'Java technical interview proxy', 'Spring Boot proxy support', 'Java microservices interview',
+    'Kafka interview support', 'Hibernate interview help', 'JPA interview proxy',
+    'Spring Security interview support', 'OAuth2 interview help', 'JVM tuning interview',
+    'Java design patterns interview', 'Java enterprise interview support',
+    'Java interview proxy USA', 'Java interview proxy UK', 'Java interview proxy Canada',
+    'real-time Java interview guidance', 'live Java interview help',
+    'AI interview proxy support', 'ML interview proxy support',
+    'proxy job support', 'same-day proxy interview support',
+    'Java proxy interview support', 'Java Spring Boot proxy interview support',
+  ],
+  ogTitle: 'Java Proxy Interview Support | Real-Time Expert Java & Spring Boot Interview Help',
+  ogDescription:
+    'Get real-time Java proxy interview support during your live Java or Spring Boot technical interview. Expert guidance covering microservices, Kafka, Hibernate, JPA, Spring Security, JVM tuning, and enterprise Java architecture. Same-day support available.',
+  twitterTitle: 'Java Proxy Interview Support | Real-Time Expert Java & Spring Boot Interview Help',
+  twitterDescription:
+    'Urgent Java proxy interview support for Spring Boot, microservices, Kafka, Hibernate, JPA, Spring Security, and enterprise Java architecture rounds. Live expert guidance during your actual Java interview. Same-day support available.',
+  heroEyebrow: 'Java & Spring Boot Proxy Interview Support – Real-Time Expert Guidance',
+  h1: 'Java Proxy Interview Support – Live Expert Help During Your Java & Spring Boot Technical Interview',
+  tagline: 'A senior Java expert beside you in real-time during your Java interview — microservices, Kafka, Hibernate, Spring Security, JVM tuning, and enterprise architecture under live pressure.',
+  painIntro:
+    'Java technical interviews at enterprise companies go deep — Spring Boot microservices design, Kafka consumer group architecture, Hibernate N+1 query problems, JVM garbage collection tuning, Spring Security and OAuth2 flows, and system design questions specific to Java enterprise stacks. Our in-house Java experts are available in real-time during your actual Java or Spring Boot interview.',
+  heroUrgency:
+    "Java interview tomorrow? Final Spring Boot round this week? Don't let deep-dive Java questions cost you an enterprise role. Our in-house Java experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support.",
+  heroVariant:
+    "Enterprise Java interviews are a different category of technical challenge. A US bank or insurance company interviewing for a Java architect role will test Kafka consumer group design, Spring Batch job partitioning, JPA entity lifecycle management, and distributed transaction patterns — not just syntax. A fintech interviewing for a Spring Boot microservices role will probe OAuth2 token flows, Spring Security filter chains, and API gateway patterns under high load. Our Java proxy interview support puts a battle-tested Java and Spring Boot expert beside you in real-time — providing discreet, precise guidance so you demonstrate the depth of knowledge the interviewer expects.",
+  geoLine: 'Java proxy interview support for professionals interviewing at US, UK, Canadian, Australian, European, and global enterprise companies.',
+  timezoneNote: 'Available across all time zones — aligned with your exact Java interview schedule.',
+  techSnippet: 'Java proxy interview support for Spring Boot, Spring Security, Spring Batch, Kafka, RabbitMQ, Hibernate, JPA, JVM optimization, microservices design, REST API architecture, OAuth2, JWT, Docker, Kubernetes, AWS EKS, and enterprise Java patterns.',
+  highlights: [
+    {
+      title: 'Microservices & Spring Boot Architecture',
+      description: 'Real-time guidance during Spring Boot microservices interview questions — service decomposition, inter-service communication (REST vs gRPC vs Kafka), circuit breaker patterns (Resilience4j), API gateway design, saga pattern for distributed transactions, and Spring Cloud configuration management under live interviewer pressure.',
+    },
+    {
+      title: 'Kafka, Messaging & Event-Driven Architecture',
+      description: 'Live help during Kafka interview questions — consumer group management, partition design, exactly-once semantics, offset management, dead letter queues, Kafka Streams processing, and event sourcing patterns. Also covers RabbitMQ AMQP design and message broker selection trade-offs.',
+    },
+    {
+      title: 'Hibernate, JPA & Database Architecture',
+      description: 'Real-time support for Hibernate and JPA interview deep-dives — entity lifecycle management, lazy vs eager loading, N+1 query problem identification and resolution, second-level cache configuration, JPQL optimization, database connection pool tuning, and PostgreSQL/MySQL query performance analysis.',
+    },
+    {
+      title: 'Spring Security, OAuth2 & JVM Tuning',
+      description: 'Live expert guidance during Spring Security interview questions — filter chain architecture, OAuth2 authorization code flow, JWT validation, RBAC implementation, and secure API design. Also covers JVM garbage collection tuning (G1GC, ZGC), heap sizing, thread dump analysis, and JProfiler interpretation questions.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Java interview topics do you cover in real-time?',
+      answer:
+        'Our Java experts cover the full enterprise Java stack in real-time — Spring Boot microservices design, Spring Security and OAuth2, Kafka consumer architecture and event-driven design, Hibernate and JPA deep-dives (N+1, lazy loading, entity lifecycle), JVM GC tuning, Spring Batch job design, REST API architecture, Docker and Kubernetes deployment, AWS EKS and ECS, design patterns (Factory, Builder, Strategy, Observer), SOLID principles, and Java 17/21 feature questions.',
+    },
+    {
+      question: 'Can you help with system design questions in a Java interview?',
+      answer:
+        'Yes. System design in Java interviews often means designing a distributed microservices system — event-driven architecture with Kafka, API gateway selection, database sharding and read replicas, caching with Redis, circuit breakers, and load balancing. Our experts can guide you through structuring and articulating a complete system design answer in a Java/Spring context.',
+    },
+    {
+      question: 'Do you support Java interviews at banks and financial institutions?',
+      answer:
+        'Yes. Java is the dominant stack at US, UK, and Canadian banks — and our experts have direct experience with the Java interview formats used at financial institutions. We cover the domain-specific patterns common in financial services Java interviews: distributed transaction management, high-throughput messaging, regulatory-compliant data storage, and trading system architecture.',
+    },
+    {
+      question: 'How quickly can you arrange Java proxy interview support?',
+      answer:
+        'Contact us as soon as your Java interview is scheduled. Same-day support may be available for urgent requests. Ideally reach out 24-48 hours before for a proper pre-interview briefing so our Java expert can align with your specific role, company, and expected question depth.',
+    },
+    {
+      question: 'Is this available for both junior and senior Java interviews?',
+      answer:
+        'Yes. We calibrate the real-time guidance to the seniority level of your interview. Junior Java interviews focus on core concepts and Spring Boot basics. Mid-level interviews go into microservices, Kafka, and Hibernate depth. Senior and architect-level interviews demand distributed system design, JVM internals, and enterprise architecture pattern knowledge — we cover all levels.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Java Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'Spring Boot microservices architecture round at a US bank — service decomposition, Kafka event sourcing, saga pattern, and API gateway design under live interviewer pressure',
+      'Hibernate and JPA deep-dive at an enterprise Java company — N+1 query diagnosis, lazy loading strategy, and second-level cache configuration questions',
+      'Kafka consumer group design question at a UK fintech — partition assignment, offset management, and exactly-once semantics in a high-throughput financial messaging context',
+      'Spring Security and OAuth2 round at a US enterprise — filter chain architecture, JWT token validation flow, and RBAC implementation deep-dive',
+      'JVM tuning interview at a performance-critical Java role — GC algorithm selection (G1GC vs ZGC), heap sizing, thread dump analysis, and memory leak diagnosis',
+      'Java system design interview — designing a distributed order management system with microservices, Kafka, Redis caching, and PostgreSQL sharding',
+      'Java 17/21 features interview — sealed classes, records, pattern matching, virtual threads (Project Loom), and their practical application in enterprise Java',
+      'Final round at a US or UK financial institution where every Java architecture answer is evaluated at a senior level',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Java Proxy Interview Support Works',
+    intro:
+      'We keep the process focused on your specific Java interview — the company, the role level, and the technology depth expected. From expert assignment to post-interview debrief, everything is calibrated to maximize your result.',
+    points: [
+      'Contact us with your Java interview details — company, role level, date, and specific technology focus (Spring Boot, Kafka, Hibernate, etc.)',
+      'In-house Java specialist assigned — with direct experience in enterprise Java, Spring ecosystem, and your specific interviewer company type',
+      'Pre-interview briefing — technical alignment on likely question areas, your background, and communication strategy',
+      'Real-time expert availability during your live Java interview for discreet, precise technical guidance',
+      'Post-interview debrief — performance review and preparation for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent Java Proxy Interview Support?',
+  bottomCTABody:
+    "Don't let deep-dive Java questions cost you an enterprise role. Real in-house Java and Spring Boot experts available 24/7 — microservices, Kafka, Hibernate, Spring Security, JVM tuning, and enterprise Java architecture. USA, UK, Canada, Australia, Europe, and globally.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+      { label: 'Proxy interview support UK', href: '/proxy-interview-uk/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DevOps Proxy Interview Support
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const devopsProxyInterviewSupport: LandingPageConfig = {
+  slug: 'devops-proxy-interview-support',
+  title: 'DevOps Proxy Interview Support – Live Expert Help for DevOps & Kubernetes Interviews',
+  description:
+    'Get real-time DevOps proxy interview support from senior DevOps and Kubernetes experts. Live guidance during DevOps technical interviews covering Kubernetes architecture, Terraform, CI/CD pipelines, GitOps, Helm, ArgoCD, Prometheus, Grafana, AWS EKS, Azure AKS, and enterprise DevOps design. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/devops-proxy-interview-support/`,
+  keywords: [
+    'DevOps proxy interview support', 'Kubernetes interview support', 'DevOps interview help',
+    'DevOps technical interview proxy', 'Kubernetes proxy interview', 'Terraform interview support',
+    'CI/CD interview help', 'GitOps interview support', 'Helm interview proxy',
+    'ArgoCD interview help', 'Prometheus Grafana interview', 'AWS EKS interview support',
+    'Azure AKS interview support', 'SRE interview support', 'Platform engineering interview help',
+    'DevOps interview proxy USA', 'DevOps interview proxy UK', 'DevOps interview proxy Canada',
+    'real-time DevOps interview guidance', 'live DevOps interview help',
+    'AI interview proxy support', 'MLOps interview support',
+    'proxy job support', 'same-day proxy interview support',
+    'DevOps proxy interview support', 'cloud architect interview proxy',
+  ],
+  ogTitle: 'DevOps Proxy Interview Support | Real-Time Expert Kubernetes & DevOps Interview Help',
+  ogDescription:
+    'Get real-time DevOps proxy interview support during your live Kubernetes or DevOps technical interview. Expert guidance covering Kubernetes architecture, Terraform, CI/CD, GitOps, Helm, ArgoCD, AWS EKS, Azure AKS, and enterprise DevOps design. Same-day support available.',
+  twitterTitle: 'DevOps Proxy Interview Support | Real-Time Expert Kubernetes & DevOps Interview Help',
+  twitterDescription:
+    'Urgent DevOps proxy interview support for Kubernetes, Terraform, CI/CD, GitOps, ArgoCD, AWS EKS, and enterprise DevOps architecture rounds. Live expert guidance during your actual DevOps interview. Same-day support available.',
+  heroEyebrow: 'DevOps & Kubernetes Proxy Interview Support – Real-Time Expert Guidance',
+  h1: 'DevOps Proxy Interview Support – Live Expert Help During Your Kubernetes & DevOps Technical Interview',
+  tagline: 'A senior DevOps expert beside you in real-time during your DevOps interview — Kubernetes architecture, Terraform, CI/CD design, GitOps, AWS EKS, Azure AKS, and SRE under live pressure.',
+  painIntro:
+    'DevOps and Kubernetes interviews at enterprise companies test depth — cluster architecture design, Terraform state management, GitOps workflow design with ArgoCD, Prometheus alerting rule design, multi-cluster networking, and CI/CD pipeline architecture that serves hundreds of microservices. Our in-house DevOps and Kubernetes experts are available in real-time during your actual DevOps interview.',
+  heroUrgency:
+    "DevOps interview tomorrow? Kubernetes architecture round this week? Don't let deep-dive infrastructure questions cost you a cloud architect or SRE role. Our in-house DevOps experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support.",
+  heroVariant:
+    "Enterprise DevOps and platform engineering interviews probe a depth that casual practitioners rarely reach. A senior DevOps architect interview at a US tech company will test multi-cluster Kubernetes design, Terraform module architecture, GitOps at scale with ArgoCD, Prometheus recording rules and alerting strategies, service mesh implementation with Istio or Linkerd, and disaster recovery design across availability zones. A cloud-native SRE interview will probe error budget policies, SLO/SLI definition, chaos engineering practices, and incident response automation. Our DevOps proxy interview support puts an enterprise-level DevOps and Kubernetes expert beside you in real-time — providing precise, discreet guidance when it matters most.",
+  geoLine: 'DevOps proxy interview support for professionals interviewing at US, UK, Canadian, Australian, European, and global enterprise companies.',
+  timezoneNote: 'Available across all time zones — aligned with your exact DevOps interview schedule.',
+  techSnippet: 'DevOps proxy interview support for Kubernetes, Terraform, Helm, ArgoCD, Flux, GitHub Actions, Jenkins, GitLab CI, Prometheus, Grafana, Datadog, AWS EKS, Azure AKS, GKE, Istio, Linkerd, Docker, Ansible, and enterprise DevOps architecture.',
+  highlights: [
+    {
+      title: 'Kubernetes Architecture & Design Interviews',
+      description: 'Real-time guidance during Kubernetes architecture interview questions — cluster design (control plane HA, etcd sizing), node pool strategies, pod scheduling (affinity, taints/tolerations), network policies, RBAC design, HPA/VPA autoscaling, persistent volume management, and multi-cluster federation design under live interviewer pressure.',
+    },
+    {
+      title: 'Terraform, IaC & GitOps Interview Support',
+      description: 'Live help during Terraform interview questions — module design and reusability, state backend management (S3/remote), workspace strategy for multi-environment deployments, drift detection, and Terraform at enterprise scale. Also covers GitOps workflows with ArgoCD and Flux — app-of-apps pattern, sync strategies, secrets management with Vault or sealed secrets.',
+    },
+    {
+      title: 'CI/CD Pipeline Design & Optimization',
+      description: 'Real-time support for CI/CD architecture interview questions — multi-stage pipeline design with GitHub Actions, GitLab CI, or Jenkins, container build optimization (multi-stage Docker builds, layer caching), deployment strategies (blue-green, canary, rolling), pipeline security (SAST, DAST, image scanning), and release engineering at scale.',
+    },
+    {
+      title: 'Observability, SRE & Incident Response',
+      description: 'Live expert guidance during SRE and observability interview questions — Prometheus metrics design, recording rules, alerting rule strategy, Grafana dashboard architecture, distributed tracing with Jaeger or OpenTelemetry, log aggregation with ELK or Loki, SLO/SLI definition, error budget policy design, and chaos engineering practices.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What DevOps interview topics do you cover in real-time?',
+      answer:
+        'Our DevOps experts cover the full enterprise DevOps and platform engineering stack in real-time — Kubernetes architecture and design, Terraform and IaC patterns, GitOps with ArgoCD and Flux, CI/CD pipeline architecture (GitHub Actions, GitLab CI, Jenkins), AWS EKS and Azure AKS management, Helm chart design, service mesh (Istio, Linkerd), Prometheus and Grafana observability, Datadog APM, SRE practices (SLO/SLI, error budgets, chaos engineering), Docker multi-stage builds, Ansible automation, and cloud security (IAM, network policies, secrets management).',
+    },
+    {
+      question: 'Can you help with Kubernetes system design questions?',
+      answer:
+        'Yes. Kubernetes system design in DevOps interviews means designing a production-grade multi-cluster platform — cluster segmentation strategy, workload placement across node pools, network policy architecture, secrets management at scale, GitOps deployment pipelines, autoscaling strategy, disaster recovery, and cost optimization. Our experts guide you through structuring and articulating a complete Kubernetes system design answer under interviewer pressure.',
+    },
+    {
+      question: 'Do you support DevOps interviews at cloud companies and financial institutions?',
+      answer:
+        'Yes. We have supported DevOps and SRE interview candidates at major US tech companies, UK banks with cloud-native infrastructure, Canadian telecoms running large Kubernetes platforms, and Australian financial institutions modernizing their DevOps practices. We understand the domain-specific DevOps interview expectations at each type of organization.',
+    },
+    {
+      question: 'How quickly can you arrange DevOps proxy interview support?',
+      answer:
+        'Contact us as soon as your DevOps interview is scheduled. Same-day support may be available for urgent requests. Ideally reach out 24-48 hours before for a proper pre-interview briefing so our DevOps expert can align with your specific role, company type, and expected infrastructure question depth.',
+    },
+    {
+      question: 'Is this available for both DevOps engineers and platform engineering roles?',
+      answer:
+        'Yes. We support DevOps engineers, SRE engineers, cloud architects, platform engineers, and infrastructure engineers. The real-time guidance is calibrated to the specific role level and company type — from a mid-level DevOps engineer interview focusing on CI/CD and Kubernetes operations, to a principal platform engineer interview requiring distributed system design and SRE governance.',
+    },
+  ],
+  useCasesSection: {
+    title: 'DevOps Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'Kubernetes cluster design round at a US tech company — control plane HA, etcd sizing, node pool strategy, RBAC design, and HPA autoscaling under live interviewer pressure',
+      'Terraform architecture interview at a cloud-native enterprise — module design, state backend management, workspace strategy, and drift detection at scale',
+      'GitOps round with ArgoCD — app-of-apps pattern, sync strategies, secrets management, and multi-environment promotion workflows',
+      'CI/CD pipeline architecture interview — multi-stage pipeline design, container build optimization, canary deployment strategy, and pipeline security (SAST, image scanning)',
+      'SRE interview round — SLO/SLI definition, error budget policy, Prometheus alerting rule design, Grafana dashboard architecture, and chaos engineering practices',
+      'AWS EKS or Azure AKS architecture interview — managed Kubernetes design, node group configuration, IAM roles for service accounts, cluster autoscaler, and cost optimization',
+      'Observability and incident response interview — distributed tracing with OpenTelemetry, log aggregation with Loki, on-call runbook design, and post-mortem analysis',
+      'Final round for a senior DevOps architect or VP of Infrastructure role where every infrastructure design decision is evaluated at a principal level',
+    ],
+  },
+  proxySection: {
+    title: 'How Our DevOps Proxy Interview Support Works',
+    intro:
+      'We focus entirely on your specific DevOps interview — the infrastructure stack, role level, and company type. From expert matching to post-interview debrief, everything is calibrated to maximize your result.',
+    points: [
+      'Contact us with your DevOps interview details — company, role level, date, and specific technology focus (Kubernetes, Terraform, AWS, CI/CD, SRE)',
+      'In-house DevOps specialist assigned — with direct enterprise experience in your specific infrastructure stack and company type',
+      'Pre-interview briefing — technical alignment on likely architecture questions, your background, and communication strategy',
+      'Real-time expert availability during your live DevOps interview for discreet, precise technical guidance',
+      'Post-interview debrief — performance review and preparation for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent DevOps Proxy Interview Support?',
+  bottomCTABody:
+    "Don't let deep-dive Kubernetes or infrastructure questions cost you a senior DevOps role. Real in-house DevOps and Kubernetes experts available 24/7 — Terraform, GitOps, CI/CD, AWS EKS, Azure AKS, SRE, and enterprise platform engineering. USA, UK, Canada, Australia, Europe, and globally.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+      { label: 'Proxy interview support UK', href: '/proxy-interview-uk/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Java proxy interview support', href: '/java-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'SRE proxy interview support', href: '/sre-proxy-interview-support/' },
+      { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Proxy Interview Support Australia
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const proxyInterviewAustralia: LandingPageConfig = {
+  slug: 'proxy-interview-australia',
+  title: 'Proxy Interview Support Australia – Live Expert Help',
+  description:
+    'Get real-time proxy interview support in Australia for IT professionals. Expert live technical interview assistance for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, Angular, AWS, Azure, Cloud, Python, and enterprise Australian tech roles — Commonwealth Bank, ANZ, Atlassian, Canva. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/proxy-interview-australia/`,
+  keywords: [
+    'proxy interview support Australia', 'live interview help Australia', 'proxy interview Australia',
+    'technical interview proxy Australia', 'coding interview help Australia',
+    'Australian tech interview support', 'real-time interview guidance Australia',
+    'AI interview proxy support', 'ML interview proxy support',
+    'MLOps interview proxy support', 'DevOps proxy interview support',
+    'Kubernetes interview support', 'Java proxy interview support',
+    'React proxy interview support', '.NET proxy interview support',
+    'AWS interview support', 'proxy job support', 'real-time interview assistance',
+    'same-day proxy interview support', 'Commonwealth Bank interview support',
+    'ANZ technical interview help', 'Atlassian interview support',
+    'Canva interview support', 'Telstra interview support',
+    'Sydney tech interview support', 'Melbourne tech interview support',
+    '482 TSS visa interview support', 'AEST interview support',
+  ],
+  ogTitle: 'Proxy Interview Support Australia | Real-Time Expert IT Interview Help',
+  ogDescription:
+    'Get real-time proxy interview support in Australia for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, AWS, Azure, and enterprise Australian tech roles — banking, fintech, Atlassian, Canva. Expert live technical interview assistance. 1000+ helped. Same-day support available.',
+  twitterTitle: 'Proxy Interview Support Australia | Real-Time Expert IT Interview Help',
+  twitterDescription:
+    'Urgent proxy interview support in Australia for AI, ML, MLOps, DevOps, Java, React, .NET, AWS, and enterprise Australian roles — Commonwealth Bank, ANZ, Atlassian, Canva. Live expert guidance during coding rounds, system design, and technical panels. Same-day support available.',
+  heroEyebrow: 'Expert Proxy Interview Support & Real-Time Interview Assistance Australia',
+  h1: 'Proxy Interview Support Australia – Real-Time Expert Guidance During Australian Tech Interviews',
+  tagline: 'Live expert help during coding rounds, system design, AI/ML interviews, and technical assessments for Australian banking, fintech, and tech company roles — AEST/AEDT aligned.',
+  painIntro:
+    'Facing a technical interview at an Australian bank, tech company, or a global firm with major Australian offices? Australian tech interviews blend US-style technical rigour with the domain expectations of Australian financial institutions, government digital services, and APAC-focused tech companies. Our in-house experts provide real-time, discreet proxy interview support aligned with AEST and AEDT schedules.',
+  heroUrgency:
+    "Australian interview tomorrow? Final round approaching? Don't let interview pressure cost you a high-paying Australian role. Our in-house experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support across AEST and AEDT.",
+  heroVariant:
+    "Australia's technology sector presents unique interview challenges. Commonwealth Bank, ANZ, NAB, and Westpac run structured multi-round technical panels with a focus on Java, Python, cloud migration, and data engineering in a regulated Australian financial context. Atlassian and Canva run engineering interviews that test system design at global scale — their bar is FAANG-equivalent. REA Group, Telstra, and WiseTech interview for full-stack, cloud-native, and platform engineering capability. Our proxy interview support puts an in-house expert beside you during the actual Australian interview — calibrated to the specific employer format you are facing.",
+  geoLine: 'Serving developers preparing for Australian tech company interviews — also supporting USA, UK, Canada, Europe, and Singapore candidates.',
+  timezoneNote: 'Available across AEST and AEDT — aligned with your Australian interview schedule.',
+  techSnippet: 'Proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG, DevOps, Kubernetes, Cloud, AWS, Azure, GCP, Java, Spring Boot, Python, React, Angular, .NET, Node.js, Data Science, and all major Australian tech interview formats.',
+  highlights: [
+    {
+      title: 'Australian Banking & Fintech Interview Support',
+      description: 'Real-time expert guidance during technical interviews at Commonwealth Bank, ANZ, NAB, Westpac, and Australian fintech companies — Java and Python backend systems, cloud-native banking architecture, data engineering, regulatory-compliant API design, and technical panels specific to Australian financial services.',
+    },
+    {
+      title: 'Atlassian, Canva & Australian Tech Company Interviews',
+      description: 'Live help during engineering interviews at Atlassian, Canva, REA Group, Seek, and WiseTech Global — system design at global scale, distributed systems, real-time collaboration infrastructure, and coding rounds that match or exceed FAANG technical bar.',
+    },
+    {
+      title: 'AI/ML, DevOps & Cloud Interview Support',
+      description: 'Real-time proxy support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers interviewing at Australian tech companies and banks — covering RAG pipeline design, LLM architecture, Kubernetes system design, AWS and Azure solution architecture, and CI/CD pipeline discussions relevant to Australian enterprise roles.',
+    },
+    {
+      title: 'Government Digital & Telco Interview Support',
+      description: 'Live expert guidance during technical interviews at Telstra, Optus, Services Australia, the ATO (Australian Tax Office), and state government digital agencies — cloud-native architecture, data engineering, API platform design, and public-sector technology governance questions specific to Australian government tech roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Australian companies and interview formats do you support?',
+      answer:
+        'We have supported candidates at major Australian employers including Commonwealth Bank, ANZ, NAB, Westpac, Atlassian, Canva, REA Group, Seek, Telstra, Optus, WiseTech Global, and Services Australia. We also support interviews at global companies with major Australian engineering hubs. We understand the distinct interview formats used by each type of Australian employer.',
+    },
+    {
+      question: 'How do Australian tech interviews differ from US and UK interviews?',
+      answer:
+        'Australian tech company interviews vary significantly by employer. Atlassian and Canva run FAANG-equivalent system design and coding rounds. Australian banks run structured multi-round panels with domain-specific financial technology questions. Government digital agencies interview for cloud and data capability within public-sector frameworks. We tailor our proxy support to the specific employer format and expectations you face.',
+    },
+    {
+      question: 'Can you support interviews at Australian banks and financial institutions?',
+      answer:
+        'Yes. Australian banking technical interviews focus on Java and Python backend systems, cloud migration (AWS/Azure), data engineering, API architecture, and regulatory compliance (APRA, AUSTRAC). We have experts with Australian financial services experience who can provide accurate, relevant real-time guidance during your live interview.',
+    },
+    {
+      question: 'Do you support 482 TSS visa holders preparing for Australian interviews?',
+      answer:
+        'Yes. We support IT professionals on 482 TSS visas, Permanent Resident applicants, and skilled migrants preparing for technical interviews at Australian employers. The stakes of securing and retaining Australian roles are high — our proxy interview support helps ensure you perform at your absolute peak when it matters most.',
+    },
+    {
+      question: 'How quickly can you arrange proxy support for an Australian interview?',
+      answer:
+        'Contact us as soon as your interview is confirmed. Same-day support may be available for urgent requests. Reaching out 24-48 hours in advance is ideal for a proper pre-interview briefing and expert assignment aligned with your AEST or AEDT interview time.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Australian Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'Atlassian or Canva engineering interview — FAANG-equivalent system design at global product scale, distributed systems, and coding rounds under high technical bar',
+      'Commonwealth Bank or ANZ technical panel — Java or Python backend systems, cloud migration architecture, and regulatory-aware data engineering in an Australian banking context',
+      'AI/ML engineer interview at an Australian tech company or bank — RAG pipeline design, LLM architecture, MLOps system design under live interviewer pressure',
+      'DevOps or cloud architect round at an Australian enterprise — Kubernetes design, AWS or Azure architecture, Terraform IaC, or CI/CD pipeline questions with a senior Australian interviewer',
+      'REA Group or Seek engineering interview — full-stack system design, real-time data pipelines, and search architecture in an Australian property or employment platform context',
+      'Telstra or Optus technical assessment — cloud-native networking, DevOps, and platform engineering in a large-scale Australian telco environment',
+      'Government digital service interview (Services Australia, ATO, state agencies) — cloud architecture, data governance, and public-sector API design',
+      'Final round for a 482 TSS-sponsored Australian role where interview success is critical for visa continuation',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Australian Proxy Interview Support Works',
+    intro:
+      'We understand the Australian tech landscape — the major employers, their interview styles, APAC domain expectations, and what Australian engineering teams look for at each level. Our proxy support is calibrated specifically to maximize your success in the Australian market.',
+    points: [
+      'Contact us with your Australian interview details — company, role level, date, and technology stack',
+      'In-house specialist assigned — with Australian tech market, banking, or fintech experience relevant to your specific employer',
+      'Pre-interview briefing — alignment on your background and Australian employer-specific expectations',
+      'Real-time expert availability during your live interview for discreet professional guidance',
+      'Post-interview debrief and preparation support for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent Proxy Interview Support in Australia?',
+  bottomCTABody:
+    "Don't let interview pressure cost you a high-paying Australian role. Real in-house experts available 24/7 for proxy interview support across AI/ML, MLOps, DevOps, Cloud, Java, React, .NET, Python, and all major Australian tech interview formats — banking, fintech, Atlassian, Canva, government digital, and enterprise.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Australia', href: '/job-support-australia/' },
+      { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview support', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support UK', href: '/proxy-interview-uk/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled-australia/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Proxy Interview Support Europe
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const proxyInterviewEurope: LandingPageConfig = {
+  slug: 'proxy-interview-europe',
+  title: 'Proxy Interview Support Europe – Live Expert Help',
+  description:
+    'Get real-time proxy interview support in Europe for IT professionals. Expert live technical interview assistance for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, Angular, AWS, Azure, Cloud, Python, and enterprise European tech roles — SAP, Deutsche Bank, ING, Booking.com, Spotify. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/proxy-interview-europe/`,
+  keywords: [
+    'proxy interview support Europe', 'live interview help Europe', 'proxy interview Europe',
+    'technical interview proxy Europe', 'coding interview help Europe',
+    'European tech interview support', 'real-time interview guidance Europe',
+    'AI interview proxy support', 'ML interview proxy support',
+    'MLOps interview proxy support', 'DevOps proxy interview support',
+    'Kubernetes interview support', 'Java proxy interview support',
+    'React proxy interview support', '.NET proxy interview support',
+    'AWS interview support', 'proxy job support', 'real-time interview assistance',
+    'same-day proxy interview support', 'SAP interview support',
+    'Deutsche Bank technical interview help', 'ING interview support',
+    'Booking.com interview support', 'Spotify interview support',
+    'EU Blue Card interview support', 'Amsterdam tech interview support',
+    'Berlin tech interview support', 'Germany tech interview support',
+  ],
+  ogTitle: 'Proxy Interview Support Europe | Real-Time Expert IT Interview Help',
+  ogDescription:
+    'Get real-time proxy interview support in Europe for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, AWS, Azure, and enterprise European tech roles — SAP, Deutsche Bank, ING, ASML, Booking.com, Spotify. Expert live technical interview assistance. 1000+ helped. Same-day support available.',
+  twitterTitle: 'Proxy Interview Support Europe | Real-Time Expert IT Interview Help',
+  twitterDescription:
+    'Urgent proxy interview support in Europe for AI, ML, MLOps, DevOps, Java, React, .NET, AWS, and enterprise European roles — SAP, Deutsche Bank, ING, Booking.com, Spotify. Live expert guidance during coding rounds, system design, and technical panels. Same-day support available.',
+  heroEyebrow: 'Expert Proxy Interview Support & Real-Time Interview Assistance Europe',
+  h1: 'Proxy Interview Support Europe – Real-Time Expert Guidance During European Tech Interviews',
+  tagline: 'Live expert help during coding rounds, system design, AI/ML interviews, and technical assessments for European banking, fintech, and tech company roles — CET/GMT aligned.',
+  painIntro:
+    'Facing a technical interview at a European enterprise, fintech, or a global tech company with major European offices? European tech interviews span a wide range — Dutch-style open technical discussions at Booking.com and ING, structured German engineering interviews at SAP and Siemens, high-bar engineering rounds at Spotify and ASML, and French or Swiss financial services panels. Our in-house experts provide real-time, discreet proxy interview support aligned with CET and GMT schedules.',
+  heroUrgency:
+    "European interview tomorrow? Final round approaching? Don't let interview pressure cost you a high-paying European role. Our in-house experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support across CET and GMT.",
+  heroVariant:
+    "European tech interviews reflect the diversity of European employer culture. Booking.com and Adyen in Amsterdam run rigorous engineering interviews with a Dutch emphasis on practical problem-solving and data-driven decision-making. SAP and Siemens in Germany interview for deep enterprise software engineering, cloud platform architecture, and integration pattern expertise. Deutsche Bank and ING run structured multi-round technical and competency panels covering Java backend, cloud migration, and regulatory-compliant data engineering. Spotify in Stockholm favors creative engineering and distributed systems design. EU Blue Card holders and international professionals competing for European tech roles face high competition — our proxy interview support puts an in-house expert beside you in real-time.",
+  geoLine: 'Serving developers preparing for European tech company interviews — also supporting USA, UK, Canada, Australia, and Singapore candidates.',
+  timezoneNote: 'Available across CET and GMT — aligned with your European interview schedule.',
+  techSnippet: 'Proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG, DevOps, Kubernetes, Cloud, AWS, Azure, GCP, Java, Spring Boot, Python, React, Angular, .NET, Node.js, Data Science, and all major European tech interview formats.',
+  highlights: [
+    {
+      title: 'European Banking & Fintech Interview Support',
+      description: 'Real-time expert guidance during technical interviews at Deutsche Bank, ING, HSBC Europe, Adyen, Klarna, and European fintech companies — Java and Python backend systems, cloud-native financial architecture, payment platform design, regulatory-compliant data engineering (GDPR, MiFID II), and multi-stage competency panels specific to European financial services.',
+    },
+    {
+      title: 'Dutch & German Enterprise Tech Interviews',
+      description: 'Live help during engineering interviews at Booking.com, ASML, Philips, SAP, Siemens, and large German enterprises — system design at global scale, distributed systems, enterprise integration patterns, Java EE and Spring Boot architecture, cloud platform migration, and the practical engineering depth expected by German and Dutch tech employers.',
+    },
+    {
+      title: 'Spotify, Klarna & Nordic Tech Interviews',
+      description: 'Real-time proxy support for engineering interviews at Spotify, Klarna, King, iZettle, and other Nordic tech companies — distributed system design, microservices at consumer product scale, real-time data pipelines, and engineering culture fit rounds specific to Swedish and Nordic tech company expectations.',
+    },
+    {
+      title: 'AI/ML, DevOps & Cloud Interview Support',
+      description: 'Real-time proxy support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers interviewing at European tech companies and banks — covering RAG pipeline design, LLM architecture, Kubernetes system design, AWS and Azure solution architecture, and CI/CD discussions relevant to European enterprise and fintech roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What European companies and interview formats do you support?',
+      answer:
+        'We have supported candidates at major European employers including Booking.com, ASML, ING, Adyen, Philips, SAP, Siemens, Deutsche Bank, Spotify, Klarna, and many Amsterdam, Berlin, and Stockholm tech companies. We also support interviews at global companies with major European engineering hubs. We understand the distinct interview formats used by different European employers.',
+    },
+    {
+      question: 'How do European tech interviews differ from US and UK interviews?',
+      answer:
+        'European tech interviews vary significantly by country and employer culture. Dutch companies favor open, collaborative technical discussions. German employers value engineering depth and systematic thinking. Nordic tech companies emphasize creative system design and engineering culture fit. European banks run structured multi-round technical and competency panels. We tailor our proxy support to the specific European employer format you are facing.',
+    },
+    {
+      question: 'Do you support EU Blue Card holders preparing for European interviews?',
+      answer:
+        'Yes. We support EU Blue Card holders, international professionals on work permits, and skilled IT professionals across Germany, Netherlands, France, Sweden, Switzerland, and other EU countries. High-stakes European tech interviews are a common point of need — our proxy interview support helps ensure you perform at your peak.',
+    },
+    {
+      question: 'Can you support interviews at European banks and financial institutions?',
+      answer:
+        'Yes. European financial services interviews combine technical depth with regulatory domain knowledge — GDPR compliance architecture, MiFID II reporting, payment system design, and trading platform engineering. We have experts with European banking and fintech experience who can provide accurate, relevant real-time guidance.',
+    },
+    {
+      question: 'How quickly can you arrange proxy support for a European interview?',
+      answer:
+        'Contact us as soon as your interview is confirmed. Same-day support may be available for urgent requests. Reaching out 24-48 hours in advance is ideal for a proper pre-interview briefing and expert assignment aligned with your CET or GMT interview time.',
+    },
+  ],
+  useCasesSection: {
+    title: 'European Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'Booking.com or Adyen engineering interview in Amsterdam — practical system design, data-driven problem-solving, and coding rounds at a global-scale Dutch tech company',
+      'Deutsche Bank or ING technical panel — Java backend systems, cloud migration architecture, and regulatory-aware data engineering in a European financial services context',
+      'AI/ML engineer interview at a European tech company or bank — RAG pipeline design, LLM architecture, MLOps system design under live interviewer pressure',
+      'DevOps or cloud architect round at a European enterprise — Kubernetes design, AWS or Azure architecture, Terraform IaC, or CI/CD pipeline questions with a senior European interviewer',
+      'SAP or Siemens engineering interview in Germany — enterprise software architecture, Java EE and Spring Boot depth, cloud platform design, and systematic German-style technical assessment',
+      'Spotify or Klarna engineering interview in Stockholm — distributed system design at consumer product scale, real-time data pipelines, and engineering culture fit rounds',
+      'ASML technical interview in Eindhoven — high-precision engineering software, Python automation, embedded systems, or semiconductor design tool architecture',
+      'Final round at a European company for an EU Blue Card role where visa continuation depends on interview success',
+    ],
+  },
+  proxySection: {
+    title: 'How Our European Proxy Interview Support Works',
+    intro:
+      'We understand the European tech landscape across key markets — the Dutch, German, Nordic, and French employer cultures, their interview styles, and what European engineering teams look for. Our proxy support is calibrated to maximize your success in the European market.',
+    points: [
+      'Contact us with your European interview details — company, country, role level, date, and technology stack',
+      'In-house specialist assigned — with European tech market, banking, or enterprise experience relevant to your specific employer and country',
+      'Pre-interview briefing — alignment on your background and European employer-specific expectations',
+      'Real-time expert availability during your live interview for discreet professional guidance',
+      'Post-interview debrief and preparation support for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent Proxy Interview Support in Europe?',
+  bottomCTABody:
+    "Don't let interview pressure cost you a high-paying European role. Real in-house experts available 24/7 for proxy interview support across AI/ML, MLOps, DevOps, Cloud, Java, React, .NET, Python, and all major European tech interview formats — banking, fintech, Dutch and German enterprise, and Nordic tech.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Proxy interview support UK', href: '/proxy-interview-uk/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview support', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support USA', href: '/proxy-interview-usa/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Proxy Interview Support Singapore
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const proxyInterviewSingapore: LandingPageConfig = {
+  slug: 'proxy-interview-singapore',
+  title: 'Proxy Interview Support Singapore – Live Expert Help',
+  description:
+    'Get real-time proxy interview support in Singapore for IT professionals. Expert live technical interview assistance for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, Angular, AWS, Azure, Cloud, Python, and enterprise Singapore tech roles — DBS, OCBC, Grab, Sea Group, GovTech. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/proxy-interview-singapore/`,
+  keywords: [
+    'proxy interview support Singapore', 'live interview help Singapore', 'proxy interview Singapore',
+    'technical interview proxy Singapore', 'coding interview help Singapore',
+    'Singapore tech interview support', 'real-time interview guidance Singapore',
+    'AI interview proxy support', 'ML interview proxy support',
+    'MLOps interview proxy support', 'DevOps proxy interview support',
+    'Kubernetes interview support', 'Java proxy interview support',
+    'React proxy interview support', '.NET proxy interview support',
+    'AWS interview support', 'proxy job support', 'real-time interview assistance',
+    'same-day proxy interview support', 'DBS interview support',
+    'Grab technical interview help', 'Sea Group interview support',
+    'GovTech Singapore interview support', 'fintech hub interview support Singapore',
+    'EP pass interview support', 'S Pass interview support Singapore',
+    'SGT interview support', 'SEA tech interview support',
+  ],
+  ogTitle: 'Proxy Interview Support Singapore | Real-Time Expert IT Interview Help',
+  ogDescription:
+    'Get real-time proxy interview support in Singapore for AI, ML, MLOps, DevOps, Kubernetes, Java, Spring Boot, React, .NET, AWS, Azure, and enterprise Singapore tech roles — DBS, OCBC, Grab, Sea Group, GovTech. Expert live technical interview assistance. 1000+ helped. Same-day support available.',
+  twitterTitle: 'Proxy Interview Support Singapore | Real-Time Expert IT Interview Help',
+  twitterDescription:
+    'Urgent proxy interview support in Singapore for AI, ML, MLOps, DevOps, Java, React, .NET, AWS, and enterprise Singapore roles — DBS, Grab, Sea Group, GovTech. Live expert guidance during coding rounds, system design, and technical panels. Same-day support available.',
+  heroEyebrow: 'Expert Proxy Interview Support & Real-Time Interview Assistance Singapore',
+  h1: 'Proxy Interview Support Singapore – Real-Time Expert Guidance During Singapore Tech Interviews',
+  tagline: 'Live expert help during coding rounds, system design, AI/ML interviews, and technical assessments for Singapore banking, fintech, superapp, and government digital roles — SGT aligned.',
+  painIntro:
+    'Facing a technical interview at a Singapore bank, superapp, fintech, or government technology agency? Singapore is Southeast Asia\'s most competitive tech hiring market — DBS and OCBC run enterprise-grade Java and Python architecture interviews, Grab and Sea Group interview at a level that rivals FAANG, and GovTech Singapore tests cloud-native and data engineering capability for national digital infrastructure. Our in-house experts provide real-time, discreet proxy interview support aligned with SGT.',
+  heroUrgency:
+    "Singapore interview tomorrow? Final round approaching? Don't let interview pressure cost you a high-paying Singapore role or EP Pass opportunity. Our in-house experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support in SGT.",
+  heroVariant:
+    "Singapore's technology market is Asia's most dynamic — and its interview standards reflect that. DBS, OCBC, and UOB run multi-round technical panels covering Java backend, cloud architecture (AWS/Azure), and regulatory-compliant data engineering within MAS-governed frameworks. Grab and Sea Group (Shopee, Garena) interview at a FAANG-equivalent level — distributed system design for hundreds of millions of users across Southeast Asia, real-time data pipelines, and high-availability platform engineering. GovTech Singapore interviews for cloud-native, cybersecurity, and AI capabilities supporting national digital infrastructure. EP Pass and S Pass holders competing for Singapore tech roles face intense competition — our proxy interview support ensures you perform at your absolute best.",
+  geoLine: 'Serving developers preparing for Singapore tech company interviews — also supporting USA, UK, Canada, Australia, and European candidates.',
+  timezoneNote: 'Available in SGT (Singapore Standard Time) — aligned with your Singapore interview schedule.',
+  techSnippet: 'Proxy interview support for AI, ML, Agentic AI, MLOps, LLMOps, RAG, DevOps, Kubernetes, Cloud, AWS, Azure, GCP, Java, Spring Boot, Python, React, Angular, .NET, Node.js, Go, Data Science, Cybersecurity, and all major Singapore tech interview formats.',
+  highlights: [
+    {
+      title: 'Singapore Banking & Fintech Interview Support',
+      description: 'Real-time expert guidance during technical interviews at DBS, OCBC, UOB, Standard Chartered Singapore, and MAS-regulated fintech companies — Java and Python backend systems, cloud-native banking architecture, payment platform design, RegTech and compliance data engineering, and multi-round technical panels specific to Singapore financial services.',
+    },
+    {
+      title: 'Grab, Sea Group & Superapp Tech Interviews',
+      description: 'Live help during engineering interviews at Grab, Shopee, Garena, Lazada, and Southeast Asian superapps — distributed system design for hundreds of millions of users, real-time geolocation and logistics platform architecture, payments and e-commerce at SEA scale, and FAANG-equivalent coding and system design rounds.',
+    },
+    {
+      title: 'GovTech Singapore & Government Digital Interviews',
+      description: 'Real-time proxy support for engineering interviews at GovTech Singapore, SNDGO, Smart Nation agencies, and Singapore government digital teams — cloud-native architecture on AWS GovCloud, cybersecurity and zero-trust design, national digital identity systems, and data engineering within government data governance frameworks.',
+    },
+    {
+      title: 'AI/ML, DevOps & Cloud Interview Support',
+      description: 'Real-time proxy support for AI/ML engineers, MLOps engineers, DevOps architects, and cloud engineers interviewing at Singapore tech companies, banks, and government agencies — covering RAG pipeline design, LLM architecture, Kubernetes system design, AWS and Azure solution architecture, and CI/CD discussions relevant to Singapore enterprise and fintech roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Singapore companies and interview formats do you support?',
+      answer:
+        'We have supported candidates at major Singapore employers including DBS, OCBC, UOB, Grab, Sea Group (Shopee, Garena), Lazada, GovTech Singapore, Singtel, StarHub, and many Singapore fintech and enterprise tech companies. We also support interviews at global companies with major Singapore engineering hubs (Google Singapore, Amazon Singapore, Meta Singapore). We understand the distinct interview formats used by each type of Singapore employer.',
+    },
+    {
+      question: 'How do Singapore tech interviews differ from US and UK interviews?',
+      answer:
+        'Singapore tech interviews are among the most rigorous in Asia. Grab and Sea Group run FAANG-equivalent engineering interviews. DBS and Singapore banks combine enterprise Java depth with MAS-regulatory domain knowledge. GovTech Singapore interviews for national infrastructure capability — high availability, data sovereignty, and zero-trust security. We tailor our proxy support to the specific Singapore employer format and expectations you face.',
+    },
+    {
+      question: 'Do you support EP Pass and S Pass holders preparing for Singapore interviews?',
+      answer:
+        'Yes. We support IT professionals on Employment Pass (EP), S Pass, and other Singapore work passes. The stakes of securing Singapore roles are high — our proxy interview support ensures you perform at your absolute peak during the interview that determines your visa outcome.',
+    },
+    {
+      question: 'Can you support interviews at Singapore banks under MAS regulation?',
+      answer:
+        'Yes. Singapore banking technical interviews combine technical depth with MAS regulatory domain knowledge — data residency requirements, API architecture under MAS Open Banking guidelines, cybersecurity frameworks (MAS TRM), and cloud adoption within MAS cloud risk management guidelines. We have experts with Singapore financial services experience who can provide accurate, relevant real-time guidance.',
+    },
+    {
+      question: 'How quickly can you arrange proxy support for a Singapore interview?',
+      answer:
+        'Contact us as soon as your interview is confirmed. Same-day support may be available for urgent requests. Reaching out 24-48 hours in advance is ideal for a proper pre-interview briefing and expert assignment aligned with your SGT interview time.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Singapore Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'Grab or Sea Group engineering interview — FAANG-equivalent distributed system design at Southeast Asian superapp scale, real-time data pipelines, and coding rounds under high technical bar',
+      'DBS or OCBC technical panel — Java backend systems, cloud-native banking architecture, payment platform design, and MAS-regulatory-aware data engineering',
+      'AI/ML engineer interview at a Singapore bank or tech company — RAG pipeline design, LLM architecture, MLOps system design under live interviewer pressure',
+      'DevOps or cloud architect round at a Singapore enterprise — Kubernetes design, AWS or Azure architecture, Terraform IaC, or CI/CD pipeline questions with a senior Singapore interviewer',
+      'GovTech Singapore interview — cloud-native architecture on AWS GovCloud, zero-trust network design, national digital identity systems, or AI platform design for government services',
+      'Lazada or Shopee engineering interview — e-commerce platform architecture, logistics and fulfilment system design, and payment gateway integration at SEA scale',
+      'Singtel or StarHub technical interview — telecom cloud-native infrastructure, network function virtualization, and digital service platform engineering',
+      'Final round for an EP Pass or S Pass role in Singapore where interview success determines visa outcome',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Singapore Proxy Interview Support Works',
+    intro:
+      'We understand the Singapore tech landscape — the major employers, their interview styles, MAS regulatory context, and what Singapore engineering teams look for. Our proxy support is calibrated to maximize your success in the Singapore market.',
+    points: [
+      'Contact us with your Singapore interview details — company, role level, date, and technology stack',
+      'In-house specialist assigned — with Singapore tech market, banking, fintech, or government digital experience relevant to your specific employer',
+      'Pre-interview briefing — alignment on your background and Singapore employer-specific expectations',
+      'Real-time expert availability during your live interview for discreet professional guidance',
+      'Post-interview debrief and preparation support for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent Proxy Interview Support in Singapore?',
+  bottomCTABody:
+    "Don't let interview pressure cost you a high-paying Singapore role or EP Pass opportunity. Real in-house experts available 24/7 for proxy interview support across AI/ML, MLOps, DevOps, Cloud, Java, React, .NET, Python, and all major Singapore tech interview formats — banking, fintech, superapp, and GovTech.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Singapore', href: '/job-support-singapore/' },
+      { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview support', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support UK', href: '/proxy-interview-uk/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled-singapore/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SRE Proxy Interview Support
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const sreProxyInterviewSupport: LandingPageConfig = {
+  slug: 'sre-proxy-interview-support',
+  title: 'SRE Proxy Interview Support – Live Expert Help for Site Reliability Engineering Interviews',
+  description:
+    'Get real-time SRE proxy interview support from senior Site Reliability Engineers. Live guidance during SRE technical interviews covering SLOs, SLIs, error budgets, incident management, chaos engineering, capacity planning, toil reduction, disaster recovery, production reliability architecture, and observability at scale. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/sre-proxy-interview-support/`,
+  keywords: [
+    'SRE proxy interview support', 'site reliability engineering interview support', 'SRE interview proxy',
+    'SLO SLI interview support', 'error budget interview help', 'incident management interview proxy',
+    'chaos engineering interview support', 'capacity planning interview help',
+    'on-call interview support', 'postmortem interview proxy', 'toil reduction interview',
+    'disaster recovery interview support', 'reliability engineering interview help',
+    'production reliability interview proxy', 'observability interview support',
+    'SRE interview proxy USA', 'SRE interview proxy UK', 'SRE interview proxy Canada',
+    'real-time SRE interview guidance', 'live SRE interview help',
+    'proxy job support', 'same-day proxy interview support',
+    'SRE technical interview proxy', 'Google SRE interview support',
+    'platform reliability interview help', 'availability engineering interview',
+  ],
+  ogTitle: 'SRE Proxy Interview Support | Real-Time Expert Site Reliability Engineering Interview Help',
+  ogDescription:
+    'Get real-time SRE proxy interview support during your live Site Reliability Engineering technical interview. Expert guidance covering SLOs, SLIs, error budgets, incident management, chaos engineering, capacity planning, disaster recovery, and production reliability architecture. Same-day support available.',
+  twitterTitle: 'SRE Proxy Interview Support | Real-Time Expert SRE Interview Help',
+  twitterDescription:
+    'Urgent SRE proxy interview support for SLOs, error budgets, incident management, chaos engineering, capacity planning, and production reliability design rounds. Live expert guidance during your actual SRE interview. Same-day support available.',
+  heroEyebrow: 'SRE Proxy Interview Support – Real-Time Expert Site Reliability Engineering Guidance',
+  h1: 'SRE Proxy Interview Support – Live Expert Help During Your Site Reliability Engineering Interview',
+  tagline: 'A senior SRE beside you in real-time during your SRE interview — SLO design, error budget policy, incident response, chaos engineering, capacity planning, and production reliability architecture under live pressure.',
+  painIntro:
+    'Site Reliability Engineering interviews are uniquely demanding — they test production thinking that only comes from operating systems at scale. A senior SRE role at a top tech company will probe your error budget policy rationale, your SLO/SLI design for a multi-tenant service, your chaos experiment design for a specific failure scenario, your incident severity triage framework, and your toil identification and automation approach — all in a structured, high-pressure interview format. Our in-house SREs are available in real-time during your actual SRE interview.',
+  heroUrgency:
+    "SRE interview tomorrow? Final reliability engineering round approaching? Don't let production reliability design questions or incident management scenarios cost you a senior SRE role. Our in-house SRE experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support.",
+  heroVariant:
+    "SRE interviews at Google, Netflix, Stripe, and Cloudflare are designed to expose whether candidates actually think in reliability terms — not just DevOps operations terms. Google SRE interviews probe the philosophical underpinnings: why error budgets create the right incentives, how SLO tightness drives toil, what makes a postmortem blameless in practice versus theory. Netflix and Stripe interviews focus on practical reliability engineering at consumer product scale — chaos experiment design for specific dependency failures, traffic shaping under cascade failure scenarios, and multi-region failover trade-offs. Cloudflare interviews assess reliability at internet infrastructure scale — anycast routing reliability, DDoS-resilient architecture, and global traffic management. Our SRE proxy interview support puts an active senior SRE — someone who has been on-call for these systems — beside you in real-time during your interview.",
+  geoLine: 'SRE proxy interview support for professionals interviewing at internet-scale tech companies, cloud providers, fintech, and enterprise platform teams across USA, UK, Canada, Australia, Europe, and globally.',
+  timezoneNote: 'Available across all time zones — aligned with your exact SRE interview schedule.',
+  techSnippet: 'SRE proxy interview support covering SLO/SLI/SLA design, error budget policy, Prometheus, Grafana, OpenTelemetry, distributed tracing, PagerDuty, incident command frameworks, Chaos Monkey, Gremlin, LitmusChaos, load shedding, circuit breakers, bulkhead patterns, capacity planning, traffic management, multi-region failover, RPO/RTO design, and production reliability architecture.',
+  highlights: [
+    {
+      title: 'SLO, SLI & Error Budget Interview Support',
+      description: 'Real-time guidance during SLO and error budget interview questions — SLI selection rationale (why latency at p99 vs p50, request success rate vs error rate), SLO tightness trade-offs (how tight an SLO creates incentive misalignment), error budget policy design (burn rate alerts, fast burn vs slow burn thresholds), multi-window multi-burn-rate alerting, and the organizational dynamics of error budgets between product and SRE teams that Google SRE and Stripe probe in interviews.',
+    },
+    {
+      title: 'Incident Management & On-Call Design Interviews',
+      description: 'Live help during incident management interview questions — incident severity classification frameworks (SEV1-SEV4 criteria and escalation triggers), incident command structure (IC, comms lead, operations lead roles), runbook design principles, blameless postmortem facilitation, MTTR vs MTTD optimization strategies, on-call rotation design (primary/secondary, escalation policy, alert fatigue reduction), and the reliability culture questions that separate SRE candidates at Netflix, PagerDuty, and Atlassian.',
+    },
+    {
+      title: 'Chaos Engineering & Resilience Testing Interviews',
+      description: 'Real-time support for chaos engineering interview questions — chaos experiment design methodology (steady state hypothesis, blast radius minimization, experiment scope), failure injection strategies (dependency latency injection, resource exhaustion, network partition simulation), GameDay facilitation design, Chaos Monkey vs Gremlin vs LitmusChaos selection rationale, chaos in production vs staging trade-offs, and how to articulate the relationship between chaos engineering and SLO confidence that Stripe and Netflix interview for.',
+    },
+    {
+      title: 'Production Reliability Architecture & Capacity Planning',
+      description: 'Live expert guidance during production reliability design interview questions — availability pattern selection (active-active vs active-passive vs multi-region active-active), load shedding strategy under cascade failure, circuit breaker and bulkhead pattern implementation rationale, rate limiting architecture for shared services, capacity planning methodology (demand forecasting, load testing interpretation, headroom policy), RPO/RTO target derivation from business requirements, and the reliability architecture decisions that cloud-scale companies evaluate in senior SRE system design rounds.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What SRE interview topics do you cover in real-time?',
+      answer:
+        'Our SRE experts cover the full site reliability engineering interview spectrum in real-time — SLO/SLI design and error budget policy, incident severity classification and on-call frameworks, blameless postmortem facilitation, chaos engineering experiment design (Chaos Monkey, Gremlin, LitmusChaos), production reliability architecture (active-active, load shedding, circuit breakers, bulkheads), capacity planning and traffic management, observability strategy (distributed tracing with OpenTelemetry, metrics with Prometheus, log aggregation), toil identification and automation ROI, multi-region failover and RPO/RTO design, and reliability culture questions.',
+    },
+    {
+      question: 'How are SRE interviews different from DevOps interviews?',
+      answer:
+        'SRE interviews assess production reliability thinking — the philosophy, measurement, and culture of reliability engineering. They probe SLO rationale, error budget policy design, incident management frameworks, and chaos engineering methodology. DevOps interviews typically assess operational tooling — CI/CD pipeline architecture, Kubernetes cluster design, Terraform IaC, and GitOps workflows. SRE interviews go deeper into why reliability decisions are made, not just how systems are built or deployed. We are expert at the SRE frame specifically.',
+    },
+    {
+      question: 'Can you help with Google-style SRE interviews in real-time?',
+      answer:
+        'Yes. Google SRE interviews are among the most philosophy-driven technical interviews — probing why error budgets work, how SLO tightness creates the right developer incentives, what makes postmortems genuinely blameless, and how toil should be measured and justified for automation investment. Our experts understand the Google SRE book principles at a depth that lets them provide precise real-time guidance during these interviews.',
+    },
+    {
+      question: 'Do you support SRE interviews at financial services and regulated companies?',
+      answer:
+        'Yes. SRE in financial services combines standard reliability engineering with regulatory dimensions — RTO/RPO commitments aligned with regulatory obligations, audit-ready incident records, change management within regulated deployment windows, and multi-region resilience for payment systems and trading platforms. We have SRE experts with financial services production experience who can provide accurate, relevant real-time guidance.',
+    },
+    {
+      question: 'Can you support both platform SRE and product SRE interview formats?',
+      answer:
+        'Yes. Platform SRE interviews (at companies like Google, Cloudflare, AWS) focus on building shared reliability infrastructure — SLO measurement platforms, on-call tooling, chaos engineering frameworks, and reliability dashboards used by hundreds of engineering teams. Product SRE interviews (at companies like Stripe, Netflix, Airbnb) focus on embedding reliability engineering within product development teams — SLO negotiation with product managers, toil reduction automation, and reliability roadmap ownership. We calibrate real-time guidance to your specific SRE role type.',
+    },
+    {
+      question: 'How quickly can you arrange SRE proxy interview support?',
+      answer:
+        'Contact us as soon as your SRE interview is scheduled. Same-day support may be available for urgent requests. Ideally reach out 24-48 hours before so our SRE expert can align with your specific company, role type, and the reliability engineering depth expected at that interview.',
+    },
+  ],
+  useCasesSection: {
+    title: 'SRE Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'Google SRE interview — error budget policy rationale, SLO tightness trade-offs, blameless postmortem facilitation design, and toil automation ROI justification under live interviewer pressure',
+      'Netflix SRE interview — chaos experiment design for a specific dependency failure, Chaos Monkey blast radius scoping, steady-state hypothesis definition, and GameDay facilitation methodology',
+      'Stripe or Cloudflare SRE interview — multi-region active-active availability design, load shedding under cascade failure, circuit breaker implementation rationale, and internet-scale traffic management reliability',
+      'SLO/SLI design round — selecting the right SLI for a given service type (latency percentile selection, error rate definition, availability measurement), SLO tightness derivation, and error budget burn rate alerting design',
+      'Incident management design interview — severity classification framework, incident command structure, escalation policy design, on-call rotation structure, and runbook quality criteria',
+      'Capacity planning interview — demand forecasting methodology, load testing interpretation, headroom policy design, and capacity headroom trade-offs at cloud cost vs reliability risk',
+      'Production reliability architecture round — active-passive vs active-active selection, bulkhead pattern scoping, rate limiting architecture for shared API gateways, and RPO/RTO derivation from business SLAs',
+      'Platform SRE interview — designing a reliability measurement platform for hundreds of engineering teams, SLO dashboard architecture, and reliability culture tooling that scales organizational adoption',
+      'Final SRE panel at a top tech company where every reliability design answer is evaluated against production experience at internet scale',
+    ],
+  },
+  proxySection: {
+    title: 'How Our SRE Proxy Interview Support Works',
+    intro:
+      'We match you with an active senior SRE who has operated production systems at the reliability bar your interviewer expects — not someone who has only studied SRE concepts. From pre-interview alignment to real-time expert presence during your SRE interview, everything is calibrated to your specific role and company.',
+    points: [
+      'Contact us with your SRE interview details — company, role type (platform SRE, product SRE, infrastructure reliability), date, and specific focus area (SLO design, incident management, chaos engineering, capacity planning)',
+      'In-house SRE specialist assigned — with hands-on production reliability experience at the scale and company type relevant to your interview',
+      'Pre-interview briefing — technical alignment on likely reliability design questions, your SRE background, and communication strategy for philosophy-heavy SRE interview questions',
+      'Real-time expert availability during your live SRE interview for discreet, precise technical guidance',
+      'Post-interview debrief — performance analysis and preparation for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent SRE Proxy Interview Support?',
+  bottomCTABody:
+    "Don't let production reliability design or SLO philosophy questions cost you a senior SRE role. Real in-house Site Reliability Engineers available 24/7 — SLO design, error budgets, incident management, chaos engineering, capacity planning, and production reliability architecture. USA, UK, Canada, Australia, Europe, and globally.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+      { label: 'Proxy interview support UK', href: '/proxy-interview-uk/' },
+    ],
+    techLinks: [
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+      { label: 'MLOps proxy interview support', href: '/mlops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'SRE job support USA', href: '/sre-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Cloud job support USA', href: '/cloud-job-support-usa/' },
+      { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// AI / ML Proxy Interview Support
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const aiMlProxyInterviewSupport: LandingPageConfig = {
+  slug: 'ai-ml-proxy-interview-support',
+  title: 'AI/ML Proxy Interview Support – Live Expert Help for Machine Learning Interviews',
+  description:
+    'Get real-time AI/ML proxy interview support from senior machine learning engineers. Live guidance during AI and ML technical interviews covering deep learning, PyTorch, TensorFlow, Hugging Face, LLM fine-tuning, RAG pipelines, recommendation systems, NLP, computer vision, ML system design, and model evaluation. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/ai-ml-proxy-interview-support/`,
+  keywords: [
+    'AI ML proxy interview support', 'machine learning interview support', 'AI interview proxy',
+    'ML interview help', 'deep learning interview support', 'PyTorch interview proxy',
+    'TensorFlow interview support', 'Hugging Face interview help', 'LLM interview support',
+    'RAG interview proxy', 'NLP interview support', 'computer vision interview help',
+    'ML system design interview', 'recommendation system interview support',
+    'AI engineer interview proxy', 'ML engineer interview help',
+    'AI interview proxy USA', 'AI interview proxy UK', 'AI interview proxy Canada',
+    'real-time AI interview guidance', 'live ML interview help',
+    'proxy job support', 'same-day proxy interview support',
+    'machine learning technical interview proxy', 'AI proxy interview support',
+    'LLM fine-tuning interview', 'transformer architecture interview support',
+  ],
+  ogTitle: 'AI/ML Proxy Interview Support | Real-Time Expert Machine Learning Interview Help',
+  ogDescription:
+    'Get real-time AI/ML proxy interview support during your live machine learning technical interview. Expert guidance covering deep learning, PyTorch, TensorFlow, LLM fine-tuning, RAG, recommendation systems, NLP, computer vision, and ML system design. Same-day support available.',
+  twitterTitle: 'AI/ML Proxy Interview Support | Real-Time Expert Machine Learning Interview Help',
+  twitterDescription:
+    'Urgent AI/ML proxy interview support for deep learning, PyTorch, LLM fine-tuning, RAG pipelines, recommendation systems, NLP, and ML system design rounds. Live expert guidance during your actual machine learning interview. Same-day support available.',
+  heroEyebrow: 'AI/ML Proxy Interview Support – Real-Time Expert Machine Learning Interview Guidance',
+  h1: 'AI/ML Proxy Interview Support – Live Expert Help During Your Machine Learning Technical Interview',
+  tagline: 'A senior ML engineer beside you in real-time during your AI/ML interview — deep learning architecture, LLM fine-tuning, RAG design, recommendation systems, ML system design, and model evaluation under live pressure.',
+  painIntro:
+    'AI and machine learning interviews test a depth that most candidates underestimate. A senior ML engineer role at a FAANG or AI-native company will probe transformer architecture choices, attention mechanism trade-offs, RAG pipeline design for production retrieval quality, LLM fine-tuning strategies (LoRA vs full fine-tuning), and end-to-end recommendation system design from feature engineering to serving — all in real-time under a live interviewer. Our in-house ML engineers are available during your actual AI/ML interview.',
+  heroUrgency:
+    "AI/ML interview tomorrow? Final machine learning round approaching? Don't let deep-dive model architecture or ML system design questions cost you an AI engineer role. Our in-house ML experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support.",
+  heroVariant:
+    "Machine learning interviews at top AI companies and tech firms separate candidates on the same axis every time: those who understand the models they work with versus those who use them as black boxes. OpenAI, Anthropic, Google DeepMind, and Meta AI interview for deep understanding — gradient flow through transformers, KV cache optimization strategies, RLHF training pipeline design, RAG retrieval quality tuning, and multi-modal model architecture decisions. Databricks, Hugging Face, and Cohere interview for practical ML engineering depth — model training pipelines, evaluation frameworks, A/B testing infrastructure, and deployment patterns for LLM-based products. Our AI/ML proxy interview support puts an active ML engineer — not a generalist — beside you in real-time.",
+  geoLine: 'AI/ML proxy interview support for professionals interviewing at AI-native companies, FAANG, enterprise tech firms, and research institutions across USA, UK, Canada, Australia, Europe, and globally.',
+  timezoneNote: 'Available across all time zones — aligned with your exact AI/ML interview schedule.',
+  techSnippet: 'AI/ML proxy interview support for PyTorch, TensorFlow, JAX, Hugging Face Transformers, scikit-learn, LangChain, LlamaIndex, OpenAI API, Anthropic API, RAG pipelines, vector databases (Pinecone, Weaviate, Chroma), FAISS, MLflow, DVC, pandas, NumPy, and all major ML interview formats.',
+  highlights: [
+    {
+      title: 'LLM, RAG & Generative AI Interview Support',
+      description: 'Real-time guidance during large language model interview questions — transformer architecture deep-dives (attention mechanisms, positional encoding, KV cache), LLM fine-tuning strategies (LoRA, QLoRA, full fine-tuning), RAG pipeline design (chunking strategy, embedding model selection, retrieval quality metrics, reranking), prompt engineering trade-offs, and Agentic AI orchestration patterns under live interviewer pressure.',
+    },
+    {
+      title: 'ML System Design Interview Support',
+      description: 'Live help structuring end-to-end ML system design answers — recommendation system architecture (two-tower models, candidate generation, ranking, feature stores), real-time fraud detection pipelines, search ranking systems (learning-to-rank, BM25 vs dense retrieval), NLP classification at scale, and A/B testing infrastructure for ML model evaluation that interviewers at Airbnb, LinkedIn, Uber, and Meta assess.',
+    },
+    {
+      title: 'Deep Learning & Model Architecture Interviews',
+      description: 'Real-time support for deep learning interview questions — CNN architecture choices (ResNet, EfficientNet, Vision Transformers) for computer vision roles, RNN vs Transformer trade-offs for sequence modelling, loss function selection, regularization strategies (dropout, batch norm, weight decay), gradient flow analysis, and PyTorch or JAX implementation questions that AI research engineer roles probe.',
+    },
+    {
+      title: 'ML Coding, Algorithms & Model Evaluation',
+      description: 'Live expert guidance during ML coding rounds — implementing ML algorithms from scratch (gradient descent, k-means, decision trees, backpropagation) in Python, NumPy vectorization, pandas data pipeline design, model evaluation metrics selection (precision-recall trade-offs, AUC-ROC, NDCG for ranking), cross-validation strategy, and statistical hypothesis testing that FAANG ML roles require during live coding sessions.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What AI/ML interview topics do you cover in real-time?',
+      answer:
+        'Our ML experts cover the full AI/ML interview spectrum in real-time — LLM architecture and fine-tuning (LoRA, RLHF, instruction tuning), RAG pipeline design and retrieval quality optimization, transformer internals (attention, positional encoding, KV cache), ML system design (recommendation systems, fraud detection, search ranking, NLP at scale), deep learning (CNNs, RNNs, Vision Transformers), ML coding (NumPy, pandas, algorithm implementation from scratch), model evaluation metrics, A/B testing for ML, and vector database integration (Pinecone, Weaviate, FAISS).',
+    },
+    {
+      question: 'Can you help with ML system design questions in real-time?',
+      answer:
+        'Yes. ML system design interviews at companies like Meta, LinkedIn, Airbnb, and Uber require designing complete pipelines — data collection, feature engineering, model training, offline evaluation, online serving, A/B testing, and monitoring. Our experts guide you through structuring and articulating a complete ML system design answer for recommendation systems, search ranking, fraud detection, and NLP classification systems.',
+    },
+    {
+      question: 'Do you support LLM and generative AI interview rounds?',
+      answer:
+        'Yes. We provide real-time proxy support for LLM and generative AI interview rounds at OpenAI, Anthropic, Google DeepMind, Cohere, Hugging Face, and enterprise AI teams. Our experts cover transformer architecture deep-dives, fine-tuning strategy selection, RAG pipeline design, Agentic AI orchestration (LangGraph, AutoGen), prompt engineering evaluation, and LLM deployment trade-offs.',
+    },
+    {
+      question: 'Can you support AI/ML interviews at non-AI-native companies?',
+      answer:
+        'Yes. Many traditional enterprise companies — banks, healthcare firms, e-commerce, telecom, and consulting — now run rigorous AI/ML interviews for data science and ML engineering roles. We support interviews at both AI-native companies (OpenAI, Databricks, Cohere) and enterprise companies building ML capabilities (JPMorgan AI, Google Cloud AI, AWS AI, Azure ML teams).',
+    },
+    {
+      question: 'How quickly can you arrange AI/ML proxy interview support?',
+      answer:
+        'Contact us as soon as your AI/ML interview is scheduled. Same-day support may be available for urgent requests. Ideally reach out 24-48 hours before for a proper pre-interview briefing so our ML expert can align with your specific role, company, and expected technical depth.',
+    },
+    {
+      question: 'Is this available for both research-oriented and applied ML engineer interviews?',
+      answer:
+        'Yes. We calibrate real-time guidance to the role type. Research engineer interviews at AI labs probe theoretical depth — gradient derivations, training dynamics, architecture ablation reasoning. Applied ML engineer interviews at product companies probe practical design — end-to-end system architecture, data pipeline reliability, model monitoring, and business metric alignment. We support both tracks.',
+    },
+  ],
+  useCasesSection: {
+    title: 'AI/ML Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'LLM or generative AI engineer interview at OpenAI, Anthropic, Google DeepMind, or Cohere — transformer architecture deep-dive, RAG pipeline design, fine-tuning strategy, and Agentic AI orchestration under live interviewer pressure',
+      'ML system design round at Meta, LinkedIn, Airbnb, or Uber — end-to-end recommendation system from candidate generation and ranking to A/B testing infrastructure and online serving',
+      'Deep learning research engineer interview — CNN vs Vision Transformer selection rationale, gradient flow analysis, loss function design, and PyTorch implementation questions from an ML research lab',
+      'RAG and vector search interview at an enterprise AI team — chunking strategy selection, embedding model choice, retrieval quality metrics (MRR, NDCG), reranking approaches, and hallucination mitigation design',
+      'ML coding round — implementing gradient descent, k-means clustering, or decision tree from scratch in Python with NumPy, under a 45-minute live coding constraint',
+      'NLP engineer interview — sequence classification architectures, named entity recognition pipeline design, sentence embedding approaches, and cross-lingual model evaluation at a multilingual product company',
+      'Computer vision engineer interview — object detection architecture choice (YOLO vs Detectron2), image segmentation approaches, model compression for mobile deployment, and real-time inference optimization',
+      'Data science technical interview at a bank or fintech — statistical hypothesis testing, feature importance analysis, model interpretability (SHAP, LIME), and credit risk model evaluation questions',
+      'AI/ML final round panel where every architecture decision is evaluated at a senior or staff engineer level at a top AI company',
+    ],
+  },
+  proxySection: {
+    title: 'How Our AI/ML Proxy Interview Support Works',
+    intro:
+      'We assign an active ML practitioner — not a generalist — to your specific interview. From pre-interview alignment on the role and company to real-time expert presence during the actual ML interview, the entire process is designed around your specific machine learning interview format.',
+    points: [
+      'Contact us with your AI/ML interview details — company, role level (applied ML, research, data science), date, and specific focus area (LLM, computer vision, NLP, recommendation systems)',
+      'In-house ML specialist assigned — with hands-on experience in your specific ML domain and company-type interview format',
+      'Pre-interview briefing — technical alignment on likely question areas, your ML background, and communication strategy for system design answers',
+      'Real-time expert availability during your live AI/ML interview for discreet, precise technical guidance',
+      'Post-interview debrief — performance analysis and preparation for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent AI/ML Proxy Interview Support?',
+  bottomCTABody:
+    "Don't let deep-dive ML architecture or system design questions cost you an AI engineer role. Real in-house machine learning engineers available 24/7 — LLM fine-tuning, RAG design, recommendation systems, deep learning, ML coding, and model evaluation. USA, UK, Canada, Australia, Europe, and globally.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+      { label: 'Proxy interview support UK', href: '/proxy-interview-uk/' },
+    ],
+    techLinks: [
+      { label: 'MLOps proxy interview support', href: '/mlops-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+      { label: 'Agentic AI & ML Job Support USA', href: '/agentic-ai-ml-job-support-usa/' },
+      { label: 'RAG & MLOps Job Support USA', href: '/agentic-ai-rag-mlops-job-support-usa/' },
+      { label: 'AI/ML Job Support Canada', href: '/ai-ml-job-support-canada/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MLOps Proxy Interview Support
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const mlopsProxyInterviewSupport: LandingPageConfig = {
+  slug: 'mlops-proxy-interview-support',
+  title: 'MLOps Proxy Interview Support – Live Expert Help for MLOps & ML Platform Interviews',
+  description:
+    'Get real-time MLOps proxy interview support from senior ML platform and MLOps engineers. Live guidance during MLOps technical interviews covering ML pipeline design, MLflow, Kubeflow, SageMaker MLOps, Vertex AI, Feast, model registry, feature stores, data drift detection, model monitoring, CI/CD for ML, and experiment tracking. 1000+ professionals helped. Same-day support available.',
+  canonical: `${BASE_URL}/mlops-proxy-interview-support/`,
+  keywords: [
+    'MLOps proxy interview support', 'ML platform interview support', 'MLOps interview proxy',
+    'MLflow interview support', 'Kubeflow interview help', 'SageMaker MLOps interview',
+    'Vertex AI interview support', 'Feast interview help', 'feature store interview proxy',
+    'model registry interview support', 'data drift detection interview', 'model monitoring interview',
+    'CI/CD for ML interview support', 'experiment tracking interview help',
+    'ML pipeline interview proxy', 'ML engineer interview support',
+    'MLOps interview proxy USA', 'MLOps interview proxy UK', 'MLOps interview proxy Canada',
+    'real-time MLOps interview guidance', 'live ML platform interview help',
+    'proxy job support', 'same-day proxy interview support',
+    'ML infrastructure interview proxy', 'MLOps technical interview support',
+    'DVC interview support', 'AIOps interview help',
+  ],
+  ogTitle: 'MLOps Proxy Interview Support | Real-Time Expert ML Platform & MLOps Interview Help',
+  ogDescription:
+    'Get real-time MLOps proxy interview support during your live ML platform or MLOps technical interview. Expert guidance covering ML pipeline architecture, MLflow, Kubeflow, SageMaker, Vertex AI, feature stores, model monitoring, data drift, and CI/CD for ML. Same-day support available.',
+  twitterTitle: 'MLOps Proxy Interview Support | Real-Time Expert ML Platform & MLOps Interview Help',
+  twitterDescription:
+    'Urgent MLOps proxy interview support for ML pipeline design, MLflow, Kubeflow, SageMaker, Vertex AI, feature stores, model monitoring, and CI/CD for ML interviews. Live expert guidance during your actual MLOps interview. Same-day support available.',
+  heroEyebrow: 'MLOps & ML Platform Proxy Interview Support – Real-Time Expert Guidance',
+  h1: 'MLOps Proxy Interview Support – Live Expert Help During Your ML Platform & MLOps Technical Interview',
+  tagline: 'A senior MLOps engineer beside you in real-time during your ML platform interview — ML pipeline architecture, feature stores, model registry, experiment tracking, model monitoring, and ML CI/CD under live pressure.',
+  painIntro:
+    'MLOps and ML platform engineering interviews go deep into infrastructure that most ML practitioners never build themselves. A senior MLOps role at a top tech company or enterprise AI team will probe ML pipeline orchestration (Kubeflow Pipelines vs Airflow vs Metaflow), feature store architecture (online vs offline feature serving latency trade-offs, point-in-time correctness), model registry design patterns, data drift detection strategies, and how to build reproducible training pipelines at scale — all under live interviewer questioning. Our in-house MLOps engineers are available in real-time during your actual MLOps interview.',
+  heroUrgency:
+    "MLOps interview tomorrow? ML platform engineering round approaching? Don't let deep-dive ML infrastructure questions cost you a senior MLOps or ML platform role. Our in-house MLOps experts are available same-day for urgent proxy interview situations — no middlemen, direct expert assignment, confidential support.",
+  heroVariant:
+    "MLOps interviews are uniquely difficult because the domain sits at the intersection of software engineering, data engineering, and machine learning — and interviewers probe all three simultaneously. Databricks and Netflix ask about ML pipeline reliability at petabyte scale and feature freshness guarantees. Uber and Airbnb probe Michelangelo-style platform design — online prediction serving latency, feature store consistency, and model versioning under concurrent training jobs. AWS, Google, and Azure interview for cloud-native MLOps — SageMaker Pipelines vs Vertex AI Pipelines, managed feature stores, and model deployment automation. Our MLOps proxy interview support puts an active ML platform engineer beside you in real-time — someone who has designed these systems, not just studied them.",
+  geoLine: 'MLOps proxy interview support for professionals interviewing at AI-native companies, cloud providers, enterprise ML platform teams, and tech firms across USA, UK, Canada, Australia, Europe, and globally.',
+  timezoneNote: 'Available across all time zones — aligned with your exact MLOps interview schedule.',
+  techSnippet: 'MLOps proxy interview support for Kubeflow, MLflow, SageMaker Pipelines, Vertex AI, Metaflow, Airflow, Feast, Tecton, Hopsworks, DVC, Weights & Biases, Neptune.ai, Seldon Core, BentoML, Evidently AI, Monte Carlo, Grafana ML observability, Docker, Kubernetes, and all major MLOps interview formats.',
+  highlights: [
+    {
+      title: 'ML Pipeline Architecture & Orchestration Interviews',
+      description: 'Real-time guidance during ML pipeline design questions — orchestrator selection trade-offs (Kubeflow Pipelines vs Apache Airflow vs Metaflow vs Prefect), pipeline component design for reproducibility, artifact versioning with DVC or MLflow, parallel training job management, pipeline failure recovery strategies, and distributed training coordination at the scale that Netflix, Uber, and Databricks interview for.',
+    },
+    {
+      title: 'Feature Store & Training Data Infrastructure',
+      description: 'Live help during feature store interview questions — online vs offline feature serving architecture (Redis vs DynamoDB vs BigTable for online, Parquet on S3 for offline), point-in-time correctness for training data consistency, feature freshness SLAs and their trade-offs, feature sharing across teams, backfill strategies for new features, and Feast vs Tecton vs Hopsworks vs AWS SageMaker Feature Store design decisions under interviewer questioning.',
+    },
+    {
+      title: 'Model Registry, Versioning & Experiment Tracking',
+      description: 'Real-time support for model lifecycle management interview questions — model registry design (MLflow Model Registry vs SageMaker Model Registry vs custom), experiment tracking schema design, hyperparameter search reproducibility, model promotion workflows (staging to production), A/B experiment metadata management, model lineage tracking, and the governance patterns that regulated industries (finance, healthcare) require for ML model audit trails.',
+    },
+    {
+      title: 'Model Monitoring, Drift Detection & ML CI/CD',
+      description: 'Live expert guidance during model monitoring and CI/CD for ML interview questions — data drift vs concept drift detection strategies (PSI, KS test, Wasserstein distance), prediction drift alerting thresholds, automated retraining trigger design, shadow deployment and canary release for ML models, model quality gates in CI pipelines, Evidently AI vs Monte Carlo vs Arize for production ML observability, and SLO definition for ML prediction latency and quality.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What MLOps interview topics do you cover in real-time?',
+      answer:
+        'Our MLOps experts cover the full ML platform and MLOps interview spectrum in real-time — ML pipeline orchestration (Kubeflow, Airflow, Metaflow), feature store architecture (Feast, Tecton, Hopsworks), model registry and experiment tracking (MLflow, Weights & Biases, Neptune), model serving (Seldon Core, BentoML, SageMaker Endpoints, Vertex AI Endpoints), data drift and concept drift detection (Evidently, Monte Carlo), CI/CD for ML (testing ML models in pipelines, model quality gates), distributed training (Horovod, PyTorch DDP, SageMaker distributed), and data versioning (DVC, Delta Lake, Iceberg).',
+    },
+    {
+      question: 'Can you help with ML platform system design questions in real-time?',
+      answer:
+        'Yes. ML platform system design interviews at companies like Uber (Michelangelo), Netflix (Metaflow), LinkedIn (Feathr), and Airbnb (Bighead) require designing complete training and serving infrastructure. Our experts guide you through designing a production ML platform — training pipeline orchestration, feature store consistency guarantees, model serving latency targets, experiment management, and monitoring architecture under live interviewer pressure.',
+    },
+    {
+      question: 'Do you support cloud-native MLOps interviews (AWS SageMaker, Google Vertex AI, Azure ML)?',
+      answer:
+        'Yes. We provide real-time proxy support for cloud-specific MLOps interviews — AWS SageMaker Pipelines, Processing Jobs, Training Jobs, Feature Store, and Model Registry; Google Vertex AI Pipelines, Feature Store, and Model Monitoring; Azure ML Pipelines, Managed Endpoints, and Model Registry. Our experts cover the design trade-offs between managed cloud MLOps services and self-managed Kubeflow or Airflow deployments.',
+    },
+    {
+      question: 'Can you support MLOps interviews at regulated industries like finance or healthcare?',
+      answer:
+        'Yes. MLOps in regulated industries requires additional governance — model audit trails, bias detection and fairness reporting, explainability integration (SHAP in the serving pipeline), regulatory approval workflows, and data lineage for compliance. We have experts with ML platform experience in financial services and healthcare who can provide relevant real-time guidance during interviews at banks, insurance companies, and health tech firms.',
+    },
+    {
+      question: 'How quickly can you arrange MLOps proxy interview support?',
+      answer:
+        'Contact us as soon as your MLOps interview is scheduled. Same-day support may be available for urgent requests. Ideally reach out 24-48 hours before so our MLOps expert can align with your specific role, company type, and expected infrastructure depth.',
+    },
+    {
+      question: 'Is this available for both ML platform engineer and MLOps engineer roles?',
+      answer:
+        'Yes. ML platform engineer roles at product companies (Uber, Airbnb, Netflix) focus on building shared ML infrastructure — orchestration, feature stores, serving infrastructure, and developer tooling. MLOps engineer roles at enterprise companies focus on deploying and monitoring existing ML models — CI/CD pipelines, model drift detection, retraining automation, and compliance tooling. We calibrate real-time guidance to your specific role type and company context.',
+    },
+  ],
+  useCasesSection: {
+    title: 'MLOps Interview Situations Where Our Proxy Support Delivers',
+    cases: [
+      'ML platform system design at Uber, Airbnb, or Netflix — designing end-to-end training and serving infrastructure including feature store consistency, pipeline orchestration, and model serving latency guarantees',
+      'Feature store architecture interview — online vs offline feature serving trade-offs, point-in-time correctness, Feast vs Tecton vs Hopsworks selection, and backfill strategy design under live interviewer pressure',
+      'Kubeflow or Airflow ML pipeline design round — orchestrator selection rationale, pipeline component modularity, artifact versioning, parallel job management, and failure recovery strategy',
+      'Model monitoring and drift detection interview — data drift vs concept drift detection strategies, alerting threshold design, automated retraining trigger architecture, and shadow deployment pattern for ML models',
+      'ML CI/CD pipeline design — model testing strategy in CI pipelines, model quality gates, canary deployment for ML models, and automated promotion from staging to production registry',
+      'AWS SageMaker or Google Vertex AI MLOps interview — managed vs self-managed MLOps trade-offs, SageMaker Pipelines design, Vertex AI Feature Store integration, and cloud-native model serving architecture',
+      'Experiment tracking and model registry design — MLflow vs Weights & Biases selection, hyperparameter search reproducibility, model promotion workflows, and model lineage for compliance in regulated industries',
+      'Distributed training architecture interview — PyTorch DDP vs Horovod vs SageMaker distributed, gradient communication strategies, data parallelism vs model parallelism trade-offs at large model scale',
+      'Final round for a senior MLOps architect or ML platform lead role where every infrastructure design decision is evaluated at a staff engineer level',
+    ],
+  },
+  proxySection: {
+    title: 'How Our MLOps Proxy Interview Support Works',
+    intro:
+      'We match you with an active ML platform practitioner who has designed the systems your interviewer will ask about — not someone who has only read about them. From pre-interview technical alignment to real-time expert presence during the interview, everything is calibrated to your specific MLOps role and company.',
+    points: [
+      'Contact us with your MLOps interview details — company, role type (ML platform engineer, MLOps engineer, ML infrastructure), date, and specific technology focus (Kubeflow, SageMaker, Vertex AI, feature stores)',
+      'In-house MLOps specialist assigned — with hands-on ML platform and pipeline infrastructure experience relevant to your company type',
+      'Pre-interview briefing — technical alignment on expected design questions, your ML infrastructure background, and communication strategy',
+      'Real-time expert availability during your live MLOps interview for discreet, precise technical guidance',
+      'Post-interview debrief — performance analysis and preparation for any follow-up system design rounds',
+    ],
+  },
+  bottomCTAHeading: 'Need Urgent MLOps Proxy Interview Support?',
+  bottomCTABody:
+    "Don't let deep-dive ML pipeline or feature store questions cost you a senior MLOps role. Real in-house ML platform engineers available 24/7 — Kubeflow, MLflow, SageMaker, Vertex AI, feature stores, model monitoring, and ML CI/CD. USA, UK, Canada, Australia, Europe, and globally.",
+  relatedLinks: {
+    geoLinks: [
+      { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+      { label: 'Proxy interview support UK', href: '/proxy-interview-uk/' },
+    ],
+    techLinks: [
+      { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'DevOps proxy interview support', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'SRE proxy interview support', href: '/sre-proxy-interview-support/' },
+      { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
+      { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+      { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+      { label: 'RAG & MLOps Job Support USA', href: '/agentic-ai-rag-mlops-job-support-usa/' },
+      { label: 'AI Workflow Automation Job Support', href: '/ai-workflow-automation-pipeline-job-support-usa/' },
+      { label: 'AI/ML Job Support Canada', href: '/ai-ml-job-support-canada/' },
+    ],
   },
 };
 
@@ -2311,6 +3752,8 @@ export const agenticAiMlJobSupportUSA: LandingPageConfig = {
     techLinks: [
       { label: 'Agentic AI & ML job support', href: '/agentic-ai-ml-job-support/' },
       { label: 'Data Science job support', href: '/data-science-job-support/' },
+      { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'MLOps proxy interview support', href: '/mlops-proxy-interview-support/' },
     ],
     problemLink: { label: 'Failed an AI/ML interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
@@ -2465,6 +3908,8 @@ export const aiWorkflowAutomationJobSupportUSA: LandingPageConfig = {
     techLinks: [
       { label: 'AI Workflow Automation job support', href: '/ai-workflow-automation-pipeline-job-support/' },
       { label: 'DevOps & Automation job support', href: '/devops-job-support/' },
+      { label: 'MLOps proxy interview support', href: '/mlops-proxy-interview-support/' },
+      { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
     ],
     problemLink: { label: 'Struggling in your DevOps job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
@@ -3209,6 +4654,8 @@ export const aiMlJobSupportCanada: LandingPageConfig = {
     techLinks: [
       { label: 'Python job support Canada', href: '/python-job-support-canada/' },
       { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
+      { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'MLOps proxy interview support', href: '/mlops-proxy-interview-support/' },
     ],
     problemLink: { label: 'Struggling in your AI/ML role?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support Canada', href: '/proxy-interview-canada/' },
@@ -3860,6 +5307,7 @@ export const allLandingPages: LandingPageConfig[] = [
   javaJobSupportUSA,
   nodejsJobSupportUSA,
   devopsJobSupportUSA,
+  sreJobSupportUSA,
   agenticAiRagMlopsJobSupportUSA,
   agenticAiMlJobSupportUSA,
   aiWorkflowAutomationJobSupportUSA,
@@ -3872,6 +5320,14 @@ export const allLandingPages: LandingPageConfig[] = [
   proxyInterviewUSA,
   proxyInterviewUK,
   proxyInterviewCanada,
+  javaProxyInterviewSupport,
+  devopsProxyInterviewSupport,
+  proxyInterviewAustralia,
+  proxyInterviewEurope,
+  proxyInterviewSingapore,
+  aiMlProxyInterviewSupport,
+  mlopsProxyInterviewSupport,
+  sreProxyInterviewSupport,
   // ── Canada tech pages ──────────────────────────────────────────────────────
   devopsJobSupportCanada,
   cloudJobSupportCanada,

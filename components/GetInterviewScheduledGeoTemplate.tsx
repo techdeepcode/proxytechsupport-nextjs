@@ -41,13 +41,14 @@ const ROLES = [
   { badge: 'ML Engineer',       desc: 'ML pipelines, model development, feature engineering, model evaluation, and end-to-end ML delivery for production systems.' },
   { badge: 'MLOps Engineer',    desc: 'Model deployment, CI/CD for ML, monitoring, containerization, and full production model lifecycle management.' },
   { badge: 'DevOps Engineer',   desc: 'CI/CD, Kubernetes, Docker, Terraform, monitoring, automation, cloud deployments, and production reliability.' },
+  { badge: 'SRE Engineer',      desc: 'SLO/SLI design, error budget tracking, incident management, chaos engineering, observability, toil automation, and production reliability engineering.' },
   { badge: 'Cloud Engineer',    desc: 'AWS, Azure, GCP, infrastructure design, cloud migration, security, scalability, cost optimization, and operational ownership.' },
   { badge: 'Backend Engineer',  desc: 'APIs, microservices, databases, authentication, performance, scalability, production debugging, and enterprise backend systems.' },
   { badge: 'Full-Stack Engineer', desc: 'End-to-end product delivery, frontend frameworks, backend APIs, databases, cloud deployment, and real business features.' },
 ];
 
 const PROCESS_STEPS = [
-  { num: 1, title: 'Role Targeting',                desc: 'We identify which role direction — AI, ML, MLOps, DevOps, Cloud, Backend, or Full-Stack — gives you the strongest positioning given your background and target market.' },
+  { num: 1, title: 'Role Targeting',                desc: 'We identify which role direction — AI, ML, MLOps, DevOps, SRE, Cloud, Backend, or Full-Stack — gives you the strongest positioning given your background and target market.' },
   { num: 2, title: 'Industry Targeting',            desc: 'We map your experience to the industries actively hiring in your target country. Your profile starts speaking the language of companies you want to reach.' },
   { num: 3, title: 'Profile Engineering',           desc: 'We rebuild how your profile communicates skills, experience, projects, tools, and business impact. No generic wording. No weak positioning. No copy-paste structure.' },
   { num: 4, title: 'Recruiter Visibility Optimization', desc: 'We align your profile with recruiter search behavior, hiring keywords, and role-specific filters used in your target country — improving discovery and shortlisting chances.' },
@@ -390,7 +391,7 @@ export default function GetInterviewScheduledGeoTemplate({ config }: Props) {
               <p className="gg-hero-sub">{config.heroSub}</p>
               <p className="gg-hero-body">{config.heroBody}</p>
               <div className="gg-role-tags" aria-label="Roles we target">
-                {['AI', 'ML', 'MLOps', 'DevOps', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
+                {['AI', 'ML', 'MLOps', 'DevOps', 'SRE', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
                   <span key={t} className="gg-role-tag">{t}</span>
                 ))}
               </div>
@@ -689,10 +690,10 @@ export default function GetInterviewScheduledGeoTemplate({ config }: Props) {
           <p className="gg-bottom-eyebrow">Get Started Today</p>
           <h2 className="gg-bottom-h2">{config.ctaText}</h2>
           <p style={{ fontSize: '.97rem', color: 'rgba(255,255,255,.65)', lineHeight: 1.72, marginBottom: 0, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>
-            Profile engineering and recruiter visibility optimization for AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals targeting {config.country}.
+            Profile engineering and recruiter visibility optimization for AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals targeting {config.country}.
           </p>
           <div className="gg-bottom-tags">
-            {['AI', 'ML', 'MLOps', 'DevOps', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
+            {['AI', 'ML', 'MLOps', 'DevOps', 'SRE', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
               <span key={t} className="gg-bottom-tag">{t}</span>
             ))}
           </div>
@@ -710,7 +711,7 @@ export default function GetInterviewScheduledGeoTemplate({ config }: Props) {
             Get IT Interview Scheduled in {config.country} With Profile Engineering
           </h2>
           <p className="gg-seo-text">
-            Proxy Tech Support helps IT professionals get interview scheduled for high-paying technology roles in {config.country} through industry-specific profile engineering and recruiter visibility optimization. Our service supports AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals targeting {config.country} job opportunities.
+            Proxy Tech Support helps IT professionals get interview scheduled for high-paying technology roles in {config.country} through industry-specific profile engineering and recruiter visibility optimization. Our service supports AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals targeting {config.country} job opportunities.
           </p>
           <p className="gg-seo-text" style={{ marginTop: '.85rem' }}>
             We also provide <a href="/proxy-interview-support/" style={{ color: 'var(--pts-forest)', fontWeight: 600, textDecoration: 'none' }}>interview proxy support</a> and <a href="/job-support-usa/" style={{ color: 'var(--pts-forest)', fontWeight: 600, textDecoration: 'none' }}>real-time IT job support</a> for professionals who need technical assistance during interviews, project work, production support, and daily job responsibilities.

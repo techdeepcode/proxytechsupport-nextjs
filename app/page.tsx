@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import HeroHomeSplit from '@/components/HeroHomeSplit';
+import WhatWeOfferSection from '@/components/WhatWeOfferSection';
 import TechSection from '@/components/TechSection';
 import ServicesSection from '@/components/ServicesSection';
 import HowItWorks from '@/components/HowItWorks';
@@ -9,6 +10,7 @@ import Stats from '@/components/Stats';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import ContactCTA from '@/components/ContactCTA';
+import FearUrgencySection from '@/components/FearUrgencySection';
 import GetInterviewScheduledSection from '@/components/GetInterviewScheduledSection';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
@@ -56,11 +58,13 @@ export default function HomePage() {
       <Navbar />
       <HeroHomeSplit />
       <main>
+        <WhatWeOfferSection />
         <TechSection />
         <ServicesSection />
         <HowItWorks />
         <Stats />
         <Testimonials />
+        <FearUrgencySection />
         <GetInterviewScheduledSection />
         <FAQ />
         <ContactCTA />

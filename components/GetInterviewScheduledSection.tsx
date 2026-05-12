@@ -65,6 +65,9 @@ export default function GetInterviewScheduledSection() {
             { icon: '🌍', text: 'USA, UK, Canada, Europe & Australia' },
             { icon: '⚡', text: 'Multi-profile strategy for different roles' },
             { icon: '📈', text: 'High-intent keyword alignment' },
+            { icon: '🧠', text: 'ATS-Friendly Technical Resume Structuring' },
+            { icon: '🚀', text: 'LinkedIn Search & Headline Optimization' },
+            { icon: '💼', text: 'Domain-Specific Career Branding' },
           ].map((p) => (
             <div key={p.text} className="gis-home-point">
               <span className="gis-home-point-icon" aria-hidden>{p.icon}</span>

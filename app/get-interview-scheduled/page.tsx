@@ -9,7 +9,7 @@ import { SITE_NAME, defaultOgImage } from '@/lib/site-seo';
 export const metadata: Metadata = {
   title: 'Get IT Interview Scheduled for High-Paying Roles | Profile Engineering',
   description:
-    'Not getting IT interview calls? Proxy Tech Support helps AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals get interview scheduled through industry-specific profile engineering and recruiter visibility optimization.',
+    'Not getting IT interview calls? Proxy Tech Support helps AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals get interview scheduled through industry-specific profile engineering and recruiter visibility optimization.',
   keywords: [
     'get interview scheduled',
     'get IT interview calls',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Get IT Interview Scheduled for High-Paying Roles | Profile Engineering',
     description:
-      'Not getting IT interview calls? We help AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals get interview scheduled through industry-specific profile engineering.',
+      'Not getting IT interview calls? We help AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals get interview scheduled through industry-specific profile engineering.',
     url: 'https://proxytechsupport.com/get-interview-scheduled/',
     type: 'website',
     siteName: SITE_NAME,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Get IT Interview Scheduled | Profile Engineering | High-Paying IT Roles',
     description:
-      'Not getting interview calls? We fix that through profile engineering and recruiter visibility optimization for AI, ML, DevOps, Cloud, Backend, and Full-Stack professionals.',
+      'Not getting interview calls? We fix that through profile engineering and recruiter visibility optimization for AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals.',
     images: [defaultOgImage.url],
   },
 };
@@ -87,7 +87,7 @@ const faqSchema = {
       name: 'Which roles do you support?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We support AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals.',
+        text: 'We support AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals.',
       },
     },
     {
@@ -130,7 +130,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Get IT Interview Scheduled — Profile Engineering & Recruiter Visibility',
   description:
-    'Profile engineering and recruiter visibility optimization for AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals targeting high-paying IT roles globally.',
+    'Profile engineering and recruiter visibility optimization for AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals targeting high-paying IT roles globally.',
   provider: {
     '@type': 'Organization',
     name: 'Proxy Tech Support',
@@ -595,7 +595,7 @@ export default function GetInterviewScheduledPage() {
                 We help IT professionals engineer industry-specific profiles aligned with real hiring demand, recruiter search behavior, and high-paying IT job requirements.
               </p>
               <div className="gis-hero-tags" aria-label="Technology roles we target">
-                {['AI', 'ML', 'MLOps', 'DevOps', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
+                {['AI', 'ML', 'MLOps', 'DevOps', 'SRE', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
                   <span key={t} className="gis-hero-tag">{t}</span>
                 ))}
               </div>
@@ -716,7 +716,7 @@ export default function GetInterviewScheduledPage() {
           <p className="gis-section-eyebrow">High-Paying Opportunities</p>
           <h2 className="gis-h2">Positioned for High-Paying IT Opportunities</h2>
           <p className="gis-lead">
-            High-paying IT roles are more competitive. Companies hiring for AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack roles do not shortlist generic profiles. They look for specific combinations of experience, depth, and business impact.
+            High-paying IT roles are more competitive. Companies hiring for AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack roles do not shortlist generic profiles. They look for specific combinations of experience, depth, and business impact.
           </p>
           <div className="gis-hp-grid">
             {[
@@ -766,6 +766,10 @@ export default function GetInterviewScheduledPage() {
               {
                 badge: 'DevOps Engineer',
                 desc: 'We align your profile with CI/CD, Kubernetes, Docker, Terraform, monitoring, automation, cloud deployments, and production reliability.',
+              },
+              {
+                badge: 'SRE Engineer',
+                desc: 'We position your profile around SLO/SLI design, error budget management, incident response, observability, chaos engineering, toil automation, and production reliability engineering.',
               },
               {
                 badge: 'Cloud Engineer',
@@ -829,7 +833,7 @@ export default function GetInterviewScheduledPage() {
               {
                 num: 1,
                 title: 'Role Targeting',
-                desc: 'We first understand what type of IT roles you want to target — AI, ML, MLOps, DevOps, Cloud, Backend, or Full-Stack. Then we identify which role direction gives you the strongest chance based on your background.',
+                desc: 'We first understand what type of IT roles you want to target — AI, ML, MLOps, DevOps, SRE, Cloud, Backend, or Full-Stack. Then we identify which role direction gives you the strongest chance based on your background.',
               },
               {
                 num: 2,
@@ -1041,7 +1045,7 @@ export default function GetInterviewScheduledPage() {
             Get Interview Scheduled via Profile Engineering
           </p>
           <div className="gis-bottom-tags" aria-label="Roles we serve">
-            {['AI', 'ML', 'MLOps', 'DevOps', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
+            {['AI', 'ML', 'MLOps', 'DevOps', 'SRE', 'Cloud', 'Backend', 'Full-Stack'].map((t) => (
               <span key={t} className="gis-bottom-tag">{t}</span>
             ))}
           </div>
@@ -1091,7 +1095,7 @@ export default function GetInterviewScheduledPage() {
                 { q: 'Do you apply for jobs on my behalf?', a: 'No. We are not a job application agency. We focus on profile engineering, recruiter visibility, and industry-specific positioning so your profile has a better chance of getting noticed and shortlisted.' },
                 { q: 'Is this resume writing?', a: 'No. This is not basic resume writing. We call it Profile Engineering because the work is focused on positioning, role alignment, recruiter search behavior, and high-paying IT job requirements.' },
                 { q: 'Can this help me get interview calls?', a: 'Yes, the goal is to improve your visibility and shortlisting chances by making your profile more aligned with recruiter searches and job requirements.' },
-                { q: 'Which roles do you support?', a: 'We support AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals.' },
+                { q: 'Which roles do you support?', a: 'We support AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals.' },
                 { q: 'Which countries do you target?', a: 'We support professionals targeting USA, UK, Canada, Australia, New Zealand, Ireland, Europe, Singapore, Hong Kong, and UAE job markets.' },
                 { q: 'Do you support high-paying IT roles?', a: 'Yes. Our positioning is built for competitive and high-paying IT roles where generic profiles usually fail to stand out.' },
                 { q: 'Do you provide interview proxy support also?', a: 'Yes. Once your interview is scheduled, we can also help with interview proxy support, technical interview assistance, and real-time job support.' },
@@ -1143,7 +1147,7 @@ export default function GetInterviewScheduledPage() {
             Get Interview Scheduled With Profile Engineering
           </h2>
           <p className="gis-seo-text">
-            Proxy Tech Support helps IT professionals improve profile visibility and get interview scheduled for high-paying technology roles across the USA, UK, Canada, Europe, Australia, New Zealand, Singapore, and Hong Kong. Our service is focused on industry-specific profile engineering for AI, ML, MLOps, DevOps, Cloud, Backend, and Full-Stack professionals.
+            Proxy Tech Support helps IT professionals improve profile visibility and get interview scheduled for high-paying technology roles across the USA, UK, Canada, Europe, Australia, New Zealand, Singapore, and Hong Kong. Our service is focused on industry-specific profile engineering for AI, ML, MLOps, DevOps, SRE, Cloud, Backend, and Full-Stack professionals.
           </p>
           <p className="gis-seo-text" style={{ marginTop: '.85rem' }}>
             We also provide <a href="/proxy-interview-support/" style={{ color: 'var(--pts-forest)', fontWeight: 600, textDecoration: 'none' }}>interview proxy support</a> and <a href="/job-support-usa/" style={{ color: 'var(--pts-forest)', fontWeight: 600, textDecoration: 'none' }}>real-time IT job support</a> for professionals who need technical assistance during interviews, project work, production support, coding tasks, and daily job responsibilities.

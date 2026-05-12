@@ -1,6 +1,6 @@
 export const stats = [
-  { number: '1000+', label: 'Successful IT Job Support & Interview Assistance' },
-  { number: '24×7',  label: 'Live IT Job Support for Critical Issues' },
-  { number: '50+',   label: 'IT Technologies Supported for Job Support & Interview Assistance Services' },
-  { number: '98.9%', label: 'Client Satisfaction Rate for Job Support & Interview Assistance Services' },
+  { number: '1000+', label: 'Developers & IT Professionals Helped Across Proxy Interviews, Job Support & Production Projects' },
+  { number: '98.9%', label: 'Client Satisfaction Across Proxy Interview Support, Job Delivery & Technical Assistance' },
+  { number: '50+',   label: 'Modern Enterprise Technologies Supported Across AI, Cloud, DevOps, Full-Stack & Data Platforms' },
+  { number: '24×7',  label: 'Live Support for Urgent Proxy Interviews, Production Issues & Critical Technical Situations' },
 ];

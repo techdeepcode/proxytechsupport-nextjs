@@ -72,7 +72,7 @@ export default async function InterviewQuestionsPage() {
           <div>
             <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00df82', marginBottom: '0.25rem' }}>Live Expert Help</p>
             <p style={{ fontSize: '0.97rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.35, margin: 0 }}>
-              Struggling to clear interviews? Get real-time expert coaching — USA, UK, Canada &amp; worldwide.
+              Struggling to clear interviews? Get real-time expert coaching — USA, Canada, UK, Europe &amp; worldwide.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>

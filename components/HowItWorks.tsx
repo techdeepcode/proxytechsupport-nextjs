@@ -171,7 +171,7 @@ export default function HowItWorks() {
         <div className="how-header">
           <p className="how-eyebrow">How it works</p>
           <h2 className="how-title">Get started in 4 simple steps</h2>
-          <p className="how-sub">From first contact to first session — measured in hours, not days.</p>
+          <p className="how-sub">From urgent request to live expert support — often within hours, not days.</p>
         </div>
 
         <div className="how-timeline-wrap">
@@ -188,6 +188,9 @@ export default function HowItWorks() {
             ))}
           </div>
         </div>
+        <p style={{ textAlign: 'center', marginTop: '2.5rem', fontSize: '0.95rem', color: 'var(--pts-text-subtle)', lineHeight: 1.6 }}>
+          ⚡ Same-day support may be available for urgent proxy interviews, production incidents, and high-pressure project situations.
+        </p>
       </div>
     </section>
   );

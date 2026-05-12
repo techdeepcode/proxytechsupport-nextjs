@@ -7,6 +7,7 @@ export const jobSupportLinks = [
   { label: 'Data Science Job Support', href: '/data-science-job-support/' },
   { label: 'AI / Machine Learning & Data', href: '/ai-ml-job-support/', hidden: true },
   { label: 'DevOps & Automation', href: '/devops-job-support/' },
+  { label: 'SRE & Reliability Engineering', href: '/sre-job-support-usa/' },
   { label: 'Cloud Technologies', href: '/cloud-technologies-job-support/' },
   { label: 'AWS Job Support', href: '/aws-job-support/' },
   { label: 'Python Job Support', href: '/python-job-support/' },
@@ -26,13 +27,20 @@ export const jobSupportLinks = [
 
 // ─── Location links (new — used in Navbar Locations dropdown + Footer) ─────
 
-/** Top 5 geo pages for the nav dropdown (keep concise). */
+/** Geo pages for the nav dropdown — job support + proxy interview locations. */
 export const locationNavLinks = [
   { label: 'Job Support USA', href: '/job-support-usa/' },
-  { label: 'Job Support UK', href: '/job-support-uk/' },
   { label: 'Job Support Canada', href: '/job-support-canada/' },
-  { label: 'Job Support Australia', href: '/job-support-australia/' },
+  { label: 'Job Support UK', href: '/job-support-uk/' },
   { label: 'Job Support Europe', href: '/job-support-europe/' },
+  { label: 'Job Support Australia', href: '/job-support-australia/' },
+  { label: 'Job Support Singapore', href: '/job-support-singapore/' },
+  { label: 'Proxy Interview USA', href: '/proxy-interview-usa/' },
+  { label: 'Proxy Interview Canada', href: '/proxy-interview-canada/' },
+  { label: 'Proxy Interview UK', href: '/proxy-interview-uk/' },
+  { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
+  { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
+  { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
 ];
 
 /** All 8 geo pages — used in Footer and internal links. */
@@ -52,6 +60,11 @@ export const allLocationLinks = [
 export const interviewNavLinks = [
   { label: 'Interview Proxy', href: '/proxy-interview-support/' },
   { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+  { label: 'AI/ML Proxy Interview', href: '/ai-ml-proxy-interview-support/' },
+  { label: 'MLOps Proxy Interview', href: '/mlops-proxy-interview-support/' },
+  { label: 'DevOps Proxy Interview', href: '/devops-proxy-interview-support/' },
+  { label: 'SRE Proxy Interview', href: '/sre-proxy-interview-support/' },
+  { label: 'Java Proxy Interview', href: '/java-proxy-interview-support/' },
   { label: 'Interview Questions', href: '/interview-questions/' },
 ];
 

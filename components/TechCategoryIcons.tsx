@@ -127,6 +127,12 @@ export default function TechCategoryIcon({ id }: Props) {
           <path d="M7 6l3.5 6M16.5 6L13 12M7 18l3.5-6M16.5 18L13 12" strokeWidth={1.1} />
         </svg>
       );
+    case 'sre':
+      return (
+        <svg {...c} viewBox="0 0 24 24" aria-hidden>
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        </svg>
+      );
     default:
       return (
         <svg {...c} viewBox="0 0 24 24" aria-hidden>

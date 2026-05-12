@@ -4,10 +4,10 @@ import { jobSupportLinks } from '@/data/navigation';
 
 const locationLinks = [
   { label: 'Job Support USA', href: '/job-support-usa/' },
-  { label: 'Job Support UK', href: '/job-support-uk/' },
   { label: 'Job Support Canada', href: '/job-support-canada/' },
-  { label: 'Job Support Australia', href: '/job-support-australia/' },
+  { label: 'Job Support UK', href: '/job-support-uk/' },
   { label: 'Job Support Europe', href: '/job-support-europe/' },
+  { label: 'Job Support Australia', href: '/job-support-australia/' },
   { label: 'Job Support Germany', href: '/job-support-germany/' },
   { label: 'Job Support Singapore', href: '/job-support-singapore/' },
   { label: 'Job Support New Zealand', href: '/job-support-newzealand/' },
@@ -20,6 +20,21 @@ const serviceLinks = [
   { label: 'Failed Interview Help', href: '/failed-interview-help/' },
   { label: 'Proxy Interview Support', href: '/proxy-interview-support/' },
   { label: 'Proxy Job Support', href: '/proxy-job-support/' },
+];
+
+const proxyInterviewLinks = [
+  { label: 'AI/ML Proxy Interview', href: '/ai-ml-proxy-interview-support/' },
+  { label: 'MLOps Proxy Interview', href: '/mlops-proxy-interview-support/' },
+  { label: 'Java Proxy Interview', href: '/java-proxy-interview-support/' },
+  { label: 'DevOps Proxy Interview', href: '/devops-proxy-interview-support/' },
+  { label: 'SRE Proxy Interview', href: '/sre-proxy-interview-support/' },
+  { label: 'Proxy Interview Support', href: '/proxy-interview-support/' },
+  { label: 'Proxy Interview USA', href: '/proxy-interview-usa/' },
+  { label: 'Proxy Interview Canada', href: '/proxy-interview-canada/' },
+  { label: 'Proxy Interview UK', href: '/proxy-interview-uk/' },
+  { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
+  { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
+  { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
 ];
 
 const resourceLinks = [
@@ -107,7 +122,12 @@ export default function Footer() {
             grid-template-columns: repeat(3, minmax(0, 1fr));
           }
           .footer-seo-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+        }
+        @media (min-width: 1100px) {
+          .footer-seo-grid {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
           }
         }
       `}</style>
@@ -127,8 +147,11 @@ export default function Footer() {
               ProxyTechSupport
             </h3>
             <p style={{ fontSize: '0.875rem', lineHeight: 1.75, maxWidth: '480px' }}>
-              Real-time IT job support and proxy interview assistance for developers across USA, UK, Canada, Australia,
-              Europe, Germany, Singapore, and New Zealand. 1000+ developers helped. All time zones covered.
+              Real-time IT job support, proxy interview support, technical interview assistance, and profile engineering
+              for developers and IT professionals across USA, Canada, UK, Europe, Australia, Germany, Singapore, and
+              New Zealand. We help professionals handle urgent proxy interviews, production issues, debugging, client
+              meetings, system design, cloud, DevOps, AI/ML, full-stack development, and high-pressure interview
+              situations across all major time zones. 1000+ IT professionals helped.
             </p>
             <div style={{ display: 'flex', gap: '1.25rem', marginTop: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+919660614469" className="footer-link" style={{ fontWeight: 600 }}>
@@ -173,6 +196,11 @@ export default function Footer() {
           </div>
 
           <div>
+            <FooterHeading>Proxy Interview</FooterHeading>
+            <FooterLinks links={proxyInterviewLinks} />
+          </div>
+
+          <div>
             <FooterHeading>Resources</FooterHeading>
             <FooterLinks links={resourceLinks} />
           </div>
@@ -188,8 +216,8 @@ export default function Footer() {
             color: 'rgba(255, 255, 255, 0.4)',
           }}
         >
-          © {year} proxytechsupport.com — IT Job Support &amp; Proxy Interview Assistance | USA • UK • Canada •
-          Australia • Europe
+          © {year} proxytechsupport.com — IT Job Support &amp; Proxy Interview Assistance | USA • Canada • UK • Europe •
+          Australia
         </p>
       </div>
     </footer>

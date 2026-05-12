@@ -258,6 +258,122 @@ Technologies supported (2026):
 
 ---
 
+---
+
+### 4. SRE & Reliability Engineering Job Support USA
+URL: /sre-job-support-usa/
+Target: Site Reliability Engineers, platform engineers, DevOps engineers with SRE responsibilities, on-call engineers
+
+Focus: Day-to-day SRE work support — not interview coaching (see SRE Proxy Interview Support for that). Expert help with real production reliability engineering tasks during US working hours.
+
+Technologies and areas supported:
+
+**SLO/SLI/Error Budget Implementation:**
+- SLI selection for specific service types (latency percentile selection, error rate definition, availability calculation)
+- SLO configuration in Prometheus, Datadog, or custom observability stacks
+- Multi-window multi-burn-rate alerting rules (Google SRE methodology)
+- Error budget dashboards in Grafana
+- SLO reporting automation for engineering and product leadership
+
+**Incident Response & On-Call Support:**
+- Real-time root cause analysis during live production incidents
+- Incident command facilitation (IC, comms lead, operations lead structure)
+- PagerDuty and OpsGenie escalation policy design
+- On-call rotation structure and alert deduplication
+- Blameless postmortem writing and facilitation
+- Runbook design and automation
+
+**Observability Stack:**
+- Prometheus: recording rules, alerting rules, federation, remote write
+- Grafana 11+: dashboard design, alerting, OnCall, Loki integration
+- OpenTelemetry: instrumentation strategy, trace sampling policy, OTLP collector configuration
+- Distributed tracing: Jaeger, Tempo (Grafana), Zipkin backend selection and configuration
+- Structured logging pipelines
+- Datadog, Dynatrace, New Relic — SRE-specific configuration
+
+**Chaos Engineering:**
+- Chaos experiment design (steady-state hypothesis, blast radius scoping)
+- Gremlin: dependency latency injection, resource exhaustion, network partition
+- LitmusChaos: Kubernetes chaos experiments, ChaosEngine CRDs
+- Chaos Monkey: Netflix Simian Army approach
+- GameDay facilitation design
+- Chaos in production vs staging trade-offs
+
+**Toil Automation:**
+- Toil identification and measurement frameworks
+- Manual runbook replacement with automation (bots, scripts, self-healing)
+- Alert correlation and deduplication scripts
+- Deployment validation automation
+
+**Capacity Planning:**
+- Demand forecasting from historical traffic data
+- Load testing: k6, Locust, Gatling — test design and result interpretation
+- Headroom policy decisions and scaling recommendations
+- Traffic management under peak load
+
+**Multi-Region Reliability:**
+- Active-active vs active-passive trade-off analysis
+- DNS failover configuration and testing
+- RPO/RTO derivation and validation
+- Circuit breaker, bulkhead, rate limiting architecture
+
+---
+
+## Proxy Interview Support — Technology-Specific Pages
+
+### Proxy Interview Support — By Technology
+
+**AI/ML Proxy Interview Support**
+URL: /ai-ml-proxy-interview-support/
+Target: AI engineers, ML engineers interviewing at tech companies, AI-native startups, and enterprises
+Focus: Live guidance during actual AI/ML technical interviews — NOT MLOps infrastructure (see MLOps proxy page)
+Topics: Deep learning architectures, PyTorch model development, LLM fine-tuning (LoRA/QLoRA/DPO), RAG pipeline design, recommendation systems, NLP, computer vision, ML system design, model evaluation, feature engineering, production AI deployment
+
+**MLOps Proxy Interview Support**
+URL: /mlops-proxy-interview-support/
+Target: MLOps engineers, ML platform engineers interviewing for infrastructure-focused ML roles
+Focus: ML infrastructure and pipeline interviews — NOT model development (see AI/ML proxy page)
+Topics: ML pipeline orchestration (Kubeflow, Airflow, ZenML), MLflow experiment tracking, feature stores, model registry, CI/CD for ML, model drift detection, LLMOps observability, SageMaker, Vertex AI, Azure ML
+
+**DevOps Proxy Interview Support**
+URL: /devops-proxy-interview-support/
+Target: DevOps engineers, platform engineers, infrastructure engineers
+Focus: Live guidance during DevOps technical interviews — Kubernetes architecture, GitOps, CI/CD design, Terraform IaC, cloud infrastructure at scale
+Topics: Kubernetes cluster design, ArgoCD GitOps, GitHub Actions CI/CD design, Terraform modules, cloud architecture, container security, observability stack design
+
+**Java Proxy Interview Support**
+URL: /java-proxy-interview-support/
+Target: Java engineers, Spring Boot developers interviewing for enterprise Java roles
+Topics: Spring Boot microservices, Kafka consumer/producer design, Hibernate/JPA, Spring Security, JVM performance tuning, Java concurrency, distributed systems design with Java
+
+**SRE Proxy Interview Support**
+URL: /sre-proxy-interview-support/
+Target: SRE candidates interviewing at Google, Netflix, Stripe, Cloudflare, financial services, and tech companies
+Focus: SRE interviews assess production reliability philosophy — NOT operational tooling (DevOps interviews do that)
+Topics: SLO/SLI design rationale, error budget policy philosophy, multi-window burn-rate alerting design, blameless postmortem facilitation, chaos engineering experiment methodology, capacity planning frameworks, incident command structure, production reliability architecture
+
+### Proxy Interview Support — By Location
+
+**Proxy Interview Australia**
+URL: /proxy-interview-australia/
+Target: IT professionals interviewing at Australian tech companies and banks
+Coverage: Commonwealth Bank, ANZ, NAB, Westpac, Atlassian, Canva, REA Group, Seek, Telstra, Optus, WiseTech Global, Services Australia
+Time zones: AEST/AEDT aligned
+
+**Proxy Interview Europe**
+URL: /proxy-interview-europe/
+Target: IT professionals interviewing at European tech companies, banks, and enterprises
+Coverage: Booking.com, ASML, ING, Adyen, Philips, SAP, Siemens, Deutsche Bank, Spotify, Klarna, EU Blue Card holders
+Time zones: CET/GMT aligned
+
+**Proxy Interview Singapore**
+URL: /proxy-interview-singapore/
+Target: IT professionals interviewing at Singapore tech companies and financial institutions
+Coverage: DBS, Grab, Sea Group (Shopee/Garena), GovTech Singapore, OCBC, UOB, Singtel, Gojek Singapore
+Time zones: SGT aligned
+
+---
+
 ## Canada Services — Technology Job Support
 
 ### 4. DevOps Job Support Canada
@@ -471,7 +587,7 @@ A: Yes. Production firefighting is one of our core services for Canadian clients
 - **Start time:** Same day in most cases
 - **Expert sourcing:** In-house only, no subcontracting
 - **Session format:** Screen share, voice/video call, remote desktop
-- **Primary technologies:** AI/ML (Agentic AI, RAG, LLMs, MLOps), DevOps/Cloud, Java, Python, React/Angular, .NET, Node.js, Databases, Testing, Cybersecurity
+- **Primary technologies:** AI/ML (Agentic AI, RAG, LLMs, MLOps), DevOps, SRE (Site Reliability Engineering), Cloud, Java, Python, React/Angular, .NET, Node.js, Databases, Testing, Cybersecurity
 - **Confidentiality:** NDA available on request; full professional discretion
 - **Interview support type:** Real-time during live technical interviews (proxy interview support)
 - **Developers helped:** 1000+

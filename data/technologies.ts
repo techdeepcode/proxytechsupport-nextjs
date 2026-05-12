@@ -12,7 +12,8 @@ export type TechIconId =
   | 'java'
   | 'brain'
   | 'flask'
-  | 'pipeline';
+  | 'pipeline'
+  | 'sre';
 
 export type Technology = {
   id: string;
@@ -20,6 +21,8 @@ export type Technology = {
   icon: TechIconId;
   tags: string[];
   description?: string;
+  challenges?: string[];
+  cta?: string;
   href?: string;
   hidden?: boolean;
 };
@@ -30,7 +33,19 @@ export const technologies: Technology[] = [
     icon: 'brain',
     href: '/agentic-ai-ml-job-support/',
     title: 'Agentic AI & Machine Learning',
-    description: 'Production-grade support for agentic AI systems, RAG pipelines, LLMs, and deep learning infrastructure in 2026.',
+    description:
+      'Real-time support for production-grade AI systems, multi-agent orchestration, RAG architectures, LLM inference pipelines, GPU optimization, fine-tuning workflows, and enterprise AI deployment challenges.',
+    challenges: [
+      'Hallucination Reduction & Retrieval Accuracy',
+      'Multi-Agent State & Memory Management',
+      'GPU Bottlenecks & Inference Latency',
+      'Fine-Tuning Stability & Dataset Alignment',
+      'RAG Evaluation & Context Optimization',
+      'AI Workflow Orchestration Failures',
+      'Vector Search Scaling & Hybrid Retrieval',
+      'LLM Cost Optimization & Deployment Reliability',
+    ],
+    cta: 'Get AI/LLM Support →',
     tags: [
       'LangGraph & AutoGen Agents',
       'CrewAI & OpenAI Agents SDK',
@@ -51,7 +66,19 @@ export const technologies: Technology[] = [
     icon: 'pipeline',
     href: '/ai-workflow-automation-pipeline-job-support/',
     title: 'AI Workflow Automation & Pipeline Engineering',
-    description: 'Expert support for AI-powered CI/CD, MLOps pipelines, AIOps, GitOps, and LLMOps DevOps toolchains in 2026.',
+    description:
+      'Enterprise support for MLOps, LLMOps, and AI infrastructure pipelines involving Kubernetes orchestration, distributed inference, GitOps delivery, AI observability, workflow automation, and production deployment reliability.',
+    challenges: [
+      'Kubernetes GPU Scheduling Issues',
+      'AI Pipeline Deployment Failures',
+      'Distributed Inference Scaling',
+      'Workflow State Recovery & Retry Handling',
+      'GitOps Drift & Environment Mismatch',
+      'LLMOps Monitoring & Observability',
+      'AI CI/CD Release Automation',
+      'Production Infrastructure Debugging',
+    ],
+    cta: 'Get MLOps & AI Infra Support →',
     tags: [
       'Airflow 2.10 / Prefect 3 / Dagster 1',
       'Temporal.io Durable Workflows',
@@ -72,7 +99,19 @@ export const technologies: Technology[] = [
     icon: 'flask',
     href: '/data-science-job-support/',
     title: 'Data Science (AI-Era)',
-    description: 'Deep data science support covering Python stack, classical ML, big data, causal inference, and AI-integrated analytics.',
+    description:
+      'Advanced data science support for predictive modeling, feature engineering, causal inference, large-scale analytics, model explainability, statistical validation, and AI-driven business intelligence systems.',
+    challenges: [
+      'Feature Drift & Data Leakage',
+      'Model Explainability & SHAP Analysis',
+      'Statistical Validation & Hypothesis Testing',
+      'Forecasting Accuracy & Time-Series Stability',
+      'Large-Scale Data Pipeline Failures',
+      'ML Feature Engineering Optimization',
+      'BI Dashboard Performance Bottlenecks',
+      'AI-Augmented Decision Systems',
+    ],
+    cta: 'Get Data Science Support →',
     tags: [
       'pandas 2.x & Polars 1.x',
       'scikit-learn 1.5 / XGBoost / LightGBM',
@@ -106,7 +145,21 @@ export const technologies: Technology[] = [
   {
     id: 'devops',
     icon: 'gear',
+    href: '/devops-job-support-usa/',
     title: 'DevOps & Automation',
+    description:
+      'Real-time DevOps support for Kubernetes infrastructure, GitOps automation, CI/CD reliability, observability, infrastructure scaling, and cloud-native production environments.',
+    challenges: [
+      'CI/CD Pipeline Failures',
+      'Kubernetes Scaling & Pod Stability',
+      'Infrastructure Drift & IaC Issues',
+      'Release Automation Problems',
+      'Monitoring & Alert Fatigue',
+      'Production Downtime & Recovery',
+      'Cloud-Native Deployment Bottlenecks',
+      'High-Availability Infrastructure Setup',
+    ],
+    cta: 'Get DevOps Support →',
     tags: [
       'Terraform',
       'Docker',
@@ -118,9 +171,56 @@ export const technologies: Technology[] = [
     ],
   },
   {
+    id: 'sre',
+    icon: 'sre',
+    href: '/sre-job-support-usa/',
+    title: 'SRE & Reliability Engineering',
+    description:
+      'Real-time Site Reliability Engineering support for SLO/SLI implementation, error budget tracking, incident response, observability stack setup, chaos engineering, toil automation, capacity planning, and production reliability architecture.',
+    challenges: [
+      'SLO/SLI Design & Error Budget Tracking',
+      'Alert Fatigue & On-Call Burnout',
+      'High MTTR During Production Incidents',
+      'Observability Gaps & Missing Tracing',
+      'Toil Accumulation & Manual Runbooks',
+      'Chaos Engineering Implementation',
+      'Capacity Planning & Traffic Forecasting',
+      'Multi-Region Failover & DR Testing',
+    ],
+    cta: 'Get SRE Support →',
+    tags: [
+      'SLO / SLI / Error Budgets',
+      'Prometheus & Grafana',
+      'OpenTelemetry & Distributed Tracing',
+      'PagerDuty / OpsGenie',
+      'Chaos Monkey / Gremlin / LitmusChaos',
+      'Incident Command & Blameless Postmortems',
+      'Toil Automation & Runbook Bots',
+      'Capacity Planning & Load Testing',
+      'Multi-Window Burn Rate Alerting',
+      'Jaeger / Tempo / Zipkin',
+      'k6 / Locust / Gatling',
+      'Multi-Region Failover & RPO/RTO',
+    ],
+  },
+  {
     id: 'cloud',
     icon: 'cloud',
+    href: '/cloud-job-support-usa/',
     title: 'Cloud Technologies',
+    description:
+      'Enterprise cloud support for scalable infrastructure, multi-cloud environments, serverless architectures, cloud migrations, cloud security, and production workload optimization.',
+    challenges: [
+      'Multi-Cloud Deployment Complexity',
+      'Infrastructure Scaling & Cost Optimization',
+      'IAM & Cloud Security Issues',
+      'Kubernetes Cluster Reliability',
+      'Disaster Recovery & HA Planning',
+      'Serverless Performance Bottlenecks',
+      'Cloud Migration & Modernization',
+      'Production Environment Stability',
+    ],
+    cta: 'Get Cloud Support →',
     tags: [
       'AWS',
       'Microsoft Azure',
@@ -132,7 +232,21 @@ export const technologies: Technology[] = [
   {
     id: 'frontend',
     icon: 'code',
+    href: '/react-job-support-usa/',
     title: 'Front-End / Full-Stack Development',
+    description:
+      'Real-time support for enterprise frontend systems, scalable UI architectures, SSR applications, micro frontends, design systems, and performance-critical web platforms.',
+    challenges: [
+      'State Management Complexity',
+      'SSR & Hydration Issues',
+      'Frontend Performance Bottlenecks',
+      'Enterprise UI Scalability',
+      'API Integration Problems',
+      'Cross-Browser Compatibility',
+      'Build & Deployment Failures',
+      'Design System Consistency',
+    ],
+    cta: 'Get Frontend Support →',
     tags: [
       'React.js',
       'Angular',
@@ -151,7 +265,21 @@ export const technologies: Technology[] = [
   {
     id: 'backend',
     icon: 'server',
+    href: '/dotnet-job-support-usa/',
     title: 'Backend & Enterprise (.NET + Node)',
+    description:
+      'Enterprise backend support for scalable APIs, distributed systems, event-driven architectures, microservices, enterprise integrations, and high-concurrency production environments.',
+    challenges: [
+      'Microservices Communication Failures',
+      'API Performance Bottlenecks',
+      'Authentication & Authorization Issues',
+      'Distributed Transaction Complexity',
+      'Real-Time Event Processing',
+      'High-Traffic System Scaling',
+      'Service Reliability & Recovery',
+      'Enterprise Integration Challenges',
+    ],
+    cta: 'Get Backend Support →',
     tags: [
       'ASP.NET',
       'ASP.NET Core',
@@ -173,7 +301,21 @@ export const technologies: Technology[] = [
   {
     id: 'java',
     icon: 'java',
+    href: '/java-job-support-usa/',
     title: 'Java Technology Stack',
+    description:
+      'Production-grade Java support for enterprise applications, distributed systems, Spring microservices, cloud-native backend architectures, and secure API platforms.',
+    challenges: [
+      'Spring Boot Performance Issues',
+      'Microservices Deployment Complexity',
+      'API Security & Authentication Failures',
+      'Kafka Message Processing Failures',
+      'JVM Performance Optimization',
+      'Distributed System Reliability',
+      'Kubernetes-Based Java Deployments',
+      'Enterprise Integration Problems',
+    ],
+    cta: 'Get Java Support →',
     tags: [
       'Core Java (Java 8+)',
       'Spring',
@@ -197,6 +339,19 @@ export const technologies: Technology[] = [
     id: 'security',
     icon: 'shield',
     title: 'Cybersecurity & AppSec',
+    description:
+      'Enterprise security support for secure application development, API protection, cloud security, DevSecOps workflows, IAM, and production risk mitigation.',
+    challenges: [
+      'API Security Vulnerabilities',
+      'Secure Authentication Failures',
+      'Cloud Misconfiguration Risks',
+      'Container & Kubernetes Security',
+      'Secure SDLC Implementation',
+      'OWASP Top 10 Mitigation',
+      'Identity & Access Management',
+      'DevSecOps Pipeline Security',
+    ],
+    cta: 'Get Security Support →',
     tags: [
       'Application Security',
       'API Security',
@@ -210,6 +365,19 @@ export const technologies: Technology[] = [
     id: 'databases',
     icon: 'database',
     title: 'Databases & Data Platforms',
+    description:
+      'Real-time support for scalable databases, distributed data systems, query optimization, data warehousing, data modeling, and high-availability production environments.',
+    challenges: [
+      'Slow Query Performance',
+      'Replication & Failover Issues',
+      'Data Modeling Complexity',
+      'Scaling & Sharding Challenges',
+      'High-Availability Database Setup',
+      'ETL Pipeline Bottlenecks',
+      'Real-Time Data Streaming',
+      'Warehouse Optimization',
+    ],
+    cta: 'Get Database Support →',
     tags: [
       'SQL Server',
       'MySQL',
@@ -226,6 +394,19 @@ export const technologies: Technology[] = [
     id: 'testing',
     icon: 'test',
     title: 'Testing & Quality Engineering',
+    description:
+      'Enterprise QA support for automated testing, API validation, performance testing, CI-integrated QA workflows, and scalable test automation systems.',
+    challenges: [
+      'Flaky Automation Tests',
+      'API Validation Failures',
+      'E2E Regression Instability',
+      'CI/CD Testing Bottlenecks',
+      'Performance Testing Issues',
+      'Cross-Environment Inconsistencies',
+      'Test Framework Maintenance',
+      'Shift-Left Testing Adoption',
+    ],
+    cta: 'Get QA Support →',
     tags: [
       'Unit Testing',
       'Integration Testing',
@@ -242,6 +423,19 @@ export const technologies: Technology[] = [
     id: 'analytics',
     icon: 'chart',
     title: 'Digital Analytics & Marketing Tech',
+    description:
+      'Technical support for analytics instrumentation, event tracking, conversion measurement, funnel optimization, attribution modeling, and modern marketing data systems.',
+    challenges: [
+      'Broken Conversion Tracking',
+      'GTM & Data Layer Issues',
+      'Attribution & Funnel Gaps',
+      'Server-Side Tracking Problems',
+      'Event Instrumentation Errors',
+      'Pixel & CAPI Integration Failures',
+      'Analytics Reporting Inconsistencies',
+      'Campaign Data Mismatch',
+    ],
+    cta: 'Get Analytics Support →',
     tags: [
       'Google Analytics (GA4)',
       'Google Tag Manager',
@@ -255,6 +449,17 @@ export const technologies: Technology[] = [
     icon: 'crm',
     title: 'CRM & Business Platforms',
     description: 'End-to-end CRM customization, integration, and production support.',
+    challenges: [
+      'Workflow Automation Failures',
+      'CRM Integration Issues',
+      'Lead Routing Problems',
+      'ERP & CRM Synchronization',
+      'Custom Module Development',
+      'Production CRM Errors',
+      'Business Process Automation',
+      'Data Consistency Problems',
+    ],
+    cta: 'Get CRM Support →',
     tags: [
       'Salesforce',
       'Microsoft Dynamics 365',

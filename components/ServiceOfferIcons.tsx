@@ -1,24 +1,6 @@
 import type { ServiceOfferIconId } from '@/data/services';
 
 const GREEN = '#03624c';
-const small = 20;
-
-function UserIcon() {
-  return (
-    <svg width={small} height={small} viewBox="0 0 24 24" fill="none" stroke={GREEN} strokeWidth={1.7} aria-hidden>
-      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" strokeLinecap="round" />
-      <circle cx="12" cy="7" r="4" />
-    </svg>
-  );
-}
-
-function ShieldIcon() {
-  return (
-    <svg width={small} height={small} viewBox="0 0 24 24" fill="none" stroke={GREEN} strokeWidth={1.7} aria-hidden>
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export default function ServiceOfferIcon({ id }: { id: ServiceOfferIconId }) {
   const c = {
@@ -33,11 +15,12 @@ export default function ServiceOfferIcon({ id }: { id: ServiceOfferIconId }) {
 
   switch (id) {
     case 'interview':
+      /* One stroked glyph @ 40×40 — aligned with briefcase / robot (no side-by-side icons). */
       return (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }} aria-hidden>
-          <UserIcon />
-          <ShieldIcon />
-        </div>
+        <svg {...c} viewBox="0 0 24 24" aria-hidden>
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+        </svg>
       );
     case 'briefcase':
       return (

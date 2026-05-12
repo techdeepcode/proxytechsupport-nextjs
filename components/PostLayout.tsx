@@ -93,10 +93,15 @@ function BlogInternalLinks() {
         {[
           { label: 'AWS Job Support', href: '/aws-job-support/' },
           { label: 'Python Job Support', href: '/python-job-support/' },
+          { label: 'DevOps Job Support', href: '/devops-job-support/' },
+          { label: 'SRE Job Support', href: '/sre-job-support-usa/' },
           { label: 'React Job Support', href: '/react-job-support/' },
           { label: 'Node.js Job Support', href: '/nodejs-job-support-usa/' },
           { label: '.NET Job Support', href: '/dotnet-job-support/' },
           { label: 'Java Job Support', href: '/java-job-support-usa/' },
+          { label: 'AI/ML Proxy Interview', href: '/ai-ml-proxy-interview-support/' },
+          { label: 'DevOps Proxy Interview', href: '/devops-proxy-interview-support/' },
+          { label: 'SRE Proxy Interview', href: '/sre-proxy-interview-support/' },
           { label: 'Interview Support', href: '/interview-support-global/' },
           { label: 'Struggling in Job?', href: '/struggling-in-job-developer-help/' },
         ].map((link) => (

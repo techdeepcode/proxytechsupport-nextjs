@@ -59,7 +59,7 @@ const barItems = [
   'Global Coverage',
 ];
 
-const dashboardPills = ['No Middlemen', 'Same-Day Start', 'Job Support + Interview Help', 'Get Interview Scheduled'];
+const dashboardPills = ['No Middlemen', 'Same-Day Start', 'Job Support + Interview Proxy', 'Get Interview Scheduled'];
 
 function CalendarIcon() {
   return (
@@ -656,9 +656,9 @@ export default function HeroHomeSplit() {
             </div>
 
             <h1 className="hero-h1-serif hero-h1-stack" style={{ marginBottom: '0.9rem' }}>
-              <span className="hero-h1-line1">Struggling at Work or Need Interview Proxy Support?</span>
+              <span className="hero-h1-line1">Struggling at Work or Need Urgent Proxy Interview Support?</span>
               <span className="hero-h1-line2 hero-h1-accent">Get Real-Time Expert Support</span>
-              <span className="hero-h1-line3">For AI · ML · DevOps · Cloud · Backend · Full-Stack Engineers</span>
+              <span className="hero-h1-line3">For AI · ML · MLOps · DevOps · SRE · Cloud · Backend · Full-Stack Engineers</span>
             </h1>
 
             {/* ── Compact GIS strip — right below H1 ── */}
@@ -677,14 +677,15 @@ export default function HeroHomeSplit() {
               <p className="hero-subline-lead">
                 <TargetIcon />
                 <span>
-                  Real-time job support for daily work + proxy interview assistance to help you clear interviews — expert developers, live.
+                  Urgent proxy interview support & real-time IT job support — coding rounds, system design, production issues, client meetings, and high-pressure interview situations handled by expert developers, live, same timezone.
                 </span>
               </p>
               <ul className="hero-subline-pains">
-                <li>Stuck on production issues or deadlines?</li>
-                <li>Need live support during technical interviews?</li>
-                <li>Not confident in coding rounds or system design?</li>
-                <li>Worried about failing your next interview?</li>
+                <li>◆ Stuck on production issues or urgent project deadlines?</li>
+                <li>◆ Need live proxy support during technical interviews?</li>
+                <li>◆ Not confident in coding rounds or system design discussions?</li>
+                <li>◆ Worried about failing your next interview or client call?</li>
+                <li>◆ Profile invisible to recruiters? We engineer it to improve shortlisting.</li>
               </ul>
             </div>
             <p className="hero-subline-2">
@@ -816,10 +817,10 @@ export default function HeroHomeSplit() {
                 />
                 <div style={{ flex: '1 1 140px', minWidth: 0 }}>
                   <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--pts-text)', lineHeight: 1.25 }}>
-                    Experts Online Now — Ready to Join Immediately
+                    Experts Available for Same-Day Proxy Interview &amp; Job Support
                   </div>
                   <div style={{ fontSize: '0.78rem', color: 'var(--pts-text-subtle)', marginTop: '0.15rem' }}>
-                    Job support, interview help &amp; profile engineering
+                    Job support, interview proxy &amp; profile engineering
                   </div>
                 </div>
                 <span

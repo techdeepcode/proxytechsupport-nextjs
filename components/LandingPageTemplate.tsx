@@ -55,7 +55,7 @@ function isGeoLandingPage(config: LandingPageConfig): boolean {
 function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (isGeoLandingPage(config)) return true;
   if (/-job-support-usa$/.test(config.slug)) return true;
-  if (/^proxy-interview-(usa|uk|canada)$/.test(config.slug)) return true;
+  if (config.slug.includes('proxy-interview')) return true;
   return false;
 }
 
@@ -117,7 +117,7 @@ function CTAButtons({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
 const trustItems = [
   { stat: '1000+', label: 'Developers Helped' },
   { stat: '24/7', label: 'Availability' },
-  { stat: '95%', label: 'Success Rate' },
+  { stat: '98.9%', label: 'Success Rate' },
   { stat: '50+', label: 'Technologies' },
 ];
 
@@ -204,6 +204,7 @@ export default function LandingPageTemplate({ config }: Props) {
       'Proxy Interview Assistance Canada',
       'Interview Support Canada',
       'DevOps Support Canada',
+      'SRE Support Canada',
       'AI ML Support Canada',
       'Cloud Support Canada',
     ],
@@ -542,12 +543,18 @@ export default function LandingPageTemplate({ config }: Props) {
       <section className="lp-hero">
         <div className={`lp-hero-inner${locationHero ? ' lp-hero-inner--geo-split' : ''}`}>
           <div className="lp-hero-copy-col">
-            <p className="lp-hero-eyebrow"><span aria-hidden>✦</span> Expert IT Job Support &amp; Proxy Interview Assistance</p>
+            <p className="lp-hero-eyebrow"><span aria-hidden>✦</span> {config.heroEyebrow ?? 'Expert IT Job Support & Proxy Interview Assistance'}</p>
             <h1 className="lp-hero-h1">{config.h1}</h1>
             <p className="lp-hero-tagline">{config.tagline}</p>
             <p className="lp-hero-pain">{config.painIntro}</p>
+            {config.heroUrgency && (
+              <p className="lp-hero-pain">{config.heroUrgency}</p>
+            )}
             {config.heroVariant && (
               <p className="lp-hero-variant">{config.heroVariant}</p>
+            )}
+            {config.heroPostUrgency && (
+              <p className="lp-hero-pain">{config.heroPostUrgency}</p>
             )}
             <CTAButtons variant="dark" />
             {!locationHero && (
@@ -694,7 +701,7 @@ export default function LandingPageTemplate({ config }: Props) {
       <section className="lp-section-white" style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
         <div className="lp-inner">
           <ActionBanner
-            headline="Need real-time IT job support or interview help? Our experts are available 24/7 — USA, UK, Canada & worldwide."
+            headline="Need real-time IT job support or interview help? Our experts are available 24/7 — USA, Canada, UK, Europe & worldwide."
           />
         </div>
       </section>
@@ -746,6 +753,9 @@ export default function LandingPageTemplate({ config }: Props) {
               {config.relatedLinks.canadaLinks?.map((l) => (
                 <a key={l.href} href={l.href} className="lp-related-link">{l.label}</a>
               ))}
+              {config.relatedLinks.additionalLinks?.map((l) => (
+                <a key={l.href} href={l.href} className="lp-related-link">{l.label}</a>
+              ))}
             </div>
           </div>
         </nav>
@@ -760,6 +770,11 @@ export default function LandingPageTemplate({ config }: Props) {
                 { label: 'Agentic AI & RAG Support', href: '/agentic-ai-rag-mlops-job-support-usa/' },
                 ...jobSupportLinks,
                 { label: 'Proxy Interview Support', href: '/proxy-interview-support/' },
+                { label: 'AI/ML Proxy Interview', href: '/ai-ml-proxy-interview-support/' },
+                { label: 'MLOps Proxy Interview', href: '/mlops-proxy-interview-support/' },
+                { label: 'DevOps Proxy Interview', href: '/devops-proxy-interview-support/' },
+                { label: 'SRE Proxy Interview', href: '/sre-proxy-interview-support/' },
+                { label: 'Java Proxy Interview', href: '/java-proxy-interview-support/' },
                 { label: 'Read Our Blog', href: '/blog/' },
               ].map((l) => (
                 <a key={l.href} href={l.href} className="lp-related-link">{l.label}</a>
@@ -773,9 +788,9 @@ export default function LandingPageTemplate({ config }: Props) {
       <section className="lp-section-dark">
         <div className="lp-bottom-inner">
           <p className="lp-bottom-eyebrow">Get Started Today</p>
-          <h2 className="lp-bottom-h2">Stop Struggling. Get Expert IT Job Support &amp; Interview Help Right Now.</h2>
+          <h2 className="lp-bottom-h2">{config.bottomCTAHeading ?? 'Stop Struggling. Get Expert IT Job Support & Interview Help Right Now.'}</h2>
           <p className="lp-bottom-sub">
-            Real developers. Real solutions. Job support and proxy interview assistance available 24/7 across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.
+            {config.bottomCTABody ?? 'Real developers. Real solutions. Job support and proxy interview assistance available 24/7 across USA, Canada, UK, Europe, Australia, Germany, Singapore, and New Zealand.'}
           </p>
           <CTAButtons variant="dark" />
           <div className="lp-contacts">

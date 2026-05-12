@@ -27,7 +27,7 @@ function PhoneIcon() {
 
 export default function ActionBanner({
   label = 'Expert Help Available',
-  headline = 'Need real-time IT job support or interview help? Our experts are available 24/7 — USA, UK, Canada & worldwide.',
+  headline = 'Need real-time IT job support or interview help? Our experts are available 24/7 — USA, Canada, UK, Europe & worldwide.',
 }: ActionBannerProps) {
   return (
     <div

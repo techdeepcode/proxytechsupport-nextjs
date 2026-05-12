@@ -114,7 +114,7 @@ export default function TechSection() {
             Technologies <span className="pts-landing-title__accent">We</span> Support
           </h2>
           <p style={{ color: 'var(--pts-text-subtle)', fontSize: '1.05rem' }}>
-            Expert support across all major IT technologies and frameworks
+            Expert proxy support across all major IT technologies and frameworks — real-time assistance for production systems, AI infrastructure, cloud-native platforms, and high-pressure delivery environments.
           </p>
         </div>
 
@@ -131,6 +131,21 @@ export default function TechSection() {
 
                 <div className="tech-card-glass__body">
                   {tech.description && <p className="tech-card-glass__desc">{tech.description}</p>}
+                  {tech.challenges && tech.challenges.length > 0 && (
+                    <div style={{ marginBottom: '0.85rem' }}>
+                      <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--pts-forest)', marginBottom: '0.4rem' }}>
+                        Common Challenges
+                      </p>
+                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                        {tech.challenges.map((c) => (
+                          <li key={c} style={{ fontSize: '0.78rem', color: 'var(--pts-text-subtle)', lineHeight: 1.45, paddingLeft: '0.85rem', position: 'relative' }}>
+                            <span aria-hidden style={{ position: 'absolute', left: 0, color: 'var(--pts-accent)' }}>•</span>
+                            {c}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   <div className="tech-pills">
                     {tech.tags.map((tag, i) => (
                       <span key={`${tech.id}-${i}-${tag}`} className="tech-pill">
@@ -140,7 +155,7 @@ export default function TechSection() {
                   </div>
                   {tech.href && (
                     <div style={{ marginTop: '0.85rem' }}>
-                      <span className="tech-card-cta">Get Support →</span>
+                      <span className="tech-card-cta">{tech.cta ?? 'Get Support →'}</span>
                     </div>
                   )}
                 </div>

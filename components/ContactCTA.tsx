@@ -163,9 +163,9 @@ export default function ContactCTA() {
 
       <div className="contact-cta-inner">
         <p className="contact-cta-eyebrow">Ready to get started?</p>
-        <h2 className="contact-cta-title">Contact us today and let our experts help you succeed</h2>
+        <h2 className="contact-cta-title">Need Urgent Proxy Interview Support or IT Job Help?</h2>
         <p className="contact-cta-sub">
-          In your IT career with our IT job support and interview assistance services
+          Get real-time support for proxy interviews, production issues, standups, coding rounds, client meetings, system design discussions, profile engineering, and high-pressure enterprise project situations.
         </p>
 
         <div className="contact-cta-btns">
@@ -176,17 +176,21 @@ export default function ContactCTA() {
             className="contact-cta-btn-wa"
           >
             <WhatsAppIcon color="#ffffff" />
-            WhatsApp Now
+            Get Live Help Now
           </a>
           <a href="tel:+919660614469" className="contact-cta-btn-ghost">
             <PhoneIcon color="#ffffff" />
-            Call Now
+            Talk on WhatsApp
           </a>
           <a href="mailto:support@proxytechsupport.com" className="contact-cta-btn-ghost">
             <MailIcon color="#ffffff" />
-            Email Us
+            Send an Email
           </a>
         </div>
+
+        <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+          ⚡ Same-day support may be available for urgent proxy interviews, production escalations, profile engineering, and critical technical situations.
+        </p>
 
         <div className="contact-cta-contact-row">
           <div className="contact-cta-contact-item">
