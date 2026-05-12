@@ -262,7 +262,7 @@ export default function Navbar({ variant = 'light' }: Props) {
                     className="nav-job-support-btn"
                     aria-haspopup="menu"
                     aria-expanded={openDropdown === 'jobSupport'}
-                    onClick={() => setOpenDropdown((cur) => (cur === 'jobSupport' ? null : 'jobSupport'))}
+                    onClick={() => openDropdownNow('jobSupport')}
                     style={{
                       background: 'var(--pts-accent)',
                       border: 'none',
@@ -286,10 +286,8 @@ export default function Navbar({ variant = 'light' }: Props) {
                   </button>
                   {openDropdown === 'jobSupport' && (
                     <div
-                      style={{ ...dropdownPanel, minWidth: '280px', transform: 'translateY(0.1rem)' }}
+                      style={{ ...dropdownPanel, minWidth: '280px' }}
                       role="menu"
-                      onMouseEnter={() => openDropdownNow('jobSupport')}
-                      onMouseLeave={() => closeDropdownSoon()}
                     >
                       {jobSupportLinks.filter((item) => !item.hidden).map((item) => (
                         <Link
@@ -324,7 +322,7 @@ export default function Navbar({ variant = 'light' }: Props) {
                     className="nav-locations-btn"
                     aria-haspopup="menu"
                     aria-expanded={openDropdown === 'locations'}
-                    onClick={() => setOpenDropdown((cur) => (cur === 'locations' ? null : 'locations'))}
+                    onClick={() => openDropdownNow('locations')}
                     style={{
                       background: 'transparent',
                       border: '1.5px solid var(--pts-forest)',
@@ -347,10 +345,8 @@ export default function Navbar({ variant = 'light' }: Props) {
                   </button>
                   {openDropdown === 'locations' && (
                     <div
-                      style={{ ...dropdownPanel, minWidth: '220px', transform: 'translateY(0.1rem)' }}
+                      style={{ ...dropdownPanel, minWidth: '220px' }}
                       role="menu"
-                      onMouseEnter={() => openDropdownNow('locations')}
-                      onMouseLeave={() => closeDropdownSoon()}
                     >
                       {locationNavLinks.map((item) => (
                         <Link
@@ -385,7 +381,7 @@ export default function Navbar({ variant = 'light' }: Props) {
                     className="nav-interview-btn"
                     aria-haspopup="menu"
                     aria-expanded={openDropdown === 'interview'}
-                    onClick={() => setOpenDropdown((cur) => (cur === 'interview' ? null : 'interview'))}
+                    onClick={() => openDropdownNow('interview')}
                     style={{
                       background: 'transparent',
                       border: '1.5px solid var(--pts-forest)',
@@ -410,10 +406,8 @@ export default function Navbar({ variant = 'light' }: Props) {
                   </button>
                   {openDropdown === 'interview' && (
                     <div
-                      style={{ ...dropdownPanel, minWidth: '240px', transform: 'translateY(0.1rem)' }}
+                      style={{ ...dropdownPanel, minWidth: '240px' }}
                       role="menu"
-                      onMouseEnter={() => openDropdownNow('interview')}
-                      onMouseLeave={() => closeDropdownSoon()}
                     >
                       {interviewNavLinks.map((item) => (
                         <Link
