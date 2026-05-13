@@ -10,76 +10,60 @@ export const dynamic = 'force-static';
 
 const BASE = 'https://proxytechsupport.com';
 
-/** Map legacy string priorities to MetadataRoute numeric 0–1 */
-function prio(p: string): number {
-  const n = Number.parseFloat(p);
-  return Number.isFinite(n) ? Math.min(1, Math.max(0, n)) : 0.7;
-}
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const today = new Date().toISOString().split('T')[0];
 
   const [posts, interviews] = await Promise.all([getAllPosts(), getAllInterviews()]);
 
   const getInterviewScheduledRoutes: MetadataRoute.Sitemap = [
-    { url: `${BASE}/get-interview-scheduled/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
-    { url: `${BASE}/get-interview-scheduled-usa/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
-    { url: `${BASE}/get-interview-scheduled-uk/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
-    { url: `${BASE}/get-interview-scheduled-canada/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
-    { url: `${BASE}/get-interview-scheduled-australia/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.9') },
-    { url: `${BASE}/get-interview-scheduled-ireland/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-germany/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-netherlands/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-sweden/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-denmark/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-finland/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-norway/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-switzerland/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-austria/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-belgium/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-spain/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-portugal/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-new-zealand/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-singapore/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/get-interview-scheduled-hong-kong/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
+    { url: `${BASE}/get-interview-scheduled/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-usa/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-uk/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-canada/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-australia/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-ireland/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-germany/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-netherlands/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-sweden/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-denmark/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-finland/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-norway/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-switzerland/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-austria/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-belgium/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-spain/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-portugal/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-new-zealand/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-singapore/`, lastModified: today },
+    { url: `${BASE}/get-interview-scheduled-hong-kong/`, lastModified: today },
   ];
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: `${BASE}/`, lastModified: today, changeFrequency: 'weekly', priority: prio('1.0') },
-    { url: `${BASE}/blog/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/interviews/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/interview-questions/`, lastModified: today, changeFrequency: 'weekly', priority: prio('0.8') },
-    { url: `${BASE}/technologies/`, lastModified: today, changeFrequency: 'monthly', priority: prio('0.3') },
+    { url: `${BASE}/`, lastModified: today },
+    { url: `${BASE}/blog/`, lastModified: today },
+    { url: `${BASE}/interviews/`, lastModified: today },
+    { url: `${BASE}/interview-questions/`, lastModified: today },
+    { url: `${BASE}/technologies/`, lastModified: today },
     ...getInterviewScheduledRoutes,
     ...allLandingPages.map((p) => ({
       url: p.canonical,
       lastModified: today,
-      changeFrequency: 'weekly' as const,
-      priority: prio('0.9'),
     })),
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => {
-    const url = getCanonicalUrlForPost(post);
     const last =
-      post.date && post.date.length >= 10 ? post.date : today;
+      post.lastmod?.trim() ? new Date(post.lastmod) : post.date ? new Date(`${post.date}T12:00:00Z`) : new Date(today);
     return {
-      url,
-      lastModified: last,
-      changeFrequency: 'weekly' as const,
-      priority: prio('0.7'),
+      url: getCanonicalUrlForPost(post),
+      lastModified: Number.isNaN(last.getTime()) ? today : last.toISOString().split('T')[0],
     };
   });
 
-  const interviewRoutes: MetadataRoute.Sitemap = interviews.map((i) => {
-    const last = i.date && i.date.length >= 10 ? i.date : today;
-    return {
-      url: getCanonicalInterviewUrl(i.slug),
-      lastModified: last,
-      changeFrequency: 'weekly' as const,
-      priority: prio('0.7'),
-    };
-  });
+  const interviewRoutes: MetadataRoute.Sitemap = interviews.map((i) => ({
+    url: getCanonicalInterviewUrl(i.slug),
+    lastModified: today,
+  }));
 
   return [...staticRoutes, ...postRoutes, ...interviewRoutes];
 }

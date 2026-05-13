@@ -784,6 +784,27 @@ export default function LandingPageTemplate({ config }: Props) {
         </nav>
       )}
 
+      {/* ── CASE STUDY / MARKET CONTEXT ──────────────────────────────────── */}
+      {config.caseStudySection && (
+        <section className="lp-section-white">
+          <div className="lp-inner" style={{ maxWidth: '720px' }}>
+            <h2 className="lp-h2">{config.caseStudySection.heading}</h2>
+            <p style={{ fontSize: '0.97rem', color: 'var(--pts-text-muted)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+              {config.caseStudySection.body}
+            </p>
+            <a
+              href={config.caseStudySection.linkHref}
+              style={{
+                fontSize: '0.95rem', color: 'var(--pts-forest)', fontWeight: 600,
+                textDecoration: 'underline', textDecorationColor: 'rgba(3,98,76,0.4)',
+              }}
+            >
+              {config.caseStudySection.linkText}
+            </a>
+          </div>
+        </section>
+      )}
+
       {/* ── BOTTOM CTA ────────────────────────────────────────────────────── */}
       <section className="lp-section-dark">
         <div className="lp-bottom-inner">

@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = getCanonicalUrlForPost(post);
   const title = `${post.title} | Proxy Tech Support`;
   const published = post.date ? `${post.date}T12:00:00.000Z` : undefined;
+  const modified = post.lastmod ?? published;
 
   return {
     title,
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: 'Proxy Tech Support',
       locale: 'en_US',
       publishedTime: published,
-      modifiedTime: published,
+      modifiedTime: modified,
       images: [defaultOgImage],
     },
     twitter: {
@@ -79,6 +80,7 @@ export default async function SlugPage({ params }: Props) {
         headline={post.title}
         description={post.description}
         datePublished={post.date}
+        dateModified={post.lastmod}
         url={url}
         type={isJobSupportSlug(slug) ? 'TechArticle' : 'BlogPosting'}
         about={post.about}

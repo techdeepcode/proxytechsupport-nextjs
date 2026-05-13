@@ -58,6 +58,7 @@ export function landingPageMetadata(config: {
   ogDescription?: string;
   twitterTitle?: string;
   twitterDescription?: string;
+  lastmod?: string;
 }) {
   return {
     title: config.title,
@@ -65,6 +66,7 @@ export function landingPageMetadata(config: {
     keywords: config.keywords,
     alternates: { canonical: config.canonical },
     robots: { index: true, follow: true },
+    ...(config.lastmod ? { other: { 'article:modified_time': config.lastmod } } : {}),
     openGraph: {
       type: 'website' as const,
       title: config.ogTitle ?? config.title,

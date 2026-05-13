@@ -38,6 +38,13 @@ export interface LandingRelatedLinks {
   additionalLinks?: LandingRelatedLink[];
 }
 
+export interface LandingCaseStudySection {
+  heading: string;
+  body: string;
+  linkText: string;
+  linkHref: string;
+}
+
 export interface LandingPageConfig {
   slug: string;
   title: string;
@@ -87,6 +94,12 @@ export interface LandingPageConfig {
 
   /** Geo-specific internal cross-links (2 geo + 2 tech + 1 problem + 1 proxy + optional blog). */
   relatedLinks?: LandingRelatedLinks;
+
+  /** Optional market context / case study section rendered before the bottom CTA. */
+  caseStudySection?: LandingCaseStudySection;
+
+  /** ISO timestamp for article:modified_time meta tag when different from publish date. */
+  lastmod?: string;
 }
 
 // ─── Shared base URL ────────────────────────────────────────────────────────
@@ -232,6 +245,13 @@ export const jobSupportUSA: LandingPageConfig = {
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
   },
+  caseStudySection: {
+    heading: 'Why US Tech Hiring Is Harder in 2026',
+    body: 'The US market has entered a "skills-first" hiring phase where 87% of tech leaders prioritize specialized domain expertise over general coding ability. This is exactly why real-time job support and proxy interview help have become critical for developers in the US market. We analyzed the full picture in our latest market report:',
+    linkText: 'Read: USA Tech Job Market 2026 — In-Demand Skills and Roles →',
+    linkHref: '/blog/usa-tech-job-market-2026-in-demand-skills-roles/',
+  },
+  lastmod: '2026-05-13T14:30:00.000Z',
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -2762,6 +2782,13 @@ export const devopsProxyInterviewSupport: LandingPageConfig = {
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
     ],
   },
+  caseStudySection: {
+    heading: '2026 DevOps Market Context',
+    body: 'The US DevOps job market in 2026 has shifted toward Platform Engineering and FinOps — roles that demand a much higher bar in technical interviews. Senior engineers with 5+ years are in short supply, but competition for those roles is intense. We published a full breakdown of what US tech employers are actually looking for this year:',
+    linkText: 'Read: USA Tech Job Market 2026 — In-Demand Skills and Roles →',
+    linkHref: '/blog/usa-tech-job-market-2026-in-demand-skills-roles/',
+  },
+  lastmod: '2026-05-13T14:30:00.000Z',
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

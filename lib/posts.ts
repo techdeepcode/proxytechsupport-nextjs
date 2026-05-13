@@ -14,6 +14,8 @@ export type PostData = {
   about?: string;
   /** Optional FAQs to emit as FAQPage JSON-LD alongside the article schema. */
   faqs?: ArticleFaq[];
+  /** Override for og:article:modified_time when different from the published date. */
+  lastmod?: string;
   /** Server Component that renders the article body (HTML/TSX). */
   Article: ComponentType;
 };
@@ -31,6 +33,7 @@ function toPostData(): PostData[] {
     permalink: meta.permalink?.trim() ? meta.permalink.trim() : undefined,
     about: (meta as Record<string, unknown>).about as string | undefined,
     faqs: (meta as Record<string, unknown>).faqs as ArticleFaq[] | undefined,
+    lastmod: (meta as Record<string, unknown>).lastmod as string | undefined,
     Article,
   }));
 }

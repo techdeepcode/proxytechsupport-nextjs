@@ -90,8 +90,11 @@ import Article_java_developer_canada_banking from './java-developer-canada-banki
 import { meta as meta_java_developer_canada_banking } from './java-developer-canada-banking/meta';
 import Article_ai_ml_engineer_jobs_canada from './ai-ml-engineer-jobs-canada/Article';
 import { meta as meta_ai_ml_engineer_jobs_canada } from './ai-ml-engineer-jobs-canada/meta';
+import Article_indian_masters_graduates_canada_it_career_breakthrough_2026 from './indian-masters-graduates-canada-it-career-breakthrough-2026/Article';
+import { meta as meta_indian_masters_graduates_canada_it_career_breakthrough_2026 } from './indian-masters-graduates-canada-it-career-breakthrough-2026/meta';
 
 export const blogArticleEntries = [
+  { meta: meta_indian_masters_graduates_canada_it_career_breakthrough_2026, Article: Article_indian_masters_graduates_canada_it_career_breakthrough_2026 },
   { meta: meta_agentic_ai_ml_job_support, Article: Article_agentic_ai_ml_job_support },
   { meta: meta_data_science_job_support, Article: Article_data_science_job_support },
   { meta: meta_ai_workflow_automation_pipeline_job_support, Article: Article_ai_workflow_automation_pipeline_job_support },

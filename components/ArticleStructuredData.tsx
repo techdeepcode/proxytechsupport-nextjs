@@ -6,10 +6,12 @@ type Props = {
   headline: string;
   description: string;
   datePublished?: string;
+  /** ISO 8601 (e.g. meta.lastmod). When set, JSON-LD `dateModified` uses it instead of mirroring `datePublished`. */
+  dateModified?: string;
   url: string;
   /** TechArticle for job-support pages; BlogPosting for general blog content. */
   type?: 'BlogPosting' | 'Article' | 'TechArticle';
-  /** Technology / topic this article teaches — used in TechArticle `about` and `teaches`. */
+  /** Topic — TechArticle maps to `about` + `teaches`; BlogPosting sets schema.org `about` when present. */
   about?: string;
   /** FAQs to emit as an inline FAQPage schema alongside the article schema. */
   faqs?: ArticleFaq[];
@@ -19,12 +21,15 @@ export default function ArticleStructuredData({
   headline,
   description,
   datePublished,
+  dateModified,
   url,
   type = 'BlogPosting',
   about,
   faqs,
 }: Props) {
   const published = datePublished ? `${datePublished}T12:00:00+05:30` : undefined;
+  const modified =
+    dateModified?.trim() ? dateModified.trim() : published;
 
   const articleSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -45,7 +50,7 @@ export default function ArticleStructuredData({
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.png` },
     },
     image: `${SITE_URL}/images/previewimg.png`,
-    ...(published ? { datePublished: published, dateModified: published } : {}),
+    ...(published ? { datePublished: published, dateModified: modified ?? published } : {}),
     /**
      * Speakable specification — tells AI agents and voice assistants which
      * CSS selectors contain the most important extractable content.
@@ -56,6 +61,13 @@ export default function ArticleStructuredData({
       cssSelector: ['h1', 'h2', 'h3', '.post-content'],
     },
   };
+
+  if (type === 'BlogPosting' && about) {
+    articleSchema.about = {
+      '@type': 'Thing',
+      name: about,
+    };
+  }
 
   // TechArticle-specific properties
   if (type === 'TechArticle') {
