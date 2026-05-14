@@ -32,6 +32,13 @@ export const metadata: Metadata = {
   keywords: HOME_KEYWORDS.split(',').map((k) => k.trim()),
   alternates: {
     canonical: 'https://proxytechsupport.com/',
+    languages: {
+      'en-US': 'https://proxytechsupport.com/',
+      'en-CA': 'https://proxytechsupport.com/',
+      'en-GB': 'https://proxytechsupport.com/',
+      'en-AU': 'https://proxytechsupport.com/',
+      'x-default': 'https://proxytechsupport.com/',
+    },
   },
   openGraph: {
     title: HOME_OG_TITLE,

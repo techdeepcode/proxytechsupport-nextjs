@@ -18,7 +18,16 @@ const blogDescription =
 export const metadata: Metadata = {
   title: blogTitle,
   description: blogDescription,
-  alternates: { canonical },
+  alternates: {
+    canonical,
+    languages: {
+      'en-US': canonical,
+      'en-CA': canonical,
+      'en-GB': canonical,
+      'en-AU': canonical,
+      'x-default': canonical,
+    },
+  },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',

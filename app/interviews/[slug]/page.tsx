@@ -33,7 +33,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ...(interview.keywords
       ? { keywords: interview.keywords.split(',').map((k) => k.trim()) }
       : {}),
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      languages: {
+        'en-US': canonical,
+        'en-CA': canonical,
+        'en-GB': canonical,
+        'en-AU': canonical,
+        'x-default': canonical,
+      },
+    },
     robots: { index: true, follow: true },
     openGraph: {
       type: 'article',

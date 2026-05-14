@@ -15,7 +15,16 @@ const shortDescription =
 export const metadata: Metadata = {
   title: pageTitle,
   description: shortDescription,
-  alternates: { canonical },
+  alternates: {
+    canonical,
+    languages: {
+      'en-US': canonical,
+      'en-CA': canonical,
+      'en-GB': canonical,
+      'en-AU': canonical,
+      'x-default': canonical,
+    },
+  },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',

@@ -64,7 +64,16 @@ export function landingPageMetadata(config: {
     title: config.title,
     description: config.description,
     keywords: config.keywords,
-    alternates: { canonical: config.canonical },
+    alternates: {
+      canonical: config.canonical,
+      languages: {
+        'en-US': config.canonical,
+        'en-CA': config.canonical,
+        'en-GB': config.canonical,
+        'en-AU': config.canonical,
+        'x-default': config.canonical,
+      },
+    },
     robots: { index: true, follow: true },
     ...(config.lastmod ? { other: { 'article:modified_time': config.lastmod } } : {}),
     openGraph: {

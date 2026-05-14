@@ -45,10 +45,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/interview-questions/`, lastModified: today },
     { url: `${BASE}/technologies/`, lastModified: today },
     ...getInterviewScheduledRoutes,
-    ...allLandingPages.map((p) => ({
-      url: p.canonical,
-      lastModified: today,
-    })),
+    ...allLandingPages.map((p) => {
+      if (p.lastmod) {
+        const d = new Date(p.lastmod);
+        return { url: p.canonical, lastModified: Number.isNaN(d.getTime()) ? today : d.toISOString().split('T')[0] };
+      }
+      return { url: p.canonical, lastModified: today };
+    }),
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => {
@@ -64,7 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   function interviewSitemapLastModified(i: (typeof interviews)[number]): string {
     const raw = i.lastmod?.trim() || i.date?.trim();
     if (!raw) return today;
-    const d = new Date(`${raw}T12:00:00.000Z`);
+    const d = new Date(raw.includes('T') ? raw : `${raw}T12:00:00.000Z`);
     return Number.isNaN(d.getTime()) ? today : d.toISOString().split('T')[0];
   }
 
