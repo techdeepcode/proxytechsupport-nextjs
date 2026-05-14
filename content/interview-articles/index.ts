@@ -16,6 +16,8 @@ import Article_2026_04_14_real_frontend_developer_interview_questions_react_type
 import { meta as meta_2026_04_14_real_frontend_developer_interview_questions_react_typescript_aws_cicd_microfrontend } from './2026-04-14-real-frontend-developer-interview-questions-react-typescript-aws-cicd-microfrontend/meta';
 import Article_2026_04_10_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops from './2026-04-10-cloud-operations-engineer-real-interview-questions-azure-aks-sql-gitops/Article';
 import { meta as meta_2026_04_10_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops } from './2026-04-10-cloud-operations-engineer-real-interview-questions-azure-aks-sql-gitops/meta';
+import Article_2026_02_24_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops from './2026-02-24-cloud-operations-engineer-real-interview-questions-azure-aks-sql-gitops/Article';
+import { meta as meta_2026_02_24_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops } from './2026-02-24-cloud-operations-engineer-real-interview-questions-azure-aks-sql-gitops/meta';
 import Article_2026_04_07_cloud_platforms_engineer_real_interview_questions_azure_m365_security_automation from './2026-04-07-cloud-platforms-engineer-real-interview-questions-azure-m365-security-automation/Article';
 import { meta as meta_2026_04_07_cloud_platforms_engineer_real_interview_questions_azure_m365_security_automation } from './2026-04-07-cloud-platforms-engineer-real-interview-questions-azure-m365-security-automation/meta';
 import Article_2026_04_03_real_enterprise_developer_interview_questions_kubernetes_aws_devops_security_usa_uk_canada_australia from './2026-04-03-real-enterprise-developer-interview-questions-kubernetes-aws-devops-security-usa-uk-canada-australia/Article';
@@ -32,6 +34,7 @@ export const interviewArticleEntries = [
   { meta: meta_2026_04_20_real_sap_abap_interview_questions_otc_pricing_odata_btp, Article: Article_2026_04_20_real_sap_abap_interview_questions_otc_pricing_odata_btp },
   { meta: meta_2026_04_14_real_frontend_developer_interview_questions_react_typescript_aws_cicd_microfrontend, Article: Article_2026_04_14_real_frontend_developer_interview_questions_react_typescript_aws_cicd_microfrontend },
   { meta: meta_2026_04_10_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops, Article: Article_2026_04_10_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops },
+  { meta: meta_2026_02_24_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops, Article: Article_2026_02_24_cloud_operations_engineer_real_interview_questions_azure_aks_sql_gitops },
   { meta: meta_2026_04_07_cloud_platforms_engineer_real_interview_questions_azure_m365_security_automation, Article: Article_2026_04_07_cloud_platforms_engineer_real_interview_questions_azure_m365_security_automation },
   { meta: meta_2026_04_03_real_enterprise_developer_interview_questions_kubernetes_aws_devops_security_usa_uk_canada_australia, Article: Article_2026_04_03_real_enterprise_developer_interview_questions_kubernetes_aws_devops_security_usa_uk_canada_australia },
   { meta: meta_2026_04_01_real_enterprise_developer_interview_questions_dotnet_sql_angular_cloud, Article: Article_2026_04_01_real_enterprise_developer_interview_questions_dotnet_sql_angular_cloud },

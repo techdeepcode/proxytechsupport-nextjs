@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllInterviewSlugs, getInterviewBySlug } from '@/lib/interviews';
-import { getCanonicalInterviewUrl } from '@/lib/interview-canonical';
+import { getInterviewCanonicalUrl } from '@/lib/interview-canonical';
 import PostLayout from '@/components/PostLayout';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import { defaultOgImage } from '@/lib/site-seo';
@@ -20,9 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const interview = await getInterviewBySlug(slug);
   if (!interview) return {};
 
-  const canonical = getCanonicalInterviewUrl(interview.slug);
+  const canonical = getInterviewCanonicalUrl(interview);
   const title = `${interview.title} | Proxy Tech Support`;
   const published = interview.date ? `${interview.date}T12:00:00.000Z` : undefined;
+  const modifiedIso = interview.lastmod?.trim()
+    ? `${interview.lastmod.trim()}T12:00:00.000Z`
+    : published;
 
   return {
     title,
@@ -40,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: 'Proxy Tech Support',
       locale: 'en_US',
       publishedTime: published,
-      modifiedTime: published,
+      modifiedTime: modifiedIso ?? published,
       images: [defaultOgImage],
     },
     twitter: {
@@ -58,7 +61,7 @@ export default async function InterviewPostPage({ params }: Props) {
   if (!interview) notFound();
 
   const Article = interview.Article;
-  const url = getCanonicalInterviewUrl(interview.slug);
+  const url = getInterviewCanonicalUrl(interview);
 
   return (
     <>
@@ -66,6 +69,7 @@ export default async function InterviewPostPage({ params }: Props) {
         headline={interview.title}
         description={interview.description}
         datePublished={interview.date}
+        dateModified={interview.lastmod?.trim()}
         url={url}
         type="Article"
       />

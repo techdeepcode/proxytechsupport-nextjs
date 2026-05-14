@@ -3,6 +3,10 @@ import { interviewArticleEntries } from '@/content/interview-articles';
 
 export type InterviewData = {
   slug: string;
+  /** When set, SEO canonical + structured data use this slug’s URL (legacy alias). */
+  canonicalSlug?: string;
+  /** YYYY-MM-DD — sitemap lastmod + article modified signals; overrides `date` when newer. */
+  lastmod?: string;
   title: string;
   description: string;
   date: string;
@@ -17,6 +21,8 @@ let cached: InterviewData[] | null = null;
 function toInterviewData(): InterviewData[] {
   return interviewArticleEntries.map(({ meta, Article }) => ({
     slug: meta.slug,
+    canonicalSlug: (meta as { canonicalSlug?: string }).canonicalSlug,
+    lastmod: (meta as { lastmod?: string }).lastmod?.trim() || undefined,
     title: meta.title,
     description: meta.description,
     date: meta.date,

@@ -8,3 +8,11 @@ export function getCanonicalInterviewPath(slug: string): string {
 export function getCanonicalInterviewUrl(slug: string): string {
   return `${SITE}${getCanonicalInterviewPath(slug)}`;
 }
+
+/** Public canonical URL for an interview (alias pages point at the primary slug). */
+export function getInterviewCanonicalUrl(interview: {
+  slug: string;
+  canonicalSlug?: string;
+}): string {
+  return getCanonicalInterviewUrl(interview.canonicalSlug ?? interview.slug);
+}

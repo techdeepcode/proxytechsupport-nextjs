@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/posts';
 import { getCanonicalUrlForPost } from '@/lib/post-canonical';
 import { getAllInterviews } from '@/lib/interviews';
-import { getCanonicalInterviewUrl } from '@/lib/interview-canonical';
+import { getInterviewCanonicalUrl } from '@/lib/interview-canonical';
 import { allLandingPages } from '@/data/landing-pages';
 
 /** Required so `output: 'export'` can emit `/sitemap.xml` at build time. */
@@ -60,10 +60,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const interviewRoutes: MetadataRoute.Sitemap = interviews.map((i) => ({
-    url: getCanonicalInterviewUrl(i.slug),
-    lastModified: today,
-  }));
+  /** Sitemap lastModified: `lastmod` when set, else publication `date`, else build date. */
+  function interviewSitemapLastModified(i: (typeof interviews)[number]): string {
+    const raw = i.lastmod?.trim() || i.date?.trim();
+    if (!raw) return today;
+    const d = new Date(`${raw}T12:00:00.000Z`);
+    return Number.isNaN(d.getTime()) ? today : d.toISOString().split('T')[0];
+  }
+
+  /** Alias + primary can share one canonical URL — keep the latest lastModified. */
+  const interviewByCanonicalUrl = new Map<string, string>();
+  for (const i of interviews) {
+    const url = getInterviewCanonicalUrl(i);
+    const lm = interviewSitemapLastModified(i);
+    const prev = interviewByCanonicalUrl.get(url);
+    if (!prev || lm > prev) interviewByCanonicalUrl.set(url, lm);
+  }
+
+  const interviewRoutes: MetadataRoute.Sitemap = [...interviewByCanonicalUrl.entries()].map(
+    ([url, lastModified]) => ({ url, lastModified }),
+  );
 
   return [...staticRoutes, ...postRoutes, ...interviewRoutes];
 }

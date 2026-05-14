@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export default async function InterviewQuestionsPage() {
-  const interviews = await getAllInterviews();
+  const interviews = (await getAllInterviews()).filter((i) => !i.canonicalSlug);
 
   return (
     <>
