@@ -9,6 +9,7 @@ const locationLinks = [
   { label: 'Job Support Europe', href: '/job-support-europe/' },
   { label: 'Job Support Australia', href: '/job-support-australia/' },
   { label: 'Job Support Germany', href: '/job-support-germany/' },
+  { label: 'Job Support Ireland', href: '/job-support-ireland/' },
   { label: 'Job Support Singapore', href: '/job-support-singapore/' },
   { label: 'Job Support New Zealand', href: '/job-support-newzealand/' },
 ];
@@ -33,6 +34,8 @@ const proxyInterviewLinks = [
   { label: 'Proxy Interview Canada', href: '/proxy-interview-canada/' },
   { label: 'Proxy Interview UK', href: '/proxy-interview-uk/' },
   { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
+  { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+  { label: 'Proxy Interview Ireland', href: '/interview-proxy-support-ireland/' },
   { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
   { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
 ];

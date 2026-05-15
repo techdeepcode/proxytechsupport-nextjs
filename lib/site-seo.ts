@@ -71,6 +71,7 @@ export function landingPageMetadata(config: {
         'en-CA': config.canonical,
         'en-GB': config.canonical,
         'en-AU': config.canonical,
+        'en-IE': config.canonical,
         'x-default': config.canonical,
       },
     },

@@ -5320,6 +5320,1018 @@ export const itJobSupportMontreal: LandingPageConfig = {
   },
 };
 
+// ═══════════════════════════════════════════════════════════════════════════
+// IRELAND LANDING PAGES
+// ═══════════════════════════════════════════════════════════════════════════
+
+export const jobSupportIreland: LandingPageConfig = {
+  slug: 'job-support-ireland',
+  title: 'IT Job Support Ireland – Real-Time Developer Help for Irish Tech Professionals',
+  description:
+    'Need IT job support in Ireland? Real-time developer help for remote and hybrid professionals on Irish projects. Dublin multinationals, pharma, financial services. IST/GMT hours. Start same-day.',
+  canonical: `${BASE_URL}/job-support-ireland/`,
+  keywords: [
+    'IT job support Ireland', 'developer job support Ireland', 'real-time job support Ireland',
+    'job support Dublin', 'IT help Ireland', 'remote IT support Ireland',
+    'contractor support Ireland', 'software developer help Ireland',
+  ],
+  ogTitle: 'IT Job Support Ireland – Real-Time Expert Help for Irish Tech Professionals',
+  ogDescription: 'Remote real-time IT job support for developers and contractors on Irish projects. Dublin multinationals, pharma, financial services. IST/GMT aligned. Start same-day.',
+  h1: 'Real-Time IT Job Support for Professionals Working in Ireland',
+  tagline: 'Live developer support for remote and hybrid IT professionals working on Irish projects — multinationals, financial services, pharma, and enterprise delivery covered.',
+  heroEyebrow: 'Ireland IT Job Support — Real-Time, Remote, Confidential',
+  painIntro:
+    'Struggling with your Irish IT project — blocked on a sprint task, facing a production incident, or behind on deliverables before your next standup? Our in-house experts join your live working session and provide immediate, confidential technical help aligned with Irish Standard Time (IST) and Greenwich Mean Time (GMT).',
+  heroVariant:
+    "Ireland's technology sector is one of the most dynamic in Europe — anchored by Dublin's Silicon Docks multinationals (Google, Meta, Amazon, LinkedIn, Stripe, HubSpot, Salesforce, Oracle), a growing pharma IT market (Pfizer, AbbVie, Roche, Boston Scientific), and a thriving IFSC financial services technology ecosystem. Irish IT contractors and permanent professionals face unique delivery pressures: high client expectations from multinational delivery teams, enterprise-grade standards, and IST timezone constraints. Whether you are a contractor on a critical enterprise project, a permanent employee at a Dublin tech multinational, or a developer on a pharma IT team — our experts provide confidential, real-time job support exactly when you need it.",
+  heroUrgency: 'Available across IST and GMT hours — early-morning standup support, real-time delivery help, and emergency assistance covered.',
+  geoLine: 'Supporting IT professionals across Ireland, UK, Canada, USA, Australia, Germany, Singapore, and Europe.',
+  timezoneNote: 'Aligned with Irish Standard Time (IST, UTC+1) and Greenwich Mean Time (GMT, UTC+0).',
+  techSnippet:
+    'We support 50+ technologies used on Irish projects: Java, Python, .NET, React, Node.js, AWS, Azure, Kubernetes, DevOps, AI/ML, and enterprise delivery tooling.',
+  highlights: [
+    {
+      title: 'Real-Time Job Support for Irish IT Contractors',
+      description:
+        'Immediate live assistance for contractors working on Irish client projects — sprint task delivery, coding, debugging, architecture decisions, and production issue resolution. No delays, no middlemen.',
+    },
+    {
+      title: 'Multinational Enterprise Project Support',
+      description:
+        "Expert backup for professionals working at Dublin's tech multinationals — high delivery standards, complex enterprise codebases, and tight client SLAs handled confidentially.",
+    },
+    {
+      title: 'Pharma & Financial Services IT Support',
+      description:
+        'Specialised support for developers on Ireland pharma (Pfizer, AbbVie, Roche, MSD) and financial services (IFSC, AIB, Bank of Ireland, Zurich) technology projects — validated systems, compliance tooling, and enterprise integration handled.',
+    },
+    {
+      title: 'Interview Assistance & Proxy Support',
+      description:
+        'Live guidance during technical interviews for Irish IT roles — coding rounds, system design, DevOps/SRE probes, and AI/ML interviews. Real-time confidential support from our in-house experts.',
+    },
+    {
+      title: 'AI/ML, DevOps & SRE Job Support',
+      description:
+        'Hands-on support for AI/ML engineers, DevOps professionals, and SREs working at Irish tech companies — cloud deployments, MLOps pipelines, Kubernetes management, CI/CD, and observability tooling.',
+    },
+    {
+      title: 'Production Issue & Emergency Support',
+      description:
+        'Immediate response for production incidents, release failures, and live system issues affecting Irish project delivery. Our experts join your environment and help resolve critical issues fast.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What IT job support do you provide for professionals working in Ireland?',
+      answer:
+        'We provide real-time IT job support for developers and contractors working on Irish projects — both in Dublin and across Ireland remotely. This includes live coding assistance, sprint task delivery, debugging, architecture guidance, production issue resolution, and interview proxy support. We cover 50+ technologies and align with Irish Standard Time (IST) and GMT working hours. Most clients start same-day.',
+    },
+    {
+      question: 'Can you support IT contractors working on Irish client projects?',
+      answer:
+        'Yes — a significant portion of our Ireland clients are contractors. Irish contracting engagements typically involve high delivery expectations, complex enterprise codebases, and limited onboarding time. Our experts provide confidential real-time job support so you can deliver at the standard expected on your Irish contract, from day one.',
+    },
+    {
+      question: 'Do you provide interview proxy support for Ireland tech roles?',
+      answer:
+        'Yes. We provide live guidance during technical interviews for Ireland IT roles — including coding rounds, system design discussions, DevOps/SRE probes, and AI/ML interviews at Dublin-based multinationals and Irish tech companies. Contact us on WhatsApp ahead of your interview and we will have the right expert ready.',
+    },
+    {
+      question: 'What Irish industries and sectors do you cover?',
+      answer:
+        'We support professionals across all major Irish tech sectors: multinational tech companies in Dublin Silicon Docks (Google, Meta, Amazon, LinkedIn, Stripe, HubSpot), IFSC financial services (AIB, Bank of Ireland, Zurich, JP Morgan Dublin, Citi), pharma and life sciences IT (Pfizer, AbbVie, Roche, MSD, Boston Scientific), enterprise software consulting, and Irish tech startups and scale-ups.',
+    },
+    {
+      question: 'What time zone do you work in for Ireland clients?',
+      answer:
+        'We align with Irish Standard Time (IST, UTC+1 in summer) and Greenwich Mean Time (GMT, UTC+0 in winter). Whether you need early-morning job support before a 9 AM Dublin standup, real-time assistance during business hours, or late-evening emergency help before an Irish release window — we are available.',
+    },
+    {
+      question: 'Is the service confidential for Irish professionals?',
+      answer:
+        'Absolutely. All support sessions are completely confidential. We sign NDAs on request and never share your details with any third party — including your employer or client. This is especially important for contractors on Irish client projects, where discretion is critical.',
+    },
+    {
+      question: 'How do I get started with Ireland IT job support?',
+      answer:
+        'Contact us on WhatsApp with your technology stack and current challenge. We will assign the right in-house expert to your case and you can start same-day. No lengthy onboarding — just immediate, expert help.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Real Situations We Help Irish IT Professionals With',
+    cases: [
+      'Resolving sprint blockers for contractors on Dublin enterprise and multinational project deliveries',
+      'Supporting Java, Python, and .NET developers working on IFSC financial services technology systems',
+      'Providing real-time debugging help before IST morning standups and critical release windows',
+      'Helping cloud and DevOps engineers manage AWS, Azure, and Kubernetes deployments on Irish projects',
+      'Assisting AI/ML professionals with Python, model deployment, and MLOps pipelines at Dublin tech companies',
+      'Real-time interview proxy guidance for Ireland-based candidates during technical rounds at multinational companies',
+      'Supporting pharma IT developers with validated systems, GxP compliance tooling, and enterprise integrations',
+      'Emergency production issue support for Ireland-based professionals outside standard business hours',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview & Live Interview Assistance for Ireland Tech Roles',
+    intro:
+      "Technical interview processes at Ireland's multinational tech companies and financial services firms are rigorous and multi-stage. Whether you are facing a coding round at Google Dublin, a system design interview at a FAANG-adjacent company, or a technical screening for an Irish contracting role — our experts provide real-time, confidential guidance so you can perform at your best.",
+    points: [
+      'Live guidance during coding rounds for Google, Meta, Amazon, LinkedIn, Stripe, and HubSpot Dublin interviews',
+      'Real-time support during system design and architecture discussions for senior Irish engineering roles',
+      'Help with technical screening for Irish IT contracting roles — client assessment rounds covered',
+      'DevOps, SRE, cloud, and AI/ML interview support for Ireland-based roles',
+      'Mock interview practice calibrated to Irish multinational and financial services employer expectations',
+    ],
+  },
+  bottomCTAHeading: 'Get Real-Time IT Job Support for Your Irish Project Today',
+  bottomCTABody: 'Immediate, confidential expert help for IT professionals working in Ireland — IST/GMT hours, all major Irish sectors, same-day start.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support UK', href: '/job-support-uk/' },
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support', href: '/devops-job-support-usa/' },
+      { label: 'AI/ML job support', href: '/agentic-ai-ml-job-support-usa/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Dublin', href: '/it-job-support-dublin/' },
+      { label: 'Ireland interview proxy support', href: '/interview-proxy-support-ireland/' },
+      { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
+      { label: 'AI/ML DevOps SRE Ireland support', href: '/ai-ml-devops-sre-job-support-ireland/' },
+      { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const itJobSupportDublin: LandingPageConfig = {
+  slug: 'it-job-support-dublin',
+  title: 'IT Job Support Dublin – Real-Time Developer Help for Dublin Tech Professionals',
+  description:
+    'Need IT job support in Dublin? Remote real-time developer help for professionals at Silicon Docks multinationals, IFSC, Sandyford, and pharma IT. IST hours. Start same-day.',
+  canonical: `${BASE_URL}/it-job-support-dublin/`,
+  keywords: [
+    'IT job support Dublin', 'developer support Dublin', 'job help Dublin',
+    'remote IT job support Dublin', 'Dublin tech developer help', 'contractor support Dublin',
+    'Dublin fintech job support', 'Dublin enterprise IT support',
+  ],
+  ogTitle: 'IT Job Support Dublin – Remote Real-Time Help for Dublin IT Professionals',
+  ogDescription: 'Real-time developer job support for IT professionals and contractors working in Dublin — Silicon Docks, IFSC, Sandyford, and pharma sectors. IST aligned. Start same-day.',
+  h1: 'IT Job Support & Developer Assistance for Dublin Tech Professionals',
+  tagline: 'Confidential real-time job support for developers and IT contractors working on Dublin projects — Silicon Docks multinationals, IFSC financial tech, Sandyford campus, and pharma IT covered.',
+  heroEyebrow: 'Dublin IT Job Support — Remote, Real-Time, Confidential',
+  painIntro:
+    "Working in Dublin's demanding tech market and struggling to keep pace? Whether you are at a Silicon Docks multinational, an IFSC financial services firm, a Sandyford tech campus employer, or a pharma IT team in Leinster — our in-house experts provide immediate, confidential job support aligned with Dublin business hours.",
+  heroVariant:
+    "Dublin is the technology capital of Europe. The Silicon Docks neighbourhood hosts the European headquarters of Google, Meta, LinkedIn, HubSpot, Stripe, Salesforce, Oracle, and Zendesk. The IFSC is home to European operations of JP Morgan, Citi, Goldman Sachs, Bank of America, Zurich, and Aon. Sandyford and Leopardstown house major tech campuses including Workday, Indeed, and Google Cloud. Dublin pharma IT teams at Pfizer, AbbVie, Roche, MSD, and Boston Scientific run complex GxP-compliant technology environments. Dublin IT professionals work under intense delivery pressure from sophisticated clients across all these sectors. Our experts provide real-time, confidential job support so you can deliver at the standard Dublin's tech market demands.",
+  heroUrgency: 'Same-day start. IST business hours. Emergency out-of-hours response available.',
+  geoLine: 'Supporting Dublin IT professionals and contractors across all Dublin sectors and remote Irish projects.',
+  timezoneNote: 'Aligned with Dublin IST (Irish Standard Time) and GMT working hours.',
+  techSnippet:
+    'We support all Dublin tech stacks: Java, Python, .NET, React, Node.js, Angular, AWS, Azure, Kubernetes, Terraform, DevOps, SRE, AI/ML, and financial services technology.',
+  highlights: [
+    {
+      title: 'Silicon Docks Multinational Support',
+      description:
+        'Real-time job support for developers and engineers at Google, Meta, LinkedIn, HubSpot, Stripe, Salesforce, Oracle, and other Dublin Silicon Docks multinationals — high delivery standards, complex codebases, and competitive sprint expectations handled confidentially.',
+    },
+    {
+      title: 'IFSC Financial Services Technology Support',
+      description:
+        'Expert help for IT professionals working on financial services technology at JP Morgan, Citi, Goldman Sachs, AIB, Bank of Ireland, Zurich, and other IFSC institutions — trading systems, risk platforms, compliance tooling, and enterprise integrations.',
+    },
+    {
+      title: 'Pharma & Life Sciences IT Support',
+      description:
+        'Specialist support for IT professionals at Pfizer, AbbVie, Roche, MSD, Boston Scientific, and other Dublin pharma companies — GxP compliance systems, validated software environments, ERP integrations, and laboratory information systems.',
+    },
+    {
+      title: 'Dublin Contractor Project Support',
+      description:
+        'Immediate job support for IT contractors working on Dublin client engagements — rapid codebase onboarding, sprint delivery, debugging, and technical delivery confidence from day one of your contract.',
+    },
+    {
+      title: 'DevOps, Cloud & SRE Project Delivery',
+      description:
+        "Hands-on support for DevOps engineers, cloud architects, and SREs at Dublin's multinationals and enterprise clients — AWS/Azure deployments, Kubernetes management, CI/CD pipelines, observability, and incident response.",
+    },
+    {
+      title: 'Sandyford & Campus Support',
+      description:
+        'Expert job support for IT professionals working at Sandyford tech campus employers including Workday, Indeed, and technology consulting firms — enterprise delivery, agile sprints, and project onboarding.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Dublin sectors and employers do you provide IT job support for?',
+      answer:
+        "We support Dublin IT professionals across all major sectors: Silicon Docks multinationals (Google, Meta, LinkedIn, HubSpot, Stripe, Salesforce, Oracle), IFSC financial services (JP Morgan, Citi, Goldman Sachs, AIB, Bank of Ireland, Zurich, Aon), pharma and life sciences IT (Pfizer, AbbVie, Roche, MSD, Boston Scientific), Sandyford and Leopardstown tech campuses (Workday, Indeed), consulting firms (Accenture Ireland, Deloitte Digital, Capgemini Ireland), and Irish tech startups and scale-ups.",
+    },
+    {
+      question: 'Can you help with urgent sprint delivery on a Dublin project?',
+      answer:
+        'Yes. Sprint blockers are one of the most common reasons Dublin contractors and employees contact us. Our experts join your live working session, understand your codebase and context quickly, and help you deliver before your standup or sprint deadline. Same-day start — contact us on WhatsApp now.',
+    },
+    {
+      question: 'Do you provide proxy interview support for Dublin tech roles?',
+      answer:
+        "Yes. We provide real-time, discreet guidance during technical interviews at Dublin companies. Dublin interview formats vary significantly across employers — algorithmic coding at Silicon Docks multinationals, system design at senior levels, practical take-home assignments at startups, and technical screening rounds for contractor roles. We tailor our proxy support to your specific Dublin employer and role.",
+    },
+    {
+      question: 'Can you help with pharma IT and GxP-compliant project support in Dublin?',
+      answer:
+        "Yes. Our experts have experience supporting developers on Dublin pharma IT projects, including validated systems, GxP-compliant software development, CSV (Computer System Validation) processes, and enterprise ERP integrations. We understand the specific constraints of pharma IT delivery at Dublin's major pharma companies.",
+    },
+    {
+      question: 'What is your availability for Dublin business hours?',
+      answer:
+        'We are fully aligned with Dublin IST and GMT business hours. Whether you need real-time help before a 9 AM standup at a Silicon Docks multinational, immediate debugging support during IFSC business hours, or emergency assistance before a pharma IT release window — our experts are available throughout Dublin working hours.',
+    },
+    {
+      question: 'How quickly can I get started with Dublin IT job support?',
+      answer:
+        'Same day. Contact us on WhatsApp with your technology stack and current situation. We assign the right in-house expert immediately — no lengthy intake process, no delays.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Dublin IT Scenarios Our Experts Handle',
+    cases: [
+      'Sprint task delivery for contractors on Silicon Docks multinational projects with tight delivery standards',
+      'Financial services technology debugging for IFSC professionals working on trading, risk, and compliance systems',
+      'Pharma IT support for GxP-compliant software development at Dublin life sciences companies',
+      'DevOps and cloud incident resolution for Dublin-based engineers working on AWS and Azure environments',
+      'Technical interview proxy support for candidates applying to Dublin multinational engineering roles',
+      'Codebase onboarding for new Dublin contractors needing to deliver from day one',
+      'Python and AI/ML project support for Dublin tech company developers working on LLM and ML pipeline projects',
+      'Production issue emergency response for Dublin professionals during and outside IST business hours',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for Dublin IT Roles',
+    intro:
+      "Dublin's tech interview landscape is one of the most competitive in Europe. FAANG-adjacent interviews at Silicon Docks companies demand algorithmic fluency and system design depth. IFSC financial services assessments test domain-specific technical knowledge. Irish contractor screening rounds are practical and fast-moving. Our in-house experts provide real-time, confidential proxy interview guidance so you can perform at your peak for Dublin's most sought-after roles.",
+    points: [
+      'Live algorithmic coding guidance during Google, Meta, LinkedIn, and HubSpot Dublin technical interviews',
+      'System design and architecture support for senior engineering roles at Dublin multinationals',
+      'Financial technology interview assistance for IFSC roles at JP Morgan, Citi, and Goldman Sachs',
+      'Contractor client screening support — practical technical assessments and rapid evaluation rounds',
+      'DevOps, SRE, and cloud interview guidance for Dublin infrastructure and platform engineering roles',
+    ],
+  },
+  bottomCTAHeading: 'Get Real-Time IT Job Support for Your Dublin Project — Start Today',
+  bottomCTABody: 'Immediate, confidential expert help for Dublin IT professionals and contractors. All major Dublin sectors covered. IST hours. Same-day start.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Ireland', href: '/job-support-ireland/' },
+      { label: 'IT job support UK', href: '/job-support-uk/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support', href: '/devops-job-support-usa/' },
+      { label: 'Java job support', href: '/java-job-support-usa/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Ireland interview proxy support', href: '/interview-proxy-support-ireland/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Ireland interview proxy support', href: '/interview-proxy-support-ireland/' },
+      { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
+      { label: 'AI/ML DevOps SRE Ireland support', href: '/ai-ml-devops-sre-job-support-ireland/' },
+      { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+      { label: 'Project onboarding help Ireland', href: '/project-onboarding-help-ireland/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const interviewProxySupportIreland: LandingPageConfig = {
+  slug: 'interview-proxy-support-ireland',
+  title: 'Interview Proxy Support Ireland – Real-Time Technical Interview Guidance for Irish Candidates',
+  description:
+    'Need interview proxy support for Ireland tech roles? Real-time live guidance during coding rounds, system design, DevOps, AI/ML, and contractor screening interviews. Dublin multinationals covered.',
+  canonical: `${BASE_URL}/interview-proxy-support-ireland/`,
+  keywords: [
+    'interview proxy support Ireland', 'proxy interview Ireland', 'interview help Ireland',
+    'technical interview support Ireland', 'coding interview help Dublin',
+    'live interview guidance Ireland', 'interview proxy Dublin', 'interview assistance Ireland',
+  ],
+  ogTitle: 'Interview Proxy Support Ireland – Live Technical Interview Guidance',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Ireland. Coding, system design, DevOps, AI/ML, and contractor screening. Same-day availability.',
+  h1: 'Interview Proxy Support for IT Professionals Facing Technical Interviews in Ireland',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing for roles at Dublin multinationals, Irish financial services firms, and Ireland tech companies — coding, system design, DevOps, and AI/ML rounds covered.',
+  heroEyebrow: 'Ireland Interview Proxy Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a critical technical interview for an Ireland IT role — coding round, system design session, or contractor client screening — and need real-time expert backup? Our in-house experts join your interview session and provide discreet, live guidance so you perform at your peak.',
+  heroVariant:
+    "Ireland's tech interview landscape is among the most demanding in Europe. Google, Meta, Amazon, LinkedIn, and Stripe in Dublin run multi-round algorithmic and system design interviews. IFSC financial services firms conduct domain-specific technical assessments. Irish consulting firms and contractors run practical technical screenings. AI/ML, DevOps, and SRE roles at Dublin multinationals require deep technical depth. Our proxy interview experts have helped hundreds of candidates clear Ireland technical interview rounds — providing real-time, confidential guidance exactly when it matters most.",
+  heroUrgency: 'Interview coming up today or tomorrow? Contact us on WhatsApp now — we respond immediately.',
+  geoLine: 'Supporting interview candidates for Ireland, UK, Canada, USA, Australia, Germany, Europe, and Singapore roles.',
+  timezoneNote: 'Available for interviews scheduled in Irish Standard Time (IST) and GMT time slots.',
+  techSnippet:
+    'We cover all Ireland interview technologies: Java, Python, .NET, React, Node.js, AWS, Azure, Kubernetes, Terraform, DevOps, SRE, AI/ML, Agentic AI, RAG, MLOps, QA automation, full-stack, and data engineering.',
+  highlights: [
+    {
+      title: 'FAANG & Dublin Multinational Interview Support',
+      description:
+        'Live algorithmic coding guidance, data structures support, and system design coaching during technical interviews at Google, Meta, Amazon, LinkedIn, Stripe, HubSpot, and other Dublin Silicon Docks companies.',
+    },
+    {
+      title: 'Contractor Client Screening Support',
+      description:
+        'Real-time guidance during practical technical assessments and rapid-evaluation contractor screening rounds — the format most Irish IT contractors face before starting client engagements.',
+    },
+    {
+      title: 'DevOps, SRE & Cloud Interview Guidance',
+      description:
+        'Expert live support during DevOps and SRE technical interviews — Kubernetes, Terraform, CI/CD, observability, incident response scenarios, and cloud architecture questions at Ireland-based roles.',
+    },
+    {
+      title: 'AI/ML & Agentic AI Interview Support',
+      description:
+        'Real-time guidance during AI/ML and Agentic AI technical interviews — model architectures, RAG pipelines, MLOps, Python ML frameworks, and system design for AI-intensive roles at Ireland tech companies.',
+    },
+    {
+      title: 'Financial Services Technical Interview Help',
+      description:
+        'Live assistance during technical assessments for IFSC financial services technology roles — trading system design, risk and compliance tooling, Java enterprise patterns, and data platform questions.',
+    },
+    {
+      title: 'Full-Stack & Java/.NET Interview Coaching',
+      description:
+        'Real-time coding guidance for Java, .NET, React, Node.js, and full-stack interviews at Ireland employers — from startup practical tasks to enterprise architecture discussions.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What exactly does Ireland interview proxy support involve?',
+      answer:
+        "Ireland interview proxy support means our in-house expert joins your live technical interview session and provides real-time, discreet guidance as you work through coding problems, system design questions, and technical discussions. The expert helps you think through solutions, structure answers, and handle pressure rounds — so you can perform at your peak. This is different from profile engineering — we help you pass the interview itself.",
+    },
+    {
+      question: 'Which Ireland companies and interview types do you support?',
+      answer:
+        "We support candidates interviewing across all major Ireland tech employers: Silicon Docks multinationals (Google, Meta, Amazon, LinkedIn, Stripe, HubSpot, Salesforce, Oracle), IFSC financial services firms (JP Morgan, Citi, Goldman Sachs, AIB, Bank of Ireland, Zurich), Dublin consulting firms (Accenture Ireland, Deloitte Digital, Capgemini Ireland), Irish tech startups and scale-ups, and contractor client screening rounds. We cover all interview formats — LeetCode-style coding, system design, practical take-home tasks, and live pair-programming sessions.",
+    },
+    {
+      question: 'How quickly can I get interview proxy support for an upcoming Ireland interview?',
+      answer:
+        "Very quickly. Contact us on WhatsApp as soon as you know your interview is scheduled — even if it is today or tomorrow. We will assess your interview type, technology stack, and employer, assign the right in-house expert, and have them ready before your interview begins.",
+    },
+    {
+      question: 'Is interview proxy support confidential?',
+      answer:
+        'Completely. All sessions are conducted with full professional discretion. We never share your details with any third party, including the employer. We sign NDAs on request. Our service has helped hundreds of Ireland tech professionals clear critical interview rounds confidentially.',
+    },
+    {
+      question: 'Do you help with contractor screening interviews in Ireland?',
+      answer:
+        "Yes. Contractor screening interviews in Ireland are often practical and fast-moving — live coding exercises, architecture questions, or rapid technical assessments conducted by client companies or recruitment agencies. Our experts are well-calibrated to these formats and provide real-time guidance to help you pass and start your Irish contract.",
+    },
+    {
+      question: 'What technologies do your Ireland interview proxy experts cover?',
+      answer:
+        'We cover all major Ireland interview technologies: Java, Spring Boot, Python, .NET/C#/ASP.NET Core, React, Angular, Node.js, full-stack development, AWS, Azure, Kubernetes, Terraform, Docker, CI/CD, DevOps, SRE, AI/ML, Agentic AI, RAG, MLOps, LLM applications, QA automation (Selenium, Playwright, Cypress), data engineering (SQL, Snowflake, Databricks), and cybersecurity.',
+    },
+    {
+      question: 'Do you also provide interview preparation before Ireland technical rounds?',
+      answer:
+        'Yes. In addition to live proxy interview support, we offer focused pre-interview technical preparation sessions — mock technical rounds calibrated to your specific Ireland employer and role, system design practice, and coding problem walkthroughs. This helps you build confidence and technical readiness before the actual interview.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Ireland Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Algorithmic coding rounds at Google, Meta, Amazon, and LinkedIn Dublin engineering teams',
+      'System design interviews for senior software engineering roles at Silicon Docks multinationals',
+      'Contractor client technical screening rounds — practical coding and architecture evaluation',
+      'DevOps and SRE technical interviews at Dublin cloud and infrastructure engineering teams',
+      'AI/ML and Python interviews at Ireland-based AI research and product companies',
+      'Financial technology interviews at JP Morgan, Citi, and Irish banking technology teams',
+      '.NET, C#, and full-stack interviews at Irish enterprise software companies and consulting firms',
+      'QA automation and SDET interviews at Dublin test engineering teams',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Ireland Interview Proxy Support Works',
+    intro:
+      'Our Ireland interview proxy support is confidential, real-time, and calibrated to the specific technical interview formats used by Irish employers. Whether you are facing a FAANG coding round in Dublin or a contractor client screening, our experts join your session and guide you through every challenge.',
+    points: [
+      'Share your interview details via WhatsApp — employer, role, technology stack, and interview format',
+      'We assign the right in-house expert matched to your exact technology and interview type',
+      'Expert joins your interview session and provides real-time, discreet guidance',
+      'Live coding help, system design structuring, and pressure round navigation covered',
+      'Post-interview debrief and follow-up support available if needed',
+    ],
+  },
+  bottomCTAHeading: 'Interview Coming Up in Ireland? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Ireland technical interviews — coding, system design, DevOps, AI/ML, and contractor screenings. Contact us on WhatsApp immediately.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Ireland', href: '/job-support-ireland/' },
+      { label: 'IT job support Dublin', href: '/it-job-support-dublin/' },
+    ],
+    techLinks: [
+      { label: 'Proxy interview support', href: '/proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed interview help', href: '/failed-interview-help/' },
+    proxyLink: { label: 'AI/ML proxy interview support', href: '/ai-ml-proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+      { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
+      { label: 'AI/ML DevOps SRE Ireland support', href: '/ai-ml-devops-sre-job-support-ireland/' },
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'SRE proxy interview', href: '/sre-proxy-interview-support/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const productionSupportHelpIreland: LandingPageConfig = {
+  slug: 'production-support-help-ireland',
+  title: 'Production Support Help Ireland – Emergency IT Incident Assistance for Irish Professionals',
+  description:
+    'Urgent production issue in Ireland? Real-time emergency production support for IT professionals dealing with incidents, cloud failures, API issues, Kubernetes crashes, and release failures. IST/GMT response.',
+  canonical: `${BASE_URL}/production-support-help-ireland/`,
+  keywords: [
+    'production support help Ireland', 'production issue Ireland', 'emergency IT support Ireland',
+    'production incident Ireland', 'cloud incident support Ireland', 'Kubernetes issue Ireland',
+    'release failure Ireland', 'production debugging Ireland',
+  ],
+  ogTitle: 'Emergency Production Support for Ireland IT Professionals',
+  ogDescription: 'Immediate real-time production issue help for Ireland-based IT professionals. Cloud failures, Kubernetes crashes, API incidents, release failures — IST/GMT emergency response.',
+  h1: 'Emergency Production Support & Incident Help for IT Professionals in Ireland',
+  tagline: 'Real-time, confidential production issue support for Ireland-based developers, DevOps engineers, and SREs facing live incidents — cloud failures, Kubernetes crashes, API outages, release rollbacks, and database emergencies handled fast.',
+  heroEyebrow: 'Ireland Production Support — Emergency, Real-Time, Confidential',
+  painIntro:
+    "Production is down. An alert fired. A release went wrong. Your service is impacting users. For Ireland-based IT professionals facing live production incidents — whether on Dublin multinational infrastructure, Irish financial services systems, or pharma IT environments — our experts join your live environment immediately and help you resolve critical issues fast.",
+  heroVariant:
+    "Ireland-based IT professionals operate in high-stakes production environments. Silicon Docks multinationals run 24/7 global services with SLA commitments. IFSC financial services systems have near-zero tolerance for downtime. Pharma IT teams face compliance-critical production incidents. Irish tech companies and contractors are expected to resolve issues fast — often without deep team backup. Our production support experts have resolved hundreds of critical production incidents across AWS, Azure, Kubernetes, Java, Python, .NET, and cloud-native environments — providing immediate, confidential help exactly when production pressure is highest.",
+  heroUrgency: 'Production down right now? Contact us on WhatsApp immediately — we respond in minutes.',
+  geoLine: 'Emergency production support for Ireland professionals and global teams with Irish project responsibilities.',
+  timezoneNote: 'Available across IST and GMT business hours — and for out-of-hours production emergencies.',
+  techSnippet:
+    'We resolve production incidents across: AWS, Azure, GCP, Kubernetes, Docker, Terraform, Jenkins, GitHub Actions, Java, Python, .NET, Node.js, React, microservices, REST APIs, Kafka, SQL, NoSQL, Grafana, Prometheus, ELK, and Datadog.',
+  highlights: [
+    {
+      title: 'Cloud Infrastructure Emergency Response',
+      description:
+        'Immediate help for AWS, Azure, and GCP production failures — EC2 crashes, ECS/EKS outages, Lambda failures, Azure service disruptions, and GCP incident triage for Ireland-based teams and multinationals.',
+    },
+    {
+      title: 'Kubernetes & Container Incident Support',
+      description:
+        'Real-time Kubernetes debugging: pod crashes, OOM kills, deployment rollback failures, service mesh issues, ingress problems, and resource constraint incidents on Irish enterprise Kubernetes clusters.',
+    },
+    {
+      title: 'API & Microservices Production Help',
+      description:
+        'Expert help for REST API failures, microservices communication breakdowns, timeout cascades, circuit breaker issues, and service-to-service dependency failures affecting Irish project production systems.',
+    },
+    {
+      title: 'Database & Data Pipeline Emergency Support',
+      description:
+        'Real-time assistance for database production incidents: SQL deadlocks, replication failures, connection pool exhaustion, PostgreSQL and MySQL crashes, Kafka consumer lag, and data pipeline failures.',
+    },
+    {
+      title: 'Release Rollback & Deployment Recovery',
+      description:
+        'Emergency support for failed deployments — CI/CD pipeline failures, release rollback guidance, Docker build failures, and post-deployment incident triage for Irish project teams.',
+    },
+    {
+      title: 'Observability & Incident Triage',
+      description:
+        'Expert help reading Grafana dashboards, Prometheus alerts, ELK logs, Datadog traces, and CloudWatch metrics to diagnose root cause and restore Irish production services fast.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What production support do you provide for Ireland-based IT professionals?',
+      answer:
+        "We provide real-time emergency production support for Ireland-based developers, DevOps engineers, and SREs facing live incidents. Our experts join your production environment immediately — via screen share or remote collaboration — and help you diagnose and resolve critical issues including cloud failures, Kubernetes crashes, API outages, database incidents, release rollbacks, and pipeline failures. We cover all major technologies used in Irish enterprise and multinational environments.",
+    },
+    {
+      question: 'How fast do you respond to production emergencies?',
+      answer:
+        "Very fast. Contact us on WhatsApp and we respond within minutes. For production emergencies, we treat every request as urgent. We assign the right expert immediately based on your technology stack and incident type. There is no waiting room — you get expert help right away.",
+    },
+    {
+      question: 'Can you help with production incidents outside Irish business hours?',
+      answer:
+        "Yes. Production doesn't respect business hours, and neither do we. We are available for emergency production support outside standard IST and GMT hours — including evenings, weekends, and public holidays. Ireland-based professionals on multinational teams particularly benefit from our out-of-hours availability when global on-call responsibilities arise.",
+    },
+    {
+      question: 'What technologies and platforms do you cover for Ireland production support?',
+      answer:
+        "We cover the full Ireland enterprise technology stack: AWS (EC2, ECS, EKS, Lambda, RDS, SQS, S3), Azure (AKS, Azure Functions, Azure SQL, Service Bus), GCP, Kubernetes, Docker, Terraform, CI/CD (Jenkins, GitHub Actions, GitLab CI, Bitbucket Pipelines), Java/Spring Boot, Python, .NET/C#, Node.js, REST APIs, Kafka, PostgreSQL, MySQL, MongoDB, Redis, Grafana, Prometheus, ELK, Datadog, and CloudWatch.",
+    },
+    {
+      question: 'Is production support available for Irish financial services and pharma IT environments?',
+      answer:
+        "Yes. We have experience supporting production incidents in sensitive environments including IFSC financial services systems (trading platforms, risk and compliance systems, payment processing) and pharma IT systems (validated software, ERP integrations, laboratory information systems). We understand the compliance and security constraints of these environments and work discreetly and professionally.",
+    },
+    {
+      question: 'How is production support kept confidential?',
+      answer:
+        "All production support sessions are completely confidential. We sign NDAs on request. We never share details of your environment, your employer, or your incident with any third party. Many of our Ireland clients work on sensitive enterprise systems where discretion is essential — we take this seriously.",
+    },
+  ],
+  useCasesSection: {
+    title: 'Ireland Production Incidents We Help Resolve',
+    cases: [
+      'AWS EKS pod crash loop affecting production traffic for a Dublin multinational engineering team',
+      'Kafka consumer lag causing data pipeline failure on an Irish financial services data platform',
+      'Failed CI/CD pipeline deployment before a critical release window for an Irish enterprise client',
+      'Database deadlock and connection pool exhaustion on a production PostgreSQL instance',
+      'Kubernetes OOM kill loop after a memory misconfiguration in an Irish cloud-native deployment',
+      'REST API timeout cascade causing downstream service failures in an Irish microservices architecture',
+      'Post-deployment 500 errors with no clear root cause in a Java/Spring Boot Ireland production service',
+      'Grafana and Prometheus alert triage for an Irish SRE team during an out-of-hours production incident',
+    ],
+  },
+  proxySection: {
+    title: 'Production Support & DevOps/SRE Job Support for Irish Teams',
+    intro:
+      'Beyond emergency incident response, we provide ongoing job support for Ireland-based DevOps engineers and SREs — daily standup support, sprint task delivery, cloud architecture guidance, CI/CD improvements, and observability tooling — so production incidents become less frequent and less severe.',
+    points: [
+      'Immediate emergency response for production incidents on Irish enterprise and multinational systems',
+      'Ongoing DevOps and SRE job support for Ireland-based infrastructure and platform engineers',
+      'Cloud architecture review and improvement for Irish project teams',
+      'CI/CD pipeline debugging and optimisation for Irish delivery teams',
+      'Observability setup and alert tuning for Grafana, Prometheus, and ELK on Irish projects',
+    ],
+  },
+  bottomCTAHeading: 'Production Emergency in Ireland? Get Immediate Expert Help Now',
+  bottomCTABody: 'Real-time production incident support for Ireland-based IT professionals. All major technologies covered. We respond in minutes — contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Ireland', href: '/job-support-ireland/' },
+      { label: 'IT job support Dublin', href: '/it-job-support-dublin/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support', href: '/devops-job-support-usa/' },
+      { label: 'SRE job support', href: '/sre-job-support-usa/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'AI/ML DevOps SRE Ireland support', href: '/ai-ml-devops-sre-job-support-ireland/' },
+      { label: 'Ireland interview proxy support', href: '/interview-proxy-support-ireland/' },
+      { label: 'Project onboarding help Ireland', href: '/project-onboarding-help-ireland/' },
+      { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const aiMlDevopsSreJobSupportIreland: LandingPageConfig = {
+  slug: 'ai-ml-devops-sre-job-support-ireland',
+  title: 'AI/ML, DevOps & SRE Job Support Ireland – High-Demand Tech Stack Support for Irish Professionals',
+  description:
+    'Job support for AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, QA, .NET, Full-Stack, React, Java, Node.js, Python, and Data Engineering roles in Ireland. Real-time expert help. IST/GMT hours.',
+  canonical: `${BASE_URL}/ai-ml-devops-sre-job-support-ireland/`,
+  keywords: [
+    'AI ML job support Ireland', 'DevOps job support Ireland', 'SRE job support Ireland',
+    'cloud job support Ireland', 'Python job support Ireland', 'Java job support Ireland',
+    'QA automation support Ireland', '.NET job support Ireland', 'data engineering Ireland',
+  ],
+  ogTitle: 'AI/ML, DevOps & SRE Job Support Ireland – Expert Help for High-Demand Tech Roles',
+  ogDescription: 'Real-time job support for AI/ML, DevOps, SRE, Cloud, QA, .NET, Full-Stack, Java, Node.js, Python, and Data Engineering professionals working in Ireland. Expert in-house help. IST/GMT hours.',
+  h1: 'AI/ML, DevOps, SRE & High-Demand Technology Job Support for Ireland Professionals',
+  tagline: 'Expert real-time job support for Ireland IT professionals working in AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, QA Automation, .NET, Full-Stack, React, Java, Node.js, Python, Data Engineering, and Cybersecurity roles.',
+  heroEyebrow: 'Ireland High-Demand Tech Job Support — Real-Time, Expert, Confidential',
+  painIntro:
+    'Working in a high-demand technology role in Ireland — AI/ML engineer, DevOps professional, SRE, cloud architect, QA engineer, full-stack developer, or data engineer — and struggling with delivery pressure, complex technical challenges, or an upcoming technical interview? Our in-house technology experts provide immediate, confidential job support across all major high-demand Ireland tech stacks.',
+  heroVariant:
+    "Ireland's technology market has the highest concentration of high-demand technology roles in Europe. Google Dublin runs AI research and cloud engineering. Meta's Ireland headquarters houses ML and infrastructure teams. LinkedIn Engineering Ireland works on large-scale data and ML systems. Stripe's global engineering hub is in Dublin. DevOps and SRE engineers at Ireland multinationals operate critical global infrastructure. QA automation engineers and SDET professionals support enterprise testing for Irish financial services and pharma clients. .NET developers work across Ireland's enterprise and consulting sectors. Data engineering professionals manage large-scale pipelines at Ireland's financial and tech companies. Our technology experts cover all of these roles — providing real-time, confidential job support for Ireland professionals working across the full high-demand technology spectrum.",
+  heroUrgency: 'Immediate help available — contact us on WhatsApp for same-day start across IST and GMT hours.',
+  geoLine: 'Supporting Ireland-based AI/ML, DevOps, SRE, and tech professionals globally and across Irish project teams.',
+  timezoneNote: 'Aligned with Irish Standard Time (IST) and GMT — full coverage for Ireland tech working hours.',
+  techSnippet:
+    'Technology coverage: AI/ML (Python, TensorFlow, PyTorch, LangChain, RAG), Agentic AI, MLOps, DevOps (Kubernetes, Terraform, CI/CD), SRE (Prometheus, Grafana, ELK), AWS, Azure, QA (Selenium, Playwright, Cypress), .NET, Java, Node.js, React, Angular, Kafka, SQL, Snowflake, Databricks, Cybersecurity.',
+  highlights: [
+    {
+      title: 'AI/ML & Agentic AI Job Support',
+      description:
+        'Real-time job support for AI engineers and ML engineers at Ireland tech companies — Python, TensorFlow, PyTorch, LangChain, LLM orchestration, RAG pipelines, vector databases, and model deployment. Sprint task help, debugging, and architecture guidance.',
+    },
+    {
+      title: 'MLOps & Data Engineering Support',
+      description:
+        'Expert help for MLOps engineers and data engineers at Ireland-based companies — ML pipeline orchestration (Airflow, Kubeflow, MLflow), model serving, feature stores, data warehouse development (Snowflake, Databricks, BigQuery), and Kafka data streaming.',
+    },
+    {
+      title: 'DevOps & Platform Engineering Support',
+      description:
+        'Immediate DevOps job support for Ireland professionals — Kubernetes management, Helm charts, Terraform IaC, Docker containerisation, CI/CD pipelines (Jenkins, GitHub Actions, GitLab CI), and cloud-native delivery on AWS, Azure, and GCP.',
+    },
+    {
+      title: 'SRE & Observability Support',
+      description:
+        'Real-time SRE job support — SLO/SLI definition and implementation, Prometheus and Grafana observability setup, ELK stack configuration, Datadog integration, alert tuning, incident runbooks, and reliability engineering for Ireland-based SRE teams.',
+    },
+    {
+      title: 'QA Automation & SDET Support',
+      description:
+        'Expert QA automation job support for Ireland-based SDET professionals — Selenium, Playwright, and Cypress framework development, API test automation, CI/CD test integration, and performance testing for Irish enterprise and fintech clients.',
+    },
+    {
+      title: '.NET, Java, Full-Stack & Cybersecurity Support',
+      description:
+        'Job support for .NET/C#/ASP.NET Core professionals at Irish financial services and enterprise companies, Java/Spring Boot developers, React and Angular full-stack engineers, and DevSecOps and cybersecurity professionals working on Irish projects.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What high-demand technology job support do you provide for Ireland professionals?',
+      answer:
+        "We provide real-time job support for the full spectrum of high-demand technology roles in Ireland's market: AI/ML engineering (Python, TensorFlow, PyTorch, LangChain, RAG, vector databases), Agentic AI development, MLOps and data engineering (Airflow, Kubeflow, Snowflake, Databricks), DevOps and platform engineering (Kubernetes, Terraform, CI/CD, AWS, Azure), SRE and observability (Prometheus, Grafana, ELK, Datadog), QA automation (Selenium, Playwright, Cypress), .NET development (C#, ASP.NET Core, Entity Framework), Java/Spring Boot, React, Angular, Node.js, full-stack, and cybersecurity/DevSecOps.",
+    },
+    {
+      question: 'Do you provide interview proxy support for high-demand tech roles in Ireland?',
+      answer:
+        "Yes. We provide real-time proxy interview support for technical interviews in all high-demand tech roles at Ireland employers — including AI/ML interviews at Google, Meta, and LinkedIn Dublin, DevOps and SRE interviews at Ireland multinationals, QA automation interviews at Irish financial services and consulting firms, and .NET and Java interviews at Ireland enterprise companies. Contact us before your interview and we will have the right expert ready.",
+    },
+    {
+      question: 'Can you help with AI/ML and Agentic AI projects at Ireland tech companies?',
+      answer:
+        "Yes. AI/ML and Agentic AI are among our strongest capability areas. We help Ireland-based AI engineers with LLM application development, RAG pipeline architecture and debugging, agentic workflow implementation (using LangChain, AutoGen, CrewAI), model training and fine-tuning, feature engineering, ML experiment tracking with MLflow, model serving, and production ML system debugging.",
+    },
+    {
+      question: 'What DevOps and SRE support do you provide for Ireland-based professionals?',
+      answer:
+        "We provide comprehensive DevOps and SRE job support for Ireland professionals: Kubernetes cluster management and debugging, Helm chart development, Terraform and infrastructure-as-code, CI/CD pipeline development and troubleshooting (Jenkins, GitHub Actions, GitLab CI, ArgoCD), AWS and Azure cloud management, observability setup (Prometheus, Grafana, ELK, Datadog), SLO/SLI implementation, incident response support, and reliability engineering. We align with Irish Standard Time and are available for production emergencies.",
+    },
+    {
+      question: 'Can you support .NET developers in Ireland\'s financial and enterprise sectors?',
+      answer:
+        "Yes. .NET is widely used across Ireland's financial services, consulting, and enterprise software sectors. We provide real-time .NET job support for professionals working with C#, ASP.NET Core, Entity Framework, Azure integrations, microservices architecture, REST API development, and legacy .NET migration projects at Irish financial institutions, consulting firms, and enterprise software companies.",
+    },
+    {
+      question: 'What Data Engineering and QA Automation support is available for Ireland professionals?',
+      answer:
+        "For data engineers in Ireland, we provide support with data pipeline development (Apache Airflow, Kafka, Spark), data warehouse development (Snowflake, Databricks, BigQuery, Redshift), SQL query optimisation, ETL/ELT architecture, and data platform architecture for Irish financial services and tech companies. For QA automation engineers and SDET professionals, we support Selenium WebDriver, Playwright, Cypress, pytest, TestNG, API test automation with REST-assured or Supertest, and performance testing with JMeter or k6.",
+    },
+    {
+      question: 'How does the Ireland tech job support service work?',
+      answer:
+        "Contact us on WhatsApp with your technology role, current challenge, and project context. We assign the right in-house expert — matched to your exact technology stack and Ireland market context — and you can start same-day. Our experts work alongside you in real time: joining your working sessions, reviewing code, debugging, providing architecture guidance, and helping you deliver.",
+    },
+  ],
+  useCasesSection: {
+    title: 'High-Demand Tech Scenarios We Help Ireland Professionals With',
+    cases: [
+      'RAG pipeline debugging and LLM application performance improvement for AI engineers at Dublin tech companies',
+      'Kubernetes deployment failure and pod crash-loop resolution for Ireland DevOps engineers',
+      'SLO definition and Prometheus/Grafana observability implementation for Ireland SRE teams',
+      'Playwright test framework development for QA automation engineers at Irish financial services firms',
+      '.NET/C# microservices debugging for Ireland enterprise and financial services developers',
+      'MLflow experiment tracking and model deployment pipeline debugging for Ireland MLOps engineers',
+      'Terraform infrastructure-as-code development for cloud architects at Ireland multinational projects',
+      'Kafka consumer and producer debugging for data engineers on Ireland financial data platforms',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for High-Demand Tech Roles in Ireland',
+    intro:
+      "Ireland's high-demand technology roles — AI/ML engineer, DevOps professional, SRE, cloud architect, QA automation engineer — carry rigorous technical interview processes. Our in-house technology specialists provide real-time, confidential proxy interview guidance so you can demonstrate your technical depth and secure the Ireland role you are targeting.",
+    points: [
+      'AI/ML and Agentic AI interview support — system design, Python coding, and ML architecture questions',
+      'DevOps and SRE interview guidance — Kubernetes, Terraform, CI/CD, and reliability scenario questions',
+      'QA Automation interview support — Selenium, Playwright, Cypress, and testing architecture questions',
+      '.NET and Java interview proxy — coding rounds, system design, and enterprise architecture questions',
+      'Data engineering interview support — SQL, Kafka, Spark, Snowflake, and data pipeline architecture',
+    ],
+  },
+  bottomCTAHeading: 'Get Expert Tech Job Support for Your Ireland Role — Start Today',
+  bottomCTABody: 'Real-time job support for AI/ML, DevOps, SRE, QA, .NET, Java, and data engineering professionals in Ireland. Confidential, same-day start, IST/GMT aligned.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Ireland', href: '/job-support-ireland/' },
+      { label: 'IT job support Dublin', href: '/it-job-support-dublin/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support', href: '/devops-job-support-usa/' },
+      { label: 'AI/ML job support', href: '/agentic-ai-ml-job-support-usa/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Ireland interview proxy support', href: '/interview-proxy-support-ireland/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
+      { label: 'Project onboarding help Ireland', href: '/project-onboarding-help-ireland/' },
+      { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+      { label: 'SRE proxy interview', href: '/sre-proxy-interview-support/' },
+      { label: 'MLOps proxy interview', href: '/mlops-proxy-interview-support/' },
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const projectOnboardingHelpIreland: LandingPageConfig = {
+  slug: 'project-onboarding-help-ireland',
+  title: 'Project Onboarding Help Ireland – KT Support for IT Professionals Joining New Irish Projects',
+  description:
+    'Struggling with project onboarding in Ireland? Get real-time KT support, codebase walkthrough, architecture understanding, and sprint delivery confidence for developers and contractors joining new Irish projects.',
+  canonical: `${BASE_URL}/project-onboarding-help-ireland/`,
+  keywords: [
+    'project onboarding help Ireland', 'KT support Ireland', 'project onboarding Ireland',
+    'developer onboarding help Ireland', 'new project help Ireland', 'codebase understanding Ireland',
+    'contractor onboarding Ireland', 'first 30 days IT support Ireland',
+  ],
+  ogTitle: 'Project Onboarding Help Ireland – KT & Codebase Support for New Irish Project Joiners',
+  ogDescription: 'Real-time onboarding support for IT professionals and contractors joining new projects in Ireland. KT sessions, codebase walkthroughs, architecture understanding, and sprint delivery confidence.',
+  h1: 'Project Onboarding & KT Help for Developers Joining New Irish Projects',
+  tagline: 'Real-time onboarding support for IT professionals and contractors joining new projects in Ireland — codebase understanding, architecture walkthroughs, sprint ramp-up, and first-sprint delivery confidence, all aligned with IST/GMT working hours.',
+  heroEyebrow: 'Ireland Project Onboarding Help — Remote, Real-Time, Confidential',
+  painIntro:
+    "Just joined a new Irish project — a contractor engagement, a permanent role at a Dublin multinational, or a transfer to a new internal team — and feeling overwhelmed by an unfamiliar codebase, complex architecture, or sprint expectations you are not yet ready to meet? Our in-house experts provide immediate, confidential onboarding support so you can ramp up fast and deliver with confidence.",
+  heroVariant:
+    "Project onboarding in Ireland's tech market is fast and unforgiving. Irish contractors are typically expected to be productive within the first week — with minimal formal KT and limited access to documentation. Permanent employees at Dublin multinationals face complex codebases, internal tooling, and team norms developed over years. Developers transferred between projects or teams inherit legacy systems with limited tribal knowledge. The first 30–60 days on a new Irish project are the highest-risk period for IT professionals — and the period when confidential, expert onboarding support makes the greatest difference to your delivery confidence and professional reputation.",
+  heroUrgency: 'Starting a new Irish project soon? Contact us on WhatsApp today — we can start same-day.',
+  geoLine: 'Supporting IT professionals and contractors joining new projects across Ireland and on remote Irish-team engagements.',
+  timezoneNote: 'Onboarding support available across IST and GMT business hours — aligned with Irish working hours.',
+  techSnippet:
+    'We support onboarding across all major Ireland project stacks: Java/Spring Boot, Python, .NET, React, Angular, Node.js, AWS, Azure, Kubernetes, Terraform, DevOps pipelines, QA frameworks, AI/ML projects, and data engineering platforms.',
+  highlights: [
+    {
+      title: 'Codebase Understanding & Technical Ramp-Up',
+      description:
+        'Expert help understanding an unfamiliar codebase: architecture walkthroughs, module and service mapping, dependency understanding, data model comprehension, and identifying key entry points — so you can start contributing quickly on your new Irish project.',
+    },
+    {
+      title: 'KT Session Support & Knowledge Transfer Help',
+      description:
+        'Real-time assistance during Knowledge Transfer sessions with your new Irish team — understanding what is being shared, identifying gaps, formulating the right questions, and translating KT content into actionable technical understanding.',
+    },
+    {
+      title: 'First-Sprint Task Delivery Confidence',
+      description:
+        'Immediate help delivering your first sprint tasks on a new Irish project — live coding assistance, PR review support, debugging unfamiliar code, and task completion guidance so you can deliver confidently from day one.',
+    },
+    {
+      title: 'Cloud & DevOps Environment Understanding',
+      description:
+        'Expert help understanding the cloud infrastructure, CI/CD pipelines, deployment processes, and DevOps tooling on your new Irish project — AWS, Azure, Kubernetes, Terraform, GitHub Actions, and Jira/Azure DevOps workflows.',
+    },
+    {
+      title: 'Architecture & System Design Walkthrough',
+      description:
+        'Guided architectural walkthroughs for complex Irish project systems — microservices architecture, API design, data flow mapping, event-driven systems, distributed systems patterns, and technology decisions that shape the project.',
+    },
+    {
+      title: 'QA Framework & Test Environment Onboarding',
+      description:
+        'Help understanding and contributing to the QA framework on your new Irish project — test automation architecture, existing test suites, CI integration, test data management, and how to write and run tests in the existing framework.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What onboarding support do you provide for developers joining new Irish projects?',
+      answer:
+        "We provide real-time, confidential onboarding support for IT professionals and contractors joining new projects in Ireland. This includes: codebase walkthrough and architecture understanding, KT session support, first-sprint task delivery assistance, cloud and DevOps environment ramp-up, QA framework understanding, and daily working session support during the critical first 30–60 days. We align with Irish Standard Time and GMT working hours.",
+    },
+    {
+      question: 'Can you help IT contractors who need to be productive quickly on a new Irish client project?',
+      answer:
+        "Yes — this is one of our most common Ireland use cases. Irish IT contractors are often expected to deliver from the first week with minimal formal KT. Our experts provide real-time job support that helps contractors get up to speed on a new codebase, understand the project architecture, and deliver their first sprint tasks confidently — without exposing their onboarding uncertainty to the client.",
+    },
+    {
+      question: 'How do you help with knowledge transfer (KT) on new Irish projects?',
+      answer:
+        "KT on Irish projects is often informal, fast, and insufficient. We help by: joining your KT sessions to help you absorb and question what is being shared, explaining complex architectural concepts you encountered during KT, filling KT gaps by helping you explore the codebase independently, and summarising key technical knowledge so you have a clear mental model of the new project.",
+    },
+    {
+      question: 'Do you help with Jira, Azure DevOps, and Agile sprint workflows on new Irish projects?',
+      answer:
+        "Yes. Navigating Jira and Azure DevOps workflows, understanding sprint ceremonies, contributing to standups with confidence, and delivering sprint tasks on schedule are all areas we support. We help you understand the Agile delivery rhythm on your new Irish project and ensure you can participate fully from your first sprint.",
+    },
+    {
+      question: 'Can you help me understand a complex legacy codebase on a new Irish project?',
+      answer:
+        "Legacy codebase onboarding is one of the most common and most challenging onboarding scenarios — especially common in Ireland's financial services and enterprise sectors. Our experts help you navigate legacy Java, .NET, and enterprise systems by identifying entry points, mapping dependencies, explaining architectural patterns, and guiding you through the key workflows you need to understand to contribute.",
+    },
+    {
+      question: 'Is onboarding support confidential?',
+      answer:
+        "Completely. All onboarding support sessions are confidential. We never share your details with your employer, client, or any third party. Many of our Ireland clients are contractors who need to maintain a professional, competent presence with their client from day one — our support is completely invisible to them.",
+    },
+    {
+      question: 'How long does onboarding support typically last?',
+      answer:
+        "Most onboarding support engagements are most intensive in the first 2–4 weeks and taper off as you gain confidence and codebase familiarity. Some clients continue with lighter-touch job support for the full first 60 days. We are flexible — you can increase or reduce support intensity based on your needs.",
+    },
+  ],
+  useCasesSection: {
+    title: 'Onboarding Situations We Help Ireland IT Professionals Navigate',
+    cases: [
+      'IT contractor joining a Dublin multinational project with minimal KT and immediate delivery expectations',
+      'Developer transitioning to a new internal team with a large, undocumented legacy codebase',
+      'New joiner at an IFSC financial services technology team needing to understand complex trading system architecture',
+      'Permanent employee starting at a Silicon Docks tech company with advanced internal tooling and team norms',
+      'DevOps engineer ramping up on a complex Kubernetes and Terraform environment on a new Irish project',
+      'QA automation engineer inheriting an existing Playwright or Selenium test framework on a new Irish client project',
+      'Data engineer onboarding to a Snowflake or Databricks data platform at an Irish financial services company',
+      'AI/ML engineer joining a project with existing ML models, pipelines, and experiment tracking infrastructure',
+    ],
+  },
+  proxySection: {
+    title: 'Onboarding Support & Job Delivery Confidence for Irish Project Joiners',
+    intro:
+      "The first 30–60 days on a new Irish project define your professional reputation with the team and client. Our onboarding support experts provide confidential real-time help so you can ramp up quickly, deliver your first sprint tasks with confidence, and build a strong technical foundation on your new Irish project.",
+    points: [
+      'Daily working session support during the onboarding period — live coding, debugging, and task delivery help',
+      'Architecture walkthrough sessions to build your mental model of the new Irish project system',
+      'Code review assistance — understanding review comments and making confident changes to unfamiliar code',
+      'Sprint ceremony support — helping you contribute meaningfully to daily standups and planning sessions',
+      'Technology gap filling — rapid upskilling support if the new project uses technologies you have limited experience with',
+    ],
+  },
+  bottomCTAHeading: 'Joining a New Irish Project? Get Expert Onboarding Help From Day One',
+  bottomCTABody: 'Confidential real-time KT and onboarding support for IT professionals and contractors joining new projects in Ireland. Same-day start. IST/GMT hours.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Ireland', href: '/job-support-ireland/' },
+      { label: 'IT job support Dublin', href: '/it-job-support-dublin/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support', href: '/devops-job-support-usa/' },
+      { label: 'AI/ML job support', href: '/agentic-ai-ml-job-support-usa/' },
+    ],
+    problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Ireland interview proxy support', href: '/interview-proxy-support-ireland/' },
+      { label: 'AI/ML DevOps SRE Ireland', href: '/ai-ml-devops-sre-job-support-ireland/' },
+      { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+      { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
+    ],
+  },
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+// GERMANY – PROXY INTERVIEW
+// ═══════════════════════════════════════════════════════════════════════════
+
+export const proxyInterviewGermany: LandingPageConfig = {
+  slug: 'proxy-interview-germany',
+  title: 'Proxy Interview Support Germany – Real-Time Technical Interview Help for German Tech Roles',
+  description:
+    'Need proxy interview support for Germany IT roles? Real-time live guidance during coding rounds, system design, DevOps, AI/ML, and enterprise tech interviews at Berlin startups, Munich enterprises, Frankfurt banking tech, and SAP ecosystem companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-germany/`,
+  keywords: [
+    'proxy interview support Germany', 'proxy interview Germany', 'technical interview help Germany',
+    'live interview guidance Germany', 'coding interview support Germany', 'interview proxy Berlin',
+    'interview proxy Munich', 'SAP interview support', 'Germany tech interview help',
+    'EU Blue Card interview support Germany', 'Zalando interview support', 'Deutsche Bank interview help',
+  ],
+  ogTitle: 'Proxy Interview Support Germany – Live Technical Interview Guidance for German Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Germany. Berlin startups, Munich enterprise, Frankfurt banking tech, SAP ecosystem. CET/CEST aligned. Same-day availability.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Germany',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Berlin tech companies, Munich enterprise and automotive firms, Frankfurt banking technology teams, and the SAP ecosystem — CET/CEST aligned.',
+  heroEyebrow: 'Germany Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Germany IT role — a structured coding assessment at a Berlin startup, a multi-round engineering panel at a Munich enterprise, a Java/SAP architecture deep-dive at a Frankfurt bank, or a practical technical screen for an EU Blue Card role — and need real-time expert backup? Our in-house experts join your interview session and provide discreet, live guidance so you perform at the level German employers expect.',
+  heroVariant:
+    "Germany's tech interview landscape has its own distinct character. Berlin's startup ecosystem — Zalando, Delivery Hero, HelloFresh, Celonis, Personio, Trade Republic, GetYourGuide — runs high-bar engineering interviews with an emphasis on clean code, pragmatic system design, and engineering depth. Munich's enterprise and automotive tech sector — BMW Group IT, Siemens, MAN, Allianz Technology, Munich Re — favors structured technical competency assessments with deep domain knowledge requirements. Frankfurt's banking technology teams — Deutsche Bank, Commerzbank, DZ Bank, ING Germany — conduct rigorous Java and cloud architecture panels with BaFin-aware regulatory context. The SAP ecosystem across Germany demands ABAP, SAP S/4HANA, and enterprise integration expertise. EU Blue Card applicants and Chancenkarte holders competing for German roles face a high technical bar — our proxy interview experts provide real-time, confidential guidance so you clear it.",
+  heroUrgency: 'Germany interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Germany, Europe, UK, Canada, USA, Australia, Ireland, and Singapore roles.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Germany interview technologies covered: Java, Spring Boot, SAP (ABAP, S/4HANA, BTP), Python, .NET, React, Angular, Node.js, AWS, Azure, Kubernetes, Terraform, DevOps, SRE, AI/ML, Agentic AI, RAG, MLOps, QA automation, data engineering, and Industry 4.0 stack.',
+  highlights: [
+    {
+      title: 'Berlin Startup Technical Interview Support',
+      description:
+        "Live guidance during engineering interviews at Zalando, Delivery Hero, HelloFresh, Celonis, Personio, Trade Republic, GetYourGuide, and other Berlin-based tech companies — coding rounds, system design at product scale, distributed systems, and Berlin's practical-first engineering culture.",
+    },
+    {
+      title: 'Munich Enterprise & Automotive Tech Interview Help',
+      description:
+        'Real-time support during structured technical panels at BMW Group IT, Siemens, MAN, Allianz Technology, Munich Re, and Munich-based enterprise companies — deep Java architecture, cloud platform design, Industry 4.0 integration patterns, and enterprise competency assessment formats.',
+    },
+    {
+      title: 'Frankfurt Banking Technology Interview Guidance',
+      description:
+        'Expert live help during technical interviews at Deutsche Bank, Commerzbank, DZ Bank, ING Germany, BNP Paribas Frankfurt, and German financial services technology teams — Java backend systems, cloud migration, regulatory-aware data engineering (BaFin, GDPR/BDSG), and structured multi-round banking tech interview formats.',
+    },
+    {
+      title: 'SAP Ecosystem Interview Support',
+      description:
+        'Real-time guidance during SAP technical interviews — ABAP development, SAP S/4HANA architecture, SAP BTP (Business Technology Platform), SAP Fiori, SAP integration patterns, and enterprise workflow design questions at SAP SE and SAP-partner companies across Germany.',
+    },
+    {
+      title: 'AI/ML, DevOps & Cloud Interview Guidance',
+      description:
+        'Live proxy support for AI/ML, DevOps, and cloud engineering interviews at Germany-based companies — machine learning system design, MLOps pipeline architecture, Kubernetes and Terraform depth, CI/CD questions, observability, and cloud-native architecture for AWS and Azure roles at German enterprises.',
+    },
+    {
+      title: 'EU Blue Card & Chancenkarte Interview Support',
+      description:
+        'Specialist guidance for international professionals interviewing for Germany roles under the EU Blue Card or Chancenkarte (Opportunity Card) pathways — where interview success directly impacts visa eligibility, making expert real-time proxy support especially critical.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What exactly does proxy interview support for Germany involve?',
+      answer:
+        "Germany proxy interview support means our in-house expert joins your live technical interview session and provides real-time, discreet guidance as you work through coding problems, system design questions, SAP architecture discussions, and competency-based technical rounds. We help you think through solutions, structure answers to German employers' high engineering standards, and handle the distinct formats of Berlin startup, Munich enterprise, and Frankfurt banking technology interviews — all confidentially.",
+    },
+    {
+      question: 'Which Germany tech hubs and employers do you support?',
+      answer:
+        "We support candidates interviewing across all major Germany tech hubs and employers: Berlin startups (Zalando, Delivery Hero, HelloFresh, Celonis, Personio, Trade Republic, GetYourGuide, About You), Munich enterprise and automotive tech (BMW Group IT, Siemens, MAN, Allianz Technology, Munich Re, Linde Group IT), Frankfurt banking technology (Deutsche Bank, Commerzbank, DZ Bank, ING Germany, BNP Paribas Frankfurt), Hamburg tech (Otto Group, About You, New Work/Xing), Stuttgart and Wolfsburg automotive IT (Mercedes-Benz Tech, Volkswagen IT, Porsche Digital), and the SAP ecosystem across Germany (SAP SE Walldorf and partner companies).",
+    },
+    {
+      question: 'How are Germany tech interviews different from USA or UK interviews?',
+      answer:
+        "German tech interviews have a distinct character rooted in Germany's engineering culture (Gründlichkeit — thoroughness and precision). Berlin startup interviews are practical and direct, emphasizing clean code, real-world system design, and engineering pragmatism. Munich enterprise interviews are structured and deep, with multi-round competency panels and an expectation of genuine architectural expertise. Frankfurt banking tech interviews combine Java and cloud architecture depth with awareness of BaFin regulatory constraints. SAP ecosystem interviews require domain-specific technical knowledge not tested elsewhere. Our experts are calibrated to these Germany-specific formats.",
+    },
+    {
+      question: 'Do you help with SAP technical interviews?',
+      answer:
+        "Yes. SAP is deeply embedded in German industry — manufacturing, logistics, finance, and public sector. We provide real-time guidance during SAP technical interviews covering ABAP development and programming, SAP S/4HANA architecture and migration, SAP BTP (Business Technology Platform) development, SAP Fiori UX development, SAP integration patterns (RFC, BAPI, IDoc, OData, CDS views), and enterprise workflow design. We support interviews at SAP SE itself as well as at SAP-partner and SAP-customer companies across Germany.",
+    },
+    {
+      question: 'Can you help EU Blue Card and Chancenkarte applicants with Germany interview support?',
+      answer:
+        "Yes. For international IT professionals pursuing an EU Blue Card or Germany's Chancenkarte (Opportunity Card), a successful technical interview is essential — often with direct consequences for visa and residency eligibility. Our proxy interview support is available for all Germany technical interviews regardless of your visa status. We understand the heightened stakes and provide expert real-time guidance so you can perform at your peak in Germany's high-bar technical interview environment.",
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Germany interview?',
+      answer:
+        "Contact us on WhatsApp as soon as you know your interview is scheduled — even if it is today or tomorrow. We assess your employer, role, and technology stack, assign the right in-house expert, and prepare them for your specific Germany interview format. We respond immediately and same-day support is available for urgent requests.",
+    },
+    {
+      question: 'What technologies do your Germany interview proxy experts cover?',
+      answer:
+        "We cover all major Germany interview technologies: Java (Spring Boot, Java EE, microservices, REST APIs), SAP (ABAP, S/4HANA, BTP, Fiori), Python, .NET/C#/ASP.NET Core, React, Angular, Node.js, AWS, Azure, Kubernetes, Terraform, Docker, CI/CD pipelines, DevOps, SRE, AI/ML (TensorFlow, PyTorch, LangChain, RAG, MLOps), QA automation (Selenium, Playwright, Cypress), data engineering (SQL, Kafka, Spark, Snowflake, Databricks), and Industry 4.0 stack (IoT integration, embedded systems interfaces, manufacturing IT).",
+    },
+    {
+      question: 'Do you provide interview preparation before Germany technical rounds?',
+      answer:
+        "Yes. In addition to live proxy interview support during the actual interview, we offer focused pre-interview technical preparation sessions — mock technical rounds calibrated to your specific Germany employer and city (Berlin startup style vs Munich enterprise panel vs Frankfurt banking tech format), German-specific system design practice, and SAP or domain-specific technical walkthroughs. This builds confidence and technical readiness before your actual Germany interview.",
+    },
+  ],
+  useCasesSection: {
+    title: 'Germany Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Coding and system design rounds at Zalando, Delivery Hero, or Celonis in Berlin — practical engineering depth under live interview pressure',
+      'Structured competency and architecture panels at BMW Group IT, Siemens, or Allianz Technology in Munich',
+      'Java backend and cloud migration technical assessments at Deutsche Bank or Commerzbank in Frankfurt',
+      'SAP ABAP and SAP BTP architecture interviews at SAP SE or SAP-partner companies across Germany',
+      'AI/ML and MLOps interviews at German tech companies and enterprises investing in machine learning',
+      'DevOps and Kubernetes technical screens at German cloud-native and platform engineering teams',
+      '.NET and full-stack technical interviews at German enterprise software and consulting firms',
+      'Industry 4.0 and IoT-integration technical assessments at German manufacturing and automotive IT teams',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Germany Proxy Interview Support Works',
+    intro:
+      'Our Germany proxy interview support is confidential, real-time, and calibrated to the specific technical formats and engineering culture of German employers. Whether you are facing a Berlin startup coding round, a Munich enterprise panel, or a Frankfurt banking architecture discussion — our experts join your session and guide you through every challenge.',
+    points: [
+      'Share your Germany interview details via WhatsApp — employer, city, role level, technology stack, and interview format',
+      'We assign an in-house expert matched to your exact technology and Germany employer type (startup, enterprise, banking, SAP)',
+      'Pre-interview alignment on your background and the specific expectations of your Germany employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout the session',
+      'Post-interview debrief and support for any follow-up rounds or subsequent Germany interview stages',
+    ],
+  },
+  bottomCTAHeading: 'Germany Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Germany technical interviews — Berlin startups, Munich enterprise, Frankfurt banking tech, and SAP ecosystem. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Germany', href: '/job-support-germany/' },
+      { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'AI/ML proxy interview', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'SRE proxy interview', href: '/sre-proxy-interview-support/' },
+      { label: 'Get interview scheduled Germany', href: '/get-interview-scheduled-germany/' },
+    ],
+  },
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const allLandingPages: LandingPageConfig[] = [
@@ -5354,6 +6366,7 @@ export const allLandingPages: LandingPageConfig[] = [
   devopsProxyInterviewSupport,
   proxyInterviewAustralia,
   proxyInterviewEurope,
+  proxyInterviewGermany,
   proxyInterviewSingapore,
   aiMlProxyInterviewSupport,
   mlopsProxyInterviewSupport,
@@ -5371,4 +6384,11 @@ export const allLandingPages: LandingPageConfig[] = [
   itJobSupportVancouver,
   itJobSupportCalgary,
   itJobSupportMontreal,
+  // ── Ireland pages ──────────────────────────────────────────────────────────
+  jobSupportIreland,
+  itJobSupportDublin,
+  interviewProxySupportIreland,
+  productionSupportHelpIreland,
+  aiMlDevopsSreJobSupportIreland,
+  projectOnboardingHelpIreland,
 ];

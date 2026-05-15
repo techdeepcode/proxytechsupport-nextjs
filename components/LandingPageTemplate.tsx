@@ -20,6 +20,8 @@ const GEO_LABELS: Record<string, string> = {
   'job-support-germany': 'Germany',
   'job-support-singapore': 'Singapore',
   'job-support-newzealand': 'New Zealand',
+  'job-support-ireland': 'Ireland',
+  'it-job-support-dublin': 'Dublin',
 };
 
 function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
@@ -47,6 +49,11 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
   return [home, { label: 'Developer Support' }, { label: shortTitle }];
 }
 
+const IRELAND_GEO_SLUGS = new Set([
+  'job-support-ireland', 'it-job-support-dublin', 'interview-proxy-support-ireland',
+  'production-support-help-ireland', 'ai-ml-devops-sre-job-support-ireland', 'project-onboarding-help-ireland',
+]);
+
 function isGeoLandingPage(config: LandingPageConfig): boolean {
   return config.slug in GEO_LABELS;
 }
@@ -56,6 +63,7 @@ function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (isGeoLandingPage(config)) return true;
   if (/-job-support-usa$/.test(config.slug)) return true;
   if (config.slug.includes('proxy-interview')) return true;
+  if (IRELAND_GEO_SLUGS.has(config.slug)) return true;
   return false;
 }
 
@@ -154,7 +162,7 @@ export default function LandingPageTemplate({ config }: Props) {
         availableLanguage: 'English',
       },
     },
-    areaServed: ['US', 'GB', 'CA', 'AU', 'DE', 'SG', 'NZ', 'EU'],
+    areaServed: ['US', 'GB', 'CA', 'AU', 'DE', 'IE', 'SG', 'NZ', 'EU'],
     serviceType: 'IT Job Support and Proxy Interview Assistance',
   };
 
@@ -177,6 +185,7 @@ export default function LandingPageTemplate({ config }: Props) {
 
   const isCanadaPage = CANADA_SLUGS.has(config.slug);
   const primaryCity = CITY_AREA[config.slug];
+  const isIrelandPage = IRELAND_GEO_SLUGS.has(config.slug);
 
   const canadaServiceSchema = isCanadaPage ? {
     '@context': 'https://schema.org',
@@ -210,12 +219,47 @@ export default function LandingPageTemplate({ config }: Props) {
     ],
   } : null;
 
+  const irelandServiceSchema = isIrelandPage ? {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: config.title,
+    description: config.description,
+    provider: {
+      '@type': 'Organization',
+      name: 'Proxy Tech Support',
+      url: 'https://proxytechsupport.com',
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Ireland', sameAs: 'https://en.wikipedia.org/wiki/Ireland' },
+      ...(config.slug === 'it-job-support-dublin'
+        ? [{ '@type': 'City', name: 'Dublin', containedInPlace: { '@type': 'Country', name: 'Ireland' } }]
+        : [
+            { '@type': 'City', name: 'Dublin', containedInPlace: { '@type': 'Country', name: 'Ireland' } },
+            { '@type': 'City', name: 'Cork', containedInPlace: { '@type': 'Country', name: 'Ireland' } },
+            { '@type': 'City', name: 'Galway', containedInPlace: { '@type': 'Country', name: 'Ireland' } },
+            { '@type': 'City', name: 'Limerick', containedInPlace: { '@type': 'Country', name: 'Ireland' } },
+          ]),
+    ],
+    serviceType: [
+      'IT Job Support Ireland',
+      'Proxy Interview Assistance Ireland',
+      'Interview Support Ireland',
+      'DevOps Support Ireland',
+      'SRE Support Ireland',
+      'AI ML Support Ireland',
+      'Cloud Support Ireland',
+    ],
+  } : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {canadaServiceSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(canadaServiceSchema) }} />
+      )}
+      {irelandServiceSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(irelandServiceSchema) }} />
       )}
 
       <style>{`

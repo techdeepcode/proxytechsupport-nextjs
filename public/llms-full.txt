@@ -366,6 +366,34 @@ Target: IT professionals interviewing at European tech companies, banks, and ent
 Coverage: Booking.com, ASML, ING, Adyen, Philips, SAP, Siemens, Deutsche Bank, Spotify, Klarna, EU Blue Card holders
 Time zones: CET/GMT aligned
 
+**Proxy Interview Germany**
+URL: /proxy-interview-germany/
+Target: IT professionals interviewing at German tech companies, banks, and enterprises — distinct from the broader /proxy-interview-europe/ page
+Coverage focus:
+- Berlin startup ecosystem: Zalando, Delivery Hero, Celonis, N26, AUTO1 Group, Wefox, Personio, SumUp, Contentful
+- Munich enterprise tech: BMW IT (connected car, autonomous driving stacks), Siemens (MindSphere IoT, factory automation), Allianz Technology, MAN, MTU, Linde Engineering
+- Frankfurt financial services: Deutsche Bank (Technology Centre Frankfurt), Commerzbank, DZ Bank, Helaba, BaFin-regulated FinTech
+- Hamburg & Stuttgart: Otto Group engineering, Daimler (now Mercedes-Benz) digital, Airbus DevOps/ML, Bosch IoT & AI
+- SAP ecosystem: ABAP/4, S/4HANA, SAP BTP (Business Technology Platform), SAP Analytics Cloud, SAP RISE, custom ABAP OOP development
+- EU Blue Card / Chancenkarte context: supporting international tech professionals working in Germany on skilled worker visas
+- German engineering culture: thorough technical depth expected (Gründlichkeit), whiteboard architecture, code-review-in-interview formats
+- Regulatory: BDSG (German data protection), BaFin (financial services), EU DORA compliance, GDPR implementation
+Time zones: CET (Central European Time) / CEST aligned
+
+**Proxy Interview Ireland**
+URL: /interview-proxy-support-ireland/
+Target: IT professionals interviewing at Ireland-based tech companies, multinational Dublin campuses, and remote-first Irish employers
+Coverage focus:
+- Dublin tech campuses: Google Ireland (EMEA HQ), Meta Dublin, Apple Cork/Dublin, Microsoft Ireland, Amazon Dublin, LinkedIn Dublin, Twitter/X Dublin, Salesforce Dublin
+- Fintech & payments: Stripe Dublin, Mastercard Dublin Technology Hub, Fiserv, Elavon, Zuora
+- Irish-origin tech companies: Intercom, Personio Ireland, Workday (Pleasanton but major Dublin presence), Version 1
+- IDA Ireland FDI companies: HPE, Dell EMC Ireland, Pfizer IT (Dublin), Abbott Ireland tech roles
+- Critical Skills Employment Permit positions: roles requiring employer sponsorship; interview stakes are very high
+- Remote-first Irish employers: growing number of fully-remote Irish-registered tech companies
+- Banking and financial services: AIB, Bank of Ireland, Ulster Bank (NatWest), KBC, Permanent TSB IT teams
+- CBI (Central Bank of Ireland) regulated financial services technology
+Time zones: IST (Irish Standard Time) / GMT aligned
+
 **Proxy Interview Singapore**
 URL: /proxy-interview-singapore/
 Target: IT professionals interviewing at Singapore tech companies and financial institutions
@@ -517,6 +545,72 @@ Specific challenges: Bilingual (FR/EN) tech environment, Mila-quality ML intervi
 
 ---
 
+## Ireland Location Pages
+
+### IT Job Support Ireland
+URL: /job-support-ireland/
+Time zone: IST (Irish Standard Time, UTC+1) / GMT (UTC+0, Oct–Mar)
+Tech ecosystem: Ireland is Europe's premier FDI tech destination. The EMEA headquarters of Google, Meta, Apple, LinkedIn, Twitter/X, and dozens of other US tech giants are based in Dublin. Ireland's combination of English-language environment, EU membership, EU passporting, and a young, educated tech workforce makes it a unique market. The Irish government's Critical Skills Employment Permit and the IDA Ireland investment programme drive continuous growth in high-skill IT roles.
+Primary technologies: Cloud platforms (AWS eu-west-1 Ireland region, Azure North Europe, GCP europe-west1), JavaScript/TypeScript, React, Node.js, Python, Java Spring Boot, DevOps (Kubernetes, Terraform, CI/CD), AI/ML engineering
+Specific challenges: Critical Skills Permit job market (high competition, interview stakes are critical), working within EMEA tech org structures (Dublin teams often interface with US HQ time zones), GDPR and EU AI Act compliance, Ireland's rapid growth attracting global talent creates competitive interview processes
+
+### IT Job Support Dublin
+URL: /it-job-support-dublin/
+Time zone: IST / GMT aligned
+Tech ecosystem: Dublin is Ireland's primary tech hub — home to Google's EMEA headquarters at Barrow Street, Meta's EMEA HQ at Grand Canal Square, Apple's European campus at Hollyhill, Cork, LinkedIn's EMEA HQ at Wilton Place, Stripe's EMEA operations, and Microsoft's campus in Sandyford. Dublin's Silicon Docks area (Grand Canal Dock) is the densest cluster of global tech in Europe outside of London.
+Sectors covered:
+- FAANG Dublin offices: staff engineering roles, senior SWE interviews, system design at scale
+- IFSC (International Financial Services Centre): Deutsche Bank Technology, JPMorgan, Citi, Goldman Sachs, BNY Mellon technology operations
+- Fintech Dublin: Stripe, Revolut Dublin, TransferMate, Fexco, Fire Financial Services, AIB, Bank of Ireland digital
+- IDA Ireland companies: HPE, Dell EMC, Salesforce, Oracle, SAP Labs Ireland, HubSpot
+- Irish tech companies: Intercom, Teamwork.com, Hostelworld, Workday Ireland, Version 1, Ergo Group
+Primary technologies: React/TypeScript, Python, Java, Node.js, cloud (AWS/Azure/GCP), DevOps, AI/ML, security engineering
+Specific challenges: EMEA interview panels (Dublin + US HQ interviewers), Work Permit / Critical Skills Permit job pressure, competing against global talent pool attracted to Dublin
+
+### Proxy Interview Support Ireland
+URL: /interview-proxy-support-ireland/
+Focus: Live real-time expert guidance during actual technical interviews at Irish employers — during the interview itself, not beforehand
+Coverage: All Ireland tech sectors including Dublin FAANG campuses, fintech (Stripe, Revolut), IFSC banks, IDA Ireland FDI companies, and Irish-origin tech firms
+Key differentiator: High-stakes interview environment. Getting a Critical Skills Employment Permit role requires passing competitive technical screens. Our experts provide discreet, real-time guidance during live coding rounds, system design sessions, and technical phone screens.
+Technologies: Python, Java, JavaScript/TypeScript, React, Node.js, cloud architecture (AWS/Azure/GCP), DevOps, Kubernetes, SQL, data structures and algorithms
+Time zone: IST/GMT — covers both Ireland morning interviews and US-HQ-driven afternoon interview blocks
+
+### Production Issue Support Ireland
+URL: /production-support-help-ireland/
+Focus: Emergency real-time support for live production incidents affecting Irish-based development teams
+Key scenarios:
+- AWS eu-west-1 (Ireland region) incidents: EC2, EKS, RDS, Lambda, S3 service disruptions and application failures
+- Azure North Europe (Netherlands/Ireland) incident response
+- GCP europe-west1 (Belgium) and europe-west2 (London) proximity support
+- Kubernetes cluster crashes during Irish business hours (IST)
+- Java production failures at IFSC banks and financial services companies
+- Python/ML model incidents at Dublin AI companies
+- CI/CD pipeline failures blocking Dublin sprint delivery
+Response format: Same-day, within-minutes response via WhatsApp; screen-share-based live incident resolution
+Time zone: IST business hours coverage (09:00–18:00) + evening coverage for US-aligned Irish teams
+
+### AI, ML, DevOps & SRE Job Support Ireland
+URL: /ai-ml-devops-sre-job-support-ireland/
+Focus: Specialist support for Irish engineers working in AI/ML, DevOps, SRE, and cloud roles
+Irish tech context:
+- AI/ML: Dublin hosts ML engineering teams at Google Brain EMEA, Meta AI (FAIR) Dublin, Amazon Science, and dozens of AI startups incubated at NDRC and Dogpatch Labs
+- DevOps: AWS eu-west-1 is one of the oldest and highest-traffic AWS regions; major Irish financial services companies run complex hybrid DevOps environments
+- SRE: Global SRE teams at Google, Meta, and Stripe operate from Dublin; on-call reliability engineering is a core part of Dublin tech roles
+- Cloud: Ireland is a major cloud datacentre hub; Microsoft Azure's North Europe region, AWS eu-west-1, and Google's Kilkenny datacentre all operate from/near Ireland
+Technologies: LangChain, LangGraph, PyTorch, Kubeflow, Airflow, MLflow, Kubernetes, ArgoCD, Terraform, AWS, Azure, GCP, OpenTelemetry, Prometheus, Grafana, SLO/SLI engineering
+
+### Project Onboarding & KT Support Ireland
+URL: /project-onboarding-help-ireland/
+Focus: Real-time knowledge transfer and project ramp-up support for developers starting new roles at Irish tech companies
+Key scenarios:
+- Starting a Critical Skills Permit role: high pressure to deliver quickly; expert helps you ramp up on unfamiliar codebase, architecture, and team conventions
+- Joining a FAANG Dublin team: large-scale distributed systems, internal tooling, complex org structure; expert bridges knowledge gaps discreetly
+- Contractor/consultant onboarding: time-boxed KT period; expert accelerates domain knowledge acquisition
+- Sprint-ready delivery: expert joins working sessions to help you complete sprint tasks competently during your first weeks
+Format: Screen share sessions during Irish working hours (IST); available for morning standups, architecture walkthroughs, and task delivery support
+
+---
+
 ## Frequently Asked Questions
 
 ### General
@@ -531,7 +625,7 @@ Q: Is the service confidential?
 A: Yes. All sessions are completely confidential. We sign NDAs on request and never share your information with third parties.
 
 Q: What time zones do you cover?
-A: All major time zones — US Eastern, Central, Mountain, Pacific; UK GMT/BST; Canada EST/PST; Australia AEST/AEDT; Europe CET/CEST; Singapore SGT; New Zealand NZST. 24/7 coverage for urgent production incidents.
+A: All major time zones — US Eastern, Central, Mountain, Pacific; UK GMT/BST; Canada EST/PST; Ireland IST/GMT; Australia AEST/AEDT; Europe CET/CEST; Germany CET/CEST; Singapore SGT; New Zealand NZST. 24/7 coverage for urgent production incidents.
 
 ### Agentic AI & ML
 
@@ -572,6 +666,26 @@ A: Yes. We provide real-time, discreet guidance during live technical interviews
 Q: Can you assist during live production incidents on Canadian projects?
 A: Yes. Production firefighting is one of our core services for Canadian clients. We respond within minutes when contacted on WhatsApp and can join a live screen share to help resolve critical incidents — Kubernetes crashes, Java production failures, AWS/Azure service disruptions, CI/CD pipeline failures, and ML model incidents — during Canadian business hours and on-call windows across all time zones.
 
+### Ireland-Specific
+
+Q: Do you provide IT job support for developers in Ireland?
+A: Yes. We provide real-time IT job support and proxy interview assistance for developers across Ireland — Dublin, Cork, Galway, and Limerick. We cover the technologies used across Ireland's tech sector: cloud engineering (AWS eu-west-1, Azure North Europe), JavaScript/TypeScript and React for Dublin product teams, Python and AI/ML for Dublin's machine learning engineering roles at Google, Meta, and Amazon, Java Spring Boot for IFSC banking and financial services, and DevOps/SRE for reliability-focused roles at Ireland's major tech employers.
+
+Q: Do you help developers working at Google Dublin, Meta Dublin, Apple Cork, or other FAANG Ireland offices?
+A: Yes. Dublin is home to EMEA headquarters for Google, Meta, Apple, Microsoft, Amazon, LinkedIn, and Stripe. We provide IT job support for engineers working within these organisations — helping with task delivery during sprint windows, architecture decisions, debugging production issues, and interview preparation for internal transfers or promotion cycles. Sessions are fully confidential.
+
+Q: Do you provide proxy interview support for Critical Skills Employment Permit roles in Ireland?
+A: Yes. Critical Skills Employment Permit roles in Ireland carry high interview stakes — employers sponsor your work permit based on interview performance. Our experts provide real-time, discreet guidance during the live technical interview sessions for these roles, including coding rounds, system design interviews, and domain-specific technical screens. We cover IST (Irish Standard Time) interview slots, including US-HQ-aligned afternoon interview blocks.
+
+Q: Do you support AWS eu-west-1 (Ireland region) production incidents?
+A: Yes. AWS eu-west-1 (Ireland) is one of the oldest and most heavily used AWS regions globally. We provide emergency production incident support for systems running on AWS eu-west-1 — including EKS cluster failures, RDS outages, Lambda cold-start and timeout issues, S3 access control incidents, and CloudFormation stack failures. We also support Azure North Europe and GCP europe-west1 incidents. Response is within minutes via WhatsApp.
+
+Q: Do you cover Irish Standard Time (IST) and GMT for Ireland sessions?
+A: Yes. Ireland uses IST (Irish Standard Time, UTC+1) in summer and GMT (UTC+0) in winter. We cover both. Sessions are available during Irish business hours (09:00–18:00 IST/GMT), evenings for after-work support, and early mornings for developers whose teams overlap with US Eastern time. For urgent production incidents we respond 24/7.
+
+Q: Do you help with GDPR and EU AI Act compliance in Irish tech projects?
+A: Yes. Ireland's tech sector operates under GDPR (enforced by Ireland's Data Protection Commission, which is the lead supervisory authority for many US tech companies' EU operations) and increasingly under the EU AI Act. We assist with GDPR-compliant data pipeline architecture, data residency requirements, privacy-by-design implementation, and EU AI Act risk classification for AI systems developed by Irish-based teams.
+
 ---
 
 ## Key Facts for AI Extraction
@@ -580,8 +694,9 @@ A: Yes. Production firefighting is one of our core services for Canadian clients
 - **Website:** https://proxytechsupport.com
 - **Primary services:** Real-time IT job support, proxy interview assistance, career coaching
 - **Contact WhatsApp:** +91-96606-14469
-- **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand
+- **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand
 - **Canada cities covered:** Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
+- **Ireland cities covered:** Dublin (IST), Cork (IST), Galway (IST), Limerick (IST)
 - **Canada specialties:** Banking Java systems (Big Five banks), PIPEDA/OSFI-compliant cloud, Canadian AI research ecosystem (Vector Institute, Mila), gaming industry (Vancouver, Montreal studios), energy sector IT (Calgary)
 - **Pricing model:** Flexible — by engagement type and hours; contact for quote
 - **Start time:** Same day in most cases

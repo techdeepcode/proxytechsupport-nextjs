@@ -35,15 +35,19 @@ export const locationNavLinks = [
   { label: 'Job Support Europe', href: '/job-support-europe/' },
   { label: 'Job Support Australia', href: '/job-support-australia/' },
   { label: 'Job Support Singapore', href: '/job-support-singapore/' },
+  { label: 'Job Support Ireland', href: '/job-support-ireland/' },
+  { label: 'Job Support Germany', href: '/job-support-germany/' },
   { label: 'Proxy Interview USA', href: '/proxy-interview-usa/' },
   { label: 'Proxy Interview Canada', href: '/proxy-interview-canada/' },
   { label: 'Proxy Interview UK', href: '/proxy-interview-uk/' },
   { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
   { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
   { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
+  { label: 'Proxy Interview Ireland', href: '/interview-proxy-support-ireland/' },
+  { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
 ];
 
-/** All 8 geo pages — used in Footer and internal links. */
+/** All geo pages — used in Footer and internal links. */
 export const allLocationLinks = [
   { label: 'Job Support USA', href: '/job-support-usa/' },
   { label: 'Job Support UK', href: '/job-support-uk/' },
@@ -51,6 +55,7 @@ export const allLocationLinks = [
   { label: 'Job Support Australia', href: '/job-support-australia/' },
   { label: 'Job Support Europe', href: '/job-support-europe/' },
   { label: 'Job Support Germany', href: '/job-support-germany/' },
+  { label: 'Job Support Ireland', href: '/job-support-ireland/' },
   { label: 'Job Support Singapore', href: '/job-support-singapore/' },
   { label: 'Job Support New Zealand', href: '/job-support-newzealand/' },
 ];

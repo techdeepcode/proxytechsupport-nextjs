@@ -1,6 +1,6 @@
 # Proxy Tech Support
 
-> Proxy Tech Support provides real-time IT job support and proxy interview assistance for software developers and engineers across USA, UK, Canada, Australia, Europe, Singapore, and worldwide. Senior in-house experts join your working hours via screen share and deliver hands-on help with coding, debugging, architecture, and task delivery — as well as live guidance during technical interviews. Same-day start. 1000+ professionals helped. All major time zones covered.
+> Proxy Tech Support provides real-time IT job support and proxy interview assistance for software developers and engineers across USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, and worldwide. Senior in-house experts join your working hours via screen share and deliver hands-on help with coding, debugging, architecture, and task delivery — as well as live guidance during technical interviews. Same-day start. 1000+ professionals helped. All major time zones covered.
 
 ## Core Service Pages
 
@@ -74,6 +74,15 @@
 - [IT Job Support Singapore](/job-support-singapore/): Singapore tech industry support — SGT aligned.
 - [IT Job Support New Zealand](/job-support-newzealand/): New Zealand developer support.
 
+## Ireland Location Pages
+
+- [IT Job Support Ireland](/job-support-ireland/): Real-time IT job support and proxy interview assistance for developers across Ireland — Dublin, Cork, Galway, Limerick. IST/GMT aligned. Same-day start.
+- [IT Job Support Dublin](/it-job-support-dublin/): Specialist IT job support for Dublin tech professionals — FAANG Dublin offices (Google, Meta, Apple, Microsoft, Amazon), IFSC fintech and banking firms, FDI tech multinationals, and IDA Ireland companies. IST aligned.
+- [Proxy Interview Support Ireland](/interview-proxy-support-ireland/): Live real-time proxy interview guidance during technical interviews at Irish and Ireland-based employers — Dublin tech campus roles, Critical Skills Employment Permit positions, and remote-first Irish companies.
+- [Production Issue Support Ireland](/production-support-help-ireland/): Emergency production incident support for Irish development teams — live bug resolution, outage recovery, Kubernetes failures, cloud incidents across AWS eu-west-1 (Ireland region) and Azure North Europe.
+- [AI, ML, DevOps & SRE Job Support Ireland](/ai-ml-devops-sre-job-support-ireland/): Specialised AI/ML, DevOps, SRE, and cloud job support for Irish engineers — covering the tech stacks at Dublin's major tech employers and Ireland's rapidly growing FDI tech sector.
+- [Project Onboarding & KT Support Ireland](/project-onboarding-help-ireland/): Real-time knowledge transfer and project onboarding support for developers joining new Irish tech projects — sprint ramp-up, codebase walkthroughs, stakeholder-ready delivery from day one.
+
 ## Proxy Interview Assistance Pages
 
 - [Global Interview Support](/interview-support-global/): Live technical interview guidance for candidates worldwide — coding rounds, system design, behavioral.
@@ -83,6 +92,8 @@
 - [Proxy Interview Canada](/proxy-interview-canada/): Live interview guidance for Canadian tech company interviews.
 - [Proxy Interview UK](/proxy-interview-uk/): Real-time interview support for UK tech, banking, and fintech interviews.
 - [Proxy Interview Europe](/proxy-interview-europe/): Real-time proxy interview support for European tech companies — Booking.com, SAP, Deutsche Bank, ING, Spotify, ASML. CET/GMT aligned.
+- [Proxy Interview Germany](/proxy-interview-germany/): Live proxy interview guidance for Germany tech company interviews — Berlin startups (Zalando, Delivery Hero, Celonis), Munich enterprise (BMW IT, Siemens, Allianz Technology), Frankfurt banking (Deutsche Bank, Commerzbank, DZ Bank), SAP ecosystem. CET aligned.
+- [Proxy Interview Ireland](/interview-proxy-support-ireland/): Real-time proxy interview support for Ireland tech company interviews — Google Dublin, Meta Dublin, Apple Cork, Microsoft Dublin, Stripe, Shopify Dublin, fintech and IDA Ireland companies. IST/GMT aligned.
 - [Proxy Interview Australia](/proxy-interview-australia/): Live interview guidance for Australian tech companies — Commonwealth Bank, ANZ, Atlassian, Canva. AEST/AEDT aligned.
 - [Proxy Interview Singapore](/proxy-interview-singapore/): Real-time interview support for Singapore tech roles — DBS, Grab, Sea Group, GovTech. SGT aligned.
 - [AI/ML Proxy Interview Support](/ai-ml-proxy-interview-support/): Real-time expert guidance during live AI/ML interviews — deep learning, PyTorch, LLM fine-tuning, RAG, recommendation systems, ML system design.
@@ -109,7 +120,8 @@
 - Website: https://proxytechsupport.com
 - Contact: WhatsApp +91-96606-14469
 - Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals
-- Coverage: USA, UK, Canada, Australia, Europe, Germany, Singapore, New Zealand
+- Coverage: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand
 - Canada cities: Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
+- Ireland cities: Dublin (IST), Cork (IST), Galway (IST), Limerick (IST)
 - Technologies: AI/ML, MLOps, DevOps, SRE, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET, Databases, Testing, Cybersecurity
 - Canada specialties: Banking Java systems (RBC/TD/Scotiabank), Canadian fintech APIs, PIPEDA-compliant cloud architectures, AI research ecosystem (Vector Institute Toronto, Mila Montreal), gaming industry (Vancouver, Montreal), energy sector tech (Calgary)
