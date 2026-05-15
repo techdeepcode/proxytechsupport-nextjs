@@ -6342,6 +6342,1460 @@ export const proxyInterviewGermany: LandingPageConfig = {
   },
 };
 
+
+// ─── Texas GEO Hub — Phase 1 ─────────────────────────────────────────────────
+
+export const jobSupportTexas: LandingPageConfig = {
+  slug: 'job-support-texas',
+  title: 'IT Job Support Texas – Real-Time Developer Help for Texas Consultants',
+  description:
+    'Real-time IT job support for Texas consultants on W2, C2C, H1B, and GC/EAD contracts. Dallas, Irving, Plano, Fort Worth. CST timezone aligned. DevOps, AI/ML, Java, React, .NET, cloud. Start same-day.',
+  canonical: `${BASE_URL}/job-support-texas/`,
+  keywords: [
+    'IT job support Texas', 'developer help Texas CST', 'job support Texas consultants',
+    'H1B job support Texas', 'C2C developer help Texas', 'W2 IT support Texas',
+    'Dallas IT job support', 'Irving IT support', 'Plano developer help',
+    'production support Texas', 'AI ML job support Texas', 'DevOps support Texas',
+  ],
+  ogTitle: 'IT Job Support Texas – CST-Timezone Help for Texas IT Consultants',
+  ogDescription:
+    'Expert CST-timezone job support for W2, C2C, H1B, GC/EAD professionals in Dallas, Irving, Plano, and across Texas. DevOps, AI/ML, Java, cloud, full-stack. Same-day start.',
+  h1: 'Real-Time IT Job Support for Texas Consultants',
+  tagline:
+    'CST-timezone expert backing for W2, C2C, H1B, and GC/EAD professionals in Dallas, Irving, Plano, and across Texas — daily project work, production incidents, sprint delivery, and interview support.',
+  heroEyebrow: 'Texas IT Job Support',
+  painIntro:
+    'Texas is one of the densest IT consulting markets in the USA — Dallas, Irving, and Plano alone host Fortune 500 enterprise projects, banking systems, telecom platforms, healthcare IT, and energy-sector cloud migrations. If you are a consultant on a high-pressure W2 or C2C contract and struggling with daily deliverables, production incidents, or client-round pressure, our CST-timezone experts are available right now.',
+  heroVariant:
+    "Texas IT projects demand speed. Whether you are navigating a complex microservices migration at a Dallas bank, a Kubernetes production incident at an Irving telecom company, a React performance issue at a Plano enterprise, or an AI/ML pipeline failure on a Fort Worth energy project — you need real expert help, not a forum post. Our in-house senior engineers cover 60+ technologies and are fully aligned with CST business hours — available before your morning standup, during client calls, and through late-night production deployments.",
+  heroUrgency:
+    'Production down? Client review in 2 hours? Standup in 20 minutes with no answers? Message us on WhatsApp — Texas CST support available immediately.',
+  geoLine: 'Supporting IT professionals in Dallas, Irving, Plano, Fort Worth, Austin, Houston, San Antonio, and across Texas.',
+  timezoneNote: 'Fully aligned with Texas CST (Central Standard Time) and CDT working hours.',
+  techSnippet:
+    'Texas tech stack coverage: Java, Spring Boot, Python, React, Node.js, .NET, DevOps (AWS, Azure, Kubernetes, Terraform), AI/ML, MLOps, SRE, QA Automation, Data Engineering, Cybersecurity.',
+  highlights: [
+    {
+      title: 'CST-Timezone Daily Job Support',
+      description:
+        'Real-time coding help, debugging, architecture review, and sprint task delivery aligned with Texas CST working hours — available before standups, during client calls, and through production windows.',
+    },
+    {
+      title: 'Texas Enterprise & Consulting Market Expertise',
+      description:
+        'Deep familiarity with Dallas banking projects, Irving telecom enterprise environments, Plano corporate tech platforms, and the W2/C2C/H1B consulting structure common across Texas.',
+    },
+    {
+      title: 'Full-Stack Technology Coverage',
+      description:
+        'Java, Python, React, .NET, Node.js, DevOps, AWS, Azure, Kubernetes, AI/ML, MLOps, SRE, QA Automation, Data Engineering — 60+ technologies covered by senior in-house experts.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What IT job support do you provide for Texas consultants?',
+      answer:
+        'We provide daily real-time job support for Texas consultants on W2, C2C, H1B, and GC/EAD contracts. Our in-house experts help with coding, debugging, architecture, sprint delivery, production incidents, and client-facing technical explanations across 60+ technologies including Java, Python, React, .NET, DevOps, AWS, Azure, AI/ML, and Data Engineering.',
+    },
+    {
+      question: 'Can you help Texas consultants during live client calls and standups?',
+      answer:
+        'Yes. Many Texas consultants reach out when they are about to enter a client meeting or have a standup in 20 minutes with no answers. Our experts provide real-time silent coaching, quick written answers, architecture explanations, and code snippets you can use immediately — before or during the meeting.',
+    },
+    {
+      question: 'Do you cover Dallas, Irving, and Plano IT consulting projects?',
+      answer:
+        'Yes. Dallas is a major enterprise IT hub with banking, telecom, and healthcare projects. Irving hosts Las Colinas enterprise campuses for major banks and telecom companies. Plano has large corporate tech campuses including Toyota, Fannie Mae, and numerous Fortune 500 companies. We support consultants across all Texas markets.',
+    },
+    {
+      question: 'What makes your Texas job support different from generic IT help?',
+      answer:
+        'We specialize in the USA IT consulting market — specifically W2, C2C, H1B, and GC/EAD contract structures common in Texas. We understand vendor layers, implementation partners, prime vendor relationships, sprint pressure, and the real-world tech stacks used in Texas Fortune 500 projects.',
+    },
+    {
+      question: 'Can you help with production incidents on Texas projects?',
+      answer:
+        'Yes. Whether it is a Kubernetes pod crash, API failure, database lock, CI/CD pipeline break, or cloud infrastructure issue — our experts can join your incident bridge, analyze logs, trace the root cause, and help you resolve it in real time during CST hours.',
+    },
+    {
+      question: 'How quickly can I start IT job support as a Texas consultant?',
+      answer:
+        'Same day. Message us on WhatsApp with your technology stack and current challenge. We assign a senior expert immediately and can start within the hour.',
+    },
+    {
+      question: 'Do you support H1B and GC/EAD professionals in Texas IT roles?',
+      answer:
+        'Yes. A significant portion of the Texas IT consulting workforce is on H1B, GC, or EAD status working through implementation partners or prime vendors. We understand the pressure these professionals face — project performance expectations, visa-status employment dependencies, and career-defining technical challenges. Everything is 100% confidential.',
+    },
+    {
+      question: 'What technologies do you cover for Texas job support?',
+      answer:
+        'We cover 60+ technologies: Java (Spring Boot, Microservices, Kafka), Python, React, Node.js, Angular, .NET (C#, ASP.NET Core), DevOps (AWS, Azure, Kubernetes, Docker, Terraform, Helm, ArgoCD, Jenkins, GitHub Actions), AI/ML (PyTorch, TensorFlow, LangChain, RAG, MLOps), SRE (Prometheus, Grafana, ELK), QA Automation (Selenium, Playwright, Cypress), Data Engineering (Snowflake, Databricks, AWS Glue), and Cybersecurity/DevSecOps.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Texas Consulting Scenarios We Handle',
+    cases: [
+      'Java Spring Boot microservices production issue at a Dallas banking project — API failures, Kafka lag, or database connection pool exhaustion',
+      'Kubernetes deployment failure at an Irving enterprise — pod crashloops, Helm chart errors during a release window',
+      'React frontend performance issue at a Plano corporate tech project — rendering bottlenecks, state management complexity, or API integration failures',
+      'AI/ML pipeline debugging for a Texas energy or healthcare project — model serving failures, data preprocessing errors, or RAG pipeline issues',
+      'DevOps CI/CD pipeline break at a Texas Fortune 500 project — GitHub Actions failing, Jenkins build errors, or Terraform apply failures',
+      'Project onboarding support for a Texas consultant just joining a new enterprise assignment — codebase walkthrough and first-sprint delivery help',
+      'Interview proxy support for a Texas candidate facing a Fortune 500 client round — technical screening, coding round, or system design interview',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview & Real-Time Support for Texas IT Roles',
+    intro:
+      'Texas Fortune 500 companies conduct rigorous multi-round technical interviews with coding, system design, and architecture rounds. Our experts provide real-time confidential coaching and proxy interview support for Texas IT roles.',
+    points: [
+      'Live coding round support for Texas employer technical screens',
+      'System design interview coaching for Dallas enterprise architecture roles',
+      'DevOps and Kubernetes interview support for Texas SRE and platform engineering positions',
+      'AI/ML interview preparation for Texas tech, healthcare, and energy sector roles',
+      'Client round support for vendor-placed Texas consultants facing implementation partner interviews',
+      'Confidential and discreet — your performance, our expertise',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+      { label: 'IT job support Irving', href: '/it-job-support-irving/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support Dallas', href: '/devops-job-support-dallas/' },
+      { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
+    ],
+    problemLink: { label: 'Struggling on your Texas IT project?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Plano', href: '/it-job-support-plano/' },
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+      { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'Texas Consulting Market: Why CST-Timezone Support Matters',
+    body:
+      "The Texas IT consulting market operates at enterprise speed. Dallas alone is home to more Fortune 500 headquarters per capita than almost any other US city — AT&T, American Airlines, Toyota North America, JPMorgan Chase Texas operations, and dozens more run complex multi-vendor IT environments with consultant-heavy project teams. Irving's Las Colinas district is one of the densest enterprise tech clusters in the country. When you are a consultant in this environment — on a W2 or C2C contract, working through a prime vendor or implementation partner — daily performance is non-negotiable. You cannot afford to fall behind on sprint tasks, miss a production window, or blank during a client architecture review.",
+    linkText: 'Start Texas IT job support now',
+    linkHref: '/job-support-texas/',
+  },
+  bottomCTAHeading: 'Texas IT Project Under Pressure?',
+  bottomCTABody:
+    'Expert CST-timezone support for Dallas, Irving, Plano, and all Texas consulting projects. Real-time help for production issues, daily sprint work, client calls, and interview rounds. Start immediately.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const itJobSupportDallas: LandingPageConfig = {
+  slug: 'it-job-support-dallas',
+  title: 'IT Job Support Dallas – Daily Developer Help for Dallas IT Consultants',
+  description:
+    'Struggling on your Dallas IT project? Real-time expert job support for Dallas consultants — sprint tasks, client calls, production issues, backend, cloud, DevOps, AI/ML, React, Java, .NET. CST hours. Start today.',
+  canonical: `${BASE_URL}/it-job-support-dallas/`,
+  keywords: [
+    'IT job support Dallas', 'developer help Dallas', 'Dallas IT consultant support',
+    'Dallas sprint task help', 'Dallas cloud job support', 'Dallas Java support',
+    'Dallas DevOps help', 'Dallas React developer support', 'Dallas backend support',
+    'job support Dallas Texas', 'IT consulting help Dallas', 'Dallas production support',
+  ],
+  ogTitle: 'IT Job Support Dallas – Real-Time Expert Help for Dallas Consultants',
+  ogDescription:
+    'Real-time job support for Dallas IT consultants — sprint delivery, client calls, production incidents, and daily coding help. Java, React, DevOps, cloud, AI/ML. CST timezone. Same-day start.',
+  h1: 'IT Job Support for Dallas Consultants — Real-Time Help When It Counts',
+  tagline:
+    'Daily expert backing for Dallas IT professionals struggling with sprint tasks, client-facing deliverables, backend complexity, cloud issues, and production pressure — CST timezone aligned.',
+  heroEyebrow: 'Dallas IT Job Support',
+  painIntro:
+    'Dallas is a high-intensity IT consulting market. Enterprise banks, telecom giants, healthcare networks, and Fortune 500 headquarters run complex multi-vendor projects where consultants are expected to deliver at full speed from day one. If you are on a Dallas project and falling behind on sprint tasks, blanking during client calls, or dealing with a production issue nobody on the team can solve — you need more than Google. You need a senior expert who can step in right now.',
+  heroVariant:
+    "Dallas IT projects are rarely simple. You might be integrating microservices across three teams for a major bank's digital transformation, debugging a Kubernetes cluster during a telecom production window, or explaining an architectural decision during a client review that starts in 30 minutes. Our experts have worked through exactly these scenarios — not in theory, but in live consulting environments. We provide real-time silent coaching, code fixes, architecture answers, and sprint delivery help that keeps your project moving and your client relationship intact.",
+  heroUrgency:
+    'Dallas standup in 15 minutes? Client call this afternoon with no clear answer? Production issue since midnight? WhatsApp us now.',
+  geoLine: 'Supporting Dallas IT consultants across the Dallas-Fort Worth metroplex and remote Dallas-based contract roles.',
+  timezoneNote: 'Fully aligned with Dallas CST business hours — available before morning standups through end-of-day production windows.',
+  techSnippet:
+    'Dallas tech stacks covered: Java, Spring Boot, Microservices, React, Angular, Node.js, .NET, Python, AWS, Azure, Kubernetes, Docker, DevOps, CI/CD, AI/ML, SRE, Data Engineering, QA Automation.',
+  highlights: [
+    {
+      title: 'Sprint Task & Daily Delivery Support',
+      description:
+        'Stuck on a JIRA ticket, Azure DevOps task, or sprint deliverable? Our experts work alongside you in real time — coding, debugging, reviewing, and unblocking so your sprint does not slip.',
+    },
+    {
+      title: 'Client Call & Architecture Review Prep',
+      description:
+        'Facing a client architecture review, technical design discussion, or implementation partner evaluation? We help you prepare answers, build diagrams, and walk through your approach with confidence.',
+    },
+    {
+      title: 'Dallas Enterprise Tech Coverage',
+      description:
+        'Deep coverage of Dallas enterprise stacks — banking Java applications, telecom cloud infrastructure, healthcare data platforms, and corporate .NET/React delivery environments.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What kind of IT job support can I get for my Dallas project?',
+      answer:
+        'We provide daily real-time support covering sprint task delivery, code debugging, architecture walkthroughs, production incident resolution, and client-facing technical explanations. Dallas enterprises commonly run Java, Spring Boot, .NET, React, Angular, Node.js, AWS, Azure, Kubernetes, and DevOps pipelines — we cover all of them.',
+    },
+    {
+      question: 'Can you help me before a client call or architecture review in Dallas?',
+      answer:
+        'Yes. Many Dallas consultants message us 30-60 minutes before a client call with a technical question they cannot confidently answer. We provide quick explanations, talking points, architecture diagrams (described or drawn), and code examples so you walk into the meeting prepared.',
+    },
+    {
+      question: 'Do you understand Dallas banking and telecom IT project environments?',
+      answer:
+        'Yes. Dallas is home to major banking and telecom enterprise IT. Whether you are on a capital markets platform for a Dallas bank, a BSS/OSS project for a major telecom, or a digital transformation initiative for a healthcare system — our experts have context for these environments and can provide help that is relevant to your specific domain.',
+    },
+    {
+      question: 'Can you help with daily sprint tasks and JIRA tickets on my Dallas project?',
+      answer:
+        'Yes. Consultants on Dallas enterprise projects often face sprint tasks that require knowledge of unfamiliar codebases, legacy integrations, or poorly documented APIs. Our experts help you understand what is needed, write the code, debug the issue, and deliver on time.',
+    },
+    {
+      question: 'What about production support for Dallas projects during and after business hours?',
+      answer:
+        'We cover production incidents during Dallas CST business hours and extended windows. Whether you are dealing with a critical API failure, a database issue, a Kubernetes deployment problem, or a CI/CD pipeline break during a release — our experts can join your incident resolution process immediately.',
+    },
+    {
+      question: 'Do you provide support for W2 and C2C consultants in Dallas?',
+      answer:
+        'Yes. The Dallas IT market is heavily driven by W2 and C2C consulting contracts placed through prime vendors and implementation partners. We understand this structure and provide job support that is fully confidential — your employer, vendor, or client will never know.',
+    },
+    {
+      question: 'How do I start IT job support for my Dallas project?',
+      answer:
+        'Message us on WhatsApp with your current project technology stack and the challenge you are facing. We match you with the right senior expert and start the same day.',
+    },
+    {
+      question: 'Do you cover DevOps, cloud, and AI/ML tasks for Dallas consultants?',
+      answer:
+        'Yes. Dallas projects increasingly require DevOps (AWS, Azure, Kubernetes, Terraform, GitHub Actions), AI/ML (LangChain, RAG pipelines, MLOps), and SRE skills. Our experts cover all these domains and can help with daily tasks, production issues, and technical interview preparation.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Dallas IT Scenarios Our Experts Handle',
+    cases: [
+      'Java Spring Boot API suddenly throwing 500 errors in production at a Dallas bank — log analysis, root cause, and fix within the same CST business day',
+      'React dashboard performance degradation at a Dallas enterprise — profiling, component optimization, and memoization fixes delivered before the client demo',
+      'Azure DevOps pipeline failing on a Dallas corporate project — YAML errors, dependency issues, or artifact upload failures diagnosed and resolved',
+      'Dallas consultant blanking during a client architecture discussion — architecture explanation, trade-off analysis, and talking points provided in real time',
+      'Kubernetes pod crashlooping on a Dallas telecom project — container logs analyzed, resource limits corrected, and deployment stabilized',
+      'Dallas consultant joining a new project with legacy .NET codebase — codebase structure explained, first sprint task completed with expert guidance',
+    ],
+  },
+  proxySection: {
+    title: 'Dallas Interview Proxy Support',
+    intro:
+      'Dallas Fortune 500 employers and implementation partners run demanding technical rounds. Our confidential proxy interview support covers Dallas employer interview formats — from coding screens to system design to client-facing rounds.',
+    points: [
+      'Real-time silent support during Dallas employer technical screening calls',
+      'Coding challenge help for Dallas Fortune 500 hiring rounds (Java, Python, React, .NET)',
+      'System design interview coaching for Dallas enterprise architect and senior developer roles',
+      'Client round preparation for vendor-placed Dallas consultants',
+      'DevOps and cloud interview support for Dallas platform and SRE roles',
+      'Completely confidential — no trace, no risk',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Irving', href: '/it-job-support-irving/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support Dallas', href: '/devops-job-support-dallas/' },
+      { label: 'Java job support Irving', href: '/java-job-support-irving/' },
+    ],
+    problemLink: { label: 'Struggling on your Dallas IT project?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Plano', href: '/it-job-support-plano/' },
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+      { label: 'IT job support USA', href: '/job-support-usa/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'Why Dallas Consultants Need Specialized Real-Time Support',
+    body:
+      "Dallas enterprise IT environments are known for their scale and complexity. Multi-team delivery across vendor layers — where a prime vendor manages multiple sub-vendors, each responsible for different modules — creates a consulting environment where individual contributors are expected to be productive from week one without sufficient KT or documentation. Sprint expectations are high, client visibility is constant, and production incidents can directly impact SLA commitments that involve millions in contract penalties. In this environment, having a senior expert available in real time during CST hours is not a luxury — it is survival infrastructure for consultants who want to stay employed and advance.",
+    linkText: 'Get Dallas IT job support now',
+    linkHref: '/it-job-support-dallas/',
+  },
+  bottomCTAHeading: 'Dallas IT Project Falling Behind?',
+  bottomCTABody:
+    'Real-time CST-timezone job support for Dallas consultants — sprint tasks, production incidents, client calls, architecture reviews, and daily coding help. Same-day start.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const itJobSupportIrving: LandingPageConfig = {
+  slug: 'it-job-support-irving',
+  title: 'IT Job Support Irving – Enterprise & Banking Developer Help in Irving TX',
+  description:
+    'IT job support for Irving TX consultants in banking, enterprise, healthcare, and telecom projects. Java, backend, SQL, cloud, DevOps, microservices, production issues. Las Colinas enterprise corridor. CST hours.',
+  canonical: `${BASE_URL}/it-job-support-irving/`,
+  keywords: [
+    'IT job support Irving TX', 'Irving developer support', 'Irving banking IT support',
+    'Las Colinas IT job help', 'Irving Java support', 'Irving enterprise IT consulting',
+    'Irving healthcare IT support', 'Irving telecom developer help', 'Irving backend support',
+    'Irving SQL production support', 'Irving cloud job support', 'Irving DevOps support',
+  ],
+  ogTitle: 'IT Job Support Irving TX – Banking, Enterprise & Developer Help',
+  ogDescription:
+    'Real-time IT job support for Irving TX consultants in banking, healthcare, telecom, and enterprise projects. Java, SQL, cloud, DevOps, microservices. Las Colinas enterprise. CST timezone.',
+  h1: 'IT Job Support for Irving TX Consultants — Banking, Enterprise & Technology Projects',
+  tagline:
+    'Real-time developer help for Irving enterprise, banking, healthcare, and telecom consultants — Java backends, SQL databases, cloud migrations, microservices, and production issue resolution.',
+  heroEyebrow: 'Irving TX IT Job Support',
+  painIntro:
+    "Irving, Texas is one of the most enterprise-dense IT corridors in the country. Las Colinas alone hosts the North American offices of some of the world's largest banks, insurance companies, telecom providers, and healthcare systems. Consultants placed here face rigorous delivery expectations, complex legacy integration work, and enterprise codebases that are rarely documented. If you are on an Irving banking, healthcare, or telecom project and need immediate expert support — we are aligned with your CST working hours.",
+  heroVariant:
+    "Irving enterprise projects have a distinct character: large Java-based banking applications with decades of accumulated business logic, complex SQL Server and Oracle databases with intricate stored procedures, cloud migration projects moving from on-premise to AWS or Azure without disrupting production, and microservices re-architecture of legacy monoliths. These are not beginner-level problems. Our experts have direct experience in enterprise banking and telecom IT environments and can provide the domain-aware support that generic help desks cannot.",
+  heroUrgency:
+    'Irving production incident? Banking system data issue? Enterprise deployment failure? WhatsApp us — CST support available now.',
+  geoLine: 'Supporting Irving consultants across Las Colinas, DFW Airport corridor, and the broader Irving enterprise tech market.',
+  timezoneNote: 'Aligned with Irving/Dallas CST business hours — standups, production windows, and client delivery schedules.',
+  techSnippet:
+    'Irving enterprise stack coverage: Java EE, Spring Boot, Hibernate, SQL Server, Oracle DB, REST APIs, Kafka, AWS, Azure, .NET, microservices, ETL pipelines, legacy modernization, and cloud migration.',
+  highlights: [
+    {
+      title: 'Banking & Financial Services IT Support',
+      description:
+        'Expert help for Irving bank and insurance technology consultants — Java enterprise applications, SQL optimization, API integration, regulatory compliance workflows, and production incident resolution.',
+    },
+    {
+      title: 'Enterprise Legacy & Modernization Support',
+      description:
+        'Practical support for Irving consultants working on legacy modernization projects — monolith decomposition, microservices refactoring, database migration, and cloud lift-and-shift.',
+    },
+    {
+      title: 'Telecom & Healthcare IT Support',
+      description:
+        'Domain-aware support for Irving telecom (BSS/OSS, billing systems, network platforms) and healthcare IT (HL7, FHIR, EMR integrations, claims processing) consulting environments.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What IT job support is available for Irving banking and enterprise consultants?',
+      answer:
+        'We provide real-time daily job support for Irving consultants in banking, insurance, telecom, healthcare, and enterprise tech projects. Coverage includes Java (Spring Boot, Hibernate, JPA, EJB), SQL Server and Oracle database optimization, REST API debugging, microservices, AWS and Azure cloud work, Kafka integration, .NET enterprise applications, and production incident resolution.',
+    },
+    {
+      question: 'Do you understand the Irving Las Colinas enterprise IT environment?',
+      answer:
+        'Yes. Las Colinas Irving hosts major enterprise tech operations for financial institutions, insurance companies, telecom providers, and healthcare systems. These environments share common characteristics: Java-heavy enterprise codebases, complex multi-schema SQL databases, strict change management processes, and vendor-managed project delivery. Our experts have context for these environments and provide support calibrated to them.',
+    },
+    {
+      question: 'Can you help with Irving banking application production issues?',
+      answer:
+        'Yes. Banking production issues in Irving enterprise environments often involve Java application server failures, SQL deadlocks or performance degradation, REST API integration failures between internal and external systems, Kafka consumer lag, and compliance-sensitive data issues. Our experts analyze logs, identify root causes, and provide resolution paths in real time.',
+    },
+    {
+      question: 'Do you support Irving consultants working on legacy Java enterprise applications?',
+      answer:
+        'Yes. Many Irving enterprise consultants work on large Java EE or Spring applications with years of accumulated business logic, poor documentation, and complex interdependencies. We help you understand the codebase quickly, diagnose issues without full context, and deliver fixes that respect the existing architecture.',
+    },
+    {
+      question: 'Can you help Irving telecom and healthcare IT consultants?',
+      answer:
+        'Yes. Irving telecom projects often involve BSS/OSS platforms, billing system integrations, and network management applications. Healthcare IT projects involve HL7/FHIR interfaces, EMR/EHR system integrations, and claims processing applications. We provide domain-aware support for both verticals.',
+    },
+    {
+      question: 'What about cloud migration support for Irving enterprise projects?',
+      answer:
+        'Cloud migration is a major initiative at Irving enterprises — moving legacy Java, .NET, and data applications to AWS or Azure. We provide support for migration architecture decisions, code refactoring, infrastructure as code (Terraform, CloudFormation), containerization (Docker, Kubernetes), and production cutover support.',
+    },
+    {
+      question: 'How do Irving consultants contact you for immediate support?',
+      answer:
+        'Message us on WhatsApp. Describe your technology stack (Java, SQL, AWS, etc.) and the specific challenge you are facing. We assign a matching senior expert immediately and start working with you the same day — including CST business hours.',
+    },
+    {
+      question: 'Do you provide interview support for Irving enterprise and banking roles?',
+      answer:
+        'Yes. Irving enterprise roles — particularly banking and financial services IT — have demanding interview formats that include SQL query writing, Java system design, API architecture, and behavioral rounds about working in regulated environments. We provide proxy interview support and interview preparation tailored to these formats.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Irving Enterprise Scenarios Our Experts Resolve',
+    cases: [
+      'Irving banking Java application throwing OutOfMemoryError in production — heap analysis, GC tuning, and memory leak identification',
+      'SQL Server stored procedure performance degradation at an Irving insurance project — query plan analysis, index optimization, and lock contention resolution',
+      'REST API integration failure between an Irving enterprise system and an external payment gateway — request/response debugging, timeout analysis, and retry logic implementation',
+      'Kafka consumer group rebalancing causing message processing delays at an Irving telecom project — partition assignment review, consumer configuration tuning',
+      'Irving consultant onboarding to a large legacy Java monolith — codebase navigation, module dependency mapping, and first ticket delivered with expert guidance',
+      'AWS to Azure migration support for an Irving enterprise — infrastructure mapping, Terraform conversion, and workload migration strategy',
+    ],
+  },
+  proxySection: {
+    title: 'Proxy Interview Support for Irving Enterprise Roles',
+    intro:
+      'Irving banking, telecom, and enterprise IT interviews are rigorous — Java deep dives, SQL optimization questions, system design for regulated environments, and behavioral rounds about large-team delivery. Our proxy support covers all of these.',
+    points: [
+      'Java enterprise interview support — Spring, Hibernate, JPA, design patterns, microservices architecture',
+      'SQL and database interview support — query optimization, stored procedures, normalization, and RDBMS architecture',
+      'Cloud architecture interview support for Irving AWS/Azure migration roles',
+      'Behavioral and domain round support — working in regulated, multi-vendor enterprise environments',
+      'Client round prep for vendor-placed Irving consultants',
+      'Fully confidential — silent expert backing during your interview call',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+    ],
+    techLinks: [
+      { label: 'Java job support Irving', href: '/java-job-support-irving/' },
+      { label: 'DevOps job support Dallas', href: '/devops-job-support-dallas/' },
+    ],
+    problemLink: { label: 'Struggling on your Irving IT project?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Plano', href: '/it-job-support-plano/' },
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+      { label: 'IT job support USA', href: '/job-support-usa/' },
+    ],
+  },
+  caseStudySection: {
+    heading: "Irving's Enterprise IT Corridor: The Consulting Reality",
+    body:
+      "Las Colinas in Irving, TX is home to North American operations for some of the world's largest financial institutions, insurance groups, and telecom companies. These companies collectively employ thousands of IT consultants placed through vendor chains — prime vendors, sub-vendors, implementation partners, and staff augmentation firms. Consultants are expected to be productive from day one, navigate internal tools and processes independently, and deliver in sprint cycles while managing offshore team coordination. When you are new to an Irving enterprise assignment, the codebase is large, documentation is sparse, and your implementation partner expects results. The consultants who succeed in these environments are the ones who get expert support early and stay ahead of delivery pressure.",
+    linkText: 'Get Irving IT job support now',
+    linkHref: '/it-job-support-irving/',
+  },
+  bottomCTAHeading: 'Irving Enterprise Project — Need Expert Help?',
+  bottomCTABody:
+    'Real-time job support for Irving banking, telecom, healthcare, and enterprise IT consultants. Java, SQL, cloud, microservices, production incidents. CST timezone. Start today.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const itJobSupportPlano: LandingPageConfig = {
+  slug: 'it-job-support-plano',
+  title: 'IT Job Support Plano TX – Enterprise Tech Help for Plano Consultants',
+  description:
+    'IT job support for Plano TX consultants on corporate enterprise projects. Cloud migration, SRE, QA automation, React, .NET, full-stack, release cycles, production workflows. Fortune 500 tech corridor. CST hours.',
+  canonical: `${BASE_URL}/it-job-support-plano/`,
+  keywords: [
+    'IT job support Plano TX', 'developer help Plano Texas', 'Plano enterprise IT support',
+    'Plano cloud support', 'Plano SRE job help', 'Plano QA automation support',
+    'Plano React developer help', 'Plano .NET support', 'Plano full-stack job support',
+    'Plano corporate IT consulting', 'Plano production support', 'Plano Fortune 500 IT help',
+  ],
+  ogTitle: 'IT Job Support Plano TX – Corporate Enterprise Developer Help',
+  ogDescription:
+    'Real-time IT job support for Plano TX consultants on Fortune 500 enterprise projects. Cloud, SRE, QA automation, React, .NET, full-stack, release cycles. CST timezone. Start today.',
+  h1: 'IT Job Support for Plano TX Consultants — Enterprise, Cloud & Full-Stack Help',
+  tagline:
+    'Expert real-time support for Plano corporate IT professionals navigating enterprise delivery, cloud migrations, SRE operations, release pressure, QA automation, and React/.NET full-stack challenges.',
+  heroEyebrow: 'Plano TX IT Job Support',
+  painIntro:
+    'Plano, Texas is a Fortune 500 technology corridor. Toyota North America, Fannie Mae, Frito-Lay, Liberty Mutual, and dozens of major enterprise technology centers run their IT operations from Plano. Consultants placed here face corporate IT environments with strict change management processes, multi-team release coordination, and enterprise architecture complexity. Whether you are dealing with a cloud migration blocking your sprint, a production SRE alert you cannot resolve, or a QA automation framework you need to understand fast — we provide the expert support to keep you on track.',
+  heroVariant:
+    "Plano enterprise IT has its own flavor: well-funded technology transformations running on structured SDLC processes, heavy use of Agile at scale (SAFe or multi-team Scrum), strict environment promotion gates, enterprise-grade cloud platforms on AWS or Azure, and production environments monitored with full observability stacks. When you hit a blocker in this environment — a Terraform plan that fails environment promotion, a React component that breaks the enterprise design system, a production monitoring alert you have never seen — the clock starts immediately. Our experts provide exact, actionable answers for Plano enterprise tech contexts.",
+  heroUrgency:
+    'Plano release window tonight? Production alert unresolved? Sprint review tomorrow and a task incomplete? Message us on WhatsApp now.',
+  geoLine: 'Supporting Plano IT consultants across the Legacy Drive corridor, corporate tech campuses, and remote Plano-contract roles.',
+  timezoneNote: 'Aligned with Plano/Dallas CST business hours including release windows, daily standups, and production monitoring shifts.',
+  techSnippet:
+    'Plano enterprise stack coverage: React, Angular, .NET (C#, ASP.NET Core), Java, Node.js, AWS, Azure, Terraform, Kubernetes, Helm, SRE (Prometheus, Grafana, PagerDuty), QA (Selenium, Playwright, Cypress, TestNG), CI/CD, and enterprise DevOps.',
+  highlights: [
+    {
+      title: 'Enterprise Release Cycle & Sprint Support',
+      description:
+        'Plano enterprise projects run on structured release cadences with strict gates. We help consultants deliver sprint tasks, clear environment promotion blockers, and prepare for code reviews in corporate SDLC environments.',
+    },
+    {
+      title: 'Cloud & SRE Operations Support',
+      description:
+        'Real-time help for Plano cloud migration work and SRE responsibilities — Terraform, Kubernetes, monitoring setup, alert response, observability, and incident resolution.',
+    },
+    {
+      title: 'QA Automation & Full-Stack Delivery',
+      description:
+        'Expert support for Plano QA automation engineers (Selenium, Playwright, Cypress) and full-stack developers (React, Angular, .NET, Node.js) working in enterprise corporate delivery environments.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What IT job support is available for Plano corporate enterprise consultants?',
+      answer:
+        'We provide real-time daily support for Plano consultants working on Fortune 500 enterprise projects. This includes sprint task delivery, code debugging, cloud infrastructure support (AWS, Azure, Terraform, Kubernetes), SRE incident response, QA automation framework help (Selenium, Playwright, Cypress), React and .NET frontend/backend issues, and release cycle support.',
+    },
+    {
+      question: 'Do you understand Plano corporate IT delivery environments?',
+      answer:
+        'Yes. Plano corporate IT is characterized by SAFe/Agile-at-scale delivery, strict change management, multi-environment promotion gates (dev/test/staging/prod), enterprise architecture review boards, and observability-heavy production environments. We understand these constraints and provide support that works within them.',
+    },
+    {
+      question: 'Can you help with Plano enterprise cloud migration projects?',
+      answer:
+        'Yes. Plano enterprises are actively running cloud migrations — moving on-premise applications to AWS or Azure, refactoring monolithic applications into containerized microservices, and establishing cloud-native DevOps pipelines. We provide expert support for migration architecture, Terraform infrastructure code, Kubernetes deployment, and cloud-native application patterns.',
+    },
+    {
+      question: 'Do you support Plano SRE engineers and production monitoring responsibilities?',
+      answer:
+        'Yes. SRE responsibilities at Plano enterprises include alert triage (PagerDuty, OpsGenie), Prometheus/Grafana dashboard management, SLO/SLI definition, incident postmortem writing, and production runbook development. Our experts help SRE consultants handle these responsibilities in real time.',
+    },
+    {
+      question: 'Can you help Plano QA automation engineers?',
+      answer:
+        'Yes. Plano enterprise QA teams commonly use Selenium WebDriver, Playwright, Cypress, TestNG, and API testing frameworks. We help QA consultants build test frameworks from scratch, debug flaky tests, integrate automation into CI/CD pipelines, and meet corporate test coverage requirements.',
+    },
+    {
+      question: 'What about React and .NET full-stack support for Plano enterprise projects?',
+      answer:
+        'Plano enterprises run large React SPAs with enterprise component libraries, state management (Redux, Zustand), and API integration layers. .NET projects involve ASP.NET Core Web APIs, Entity Framework, and enterprise authentication (Azure AD, OKTA). We provide full-stack support for both.',
+    },
+    {
+      question: 'How quickly can Plano consultants start job support?',
+      answer:
+        'Same day. WhatsApp us with your stack and challenge — Java, .NET, React, cloud, SRE, QA — and we assign the right senior expert within the hour.',
+    },
+    {
+      question: 'Do you support release preparation and deployment support for Plano enterprise projects?',
+      answer:
+        'Yes. Release support is high-stakes at Plano enterprises — environment promotion failures, production deployment issues, and post-deployment monitoring are all scenarios we cover. We provide support during release windows, help with deployment runbooks, and assist with production hypercare after major releases.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Plano Enterprise Scenarios We Handle',
+    cases: [
+      'React enterprise application breaking in Plano staging environment — prop drilling issue, context provider failure, or enterprise design system integration error',
+      'ASP.NET Core Web API returning 401 errors after an Azure AD token refresh — OAuth flow debugging and token validation fix',
+      'Terraform apply failing during Plano corporate AWS environment promotion — state file conflict, IAM permission issue, or resource dependency error',
+      'Plano SRE consultant receiving PagerDuty alert for high error rate — log analysis, trace correlation, and incident resolution steps',
+      'Cypress test suite failing on CI after a UI library upgrade at a Plano enterprise — selector updates, async handling, and test stability improvements',
+      'Plano consultant needing to write a system design document for a client architecture review — guidance on enterprise patterns, trade-off documentation, and presentation structure',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Proxy Support for Plano Enterprise Roles',
+    intro:
+      'Plano Fortune 500 companies run structured multi-round technical interviews. Our proxy support is calibrated to enterprise corporate hiring patterns — system design, architecture review, coding challenges, and technical presentation rounds.',
+    points: [
+      'System design interview support for Plano enterprise architect and senior engineer roles',
+      'React and .NET technical round support for Plano corporate full-stack positions',
+      'Cloud and DevOps interview support for Plano platform engineering and SRE roles',
+      'QA automation interview support for Plano enterprise SDET and QA engineer positions',
+      'Technical presentation and architecture walkthrough support for senior Plano roles',
+      'Completely confidential — no trace, real results',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+    ],
+    techLinks: [
+      { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
+      { label: 'DevOps job support Dallas', href: '/devops-job-support-dallas/' },
+    ],
+    problemLink: { label: 'Struggling on your Plano IT project?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Irving', href: '/it-job-support-irving/' },
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+      { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
+    ],
+  },
+  caseStudySection: {
+    heading: "Plano's Corporate Tech Corridor: High-Stakes Consulting Reality",
+    body:
+      "Plano has quietly become one of the USA's most significant enterprise technology hubs. Toyota's North American headquarters, Fannie Mae's technology center, Liberty Mutual's enterprise IT operations, and dozens of major corporate tech campuses make Plano a demanding consulting market. These companies run scaled Agile delivery with multiple vendor teams coordinating across sprint cycles, and production environments that have zero tolerance for unplanned downtime. Consultants here are expected to integrate into complex enterprise workflows quickly, navigate internal tooling and architecture standards independently, and deliver at the pace of a well-funded corporate engineering org. The consultants who thrive are the ones who have expert support behind them from day one.",
+    linkText: 'Get Plano IT job support now',
+    linkHref: '/it-job-support-plano/',
+  },
+  bottomCTAHeading: 'Plano Enterprise Project — Expert Help Available Now',
+  bottomCTABody:
+    'Real-time support for Plano Fortune 500 enterprise consultants — cloud, SRE, QA automation, React, .NET, full-stack, release cycles. CST timezone. Start same-day.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const devopsJobSupportDallas: LandingPageConfig = {
+  slug: 'devops-job-support-dallas',
+  title: 'DevOps Job Support Dallas – CI/CD, Kubernetes, AWS & Azure Help',
+  description:
+    'Real-time DevOps job support for Dallas consultants — CI/CD pipelines, Kubernetes, AWS, Azure, Terraform, Docker, GitHub Actions, Jenkins, Helm, ArgoCD, monitoring, incident bridge support. CST timezone.',
+  canonical: `${BASE_URL}/devops-job-support-dallas/`,
+  keywords: [
+    'DevOps job support Dallas', 'Kubernetes support Dallas', 'AWS DevOps help Dallas',
+    'CI/CD support Dallas TX', 'Terraform help Dallas', 'GitHub Actions support Dallas',
+    'Jenkins support Dallas', 'Helm ArgoCD Dallas', 'Dallas DevOps consultant help',
+    'Dallas production deployment support', 'Dallas incident bridge support', 'DevOps Dallas Texas',
+  ],
+  ogTitle: 'DevOps Job Support Dallas – Kubernetes, AWS, CI/CD & Incident Help',
+  ogDescription:
+    'Real-time DevOps support for Dallas consultants — CI/CD failures, Kubernetes issues, Terraform errors, AWS/Azure incidents, GitHub Actions, Jenkins, Helm, ArgoCD, observability. CST timezone.',
+  h1: 'DevOps Job Support for Dallas Consultants — Real-Time CI/CD, Kubernetes & Cloud Help',
+  tagline:
+    'Immediate expert backing for Dallas DevOps engineers dealing with CI/CD failures, Kubernetes issues, Terraform problems, production deployments, and incident bridge calls — CST timezone aligned.',
+  heroEyebrow: 'Dallas DevOps Job Support',
+  painIntro:
+    'Dallas DevOps roles are high-pressure. You are responsible for the pipeline that every developer on the project depends on. When a GitHub Actions workflow fails at 6 PM before a release window, when a Kubernetes deployment rollout hangs in production, when a Terraform apply destroys a resource it should not have — the entire project team is watching and waiting for you to fix it. If you are a Dallas DevOps engineer or consultant who needs an expert in your corner for exactly these moments, we are available right now.',
+  heroVariant:
+    "Dallas DevOps consulting roles span banking CI/CD pipelines running on Jenkins and GitHub Actions, telecom Kubernetes clusters with hundreds of microservices, enterprise Terraform infrastructure managing multi-account AWS environments, ArgoCD GitOps deployments for Plano corporate platforms, and Helm chart management for enterprise container workloads. Our DevOps experts have deep operational experience — not just certification-level theory — across the full Dallas enterprise DevOps toolchain.",
+  heroUrgency:
+    'Dallas release window in 2 hours? Kubernetes cluster degraded? Terraform apply blocking deployment? WhatsApp us — DevOps support now.',
+  geoLine: 'Supporting Dallas DevOps engineers across enterprise, banking, telecom, and healthcare IT projects in the DFW area.',
+  timezoneNote: 'Aligned with Dallas CST business hours including release windows, on-call rotations, and incident bridge calls.',
+  techSnippet:
+    'Dallas DevOps coverage: AWS (EKS, ECS, EC2, Lambda, S3, IAM, CloudFormation, CDK), Azure (AKS, DevOps Pipelines, ARM, Bicep), Kubernetes, Helm, ArgoCD, Terraform, Docker, GitHub Actions, Jenkins, GitLab CI, Prometheus, Grafana, ELK, PagerDuty, Datadog.',
+  highlights: [
+    {
+      title: 'CI/CD Pipeline Failure Resolution',
+      description:
+        'Immediate expert support for broken CI/CD pipelines — GitHub Actions YAML errors, Jenkins build failures, Docker build issues, artifact upload problems, environment promotion blockers, and deployment gate failures.',
+    },
+    {
+      title: 'Kubernetes & Container Operations Support',
+      description:
+        'Real-time help for Kubernetes issues: pod crashloops, deployment rollout failures, resource constraint issues, Helm chart errors, ArgoCD sync failures, ingress misconfigurations, and cluster-level problems.',
+    },
+    {
+      title: 'Terraform & Infrastructure as Code Help',
+      description:
+        'Expert support for Terraform issues — state file corruption, plan failures, resource dependency errors, provider version conflicts, module refactoring, and multi-account AWS/Azure infrastructure management.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What DevOps job support do you provide for Dallas consultants?',
+      answer:
+        'We provide real-time DevOps job support covering: CI/CD pipeline failures (GitHub Actions, Jenkins, GitLab CI), Kubernetes operations (EKS, AKS, self-managed), Terraform infrastructure issues, Helm chart management, ArgoCD GitOps deployments, Docker containerization problems, AWS and Azure service configuration, monitoring and observability setup (Prometheus, Grafana, ELK, Datadog), and production incident response.',
+    },
+    {
+      question: 'Can you help with Dallas production deployment failures and incident bridge calls?',
+      answer:
+        'Yes. Dallas enterprise production deployments involve multiple teams and strict change windows. When a deployment fails — Helm upgrade error, Kubernetes rollout hang, Terraform apply failure, or post-deployment health check failure — we provide immediate triage, root cause analysis, and resolution steps. We can also provide real-time guidance during incident bridge calls.',
+    },
+    {
+      question: 'Do you cover Kubernetes support for Dallas DevOps engineers?',
+      answer:
+        'Yes. Kubernetes issues in Dallas enterprise environments include pod OOMKilled errors, CrashLoopBackOff debugging, HPA misconfigurations, ingress controller issues, persistent volume claim failures, RBAC permission errors, and cluster upgrade problems. We diagnose and resolve all of these.',
+    },
+    {
+      question: 'What Terraform support do you provide for Dallas cloud infrastructure?',
+      answer:
+        'Terraform support for Dallas environments includes: plan/apply failure diagnosis, state file issues (lock, drift, corruption), module structure optimization, multi-account AWS and Azure configuration, provider version migration, import of existing resources, and security/compliance review of infrastructure code.',
+    },
+    {
+      question: 'Can you help with GitHub Actions and Jenkins CI/CD for Dallas enterprise projects?',
+      answer:
+        'Yes. Dallas enterprise CI/CD support covers GitHub Actions workflow debugging (YAML syntax, conditional steps, secret management, matrix builds), Jenkins pipeline issues (Groovy scripting, agent configuration, plugin conflicts, shared library problems), and GitLab CI pipeline optimization.',
+    },
+    {
+      question: 'Do you help with observability and monitoring setup for Dallas DevOps roles?',
+      answer:
+        'Yes. Monitoring and observability is a core DevOps responsibility in Dallas enterprises. We help with Prometheus metric collection and alert rule configuration, Grafana dashboard building, ELK stack log pipeline setup, Datadog APM and infrastructure monitoring, and PagerDuty alert routing.',
+    },
+    {
+      question: 'Can you support Dallas DevOps consultants during daily standups and sprint planning?',
+      answer:
+        'Yes. Dallas DevOps consultants often face sprint tasks involving infrastructure provisioning, pipeline setup, monitoring configuration, or cloud cost optimization. We help you understand the task requirements, implement the solution, and present it confidently in sprint reviews.',
+    },
+    {
+      question: 'How do I get immediate DevOps support for a Dallas emergency?',
+      answer:
+        'WhatsApp us immediately with your specific issue — include the tool (Kubernetes/Terraform/GitHub Actions/Jenkins), the error message or symptom, and your cloud platform (AWS/Azure). We assign a DevOps expert within minutes and start working on the problem with you.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Dallas DevOps Scenarios We Resolve',
+    cases: [
+      'GitHub Actions release workflow failing at Docker push step — authentication error, registry configuration issue, or image tagging problem resolved before Dallas release window',
+      'EKS pod stuck in CrashLoopBackOff on a Dallas banking project — container logs analyzed, ConfigMap secret mismatch identified, and fix deployed',
+      'Terraform apply destroying a production RDS instance due to a plan misconfiguration — lifecycle block added, state lock resolved, and apply re-run safely',
+      'ArgoCD application out-of-sync and blocking Dallas Plano enterprise deployment — Git repo configuration corrected and sync forced with health check verification',
+      'Prometheus alert firing for high API latency at a Dallas telecom project — Grafana traces analyzed, slow database query identified, and escalation path prepared',
+      'Jenkins shared library pipeline failing after a version upgrade — Groovy compatibility issue identified and pipeline script updated for the new Jenkins version',
+    ],
+  },
+  proxySection: {
+    title: 'DevOps Interview Proxy Support for Dallas Roles',
+    intro:
+      'Dallas DevOps interviews are technical and operational — covering Kubernetes architecture, CI/CD design, Terraform patterns, cloud networking, and incident response scenarios. Our proxy support covers all of it.',
+    points: [
+      'Kubernetes architecture and operations interview support — cluster design, RBAC, networking, storage',
+      'CI/CD design questions — pipeline architecture, branching strategies, deployment patterns',
+      'Terraform and IaC interview support — module design, state management, cloud provider specifics',
+      'AWS and Azure architecture interview support for Dallas DevOps and cloud engineer roles',
+      'Incident response scenario interview coaching — SRE/on-call simulation questions',
+      'Confidential real-time support during your Dallas DevOps interview call',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+    ],
+    techLinks: [
+      { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+    ],
+    problemLink: { label: 'DevOps issue on your Dallas project?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'DevOps interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
+      { label: 'IT job support Irving', href: '/it-job-support-irving/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'Dallas DevOps: High Ownership, Zero Margin for Error',
+    body:
+      "DevOps roles in Dallas enterprise environments carry disproportionate responsibility. A single broken pipeline blocks multiple developer teams. A failed Kubernetes deployment during a release window impacts SLA commitments for the entire product. A Terraform misconfiguration can affect production infrastructure supporting thousands of users. Dallas enterprises — particularly in banking, telecom, and healthcare — run on strict change management processes where production incidents have formal post-mortem requirements and root cause documentation. Dallas DevOps consultants who are placed in these environments often arrive without sufficient onboarding and are expected to operate autonomously within days. Having an expert available for real-time support is not a shortcut — it is how serious consultants protect their reputation and their contract.",
+    linkText: 'Get Dallas DevOps job support now',
+    linkHref: '/devops-job-support-dallas/',
+  },
+  bottomCTAHeading: 'Dallas DevOps Emergency or Daily Blocker?',
+  bottomCTABody:
+    'Real-time CI/CD, Kubernetes, Terraform, AWS, Azure, and incident support for Dallas DevOps engineers. CST timezone. Available now.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const javaJobSupportIrving: LandingPageConfig = {
+  slug: 'java-job-support-irving',
+  title: 'Java Job Support Irving TX – Spring Boot, Microservices & Backend Help',
+  description:
+    'Java job support for Irving TX consultants — Spring Boot, microservices, REST APIs, Kafka, SQL, JPA, Hibernate, AWS/Azure, production debugging, log analysis, banking enterprise Java. CST timezone. Same-day start.',
+  canonical: `${BASE_URL}/java-job-support-irving/`,
+  keywords: [
+    'Java job support Irving TX', 'Spring Boot support Irving', 'Irving Java backend help',
+    'microservices support Irving', 'Java production support Irving', 'Kafka support Irving',
+    'Irving banking Java help', 'REST API debugging Irving', 'Irving enterprise Java consulting',
+    'Spring Boot microservices Irving', 'Java job support Dallas area', 'Irving Java developer support',
+  ],
+  ogTitle: 'Java Job Support Irving TX – Spring Boot, Microservices & Backend Help',
+  ogDescription:
+    'Real-time Java job support for Irving TX consultants — Spring Boot, microservices, REST APIs, Kafka, SQL, JPA, production debugging, banking enterprise Java. CST timezone. Start same-day.',
+  h1: 'Java Job Support for Irving TX Consultants — Spring Boot, Microservices & Backend',
+  tagline:
+    'Real-time Java backend support for Irving enterprise and banking consultants — Spring Boot issues, microservices debugging, REST API failures, Kafka lag, SQL performance, and production incident resolution.',
+  heroEyebrow: 'Irving Java Job Support',
+  painIntro:
+    'Irving enterprise and banking Java projects are notoriously complex. You are dealing with large Spring Boot applications built over years, REST APIs connecting dozens of internal and external services, Kafka event streams processing millions of messages, and SQL databases carrying decades of business logic. When something breaks in production — or when you are simply stuck on a task in this environment — you need a Java expert who understands enterprise banking codebases, not someone learning alongside you.',
+  heroVariant:
+    "Java backend consulting in Irving requires more than Spring Boot knowledge. Irving banking applications have complex transaction management, distributed systems coordination, legacy integration via SOAP and REST, JPA/Hibernate performance issues in large schemas, and production environments with strict deployment gates. Our Java experts have direct experience with these enterprise environments — they understand the constraints, the patterns, and the failure modes specific to large Irving-style Java banking applications.",
+  heroUrgency:
+    'Irving Java production issue? Spring Boot API throwing 500s? Kafka consumer lag spiking? WhatsApp us — Java support available now.',
+  geoLine: 'Supporting Irving Java backend consultants across Las Colinas, DFW enterprise corridor, and remote Irving-contracted roles.',
+  timezoneNote: 'Aligned with Irving/Dallas CST business hours — production windows, deployment schedules, and daily standup timing.',
+  techSnippet:
+    'Irving Java stack coverage: Spring Boot, Spring MVC, Spring Security, JPA, Hibernate, Kafka, REST APIs, SOAP, SQL Server, Oracle DB, MySQL, PostgreSQL, AWS (EKS, RDS, SQS, SNS), Azure, Docker, Kubernetes, Maven, Gradle, JUnit, Mockito.',
+  highlights: [
+    {
+      title: 'Spring Boot & Microservices Production Support',
+      description:
+        'Real-time debugging for Spring Boot production issues — API failures, bean initialization errors, transaction rollbacks, connection pool exhaustion, memory leaks, and microservices communication failures.',
+    },
+    {
+      title: 'Irving Banking Java Application Support',
+      description:
+        'Domain-aware support for Java banking applications — payment processing logic, account management APIs, compliance workflow integration, legacy SOAP service migration, and financial data processing.',
+    },
+    {
+      title: 'Kafka, SQL & Data Pipeline Support',
+      description:
+        'Expert help for Kafka consumer lag, producer failures, schema registry issues, SQL query optimization, Oracle/SQL Server stored procedure debugging, and JPA N+1 performance problems.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What Java job support do you provide for Irving enterprise consultants?',
+      answer:
+        'We provide real-time Java backend job support including: Spring Boot application debugging, microservices issue resolution, REST API failure analysis, Kafka consumer/producer troubleshooting, JPA/Hibernate query optimization, SQL database debugging (SQL Server, Oracle, PostgreSQL), AWS integration issues (RDS, SQS, SNS, EKS), and Java production incident response.',
+    },
+    {
+      question: 'Can you help with Spring Boot production issues in Irving banking projects?',
+      answer:
+        'Yes. Spring Boot production issues in Irving banking environments include: NullPointerExceptions in production (where debug logging is restricted), transaction management failures in multi-database environments, Spring Security authentication/authorization issues, bean circular dependency errors, and REST template/WebClient connection timeout problems. We analyze your specific error and provide immediate fixes.',
+    },
+    {
+      question: 'Do you support Kafka troubleshooting for Irving enterprise applications?',
+      answer:
+        'Yes. Irving enterprise Kafka issues include: consumer group rebalancing causing message processing delays, dead letter queue accumulation, Avro schema registry compatibility failures, producer retry storms, and partition key strategy problems causing hotspots. We diagnose the specific Kafka issue and provide operational fixes and code corrections.',
+    },
+    {
+      question: 'Can you help with JPA and Hibernate performance issues in Irving SQL databases?',
+      answer:
+        'Yes. JPA/Hibernate performance issues are common in Irving large-schema enterprise applications — N+1 query problems, lazy loading causing LazyInitializationException, poorly indexed queries causing full table scans, and large object graph serialization issues. We identify the exact problem and provide the corrected JPA configuration, query, or fetch strategy.',
+    },
+    {
+      question: 'What about microservices communication failures in Irving distributed systems?',
+      answer:
+        'Irving microservices environments experience: circuit breaker tripping (Resilience4j, Hystrix), service mesh issues (Istio, Linkerd), inter-service authentication failures (JWT, OAuth), REST client timeout misconfigurations, and service discovery issues (Eureka, Consul, Kubernetes DNS). We diagnose the communication layer failure and provide the fix.',
+    },
+    {
+      question: 'Can you help Irving Java consultants understand legacy codebases quickly?',
+      answer:
+        'Yes. Many Irving Java consultants join projects with large legacy Spring applications — multi-module Maven projects, complex bean hierarchies, undocumented business logic, and mixed technology generations (Spring MVC + Spring Boot, legacy SOAP + new REST). We provide codebase navigation help, module dependency mapping, and quick-start support so you deliver your first sprint tasks confidently.',
+    },
+    {
+      question: 'Do you support API testing and debugging for Irving REST API integration issues?',
+      answer:
+        'Yes. Irving enterprise REST API issues include: endpoint returning unexpected response codes, request payload serialization failures (Jackson, JAXB), authentication header mismatches, SSL/TLS certificate errors in mutual TLS setups, and content negotiation failures. We debug the full HTTP layer and provide corrected code.',
+    },
+    {
+      question: 'How quickly can I get Java job support for my Irving project?',
+      answer:
+        'Same day — often within the hour. WhatsApp us with your specific Java issue, the error message or symptom, and your tech stack details. We match you with a senior Java expert immediately.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Irving Java Scenarios Our Experts Resolve',
+    cases: [
+      'Spring Boot REST API returning 500 Internal Server Error in Irving banking production — stack trace analyzed, root cause identified, and hotfix provided',
+      'Kafka consumer lag spiking to 50,000 messages at an Irving enterprise — consumer group configuration corrected and partition rebalancing triggered',
+      'JPA N+1 query causing 30-second response times in an Irving insurance Java application — fetch strategy corrected with JOIN FETCH and query cache configured',
+      'Irving Java consultant stuck on a Spring Security configuration for a multi-tenant banking API — role hierarchy, JWT filter chain, and method-level security configured correctly',
+      'Oracle stored procedure returning wrong results after a schema change at an Irving legacy system — procedure logic reviewed and corrected without touching production schema',
+      'Irving consultant onboarding to a 500,000-line Spring Boot monolith — module structure explained, business domain mapped, and first sprint tasks completed with guidance',
+    ],
+  },
+  proxySection: {
+    title: 'Java Interview Proxy Support for Irving Enterprise Roles',
+    intro:
+      'Irving banking and enterprise Java interviews are deep technical assessments — Spring internals, JPA behavior, system design for distributed banking systems, and SQL optimization under time pressure. Our proxy support covers every layer.',
+    points: [
+      'Spring Boot and Spring Framework deep-dive interview support — IoC, AOP, transaction management, security',
+      'Microservices architecture and design pattern interview support for Irving enterprise roles',
+      'Kafka and messaging system interview support — consumer groups, offset management, exactly-once semantics',
+      'SQL and database interview support — query optimization, indexing, normalization, stored procedures',
+      'System design interview support for large-scale Irving banking Java applications',
+      'Real-time silent expert support during your Irving Java interview call',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Irving', href: '/it-job-support-irving/' },
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+    ],
+    problemLink: { label: 'Struggling with Java on your Irving project?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+      { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
+      { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'Irving Java Enterprise: Why Generic Java Help Fails Here',
+    body:
+      "Irving's enterprise Java landscape is shaped by decades of financial industry technology investment. The Spring applications running at major banks and insurance companies in Irving are not tutorial-scale projects — they are multi-module, multi-team, multi-datacenter systems with deeply embedded business logic, complex transaction requirements, and integration footprints spanning dozens of internal and external services. A consultant placed in this environment and facing a Spring Security issue or a Kafka consumer lag problem cannot solve it with a Stack Overflow search. The problem requires contextual understanding of the Irving enterprise Java ecosystem, banking domain knowledge, and senior engineering experience. That is exactly what we provide — in real time, during your CST working hours.",
+    linkText: 'Get Irving Java job support now',
+    linkHref: '/java-job-support-irving/',
+  },
+  bottomCTAHeading: 'Irving Java Project — Expert Help Available Now',
+  bottomCTABody:
+    'Real-time Spring Boot, microservices, Kafka, SQL, and Java production support for Irving enterprise consultants. CST timezone. Start same-day.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const productionSupportHelpTexas: LandingPageConfig = {
+  slug: 'production-support-help-texas',
+  title: 'Production Support Help Texas – Emergency Incident & Deployment Help',
+  description:
+    'Emergency production support help for Texas IT professionals. Incident response, failed deployments, API failures, Kubernetes crashes, Java/.NET/Node.js errors, SRE alerts, CI/CD failures, log analysis. CST timezone.',
+  canonical: `${BASE_URL}/production-support-help-texas/`,
+  keywords: [
+    'production support help Texas', 'emergency production support Texas', 'Texas production incident help',
+    'failed deployment support Texas', 'Kubernetes production issue Texas', 'Texas SRE incident support',
+    'Java production error help Texas', 'API failure support Texas', 'Texas database issue help',
+    'CI/CD failure Texas', 'production debugging Texas', 'Texas DevOps incident support',
+  ],
+  ogTitle: 'Production Support Help Texas – Emergency Incident & Deployment Resolution',
+  ogDescription:
+    'Emergency Texas production support — incident response, failed deployments, Kubernetes issues, API failures, Java/.NET/Node.js errors, SRE alerts, CI/CD failures, log analysis. CST. Available now.',
+  h1: 'Emergency Production Support Help for Texas IT Professionals',
+  tagline:
+    'Immediate incident response, deployment failure resolution, and production debugging for Texas consultants — Kubernetes, Java, .NET, Node.js, APIs, databases, CI/CD, SRE alerts. Available now.',
+  heroEyebrow: 'Texas Production Support Help',
+  painIntro:
+    'Production is down. Your Texas consulting project is in an incident bridge call. The CTO is on the call. The implementation partner is asking questions. Your team is looking at you. And you do not have the answer — yet. We do. Our Texas production support experts specialize in exactly this scenario — rapid triage, root cause identification, and real-time resolution guidance during live production incidents at Texas enterprise, banking, telecom, and healthcare projects.',
+  heroVariant:
+    "Texas production incidents are particularly high-stakes in enterprise consulting environments — SLA violations have contractual consequences, production access is restricted and requires change tickets, and every minute of downtime is tracked and reported to client stakeholders. Whether you are dealing with a Kubernetes pod crash at a Dallas bank, a Java heap exhaustion issue at an Irving enterprise, a CI/CD pipeline failure blocking a Plano release, or an API gateway returning 503s for a Fort Worth healthcare system — we provide immediate expert guidance to get production stable.",
+  heroUrgency:
+    'Texas production incident happening right now? WhatsApp us immediately — CST production support available around the clock.',
+  geoLine: 'Supporting Texas IT professionals in Dallas, Irving, Plano, Fort Worth, Austin, Houston, and statewide during production emergencies.',
+  timezoneNote: 'Texas CST-aligned production support — available during business hours, release windows, and extended incident response periods.',
+  techSnippet:
+    'Texas production support coverage: Java (Spring Boot, JVM, GC), .NET (ASP.NET Core, IIS, Windows Server), Node.js, Kubernetes (EKS, AKS), AWS, Azure, PostgreSQL, MySQL, SQL Server, Oracle, Kafka, REST APIs, CI/CD (GitHub Actions, Jenkins), Prometheus/Grafana, ELK.',
+  highlights: [
+    {
+      title: 'Immediate Incident Triage & Root Cause Analysis',
+      description:
+        'Real-time production incident support — log analysis, error trace correlation, dependency chain investigation, and root cause identification within minutes of the incident starting.',
+    },
+    {
+      title: 'Failed Deployment & Release Recovery',
+      description:
+        'Emergency support for failed Texas production deployments — rollback guidance, Kubernetes deployment corrections, Helm upgrade failures, CI/CD pipeline unblocking, and post-deployment health verification.',
+    },
+    {
+      title: 'Multi-Technology Production Coverage',
+      description:
+        'Production support across all major Texas enterprise tech stacks — Java, .NET, Node.js, Python, Kubernetes, AWS, Azure, SQL databases, Kafka, REST APIs, and full observability stack analysis.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What production support do you provide for Texas IT consultants?',
+      answer:
+        'We provide emergency and ongoing production support for Texas IT professionals — incident triage, root cause analysis, deployment failure recovery, application error debugging, database issue resolution, Kubernetes cluster stabilization, API failure diagnosis, CI/CD pipeline unblocking, and production monitoring alert response. We cover Java, .NET, Node.js, Python, Kubernetes, AWS, Azure, and all major enterprise databases.',
+    },
+    {
+      question: 'Can you help during a live Texas production incident bridge call?',
+      answer:
+        'Yes. This is one of our most common and urgent support scenarios. You join the incident bridge, we join your communication channel (WhatsApp, Slack, or message thread), and provide real-time analysis, root cause findings, and resolution steps as you work through the incident. We move fast — production is down and every minute counts.',
+    },
+    {
+      question: 'What Texas production deployment failures can you help resolve?',
+      answer:
+        'We handle: Kubernetes deployment rollout failures (CrashLoopBackOff, OOMKilled, ImagePullBackOff), Helm upgrade failures, Terraform apply errors causing infrastructure issues, GitHub Actions or Jenkins deployment pipeline failures, AWS ECS or EKS service deployment problems, Azure AKS deployment issues, and application startup failures after a new deployment.',
+    },
+    {
+      question: 'Can you help with Java production errors at Texas enterprise projects?',
+      answer:
+        'Yes. Java production errors we resolve include: OutOfMemoryError and GC pressure (heap dumps analyzed), ClassNotFoundException in complex Spring Boot classpath environments, NullPointerExceptions in production where stack traces are obfuscated, Spring transaction rollback failures, Hibernate LazyInitializationException in production scopes, and JVM thread deadlocks causing application hangs.',
+    },
+    {
+      question: 'Do you provide .NET and Node.js production support for Texas projects?',
+      answer:
+        'Yes. .NET production issues include: ASP.NET Core unhandled exceptions, Entity Framework database connection errors, IIS application pool crashes, Azure App Service deployment failures, and Windows Server service crashes. Node.js issues include: memory leaks causing pod restarts, event loop blocking causing timeouts, uncaught Promise rejections crashing processes, and Express API route failures.',
+    },
+    {
+      question: 'Can you help with Kubernetes production issues at Texas enterprise clusters?',
+      answer:
+        'Yes. Kubernetes production support includes: pod crashloops (GC pressure, OOM, misconfiguration), node pressure causing pod evictions, persistent volume mount failures, ingress routing failures causing 502/503 errors, horizontal pod autoscaler misconfiguration causing over/under-scaling, and secret/ConfigMap reference errors blocking deployments.',
+    },
+    {
+      question: 'Do you help with database production issues at Texas projects?',
+      answer:
+        'Yes. Database production issues we handle: SQL Server deadlocks and blocking queries, Oracle tablespace exhaustion, PostgreSQL connection pool exhaustion, MySQL replication lag, RDS failover issues on AWS, and Cosmos DB or DynamoDB throttling on Azure/AWS. We provide both immediate stabilization steps and longer-term fixes.',
+    },
+    {
+      question: 'How quickly can you respond to a Texas production emergency?',
+      answer:
+        'Immediately. WhatsApp us with the technology, the error/symptom, and your environment. We start triage within minutes — no intake form, no ticket queue, no wait. Texas CST timezone support available during business hours and extended windows.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Texas Production Emergencies Our Experts Have Resolved',
+    cases: [
+      'Dallas banking Java application OutOfMemoryError during peak transaction hours — heap dump analyzed, memory leak in session cache identified, and temporary fix applied within the same incident window',
+      'Irving enterprise Kubernetes cluster pod evictions due to node memory pressure — resource limits corrected, non-critical pods rescheduled, and cluster stabilized before SLA breach',
+      'Plano corporate CI/CD pipeline blocked before a critical release — GitHub Actions YAML conditional error identified and corrected, release resumed',
+      'Texas healthcare API returning 503 errors due to downstream service timeout cascade — circuit breaker timeout configuration corrected and upstream retry logic adjusted',
+      'Fort Worth energy sector PostgreSQL connection pool exhaustion during batch processing — connection pool settings corrected and batch job concurrency reduced',
+      'Dallas telecom production deployment failed after Helm upgrade — values.yaml resource conflict identified, rollback executed, and corrected upgrade re-applied',
+    ],
+  },
+  proxySection: {
+    title: 'Production Support Scenario Interview Preparation',
+    intro:
+      'Texas production support roles and SRE positions include interview rounds that test incident response thinking, root cause analysis, and system diagnosis under pressure. We prepare you for these rounds.',
+    points: [
+      'Incident response interview coaching — walk-through of production incident scenarios for Texas SRE roles',
+      'Root cause analysis interview support — structured debugging methodology questions',
+      'Kubernetes production troubleshooting interview support for Texas platform engineering roles',
+      'AWS and Azure production architecture interview support for cloud operations positions',
+      'Postmortem writing and incident management interview preparation',
+      'Real-time support during production-scenario interview rounds at Texas enterprise employers',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support Dallas', href: '/devops-job-support-dallas/' },
+      { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
+    ],
+    problemLink: { label: 'Production issue or incident emergency?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Irving', href: '/it-job-support-irving/' },
+      { label: 'Java job support Irving', href: '/java-job-support-irving/' },
+      { label: 'Production issue support', href: '/production-issue-support/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'Texas Production Incidents: The Consulting Pressure Behind Every Outage',
+    body:
+      "In Texas enterprise IT consulting, a production incident is never just a technical problem — it is a contractual and professional crisis. SLA agreements at Texas Fortune 500 companies specify uptime commitments, and every minute of unplanned downtime is logged against the implementation partner. When an incident occurs, a bridge call is opened immediately, client stakeholders join, and the vendor team is expected to resolve the issue with speed and clear communication. Consultants who cannot triage quickly, communicate clearly, and identify root causes under pressure become a liability. The Texas enterprises that hire through implementation partners monitor this closely, and a poor incident response can lead to contract termination. Having expert backup during production incidents is one of the most direct investments a Texas consultant can make in job security.",
+    linkText: 'Get Texas production support now',
+    linkHref: '/production-support-help-texas/',
+  },
+  bottomCTAHeading: 'Texas Production Emergency — Get Expert Help Now',
+  bottomCTABody:
+    'Immediate production incident support for Dallas, Irving, Plano, and all Texas consulting projects. Java, .NET, Node.js, Kubernetes, AWS, Azure, CI/CD, databases. CST timezone. No wait.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const projectOnboardingHelpTexas: LandingPageConfig = {
+  slug: 'project-onboarding-help-texas',
+  title: 'Project Onboarding Help Texas – New Assignment Support for IT Consultants',
+  description:
+    'Project onboarding help for Texas IT consultants joining new assignments. KT support, codebase walkthrough, architecture understanding, first sprint delivery, DevOps pipeline orientation, shadow support. CST timezone.',
+  canonical: `${BASE_URL}/project-onboarding-help-texas/`,
+  keywords: [
+    'project onboarding help Texas', 'IT consultant onboarding Texas', 'KT support Texas',
+    'new project help Texas', 'codebase walkthrough Texas', 'first sprint support Texas',
+    'Texas consultant onboarding help', 'new assignment developer support Texas',
+    'shadow support Texas', 'architecture walkthrough Texas', 'Texas project ramp-up help',
+    'onboarding support Dallas Irving Plano',
+  ],
+  ogTitle: 'Project Onboarding Help Texas – First 30-60 Days IT Consultant Support',
+  ogDescription:
+    'Onboarding support for Texas IT consultants joining new assignments — KT walkthroughs, codebase understanding, architecture explanation, first sprint delivery, and shadow support. CST timezone.',
+  h1: 'Project Onboarding Help for Texas IT Consultants — First 30–60 Days Support',
+  tagline:
+    'Expert-backed ramp-up support for Texas consultants joining new enterprise assignments — KT walkthroughs, codebase navigation, architecture understanding, first sprint delivery, and confident project integration.',
+  heroEyebrow: 'Texas Project Onboarding Support',
+  painIntro:
+    'You just joined a new Texas IT consulting assignment. The KT (knowledge transfer) was rushed — two calls with someone who was already half-offboarded. The codebase is enormous, the documentation is outdated, your first sprint tasks are already assigned, and your standup is in three days. Nobody on the client team has time to hand-hold a new consultant. If this is your situation right now, you are not alone — and you do not have to white-knuckle through it.',
+  heroVariant:
+    "The first 30–60 days of a Texas consulting assignment are the most vulnerable period in any contract. Client expectations are set during this window. Implementation partner visibility is highest. Sprint performance is tracked. If you struggle visibly in the first month, it becomes a pattern that is hard to reverse — and short contracts in Texas enterprise markets can end without notice. Our expert support is specifically designed for this period: we help you understand the codebase quickly, get your first tasks delivered confidently, and build the technical credibility that protects your contract long-term.",
+  heroUrgency:
+    'New Texas project starting next week? First standup with no task clarity? WhatsApp us — onboarding support starts today.',
+  geoLine: 'Supporting Texas IT consultants joining new assignments in Dallas, Irving, Plano, Fort Worth, Austin, Houston, and remote Texas roles.',
+  timezoneNote: 'Aligned with Texas CST working hours — available before standups, sprint ceremonies, and client onboarding sessions.',
+  techSnippet:
+    'Onboarding support covers all major Texas enterprise stacks: Java, Spring Boot, React, .NET, Node.js, Python, DevOps (Kubernetes, AWS, Azure, Terraform, GitHub Actions), AI/ML, Data Engineering, QA Automation, and legacy enterprise technologies.',
+  highlights: [
+    {
+      title: 'Codebase Navigation & Architecture Walkthrough',
+      description:
+        'We help you understand large enterprise codebases quickly — module structure, business domain mapping, dependency relationships, data flow diagrams, and identification of the most critical code paths for your assigned sprint tasks.',
+    },
+    {
+      title: 'First Sprint Delivery Support',
+      description:
+        'Real-time help completing your first assigned tasks on a new Texas project — understanding the ticket requirements, implementing the solution correctly, passing code review, and delivering before the sprint deadline.',
+    },
+    {
+      title: 'DevOps Pipeline & Cloud Environment Orientation',
+      description:
+        'Practical walkthrough of the CI/CD pipeline, deployment process, AWS or Azure environment structure, and development workflow for your new Texas project so you can work independently from day one.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What onboarding support do you provide for Texas consultants joining new projects?',
+      answer:
+        'We provide: codebase structure explanation and navigation help, architecture walkthrough (how the system works end to end), business domain understanding, first sprint task delivery support, CI/CD pipeline and development workflow orientation, team communication and standup preparation, and technology-specific onboarding help for your specific stack (Java, .NET, React, DevOps, AI/ML, Data Engineering, etc.).',
+    },
+    {
+      question: 'Can you help me understand a new codebase quickly on my Texas assignment?',
+      answer:
+        'Yes. We guide you through large enterprise codebases systematically — starting from the module structure, identifying the entry points relevant to your tasks, mapping the data flow for the business domain you are working in, and explaining the design patterns and architectural decisions used. Most Texas enterprise codebases become navigable within a few focused sessions.',
+    },
+    {
+      question: 'What if my KT was rushed and incomplete on my Texas project?',
+      answer:
+        'This is the most common onboarding problem for Texas consultants — especially when joining through an implementation partner where the previous consultant has already left. We reconstruct the knowledge you should have received: we read the codebase, understand the system behavior, and provide you a structured explanation of what you need to know to do your job.',
+    },
+    {
+      question: 'Can you help me prepare for my first standup on a new Texas project?',
+      answer:
+        'Yes. We help you understand your first assigned tasks, formulate a clear progress update, and prepare for any technical questions that might come up during the standup. Many Texas consultants message us the night before their first standup when they are unsure how to present their task status.',
+    },
+    {
+      question: 'Do you provide onboarding support for DevOps and cloud roles in Texas?',
+      answer:
+        'Yes. DevOps and cloud onboarding on Texas projects involves understanding the CI/CD pipeline architecture (GitHub Actions, Jenkins, GitLab CI), the Kubernetes cluster environment, the AWS or Azure account and service structure, the Terraform codebase, and the deployment and release process. We provide a structured orientation for all of this.',
+    },
+    {
+      question: 'Can you help with AI/ML and Data Engineering project onboarding in Texas?',
+      answer:
+        'Yes. AI/ML project onboarding in Texas involves understanding ML pipeline architecture, model training and serving infrastructure, data preprocessing workflows, MLOps tooling (MLflow, SageMaker, Vertex AI), and RAG/LangChain-based application architectures. Data Engineering onboarding involves understanding data lake architecture, ETL pipelines (AWS Glue, dbt, Databricks), and the data modeling domain. We provide expert guidance for both.',
+    },
+    {
+      question: 'What is shadow support and how does it help Texas consultants?',
+      answer:
+        'Shadow support is where our expert joins your session as a silent observer — during standups, architecture discussions, code reviews, or sprint ceremonies — and provides real-time coaching via private message. You speak and present; we provide the technical content and answers from behind. This is particularly valuable during the first few weeks on a new Texas project.',
+    },
+    {
+      question: 'How long does onboarding support typically last for Texas consultants?',
+      answer:
+        'Most Texas consultants use onboarding support intensively for the first 2–6 weeks of a new assignment, then transition to periodic support for specific blockers or incidents. We do not have minimum duration requirements — you use us when you need us.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Texas Consultant Onboarding Scenarios We Handle',
+    cases: [
+      'Dallas consultant joining a large Java Spring Boot banking application with 3 hours of KT — we explain the module structure, transaction flow, and first sprint task within a day',
+      'Irving DevOps consultant placed on a complex Kubernetes project with no documentation — we map the cluster, CI/CD pipeline, and deployment process into a clear mental model',
+      'Plano consultant onboarding to a React enterprise application built on a custom internal component library — we explain the design system, state management patterns, and API integration layer',
+      'Texas AI/ML consultant joining an RAG-based project with no prior LangChain experience — we provide architecture walkthrough, pipeline explanation, and first task completion support',
+      'Houston consultant taking over a Data Engineering project mid-sprint — we map the dbt models, Snowflake schema, and AWS Glue ETL pipeline and complete the pending sprint tasks',
+      'Texas QA consultant onboarding to an enterprise Playwright framework — we explain the test structure, page object model, CI integration, and first test suite delivered on time',
+    ],
+  },
+  proxySection: {
+    title: 'New Project Interview Preparation for Texas Roles',
+    intro:
+      'Sometimes the interview itself is the first test of your fit for a new Texas project. Whether it is a client round before placement, a technical screen with an implementation partner, or a final interview at a Fortune 500 — we prepare you.',
+    points: [
+      'Project onboarding simulation — we run mock sessions mimicking a real Texas enterprise onboarding scenario',
+      'Technical interview preparation for new Dallas, Irving, or Plano project roles',
+      'Client round support for Texas consultants being evaluated by implementation partners',
+      'Architecture walkthrough interview coaching — explaining a system you are unfamiliar with under pressure',
+      'Behavioral interview preparation for new project assignment contexts',
+      'Real-time interview proxy support for Texas implementation partner screening calls',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+    ],
+    techLinks: [
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+      { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
+    ],
+    problemLink: { label: 'Struggling on a new Texas project?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Irving', href: '/it-job-support-irving/' },
+      { label: 'IT job support Plano', href: '/it-job-support-plano/' },
+      { label: 'Java job support Irving', href: '/java-job-support-irving/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'The Texas Consulting Onboarding Gap: Why New Assignments Are So Hard',
+    body:
+      "The reality of Texas IT consulting is that knowledge transfer between outgoing and incoming consultants is almost always inadequate. Implementation partners prioritize contract continuity over thorough handoffs. Outgoing consultants are mentally checked out. Client teams are focused on delivery, not onboarding. The new consultant is left to figure out a complex enterprise codebase, an unfamiliar deployment process, and a set of sprint deliverables — all in the first two weeks. In Texas enterprise markets where contracts are at-will and client satisfaction is monitored continuously, a slow start can become a permanent label. The consultants who navigate this successfully are the ones who build their understanding fast, deliver their first tasks confidently, and establish technical credibility early. Our onboarding support is designed to give you exactly that advantage.",
+    linkText: 'Get Texas project onboarding support now',
+    linkHref: '/project-onboarding-help-texas/',
+  },
+  bottomCTAHeading: 'New Texas Assignment — Expert Onboarding Support Available',
+  bottomCTABody:
+    'KT walkthroughs, codebase navigation, first sprint delivery, and shadow support for Texas IT consultants starting new enterprise assignments. CST timezone. Start today.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const interviewProxySupportDallas: LandingPageConfig = {
+  slug: 'interview-proxy-support-dallas',
+  title: 'Interview Proxy Support Dallas – Client Round & Technical Interview Help',
+  description:
+    'Interview proxy support for Dallas IT professionals — client rounds, vendor screenings, implementation partner interviews, coding rounds, system design, DevOps, AI/ML, Java, .NET, full-stack. Confidential. CST.',
+  canonical: `${BASE_URL}/interview-proxy-support-dallas/`,
+  keywords: [
+    'interview proxy support Dallas', 'proxy interview Dallas TX', 'Dallas client round support',
+    'Dallas technical interview help', 'implementation partner interview Dallas', 'vendor screening support Dallas',
+    'Dallas coding round support', 'system design interview Dallas', 'Dallas Java interview support',
+    'Dallas DevOps interview help', 'Dallas AI ML interview support', 'interview proxy Dallas Texas',
+  ],
+  ogTitle: 'Interview Proxy Support Dallas – Client Rounds, Vendor Screens & Tech Interviews',
+  ogDescription:
+    'Confidential interview proxy support for Dallas IT professionals — client rounds, implementation partner screens, coding challenges, system design, DevOps, AI/ML, Java, .NET. CST timezone.',
+  h1: 'Interview Proxy Support for Dallas Candidates — Client Rounds, Vendor Screens & Technical Interviews',
+  tagline:
+    'Confidential real-time interview support for Dallas IT professionals facing Fortune 500 client rounds, implementation partner screenings, vendor technical evaluations, and coding challenges.',
+  heroEyebrow: 'Dallas Interview Proxy Support',
+  painIntro:
+    "Dallas is one of the most competitive IT consulting markets in the USA. Client rounds at Fortune 500 Dallas employers, vendor screenings by prime vendors, implementation partner technical evaluations, and multi-stage technical interviews are standing between you and your next role or contract renewal. If you are a W2, C2C, H1B, or GC/EAD professional who knows the work but struggles under interview pressure — especially for Dallas enterprise roles that require domain-specific knowledge — our confidential proxy interview support is exactly what you need.",
+  heroVariant:
+    "Dallas interview formats vary significantly by employer and sector. Banking employer technical rounds focus on Java enterprise patterns, SQL optimization, and distributed system design. Telecom and tech company rounds emphasize Kubernetes, DevOps pipeline design, and cloud architecture. AI/ML roles at Dallas enterprises test RAG architectures, MLOps tooling, and Python-based model serving. Implementation partner screenings for consulting positions test breadth across multiple technologies and communication skills. Our experts are calibrated to all of these Dallas-specific interview formats — not generic prep, but targeted support for real Dallas hiring patterns.",
+  heroUrgency:
+    'Dallas interview tomorrow? Client round this afternoon? WhatsApp us now — confidential proxy support available immediately.',
+  geoLine: 'Supporting Dallas candidates facing interviews at Fortune 500 companies, implementation partners, prime vendors, and consulting firms across the DFW metroplex.',
+  timezoneNote: 'Available for Dallas CST interview calls — morning technical screens, afternoon client rounds, and evening vendor evaluation calls.',
+  techSnippet:
+    'Dallas interview coverage: Java, Spring Boot, System Design, Microservices, React, .NET, Python, DevOps (Kubernetes, AWS, Azure, Terraform, CI/CD), AI/ML (RAG, LangChain, MLOps), SRE, QA Automation (Playwright, Cypress), Data Engineering, Cybersecurity.',
+  highlights: [
+    {
+      title: 'Dallas Client Round & Vendor Screening Support',
+      description:
+        'Real-time confidential support during Dallas client rounds and vendor screenings — technical questions answered, architecture scenarios coached, and behavioral questions prepared so you perform at your best.',
+    },
+    {
+      title: 'Coding Round & System Design Interview Support',
+      description:
+        'Live coding challenge support (LeetCode-style, take-home, or whiteboard) and system design interview coaching for Dallas Fortune 500 and consulting firm technical rounds.',
+    },
+    {
+      title: 'Technology-Specific Dallas Interview Preparation',
+      description:
+        'Targeted preparation for Dallas sector-specific interviews — banking Java, telecom DevOps/SRE, enterprise AI/ML, corporate full-stack, and QA automation roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What interview proxy support do you provide for Dallas candidates?',
+      answer:
+        'We provide confidential real-time proxy interview support for Dallas IT professionals facing: technical phone screens, coding rounds, system design interviews, client-facing rounds, vendor and implementation partner screenings, live coding assessments, architecture walkthroughs, and behavioral interview rounds. Coverage spans Java, .NET, React, Python, DevOps, Kubernetes, AWS, Azure, AI/ML, SRE, QA Automation, and Data Engineering.',
+    },
+    {
+      question: 'How does interview proxy support work for Dallas interviews?',
+      answer:
+        'You share your screen or audio with us via WhatsApp or a private communication channel. During your interview call, our expert provides real-time answers, code solutions, architecture explanations, and talking points via private message — you speak and present, we provide the technical content. Everything is confidential and undetectable.',
+    },
+    {
+      question: 'Do you understand Dallas Fortune 500 client round formats?',
+      answer:
+        'Yes. Dallas Fortune 500 client rounds vary by sector and employer tier. Banking employers (JPMorgan, Citi, Bank of America TX operations) run Java architecture rounds. Telecom clients (AT&T, Verizon TX) run DevOps and systems-level rounds. Corporate tech employers (Toyota, Toyota Financial, Fannie Mae) run full-stack and data engineering rounds. We know these formats and calibrate our support accordingly.',
+    },
+    {
+      question: 'Can you help with implementation partner technical screenings for Dallas consulting roles?',
+      answer:
+        'Yes. Implementation partner screenings for Dallas consulting placements often test breadth — multiple technologies, problem-solving approach, and communication clarity — rather than deep specialization in one area. Our experts help you navigate these breadth-style screenings and present your skills confidently across the technologies on your resume.',
+    },
+    {
+      question: 'What about coding round support for Dallas technical interviews?',
+      answer:
+        'Yes. Coding round support for Dallas interviews covers: data structures and algorithm problems (LeetCode easy/medium/hard), take-home project solutions, live coding in Java, Python, JavaScript, or C#, and system design implementation tasks. We provide real-time solutions and explanations during the round.',
+    },
+    {
+      question: 'Do you provide DevOps and cloud interview proxy support for Dallas roles?',
+      answer:
+        'Yes. Dallas DevOps and cloud interview rounds include Kubernetes scenario questions, CI/CD pipeline design, Terraform IaC questions, AWS/Azure architecture design, and incident response scenarios. Our DevOps experts provide real-time support for all of these.',
+    },
+    {
+      question: 'How do I contact you for an urgent Dallas interview coming up soon?',
+      answer:
+        'WhatsApp us immediately with your interview time, company type, and the technology stack being tested. We confirm availability and brief the matching expert on your specific interview context. We can be ready within hours for same-day interviews.',
+    },
+    {
+      question: 'Is your Dallas interview proxy support completely confidential?',
+      answer:
+        'Yes. Confidentiality and discretion are fundamental to our service. The support we provide during your interview is invisible to the interviewer — there is no detectable trace of external assistance. We do not store personally identifiable interview details, and our communication happens through secure channels.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Dallas Interview Scenarios Our Experts Cover',
+    cases: [
+      'Dallas Java backend role at a major bank — Java 17 features, Spring Security configuration, SQL query optimization, and microservices design pattern questions',
+      'Dallas DevOps/SRE role at a telecom client — Kubernetes cluster design, CI/CD pipeline architecture, Terraform state management, and incident response scenario',
+      'Dallas AI/ML engineer role — RAG pipeline architecture, LangChain agent design, MLOps tooling (MLflow, SageMaker), and Python data processing questions',
+      'Dallas full-stack role at a Fortune 500 corporate — React performance optimization, ASP.NET Core Web API design, Azure Active Directory integration',
+      'Dallas implementation partner screening for a multi-technology consulting position — breadth test across Java, cloud, DevOps, and communication skills',
+      'Dallas QA automation engineer role — Playwright test architecture, CI/CD integration, API testing with Postman/Newman, and test coverage strategy questions',
+    ],
+  },
+  proxySection: {
+    title: 'Full Dallas Interview Proxy Coverage',
+    intro:
+      'From a 30-minute implementation partner phone screen to a full-day client-side technical assessment — our experts provide real-time confidential support for every format used by Dallas IT employers.',
+    points: [
+      'Phone and video technical screen support — technology questions answered in real time',
+      'Live coding round support — data structures, algorithms, and domain-specific coding challenges',
+      'System design interview coaching — architecture, trade-off analysis, and scalability questions',
+      'Client-round scenario support — situational and behavioral questions about enterprise consulting experience',
+      'Implementation partner evaluation support — breadth tests and communication-focused technical rounds',
+      'Complete confidentiality — your interview, your result, our expertise behind the scenes',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support Dallas', href: '/devops-job-support-dallas/' },
+      { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
+    ],
+    problemLink: { label: 'Facing a Dallas interview and feeling unprepared?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Java job support Irving', href: '/java-job-support-irving/' },
+      { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
+      { label: 'Proxy interview support', href: '/proxy-interview-support/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'Dallas Interview Reality: What Fortune 500 Client Rounds Actually Test',
+    body:
+      "Dallas Fortune 500 client rounds are calibrated to filter for one specific thing: can this consultant deliver in our enterprise environment without extensive hand-holding? They test technical competency under time pressure, communication clarity when explaining complex systems, domain awareness of the specific industry (banking, telecom, healthcare, energy), and composure during adversarial questioning. Implementation partner screenings add another layer — they need to know you will represent their firm well to the end client. W2 and C2C consultants on H1B or GC/EAD status often feel additional pressure because a failed round can affect not just the contract but their overall employment situation in the USA. Our proxy interview support exists specifically for these high-stakes scenarios — to ensure your technical ability is what the interviewer judges, not your interview performance under pressure.",
+    linkText: 'Get Dallas interview proxy support now',
+    linkHref: '/interview-proxy-support-dallas/',
+  },
+  bottomCTAHeading: 'Dallas Interview Tomorrow? We Are Ready.',
+  bottomCTABody:
+    'Confidential real-time proxy interview support for Dallas client rounds, vendor screenings, coding challenges, and system design interviews. Java, DevOps, AI/ML, React, .NET. CST timezone.',
+  lastmod: '2026-05-15',
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const aiMlDevOpsSreJobSupportTexas: LandingPageConfig = {
+  slug: 'ai-ml-devops-sre-job-support-texas',
+  title: 'AI/ML, DevOps & SRE Job Support Texas – High-Demand Tech Help for Texas Engineers',
+  description:
+    'Job support for Texas AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, QA Automation, .NET, React, Java, Node.js, Python, Data Engineering, and Cybersecurity professionals. CST timezone. Real-time expert help.',
+  canonical: `${BASE_URL}/ai-ml-devops-sre-job-support-texas/`,
+  keywords: [
+    'AI ML job support Texas', 'DevOps job support Texas', 'SRE job support Texas',
+    'MLOps support Texas', 'Agentic AI support Texas', 'RAG support Texas',
+    'cloud job support Texas', 'QA automation job support Texas', 'cybersecurity job support Texas',
+    'data engineering support Texas', 'React job support Texas', 'Python job support Texas',
+    '.NET job support Texas', 'Texas high demand tech support', 'AI ML DevOps Texas consultants',
+  ],
+  ogTitle: 'AI/ML, DevOps & SRE Job Support Texas – High-Demand Tech Expert Help',
+  ogDescription:
+    'Real-time job support for Texas AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, QA Automation, .NET, React, Java, Python, Data Engineering, and Cybersecurity professionals. CST. Start today.',
+  h1: 'AI/ML, DevOps, SRE & High-Demand Technology Job Support for Texas Professionals',
+  tagline:
+    'Expert real-time job support for Texas engineers working in AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, QA Automation, full-stack, data engineering, and cybersecurity roles.',
+  heroEyebrow: 'Texas High-Demand Tech Job Support',
+  painIntro:
+    'Texas is rapidly becoming a hub for high-demand technology roles — AI/ML engineers at energy and healthcare companies, DevOps/SRE engineers at Dallas Fortune 500 enterprises, MLOps engineers managing model pipelines at Plano tech campuses, cloud engineers modernizing Irving enterprise infrastructure, and data engineers building Snowflake and Databricks pipelines for Texas financial institutions. These are the roles that command premium rates — and the roles where daily delivery pressure is highest. If you are a Texas consultant working in any of these domains and need expert backing, we are aligned with your CST timezone and your specific tech stack.',
+  heroVariant:
+    "High-demand tech roles in Texas come with high-demand expectations. An Agentic AI engineer is expected to design and debug LLM orchestration pipelines. An MLOps engineer is expected to manage the full model lifecycle from training to production monitoring. An SRE is expected to own reliability across complex distributed systems with real SLO commitments. A data engineer is expected to build and maintain pipelines that business-critical dashboards depend on. When any of these systems break — or when the consultant in these roles hits a wall — there is no obvious place to turn. We are that place.",
+  heroUrgency:
+    'AI/ML pipeline failing? SRE alert unresolved? MLOps model serving broken? Texas production issue? WhatsApp us — high-demand tech support now.',
+  geoLine: 'Supporting Texas high-demand tech professionals in Dallas, Irving, Plano, Fort Worth, Austin, Houston, and remote Texas contract roles.',
+  timezoneNote: 'Fully aligned with Texas CST business hours — available for incident response, daily tasks, and sprint delivery across all high-demand technology domains.',
+  techSnippet:
+    'Full high-demand Texas tech coverage: PyTorch, TensorFlow, LangChain, LlamaIndex, RAG, Agentic AI, MLflow, SageMaker, Vertex AI, Kubernetes, Terraform, AWS, Azure, GCP, Prometheus, Grafana, ELK, Playwright, Cypress, Snowflake, Databricks, dbt, DevSecOps, React, .NET.',
+  highlights: [
+    {
+      title: 'AI/ML, Agentic AI & RAG Support',
+      description:
+        'Real-time support for Texas AI/ML engineers — LLM application development (LangChain, LlamaIndex), RAG pipeline debugging, Agentic AI workflow design, model training/fine-tuning, MLOps pipeline management, and production model serving issues.',
+    },
+    {
+      title: 'DevOps, SRE & Cloud Engineering Support',
+      description:
+        'Expert help for Texas DevOps and SRE professionals — Kubernetes operations, CI/CD pipeline management, Terraform infrastructure, monitoring (Prometheus, Grafana, Datadog), incident response, SLO/SLI design, and multi-cloud (AWS, Azure, GCP) architecture.',
+    },
+    {
+      title: 'QA Automation, Data Engineering & Full-Stack Support',
+      description:
+        'Specialized support for Texas QA automation engineers (Playwright, Cypress, Selenium, API testing), data engineers (Snowflake, Databricks, dbt, AWS Glue), and full-stack developers (React, Node.js, .NET, Java, Python) in high-demand consulting roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What AI/ML job support do you provide for Texas engineers?',
+      answer:
+        'We provide real-time AI/ML job support covering: LLM application development (LangChain, LlamaIndex, OpenAI API, Anthropic API), RAG pipeline building and debugging (vector databases: Pinecone, Weaviate, pgvector), Agentic AI workflow design, model fine-tuning (LoRA, QLoRA), MLOps pipeline management (MLflow, SageMaker, Vertex AI, Kubeflow), and production model serving issues (TorchServe, Triton, Ray Serve).',
+    },
+    {
+      question: 'Do you support Agentic AI and RAG engineers in Texas?',
+      answer:
+        'Yes. Agentic AI is a rapidly growing domain in Texas enterprise and startup projects. We support engineers building multi-agent systems (LangGraph, AutoGen, CrewAI), RAG architectures with hybrid search and reranking, tool-calling and function-use agent patterns, memory management in LLM applications, and production debugging of Agentic AI workflows that produce unexpected outputs.',
+    },
+    {
+      question: 'What SRE job support do you provide for Texas engineers?',
+      answer:
+        'SRE job support for Texas covers: SLO/SLI/error budget definition and measurement, Prometheus alert rule design and tuning, Grafana dashboard development for reliability metrics, on-call incident response (PagerDuty, OpsGenie integration), postmortem writing and structured incident analysis, chaos engineering (Gremlin, Chaos Monkey), and reliability review for Texas enterprise systems.',
+    },
+    {
+      question: 'Can you help Texas MLOps engineers with model pipeline issues?',
+      answer:
+        'Yes. MLOps issues in Texas enterprise environments include: training pipeline failures (data preprocessing errors, feature store misconfigurations), model registration and versioning issues (MLflow model registry), model serving latency problems (TorchServe, Triton), data drift detection and model retraining triggers, and ML experiment tracking and reproducibility problems.',
+    },
+    {
+      question: 'What QA Automation support do you provide for Texas SDET engineers?',
+      answer:
+        'QA Automation support covers: Playwright test framework design and debugging, Cypress component and E2E testing, Selenium WebDriver multi-browser test issues, API testing (Postman, Newman, REST Assured, k6), CI/CD integration for test suites (GitHub Actions, Jenkins), test coverage strategy, flaky test resolution, and performance testing (Gatling, JMeter, k6) for Texas enterprise applications.',
+    },
+    {
+      question: 'Do you support Texas Data Engineering professionals?',
+      answer:
+        'Yes. Data Engineering support for Texas professionals covers: Snowflake SQL optimization and data modeling, Databricks pipeline debugging (PySpark, Delta Lake, Photon), dbt model development and testing, AWS Glue ETL troubleshooting, Apache Kafka data streaming, data warehouse design (star/snowflake schema), and DataOps/data pipeline monitoring for Texas financial and enterprise data platforms.',
+    },
+    {
+      question: 'Can you support Texas cybersecurity and DevSecOps engineers?',
+      answer:
+        'Yes. Cybersecurity and DevSecOps support covers: SAST/DAST tool integration in CI/CD pipelines (Snyk, SonarQube, OWASP ZAP), container security scanning (Trivy, Aqua), secrets management (HashiCorp Vault, AWS Secrets Manager), IAM policy design and least-privilege implementation, compliance automation (SOC 2, PCI DSS control mapping), and security incident analysis for Texas enterprise environments.',
+    },
+    {
+      question: 'How do Texas high-demand tech professionals start job support?',
+      answer:
+        'WhatsApp us with your technology domain (AI/ML, DevOps, SRE, QA, Data Engineering, etc.) and your specific challenge. We assign a senior expert who specializes in that domain and start the same day — often within the hour for urgent production or interview situations.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Texas High-Demand Tech Scenarios Our Experts Handle',
+    cases: [
+      'Texas AI/ML engineer with RAG pipeline returning irrelevant results — embedding model mismatch, retrieval strategy corrected, and response quality improved',
+      'Dallas SRE receiving error budget burn alerts — Prometheus query corrected, fast-burn alert threshold calibrated, and incident response runbook updated',
+      'Irving MLOps engineer with model training pipeline failing on SageMaker — IAM permission issue resolved, S3 data path corrected, and training job resumed',
+      'Plano Data Engineer with Snowflake dbt model failing — SQL logic error in incremental model identified, merge key conflict resolved',
+      'Texas QA Automation engineer with Playwright tests failing on CI — timing issue fixed with proper async handling, browser launch configuration corrected',
+      'Texas Cybersecurity/DevSecOps engineer with Snyk finding high-severity CVE in production dependency — remediation plan developed, dependency upgrade tested, and CI gate updated',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Proxy Support for Texas High-Demand Tech Roles',
+    intro:
+      'AI/ML, DevOps/SRE, MLOps, and data engineering interviews at Texas enterprises are technically intensive. Our proxy support is domain-specific — not generic IT prep, but deep expert backing for each technology domain.',
+    points: [
+      'AI/ML interview support — LLM architecture, RAG design, MLOps tooling, model evaluation, and Python ML coding',
+      'DevOps/SRE interview support — Kubernetes design, CI/CD architecture, observability, incident response, and infrastructure as code',
+      'MLOps interview support — ML pipeline design, experiment tracking, feature stores, model registry, and deployment strategies',
+      'QA Automation interview support — test architecture, framework design, CI integration, and performance testing',
+      'Data Engineering interview support — SQL, Spark, Snowflake, dbt, and data modeling design questions',
+      'Cybersecurity and DevSecOps interview support — security architecture, compliance frameworks, and threat modeling',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support across Texas', href: '/job-support-texas/' },
+      { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
+    ],
+    techLinks: [
+      { label: 'DevOps job support Dallas', href: '/devops-job-support-dallas/' },
+      { label: 'Production support help Texas', href: '/production-support-help-texas/' },
+    ],
+    problemLink: { label: 'Struggling with a high-demand tech role in Texas?', href: '/struggling-in-job-developer-help/' },
+    proxyLink: { label: 'Interview proxy support Dallas', href: '/interview-proxy-support-dallas/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'AI/ML job support USA', href: '/agentic-ai-ml-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+      { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
+    ],
+  },
+  caseStudySection: {
+    heading: 'Texas High-Demand Tech: Why These Roles Need Specialized Support',
+    body:
+      "AI/ML, DevOps/SRE, MLOps, data engineering, and cybersecurity roles in Texas are experiencing some of the highest demand and highest compensation growth in the USA technology market. Texas energy companies are deploying AI for predictive maintenance and geospatial analysis. Texas healthcare systems are building RAG-based clinical decision support tools. Texas financial institutions are implementing ML-driven fraud detection and risk modeling pipelines. Dallas Fortune 500 companies are building Agentic AI workflows for enterprise automation. These are not simple feature additions — they are complex systems at the intersection of data, infrastructure, and machine learning that require expert engineering. The consultants placed in these roles are expected to be senior practitioners, not graduates learning on the job. When these experts hit real engineering challenges — as everyone does — they need expert-level backing, not generic online resources.",
+    linkText: 'Get Texas AI/ML and DevOps job support now',
+    linkHref: '/ai-ml-devops-sre-job-support-texas/',
+  },
+  bottomCTAHeading: 'Texas High-Demand Tech Role — Expert Support Available Now',
+  bottomCTABody:
+    'Real-time job support for Texas AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, QA Automation, Data Engineering, and Cybersecurity professionals. CST timezone. Start today.',
+  lastmod: '2026-05-15',
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const allLandingPages: LandingPageConfig[] = [
@@ -6401,4 +7855,15 @@ export const allLandingPages: LandingPageConfig[] = [
   productionSupportHelpIreland,
   aiMlDevopsSreJobSupportIreland,
   projectOnboardingHelpIreland,
+  // ── Texas GEO Hub — Phase 1 ───────────────────────────────────────────────
+  jobSupportTexas,
+  itJobSupportDallas,
+  itJobSupportIrving,
+  itJobSupportPlano,
+  devopsJobSupportDallas,
+  javaJobSupportIrving,
+  productionSupportHelpTexas,
+  projectOnboardingHelpTexas,
+  interviewProxySupportDallas,
+  aiMlDevOpsSreJobSupportTexas,
 ];

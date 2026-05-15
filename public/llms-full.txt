@@ -545,6 +545,73 @@ Specific challenges: Bilingual (FR/EN) tech environment, Mila-quality ML intervi
 
 ---
 
+## Texas GEO Hub — Phase 1
+
+### IT Job Support Texas
+URL: /job-support-texas/
+Target: W2, C2C, H1B, GC/EAD IT consultants across Texas — Dallas, Irving, Plano, Fort Worth, Austin, Houston
+Timezone: CST (Central Standard Time) / CDT
+Texas consulting market context: Texas is one of the densest IT consulting markets in the USA. Dallas, Irving, and Plano host Fortune 500 enterprise projects, banking systems, telecom platforms, healthcare IT, and energy-sector cloud migrations. Dallas is home to AT&T, American Airlines, JPMorgan Texas operations, Toyota North America, and dozens of other Fortune 500 headquarters. Irving's Las Colinas district is one of the densest enterprise tech clusters in the country. Plano has major corporate tech campuses including Toyota, Fannie Mae, and numerous Fortune 500 companies.
+Technologies: Java, Spring Boot, Python, React, Node.js, .NET, DevOps (AWS, Azure, Kubernetes, Terraform), AI/ML, MLOps, SRE, QA Automation, Data Engineering, Cybersecurity
+Consulting context: W2 consultants, C2C contractors, H1B professionals, GC/EAD workers, prime vendor relationships, implementation partner environments, vendor-layered delivery
+
+### IT Job Support Dallas
+URL: /it-job-support-dallas/
+Target: Dallas IT consultants on enterprise banking, telecom, healthcare, and Fortune 500 projects
+Dallas context: Dallas enterprise IT is characterized by multi-team delivery across vendor layers, banking digital transformation projects, telecom BSS/OSS modernization, healthcare data platform builds, and corporate .NET/React delivery. Consultants expected to deliver at speed from week one.
+Key scenarios: Sprint task delivery, client architecture reviews, production incident resolution, vendor-placed consultant support, CST standup assistance
+Technologies: Java, Spring Boot, React, Angular, Node.js, .NET, Python, AWS, Azure, Kubernetes, Docker, DevOps, CI/CD, AI/ML, SRE, Data Engineering, QA Automation
+
+### IT Job Support Irving TX
+URL: /it-job-support-irving/
+Target: Irving enterprise, banking, insurance, telecom, and healthcare IT consultants
+Irving context: Las Colinas Irving hosts North American operations of major banks, insurance companies, telecom providers, and healthcare systems — Java-heavy enterprise codebases, complex SQL databases, strict change management, vendor-managed project delivery. Bank of America, Celanese, McKesson, Kimberly-Clark Irving operations.
+Technologies: Java EE, Spring Boot, Hibernate, SQL Server, Oracle DB, REST APIs, Kafka, AWS, Azure, .NET, microservices, ETL pipelines, legacy modernization
+
+### IT Job Support Plano TX
+URL: /it-job-support-plano/
+Target: Plano enterprise tech professionals at corporate Fortune 500 campuses
+Plano context: Plano hosts major corporate tech campuses — Toyota North America HQ, Fannie Mae operations, Frito-Lay/PepsiCo IT, JCPenney tech, and numerous enterprise software firms. Enterprise delivery at scale, cloud migration initiatives, SRE work, QA automation framework builds.
+Technologies: Cloud (AWS, Azure), SRE (Prometheus, Grafana), QA Automation (Playwright, Cypress, Selenium), React, .NET, full-stack, CI/CD, release cycle management
+
+### DevOps Job Support Dallas
+URL: /devops-job-support-dallas/
+Target: Dallas DevOps engineers, SRE engineers, platform engineers
+Dallas DevOps context: Dallas Fortune 500 companies run complex multi-cloud environments. AT&T engineering, banking DevOps transformations, healthcare cloud migrations, and telecom CI/CD modernization.
+Technologies: Kubernetes, Helm, ArgoCD, Flux CD, Terraform, Docker, AWS, Azure, GitHub Actions, Jenkins, GitLab CI, Prometheus, Grafana, ELK, Datadog, incident bridge support, production deployment support
+
+### Java Job Support Irving TX
+URL: /java-job-support-irving/
+Target: Irving Java backend consultants at banking, insurance, and enterprise firms
+Irving Java context: Irving banking applications (capital markets, lending, insurance policy management), complex Spring Boot microservices, legacy Java EE to Spring Boot migration, high-availability clustered Java with Oracle/SQL Server.
+Technologies: Java 11/17/21, Spring Boot 3.x, Spring Cloud, Spring Security, Hibernate, JPA, Maven, Kafka, REST APIs, SQL Server, Oracle DB, AWS (EKS, RDS), microservices
+
+### Production Support Help Texas
+URL: /production-support-help-texas/
+Target: Texas developers, DevOps engineers, SREs facing live production incidents
+Texas production context: Texas Fortune 500 production environments — banking systems with near-zero downtime tolerance, telecom platforms with SLA commitments, healthcare systems with compliance criticality. Emergency support during CST business hours.
+Technologies: AWS (EKS, RDS, Lambda, EC2), Azure, Kubernetes, Docker, Java/Spring Boot, Python, .NET, Node.js, Kafka, SQL, Grafana, Prometheus, ELK, Datadog, CI/CD pipelines
+
+### Project Onboarding Help Texas
+URL: /project-onboarding-help-texas/
+Target: Texas consultants joining new enterprise projects — first 30-60 days
+Texas onboarding context: Large Irving and Dallas enterprise projects have sparse documentation, large codebases, complex vendor-layer team structures, and high delivery expectations from day one. KT sessions often cover complex microservices, AWS/Azure infrastructure, AI/ML pipeline architectures.
+Coverage: KT support, codebase walkthrough, architecture understanding, sprint task delivery, DevOps pipeline navigation, AI/ML onboarding, shadow support, confidence building
+
+### Interview Proxy Support Dallas
+URL: /interview-proxy-support-dallas/
+Target: Dallas candidates facing technical interviews at Fortune 500 companies and implementation partners
+Dallas interview context: Dallas employer client rounds test domain-specific knowledge (banking, telecom, healthcare), technical competency under pressure, communication clarity for enterprise delivery. W2/C2C/H1B consultants face high stakes — failed rounds affect contract and visa status.
+Technologies: Java, .NET, Python, React, DevOps (Kubernetes, Terraform, CI/CD), AI/ML, system design, SQL, cloud architecture
+
+### AI/ML, DevOps & SRE Job Support Texas
+URL: /ai-ml-devops-sre-job-support-texas/
+Target: Texas high-demand technology professionals — AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, QA Automation, Data Engineering, Cybersecurity
+Texas high-demand tech context: Texas energy companies deploying AI for predictive maintenance, Texas healthcare building RAG-based clinical decision support, Texas banks implementing ML-driven fraud detection, Dallas Fortune 500 building Agentic AI enterprise workflows.
+Technologies: PyTorch, TensorFlow, LangChain, LlamaIndex, RAG, Agentic AI (LangGraph, CrewAI, AutoGen), MLflow, SageMaker, Vertex AI, Kubernetes, Terraform, AWS, Azure, GCP, Prometheus, Grafana, ELK, Playwright, Cypress, Snowflake, Databricks, dbt, DevSecOps, React, .NET, Java, Python, Node.js
+
+---
+
 ## Ireland Location Pages
 
 ### IT Job Support Ireland
@@ -695,6 +762,8 @@ A: Yes. Ireland's tech sector operates under GDPR (enforced by Ireland's Data Pr
 - **Primary services:** Real-time IT job support, proxy interview assistance, career coaching
 - **Contact WhatsApp:** +91-96606-14469
 - **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand
+- **USA Texas cities covered:** Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
+- **Texas specialties:** W2/C2C/H1B/GC/EAD consulting support, Fortune 500 enterprise projects, Irving Las Colinas banking and telecom, Plano corporate tech campuses, CST-timezone aligned, emergency production support
 - **Canada cities covered:** Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
 - **Ireland cities covered:** Dublin (IST), Cork (IST), Galway (IST), Limerick (IST)
 - **Canada specialties:** Banking Java systems (Big Five banks), PIPEDA/OSFI-compliant cloud, Canadian AI research ecosystem (Vector Institute, Mila), gaming industry (Vancouver, Montreal studios), energy sector IT (Calgary)

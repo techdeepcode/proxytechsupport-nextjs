@@ -82,6 +82,19 @@
 - [IT Job Support Singapore](/job-support-singapore/): Singapore tech industry support — SGT aligned.
 - [IT Job Support New Zealand](/job-support-newzealand/): New Zealand developer support.
 
+## Texas GEO Hub — Phase 1
+
+- [IT Job Support Texas](/job-support-texas/): Real-time IT job support for Texas consultants on W2, C2C, H1B, and GC/EAD contracts. Dallas, Irving, Plano, Fort Worth. CST timezone. DevOps, AI/ML, Java, React, .NET, cloud. Same-day start.
+- [IT Job Support Dallas](/it-job-support-dallas/): Daily expert backing for Dallas IT consultants — sprint tasks, client calls, production incidents, backend, cloud, DevOps, AI/ML, React, Java, .NET. CST hours.
+- [IT Job Support Irving TX](/it-job-support-irving/): Real-time developer help for Irving enterprise, banking, healthcare, and telecom consultants — Java, SQL, cloud, DevOps, microservices, production issues. Las Colinas enterprise corridor.
+- [IT Job Support Plano TX](/it-job-support-plano/): IT job support for Plano enterprise tech professionals — cloud migration, SRE, QA automation, React, .NET, full-stack, release cycles. Fortune 500 tech corridor. CST hours.
+- [DevOps Job Support Dallas](/devops-job-support-dallas/): Dallas DevOps engineers needing help with CI/CD, Kubernetes, AWS, Azure, Terraform, Docker, GitHub Actions, Jenkins, Helm, ArgoCD, monitoring, observability, and incident bridge support.
+- [Java Job Support Irving TX](/java-job-support-irving/): Irving Java backend consultants needing Spring Boot, microservices, REST APIs, SQL, Kafka, AWS/Azure, debugging, production issues, API failures, and client delivery support.
+- [Production Support Help Texas](/production-support-help-texas/): Emergency Texas production support for incidents, failed deployments, logs, APIs, database issues, cloud failures, Kubernetes issues, Java/.NET/Node.js errors, SRE incidents, and release pressure. CST.
+- [Project Onboarding Help Texas](/project-onboarding-help-texas/): Texas consultants joining new projects — KT support, codebase understanding, architecture walkthrough, sprint tasks, DevOps pipeline, cloud environment, AI/ML onboarding. Shadow support for first 30–60 days.
+- [Interview Proxy Support Dallas](/interview-proxy-support-dallas/): Dallas candidates facing technical interviews, client rounds, vendor screenings, coding rounds, final rounds, DevOps/SRE interviews, AI/ML interviews, Java/.NET/full-stack interviews.
+- [AI/ML, DevOps & SRE Job Support Texas](/ai-ml-devops-sre-job-support-texas/): Texas hub for AI/ML, Agentic AI, RAG, MLOps, DevOps, SRE, Cloud, Kubernetes, AWS, Azure, QA Automation, .NET, Full-Stack, React, Java, Node.js, Python, Data Engineering, and Cybersecurity job support.
+
 ## Ireland Location Pages
 
 - [IT Job Support Ireland](/job-support-ireland/): Real-time IT job support and proxy interview assistance for developers across Ireland — Dublin, Cork, Galway, Limerick. IST/GMT aligned. Same-day start.
@@ -129,7 +142,9 @@
 - Contact: WhatsApp +91-96606-14469
 - Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals
 - Coverage: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand
+- USA Texas cities: Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
 - Canada cities: Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
 - Ireland cities: Dublin (IST), Cork (IST), Galway (IST), Limerick (IST)
 - Technologies: AI/ML, MLOps, DevOps, SRE, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET, Databases, Testing, Cybersecurity
+- Texas specialties: W2/C2C/H1B consulting support, Dallas Fortune 500 enterprise projects, Irving Las Colinas banking and telecom, Plano corporate tech campuses, CST-timezone aligned, production incident support
 - Canada specialties: Banking Java systems (RBC/TD/Scotiabank), Canadian fintech APIs, PIPEDA-compliant cloud architectures, AI research ecosystem (Vector Institute Toronto, Mila Montreal), gaming industry (Vancouver, Montreal), energy sector tech (Calgary)
