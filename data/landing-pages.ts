@@ -244,6 +244,12 @@ export const jobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'USA IT Support Legacy Since 2008', href: '/usa-it-job-support-legacy/' },
+      { label: 'USA Career Crisis Support', href: '/usa-it-career-crisis-support/' },
+      { label: 'USA AI Era Job Support', href: '/usa-ai-era-job-support/' },
+      { label: 'USA Remote Work IT Support', href: '/usa-remote-work-it-support/' },
+    ],
   },
   caseStudySection: {
     heading: 'Why US Tech Hiring Is Harder in 2026',
@@ -2230,6 +2236,10 @@ export const proxyInterviewUSA: LandingPageConfig = {
     problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
+    additionalLinks: [
+      { label: 'USA IT Support Legacy Since 2008', href: '/usa-it-job-support-legacy/' },
+      { label: 'USA Career Crisis Support', href: '/usa-it-career-crisis-support/' },
+    ],
   },
 };
 

@@ -8,6 +8,7 @@ import ActionBanner from '@/components/ActionBanner';
 import type { LandingPageConfig } from '@/data/landing-pages';
 import { jobSupportLinks } from '@/data/navigation';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
+import USALegacyTrustBanner from '@/components/USALegacyTrustBanner';
 
 // ─── Breadcrumb derivation ────────────────────────────────────────────────────
 
@@ -167,6 +168,7 @@ export default function LandingPageTemplate({ config }: Props) {
   };
 
   const locationHero = useLocationHeroMetricsAside(config);
+  const isUSAPage = config.slug === 'job-support-usa' || config.slug === 'proxy-interview-usa' || config.slug.endsWith('-usa');
 
   const CANADA_SLUGS = new Set([
     'job-support-canada', 'proxy-interview-canada', 'get-interview-scheduled-canada',
@@ -749,6 +751,9 @@ export default function LandingPageTemplate({ config }: Props) {
           />
         </div>
       </section>
+
+      {/* ── USA LEGACY TRUST BANNER (USA pages only) ──────────────────────── */}
+      {isUSAPage && <USALegacyTrustBanner />}
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <section className="lp-section-white">

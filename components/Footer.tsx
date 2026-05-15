@@ -15,6 +15,10 @@ const locationLinks = [
 ];
 
 const serviceLinks = [
+  { label: 'USA Legacy Since 2008', href: '/usa-it-job-support-legacy/' },
+  { label: 'USA Career Crisis Support', href: '/usa-it-career-crisis-support/' },
+  { label: 'USA AI Era Job Support', href: '/usa-ai-era-job-support/' },
+  { label: 'USA Remote Work Support', href: '/usa-remote-work-it-support/' },
   { label: 'Production Issue Support', href: '/production-issue-support/' },
   { label: 'Struggling in Your IT Job?', href: '/struggling-in-job-developer-help/' },
   { label: 'Interview Support Global', href: '/interview-support-global/' },
@@ -46,6 +50,8 @@ const resourceLinks = [
   { label: 'Technologies', href: '/#tech' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Contact', href: '/#contact' },
+  { label: 'USA IT Support Legacy', href: '/usa-it-job-support-legacy/' },
+  { label: 'Our Legacy', href: '/our-legacy/' },
 ];
 
 function FooterHeading({ children }: { children: React.ReactNode }) {

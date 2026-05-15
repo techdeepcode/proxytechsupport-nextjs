@@ -7,6 +7,7 @@ import TechSection from '@/components/TechSection';
 import ServicesSection from '@/components/ServicesSection';
 import HowItWorks from '@/components/HowItWorks';
 import Stats from '@/components/Stats';
+import USALegacySection from '@/components/USALegacySection';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import ContactCTA from '@/components/ContactCTA';
@@ -70,6 +71,7 @@ export default function HomePage() {
         <ServicesSection />
         <HowItWorks />
         <Stats />
+        <USALegacySection />
         <Testimonials />
         <FearUrgencySection />
         <GetInterviewScheduledSection />

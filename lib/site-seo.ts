@@ -4,7 +4,7 @@ export const SITE_NAME = 'Proxy Tech Support';
 
 /** `<title>` / default HTML title (legacy primary meta) */
 export const HOME_HTML_TITLE =
-  'Real-Time IT Job Support, Proxy Interview Support & Profile Engineering | USA · UK · Canada';
+  'Real-Time IT Job Support & Proxy Interview Support Since 2008 | USA · UK · Canada';
 
 /** `meta name="description"` — legacy long description */
 export const HOME_META_DESCRIPTION =

@@ -718,6 +718,18 @@ export default function HeroHomeSplit() {
                 Profile Engineering →
               </Link>
             </div>
+            <a
+              href="/usa-it-job-support-legacy/"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                fontSize: '0.75rem', fontWeight: 600, color: 'var(--pts-forest)',
+                border: '1px solid rgba(var(--pts-forest-rgb), 0.22)', borderRadius: 999,
+                padding: '0.3rem 0.75rem', textDecoration: 'none',
+                background: 'rgba(var(--pts-accent-rgb), 0.06)',
+              }}
+            >
+              <span aria-hidden>✦</span> Trusted Since 2008 · USA IT Job Support
+            </a>
 
           </div>
 

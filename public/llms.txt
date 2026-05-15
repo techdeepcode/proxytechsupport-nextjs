@@ -41,6 +41,14 @@
 - [Proxy Interview USA](/proxy-interview-usa/): Live interview assistance for US company interviews — FAANG, startups, enterprise.
 - [Get Interview Scheduled USA](/get-interview-scheduled-usa/): Schedule proxy interview support for US tech company interviews.
 
+## USA Legacy & History Pages
+
+- [USA IT Job Support Legacy Since 2008](/usa-it-job-support-legacy/): The full story of Proxy Tech Support's 17-year history supporting USA IT professionals — from the 2008 Great Recession through COVID remote work, tech layoffs, and AI-era job pressure. USA-first support built across five major market cycles.
+- [USA IT Career Crisis Support](/usa-it-career-crisis-support/): Real-time support for USA developers, consultants, and contractors facing job-loss pressure, layoff threats, sudden skill gaps, or performance improvement plans — covering every career crisis scenario since 2008.
+- [USA AI Era Job Support](/usa-ai-era-job-support/): Specialized job support for USA developers navigating AI automation anxiety, AI-integrated production systems, AI-era technical interviews, and career relevance pressure in the 2025+ tech landscape.
+- [USA Remote Work IT Support](/usa-remote-work-it-support/): Remote-first IT job support for USA developers working from home — real-time help for distributed teams, virtual client calls, remote standups, async delivery, and home-office production pressure since COVID.
+- [Our Legacy](/our-legacy/): Overview of Proxy Tech Support's history and global reach — USA as the primary focus since 2008, with extended coverage for Canada, UK, Ireland, and Australia.
+
 ## Canada Location Landing Pages
 
 - [IT Job Support Canada](/job-support-canada/): Real-time IT job support and proxy interview assistance for Canadian tech professionals. EST to PST covered — Toronto, Vancouver, Calgary, Montreal.
