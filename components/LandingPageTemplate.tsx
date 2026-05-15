@@ -23,6 +23,7 @@ const GEO_LABELS: Record<string, string> = {
   'job-support-newzealand': 'New Zealand',
   'job-support-ireland': 'Ireland',
   'it-job-support-dublin': 'Dublin',
+  'job-support-texas': 'Texas',
 };
 
 function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
@@ -33,6 +34,11 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
   // Geo pages: job-support-usa, job-support-uk …
   if (slug in GEO_LABELS) {
     return [home, { label: 'Locations', href: '/job-support-usa/' }, { label: `Job Support ${GEO_LABELS[slug]}` }];
+  }
+
+  // Texas city / specialty pages
+  if (TEXAS_GEO_SLUGS.has(slug) && slug !== 'job-support-texas') {
+    return [home, { label: 'Texas Job Support', href: '/job-support-texas/' }, { label: shortTitle }];
   }
 
   // Tech pages: java-job-support-usa, nodejs-job-support-usa …
@@ -55,6 +61,12 @@ const IRELAND_GEO_SLUGS = new Set([
   'production-support-help-ireland', 'ai-ml-devops-sre-job-support-ireland', 'project-onboarding-help-ireland',
 ]);
 
+const TEXAS_GEO_SLUGS = new Set([
+  'job-support-texas', 'it-job-support-dallas', 'it-job-support-irving', 'it-job-support-plano',
+  'devops-job-support-dallas', 'java-job-support-irving', 'production-support-help-texas',
+  'project-onboarding-help-texas', 'interview-proxy-support-dallas', 'ai-ml-devops-sre-job-support-texas',
+]);
+
 function isGeoLandingPage(config: LandingPageConfig): boolean {
   return config.slug in GEO_LABELS;
 }
@@ -65,6 +77,7 @@ function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (/-job-support-usa$/.test(config.slug)) return true;
   if (config.slug.includes('proxy-interview')) return true;
   if (IRELAND_GEO_SLUGS.has(config.slug)) return true;
+  if (TEXAS_GEO_SLUGS.has(config.slug)) return true;
   return false;
 }
 
@@ -169,6 +182,7 @@ export default function LandingPageTemplate({ config }: Props) {
 
   const locationHero = useLocationHeroMetricsAside(config);
   const isUSAPage = config.slug === 'job-support-usa' || config.slug === 'proxy-interview-usa' || config.slug.endsWith('-usa');
+  const isTexasPage = TEXAS_GEO_SLUGS.has(config.slug);
 
   const CANADA_SLUGS = new Set([
     'job-support-canada', 'proxy-interview-canada', 'get-interview-scheduled-canada',
@@ -221,6 +235,33 @@ export default function LandingPageTemplate({ config }: Props) {
     ],
   } : null;
 
+  const texasServiceSchema = isTexasPage ? {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: config.title,
+    description: config.description,
+    provider: {
+      '@type': 'Organization',
+      name: 'Proxy Tech Support',
+      url: 'https://proxytechsupport.com',
+    },
+    areaServed: [
+      { '@type': 'State', name: 'Texas', containedInPlace: { '@type': 'Country', name: 'United States' } },
+      { '@type': 'City', name: 'Dallas', containedInPlace: { '@type': 'State', name: 'Texas' } },
+      { '@type': 'City', name: 'Irving', containedInPlace: { '@type': 'State', name: 'Texas' } },
+      { '@type': 'City', name: 'Plano', containedInPlace: { '@type': 'State', name: 'Texas' } },
+      { '@type': 'City', name: 'Fort Worth', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    ],
+    serviceType: [
+      'IT Job Support Texas',
+      'Proxy Interview Assistance Texas',
+      'DevOps Support Texas',
+      'AI ML Support Texas',
+      'Production Support Texas',
+      'Interview Support Dallas',
+    ],
+  } : null;
+
   const irelandServiceSchema = isIrelandPage ? {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -262,6 +303,9 @@ export default function LandingPageTemplate({ config }: Props) {
       )}
       {irelandServiceSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(irelandServiceSchema) }} />
+      )}
+      {texasServiceSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(texasServiceSchema) }} />
       )}
 
       <style>{`
