@@ -678,6 +678,98 @@ Format: Screen share sessions during Irish working hours (IST); available for mo
 
 ---
 
+## Knowledge Base Guides
+
+The Knowledge Base is a library of focused editorial guides on IT job support, interview support, technology-specific support, and country-specific guidance. Explorer page: `/knowledge-base/`
+
+### Interview Support Guides
+
+- [What Is Interview Proxy Support](/what-is-interview-proxy-support/): What interview proxy support is, who benefits, and how real-time expert guidance works during technical screens.
+- [How Live Technical Interview Support Works](/how-live-technical-interview-support-works/): Step-by-step walkthrough of how expert support is delivered during live coding and system design rounds without disrupting interview flow.
+- [Final Round Interview Support Guide](/final-round-interview-support-guide/): Panel interviews, hiring manager rounds, and executive-level final rounds — and how expert support improves final-round outcomes.
+- [Technical Interview Support USA Guide](/technical-interview-support-usa-guide/): USA-specific technical interview support covering FAANG, bank, startup, and enterprise interview formats.
+- [Interview Proxy Support Risks & Expectations](/interview-proxy-support-risks-expectations/): Honest guide to the risks, realistic expectations, and appropriate use of interview proxy support.
+
+### Proxy Job Support Guides
+
+- [What Is Proxy Job Support](/what-is-proxy-job-support/): What proxy job support is, who uses it, and how it helps with production issues, standups, client calls, and daily delivery pressure.
+- [How Proxy Job Support Works](/how-proxy-job-support-works/): Process guide for setting up and using proxy job support for an active IT role — from initial assessment to day-to-day task sessions.
+- [Real-Time IT Job Support Guide](/real-time-it-job-support-guide/): How synchronous, in-the-moment job support works during working hours — what it covers and how to use it most effectively.
+- [Production Issue Support for IT Professionals](/production-issue-support-for-it-professionals/): Expert support during production incidents — rapid diagnosis, resolution guidance, and post-mortem documentation under time pressure.
+- [Client Call & Standup Support Guide](/client-call-and-standup-support-guide/): Communication support for IT professionals in client-facing roles — standups, demos, stakeholder calls, and written status updates.
+
+### Technology Support Guides
+
+- [AI/ML Job Support Guide](/ai-ml-job-support-guide/): Job support for AI and ML engineers — model development, LLM integration, RAG pipelines, deployment, and production debugging.
+- [MLOps Job Support Guide](/mlops-job-support-guide/): Expert support for MLOps engineers — ML pipelines, model monitoring, feature stores, MLflow, Kubeflow, production model management.
+- [RAG & Agentic AI Job Support Guide](/rag-agentic-ai-job-support-guide/): Support for engineers building RAG systems and agentic AI applications — LangChain, LlamaIndex, vector databases, agent orchestration.
+- [GenAI Interview Support Guide](/genai-interview-support-guide/): Interview support guide for generative AI engineering roles — what to expect and how real-time guidance improves GenAI interview performance.
+- [DevOps Job Support Guide](/devops-job-support-guide/): Job support for DevOps engineers — CI/CD pipeline issues, Kubernetes, Terraform, AWS/Azure, observability, and incident response in real time.
+- [SRE Job Support Guide](/sre-job-support-guide/): Support for Site Reliability Engineers — SLO/SLI definition, error budget management, incident management, and reliability automation.
+- [AWS Job Support Guide](/aws-job-support-guide/): Real-time support for engineers working on AWS — EC2, EKS, Lambda, RDS, S3, IAM policy debugging, VPC networking, and CloudFormation.
+- [Azure Job Support Guide](/azure-job-support-guide/): Expert help for Azure engineers — AKS, App Service, Azure DevOps pipelines, Azure ML, Cosmos DB, and Azure networking and IAM issues.
+- [Kubernetes Job Support Guide](/kubernetes-job-support-guide/): Job support for Kubernetes engineers — pod failures, RBAC misconfiguration, networking policies, Helm, ArgoCD, and cluster management.
+- [React Job Support Guide](/react-job-support-guide/): Support for React and frontend developers — React 18, Next.js, TypeScript, state management, performance issues, and component architecture.
+- [.NET Job Support Guide](/dotnet-job-support-guide/): Job support for .NET and C# developers — ASP.NET Core, Entity Framework, Azure integration, microservices, and deployment issues.
+- [Java Job Support Guide](/java-job-support-guide/): Expert help for Java developers — Spring Boot, Spring Security, JPA, Kafka, microservices architecture, JVM performance, and API design.
+- [Node.js Job Support Guide](/nodejs-job-support-guide/): Support for Node.js developers — Express, NestJS, REST/GraphQL APIs, async debugging, streaming, WebSockets, and performance issues.
+- [Full-Stack Job Support Guide](/full-stack-job-support-guide/): Job support for full-stack developers spanning frontend, backend, API integration, database design, and deployment challenges.
+- [QA Automation Job Support Guide](/qa-automation-job-support-guide/): Support for QA automation engineers — Selenium, Playwright, Cypress, API testing, test framework setup, and CI/CD integration.
+- [Data Engineering Job Support Guide](/data-engineering-job-support-guide/): Expert support for data engineers — Spark, Databricks, dbt, Airflow, pipeline debugging, data quality issues, and lakehouse architecture.
+- [Cybersecurity & DevSecOps Job Support Guide](/cybersecurity-devsecops-job-support-guide/): Support for cybersecurity and DevSecOps engineers — IAM misconfiguration, cloud security, SAST/DAST, OWASP remediation, and audit response.
+
+### Canada Knowledge Guides
+
+- [Why Your Canada IT Resume Gets No Calls](/why-canada-it-resume-gets-no-calls/): Why qualified IT professionals in Canada get no recruiter calls — ATS filtering, keyword mismatch, weak LinkedIn headline, and how to fix each issue.
+- [How to Get IT Interviews Scheduled in Canada](/how-to-get-it-interviews-scheduled-in-canada/): Step-by-step guide to improving IT interview scheduling rate in Canada — resume keywords, LinkedIn, referral channels, and role targeting.
+- [Canada IT Resume & LinkedIn Positioning Guide](/canada-it-resume-linkedin-positioning-guide/): How to position your IT resume and LinkedIn profile for Canadian recruiter searches — headline, skills section, ATS keywords, and project bullet copy.
+- [Canada IT Job Search Mistakes](/canada-it-job-search-mistakes/): The most common IT job search mistakes costing candidates interviews in Canada — generic resume, missing keywords, wrong role targeting.
+- [Recruiter Keywords for Canada IT Jobs](/recruiter-keywords-for-canada-it-jobs/): The exact keywords Canadian IT recruiters search for — by role, technology, and sector, with examples for Java, DevOps, AI/ML, and React.
+- [Canada Interview Proxy Support Guide](/canada-interview-proxy-support-guide/): How real-time interview support works in the Canadian context — formats used by Canadian employers, behavioural expectations, and live guidance delivery.
+- [Canada Technical Interview Support Guide](/canada-technical-interview-support-guide/): Live coding and system design interview support for Canadian IT roles — difficulty expectations by employer type.
+- [Canada Final Round Interview Support Guide](/canada-final-round-interview-support-guide/): Panel, hiring manager, and executive-level final round interview support for Canadian IT roles.
+- [Canada Live Coding Interview Support Guide](/canada-live-coding-interview-support-guide/): HackerRank, CoderPad, and take-home project support for Canadian IT interviews — what Canadian employers actually look for.
+- [Canada DevOps & Cloud Interview Support Guide](/canada-devops-cloud-interview-support-guide/): Expert support for DevOps and cloud engineering interviews in Canada — AWS, Azure, Kubernetes, Terraform, and Canadian banking system design.
+- [Canada Proxy Job Support Guide](/canada-proxy-job-support-guide/): Real-time job support for IT professionals in Canadian roles — what it covers, how it works in Canadian banking and tech environments.
+- [How Proxy Job Support Works in Canada](/how-proxy-job-support-works-in-canada/): Step-by-step process guide for using proxy job support in Canadian IT roles — from initial assessment to daily standup and delivery session coverage.
+- [Canada Real-Time IT Job Support Guide](/canada-real-time-it-job-support-guide/): Live technical help for IT professionals at Canadian employers — how it works in banking, fintech, and tech environments across Canadian time zones.
+- [Canada Production Issue Support Guide](/canada-production-issue-support-guide/): Production incident support for Canadian banking and enterprise IT roles — P1 incident processes, RCA guidance, and post-mortem documentation.
+- [Canada Client Call & Standup Support Guide](/canada-client-call-standup-support-guide/): Communication support for IT professionals in Canadian workplaces — standup preparation, client call guidance, and professional communication norms.
+
+### Ireland Knowledge Guides
+
+- [Ireland IT Job Support Guide](/ireland-it-job-support-guide/): IT job support for professionals in Ireland — Dublin multinational offices, Irish banks, GDPR obligations, and remote Irish roles.
+- [Ireland Interview Proxy Support Guide](/ireland-interview-proxy-support-guide/): Technical interview support for Dublin and Irish IT roles — FAANG Dublin offices, Irish bank competency interviews, Irish fintech take-home assessments.
+- [Ireland Production Support Help Guide](/ireland-production-support-help-guide/): Production incident support for Irish IT roles — GDPR breach response, AWS eu-west-1 issues, and on-call support during Irish business hours.
+- [Ireland Project Onboarding Help Guide](/ireland-project-onboarding-help-guide/): Onboarding and ramp-up support for IT professionals starting new roles in Ireland — codebase navigation, toolchain setup, first-90-days delivery.
+- [Ireland AI/ML, DevOps & SRE Support Guide](/ireland-ai-ml-devops-sre-support-guide/): AI/ML, DevOps, and SRE job support for Dublin tech roles — EU AI Act context, GDPR-compliant AI systems, cloud engineering at Irish multinationals.
+
+### Germany Knowledge Guides
+
+- [Germany IT Job Support Guide](/germany-it-job-support-guide/): IT job support for professionals in Germany — Berlin startups, Munich enterprise tech, German banking, and the professional culture of German IT roles.
+- [Germany Interview Support Guide](/germany-interview-support-guide/): Technical interview support for Berlin, Munich, and German IT roles — how German employers interview and what depth they expect.
+- [Germany DevOps & Cloud Job Support Guide](/germany-devops-cloud-job-support-guide/): DevOps and cloud engineering job support for German IT roles — AWS eu-central-1 Frankfurt, DSGVO infrastructure compliance, BSI C5 requirements.
+- [Germany Java, .NET & Full-Stack Support Guide](/germany-java-dotnet-fullstack-support-guide/): Java, .NET, Angular, and React job support for German roles — Spring Boot in German banking, Keycloak SSO, Angular in German enterprise environments.
+- [Germany AI/ML & Data Engineering Support Guide](/germany-ai-ml-data-support-guide/): AI/ML and data engineering job support for German tech roles — EU AI Act compliance, DSGVO in ML pipelines, Databricks, German automotive AI context.
+
+### Australia Knowledge Guides
+
+- [Australia IT Job Support Guide](/australia-it-job-support-guide/): IT job support for professionals in Australia — Sydney banks, Melbourne tech, Atlassian, Canva, and full AEST/AEDT/AWST time zone coverage.
+- [Australia Interview Proxy Support Guide](/australia-interview-proxy-support-guide/): Technical interview support for Australian IT roles — Atlassian and Canva assessments, Big Four bank competency interviews, FAANG Sydney office processes.
+- [Australia Production Support Help Guide](/australia-production-support-help-guide/): Production incident support for Australian IT roles — APRA CPS 234 incident obligations, NPP payment system issues, and on-call incident guidance.
+- [Australia DevOps, Cloud & SRE Support Guide](/australia-devops-cloud-sre-support-guide/): DevOps, cloud, and SRE job support for Australian IT roles — AWS ap-southeast-2 Sydney, Azure Australia, Atlassian toolchain, and Australian compliance.
+- [Australia Full-Stack, Java, .NET & React Support Guide](/australia-fullstack-java-dotnet-react-support-guide/): Java, .NET, React, and full-stack job support for Australian IT roles — banking Java backends, React at Atlassian and Canva, and WCAG accessibility.
+
+### Europe Knowledge Guides
+
+- [Europe IT Job Support Guide](/europe-it-job-support-guide/): IT job support across European tech hubs — Amsterdam, Stockholm, Berlin, Paris, Warsaw, and remote European roles with CET/WET time zone coverage.
+- [Europe Interview Support Guide](/europe-interview-support-guide/): Technical interview support for European IT roles — Booking.com, Adyen, Spotify, Klarna, and US multinational European office interview processes.
+- [Europe DevOps, Cloud & SRE Support Guide](/europe-devops-cloud-sre-support-guide/): DevOps, cloud, and SRE job support for European IT roles — AWS eu-central-1, GDPR data residency enforcement, GitLab CI adoption, and cloud compliance.
+- [Europe AI/ML, RAG & MLOps Support Guide](/europe-ai-ml-rag-mlops-support-guide/): AI/ML and data engineering job support for European tech roles — EU AI Act compliance, GDPR in ML pipelines, Mistral AI, and European AI engineering context.
+- [Europe Full-Stack, Backend & Frontend Support Guide](/europe-fullstack-backend-frontend-support-guide/): Java, Python, TypeScript, React, and Angular job support for European IT roles — Keycloak SSO, PSD2 payment APIs, and GDPR-compliant development.
+
+---
+
 ## Frequently Asked Questions
 
 ### General

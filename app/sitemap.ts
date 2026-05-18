@@ -89,5 +89,79 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ([url, lastModified]) => ({ url, lastModified }),
   );
 
-  return [...staticRoutes, ...postRoutes, ...interviewRoutes];
+  const knowledgeBaseRoutes: MetadataRoute.Sitemap = [
+    { url: `${BASE}/knowledge-base/`, lastModified: today, priority: 0.85 },
+    // Interview Support cluster
+    { url: `${BASE}/what-is-interview-proxy-support/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/how-live-technical-interview-support-works/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/final-round-interview-support-guide/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/technical-interview-support-usa-guide/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/interview-proxy-support-risks-expectations/`, lastModified: today, priority: 0.8 },
+    // Proxy Job Support cluster
+    { url: `${BASE}/what-is-proxy-job-support/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/how-proxy-job-support-works/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/real-time-it-job-support-guide/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/production-issue-support-for-it-professionals/`, lastModified: today, priority: 0.8 },
+    { url: `${BASE}/client-call-and-standup-support-guide/`, lastModified: today, priority: 0.8 },
+    // Technology cluster
+    { url: `${BASE}/ai-ml-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/mlops-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/rag-agentic-ai-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/genai-interview-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/devops-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/sre-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/aws-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/azure-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/kubernetes-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/react-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/dotnet-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/java-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/nodejs-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/full-stack-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/qa-automation-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/data-engineering-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/cybersecurity-devsecops-job-support-guide/`, lastModified: today, priority: 0.75 },
+    // Canada cluster
+    { url: `${BASE}/why-canada-it-resume-gets-no-calls/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/how-to-get-it-interviews-scheduled-in-canada/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-it-resume-linkedin-positioning-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-it-job-search-mistakes/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/recruiter-keywords-for-canada-it-jobs/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-interview-proxy-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-technical-interview-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-final-round-interview-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-live-coding-interview-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-devops-cloud-interview-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-proxy-job-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/how-proxy-job-support-works-in-canada/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-real-time-it-job-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-production-issue-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/canada-client-call-standup-support-guide/`, lastModified: today, priority: 0.78 },
+    // Ireland cluster
+    { url: `${BASE}/ireland-it-job-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/ireland-interview-proxy-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/ireland-production-support-help-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/ireland-project-onboarding-help-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/ireland-ai-ml-devops-sre-support-guide/`, lastModified: today, priority: 0.72 },
+    // Germany cluster
+    { url: `${BASE}/germany-it-job-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/germany-interview-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/germany-devops-cloud-job-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/germany-java-dotnet-fullstack-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/germany-ai-ml-data-support-guide/`, lastModified: today, priority: 0.72 },
+    // Australia cluster
+    { url: `${BASE}/australia-it-job-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/australia-interview-proxy-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/australia-production-support-help-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/australia-devops-cloud-sre-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/australia-fullstack-java-dotnet-react-support-guide/`, lastModified: today, priority: 0.72 },
+    // Europe cluster
+    { url: `${BASE}/europe-it-job-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/europe-interview-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/europe-devops-cloud-sre-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/europe-ai-ml-rag-mlops-support-guide/`, lastModified: today, priority: 0.72 },
+    { url: `${BASE}/europe-fullstack-backend-frontend-support-guide/`, lastModified: today, priority: 0.72 },
+  ];
+
+  return [...staticRoutes, ...postRoutes, ...interviewRoutes, ...knowledgeBaseRoutes];
 }

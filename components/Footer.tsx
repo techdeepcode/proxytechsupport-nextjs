@@ -46,6 +46,7 @@ const proxyInterviewLinks = [
 
 const resourceLinks = [
   { label: 'Blog', href: '/blog/' },
+  { label: 'Knowledge Base', href: '/knowledge-base/' },
   { label: 'Interview Questions', href: '/interview-questions/' },
   { label: 'Technologies', href: '/#tech' },
   { label: 'FAQ', href: '/#faq' },

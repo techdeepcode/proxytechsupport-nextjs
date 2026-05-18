@@ -133,6 +133,36 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Grok',
         allow: '/',
       },
+      // ── Timpi / Anthropic training crawler ──────────────────────────────
+      {
+        userAgent: 'Timpibot',
+        allow: '/',
+      },
+      // ── Huawei / PetalBot ───────────────────────────────────────────────
+      {
+        userAgent: 'PetalBot',
+        allow: '/',
+      },
+      // ── Allen Institute for AI (AI2) ────────────────────────────────────
+      {
+        userAgent: 'AI2Bot',
+        allow: '/',
+      },
+      // ── DuckDuckGo AI Assistant ──────────────────────────────────────────
+      {
+        userAgent: 'DuckAssistBot',
+        allow: '/',
+      },
+      // ── Qwen / Alibaba AI ────────────────────────────────────────────────
+      {
+        userAgent: 'Qwenbot',
+        allow: '/',
+      },
+      // ── Omgili / Webz.io (LLM training data) ────────────────────────────
+      {
+        userAgent: 'omgili',
+        allow: '/',
+      },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

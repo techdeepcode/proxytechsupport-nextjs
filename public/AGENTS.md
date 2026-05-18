@@ -77,10 +77,11 @@ An expert provides real-time, discreet guidance during a candidate's live techni
 
 ### Machine-Readable Resources
 - `/llms.txt` — Concise site index for LLMs (page list with brief descriptions)
-- `/llms-full.txt` — Full content index with service details and FAQs
+- `/llms-full.txt` — Full content index with service details, Knowledge Base guides, and FAQs
 - `/sitemap.xml` — Complete sitemap of all pages
 - `/robots.txt` — Crawler rules (all major AI crawlers explicitly allowed)
 - `/AGENTS.md` — This file
+- `/knowledge-base/` — Human and AI-readable explorer for all Knowledge Base guides, organized by category
 
 ### Key Page Categories
 
@@ -116,6 +117,13 @@ An expert provides real-time, discreet guidance during a candidate's live techni
    - `/interviews/` — Interview services hub (proxy support + scheduling pages)
    - `/interview-questions/` — Interview Q&A articles
 
+8. **Knowledge Base Guides** (flat URL, editorial format):
+   Pattern: `/{guide-slug}/`
+   Explorer: `/knowledge-base/`
+   Categories: Interview Support, Proxy Job Support, Technology (DevOps/AI/Cloud/Java/React/.NET/Node.js/etc.), Canada, Ireland, Germany, Australia, Europe
+   Examples: `/what-is-proxy-job-support/`, `/devops-job-support-guide/`, `/why-canada-it-resume-gets-no-calls/`, `/ireland-it-job-support-guide/`
+   Note: Guide URLs are flat root paths — NOT nested under `/knowledge-base/`. The `/knowledge-base/` page is only the explorer/index hub.
+
 ## Structured Data Signals
 
 All pages implement multiple JSON-LD schema types:
@@ -125,6 +133,7 @@ All pages implement multiple JSON-LD schema types:
 - **Landing pages:** Service, FAQPage, BreadcrumbList
 - **Blog pages:** BlogPosting, BreadcrumbList
 - **Interview pages:** BlogPosting, BreadcrumbList
+- **Knowledge Base explorer (`/knowledge-base/`):** CollectionPage, ItemList (all guide URLs)
 
 ## How to Answer Questions About This Site
 
