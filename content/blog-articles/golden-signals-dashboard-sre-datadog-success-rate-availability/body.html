@@ -1,0 +1,691 @@
+<h1>Golden Signals Dashboard for SRE: Datadog Success Rate, Availability, SLO, Error Budget and Troubleshooting Widgets</h1>
+
+<p>A Golden Signals dashboard is not just a chart collection. For an SRE, it should answer one question fast: <strong>is the service reliable right now, and if not, where should we investigate first?</strong> Every widget placement, every metric formula, and every threshold color should serve that single purpose. This guide covers how to build that dashboard in Datadog from scratch — the exact widget set, the filter structure, the query patterns, the troubleshooting flow, and how to explain it all in an interview or a production incident review.</p>
+
+<hr>
+
+<h2>Why Managers Care About Success Rate and Availability Progression</h2>
+
+<p>When a production service degrades, managers do not want theory. They want to know: <em>which endpoint, which region, which version, or which dependency caused the drop?</em> They want to see a trend, not a single number. A dashboard that shows only the current success rate tells you there is a problem. A dashboard that shows the <strong>progression of Success Rate and Availability over time</strong> — at 1h, 24h, 7d, and 30d — tells you when the problem started, whether it is getting worse, and whether recent deployments or infrastructure changes correlate with the degradation.</p>
+
+<p>Senior engineering managers and VPs of Engineering use these trends to make release decisions, escalation calls, and SLA commitments to customers. That is why Success Rate Over Time and Availability Over Time must be the two primary widgets at the top of any SRE dashboard — not buried three rows down between CPU graphs.</p>
+
+<hr>
+
+<h2>The Four Golden Signals: Practical SRE Language</h2>
+
+<p>Google's SRE book defined four signals that, together, give you a complete picture of service health. Here is how each one translates to production decisions:</p>
+
+<h3>Latency</h3>
+<p>Latency is not just the average response time — averages hide the 5% of requests that take 10x longer. Track <strong>P50, P95, and P99</strong>. P50 tells you what a typical user experiences. P95 tells you what 1 in 20 users experiences. P99 tells you where your worst-case SLA commitments are at risk. When P95 spikes but P50 stays flat, you have a tail latency problem — often caused by a slow database query, a downstream dependency timing out, or a specific endpoint with heavy computation. When both P50 and P95 spike, the problem is systemic — resource saturation or a traffic surge affecting the entire service.</p>
+
+<h3>Traffic</h3>
+<p>Traffic is the request rate — how much load the service is currently under. You need this to contextualize every other signal. A success rate drop from 99.9% to 98% on 10 requests per second is noise. The same drop on 50,000 requests per second is a SEV1 incident affecting 1,000 users per minute. Always show current request volume alongside success rate so no one misreads low-traffic error spikes as a production crisis.</p>
+
+<h3>Errors</h3>
+<p>Errors are the direct explanation for why success rate drops. But a single error rate number is not enough. You need to break it down by HTTP status code (to separate 4xx client errors from 5xx service errors), by endpoint (to find which API is failing), by error type or exception class (to find the root cause), and by region or version (to understand blast radius). A dashboard that shows only "2% error rate" is useless during an incident. A dashboard that shows "2% error rate, 98% of it on the <code>/api/v2/checkout</code> endpoint, all 503s, starting at 14:32, correlated with the v3.7.1 deployment" is actionable in 30 seconds.</p>
+
+<h3>Saturation</h3>
+<p>Saturation tells you how close the service is to its resource limits. A dashboard that only shows CPU and memory is not an SRE dashboard — it is an infrastructure dashboard. Real SRE saturation monitoring covers: CPU utilization, memory usage, pod restart count, OOM kill events, replica availability (desired vs. running vs. available), connection pool usage (active/idle/wait/timeout), queue depth and consumer lag, and database connection limits. Saturation is often the root cause hiding behind a success rate or latency symptom — the error rate is 4xx because the connection pool is exhausted, not because the code is wrong.</p>
+
+<hr>
+
+<h2>Success Rate vs Availability: Two Different Reliability Stories</h2>
+
+<p>These two metrics are often confused. Understanding the difference is critical for both production work and SRE interviews.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Success Rate</th>
+      <th>Availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>What it measures</strong></td>
+      <td>Request-level reliability — of all requests the service received, how many succeeded</td>
+      <td>Reachability and uptime — of all health checks performed, how many returned healthy</td>
+    </tr>
+    <tr>
+      <td><strong>Formula</strong></td>
+      <td>Successful Requests / Total Requests × 100</td>
+      <td>Successful Availability Checks / Total Availability Checks × 100</td>
+    </tr>
+    <tr>
+      <td><strong>Degrades when</strong></td>
+      <td>Service is receiving traffic and returning errors (5xx, unhandled exceptions)</td>
+      <td>Service is unreachable, failing health checks, or completely down even with no traffic</td>
+    </tr>
+    <tr>
+      <td><strong>Data sources in Datadog</strong></td>
+      <td>APM traces, application metrics, custom StatsD counters</td>
+      <td>Synthetic monitors, health check endpoints, uptime monitors, SLO availability data</td>
+    </tr>
+    <tr>
+      <td><strong>Common scenario</strong></td>
+      <td>Service is up and reachable but returning database errors on checkout — Availability: 100%, Success Rate: 40%</td>
+      <td>Pod crashes, health checks fail, load balancer marks instance unhealthy — Availability: 60%, Success Rate: N/A (no traffic reaching service)</td>
+    </tr>
+    <tr>
+      <td><strong>SLO type</strong></td>
+      <td>Request-based SLO (numerator: good requests, denominator: total requests)</td>
+      <td>Monitor-based SLO or time-based SLO (uptime as percentage of time in healthy state)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A good Golden Signals dashboard shows both metrics side by side, because they answer different parts of the reliability question. You need both to understand the complete service health picture.</p>
+
+<hr>
+
+<h2>Complete Dashboard Layout</h2>
+
+<p>The dashboard is organized into nine rows. Each row has a specific purpose — the layout is designed so an on-call engineer can scan top-to-bottom and know exactly where to look based on the symptom they are investigating.</p>
+
+<h3>Row 1: Current Service Health</h3>
+<p>Six query value widgets showing the current state at a glance. These are the first thing an on-call engineer sees.</p>
+<ul>
+  <li><strong>Current Success Rate</strong> — color-coded: green ≥ 99.9%, yellow 99.5–99.9%, red &lt; 99.5%</li>
+  <li><strong>Current Availability</strong> — same thresholds as success rate</li>
+  <li><strong>Current Error Rate</strong> — green &lt; 0.1%, yellow 0.1–0.5%, red &gt; 0.5%</li>
+  <li><strong>P95 Latency</strong> — green &lt; 500ms, yellow 500ms–1000ms, red &gt; 1000ms</li>
+  <li><strong>Current Request Volume</strong> — no threshold, provides traffic context</li>
+  <li><strong>SLO / Error Budget</strong> — Datadog SLO widget showing target, current value, budget remaining, and budget consumed</li>
+</ul>
+
+<h3>Row 2: Progression Over Time</h3>
+<p>Four timeseries widgets showing historical trends — this is the row managers look at during review meetings and the row SREs look at during incident timelines.</p>
+<ul>
+  <li><strong>Success Rate Over Time</strong> — line chart with target line at 99.9%, supports 1h/24h/7d/30d</li>
+  <li><strong>Availability Over Time</strong> — line chart using synthetic monitor, health check, or SLO availability data</li>
+  <li><strong>SLO Burn Rate</strong> — line chart showing budget consumption rate relative to the sustainable pace</li>
+  <li><strong>Error Budget Remaining</strong> — trend of remaining budget as the window progresses</li>
+</ul>
+
+<h3>Row 3: Failure Analysis</h3>
+<p>This row answers "why is success rate dropping?" It is the first troubleshooting row.</p>
+<ul>
+  <li>Error Rate Over Time (grouped by status code, endpoint, region, version)</li>
+  <li>HTTP Status Code Breakdown (2xx, 3xx, 4xx, 5xx)</li>
+  <li>Top Failing Endpoints (top list by error count)</li>
+  <li>Error Type Breakdown (by exception.type or error.message)</li>
+</ul>
+
+<h3>Row 4: Latency</h3>
+<p>Latency details for user experience and slow-request investigation.</p>
+<ul>
+  <li>P50 / P95 / P99 Latency (all on one timeseries or separate query values)</li>
+  <li>Slowest Endpoints (top list by P95 latency)</li>
+  <li>Dependency Latency (downstream service call durations)</li>
+  <li>Latency by Region (to isolate geographic degradation)</li>
+</ul>
+
+<h3>Row 5: Traffic</h3>
+<p>Traffic patterns to understand load and correlate with error and latency behavior.</p>
+<ul>
+  <li>Request Rate Over Time (RPS or RPM by service, endpoint, region)</li>
+  <li>Traffic by Endpoint (top list)</li>
+  <li>Traffic by Region (timeseries grouped by region)</li>
+  <li>Traffic vs Error Rate (overlay chart to see if errors track load)</li>
+</ul>
+
+<h3>Row 6: Saturation</h3>
+<p>Resource utilization and capacity — this row explains whether the system is under pressure.</p>
+<ul>
+  <li>CPU and Memory (by host, pod, container, cluster)</li>
+  <li>Pod Restarts / OOM kills (count by pod and namespace)</li>
+  <li>Replica Availability (desired vs. available vs. unavailable)</li>
+  <li>Connection Pool Usage (active, idle, wait time, timeout count)</li>
+</ul>
+
+<h3>Row 7: Dependencies</h3>
+<p>Downstream health — because most production incidents are caused by something the service depends on, not the service itself.</p>
+<ul>
+  <li>Database Health (latency, error rate, slow queries, lock wait time)</li>
+  <li>Cache Health (hit ratio, latency, eviction rate, error rate)</li>
+  <li>Queue Health (queue depth, consumer lag, dead letter queue count)</li>
+  <li>External API Health (latency, error rate, timeout count, retry rate)</li>
+</ul>
+
+<h3>Row 8: Logs and Traces</h3>
+<p>Evidence-level debugging — the row that takes you from metric to root cause.</p>
+<ul>
+  <li>Recent Error Logs (filtered by service, endpoint, error.message, trace_id)</li>
+  <li>Top Error Messages (aggregated log patterns)</li>
+  <li>Trace Samples (failed spans, slow spans, dependency call chains)</li>
+  <li>Logs by Endpoint (to isolate which API is generating errors)</li>
+</ul>
+
+<h3>Row 9: Deployment Correlation</h3>
+<p>Release validation and change correlation — to answer "did this start after the last deployment?"</p>
+<ul>
+  <li>Deployment Events overlay (vertical markers on Success Rate and Error Rate timeseries)</li>
+  <li>Success Rate by Version (timeseries or top list grouped by container image or version tag)</li>
+  <li>Error Rate by Version</li>
+  <li>Latency by Version</li>
+</ul>
+
+<hr>
+
+<h2>Recommended Datadog Template Variables (Filters)</h2>
+
+<p>Template variables make the dashboard reusable across services, environments, and infrastructure scopes. Configure these at the dashboard level so every widget respects the selected filter automatically.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Tag</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>$env</code></td>
+      <td><code>env</code></td>
+      <td>Switch between prod, staging, and lower environments without cloning dashboards</td>
+    </tr>
+    <tr>
+      <td><code>$service</code></td>
+      <td><code>service</code></td>
+      <td>Reuse the same dashboard for different microservices</td>
+    </tr>
+    <tr>
+      <td><code>$region</code></td>
+      <td><code>region</code></td>
+      <td>Isolate region-specific reliability issues</td>
+    </tr>
+    <tr>
+      <td><code>$availability_zone</code></td>
+      <td><code>availability-zone</code></td>
+      <td>Identify AZ-level availability failures in multi-AZ deployments</td>
+    </tr>
+    <tr>
+      <td><code>$cluster</code></td>
+      <td><code>kube_cluster_name</code></td>
+      <td>Filter to a specific Kubernetes cluster</td>
+    </tr>
+    <tr>
+      <td><code>$namespace</code></td>
+      <td><code>kube_namespace</code></td>
+      <td>Scope to a specific Kubernetes namespace</td>
+    </tr>
+    <tr>
+      <td><code>$pod</code></td>
+      <td><code>pod_name</code></td>
+      <td>Drill down to a specific pod during a pod-level incident</td>
+    </tr>
+    <tr>
+      <td><code>$host</code></td>
+      <td><code>host</code></td>
+      <td>Isolate a specific host or node</td>
+    </tr>
+    <tr>
+      <td><code>$version</code></td>
+      <td><code>version</code></td>
+      <td>Compare reliability between deployment versions</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Set the default values for <code>$env</code> to <code>prod</code> and <code>$service</code> to <code>*</code> so the dashboard opens in a useful state without requiring the user to configure it first.</p>
+
+<hr>
+
+<h2>Widget-by-Widget Implementation Guide</h2>
+
+<h3>Section 1: Success Rate and Availability Progression</h3>
+
+<h4>Success Rate Over Time</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries (line chart)</li>
+  <li><strong>Formula pattern:</strong> <code>(sum of successful requests / sum of total requests) * 100</code></li>
+  <li><strong>Scope:</strong> filter by <code>$env</code>, <code>$service</code>, <code>$region</code></li>
+  <li><strong>Y-axis:</strong> 0–100 with target reference line at 99.9</li>
+  <li><strong>Time range presets:</strong> support 1h, 24h, 7d, and 30d so managers can review short-term incidents and long-term trends on the same widget</li>
+  <li><strong>Color threshold:</strong> green ≥ 99.9%, yellow 99.5–99.9%, red &lt; 99.5%</li>
+</ul>
+
+<h4>Availability Over Time</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries (line chart)</li>
+  <li><strong>Data sources:</strong> Datadog Synthetic monitors, health check endpoint metrics, uptime monitor data, or SLO availability rollup</li>
+  <li><strong>Formula pattern:</strong> <code>(sum of successful health checks / sum of total health checks) * 100</code></li>
+  <li><strong>Group by:</strong> region and availability zone for multi-region services</li>
+  <li><strong>Y-axis:</strong> 99–100 range to make small drops visible; use custom y-axis bounds</li>
+</ul>
+
+<h4>Availability by Region / AZ</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries grouped by region, or Top List showing current availability per region</li>
+  <li><strong>Purpose:</strong> isolate whether an availability drop is global or specific to one region or AZ — critical for multi-region architectures on AWS, GCP, and Azure</li>
+</ul>
+
+<h4>SLO / Error Budget Widget</h4>
+<ul>
+  <li><strong>Widget type:</strong> Datadog SLO widget (native widget, not a timeseries)</li>
+  <li><strong>Configuration:</strong> link the widget to your configured SLO in Datadog</li>
+  <li><strong>Display:</strong> shows SLO target, current SLO value, error budget remaining (in percentage and in minutes/hours), and budget consumed</li>
+  <li><strong>Window:</strong> typically 7-day and 30-day rolling windows side by side</li>
+</ul>
+
+<h4>SLO Burn Rate</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries line chart</li>
+  <li><strong>Formula pattern:</strong> error rate for the current window divided by the allowed error rate for the SLO</li>
+  <li><strong>Reference lines:</strong> add horizontal reference lines at burn rate 1 (sustainable), 6 (slow burn alert), and 14.4 (fast burn / critical alert)</li>
+  <li><strong>Alert integration:</strong> connect this widget to your Datadog composite alert so the on-call sees the burn rate spike in context with the page they received</li>
+</ul>
+
+<hr>
+
+<h3>Section 2: Current Health Widgets</h3>
+
+<h4>Current Success Rate</h4>
+<ul>
+  <li><strong>Widget type:</strong> Query Value</li>
+  <li><strong>Formula:</strong> same formula as the timeseries but aggregated to a single value for the selected time window</li>
+  <li><strong>Conditional formatting:</strong> green ≥ 99.9%, yellow 99.5–99.9%, red &lt; 99.5%</li>
+</ul>
+
+<h4>Current Availability</h4>
+<ul>
+  <li><strong>Widget type:</strong> Query Value or SLO widget in summary mode</li>
+  <li><strong>Same thresholds as Success Rate</strong></li>
+</ul>
+
+<h4>Current Error Rate</h4>
+<ul>
+  <li><strong>Widget type:</strong> Query Value</li>
+  <li><strong>Conditional formatting:</strong> green &lt; 0.1%, yellow 0.1–0.5%, red &gt; 0.5%</li>
+</ul>
+
+<h4>P95 Latency</h4>
+<ul>
+  <li><strong>Widget type:</strong> Query Value</li>
+  <li><strong>Conditional formatting:</strong> green &lt; 500ms, yellow 500ms–1000ms, red &gt; 1000ms</li>
+  <li><strong>Note:</strong> thresholds vary by service — a payment API at 500ms may be acceptable while a search API at 500ms is unacceptable. Set per-service thresholds rather than using the same value globally.</li>
+</ul>
+
+<h4>Request Volume</h4>
+<ul>
+  <li><strong>Widget type:</strong> Query Value</li>
+  <li><strong>Purpose:</strong> never review success rate without traffic context — a 2% error rate on 5 requests/second is noise; the same on 100,000 requests/second is a critical incident</li>
+  <li><strong>No threshold color coding</strong> — informational widget</li>
+</ul>
+
+<hr>
+
+<h3>Section 3: Failure Analysis Widgets</h3>
+
+<h4>Error Rate Over Time</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries, grouped by <code>http.status_code</code> or <code>status</code></li>
+  <li><strong>Additional groupings:</strong> switch the group-by to <code>endpoint</code>, <code>region</code>, or <code>version</code> to narrow down blast radius</li>
+  <li><strong>Use when:</strong> Success Rate drops — this is your first investigation widget</li>
+</ul>
+
+<h4>HTTP Status Code Breakdown</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries stacked bar or table</li>
+  <li><strong>Purpose:</strong> separate 4xx client errors from 5xx service errors</li>
+  <li><strong>Why it matters:</strong> a spike in 4xx can mean a broken client integration or an API contract change; a spike in 5xx means your service is failing — very different root causes and very different escalation paths</li>
+</ul>
+
+<h4>Top Failing Endpoints</h4>
+<ul>
+  <li><strong>Widget type:</strong> Top List sorted by error count descending</li>
+  <li><strong>Group by:</strong> <code>resource_name</code> or <code>http.route</code></li>
+  <li><strong>Purpose:</strong> when Success Rate drops across the board, one or two endpoints often account for 80% of failures — find them immediately</li>
+</ul>
+
+<h4>Error Type Breakdown</h4>
+<ul>
+  <li><strong>Widget type:</strong> Top List or table</li>
+  <li><strong>Group by:</strong> <code>exception.type</code>, <code>error.message</code>, or custom error tag</li>
+  <li><strong>Purpose:</strong> connects the metric symptom to the code-level root cause — is it a NullPointerException, a database connection timeout, a downstream API 504, or a configuration error?</li>
+</ul>
+
+<hr>
+
+<h3>Section 4: Latency Widgets</h3>
+
+<h4>P50 / P95 / P99 Latency Timeseries</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries with three lines (P50, P95, P99) on the same chart</li>
+  <li><strong>Why three lines:</strong> a widening gap between P50 and P99 indicates that a minority of requests are experiencing extreme slowness — often a slow database query, a downstream timeout, or a specific code path with heavy computation</li>
+</ul>
+
+<h4>Slowest Endpoints</h4>
+<ul>
+  <li><strong>Widget type:</strong> Top List sorted by P95 latency descending</li>
+  <li><strong>Group by:</strong> <code>resource_name</code> or <code>http.route</code></li>
+  <li><strong>Use when:</strong> P95 is high but it is unclear which API is causing it</li>
+</ul>
+
+<hr>
+
+<h3>Section 5: Saturation Widgets</h3>
+
+<h4>CPU and Memory</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries grouped by <code>host</code>, <code>pod</code>, or <code>container</code></li>
+  <li><strong>CPU threshold:</strong> alert at 80%, critical at 90% sustained for more than 5 minutes</li>
+  <li><strong>Memory threshold:</strong> alert when approaching the container memory limit (typically 80% of the limit)</li>
+</ul>
+
+<h4>Pod Restarts / OOM Kills</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries or change widget showing restart count over time</li>
+  <li><strong>Group by:</strong> <code>pod_name</code>, <code>kube_namespace</code></li>
+  <li><strong>Why it matters:</strong> pod restarts directly explain Availability drops — when pods are restarting, health checks fail and the load balancer marks them unhealthy</li>
+</ul>
+
+<h4>Replica Availability</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries showing desired, available, and unavailable replica counts</li>
+  <li><strong>Alert threshold:</strong> unavailable replicas &gt; 0 for more than 2 minutes</li>
+  <li><strong>Purpose:</strong> if desired is 5 and available is 2, your service is running at 40% capacity — success rate and latency degradation will follow</li>
+</ul>
+
+<h4>Connection Pool Usage</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries showing active, idle, wait time, and timeout count</li>
+  <li><strong>Critical pattern:</strong> a rising wait time followed by connection timeouts followed by a success rate drop is a classic connection pool exhaustion pattern — very common under traffic spikes or when a slow downstream API holds connections open</li>
+</ul>
+
+<hr>
+
+<h3>Section 6: Dependency Widgets</h3>
+
+<h4>Database Health</h4>
+<ul>
+  <li><strong>Metrics to track:</strong> query latency (P50/P95), error rate, slow query count, lock wait time, active connections</li>
+  <li><strong>Widget types:</strong> timeseries for latency and error rate, query value for current connection count</li>
+  <li><strong>Purpose:</strong> most success rate drops in data-heavy services originate at the database layer — slow queries, connection limits, or lock contention</li>
+</ul>
+
+<h4>Cache Health</h4>
+<ul>
+  <li><strong>Metrics to track:</strong> hit ratio, latency, eviction rate, error rate, memory usage</li>
+  <li><strong>Critical pattern:</strong> a sudden drop in cache hit ratio causes a surge of requests to reach the database — this causes both latency spikes and potential database connection exhaustion</li>
+</ul>
+
+<h4>Queue Health</h4>
+<ul>
+  <li><strong>Metrics to track:</strong> queue depth (messages waiting), consumer lag, dead letter queue (DLQ) message count, consumer throughput</li>
+  <li><strong>Critical pattern:</strong> a growing DLQ count combined with a growing queue depth means consumers are failing and retrying — the service is producing work it cannot process</li>
+</ul>
+
+<h4>External API Health</h4>
+<ul>
+  <li><strong>Metrics to track:</strong> latency, error rate, timeout count, retry rate per downstream service</li>
+  <li><strong>Group by:</strong> downstream service name or hostname</li>
+  <li><strong>Purpose:</strong> when your success rate drops but all internal metrics look healthy, the problem is almost certainly a downstream API — this widget surfaces it immediately</li>
+</ul>
+
+<hr>
+
+<h3>Section 7: Logs, Traces, and Deployment Widgets</h3>
+
+<h4>Recent Error Logs</h4>
+<ul>
+  <li><strong>Widget type:</strong> Log Stream filtered to error-level logs</li>
+  <li><strong>Columns:</strong> timestamp, service, endpoint, error message, trace_id</li>
+  <li><strong>Purpose:</strong> takes the investigation from metric to evidence in one click — the trace_id in an error log connects directly to the distributed trace in Datadog APM</li>
+</ul>
+
+<h4>Trace Samples</h4>
+<ul>
+  <li><strong>Widget type:</strong> Trace List filtered to failed or slow spans</li>
+  <li><strong>Purpose:</strong> shows the full request path — which service called which, where time was spent, which span threw the error</li>
+  <li><strong>Filter:</strong> show only traces where <code>error:true</code> or <code>duration &gt; P95 threshold</code></li>
+</ul>
+
+<h4>Deployment Events</h4>
+<ul>
+  <li><strong>Widget type:</strong> Event Timeline or Event Stream filtered to deployment events</li>
+  <li><strong>Integration:</strong> overlay deployment markers on the Success Rate Over Time and Error Rate Over Time charts using the <code>@evt.name:deployment</code> tag</li>
+  <li><strong>Purpose:</strong> the most common question in any post-incident review is "did this start after a deployment?" — this widget answers it without leaving the dashboard</li>
+</ul>
+
+<h4>Success/Error Rate by Version</h4>
+<ul>
+  <li><strong>Widget type:</strong> Timeseries grouped by <code>version</code> or <code>image_tag</code></li>
+  <li><strong>Purpose:</strong> compare old and new versions side by side — if v3.7.0 has 99.9% success rate and v3.7.1 has 94% success rate, the deployment is the cause and a rollback decision can be made in minutes</li>
+</ul>
+
+<hr>
+
+<h2>Troubleshooting Flow: From Symptom to Root Cause</h2>
+
+<p>A good Golden Signals dashboard should help an engineer move from symptom to root cause in minutes. Here is the exact investigation sequence for each common failure pattern:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symptom</th>
+      <th>Investigation Sequence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Success Rate drops</strong></td>
+      <td>Error Rate Over Time → HTTP Status Code Breakdown → Top Failing Endpoints → Error Type Breakdown → Recent Deployments → Dependency Health (DB, Cache, External API) → Logs/Traces → Saturation (Connection Pool, CPU)</td>
+    </tr>
+    <tr>
+      <td><strong>Availability drops</strong></td>
+      <td>Availability Monitor → Region/AZ Availability → Health Check Failures → Pod Restarts/OOM → Replica Availability → Load Balancer Health → Dependency Outage → Recent Deployments</td>
+    </tr>
+    <tr>
+      <td><strong>Latency increases</strong></td>
+      <td>P95/P99 Latency → Slowest Endpoints → Dependency Latency → Database Latency → Queue Consumer Lag → CPU/Memory Saturation → Traffic Spike → Recent Deployment / Version Latency</td>
+    </tr>
+    <tr>
+      <td><strong>Traffic spike</strong></td>
+      <td>Request Rate Over Time → Traffic by Endpoint → Traffic by Region → Error Rate (is the spike causing errors?) → Saturation (is the system keeping up?) → Autoscaling / Replica Count → Connection Pool</td>
+    </tr>
+    <tr>
+      <td><strong>Errors after deployment</strong></td>
+      <td>Deployment Events overlay → Error Rate by Version → Success Rate by Version → Latency by Version → Logs/Traces filtered by new version → Rollback decision</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Datadog Query and Formula Examples</h2>
+
+<p>These patterns use generic metric names. Your actual metric names will depend on your instrumentation — APM auto-instrumentation generates different metric names than custom StatsD or DogStatsD counters. Adjust the metric names to match your service's instrumentation.</p>
+
+<h3>Success Rate (request-based)</h3>
+<pre><code>Formula: (A / B) * 100
+A = sum:&lt;your_success_metric&gt;{env:$env, service:$service}.as_count()
+B = sum:&lt;your_total_request_metric&gt;{env:$env, service:$service}.as_count()</code></pre>
+
+<h3>Error Rate</h3>
+<pre><code>Formula: (A / B) * 100
+A = sum:&lt;your_error_metric&gt;{env:$env, service:$service}.as_count()
+B = sum:&lt;your_total_request_metric&gt;{env:$env, service:$service}.as_count()</code></pre>
+
+<h3>Availability (health-check based)</h3>
+<pre><code>Formula: (A / B) * 100
+A = sum:&lt;your_health_check_success_metric&gt;{env:$env, service:$service}.as_count()
+B = sum:&lt;your_health_check_total_metric&gt;{env:$env, service:$service}.as_count()</code></pre>
+
+<h3>SLO Burn Rate (fast burn window — 1 hour)</h3>
+<pre><code>Burn Rate = (error_rate_last_1h / allowed_error_rate_for_SLO)
+Alert threshold: burn_rate > 14.4 for 1 hour (will exhaust 30-day budget in ~2 days)
+Alert threshold: burn_rate > 6 for 6 hours (slow burn)</code></pre>
+
+<h3>P95 Latency by Endpoint</h3>
+<pre><code>p95:&lt;your_latency_metric&gt;{env:$env, service:$service} by {resource_name}</code></pre>
+
+<h3>Pod Restart Count</h3>
+<pre><code>sum:kubernetes.containers.restarts{env:$env, kube_namespace:$namespace} by {pod_name}.as_count()</code></pre>
+
+<h3>Connection Pool Wait Time</h3>
+<pre><code>avg:&lt;your_connection_pool_wait_metric&gt;{env:$env, service:$service}</code></pre>
+
+<p><em>Important: always use <code>.as_count()</code> rather than <code>.as_rate()</code> when summing events for ratio calculations — <code>.as_rate()</code> pre-normalizes by time interval and can produce incorrect ratios when combined with another <code>.as_rate()</code> metric.</em></p>
+
+<hr>
+
+<h2>SRE Interview Angle: How to Explain This Dashboard</h2>
+
+<p>For SRE interviews, this dashboard is one of the strongest ways to prove production thinking. Most candidates answer observability questions in abstract terms. When you describe a specific dashboard layout — with real widget types, real troubleshooting flows, and real threshold rationales — interviewers immediately understand that you have built and used these systems in production.</p>
+
+<h3>How to Describe It in an Interview</h3>
+
+<p>Frame your answer around decision-making, not feature listing:</p>
+
+<blockquote>
+  <p>"I build Golden Signals dashboards in Datadog organized into two purposes: the top rows answer 'is the service reliable right now' — Success Rate, Availability, SLO, and Error Budget as query value widgets with color coding. The progression rows below answer 'how has reliability changed over time' — timeseries at 1h, 24h, 7d, and 30d so I can show managers a trend, not just a current number. The troubleshooting rows are for when the answer is 'no, it is not reliable' — Error Rate broken down by status code, endpoint, and version, dependency health for DB/cache/queue/external APIs, and Deployment Events overlaid on error rate so I can answer 'did this start after the last deployment' in under 10 seconds."</p>
+</blockquote>
+
+<h3>Common Interview Questions and How to Use This Dashboard</h3>
+
+<ul>
+  <li><strong>"How do you define reliability?"</strong> — Answer with Success Rate and Availability as two separate metrics, explain the formula for each, and explain why both are needed.</li>
+  <li><strong>"Walk me through an incident investigation"</strong> — Use the troubleshooting flow table. Start with the symptom, describe each widget you check in sequence, and explain what you are looking for at each step.</li>
+  <li><strong>"What is an SLO and how do you manage error budgets?"</strong> — Describe the SLO widget, the burn rate timeseries with the 14.4x threshold, and how burn rate alerts work as a tiered alerting system (fast burn = page immediately, slow burn = watch and prepare).</li>
+  <li><strong>"How would you know if a deployment caused an incident?"</strong> — Describe the Deployment Events overlay and the Success/Error Rate by Version widget — you can compare old and new versions on the same chart within seconds of the deployment completing.</li>
+  <li><strong>"What is the difference between a health check and request success rate?"</strong> — This is the Availability vs Success Rate question. Use the table above to explain it concisely.</li>
+</ul>
+
+<h3>For Real Production Incidents</h3>
+
+<p>This dashboard type is the foundation of an effective on-call rotation. When a page fires at 2 AM, the on-call engineer should be able to open this dashboard, see the failing metric in Row 1, understand the historical context in Row 2, find the error source in Row 3, and have a root cause hypothesis within 5 minutes — without switching between multiple dashboards or querying logs manually.</p>
+
+<p>If you are currently in a role where this capability does not exist, building this dashboard is one of the highest-leverage reliability improvements you can make. It pays back in reduced MTTR, cleaner post-incident reviews, and significantly less on-call fatigue.</p>
+
+<hr>
+
+<h2>Need Real-Time SRE Job Support for Datadog, Dashboards, or Production Incidents?</h2>
+
+<p>Building and maintaining this type of dashboard under real project pressure — tight deadlines, incomplete metrics coverage, misconfigured SLOs, or a manager who needs results yesterday — is a different challenge from reading about it. If you are currently stuck on any part of this:</p>
+
+<ul>
+  <li>SLO configuration that is not reflecting the correct error budget</li>
+  <li>Success Rate formula returning incorrect values due to metric naming or tag structure</li>
+  <li>Burn rate alerts that are either too noisy or not firing when they should</li>
+  <li>Datadog APM instrumentation that is not producing the right request metrics</li>
+  <li>Dashboard layout that your manager or team lead wants restructured before a quarterly review</li>
+  <li>An incident where you need help tracing the root cause through Datadog logs, traces, and metrics</li>
+</ul>
+
+<p><a href="/sre-job-support-usa/">Real-time SRE job support</a> from Proxy Tech Support connects you with a senior SRE specialist — live screen share, same-day response, direct help on your actual Datadog environment. We cover <a href="/devops-job-support-usa/">DevOps and cloud infrastructure job support</a> as well, including Kubernetes, AWS, GCP, Azure, Prometheus, Grafana, and the full observability stack.</p>
+
+<p>For engineers working outside the USA: we also provide <a href="/job-support-usa/">IT job support across all US time zones</a> and serve teams globally.</p>
+
+<hr>
+
+<h2>Preparing for an SRE, DevOps, or Datadog Interview?</h2>
+
+<p>Technical interviews for SRE, DevOps, and observability roles increasingly test production scenario thinking — not just tool knowledge. Interviewers at top-tier companies want to understand how you approach incidents, how you build dashboards, how you manage SLO trade-offs, and how you communicate reliability to non-technical stakeholders.</p>
+
+<p>Our <a href="/sre-proxy-interview-support/">proxy interview support for SRE roles</a> prepares you for:</p>
+
+<ul>
+  <li>SRE system design rounds (SLO design, alerting strategy, dashboard architecture)</li>
+  <li>Incident investigation walkthroughs using real-world scenario narratives</li>
+  <li>Kubernetes reliability and observability questions (health checks, HPA, PodDisruptionBudgets)</li>
+  <li>Datadog-specific interview questions (APM setup, log pipelines, monitor types, SLO configuration)</li>
+  <li>Communication round preparation — explaining reliability metrics to engineering managers</li>
+</ul>
+
+<p>We also provide <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a> for roles that blend SRE responsibilities with CI/CD, infrastructure as code, and cloud platform work. Explore the full <a href="/technologies/">technologies and tools we cover</a> and our <a href="/interview-questions/">interview questions resource</a> for SRE, DevOps, and cloud engineering roles.</p>
+
+<p>For engineers preparing for interviews outside the USA: we provide <a href="/proxy-interview-usa/">proxy interview support across all US locations</a>, <a href="/proxy-interview-canada/">proxy interview support in Canada</a>, <a href="/proxy-interview-uk/">proxy interview support in the UK</a>, and <a href="/proxy-interview-australia/">proxy interview support in Australia</a>.</p>
+
+<hr>
+
+<h2>Complete Widget Checklist</h2>
+
+<p>Use this as a build checklist when implementing the dashboard in Datadog. A fully complete Golden Signals dashboard for production SRE use should have all 26 widgets configured and validated.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Widget</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Current Health</td><td>Current Success Rate</td><td>—</td></tr>
+    <tr><td>Current Health</td><td>Current Availability</td><td>—</td></tr>
+    <tr><td>Current Health</td><td>Current Error Rate</td><td>—</td></tr>
+    <tr><td>Current Health</td><td>P95 Latency</td><td>—</td></tr>
+    <tr><td>Current Health</td><td>Request Volume</td><td>—</td></tr>
+    <tr><td>Current Health</td><td>SLO / Error Budget</td><td>—</td></tr>
+    <tr><td>Progression</td><td>Success Rate Over Time</td><td>—</td></tr>
+    <tr><td>Progression</td><td>Availability Over Time</td><td>—</td></tr>
+    <tr><td>Progression</td><td>SLO Burn Rate</td><td>—</td></tr>
+    <tr><td>Progression</td><td>Error Budget Remaining</td><td>—</td></tr>
+    <tr><td>Failure Analysis</td><td>Error Rate Over Time</td><td>—</td></tr>
+    <tr><td>Failure Analysis</td><td>HTTP Status Code Breakdown</td><td>—</td></tr>
+    <tr><td>Failure Analysis</td><td>Top Failing Endpoints</td><td>—</td></tr>
+    <tr><td>Failure Analysis</td><td>Error Type Breakdown</td><td>—</td></tr>
+    <tr><td>Latency</td><td>P50 / P95 / P99 Latency</td><td>—</td></tr>
+    <tr><td>Latency</td><td>Slowest Endpoints</td><td>—</td></tr>
+    <tr><td>Traffic</td><td>Request Rate Over Time</td><td>—</td></tr>
+    <tr><td>Saturation</td><td>CPU and Memory</td><td>—</td></tr>
+    <tr><td>Saturation</td><td>Pod Restarts / OOM</td><td>—</td></tr>
+    <tr><td>Saturation</td><td>Replica Availability</td><td>—</td></tr>
+    <tr><td>Saturation</td><td>Connection Pool Usage</td><td>—</td></tr>
+    <tr><td>Dependencies</td><td>Database Health</td><td>—</td></tr>
+    <tr><td>Dependencies</td><td>Cache Health</td><td>—</td></tr>
+    <tr><td>Dependencies</td><td>Queue Health</td><td>—</td></tr>
+    <tr><td>Dependencies</td><td>External API Health</td><td>—</td></tr>
+    <tr><td>Logs &amp; Traces</td><td>Recent Error Logs</td><td>—</td></tr>
+    <tr><td>Logs &amp; Traces</td><td>Trace Samples</td><td>—</td></tr>
+    <tr><td>Deployment</td><td>Deployment Events</td><td>—</td></tr>
+    <tr><td>Deployment</td><td>Success/Error Rate by Version</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a Golden Signals Dashboard in SRE?</h3>
+<p>A Golden Signals Dashboard is a single-pane observability view built around the four metrics Google SRE teams identified as most reliable for service health assessment: Latency, Traffic, Errors, and Saturation. Production SRE teams extend this to include Success Rate, Availability, SLO status, error budget, and burn rate — giving on-call engineers everything needed to move from symptom to root cause in minutes without switching between dashboards.</p>
+
+<h3>What are the four golden signals of monitoring?</h3>
+<p><strong>Latency</strong> (how long requests take, tracked at P50/P95/P99), <strong>Traffic</strong> (request volume per second or minute), <strong>Errors</strong> (rate of failed requests broken down by status code, endpoint, and type), and <strong>Saturation</strong> (resource utilization including CPU, memory, connection pools, pod restarts, and queue lag).</p>
+
+<h3>How do you calculate Success Rate in Datadog?</h3>
+<p>Success Rate = (successful requests / total requests) × 100. In Datadog, build this as a formula query: divide the sum of your success metric by the sum of your total request metric, then multiply by 100. Scope both metrics with <code>$env</code> and <code>$service</code> template variables so the formula works across all your services without modification. Use <code>.as_count()</code> aggregation, not <code>.as_rate()</code>, to avoid double-normalization in ratio formulas.</p>
+
+<h3>What is the difference between Success Rate and Availability?</h3>
+<p>Success Rate is request-level reliability — of all requests received, how many succeeded. It degrades when the service is up and receiving traffic but returning errors. Availability is reachability and uptime — of all health checks performed, how many succeeded. It degrades when the service is unreachable, crashing, or failing health checks. A service can have 100% Availability but 40% Success Rate (up but broken), or 60% Availability but 100% Success Rate for the requests that do reach it (partially up). Both metrics are required.</p>
+
+<h3>Which Datadog widgets are needed for SRE troubleshooting?</h3>
+<p>For complete SRE troubleshooting coverage: Success Rate Over Time, Availability Over Time, SLO/Error Budget widget, SLO Burn Rate, Current Success Rate (query value), Current Availability (query value), Error Rate Over Time, HTTP Status Code Breakdown, Top Failing Endpoints, Error Type Breakdown, P50/P95/P99 Latency, Slowest Endpoints, Request Rate, CPU/Memory, Pod Restarts/OOM, Replica Availability, Connection Pool Usage, Database/Cache/Queue/External API Health, Recent Error Logs, Trace Samples, Deployment Events, and Success/Error Rate by Version.</p>
+
+<h3>How do SLO, error budget, and burn rate help SRE teams?</h3>
+<p>The SLO sets the reliability target (e.g., 99.9% success rate over 30 days). The error budget is the tolerated failure margin — at 99.9%, that is approximately 43.2 minutes of failure budget per month. Burn rate measures how fast the budget is being consumed. A burn rate of 1 is sustainable. A burn rate of 14.4 over one hour means the budget will be exhausted in approximately two days — that triggers a critical alert and an immediate incident response. Burn rate is the mechanism that converts an SLO from a passive report into an active alerting system.</p>
+
+<h3>How should an SRE explain Golden Signals in an interview?</h3>
+<p>Explain in terms of production decisions: "I track Latency at P50/P95/P99 to distinguish typical from tail performance. Traffic gives me load context — the same error rate has very different severity on 100 RPS vs 100,000 RPS. Errors I break down by status code, endpoint, and version to find blast radius. Saturation — I track CPU, memory, pod restarts, connection pool usage, and replica count, not just CPU and memory, because saturation failures usually manifest as application-layer symptoms. I add Success Rate and Availability on top of the four signals because they directly map to SLO commitments. And I use SLO burn rate for alerting — burn rate over 14 means page immediately."</p>
+
+<h3>Can Proxy Tech Support help with SRE Datadog job support?</h3>
+<p>Yes. We provide real-time job support for SRE engineers working with Datadog — dashboard design, SLO configuration, metric instrumentation, alert tuning, and incident troubleshooting. Via live screen share, same-day response. We cover Datadog APM, Infrastructure Monitoring, Log Management, Synthetic Monitoring, and the full SLO/error budget framework. Contact us via WhatsApp (+91-96606-14469) or visit our <a href="/sre-job-support-usa/">SRE job support page</a>.</p>
+
+<h3>Can Proxy Tech Support help with SRE or DevOps interview preparation?</h3>
+<p>Yes. We provide <a href="/sre-proxy-interview-support/">proxy interview support for SRE roles</a> and <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a>, covering production scenario walkthroughs, dashboard design explanations, SLO strategy, incident response narratives, Kubernetes reliability questions, and live interview assistance. We serve engineers in the USA, UK, Canada, and Australia.</p>
+
+<hr>
+
+<h2>Conclusion</h2>
+
+<p>A Golden Signals dashboard built around Success Rate and Availability progression is not a nice-to-have — it is the foundation of an SRE team's ability to respond to incidents quickly, review reliability trends honestly, and make release decisions with data. The difference between a dashboard that gets used during incidents and one that sits forgotten on a bookmark is whether it answers the right question in the right sequence: current state first, trend second, troubleshooting path third.</p>
+
+<p>The 29-widget layout described here — with Datadog template variables for environment, service, region, cluster, and version — gives you a single dashboard that works for every service, every environment, and every on-call scenario. Build the first two rows first (Current Health and Progression Over Time). Validate that Success Rate and Availability are trending correctly. Then add the troubleshooting rows incrementally, prioritizing the sections that match your service's most common failure patterns.</p>
+
+<p>If you need hands-on help building this, debugging Datadog metric queries, configuring SLOs, or preparing to present it in an interview: Proxy Tech Support provides <a href="/sre-job-support-usa/">real-time SRE job support</a>, <a href="/sre-proxy-interview-support/">proxy interview support for SRE roles</a>, and <a href="/devops-job-support-usa/">DevOps and observability job support</a> for engineers across the USA, UK, Canada, and Australia. Reach us via WhatsApp (+91-96606-14469) for same-day support.</p>
+
+<p>Browse more production-focused guides on our <a href="/blog/">blog</a>, or explore the full <a href="/technologies/">technologies we support</a>.</p>

@@ -319,6 +319,101 @@ Technologies and areas supported:
 
 ---
 
+---
+
+## Expert Blog Articles — SRE & Observability
+
+### Golden Signals Dashboard for SRE — Datadog Article
+URL: /blog/golden-signals-dashboard-sre-datadog-success-rate-availability/
+Type: Expert technical blog article
+Published: 2026-05-19
+Target audience: SRE engineers, DevOps engineers, platform engineers, Datadog users, observability engineers, SRE and DevOps interview candidates, production support engineers
+
+Primary SEO topics: Golden Signals Dashboard, SRE Golden Signals Dashboard, Datadog Golden Signals Dashboard, Success Rate Dashboard, Availability Dashboard, SRE Dashboard, Datadog SLO Dashboard, Error Budget Dashboard, SLO Burn Rate Dashboard, Datadog troubleshooting widgets, SRE job support, Datadog job support, SRE proxy interview support, DevOps SRE interview support, production support dashboard, observability dashboard, incident troubleshooting dashboard
+
+**Article Summary:**
+A complete production-grade guide to building a Golden Signals dashboard in Datadog for SRE teams. Sourced from real SRE dashboard requirements documents. Covers the full 9-section layout, all 29 required widgets, Datadog template variables, formula patterns, troubleshooting investigation flows, SLO/error budget mechanics, and how to explain this dashboard in SRE interviews.
+
+**Opening premise:** A Golden Signals dashboard should answer one question fast — is the service reliable right now, and if not, where should we investigate first? Every design decision must serve that goal.
+
+**Four Golden Signals (practical SRE interpretation):**
+- Latency: P50/P95/P99 — not average; P50 for typical users, P95 for 1-in-20 users, P99 for SLA commitments; gap between P50 and P99 reveals tail latency issues
+- Traffic: request volume per second/minute; required to contextualize all other signals (2% error rate on 10 RPS vs 50,000 RPS is completely different severity)
+- Errors: rate of failed requests broken down by HTTP status code (4xx vs 5xx), endpoint, error type/exception class, region, version
+- Saturation: CPU, memory, pod restarts, OOM kills, replica availability (desired vs running vs available), connection pool (active/idle/wait/timeout), queue depth, consumer lag
+
+**Success Rate vs Availability (key distinction):**
+- Success Rate = Successful Requests / Total Requests × 100 (request-level reliability; degrades when service receives traffic and returns errors)
+- Availability = Successful Health Checks / Total Health Checks × 100 (reachability/uptime reliability; degrades when service is unreachable or failing health checks)
+- Both metrics are required; they explain different failure modes
+- Data sources: Success Rate from APM traces and application metrics; Availability from Synthetic monitors, health check endpoints, uptime monitors, SLO availability rollup
+
+**Dashboard Layout (9 rows):**
+1. Current Service Health: Current Success Rate, Current Availability, Current Error Rate, P95 Latency, Request Volume, SLO/Error Budget (query value widgets with color thresholds)
+2. Progression Over Time: Success Rate Over Time (with 99.9% target line), Availability Over Time, SLO Burn Rate, Error Budget Remaining (timeseries)
+3. Failure Analysis: Error Rate Over Time (grouped by status code/endpoint/region/version), HTTP Status Code Breakdown, Top Failing Endpoints, Error Type Breakdown
+4. Latency: P50/P95/P99 Latency, Slowest Endpoints, Dependency Latency, Latency by Region
+5. Traffic: Request Rate Over Time, Traffic by Endpoint, Traffic by Region, Traffic vs Error Rate
+6. Saturation: CPU and Memory, Pod Restarts/OOM, Replica Availability, Connection Pool Usage
+7. Dependencies: Database Health, Cache Health, Queue Health, External API Health
+8. Logs and Traces: Recent Error Logs (with trace_id), Top Error Messages, Trace Samples (failed/slow spans), Logs by Endpoint
+9. Deployment Correlation: Deployment Events overlay, Success Rate by Version, Error Rate by Version, Latency by Version
+
+**Datadog Template Variables:**
+$env (env tag), $service (service tag), $region (region tag), $availability_zone (availability-zone tag), $cluster (kube_cluster_name), $namespace (kube_namespace), $pod (pod_name), $host (host), $version (version tag)
+
+**Widget Thresholds:**
+- Current Success Rate: green ≥99.9%, yellow 99.5–99.9%, red <99.5%
+- Current Availability: green ≥99.9%, yellow 99.5–99.9%, red <99.5%
+- Current Error Rate: green <0.1%, yellow 0.1–0.5%, red >0.5%
+- P95 Latency: green <500ms, yellow 500ms–1000ms, red >1000ms
+
+**SLO Burn Rate mechanics:**
+- Burn rate 1 = consuming budget at exactly the sustainable rate
+- Burn rate 14.4 over 1 hour = critical alert (exhausting 30-day budget in ~2 days)
+- Burn rate 6 over 6 hours = slow burn alert
+- Reference lines at 1, 6, and 14.4 on the burn rate timeseries widget
+
+**Troubleshooting Flows (5 symptom patterns):**
+1. Success Rate drops → Error Rate Over Time → HTTP Status Code Breakdown → Top Failing Endpoints → Error Type Breakdown → Recent Deployments → Dependency Health → Logs/Traces → Saturation
+2. Availability drops → Availability Monitor → Region/AZ Availability → Health Check Failures → Pod Restarts → Replica Availability → Load Balancer Health → Dependency Outage → Recent Deployments
+3. Latency increases → P95/P99 Latency → Slowest Endpoints → Dependency Latency → Database Latency → Queue Lag → CPU/Memory → Traffic Spike → Recent Deployment
+4. Traffic spike → Request Rate → Traffic by Endpoint → Traffic by Region → Error Rate → Saturation → Autoscaling/Replicas → Connection Pool
+5. Errors after deployment → Deployment Events overlay → Error Rate by Version → Success Rate by Version → Latency by Version → Logs/Traces filtered by version → Rollback decision
+
+**Datadog Query Patterns:**
+- Success Rate: (sum of success metric / sum of total request metric) × 100, using .as_count() aggregation
+- Error Rate: (sum of error metric / sum of total request metric) × 100
+- Availability: (sum of healthy checks / sum of total checks) × 100
+- SLO Burn Rate: error_rate_in_window / allowed_error_rate_for_SLO
+- P95 Latency by endpoint: p95 of latency metric grouped by resource_name
+- Pod restarts: sum of kubernetes.containers.restarts by pod_name as count
+
+**Interview angle:** How SRE candidates should describe this dashboard in interviews — frame around production decisions, not feature lists. Explain burn rate alerting threshold rationale (14.4x = 2-day budget exhaustion). Differentiate Availability vs Success Rate as two distinct failure modes.
+
+**Internal links in article:**
+- /sre-job-support-usa/ (real-time SRE job support)
+- /sre-proxy-interview-support/ (proxy interview support for SRE roles)
+- /devops-job-support-usa/ (DevOps job support)
+- /devops-proxy-interview-support/ (DevOps proxy interview support)
+- /cloud-job-support-usa/ (cloud and DevOps job support)
+- /job-support-usa/ (IT job support USA)
+- /proxy-interview-usa/, /proxy-interview-canada/, /proxy-interview-uk/, /proxy-interview-australia/
+- /technologies/, /interview-questions/, /blog/
+
+**FAQs included (with structured data):**
+1. What is a Golden Signals Dashboard in SRE?
+2. What are the four golden signals of monitoring?
+3. How do you calculate Success Rate in Datadog?
+4. What is the difference between Success Rate and Availability?
+5. Which Datadog widgets are needed for SRE troubleshooting?
+6. How do SLO, error budget, and burn rate help SRE teams?
+7. How should an SRE explain Golden Signals in an interview?
+8. Can Proxy Tech Support help with SRE Datadog job support?
+9. Can Proxy Tech Support help with SRE or DevOps interview preparation?
+
+---
+
 ## Proxy Interview Support — Technology-Specific Pages
 
 ### Proxy Interview Support — By Technology
@@ -863,7 +958,7 @@ A: Yes. Ireland's tech sector operates under GDPR (enforced by Ireland's Data Pr
 - **Start time:** Same day in most cases
 - **Expert sourcing:** In-house only, no subcontracting
 - **Session format:** Screen share, voice/video call, remote desktop
-- **Primary technologies:** AI/ML (Agentic AI, RAG, LLMs, MLOps), DevOps, SRE (Site Reliability Engineering), Cloud, Java, Python, React/Angular, .NET, Node.js, Databases, Testing, Cybersecurity
+- **Primary technologies:** AI/ML (Agentic AI, RAG, LLMs, MLOps), DevOps, SRE (Site Reliability Engineering), Cloud, Java, Python, React/Angular, .NET, Node.js, Databases, Testing, Cybersecurity, Observability (Datadog APM/SLO/error budget/burn rate/Golden Signals dashboards/Log Management/Synthetic Monitoring, Prometheus, Grafana, OpenTelemetry)
 - **Confidentiality:** NDA available on request; full professional discretion
 - **Interview support type:** Real-time during live technical interviews (proxy interview support)
 - **Developers helped:** 1000+
