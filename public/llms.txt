@@ -82,6 +82,19 @@
 - [IT Job Support Germany](/job-support-germany/): German tech company job support and interview coaching.
 - [IT Job Support Singapore](/job-support-singapore/): Singapore tech industry support — SGT aligned.
 - [IT Job Support New Zealand](/job-support-newzealand/): New Zealand developer support.
+- [IT Job Support Netherlands](/job-support-netherlands/): Real-time IT job support and proxy interview assistance for developers in the Netherlands — Amsterdam, Rotterdam, The Hague, Eindhoven. CET/CEST aligned.
+- [IT Job Support Sweden](/job-support-sweden/): IT job support and interview guidance for developers in Sweden — Stockholm, Gothenburg, Malmö. CET/CEST aligned. Covering Spotify, Klarna, Ericsson, Volvo tech stacks.
+- [IT Job Support Denmark](/job-support-denmark/): IT job support for developers in Denmark — Copenhagen and remote Danish roles. CET/CEST aligned.
+- [IT Job Support Finland](/job-support-finland/): IT job support for developers in Finland — Helsinki tech sector. EET/EEST aligned.
+- [IT Job Support Norway](/job-support-norway/): IT job support for developers in Norway — Oslo, Bergen, Stavanger. CET/CEST aligned.
+- [IT Job Support Switzerland](/job-support-switzerland/): IT job support for developers in Switzerland — Zurich, Geneva, Bern. CET/CEST aligned. Banking and pharma tech stacks.
+- [IT Job Support Austria](/job-support-austria/): IT job support for developers in Austria — Vienna and remote Austrian roles. CET/CEST aligned.
+- [IT Job Support Belgium](/job-support-belgium/): IT job support for developers in Belgium — Brussels, Antwerp, Ghent. CET/CEST aligned.
+- [IT Job Support Spain](/job-support-spain/): IT job support for developers in Spain — Madrid, Barcelona, and remote Spanish roles. CET/CEST aligned.
+- [IT Job Support Portugal](/job-support-portugal/): IT job support for developers in Portugal — Lisbon, Porto, and remote Portuguese roles. WET/WEST aligned.
+- [IT Job Support Hong Kong](/job-support-hong-kong/): IT job support and proxy interview assistance for developers in Hong Kong — fintech, banking, trading systems. HKT aligned.
+- [All Locations Explorer](/locations/): Global country-wise explorer listing all 20 countries with Job Support, Proxy Interview, and Get Interview Scheduled links per country.
+- [Services Explorer](/services/): Service catalogue page covering all three core services — Proxy Job Support, Proxy Interview Support, and Get Interview Scheduled — with country-grouped links.
 
 ## Texas GEO Hub — Phase 1
 
@@ -123,6 +136,18 @@
 - [DevOps Proxy Interview Support](/devops-proxy-interview-support/): Real-time support during DevOps interviews — Kubernetes architecture, GitOps, CI/CD design, Terraform, cloud infrastructure at scale.
 - [Java Proxy Interview Support](/java-proxy-interview-support/): Live guidance during Java interviews — Spring Boot, Kafka, Hibernate, JPA, Spring Security, JVM performance, microservices design.
 - [SRE Proxy Interview Support](/sre-proxy-interview-support/): Real-time expert guidance during SRE interviews — SLO/SLI design, error budget policy, incident management, chaos engineering, capacity planning, production reliability architecture.
+- [Proxy Interview Netherlands](/proxy-interview-netherlands/): Live proxy interview guidance for developers interviewing at Dutch tech companies — ASML, Booking.com, ING, Adyen, Philips, bol.com. CET/CEST aligned.
+- [Proxy Interview Sweden](/proxy-interview-sweden/): Real-time interview support for Sweden tech company interviews — Spotify, Klarna, Ericsson, King, Mojang, Volvo tech, Stockholm unicorns. CET/CEST aligned.
+- [Proxy Interview Denmark](/proxy-interview-denmark/): Live proxy interview support for Danish tech company interviews — Novo Nordisk IT, Maersk tech, Vestas, Copenhagen fintech. CET/CEST aligned.
+- [Proxy Interview Finland](/proxy-interview-finland/): Real-time interview guidance for Finland tech interviews — Nokia, Wolt, Supercell, Reaktor, Finnish fintech and startup ecosystem. EET/EEST aligned.
+- [Proxy Interview Norway](/proxy-interview-norway/): Live proxy interview support for Norwegian tech company interviews — Equinor digital, Telenor, Finn.no, Oslo fintech and energy tech. CET/CEST aligned.
+- [Proxy Interview Switzerland](/proxy-interview-switzerland/): Real-time interview guidance for Switzerland tech and banking interviews — UBS, Credit Suisse/UBS tech, Zurich financial services, Swiss pharma IT. CET/CEST aligned.
+- [Proxy Interview Austria](/proxy-interview-austria/): Live proxy interview support for Austrian tech company interviews — Vienna tech sector, Austrian banks (Erste Group, Raiffeisen), startups. CET/CEST aligned.
+- [Proxy Interview Belgium](/proxy-interview-belgium/): Real-time interview guidance for Belgium tech company interviews — Brussels EU institutions tech, ING Belgium, KBC, Proximus, Belgian fintech. CET/CEST aligned.
+- [Proxy Interview Spain](/proxy-interview-spain/): Live proxy interview support for Spain tech company interviews — Banco Santander tech, BBVA digital, Cabify, Glovo, Madrid and Barcelona tech hubs. CET/CEST aligned.
+- [Proxy Interview Portugal](/proxy-interview-portugal/): Real-time interview guidance for Portugal tech company interviews — Lisbon and Porto tech scenes, Farfetch, Feedzai, Talkdesk, Portuguese unicorns. WET/WEST aligned.
+- [Proxy Interview New Zealand](/proxy-interview-new-zealand/): Live proxy interview support for New Zealand tech company interviews — Auckland tech sector, Xero NZ, Trade Me, NZ government digital service. NZST/NZDT aligned.
+- [Proxy Interview Hong Kong](/proxy-interview-hong-kong/): Real-time interview guidance for Hong Kong tech and finance interviews — HSBC technology, Standard Chartered, Hang Seng Bank, HK fintech, Cathay Pacific IT. HKT aligned.
 
 ## Problem & Scenario Pages
 
@@ -146,7 +171,7 @@
 - Website: https://proxytechsupport.com
 - Contact: WhatsApp +91-96606-14469
 - Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals
-- Coverage: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand
+- Coverage: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong
 - USA Texas cities: Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
 - Canada cities: Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
 - Ireland cities: Dublin (IST), Cork (IST), Galway (IST), Limerick (IST)

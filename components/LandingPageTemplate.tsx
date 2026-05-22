@@ -24,6 +24,17 @@ const GEO_LABELS: Record<string, string> = {
   'job-support-ireland': 'Ireland',
   'it-job-support-dublin': 'Dublin',
   'job-support-texas': 'Texas',
+  'job-support-netherlands': 'Netherlands',
+  'job-support-sweden': 'Sweden',
+  'job-support-denmark': 'Denmark',
+  'job-support-finland': 'Finland',
+  'job-support-norway': 'Norway',
+  'job-support-switzerland': 'Switzerland',
+  'job-support-austria': 'Austria',
+  'job-support-belgium': 'Belgium',
+  'job-support-spain': 'Spain',
+  'job-support-portugal': 'Portugal',
+  'job-support-hong-kong': 'Hong Kong',
 };
 
 function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
@@ -33,7 +44,7 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
 
   // Geo pages: job-support-usa, job-support-uk …
   if (slug in GEO_LABELS) {
-    return [home, { label: 'Locations', href: '/job-support-usa/' }, { label: `Job Support ${GEO_LABELS[slug]}` }];
+    return [home, { label: 'Locations', href: '/locations/' }, { label: `Job Support ${GEO_LABELS[slug]}` }];
   }
 
   // Texas city / specialty pages

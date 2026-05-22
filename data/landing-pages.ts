@@ -7796,6 +7796,2408 @@ export const aiMlDevOpsSreJobSupportTexas: LandingPageConfig = {
   lastmod: '2026-05-15',
 };
 
+// ═══════════════════════════════════════════════════════════════════════════
+// NEW COUNTRY PAGES — Job Support & Proxy Interview
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ─── JOB SUPPORT — NETHERLANDS ──────────────────────────────────────────────
+
+export const jobSupportNetherlands: LandingPageConfig = {
+  slug: 'job-support-netherlands',
+  title: 'IT Job Support & Proxy Interview Help Netherlands',
+  description:
+    'Need IT job support in the Netherlands? Real-time developer help & proxy interview assistance for Dutch tech roles. Java, Python, Kotlin, AWS, Kubernetes. CET/CEST aligned. 1000+ devs helped.',
+  canonical: `${BASE_URL}/job-support-netherlands/`,
+  keywords: [
+    'IT job support Netherlands', 'proxy interview support Netherlands', 'developer job support Netherlands',
+    'Java job support Netherlands', 'Booking.com interview support', 'ASML developer support Netherlands',
+    'interview assistance Netherlands', 'real-time coding support Netherlands',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in the Netherlands',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in the Netherlands — CET/CEST aligned.',
+  painIntro:
+    'Working in the Dutch tech ecosystem means navigating high-output engineering environments where delivery standards are demanding. Whether you are at an Amsterdam startup, a Rotterdam fintech, or a Eindhoven deep-tech company, our experts provide same-day support aligned to your timezone.',
+  heroVariant:
+    "The Netherlands hosts some of Europe's most competitive tech environments — Booking.com runs FAANG-style engineering interviews and rigorous engineering practices; ASML's semiconductor software demands extreme precision; Adyen, ING, and ABN AMRO require deep fintech and payment engineering expertise; TomTom and HERE Technologies push mapping and navigation software boundaries. Dutch startups and scale-ups in Amsterdam's thriving tech hub operate with a pragmatic, high-accountability engineering culture. Our in-house experts are available during CET/CEST hours to provide real-time job support and interview guidance calibrated to what Dutch tech employers actually expect.",
+  geoLine: 'Supporting developers across Netherlands, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Netherlands CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Kotlin, Python, React, Node.js, AWS, Azure, Kubernetes, and fintech/payment stack used across Dutch tech companies.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Netherlands', 'Netherlands CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Netherlands',
+    cases: [
+      'Handling production incidents on Booking.com-scale distributed systems under tight SLA pressure',
+      'Supporting Java and Kotlin microservices architecture for Dutch fintech platforms (Adyen, ING, ABN AMRO)',
+      'Resolving AWS and Kubernetes deployment issues for Amsterdam-based scale-ups and startups',
+      'Helping with ASML-adjacent software engineering work requiring high reliability and precision',
+      'Preparing for technical interviews at Dutch tech companies (Booking.com, TomTom, Adyen, ASML)',
+      'Real-time interview guidance during live coding and system design rounds for Dutch tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Netherlands',
+    intro:
+      'Dutch tech interviews — especially at Booking.com, Adyen, and ASML — are known for their technical depth and precision. Our experts provide real-time, discreet guidance during your live interview so you can demonstrate the engineering rigor Dutch employers value.',
+    points: [
+      'Live guidance during coding and system design rounds for Dutch tech company interviews',
+      'Real-time support during Java, Kotlin, Python, and cloud architecture technical assessments',
+      'Help structuring answers for Dutch engineering role competency and distributed systems panels',
+      'On-the-job support for delivering high-quality code on Dutch project timelines',
+      'Mock interview practice tailored to Dutch tech company formats (Booking.com, Adyen, TomTom)',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Netherlands', href: '/proxy-interview-netherlands/' },
+      { label: 'Get Interview Scheduled Netherlands', href: '/get-interview-scheduled-netherlands/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — SWEDEN ───────────────────────────────────────────────────
+
+export const jobSupportSweden: LandingPageConfig = {
+  slug: 'job-support-sweden',
+  title: 'IT Job Support & Proxy Interview Help Sweden',
+  description:
+    'Need IT job support in Sweden? Real-time developer help & proxy interview assistance for Swedish tech roles. Java, Kotlin, Python, React, Kubernetes. CET/CEST aligned. Start today.',
+  canonical: `${BASE_URL}/job-support-sweden/`,
+  keywords: [
+    'IT job support Sweden', 'proxy interview support Sweden', 'developer job support Sweden',
+    'Spotify interview support', 'Klarna interview support Sweden', 'Java job support Sweden',
+    'interview assistance Sweden', 'real-time coding support Sweden',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Sweden',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Sweden — CET/CEST aligned.',
+  painIntro:
+    'Sweden has built one of Europe\'s most vibrant tech ecosystems, driven by globally recognised companies and a culture of engineering innovation. Our experts are available during CET/CEST hours to provide real-time job support and interview guidance tailored to Swedish tech roles.',
+  heroVariant:
+    "Sweden punches well above its weight in global tech — Spotify redefined audio streaming engineering; Klarna built one of Europe's most scalable fintech platforms; Ericsson is a global telecommunications engineering leader; King, DICE, and Paradox Interactive represent world-class game development; Volvo IT and Scania Group push automotive and heavy industry software forward. Swedish tech culture values flat hierarchies, technical excellence, and genuine autonomy. Engineering interviews at Swedish companies blend distributed systems depth, practical coding assessment, and engineering culture fit. Whether you are at a Stockholm startup or an established Swedish enterprise, our in-house experts provide real-time support calibrated to what Swedish tech teams demand.",
+  geoLine: 'Supporting developers across Sweden, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Swedish CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Kotlin, Python, React, Node.js, Scala, Kubernetes, AWS, and the distributed systems stack used by Swedish tech leaders.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Sweden', 'Swedish CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Sweden',
+    cases: [
+      'Supporting Spotify-scale data pipelines, microservices, and distributed systems under live production pressure',
+      'Helping with Klarna fintech platform engineering — payments, checkout, risk, and compliance tech stacks',
+      'Resolving Kubernetes and cloud-native infrastructure incidents for Stockholm-based scale-ups',
+      'Assisting with Ericsson telecom software engineering and 5G platform development challenges',
+      'Preparing for technical interviews at Swedish tech companies (Spotify, Klarna, King, Ericsson, Volvo IT)',
+      'Real-time interview guidance during live coding, system design, and distributed systems rounds for Swedish roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Sweden',
+    intro:
+      'Swedish tech interviews at companies like Spotify and Klarna assess engineering depth, distributed systems thinking, and code quality. Our experts provide real-time guidance so you can demonstrate the technical calibre Swedish engineering teams look for.',
+    points: [
+      'Live guidance during coding and system design rounds for Swedish tech company interviews',
+      'Real-time support during Java, Kotlin, Scala, and Python technical assessments',
+      'Help with distributed systems and microservices questions at Spotify, Klarna, and Ericsson format interviews',
+      'On-the-job support for delivering quality code under Swedish project delivery standards',
+      'Mock interview practice tailored to Swedish tech company hiring formats',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Sweden', href: '/proxy-interview-sweden/' },
+      { label: 'Get Interview Scheduled Sweden', href: '/get-interview-scheduled-sweden/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — DENMARK ──────────────────────────────────────────────────
+
+export const jobSupportDenmark: LandingPageConfig = {
+  slug: 'job-support-denmark',
+  title: 'IT Job Support & Proxy Interview Help Denmark',
+  description:
+    'Need IT job support in Denmark? Real-time developer help & proxy interview assistance for Danish tech roles. Java, Python, .NET, DevOps. CET/CEST aligned. 1000+ devs helped. Start today.',
+  canonical: `${BASE_URL}/job-support-denmark/`,
+  keywords: [
+    'IT job support Denmark', 'proxy interview support Denmark', 'developer job support Denmark',
+    'Maersk tech interview support', 'Java job support Denmark', 'Copenhagen interview assistance',
+    'software job help Denmark', 'real-time coding support Denmark',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Denmark',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Denmark — CET/CEST aligned.',
+  painIntro:
+    'Denmark\'s tech sector is anchored by global logistics giants, world-class medtech firms, and a growing fintech startup scene. Whether you are at Maersk, Novo Nordisk, a Copenhagen startup, or an Aarhus enterprise, our experts are available during CET/CEST hours.',
+  heroVariant:
+    "Denmark's tech landscape blends enterprise engineering with innovative startup culture. Maersk Technology is building one of logistics's most ambitious digital transformation programs — modernising container shipping across cloud, blockchain, and IoT. Novo Nordisk's digital health and medtech engineering requires bioinformatics, data science, and regulated software expertise. IO Interactive pushes game development boundaries. Copenhagen's fintech scene — Pleo, Lunar, Netcompany, Trustpilot — is growing rapidly and hiring technically. Whether you are maintaining legacy enterprise systems or building cloud-native microservices, our experts understand the Danish tech environment and provide real-time support aligned to your CET/CEST schedule.",
+  geoLine: 'Supporting developers across Denmark, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Danish CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Python, .NET, React, Node.js, AWS, Kubernetes, and the data/logistics tech stack used by Danish enterprise and startup companies.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Denmark', 'Danish CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Denmark',
+    cases: [
+      'Supporting Maersk Technology digital transformation engineering and supply chain platform development',
+      'Helping with Novo Nordisk medtech and pharma IT — regulated software, clinical data platforms, bioinformatics',
+      'Resolving production incidents for Copenhagen fintech startups (Pleo, Lunar, Trustpilot)',
+      'Assisting with .NET, Java, and Python backend development for Danish enterprise IT projects',
+      'Preparing for technical interviews at Danish tech companies (Maersk, Novo Nordisk, IO Interactive, Pleo)',
+      'Real-time interview guidance during live coding and system design rounds for Danish tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Denmark',
+    intro:
+      'Danish tech interviews blend enterprise technical depth with startup pragmatism. Our experts provide real-time, discreet guidance during your live interview so you can demonstrate the engineering quality Danish employers require.',
+    points: [
+      'Live guidance during coding and system design rounds for Danish tech company interviews',
+      'Real-time support during Java, Python, .NET, and cloud assessments for Danish enterprise roles',
+      'Help with logistics and supply chain tech questions relevant to Maersk Technology interviews',
+      'On-the-job support aligned to Danish CET/CEST project delivery timelines',
+      'Mock interview practice calibrated to Danish tech company formats (Maersk, Pleo, Netcompany)',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Denmark', href: '/proxy-interview-denmark/' },
+      { label: 'Get Interview Scheduled Denmark', href: '/get-interview-scheduled-denmark/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — FINLAND ──────────────────────────────────────────────────
+
+export const jobSupportFinland: LandingPageConfig = {
+  slug: 'job-support-finland',
+  title: 'IT Job Support & Proxy Interview Help Finland',
+  description:
+    'Need IT job support in Finland? Real-time developer help & proxy interview assistance for Finnish tech roles. Java, Kotlin, Python, React, Node.js. EET/EEST aligned. Start today.',
+  canonical: `${BASE_URL}/job-support-finland/`,
+  keywords: [
+    'IT job support Finland', 'proxy interview support Finland', 'developer job support Finland',
+    'Wolt interview support', 'Nokia job support Finland', 'Java job support Finland',
+    'interview assistance Finland', 'real-time coding support Finland',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Finland',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Finland — EET/EEST aligned.',
+  painIntro:
+    'Finland has produced some of the world\'s most technically impressive software companies and games. Whether you are at Wolt, Rovio, Supercell, Nokia Networks, or a Helsinki startup, our experts are available during EET/EEST hours.',
+  heroVariant:
+    "Finland has an outsized global tech footprint relative to its population. Wolt pioneered ultra-reliable food delivery engineering at continental scale. Supercell and Rovio built some of the world's most downloaded games with lean, highly skilled teams. Nokia Networks remains a global telecommunications software leader. Kone Digital is transforming elevator and escalator infrastructure with IoT and predictive analytics. Relex Solutions is a global leader in supply chain and retail planning software. Finnish tech culture prizes deep technical expertise, honest engineering practices, and high individual accountability — Helsinki interviews often emphasise genuine problem-solving depth over interview performance theatre. Our experts provide real-time support aligned to EET/EEST working hours.",
+  geoLine: 'Supporting developers across Finland, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Finnish EET (UTC+2) and EEST (UTC+3) working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Kotlin, Python, React, Node.js, AWS, Azure, Kubernetes, and the mobile and backend stacks used by Finnish tech companies.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Finland', 'Finnish EET/EEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Finland',
+    cases: [
+      'Supporting Wolt-scale backend engineering — real-time logistics, courier dispatch, and high-availability microservices',
+      'Helping with Nokia Networks telecom software and 5G platform engineering challenges',
+      'Assisting with Kone Digital IoT platform development and predictive maintenance engineering',
+      'Resolving production incidents for Helsinki and Tampere-based startup and scale-up teams',
+      'Preparing for technical interviews at Finnish tech companies (Wolt, Rovio, Nokia, Kone, Relex)',
+      'Real-time interview guidance during live coding and architecture rounds for Finnish tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Finland',
+    intro:
+      'Finnish tech interviews value genuine technical depth and honest problem-solving. Our experts provide real-time, discreet guidance so you can demonstrate the engineering substance Finnish companies are looking for.',
+    points: [
+      'Live guidance during coding and system design rounds for Finnish tech company interviews',
+      'Real-time support during Java, Kotlin, Python, and Node.js technical assessments',
+      'Help with mobile, backend, and real-time systems questions at Wolt and Nokia format interviews',
+      'On-the-job support aligned to Finnish EET/EEST project delivery schedules',
+      'Mock interview practice tailored to Finnish tech company hiring formats',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Finland', href: '/proxy-interview-finland/' },
+      { label: 'Get Interview Scheduled Finland', href: '/get-interview-scheduled-finland/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — NORWAY ───────────────────────────────────────────────────
+
+export const jobSupportNorway: LandingPageConfig = {
+  slug: 'job-support-norway',
+  title: 'IT Job Support & Proxy Interview Help Norway',
+  description:
+    'Need IT job support in Norway? Real-time developer help & proxy interview assistance for Norwegian tech roles. Java, Python, .NET, DevOps. CET/CEST aligned. Start today.',
+  canonical: `${BASE_URL}/job-support-norway/`,
+  keywords: [
+    'IT job support Norway', 'proxy interview support Norway', 'developer job support Norway',
+    'Equinor tech job support', 'DNB interview support Norway', 'Java job support Norway',
+    'Oslo interview assistance', 'real-time coding support Norway',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Norway',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Norway — CET/CEST aligned.',
+  painIntro:
+    'Norway\'s tech sector spans energy and oil & gas digital transformation, Nordic fintech, telecom, and a growing Oslo startup scene. Our experts are available during CET/CEST hours to provide real-time support tailored to Norwegian tech roles.',
+  heroVariant:
+    "Norway's technology landscape is shaped by several distinct forces. Equinor — the global energy major — is investing heavily in digital transformation, deploying AI, IoT, and cloud at scale across oil field operations and offshore energy infrastructure. DNB, Norway's largest bank, and Nordic fintech companies like Vipps are engineering at the frontier of digital payments. Telenor is a major Scandinavian telecoms technology operator. Schibsted builds data-intensive media and marketplace platforms including Finn.no, one of Scandinavia's largest e-commerce platforms. Norwegian tech culture values pragmatism, quality, and work-life balance — but demands genuine technical competence in interviews and on projects. Our in-house experts are aligned to CET/CEST hours and understand Norwegian tech environments.",
+  geoLine: 'Supporting developers across Norway, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Norwegian CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Python, .NET, React, AWS, Azure, Kubernetes, and the energy/fintech/telecom stack used by Norwegian enterprise and tech companies.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Norway', 'Norwegian CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Norway',
+    cases: [
+      'Supporting Equinor digital transformation engineering — AI/ML for predictive maintenance, cloud migration, IoT integration',
+      'Helping with DNB and Vipps fintech platform development — payments, open banking, digital wallets',
+      'Resolving Kubernetes and cloud-native production incidents for Oslo-based tech startups',
+      'Assisting with Schibsted/Finn.no data platform and large-scale marketplace engineering',
+      'Preparing for technical interviews at Norwegian tech companies (Equinor, DNB, Telenor, Schibsted)',
+      'Real-time interview guidance during live coding and system design rounds for Norwegian tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Norway',
+    intro:
+      'Norwegian tech interviews value technical honesty and practical problem-solving. Our experts provide real-time, discreet guidance during your live interview to help you demonstrate the engineering depth Norwegian employers expect.',
+    points: [
+      'Live guidance during coding and system design rounds for Norwegian tech company interviews',
+      'Real-time support during Java, Python, and cloud technical assessments for Norwegian enterprise roles',
+      'Help with energy tech and fintech engineering questions relevant to Equinor and DNB interview formats',
+      'On-the-job support aligned to Norwegian CET/CEST project timelines',
+      'Mock interview practice tailored to Norwegian tech company hiring formats',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Norway', href: '/proxy-interview-norway/' },
+      { label: 'Get Interview Scheduled Norway', href: '/get-interview-scheduled-norway/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — SWITZERLAND ──────────────────────────────────────────────
+
+export const jobSupportSwitzerland: LandingPageConfig = {
+  slug: 'job-support-switzerland',
+  title: 'IT Job Support & Proxy Interview Help Switzerland',
+  description:
+    'Need IT job support in Switzerland? Real-time developer help & proxy interview assistance for Swiss tech roles. Java, Python, .NET, fintech. CET/CEST aligned. 1000+ devs helped.',
+  canonical: `${BASE_URL}/job-support-switzerland/`,
+  keywords: [
+    'IT job support Switzerland', 'proxy interview support Switzerland', 'developer job support Switzerland',
+    'UBS tech job support', 'Zurich interview assistance', 'Java job support Switzerland',
+    'fintech job support Switzerland', 'real-time coding support Switzerland',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Switzerland',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Switzerland — CET/CEST aligned.',
+  painIntro:
+    'Switzerland\'s tech sector is dominated by global banking technology, pharma IT, and a world-class Zurich tech scene anchored by Google, ETH spinoffs, and major financial institutions. Our experts are available during CET/CEST hours with deep knowledge of Swiss tech environments.',
+  heroVariant:
+    "Switzerland hosts some of the world's most demanding engineering environments. UBS, Julius Baer, and the Zurich financial cluster require enterprise Java, cloud migration expertise, and regulatory-aware banking systems engineering at the highest level. Roche and Novartis run globally significant pharma IT and digital health engineering programs. Google's Zurich engineering hub — one of its largest outside the USA — works on Search, Maps, and cloud infrastructure. Temenos is the world's leading banking software vendor. ETH Zurich spinoffs and Zurich-based deep tech companies attract elite engineers. Swiss engineering culture values precision, quality, and reliability. Interviews are thorough. Our experts understand Swiss technical standards and provide real-time support aligned to your CET/CEST schedule.",
+  geoLine: 'Supporting developers across Switzerland, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Swiss CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Python, .NET, React, AWS, Azure, Kubernetes, and the banking/pharma/enterprise stack used in Swiss tech roles.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Switzerland', 'Swiss CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Switzerland',
+    cases: [
+      'Supporting UBS, Julius Baer, and Swiss banking IT — enterprise Java, cloud migration, regulatory-aware systems',
+      'Helping with Roche and Novartis pharma IT — digital health platforms, clinical data engineering, validated systems',
+      'Resolving Google Zurich-adjacent engineering challenges — distributed systems, infrastructure, search/cloud tech',
+      'Assisting with Temenos banking software and Swiss fintech platform engineering',
+      'Preparing for technical interviews at Swiss tech companies (UBS, Julius Baer, Roche IT, Google Zurich)',
+      'Real-time interview guidance during live coding and architecture rounds for Swiss tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Switzerland',
+    intro:
+      'Swiss tech interviews — particularly in banking and pharma — require precision, deep technical knowledge, and domain expertise. Our experts provide real-time, discreet guidance so you can perform at the level Swiss employers expect.',
+    points: [
+      'Live guidance during coding and system design rounds for Swiss tech company interviews',
+      'Real-time support during Java, Python, and cloud technical assessments for Swiss banking and pharma roles',
+      'Help with financial systems and regulated software engineering questions relevant to Swiss interview formats',
+      'On-the-job support aligned to Swiss CET/CEST project delivery standards',
+      'Mock interview practice tailored to Swiss banking, pharma, and tech company hiring formats',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Switzerland', href: '/proxy-interview-switzerland/' },
+      { label: 'Get Interview Scheduled Switzerland', href: '/get-interview-scheduled-switzerland/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — AUSTRIA ──────────────────────────────────────────────────
+
+export const jobSupportAustria: LandingPageConfig = {
+  slug: 'job-support-austria',
+  title: 'IT Job Support & Proxy Interview Help Austria',
+  description:
+    'Need IT job support in Austria? Real-time developer help & proxy interview assistance for Austrian tech roles. Java, .NET, Python, DevOps, SAP. CET/CEST aligned. Start today.',
+  canonical: `${BASE_URL}/job-support-austria/`,
+  keywords: [
+    'IT job support Austria', 'proxy interview support Austria', 'developer job support Austria',
+    'Vienna interview assistance', 'Erste Bank tech support', 'Java job support Austria',
+    'Bitpanda interview support', 'real-time coding support Austria',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Austria',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Austria — CET/CEST aligned.',
+  painIntro:
+    'Austria\'s tech sector combines established banking and enterprise IT with a growing Vienna startup scene. Whether you are at Erste Bank, Bitpanda, Dynatrace, or a Vienna startup, our experts are available during CET/CEST hours.',
+  heroVariant:
+    "Austria's technology ecosystem is anchored by Vienna, which blends enterprise banking IT, a vibrant startup community, and the headquarters of global tech companies. Erste Bank and Raiffeisen International represent major European banking technology programs. Bitpanda is one of Europe's leading crypto and neobroker fintech platforms. Dynatrace — an Austrian-founded, globally-listed observability company — is a world leader in infrastructure and application performance monitoring. TTTech is a deep-tech company specialising in safety-critical software for automotive, aerospace, and industrial IoT. Kapsch, Frequentis, and Austrian Airlines all run significant IT engineering operations. Vienna's tech community is growing rapidly, with a strong startup ecosystem backed by European funding. Our experts understand Austrian tech environments and are aligned to CET/CEST hours.",
+  geoLine: 'Supporting developers across Austria, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Austrian CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, .NET, Python, React, Kubernetes, AWS, Azure, SAP, and the enterprise and fintech stack used across Austrian tech roles.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Austria', 'Austrian CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Austria',
+    cases: [
+      'Supporting Erste Bank and Raiffeisen banking IT — enterprise Java, cloud migration, API banking platforms',
+      'Helping with Bitpanda fintech engineering — crypto exchange, neobroker, payment processing tech stacks',
+      'Resolving Dynatrace-adjacent observability and monitoring platform engineering challenges',
+      'Assisting with TTTech safety-critical software and automotive IoT engineering requirements',
+      'Preparing for technical interviews at Austrian tech companies (Dynatrace, Bitpanda, Erste Bank, TTTech)',
+      'Real-time interview guidance during live coding and system design rounds for Austrian tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Austria',
+    intro:
+      'Austrian tech interviews across banking, fintech, and enterprise software require solid technical depth and domain knowledge. Our experts provide real-time, discreet guidance during your live interview.',
+    points: [
+      'Live guidance during coding and system design rounds for Austrian tech company interviews',
+      'Real-time support during Java, .NET, Python, and cloud technical assessments',
+      'Help with banking systems and fintech engineering questions for Austrian employer interview formats',
+      'On-the-job support aligned to Austrian CET/CEST project delivery timelines',
+      'Mock interview practice tailored to Austrian tech company formats (Dynatrace, Bitpanda, Erste Bank)',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Austria', href: '/proxy-interview-austria/' },
+      { label: 'Get Interview Scheduled Austria', href: '/get-interview-scheduled-austria/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — BELGIUM ──────────────────────────────────────────────────
+
+export const jobSupportBelgium: LandingPageConfig = {
+  slug: 'job-support-belgium',
+  title: 'IT Job Support & Proxy Interview Help Belgium',
+  description:
+    'Need IT job support in Belgium? Real-time developer help & proxy interview assistance for Belgian tech roles. Java, .NET, Python, SAP. CET/CEST aligned. 1000+ devs helped. Start today.',
+  canonical: `${BASE_URL}/job-support-belgium/`,
+  keywords: [
+    'IT job support Belgium', 'proxy interview support Belgium', 'developer job support Belgium',
+    'Brussels interview assistance', 'KBC tech support Belgium', 'Java job support Belgium',
+    'EU institutions IT support', 'real-time coding support Belgium',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Belgium',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Belgium — CET/CEST aligned.',
+  painIntro:
+    'Belgium\'s tech sector combines major banking and financial services IT, EU institutions\' technology operations, a strong consulting sector, and a growing Brussels and Antwerp startup scene. Our experts are available during CET/CEST hours.',
+  heroVariant:
+    "Belgium's IT landscape is diverse and demanding. KBC Group is a major European bank with significant digital transformation and banking technology programs. BNP Paribas Fortis and ING Belgium run large-scale financial IT operations from Brussels. Proximus is Belgium's national telecom operator and a significant IT employer. Bekaert, UCB, and Ageas run enterprise IT programs across manufacturing, pharma, and insurance. EU and NATO institutions in Brussels create a unique tech employment ecosystem with demanding technical and security requirements. Belgium also has a robust IT consulting and outsourcing sector — Capgemini, Deloitte Technology, and Accenture Belgium are significant employers. Our experts understand the Belgian tech environment and are available during CET/CEST hours.",
+  geoLine: 'Supporting developers across Belgium, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Belgian CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, .NET, Python, React, SAP, Kubernetes, AWS, Azure, and the banking/enterprise stack used across Belgian tech roles.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Belgium', 'Belgian CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Belgium',
+    cases: [
+      'Supporting KBC and BNP Paribas Fortis banking IT engineering — enterprise Java, API banking, cloud migration',
+      'Helping with EU/NATO institutions\' IT engineering — secure systems, compliance-aware development, enterprise platforms',
+      'Resolving production incidents for Brussels and Antwerp-based startups and consulting delivery teams',
+      'Assisting with SAP and enterprise IT consulting delivery projects at Belgium-based firms',
+      'Preparing for technical interviews at Belgian tech companies (KBC, Proximus, Capgemini Belgium)',
+      'Real-time interview guidance during live coding and architecture rounds for Belgian tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Belgium',
+    intro:
+      'Belgian tech interviews across banking, consulting, and enterprise IT require demonstrated technical competence and domain knowledge. Our experts provide real-time, discreet guidance during your live interview.',
+    points: [
+      'Live guidance during coding and system design rounds for Belgian tech company interviews',
+      'Real-time support during Java, .NET, Python, and SAP technical assessments',
+      'Help with banking systems and enterprise IT questions for Belgian employer interview formats',
+      'On-the-job support aligned to Belgian CET/CEST project delivery timelines',
+      'Mock interview practice tailored to Belgian tech company formats (KBC, BNP Paribas, Proximus)',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Belgium', href: '/proxy-interview-belgium/' },
+      { label: 'Get Interview Scheduled Belgium', href: '/get-interview-scheduled-belgium/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — SPAIN ────────────────────────────────────────────────────
+
+export const jobSupportSpain: LandingPageConfig = {
+  slug: 'job-support-spain',
+  title: 'IT Job Support & Proxy Interview Help Spain',
+  description:
+    'Need IT job support in Spain? Real-time developer help & proxy interview assistance for Spanish tech roles. Java, Python, React, AWS. CET/CEST aligned. 1000+ devs helped. Start today.',
+  canonical: `${BASE_URL}/job-support-spain/`,
+  keywords: [
+    'IT job support Spain', 'proxy interview support Spain', 'developer job support Spain',
+    'Santander tech job support', 'BBVA interview support', 'Barcelona tech interview support',
+    'Madrid interview assistance Spain', 'real-time coding support Spain',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Spain',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Spain — CET/CEST aligned.',
+  painIntro:
+    'Spain has emerged as a major European tech hub, with Madrid and Barcelona attracting global tech investment and a growing startup ecosystem. Whether you are at Santander, BBVA, Glovo, or a Spanish startup, our experts are available during CET/CEST hours.',
+  heroVariant:
+    "Spain's technology sector has matured rapidly. Madrid is home to the global tech hubs of Santander and BBVA — two of the world's largest banks, both running significant software engineering operations. Telefónica is a global telecoms giant headquartered in Madrid. Amadeus IT Group, headquartered near Madrid, builds the world's largest travel technology platform. Barcelona hosts Glovo (a major European delivery tech company), Cabify, Typeform, and a thriving startup ecosystem that has grown substantially since Web Summit's move to Lisbon brought more attention to Iberian tech. Spain's tech talent market is competitive — particularly for roles in fintech, delivery tech, and enterprise software. Our experts are CET/CEST aligned and understand what Spanish tech employers look for.",
+  geoLine: 'Supporting developers across Spain, Germany, Europe, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Spanish CET and CEST working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Python, React, Node.js, AWS, Azure, Kubernetes, and the fintech and delivery tech stack used by Spanish tech companies.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Spain', 'Spanish CET/CEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Spain',
+    cases: [
+      'Supporting Santander and BBVA banking IT engineering — Java microservices, open banking, cloud migration',
+      'Helping with Glovo and Cabify delivery tech — real-time dispatch, logistics APIs, mobile and backend engineering',
+      'Resolving production incidents for Barcelona and Madrid-based startups and scale-ups',
+      'Assisting with Amadeus travel technology platform engineering and distributed systems challenges',
+      'Preparing for technical interviews at Spanish tech companies (Santander, BBVA, Glovo, Amadeus)',
+      'Real-time interview guidance during live coding and system design rounds for Spanish tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Spain',
+    intro:
+      'Spanish tech interviews at major banks, delivery platforms, and travel tech companies require solid technical depth across multiple domains. Our experts provide real-time, discreet guidance during your live interview.',
+    points: [
+      'Live guidance during coding and system design rounds for Spanish tech company interviews',
+      'Real-time support during Java, Python, React, and cloud technical assessments',
+      'Help with fintech and delivery platform engineering questions for Spanish employer interview formats',
+      'On-the-job support aligned to Spanish CET/CEST project delivery timelines',
+      'Mock interview practice tailored to Spanish tech company formats (Santander, BBVA, Glovo)',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Spain', href: '/proxy-interview-spain/' },
+      { label: 'Get Interview Scheduled Spain', href: '/get-interview-scheduled-spain/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — PORTUGAL ─────────────────────────────────────────────────
+
+export const jobSupportPortugal: LandingPageConfig = {
+  slug: 'job-support-portugal',
+  title: 'IT Job Support & Proxy Interview Help Portugal',
+  description:
+    'Need IT job support in Portugal? Real-time developer help & proxy interview assistance for Portuguese tech roles. Java, Python, React, Node.js. WET/WEST aligned. Start today.',
+  canonical: `${BASE_URL}/job-support-portugal/`,
+  keywords: [
+    'IT job support Portugal', 'proxy interview support Portugal', 'developer job support Portugal',
+    'Farfetch interview support', 'Lisbon tech interview support', 'Porto interview assistance Portugal',
+    'Feedzai job support', 'real-time coding support Portugal',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Portugal',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Portugal — WET/WEST aligned.',
+  painIntro:
+    'Portugal has rapidly established itself as one of Europe\'s most attractive tech hubs, with Lisbon and Porto hosting global tech company offices, growing startups, and remote-first engineering teams. Our experts are available during WET/WEST hours.',
+  heroVariant:
+    "Portugal's tech transformation has been remarkable. Farfetch — one of Europe's largest tech unicorns — built its global luxury e-commerce engineering team primarily in Porto. Feedzai, a global AI-powered risk and fraud detection platform, was founded in Portugal and continues to run significant engineering operations in Lisbon and Coimbra. Revolut operates major engineering hubs in Lisbon. Web Summit's permanent home in Lisbon has accelerated startup investment and talent attraction. Natixis, Siemens, Vodafone, and other multinationals operate large engineering and shared-service centres in Portugal. The Portuguese tech market is attracting European and international IT professionals on Digital Nomad Visas and Tech Visas. Our experts understand Portugal's unique tech landscape and are aligned to WET/WEST working hours — an hour behind most of continental Europe.",
+  geoLine: 'Supporting developers across Portugal, Europe, Germany, UK, USA, Canada, Australia, Singapore, and New Zealand.',
+  timezoneNote: 'Fully aligned with Portuguese WET (UTC+0) and WEST (UTC+1) working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Python, React, Node.js, AWS, Azure, Kubernetes, and the e-commerce/fintech/ML stack used by Portuguese tech companies.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Portugal', 'Portuguese WET/WEST'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Portugal',
+    cases: [
+      'Supporting Farfetch luxury e-commerce engineering — scalable microservices, platform APIs, checkout and order management',
+      'Helping with Feedzai AI/ML and risk platform engineering — real-time fraud detection, data pipelines, streaming',
+      'Resolving production incidents for Lisbon and Porto-based startups and multinational tech hubs',
+      'Assisting with Revolut and Portuguese neobank engineering — payments, compliance, cloud-native backend',
+      'Preparing for technical interviews at Portuguese tech companies (Farfetch, Feedzai, Revolut Portugal)',
+      'Real-time interview guidance during live coding and system design rounds for Portuguese tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Portugal',
+    intro:
+      'Portuguese tech interviews at global unicorns and multinational hubs require strong technical fundamentals and modern engineering practices. Our experts provide real-time, discreet guidance during your live interview.',
+    points: [
+      'Live guidance during coding and system design rounds for Portuguese tech company interviews',
+      'Real-time support during Java, Python, React, and Node.js technical assessments',
+      'Help with e-commerce, fintech, and ML engineering questions for Portuguese employer interview formats',
+      'On-the-job support aligned to Portuguese WET/WEST project delivery timelines',
+      'Mock interview practice tailored to Portuguese tech company formats (Farfetch, Feedzai, Revolut)',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Europe', href: '/job-support-europe/' },
+      { label: 'IT job support in Germany', href: '/job-support-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Portugal', href: '/proxy-interview-portugal/' },
+      { label: 'Get Interview Scheduled Portugal', href: '/get-interview-scheduled-portugal/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── JOB SUPPORT — HONG KONG ────────────────────────────────────────────────
+
+export const jobSupportHongKong: LandingPageConfig = {
+  slug: 'job-support-hong-kong',
+  title: 'IT Job Support & Proxy Interview Help Hong Kong',
+  description:
+    'Need IT job support in Hong Kong? Real-time developer help & proxy interview assistance for HK tech roles. Java, Python, React, fintech. HKT aligned. 1000+ devs helped. Start today.',
+  canonical: `${BASE_URL}/job-support-hong-kong/`,
+  keywords: [
+    'IT job support Hong Kong', 'proxy interview support Hong Kong', 'developer job support Hong Kong',
+    'HSBC tech job support', 'Hong Kong fintech interview support', 'Java job support Hong Kong',
+    'Standard Chartered interview support HK', 'real-time coding support Hong Kong',
+  ],
+  h1: 'IT Job Support & Proxy Interview Assistance in Hong Kong',
+  tagline: 'Real-time developer support and live interview guidance for IT professionals in Hong Kong — HKT aligned.',
+  painIntro:
+    'Hong Kong is a global financial technology hub where banking IT, insurance tech, and fintech startups operate under high delivery expectations. Our experts are available during HKT (UTC+8) working hours to provide same-day real-time support.',
+  heroVariant:
+    "Hong Kong's technology landscape is shaped by its role as Asia's leading international financial centre. HSBC's global technology hub in Hong Kong runs large-scale banking IT programs — enterprise Java, cloud migration, regulatory-aware systems engineering. Standard Chartered's HK technology operations, Bank of China (Hong Kong), Hang Seng Bank, and the broader banking sector all require deep financial systems engineering expertise. Manulife Asia and AIA IT represent major insurance tech employers. Klook, a Hong Kong-founded global travel and experiences platform, operates a high-scale consumer tech engineering team. Hong Kong's growing fintech sector — Bowtie, Neat, and others — adds startup engineering opportunities alongside the dominant banking tech market. Our experts are aligned to HKT working hours and understand Hong Kong's demanding tech employment environment.",
+  geoLine: 'Supporting developers across Hong Kong, Singapore, Australia, UK, USA, Canada, Europe, Germany, and New Zealand.',
+  timezoneNote: 'Fully aligned with Hong Kong HKT (UTC+8) working hours.',
+  techSnippet: 'We support 50+ technologies including Java, Python, React, Node.js, AWS, Azure, Kubernetes, and the fintech and banking stack used by Hong Kong tech employers.',
+  highlights: baseHighlights,
+  faqs: geoFaqs('Hong Kong', 'Hong Kong HKT (UTC+8)'),
+  useCasesSection: {
+    title: 'Common Situations We Help With in Hong Kong',
+    cases: [
+      'Supporting HSBC and Standard Chartered HK banking IT — enterprise Java, cloud migration, payments, regulatory systems',
+      'Helping with Manulife Asia and AIA insurance tech engineering — policy platforms, digital claims, cloud transformation',
+      'Resolving production incidents for Hong Kong fintech startups and digital banking platforms',
+      'Assisting with Klook consumer tech engineering — bookings, payments, high-availability platform architecture',
+      'Preparing for technical interviews at HK tech employers (HSBC, Standard Chartered, Klook, Manulife)',
+      'Real-time interview guidance during live coding and system design rounds for Hong Kong tech roles',
+    ],
+  },
+  proxySection: {
+    title: 'Interview Assistance & Real-Time Support in Hong Kong',
+    intro:
+      'Hong Kong banking and fintech interviews require strong enterprise Java, systems design, and financial domain knowledge. Our experts provide real-time, discreet guidance during your live interview aligned to HKT hours.',
+    points: [
+      'Live guidance during coding and system design rounds for Hong Kong tech company interviews',
+      'Real-time support during Java, Python, and cloud technical assessments for HK banking and fintech roles',
+      'Help with financial systems engineering and payment platform questions for HK interview formats',
+      'On-the-job support aligned to Hong Kong HKT working hours and project delivery cycles',
+      'Mock interview practice tailored to Hong Kong employer formats (HSBC, Standard Chartered, Klook)',
+    ],
+  },
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support in Singapore', href: '/job-support-singapore/' },
+      { label: 'IT job support in Australia', href: '/job-support-australia/' },
+    ],
+    techLinks: [
+      { label: 'Java job support USA', href: '/java-job-support-usa/' },
+      { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
+    ],
+    problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
+    proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Proxy Interview Hong Kong', href: '/proxy-interview-hong-kong/' },
+      { label: 'Get Interview Scheduled Hong Kong', href: '/get-interview-scheduled-hong-kong/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+// PROXY INTERVIEW PAGES — New Countries
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ─── PROXY INTERVIEW — NETHERLANDS ──────────────────────────────────────────
+
+export const proxyInterviewNetherlands: LandingPageConfig = {
+  slug: 'proxy-interview-netherlands',
+  title: 'Proxy Interview Support Netherlands – Real-Time Technical Interview Help for Dutch Tech Roles',
+  description:
+    'Need proxy interview support for Netherlands IT roles? Real-time live guidance during coding rounds, system design, DevOps, fintech, and distributed systems interviews at Amsterdam startups, Dutch banks, and ASML-adjacent companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-netherlands/`,
+  keywords: [
+    'proxy interview support Netherlands', 'proxy interview Netherlands', 'technical interview help Netherlands',
+    'live interview guidance Netherlands', 'coding interview support Netherlands', 'Booking.com interview support',
+    'Adyen interview support', 'ASML interview help Netherlands', 'Amsterdam tech interview support',
+  ],
+  ogTitle: 'Proxy Interview Support Netherlands – Live Technical Interview Guidance for Dutch Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in the Netherlands. Booking.com, Adyen, ING, ASML, Amsterdam startups. CET/CEST aligned. Same-day availability.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in the Netherlands',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Booking.com, Adyen, ING, ASML, TomTom, and Amsterdam tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Netherlands Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Netherlands IT role — a rigorous engineering assessment at Booking.com, a system design panel at Adyen, a distributed systems interview at ASML, or a coding round at an Amsterdam fintech startup — and need real-time expert backup? Our in-house experts join your interview session and provide discreet, live guidance so you perform at the level Dutch employers expect.',
+  heroVariant:
+    "The Netherlands hosts some of Europe's most technically demanding interview processes. Booking.com — one of the world's largest travel platforms — runs FAANG-calibre engineering interviews with emphasis on algorithms, systems design, and engineering depth. Adyen — the global payments platform — conducts rigorous technical assessments focused on distributed systems, payment processing, and engineering rigour. ASML, the semiconductor equipment giant, requires extreme software precision and reliability in its assessments. ING and ABN AMRO run structured Java and cloud engineering interviews for their digital banking transformation programs. TomTom, HERE, and Dutch geospatial tech companies assess mapping and real-time data engineering depth. Our proxy interview experts are calibrated to Dutch interview formats and available during CET/CEST hours.",
+  heroUrgency: 'Netherlands interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Netherlands, Germany, Europe, UK, Canada, USA, Australia, Ireland, and Singapore roles.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Netherlands interview technologies covered: Java, Kotlin, Python, React, Node.js, Scala, AWS, Azure, Kubernetes, Terraform, DevOps, distributed systems, fintech/payments stack, AI/ML, data engineering, and geospatial tech.',
+  highlights: [
+    {
+      title: 'Booking.com Engineering Interview Support',
+      description:
+        'Live guidance during Booking.com\'s rigorous engineering interviews — algorithms, data structures, system design at travel platform scale, distributed systems depth, and Booking.com\'s engineering culture assessment. One of the most demanding technical interview processes in European tech.',
+    },
+    {
+      title: 'Adyen Payments & Fintech Interview Help',
+      description:
+        'Real-time support during Adyen technical interviews — distributed systems for payment processing, high-availability platform design, financial systems architecture, and Adyen\'s engineering-first culture assessments. Amsterdam fintech at world-class scale.',
+    },
+    {
+      title: 'ING & ABN AMRO Banking IT Interview Guidance',
+      description:
+        'Expert live help during Dutch banking tech interviews — enterprise Java, API-first banking platforms, cloud migration architecture, open banking, and structured technical competency panels for ING, ABN AMRO, and other Dutch financial services technology teams.',
+    },
+    {
+      title: 'ASML & Deep Tech Interview Support',
+      description:
+        'Real-time guidance during ASML-adjacent and Dutch deep-tech interviews — safety-critical software engineering, embedded systems, precision algorithms, reliability engineering, and the high technical bar of Netherlands semiconductor and engineering tech interviews.',
+    },
+    {
+      title: 'Amsterdam Startup & Scale-Up Interview Help',
+      description:
+        'Live proxy support for technical interviews at Amsterdam-based startups and scale-ups — full-stack engineering, microservices, AWS/GCP cloud-native, DevOps/SRE, and the practical engineering depth Amsterdam startup hiring teams expect from senior candidates.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, Kubernetes, cloud infrastructure, AI/ML, and data engineering interviews at Dutch tech companies — covering Terraform, CI/CD pipelines, MLOps, data platforms, and observability engineering for Netherlands technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Netherlands involve?',
+      answer:
+        'Netherlands proxy interview support means our in-house expert joins your live technical interview session and provides real-time, discreet guidance as you work through coding problems, system design questions, and competency assessments. We help you think through solutions, structure answers, and handle the distinct formats of Booking.com engineering panels, Adyen payments tech interviews, Dutch banking IT rounds, and ASML-adjacent technical assessments — all confidentially.',
+    },
+    {
+      question: 'Which Netherlands companies and tech hubs do you support?',
+      answer:
+        'We support candidates interviewing across all major Netherlands tech employers: Amsterdam (Booking.com, Adyen, TomTom, HERE Technologies, IMDB, Uber Amsterdam, Databricks), Dutch banking (ING, ABN AMRO, Rabobank, de Volksbank), Eindhoven and South Holland (ASML, Philips, NXP Semiconductors), Rotterdam (DP World, Coolblue), and Dutch startups and scale-ups across all major tech hubs in the Netherlands.',
+    },
+    {
+      question: 'How are Netherlands tech interviews different from UK or German interviews?',
+      answer:
+        'Dutch tech interviews blend elements of FAANG-style rigour (particularly at Booking.com and Adyen) with Dutch directness and pragmatism. Booking.com\'s interview process is famously thorough — multiple rounds, systems design at scale, and genuine algorithmic depth. Adyen focuses on payment systems and distributed systems understanding. Dutch banking interviews are structured but more practical than German banking counterparts. ASML and deep-tech interviews emphasise precision and reliability. Dutch interview culture values direct communication and genuine engineering substance over performance.',
+    },
+    {
+      question: 'What technologies do your Netherlands interview proxy experts cover?',
+      answer:
+        'We cover all major Netherlands interview technologies: Java (Spring Boot, microservices, REST APIs), Kotlin, Python, Scala (Spark), React, Angular, Node.js, AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD pipelines, DevOps/SRE, AI/ML (TensorFlow, PyTorch, LangChain, MLOps), data engineering (Kafka, Spark, Snowflake, Databricks), payments and fintech stack (Adyen-related technologies), and geospatial tech for TomTom/HERE interviews.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Netherlands interview?',
+      answer:
+        'Contact us on WhatsApp as soon as you know your interview is scheduled — even if it is today or tomorrow. We assess your employer, role, and technology stack, assign the right in-house expert calibrated to your specific Netherlands employer format (Booking.com, Adyen, ING, ASML, or startup), and prepare them for your interview. Same-day support is available for urgent requests.',
+    },
+    {
+      question: 'Is the proxy interview support confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any details about your interview session to any third party. Our experts maintain strict confidentiality throughout the engagement. We have supported thousands of IT professionals globally and confidentiality is foundational to how we operate.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Netherlands Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Booking.com multi-round engineering interviews — algorithmic depth, system design at travel-platform scale, distributed systems',
+      'Adyen technical assessments — payment processing systems, distributed systems design, financial platform architecture',
+      'ING and ABN AMRO banking IT panels — Java enterprise, API banking, cloud migration, open banking platform design',
+      'ASML software engineering interviews — reliability-critical systems, algorithm depth, precision software engineering',
+      'Amsterdam startup coding rounds — full-stack, microservices, cloud-native, DevOps/SRE technical assessments',
+      'DevOps and cloud engineering interviews at Dutch scale-ups and enterprise IT transformation teams',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Netherlands Proxy Interview Support Works',
+    intro:
+      'Our Netherlands proxy interview support is confidential, real-time, and calibrated to the specific technical formats and engineering standards of Dutch employers. Whether you are facing a Booking.com engineering panel, an Adyen payments interview, or a Dutch banking IT round — our experts join your session and guide you.',
+    points: [
+      'Share your Netherlands interview details via WhatsApp — employer, city, role level, technology stack, and interview format',
+      'We assign an in-house expert matched to your exact technology and Netherlands employer type (Booking.com, Adyen, bank, ASML, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Netherlands employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout the session',
+      'Post-interview debrief and support for any follow-up rounds or next Netherlands interview stages',
+    ],
+  },
+  bottomCTAHeading: 'Netherlands Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Netherlands technical interviews — Booking.com, Adyen, ING, ASML, and Amsterdam tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Netherlands', href: '/job-support-netherlands/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'AI/ML proxy interview', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'Get interview scheduled Netherlands', href: '/get-interview-scheduled-netherlands/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — SWEDEN ────────────────────────────────────────────────
+
+export const proxyInterviewSweden: LandingPageConfig = {
+  slug: 'proxy-interview-sweden',
+  title: 'Proxy Interview Support Sweden – Real-Time Technical Interview Help for Swedish Tech Roles',
+  description:
+    'Need proxy interview support for Sweden IT roles? Real-time live guidance during coding rounds, system design, DevOps, and distributed systems interviews at Spotify, Klarna, Ericsson, King, and Stockholm tech companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-sweden/`,
+  keywords: [
+    'proxy interview support Sweden', 'proxy interview Sweden', 'technical interview help Sweden',
+    'Spotify interview support', 'Klarna interview support Sweden', 'Stockholm tech interview help',
+    'live interview guidance Sweden', 'coding interview support Sweden',
+  ],
+  ogTitle: 'Proxy Interview Support Sweden – Live Technical Interview Guidance for Swedish Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Sweden. Spotify, Klarna, Ericsson, King, Stockholm startups. CET/CEST aligned. Same-day availability.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Sweden',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Spotify, Klarna, Ericsson, King, Volvo IT, and Stockholm tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Sweden Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Sweden IT role — a distributed systems panel at Spotify, a fintech engineering round at Klarna, a telecoms software assessment at Ericsson, or a live coding challenge at a Stockholm startup — and need real-time expert backup? Our in-house experts join your interview session and provide discreet, live guidance.',
+  heroVariant:
+    "Sweden produces some of Europe's most technically demanding engineering interviews. Spotify conducts thorough distributed systems, data engineering, and backend engineering interviews calibrated to the scale of a global audio streaming platform. Klarna's fintech engineering interviews assess payments system design, backend architecture, and financial platform expertise. Ericsson interviews require deep telecoms software and network engineering knowledge, especially for 5G platform roles. King and other Swedish gaming companies run creative technical assessments for game development, engine, and backend roles. DICE (EA), Paradox Interactive, and Mojang have distinct engineering interview cultures. Volvo IT, Scania, and Swedish automotive tech firms run structured competency assessments. Our experts are calibrated to Swedish interview formats and available during CET/CEST hours.",
+  heroUrgency: 'Sweden interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Sweden, Germany, Europe, UK, Canada, USA, Australia, Ireland, and Singapore roles.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Sweden interview technologies covered: Java, Kotlin, Scala, Python, React, Node.js, AWS, GCP, Kubernetes, Terraform, distributed systems, fintech stack, AI/ML, data engineering, game development, and 5G/telecom software.',
+  highlights: [
+    {
+      title: 'Spotify Engineering Interview Support',
+      description:
+        'Live guidance during Spotify\'s technical interviews — backend microservices at streaming scale, data engineering (Spotify\'s data pipelines process petabytes), distributed systems design, and Spotify\'s engineering culture assessment. One of Europe\'s most respected engineering interview processes.',
+    },
+    {
+      title: 'Klarna Fintech Interview Help',
+      description:
+        'Real-time support during Klarna technical interviews — payment systems architecture, buy-now-pay-later platform engineering, risk and compliance tech, financial data modeling, and Klarna\'s engineering-first hiring process for its Stockholm and global engineering teams.',
+    },
+    {
+      title: 'Ericsson Telecom Software Interview Guidance',
+      description:
+        'Expert live help during Ericsson engineering interviews — 5G software platform development, telecoms protocol stack, network function virtualisation (NFV), cloud-native telecom, and the deep technical assessments Ericsson runs for its global software engineering teams.',
+    },
+    {
+      title: 'King, DICE & Swedish Gaming Interview Support',
+      description:
+        'Real-time guidance during Swedish gaming company interviews — game server architecture, real-time multiplayer systems, game engine internals, live-ops backend engineering, and the creative technical assessments at King, DICE (EA), Mojang, Paradox Interactive, and other Stockholm-based game studios.',
+    },
+    {
+      title: 'Stockholm Startup & Scale-Up Interview Help',
+      description:
+        'Live proxy support for technical interviews at Stockholm-based startups and scale-ups — full-stack engineering, microservices, cloud-native, DevOps/SRE, fintech, and the practical engineering depth Stockholm startup hiring teams expect.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, Kubernetes, cloud infrastructure, and AI/ML interviews at Swedish tech companies — Terraform, CI/CD, observability, MLOps, and data platform engineering for Swedish technology roles across fintech, telecom, gaming, and enterprise.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Sweden involve?',
+      answer:
+        'Sweden proxy interview support means our in-house expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design sessions, and competency assessments. We are calibrated to Spotify\'s distributed systems depth, Klarna\'s fintech engineering standards, Ericsson\'s telecoms technical requirements, and Swedish startup interview formats — confidentially.',
+    },
+    {
+      question: 'Which Swedish companies and tech hubs do you support?',
+      answer:
+        'We support candidates interviewing at all major Swedish tech employers: Stockholm (Spotify, Klarna, King, H&M Tech, Voi, Bambora, Trustly, iZettle/PayPal, Accenture Sweden), Gothenburg (Volvo IT, Volvo Cars Tech, SKF, Ericsson GBG, Stena), Malmö (Axis Communications, Qlik), and all major Swedish enterprise, fintech, gaming, telecom, and startup employers.',
+    },
+    {
+      question: 'How are Swedish tech interviews different from other European countries?',
+      answer:
+        'Swedish tech interviews blend technical depth with cultural directness. Spotify and Klarna run interviews that rival FAANG in engineering rigour. Ericsson interviews require genuine telecoms domain knowledge. Swedish gaming company interviews are creative and practical — focused on real problem-solving. Swedish startup interviews tend to be more conversational but technically substantive. Swedish interview culture values honesty, genuine expertise, and flat-hierarchy collaboration skills. Rehearsed answers without technical substance do not work in Swedish interviews.',
+    },
+    {
+      question: 'What technologies do your Sweden interview experts cover?',
+      answer:
+        'We cover all major Swedish interview technologies: Java, Kotlin, Scala, Python, React, Angular, Node.js, AWS, GCP, Azure, Kubernetes, Terraform, Docker, CI/CD, distributed systems, data engineering (Kafka, Spark, Flink), AI/ML and MLOps, game development (Unity, Unreal backend, custom engines), 5G and telecom software, fintech stack (payments, risk, compliance), and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Sweden interview?',
+      answer:
+        'Contact us on WhatsApp as soon as you know your interview is scheduled — even if it is today or tomorrow. We assess your employer, role, and technology stack, assign the right expert calibrated to your specific Swedish employer format (Spotify, Klarna, Ericsson, gaming, startup), and prepare them for your interview. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview session details to any third party. Confidentiality is foundational to how we operate across all 1000+ professionals we have supported globally.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Sweden Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Spotify multi-round backend and distributed systems interviews — data pipelines at streaming scale, microservices, system design',
+      'Klarna fintech engineering assessments — payments platform design, risk systems, financial data architecture',
+      'Ericsson telecom software interviews — 5G platform, NFV, network engineering, cloud-native telecoms',
+      'King, DICE, and Mojang gaming interviews — game server architecture, real-time multiplayer, live-ops backend',
+      'Stockholm startup coding rounds — full-stack, microservices, cloud-native, DevOps/SRE',
+      'AI/ML and data engineering interviews at Swedish enterprise and scale-up companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Sweden Proxy Interview Support Works',
+    intro:
+      'Our Sweden proxy interview support is confidential, real-time, and calibrated to the specific technical formats of Swedish employers. Whether you are facing a Spotify distributed systems panel, a Klarna fintech round, or a Stockholm startup interview — our experts join your session and guide you.',
+    points: [
+      'Share your Sweden interview details via WhatsApp — employer, role level, technology stack, and interview format',
+      'We assign an in-house expert matched to your exact technology and Swedish employer type (Spotify, Klarna, Ericsson, gaming, startup)',
+      'Pre-interview alignment on your background and the expectations of your specific Sweden employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout the session',
+      'Post-interview debrief and support for any follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Sweden Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Sweden technical interviews — Spotify, Klarna, Ericsson, King, and Stockholm tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Sweden', href: '/job-support-sweden/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'AI/ML proxy interview', href: '/ai-ml-proxy-interview-support/' },
+      { label: 'Get interview scheduled Sweden', href: '/get-interview-scheduled-sweden/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — DENMARK ───────────────────────────────────────────────
+
+export const proxyInterviewDenmark: LandingPageConfig = {
+  slug: 'proxy-interview-denmark',
+  title: 'Proxy Interview Support Denmark – Real-Time Technical Interview Help for Danish Tech Roles',
+  description:
+    'Need proxy interview support for Denmark IT roles? Real-time live guidance during coding rounds, system design, DevOps, and logistics/fintech interviews at Maersk, Novo Nordisk, Pleo, and Copenhagen tech companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-denmark/`,
+  keywords: [
+    'proxy interview support Denmark', 'proxy interview Denmark', 'technical interview help Denmark',
+    'Maersk technology interview support', 'Copenhagen tech interview help', 'live interview guidance Denmark',
+    'Pleo interview support', 'Trustpilot interview support Denmark',
+  ],
+  ogTitle: 'Proxy Interview Support Denmark – Live Technical Interview Guidance for Danish Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Denmark. Maersk Technology, Novo Nordisk IT, Pleo, Trustpilot, Copenhagen startups. CET/CEST aligned.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Denmark',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Maersk Technology, Novo Nordisk IT, Pleo, Trustpilot, IO Interactive, and Copenhagen tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Denmark Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Denmark IT role — a digital transformation engineering round at Maersk Technology, a data platform interview at Novo Nordisk, a product engineering assessment at Pleo, or a coding challenge at a Copenhagen startup — and need real-time expert backup? Our in-house experts join your session and provide live guidance.',
+  heroVariant:
+    "Denmark's tech interview landscape spans logistics giant digital transformation, medtech and pharma IT, Copenhagen fintech and startup culture, and game development. Maersk Technology is running one of enterprise IT's most ambitious transformation programs — cloud migration, IoT for container tracking, AI for supply chain. Novo Nordisk's digital and IT engineering interviews require pharma domain awareness and clinical data systems expertise. Pleo's product engineering interviews reflect Copenhagen startup culture — pragmatic, engineering-led, and depth-focused. IO Interactive (known for Hitman) runs technical game development interviews with creative engineering depth. Trustpilot interviews assess web platform, data, and product engineering. Our experts are calibrated to Danish interview formats.",
+  heroUrgency: 'Denmark interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Denmark, Germany, Europe, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Denmark interview technologies covered: Java, Python, .NET, React, Node.js, AWS, Kubernetes, Terraform, DevOps/SRE, supply chain tech, medtech/biotech data stacks, AI/ML, data engineering, and game development.',
+  highlights: [
+    {
+      title: 'Maersk Technology Interview Support',
+      description:
+        'Live guidance during Maersk Technology interviews — digital transformation engineering, cloud migration architecture, IoT for container tracking, supply chain platform development, and the large-scale logistics software engineering Maersk is building to modernise global shipping.',
+    },
+    {
+      title: 'Novo Nordisk & Medtech IT Interview Help',
+      description:
+        'Real-time support during Novo Nordisk and Danish medtech/pharma IT interviews — digital health platform engineering, clinical data systems, regulated software development (GxP), biotech data pipelines, and the intersection of life sciences and software engineering.',
+    },
+    {
+      title: 'Copenhagen Fintech Interview Guidance',
+      description:
+        'Expert live help during Pleo, Lunar, Clearhaus, and Copenhagen fintech startup interviews — product engineering, payment systems, open banking, backend microservices, and the engineering-first culture of Copenhagen\'s growing fintech scene.',
+    },
+    {
+      title: 'IO Interactive & Gaming Interview Support',
+      description:
+        'Real-time guidance during IO Interactive (Hitman) and Danish game development interviews — game server engineering, gameplay systems, engine programming, live-ops backend, and the creative technical depth of Copenhagen\'s game development sector.',
+    },
+    {
+      title: 'Trustpilot, Zendesk & SaaS Interview Help',
+      description:
+        'Live proxy support during Trustpilot, Zendesk Copenhagen, and Danish SaaS company interviews — web platform engineering, data and analytics at review scale, product engineering, and customer experience platform architecture.',
+    },
+    {
+      title: 'DevOps, Cloud & Data Interview Guidance',
+      description:
+        'Real-time support for DevOps, cloud, and data engineering interviews at Danish tech companies — Kubernetes, Terraform, CI/CD, data pipelines, observability, and AWS/Azure cloud architecture for Denmark technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Denmark involve?',
+      answer:
+        'Denmark proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to Maersk Technology\'s digital transformation interview style, Novo Nordisk\'s pharma IT requirements, Copenhagen fintech startup formats, and IO Interactive\'s game engineering assessments — confidentially.',
+    },
+    {
+      question: 'Which Danish companies do you support?',
+      answer:
+        'We support candidates interviewing across all major Danish tech employers: Copenhagen (Maersk Technology, Novo Nordisk IT, Pleo, Lunar, Trustpilot, IO Interactive, Zendesk Copenhagen, Clearhaus, Templafy, Penneo, Podio), Aarhus (Systematic, Kamstrup, Mjolner Informatics), and Danish enterprise IT across all major sectors.',
+    },
+    {
+      question: 'What technologies do your Denmark interview experts cover?',
+      answer:
+        'We cover all major Danish interview technologies: Java, Python, .NET/C#, React, Angular, Node.js, AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD, data engineering (Kafka, Spark, SQL), AI/ML, supply chain tech, medtech/biotech data stacks (HL7, FHIR for pharma), game development (Unity, Unreal Engine backend), and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Denmark interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, technology stack, and format, assign the right expert, and prepare them specifically for your Denmark employer. Same-day support is available for urgent requests.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party. Thousands of IT professionals globally have relied on our confidential support.',
+    },
+    {
+      question: 'Do you help with Maersk Technology digital transformation interviews?',
+      answer:
+        'Yes. Maersk Technology is running one of the most ambitious enterprise IT transformation programs globally — moving from legacy shipping systems to cloud-native, IoT-integrated, AI-driven logistics platforms. Our experts can provide real-time guidance during Maersk Technology interviews covering cloud migration, microservices architecture, supply chain platform engineering, IoT integration, and the enterprise-scale technical assessments Maersk conducts.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Denmark Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Maersk Technology interviews — cloud migration architecture, supply chain platform engineering, IoT logistics tech',
+      'Novo Nordisk IT interviews — digital health platforms, clinical data systems, pharma-regulated software',
+      'Pleo and Copenhagen fintech startup engineering assessments — product engineering, payments, open banking',
+      'IO Interactive game development technical interviews — game server, engine, gameplay systems',
+      'Trustpilot and SaaS platform engineering interviews — web scale, data engineering, product architecture',
+      'DevOps and cloud engineering technical screens at Danish scale-ups and enterprise IT teams',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Denmark Proxy Interview Support Works',
+    intro:
+      'Our Denmark proxy interview support is confidential, real-time, and calibrated to Danish employer interview formats. Whether you are facing a Maersk digital transformation panel, a Novo Nordisk pharma IT round, or a Copenhagen startup engineering assessment — our experts join your session and guide you.',
+    points: [
+      'Share your Denmark interview details via WhatsApp — employer, role level, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Danish employer type (Maersk, pharma, fintech, gaming, SaaS)',
+      'Pre-interview alignment on your background and the expectations of your specific Denmark employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Denmark Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Denmark technical interviews — Maersk Technology, Novo Nordisk, Pleo, and Copenhagen tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Denmark', href: '/job-support-denmark/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Denmark', href: '/get-interview-scheduled-denmark/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — FINLAND ────────────────────────────────────────────────
+
+export const proxyInterviewFinland: LandingPageConfig = {
+  slug: 'proxy-interview-finland',
+  title: 'Proxy Interview Support Finland – Real-Time Technical Interview Help for Finnish Tech Roles',
+  description:
+    'Need proxy interview support for Finland IT roles? Real-time live guidance during coding rounds, system design, DevOps, and backend interviews at Wolt, Nokia, Rovio, Supercell, Kone, and Helsinki tech companies. EET/EEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-finland/`,
+  keywords: [
+    'proxy interview support Finland', 'proxy interview Finland', 'technical interview help Finland',
+    'Wolt interview support', 'Nokia interview support Finland', 'Helsinki tech interview help',
+    'Supercell interview support', 'Rovio interview support Finland',
+  ],
+  ogTitle: 'Proxy Interview Support Finland – Live Technical Interview Guidance for Finnish Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Finland. Wolt, Nokia Networks, Rovio, Supercell, Kone Digital, Helsinki startups. EET/EEST aligned.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Finland',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Wolt, Nokia Networks, Rovio, Supercell, Kone Digital, and Helsinki tech companies — EET/EEST aligned.',
+  heroEyebrow: 'Finland Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Finland IT role — a backend systems round at Wolt, a telecom software assessment at Nokia Networks, a game engineering interview at Rovio or Supercell, or a platform engineering challenge at a Helsinki startup — and need real-time expert backup? Our experts join your session and provide discreet, live guidance.',
+  heroVariant:
+    "Finland's tech interview culture prizes deep technical substance and honest problem-solving. Wolt — which pioneered ultra-reliable food delivery tech in Nordic markets — runs engineering interviews focused on real-time systems, backend reliability, and high-availability architecture. Nokia Networks interviews assess 5G software, telecom protocol stacks, and network engineering depth. Supercell and Rovio are globally renowned game studios whose interviews test creative system design, game server engineering, and technical depth under pressure. Kone Digital is pushing IoT and predictive analytics for elevator and escalator infrastructure. Relex Solutions — a global supply chain software leader — runs engineering interviews emphasising algorithmic depth and enterprise software design. Our experts are calibrated to Finnish interview formats and aligned to EET/EEST hours.",
+  heroUrgency: 'Finland interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Finland, Germany, Europe, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in EET (UTC+2) and EEST (UTC+3) time slots.',
+  techSnippet:
+    'Finland interview technologies covered: Java, Kotlin, Python, React, Node.js, Go, AWS, GCP, Kubernetes, real-time systems, 5G/telecom software, game development, AI/ML, data engineering, and IoT platforms.',
+  highlights: [
+    {
+      title: 'Wolt Backend & Real-Time Systems Interview Support',
+      description:
+        'Live guidance during Wolt\'s engineering interviews — high-availability real-time systems, backend microservices, courier dispatch algorithms, logistics platform architecture, and the reliability engineering standards Wolt has built for Nordic and European food delivery at scale.',
+    },
+    {
+      title: 'Nokia Networks Telecom Software Interview Help',
+      description:
+        'Real-time support during Nokia Networks engineering interviews — 5G software platform development, network protocol stacks (LTE, NR, core network), cloud-native telecoms, network function virtualisation, and Nokia\'s deep technical assessment for its global software engineering teams.',
+    },
+    {
+      title: 'Supercell & Rovio Gaming Interview Guidance',
+      description:
+        'Expert live help during Supercell (Clash of Clans, Clash Royale, Brawl Stars) and Rovio (Angry Birds) gaming interviews — game server architecture, real-time multiplayer, live-ops backend engineering, mobile gaming tech stacks, and the creative engineering depth required by Finland\'s world-class game studios.',
+    },
+    {
+      title: 'Kone Digital & Industrial IoT Interview Support',
+      description:
+        'Real-time guidance during Kone Digital engineering interviews — IoT platform architecture, predictive maintenance systems, real-time sensor data pipelines, cloud integration for industrial equipment, and the reliability-critical engineering that Kone demands for its global elevator and escalator digital transformation.',
+    },
+    {
+      title: 'Helsinki Startup & Scale-Up Interview Help',
+      description:
+        'Live proxy support for technical interviews at Helsinki and Tampere-based startups and scale-ups — full-stack engineering, microservices, cloud-native, DevOps/SRE, fintech, and the deep technical culture of Finnish startup hiring.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, Kubernetes, cloud, and AI/ML interviews at Finnish tech companies — covering CI/CD, observability, MLOps, data platforms, and cloud architecture engineering for Finland technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Finland involve?',
+      answer:
+        'Finland proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to Wolt\'s real-time systems depth, Nokia\'s telecoms software requirements, Supercell and Rovio\'s gaming engineering standards, and Helsinki startup formats — confidentially.',
+    },
+    {
+      question: 'Which Finnish companies do you support?',
+      answer:
+        'We support candidates interviewing at all major Finnish tech employers: Helsinki and Espoo (Wolt, Nokia Networks, Kone Digital, Relex Solutions, Varma, F-Secure/WithSecure, Futurice, Reaktor), Tampere (Nokia Tampere, Basware, Vincit), and Finnish gaming companies (Supercell, Rovio, Next Games, Small Giant Games, Frogmind) across all major tech roles.',
+    },
+    {
+      question: 'What technologies do your Finland interview experts cover?',
+      answer:
+        'We cover all major Finnish interview technologies: Java, Kotlin, Python, Go, Scala, React, Node.js, AWS, GCP, Azure, Kubernetes, Terraform, Docker, CI/CD, real-time systems, 5G and telecom software (LTE, NR, NFV), game development (Unity, Unreal Engine, custom engines), IoT platforms, AI/ML, and supply chain/logistics tech.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Finland interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, technology stack, and interview format, assign the right expert, and prepare them for your specific Finnish employer. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+    {
+      question: 'How are Finnish tech interviews different from other Scandinavian countries?',
+      answer:
+        'Finnish tech interviews tend to be direct and substance-focused — Finnish engineering culture values sisu (grit) and genuine technical depth over polished presentation. Wolt interviews assess real reliability engineering knowledge. Nokia requires genuine telecom domain expertise. Gaming company interviews are creative and technically deep. Finnish startup interviews expect honest problem-solving and intellectual humility. Our experts are calibrated to these distinct Finnish interview characteristics.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Finland Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Wolt backend engineering interviews — real-time systems, microservices, courier dispatch, high-availability architecture',
+      'Nokia Networks telecom software assessments — 5G platforms, protocol stacks, cloud-native telecoms',
+      'Supercell and Rovio gaming interviews — game server, real-time multiplayer, live-ops backend engineering',
+      'Kone Digital IoT and industrial platform interviews — predictive maintenance, sensor data, cloud integration',
+      'Helsinki and Tampere startup coding rounds — full-stack, microservices, cloud-native, DevOps',
+      'AI/ML and data engineering technical screens at Finnish enterprise and scale-up companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Finland Proxy Interview Support Works',
+    intro:
+      'Our Finland proxy interview support is confidential, real-time, and calibrated to Finnish employer interview formats. Whether you are facing a Wolt real-time systems panel, a Nokia telecom assessment, or a Supercell game engineering interview — our experts join your session and guide you.',
+    points: [
+      'Share your Finland interview details via WhatsApp — employer, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Finnish employer type (Wolt, Nokia, gaming, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Finland employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Finland Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Finland technical interviews — Wolt, Nokia Networks, Supercell, Rovio, and Helsinki tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Finland', href: '/job-support-finland/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Finland', href: '/get-interview-scheduled-finland/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — NORWAY ─────────────────────────────────────────────────
+
+export const proxyInterviewNorway: LandingPageConfig = {
+  slug: 'proxy-interview-norway',
+  title: 'Proxy Interview Support Norway – Real-Time Technical Interview Help for Norwegian Tech Roles',
+  description:
+    'Need proxy interview support for Norway IT roles? Real-time live guidance during coding rounds, system design, DevOps, and energy/fintech interviews at Equinor, DNB, Telenor, Schibsted, and Oslo tech companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-norway/`,
+  keywords: [
+    'proxy interview support Norway', 'proxy interview Norway', 'technical interview help Norway',
+    'Equinor tech interview support', 'DNB interview support Norway', 'Oslo tech interview help',
+    'live interview guidance Norway', 'Telenor interview support',
+  ],
+  ogTitle: 'Proxy Interview Support Norway – Live Technical Interview Guidance for Norwegian Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Norway. Equinor, DNB, Telenor, Schibsted, Vipps, Oslo tech startups. CET/CEST aligned. Same-day availability.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Norway',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Equinor, DNB, Telenor, Schibsted, Vipps, and Oslo tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Norway Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Norway IT role — a digital transformation engineering round at Equinor, a fintech assessment at DNB or Vipps, a telecoms interview at Telenor, or a platform engineering challenge at Schibsted — and need real-time expert backup? Our in-house experts join your session and provide live guidance.',
+  heroVariant:
+    "Norway's tech interview landscape reflects its unique economic position. Equinor — the global energy major — conducts engineering interviews for a digital transformation programme that deploys AI, ML, IoT, and cloud across North Sea oil field operations and renewable energy infrastructure. DNB, Norway's largest bank, and Vipps — one of Europe's most successful mobile payment platforms — interview for fintech engineering roles requiring payment systems expertise and digital banking architecture knowledge. Telenor runs telecoms software engineering interviews similar to Ericsson in depth. Schibsted and Finn.no interview for data platform, marketplace, and full-stack engineering roles. Norwegian tech interviews value honesty, pragmatism, and genuine technical substance. Our experts are aligned to CET/CEST hours.",
+  heroUrgency: 'Norway interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Norway, Germany, Europe, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Norway interview technologies covered: Java, Python, .NET, React, Node.js, AWS, Azure, Kubernetes, Terraform, energy tech/IoT, fintech stack, 5G/telecom, AI/ML, data engineering, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'Equinor Digital Transformation Interview Support',
+      description:
+        'Live guidance during Equinor technology interviews — AI/ML for predictive maintenance and geospatial analysis, cloud migration of energy systems, IoT integration for offshore operations, and the digital transformation engineering Equinor is building for the energy sector.',
+    },
+    {
+      title: 'DNB & Vipps Fintech Interview Help',
+      description:
+        'Real-time support during DNB and Vipps technical interviews — digital banking platform engineering, mobile payment systems architecture, open banking APIs, real-time transaction processing, and the financial technology engineering of Norway\'s leading bank and payments platform.',
+    },
+    {
+      title: 'Telenor Telecoms Software Interview Guidance',
+      description:
+        'Expert live help during Telenor engineering interviews — 5G platform software, network infrastructure, cloud-native telecoms, network function virtualisation, and the deep technical assessments Telenor runs for its software engineering and IT transformation teams.',
+    },
+    {
+      title: 'Schibsted & Finn.no Platform Interview Support',
+      description:
+        'Real-time guidance during Schibsted, Finn.no, and Norwegian media/marketplace platform interviews — data engineering at marketplace scale, full-stack platform engineering, product development, recommendation systems, and the digital product technical assessments of Norwegian media tech companies.',
+    },
+    {
+      title: 'Oslo Startup & Scale-Up Interview Help',
+      description:
+        'Live proxy support for technical interviews at Oslo-based startups and scale-ups — full-stack engineering, microservices, cloud-native, DevOps/SRE, and the honest, pragmatic engineering depth Oslo startup hiring teams expect.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, Kubernetes, cloud infrastructure, energy tech, and AI/ML interviews at Norwegian tech companies — covering Terraform, CI/CD, observability, MLOps, IoT platforms, and cloud architecture for Norway technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Norway involve?',
+      answer:
+        'Norway proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to Equinor\'s energy tech and AI/ML interview depth, DNB and Vipps fintech requirements, Telenor telecoms technical standards, and Oslo startup formats — confidentially.',
+    },
+    {
+      question: 'Which Norwegian companies do you support?',
+      answer:
+        'We support candidates interviewing across all major Norwegian tech employers: Oslo (Equinor, DNB, Vipps, Telenor, Schibsted, Finn.no, Aker BP, Kolonial.no, Kahoot, Cognite, Ardoq), Bergen (Vizrt, Sparebanken Vest), and Norwegian enterprise IT and startup companies across all major tech sectors.',
+    },
+    {
+      question: 'What technologies do your Norway interview experts cover?',
+      answer:
+        'We cover all major Norwegian interview technologies: Java, Python, .NET/C#, React, Node.js, Kotlin, AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD, energy tech (IoT, SCADA-adjacent systems, geospatial data), fintech stack (payment systems, open banking), 5G and telecom software, AI/ML, data engineering, and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Norway interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, role, and technology stack, assign the right expert for your specific Norwegian employer format, and prepare them for your interview. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities or any interview details to any third party.',
+    },
+    {
+      question: 'Do you help with Equinor technology interviews?',
+      answer:
+        'Yes. Equinor is investing billions in digital transformation — deploying AI and ML for predictive maintenance and reservoir analysis, migrating legacy energy systems to cloud, integrating IoT for offshore operations monitoring, and building data platforms for the energy transition. Our experts can provide real-time guidance during Equinor interviews covering cloud architecture, AI/ML systems design, IoT integration patterns, data engineering, and the enterprise-scale technology transformation Equinor is conducting.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Norway Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Equinor technology interviews — AI/ML for energy, cloud migration, IoT for offshore operations',
+      'DNB and Vipps fintech engineering assessments — digital banking, payment systems, open banking APIs',
+      'Telenor telecoms software interviews — 5G platforms, cloud-native telecoms, network engineering',
+      'Schibsted and Finn.no platform interviews — marketplace data engineering, full-stack product development',
+      'Oslo startup coding rounds — full-stack, microservices, cloud-native, DevOps/SRE',
+      'AI/ML and cloud infrastructure technical screens at Norwegian enterprise tech companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Norway Proxy Interview Support Works',
+    intro:
+      'Our Norway proxy interview support is confidential, real-time, and calibrated to Norwegian employer interview formats. Whether you are facing an Equinor energy tech panel, a DNB fintech round, or an Oslo startup engineering assessment — our experts join your session and guide you.',
+    points: [
+      'Share your Norway interview details via WhatsApp — employer, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Norwegian employer type (Equinor, fintech, telecom, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Norway employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Norway Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Norway technical interviews — Equinor, DNB, Vipps, Telenor, and Oslo tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Norway', href: '/job-support-norway/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Norway', href: '/get-interview-scheduled-norway/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — SWITZERLAND ───────────────────────────────────────────
+
+export const proxyInterviewSwitzerland: LandingPageConfig = {
+  slug: 'proxy-interview-switzerland',
+  title: 'Proxy Interview Support Switzerland – Real-Time Technical Interview Help for Swiss Tech Roles',
+  description:
+    'Need proxy interview support for Switzerland IT roles? Real-time live guidance during coding rounds, system design, banking tech, pharma IT, and cloud interviews at UBS, Julius Baer, Roche, Novartis, Google Zurich, and Swiss tech companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-switzerland/`,
+  keywords: [
+    'proxy interview support Switzerland', 'proxy interview Switzerland', 'technical interview help Switzerland',
+    'UBS tech interview support', 'Google Zurich interview support', 'Zurich tech interview help',
+    'Julius Baer interview support', 'Roche IT interview support Switzerland',
+  ],
+  ogTitle: 'Proxy Interview Support Switzerland – Live Technical Interview Guidance for Swiss Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Switzerland. UBS, Julius Baer, Roche IT, Novartis, Google Zurich, Temenos, Swiss banks. CET/CEST aligned.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Switzerland',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at UBS, Julius Baer, Roche IT, Novartis, Google Zurich, Temenos, and Swiss tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Switzerland Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Switzerland IT role — a banking systems engineering round at UBS or Julius Baer, a pharma IT assessment at Roche or Novartis, a world-class engineering panel at Google Zurich, or a fintech interview at a Zurich startup — and need real-time expert backup? Our experts join your session and provide discreet, live guidance.',
+  heroVariant:
+    "Switzerland hosts some of the world's most demanding technical interview environments. UBS — one of the world's largest wealth management banks — runs rigorous Java, cloud, and financial systems engineering interviews for its technology transformation programs. Julius Baer and other Swiss private banks conduct thorough technical assessments for banking platform engineering roles. Roche and Novartis — global pharma giants headquartered in Basel — require regulated software, clinical data systems, and enterprise IT engineering expertise. Google's Zurich engineering hub is one of its largest and most elite globally — Google Zurich interviews apply the full FAANG-calibre assessment process. Temenos, the world's leading banking software vendor, conducts deep technical interviews for its fintech engineering teams. ETH Zurich spinoffs and Swiss deep-tech startups attract elite engineers. Our experts are aligned to CET/CEST hours.",
+  heroUrgency: 'Switzerland interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Switzerland, Germany, Europe, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Switzerland interview technologies covered: Java, Python, .NET, React, Scala, AWS, Azure, Kubernetes, Terraform, banking/fintech stack, pharma IT (GxP, clinical data), AI/ML, distributed systems, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'UBS & Swiss Banking IT Interview Support',
+      description:
+        'Live guidance during UBS and Swiss banking technology interviews — enterprise Java architecture, cloud migration for financial systems, regulatory-aware software engineering (FINMA compliance), trading platform development, wealth management tech, and the structured multi-round technical panels of Swiss private and universal banks.',
+    },
+    {
+      title: 'Google Zurich Engineering Interview Help',
+      description:
+        'Real-time support during Google Zurich\'s engineering interviews — algorithms and data structures to Google standards, systems design at global search and cloud infrastructure scale, distributed systems engineering, and the full FAANG-calibre interview process conducted at Google\'s flagship European engineering hub.',
+    },
+    {
+      title: 'Roche & Novartis Pharma IT Interview Guidance',
+      description:
+        'Expert live help during Roche and Novartis IT engineering interviews — digital health and clinical data platform development, GxP-regulated software engineering, bioinformatics and data science at pharma scale, cloud infrastructure for life sciences, and the technically rigorous and compliance-aware assessments of global Swiss pharma IT teams.',
+    },
+    {
+      title: 'Temenos & Swiss Fintech Interview Support',
+      description:
+        'Real-time guidance during Temenos banking software and Swiss fintech interviews — banking platform architecture (core banking, wealth management, digital banking), financial data engineering, API and integration architecture for banking ecosystems, and the deep technical assessments of Switzerland\'s leading financial technology companies.',
+    },
+    {
+      title: 'ETH Spinoffs & Swiss Deep Tech Interview Help',
+      description:
+        'Live proxy support during ETH Zurich spinoff and Swiss deep tech company interviews — applied ML, robotics software, computer vision, distributed systems research-to-production, and the elite technical depth expected by companies emerging from one of the world\'s leading technical universities.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, Kubernetes, cloud infrastructure, and AI/ML interviews at Swiss tech companies — covering Terraform, CI/CD, observability, MLOps, data platforms, and cloud architecture engineering for Switzerland technology roles across banking, pharma, and tech.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Switzerland involve?',
+      answer:
+        'Switzerland proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to UBS banking IT depth, Google Zurich\'s FAANG standards, Roche and Novartis pharma IT requirements, Temenos fintech engineering, and Swiss startup formats — confidentially.',
+    },
+    {
+      question: 'Which Swiss companies do you support?',
+      answer:
+        'We support candidates interviewing across all major Swiss tech employers: Zurich (UBS, Julius Baer, Google Zurich, Microsoft Zurich, Temenos, ETH spinoffs, Swiss Re IT, Zurich Insurance IT, Adecco Group IT), Basel (Roche, Novartis, Syngenta IT), Geneva (Pictet, CERN IT, UN/international organisations IT), and Swiss enterprise IT, fintech, and startup companies across the country.',
+    },
+    {
+      question: 'How are Swiss tech interviews different?',
+      answer:
+        'Swiss tech interviews are thorough, precise, and demanding — reflecting the Swiss engineering culture of quality and reliability. UBS and private bank interviews are structured and technically deep, with financial domain knowledge requirements. Google Zurich applies the full global Google interview process. Pharma IT interviews at Roche and Novartis combine technical depth with regulated software and domain awareness. Swiss startup and ETH spinoff interviews emphasise genuine research-level technical expertise. Precision and depth are expected across all Swiss tech interview contexts.',
+    },
+    {
+      question: 'What technologies do your Switzerland interview experts cover?',
+      answer:
+        'We cover all major Swiss interview technologies: Java (Spring Boot, J2EE, financial systems), Python, .NET/C#, Scala, React, Angular, Node.js, AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD, banking/fintech stack (core banking, trading, wealth management), pharma IT (GxP, LIMS, clinical data systems, HL7/FHIR), AI/ML and MLOps, distributed systems, and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Switzerland interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, role, and technology stack, assign the right expert for your specific Swiss employer format (UBS, Google, Roche, Temenos, startup), and prepare them for your interview. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Switzerland Interview Situations We Help Candidates Navigate',
+    cases: [
+      'UBS and Swiss banking IT interviews — enterprise Java, cloud migration, financial systems, FINMA-aware architecture',
+      'Google Zurich engineering panels — FAANG-standard algorithms, systems design, distributed systems',
+      'Roche and Novartis pharma IT interviews — digital health, clinical data systems, GxP-regulated software',
+      'Temenos banking software interviews — core banking platform, wealth management tech, financial API design',
+      'ETH spinoff and Swiss deep-tech interviews — applied ML, robotics, distributed systems research',
+      'DevOps and cloud engineering technical screens at Swiss enterprise and startup tech teams',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Switzerland Proxy Interview Support Works',
+    intro:
+      'Our Switzerland proxy interview support is confidential, real-time, and calibrated to Swiss employer interview formats. Whether facing a UBS banking IT panel, a Google Zurich engineering round, or a Roche pharma IT assessment — our experts join your session and guide you.',
+    points: [
+      'Share your Switzerland interview details via WhatsApp — employer, city, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Swiss employer type (banking, Google, pharma, fintech, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Switzerland employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Switzerland Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Switzerland technical interviews — UBS, Google Zurich, Roche IT, Novartis, and Swiss tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Switzerland', href: '/job-support-switzerland/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Switzerland', href: '/get-interview-scheduled-switzerland/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — AUSTRIA ────────────────────────────────────────────────
+
+export const proxyInterviewAustria: LandingPageConfig = {
+  slug: 'proxy-interview-austria',
+  title: 'Proxy Interview Support Austria – Real-Time Technical Interview Help for Austrian Tech Roles',
+  description:
+    'Need proxy interview support for Austria IT roles? Real-time live guidance during coding rounds, system design, fintech, and enterprise tech interviews at Dynatrace, Bitpanda, Erste Bank, and Vienna tech companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-austria/`,
+  keywords: [
+    'proxy interview support Austria', 'proxy interview Austria', 'technical interview help Austria',
+    'Dynatrace interview support', 'Bitpanda interview support Austria', 'Vienna tech interview help',
+    'Erste Bank IT interview support', 'live interview guidance Austria',
+  ],
+  ogTitle: 'Proxy Interview Support Austria – Live Technical Interview Guidance for Austrian Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Austria. Dynatrace, Bitpanda, Erste Bank, TTTech, Vienna startups. CET/CEST aligned. Same-day availability.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Austria',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Dynatrace, Bitpanda, Erste Bank, TTTech, and Vienna tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Austria Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for an Austria IT role — an observability engineering round at Dynatrace, a fintech assessment at Bitpanda, a banking IT panel at Erste Bank, or a safety-critical software interview at TTTech — and need real-time expert backup? Our experts join your session and provide live guidance.',
+  heroVariant:
+    "Austria's tech interview landscape combines globally-listed tech companies, a thriving Vienna startup ecosystem, major banking IT, and safety-critical engineering. Dynatrace — an Austrian-founded, globally-listed leader in observability and application performance monitoring — runs rigorous engineering interviews for its cloud platform, agent, and AI engine teams. Bitpanda — one of Europe's largest neobroker and crypto platforms — conducts fintech engineering interviews for its high-scale trading and investment platform. Erste Bank and Raiffeisen International run structured banking IT technical assessments. TTTech is a world leader in safety-critical software for automotive, aerospace, and industrial IoT. Vienna's startup scene — Runtastic/Adidas, Brainloop, Frequentis — adds technical depth. Our experts are calibrated to Austrian interview formats.",
+  heroUrgency: 'Austria interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Austria, Germany, Europe, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Austria interview technologies covered: Java, .NET, Python, React, Kubernetes, Terraform, observability/monitoring stack, fintech/crypto stack, banking IT, safety-critical software, cloud platforms, AI/ML, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'Dynatrace Observability Interview Support',
+      description:
+        'Live guidance during Dynatrace engineering interviews — cloud observability platform architecture, distributed tracing at enterprise scale, AI-powered monitoring, Kubernetes and cloud-native infrastructure, agent engineering, and the rigorous technical assessments of Austria\'s globally-listed observability tech leader.',
+    },
+    {
+      title: 'Bitpanda Fintech & Crypto Interview Help',
+      description:
+        'Real-time support during Bitpanda technical interviews — crypto exchange and neobroker platform engineering, high-frequency trading systems, payment processing at scale, real-time portfolio management, regulatory-aware fintech architecture, and the engineering depth of one of Europe\'s leading investment technology platforms.',
+    },
+    {
+      title: 'Erste Bank & Austrian Banking IT Interview Guidance',
+      description:
+        'Expert live help during Erste Bank, Raiffeisen International, and Austrian banking IT interviews — enterprise Java, cloud migration for financial systems, open banking API design, digital banking platform engineering, and the structured technical competency panels of major Austrian financial institutions.',
+    },
+    {
+      title: 'TTTech Safety-Critical Software Interview Support',
+      description:
+        'Real-time guidance during TTTech and Austrian safety-critical software interviews — AUTOSAR and functional safety (ISO 26262) for automotive, DO-178 for aerospace, IEC 61508 for industrial IoT, real-time operating system engineering, and the extreme reliability and precision expected in safety-critical software technical assessments.',
+    },
+    {
+      title: 'Vienna Startup & Scale-Up Interview Help',
+      description:
+        'Live proxy support for technical interviews at Vienna-based startups and scale-ups — full-stack engineering, microservices, cloud-native, DevOps/SRE, fintech, and the engineering depth Vienna\'s growing startup community expects.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, cloud, and AI/ML interviews at Austrian tech companies — Kubernetes, Terraform, CI/CD, observability platforms, MLOps, and cloud architecture for Austria technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Austria involve?',
+      answer:
+        'Austria proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to Dynatrace\'s observability platform engineering depth, Bitpanda\'s fintech standards, Erste Bank banking IT requirements, TTTech safety-critical software, and Vienna startup formats — confidentially.',
+    },
+    {
+      question: 'Which Austrian companies do you support?',
+      answer:
+        'We support candidates interviewing at all major Austrian tech employers: Vienna (Dynatrace, Bitpanda, Erste Bank, Raiffeisen International, TTTech, Frequentis, Kapsch, s IT Solutions, Adidas/Runtastic, Brainloop, Boku, Runtastic), Graz (AVL, Anton Paar IT, Virtual Vehicle), Linz (Fabasoft, Scan4You), and Austrian enterprise IT, fintech, and startup companies.',
+    },
+    {
+      question: 'What technologies do your Austria interview experts cover?',
+      answer:
+        'We cover all major Austrian interview technologies: Java, .NET/C#, Python, React, Angular, Node.js, AWS, Azure, GCP, Kubernetes, Terraform, Docker, observability stack (OpenTelemetry, Prometheus, Grafana), fintech/crypto stack, banking IT, safety-critical software (AUTOSAR, DO-178, IEC 61508), AI/ML, and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for an Austria interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, role, and technology stack, assign the right expert for your specific Austrian employer, and prepare them for your interview. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+    {
+      question: 'Do you help with Dynatrace engineering interviews?',
+      answer:
+        'Yes. Dynatrace is a world leader in observability and application performance monitoring — its engineering interviews are rigorous and assess deep knowledge of cloud-native architectures, distributed tracing, AI-powered monitoring systems, and large-scale infrastructure engineering. Our experts can provide real-time guidance during Dynatrace interviews covering observability platform design, Kubernetes and cloud-native engineering, AI and ML for monitoring, and the technical depth Dynatrace expects from its engineering teams.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Austria Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Dynatrace engineering interviews — observability platform, distributed tracing, cloud-native, AI monitoring',
+      'Bitpanda fintech and crypto platform interviews — trading systems, payment processing, regulatory-aware architecture',
+      'Erste Bank and Austrian banking IT panels — enterprise Java, open banking, cloud migration, digital banking',
+      'TTTech safety-critical software interviews — AUTOSAR, ISO 26262, DO-178, real-time OS engineering',
+      'Vienna startup coding rounds — full-stack, microservices, cloud-native, DevOps/SRE',
+      'Cloud and AI/ML technical screens at Austrian enterprise and scale-up tech companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Austria Proxy Interview Support Works',
+    intro:
+      'Our Austria proxy interview support is confidential, real-time, and calibrated to Austrian employer interview formats. Whether facing a Dynatrace observability panel, a Bitpanda fintech round, or an Erste Bank banking IT assessment — our experts join your session and guide you.',
+    points: [
+      'Share your Austria interview details via WhatsApp — employer, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Austrian employer type (Dynatrace, fintech, banking, safety-critical, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Austria employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Austria Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Austria technical interviews — Dynatrace, Bitpanda, Erste Bank, and Vienna tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Austria', href: '/job-support-austria/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Austria', href: '/get-interview-scheduled-austria/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — BELGIUM ────────────────────────────────────────────────
+
+export const proxyInterviewBelgium: LandingPageConfig = {
+  slug: 'proxy-interview-belgium',
+  title: 'Proxy Interview Support Belgium – Real-Time Technical Interview Help for Belgian Tech Roles',
+  description:
+    'Need proxy interview support for Belgium IT roles? Real-time live guidance during coding rounds, system design, banking IT, and EU/enterprise interviews at KBC, BNP Paribas Fortis, Proximus, and Brussels tech companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-belgium/`,
+  keywords: [
+    'proxy interview support Belgium', 'proxy interview Belgium', 'technical interview help Belgium',
+    'KBC interview support', 'Brussels tech interview help', 'live interview guidance Belgium',
+    'BNP Paribas Belgium interview support', 'Proximus interview support',
+  ],
+  ogTitle: 'Proxy Interview Support Belgium – Live Technical Interview Guidance for Belgian Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Belgium. KBC, BNP Paribas Fortis, Proximus, EU institutions IT, Brussels tech companies. CET/CEST aligned.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Belgium',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at KBC, BNP Paribas Fortis, Proximus, EU institutions, and Brussels tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Belgium Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Belgium IT role — a banking IT panel at KBC or BNP Paribas Fortis, a telecoms engineering round at Proximus, an EU institutions IT assessment, or a technical challenge at a Brussels startup — and need real-time expert backup? Our experts join your session and provide live guidance.',
+  heroVariant:
+    "Belgium's tech interview environment is shaped by major banking IT, EU institutions, a strong consulting sector, and a growing Brussels and Antwerp startup ecosystem. KBC Group — a major European bank — runs structured technical assessments for its digital banking and transformation programs. BNP Paribas Fortis and ING Belgium conduct Java, cloud, and financial IT engineering interviews. Proximus interviews for telecom software, network engineering, and digital services roles. EU and NATO institutions in Brussels hire for complex, security-aware IT engineering roles. Belgian consulting firms — Capgemini, Deloitte Technology, Accenture — conduct competency-based technical interviews for client delivery roles. Our experts are aligned to CET/CEST hours and calibrated to Belgian interview formats.",
+  heroUrgency: 'Belgium interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Belgium, Germany, Europe, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Belgium interview technologies covered: Java, .NET, Python, React, SAP, Kubernetes, AWS, Azure, banking/fintech stack, telecom software, EU institution IT stack, AI/ML, data engineering, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'KBC & Belgian Banking IT Interview Support',
+      description:
+        'Live guidance during KBC Group and Belgian banking technology interviews — enterprise Java, digital banking platform engineering, cloud migration, open banking API design, payment processing, and the structured technical competency assessments of Belgium\'s largest domestic bank.',
+    },
+    {
+      title: 'BNP Paribas Fortis & ING Belgium Interview Help',
+      description:
+        'Real-time support during BNP Paribas Fortis and ING Belgium technical interviews — financial systems engineering, data and analytics platforms, Java and .NET backend development, cloud transformation, and regulatory-aware banking IT architecture for major Belgian financial services institutions.',
+    },
+    {
+      title: 'Proximus & Telecom IT Interview Guidance',
+      description:
+        'Expert live help during Proximus and Belgian telecoms engineering interviews — 5G and network software, telecom platform engineering, digital services backend, cloud-native telecoms, and the structured technical assessments of Belgium\'s national telecommunications operator.',
+    },
+    {
+      title: 'EU & NATO Institutions IT Interview Support',
+      description:
+        'Real-time guidance during EU institutions and NATO IT engineering interviews in Brussels — secure systems engineering, compliance-aware development, enterprise platform architecture, IT governance requirements, and the technically demanding and process-rigorous assessments of European institution IT programs.',
+    },
+    {
+      title: 'Belgian IT Consulting Interview Help',
+      description:
+        'Live proxy support during Capgemini Belgium, Deloitte Technology, Accenture, and Belgian IT consulting firm interviews — client-delivery engineering competency assessments, full-stack development panels, cloud and DevOps assessments, and the mixed technical/behavioural formats of Belgian consulting interviews.',
+    },
+    {
+      title: 'Brussels Startup & DevOps Interview Guidance',
+      description:
+        'Real-time support for Brussels and Antwerp startup engineering interviews and DevOps/cloud technical screens — full-stack engineering, microservices, cloud-native, Kubernetes, CI/CD, and the growing engineering depth of Belgium\'s startup ecosystem.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Belgium involve?',
+      answer:
+        'Belgium proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and competency assessments. We are calibrated to KBC\'s banking IT standards, BNP Paribas Fortis financial engineering requirements, Proximus telecoms technical formats, EU institutions IT assessments, and Belgian consulting interview structures — confidentially.',
+    },
+    {
+      question: 'Which Belgian companies do you support?',
+      answer:
+        'We support candidates interviewing at all major Belgian tech employers: Brussels (KBC Group, BNP Paribas Fortis, ING Belgium, Proximus, Capgemini Belgium, Deloitte Technology, Accenture, EU Commission IT, NATO NCIA, UCB IT), Antwerp (Bekaert, Ageas, Katoen Natie IT), Ghent (IMEC, Ablynx IT), and Belgian enterprise IT, fintech, and startup companies.',
+    },
+    {
+      question: 'What technologies do your Belgium interview experts cover?',
+      answer:
+        'We cover all major Belgian interview technologies: Java, .NET/C#, Python, React, Angular, Node.js, SAP (ABAP, S/4HANA), AWS, Azure, GCP, Kubernetes, Terraform, Docker, banking/fintech stack, telecoms software, EU institution IT stack (OpenShift, secure platforms), AI/ML, data engineering, and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Belgium interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, role, and technology stack, assign the right expert for your specific Belgian employer, and prepare them for your interview. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+    {
+      question: 'Do you help with EU institutions IT interviews in Brussels?',
+      answer:
+        'Yes. EU Commission, EU Parliament, and European institutions IT interviews have distinct characteristics — combining technical depth with process rigour, compliance awareness, and enterprise-scale platform engineering. We provide real-time guidance during EU institutions IT interviews covering enterprise architecture, cloud and hybrid infrastructure, secure systems development, data governance, and the structured competency assessments used across Brussels-based European institution IT programs.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Belgium Interview Situations We Help Candidates Navigate',
+    cases: [
+      'KBC and Belgian banking IT technical panels — enterprise Java, digital banking, open banking APIs, cloud migration',
+      'BNP Paribas Fortis and ING Belgium engineering assessments — financial systems, data platforms, regulatory-aware IT',
+      'Proximus telecom software interviews — 5G networks, digital services, cloud-native telecoms',
+      'EU institutions and NATO IT interviews — secure systems, enterprise platforms, compliance-aware development',
+      'Belgian IT consulting competency assessments — Capgemini, Deloitte, Accenture technical and delivery panels',
+      'Brussels and Antwerp startup coding rounds — full-stack, microservices, cloud-native, DevOps',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Belgium Proxy Interview Support Works',
+    intro:
+      'Our Belgium proxy interview support is confidential, real-time, and calibrated to Belgian employer interview formats. Whether facing a KBC banking IT panel, an EU institutions IT assessment, or a Brussels startup engineering round — our experts join your session and guide you.',
+    points: [
+      'Share your Belgium interview details via WhatsApp — employer, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Belgian employer type (banking, EU institutions, telecom, consulting, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Belgium employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Belgium Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Belgium technical interviews — KBC, BNP Paribas Fortis, Proximus, and Brussels tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Belgium', href: '/job-support-belgium/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Belgium', href: '/get-interview-scheduled-belgium/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — SPAIN ──────────────────────────────────────────────────
+
+export const proxyInterviewSpain: LandingPageConfig = {
+  slug: 'proxy-interview-spain',
+  title: 'Proxy Interview Support Spain – Real-Time Technical Interview Help for Spanish Tech Roles',
+  description:
+    'Need proxy interview support for Spain IT roles? Real-time live guidance during coding rounds, system design, fintech, and delivery tech interviews at Santander, BBVA, Glovo, Amadeus, and Madrid/Barcelona tech companies. CET/CEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-spain/`,
+  keywords: [
+    'proxy interview support Spain', 'proxy interview Spain', 'technical interview help Spain',
+    'Santander tech interview support', 'BBVA interview support', 'Barcelona tech interview help',
+    'Glovo interview support', 'Amadeus interview support Spain',
+  ],
+  ogTitle: 'Proxy Interview Support Spain – Live Technical Interview Guidance for Spanish Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Spain. Santander, BBVA, Glovo, Amadeus IT, Telefónica, Madrid and Barcelona tech companies. CET/CEST aligned.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Spain',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Santander Tech, BBVA, Glovo, Amadeus IT, Telefónica, and Madrid/Barcelona tech companies — CET/CEST aligned.',
+  heroEyebrow: 'Spain Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Spain IT role — a banking engineering round at Santander or BBVA, a delivery tech assessment at Glovo, a travel technology panel at Amadeus IT, or a telecoms interview at Telefónica — and need real-time expert backup? Our experts join your session and provide live guidance.',
+  heroVariant:
+    "Spain's tech interview landscape spans global banking technology, logistics and delivery engineering, travel tech, telecom, and Barcelona's growing startup scene. Santander and BBVA are among the world's largest banks — both running significant software engineering programs from Madrid. Amadeus IT Group, headquartered near Madrid, is the world's largest travel technology platform, running rigorous engineering interviews for its global development teams. Glovo — one of Europe's leading delivery platforms — conducts technical assessments for its high-scale backend engineering. Telefónica runs telecoms software and digital services engineering interviews. Barcelona's startup ecosystem (Typeform, Holded, Factorial) is growing rapidly. Our experts are calibrated to Spanish interview formats and aligned to CET/CEST hours.",
+  heroUrgency: 'Spain interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Spain, Germany, Europe, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in CET (UTC+1) and CEST (UTC+2) time slots.',
+  techSnippet:
+    'Spain interview technologies covered: Java, Python, React, Node.js, AWS, Azure, Kubernetes, Terraform, banking/fintech stack, delivery logistics tech, travel technology, telecom software, AI/ML, data engineering, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'Santander & BBVA Banking Tech Interview Support',
+      description:
+        'Live guidance during Santander Technology and BBVA engineering interviews — Java microservices for global banking platforms, open banking API design, cloud migration for financial systems, digital banking product engineering, and the rigorous multi-round technical assessments of two of the world\'s largest Spanish bank engineering teams.',
+    },
+    {
+      title: 'Amadeus IT Travel Technology Interview Help',
+      description:
+        'Real-time support during Amadeus IT Group engineering interviews — travel distribution platform engineering at global scale, airline and hotel reservation system architecture, payment and settlement systems, high-availability API design, and the deep technical assessment process of the world\'s largest travel technology company.',
+    },
+    {
+      title: 'Glovo & Delivery Tech Interview Guidance',
+      description:
+        'Expert live help during Glovo technical interviews — real-time logistics and dispatch algorithm systems, backend microservices at delivery scale, mobile and consumer platform engineering, data and analytics for operations, and the fast-moving, engineering-led culture of Barcelona\'s leading delivery platform.',
+    },
+    {
+      title: 'Telefónica & Telecom Software Interview Support',
+      description:
+        'Real-time guidance during Telefónica and Spanish telecoms engineering interviews — 5G and network software development, digital services backend, cloud-native telecoms, IoT platform engineering, and the technical depth of Spain\'s largest telecommunications operator and its global engineering teams.',
+    },
+    {
+      title: 'Barcelona Startup Interview Help',
+      description:
+        'Live proxy support during Barcelona and Madrid startup technical interviews — full-stack engineering, SaaS platform development, microservices, cloud-native architecture, DevOps/SRE, and the engineering depth of Spain\'s growing tech startup ecosystem (Typeform, Holded, Factorial, Wallbox, TravelPerk).',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, Kubernetes, cloud infrastructure, and AI/ML interviews at Spanish tech companies — covering Terraform, CI/CD, observability, MLOps, data engineering, and cloud architecture for Spain technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Spain involve?',
+      answer:
+        'Spain proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to Santander and BBVA banking IT depth, Amadeus IT travel technology requirements, Glovo delivery tech engineering, Telefónica telecoms formats, and Barcelona startup interview styles — confidentially.',
+    },
+    {
+      question: 'Which Spanish companies do you support?',
+      answer:
+        'We support candidates interviewing at all major Spanish tech employers: Madrid (Santander Technology, BBVA, Telefónica, Amadeus IT, Indra, GMV, Paradigma, Cabify, Idealista) and Barcelona (Glovo, Typeform, Holded, Factorial, Wallbox, TravelPerk, King Barcelona, Zynga Barcelona, Criteo Barcelona), plus Spanish enterprise IT and startup companies across all major cities.',
+    },
+    {
+      question: 'What technologies do your Spain interview experts cover?',
+      answer:
+        'We cover all major Spanish interview technologies: Java, Python, React, Angular, Node.js, .NET/C#, AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD, banking/fintech stack, travel tech (GDS, reservation systems), delivery logistics tech, telecom software, AI/ML, data engineering (Spark, Kafka, SQL), and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Spain interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, role, and technology stack, assign the right expert for your specific Spanish employer format, and prepare them for your interview. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+    {
+      question: 'Do you help with Amadeus IT Group technical interviews?',
+      answer:
+        'Yes. Amadeus IT Group is the world\'s largest travel technology company — its engineering interviews are thorough and assess distributed systems at massive scale, travel distribution platform architecture, real-time booking and reservation system design, payment and settlement engineering, and API design for global airline, hotel, and rail distribution. Our experts provide real-time guidance during Amadeus IT Group interviews for all its major technology teams.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Spain Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Santander and BBVA banking tech interviews — Java microservices, open banking APIs, cloud migration, digital banking',
+      'Amadeus IT engineering panels — travel platform architecture, global-scale distributed systems, booking system design',
+      'Glovo delivery tech assessments — real-time logistics, backend microservices, data engineering',
+      'Telefónica and telecom software interviews — 5G, digital services, cloud-native telecoms',
+      'Barcelona and Madrid startup coding rounds — full-stack, SaaS, microservices, cloud-native, DevOps',
+      'AI/ML and data engineering technical screens at Spanish enterprise and scale-up tech companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Spain Proxy Interview Support Works',
+    intro:
+      'Our Spain proxy interview support is confidential, real-time, and calibrated to Spanish employer interview formats. Whether facing a Santander banking tech panel, an Amadeus IT travel technology round, or a Barcelona startup engineering assessment — our experts join your session and guide you.',
+    points: [
+      'Share your Spain interview details via WhatsApp — employer, city, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Spanish employer type (banking, travel tech, delivery, telecom, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Spain employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Spain Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Spain technical interviews — Santander, BBVA, Glovo, Amadeus IT, and Madrid/Barcelona tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Spain', href: '/job-support-spain/' },
+      { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Spain', href: '/get-interview-scheduled-spain/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — PORTUGAL ───────────────────────────────────────────────
+
+export const proxyInterviewPortugal: LandingPageConfig = {
+  slug: 'proxy-interview-portugal',
+  title: 'Proxy Interview Support Portugal – Real-Time Technical Interview Help for Portuguese Tech Roles',
+  description:
+    'Need proxy interview support for Portugal IT roles? Real-time live guidance during coding rounds, system design, e-commerce, and fintech interviews at Farfetch, Feedzai, Revolut, Natixis, and Lisbon/Porto tech companies. WET/WEST aligned.',
+  canonical: `${BASE_URL}/proxy-interview-portugal/`,
+  keywords: [
+    'proxy interview support Portugal', 'proxy interview Portugal', 'technical interview help Portugal',
+    'Farfetch interview support', 'Feedzai interview support Portugal', 'Lisbon tech interview help',
+    'live interview guidance Portugal', 'Revolut Portugal interview support',
+  ],
+  ogTitle: 'Proxy Interview Support Portugal – Live Technical Interview Guidance for Portuguese Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Portugal. Farfetch, Feedzai, Revolut Portugal, Natixis, Lisbon and Porto tech companies. WET/WEST aligned.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Portugal',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Farfetch, Feedzai, Revolut Portugal, Natixis, and Lisbon/Porto tech companies — WET/WEST aligned.',
+  heroEyebrow: 'Portugal Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Portugal IT role — an e-commerce platform engineering round at Farfetch, an AI fraud detection assessment at Feedzai, a fintech engineering panel at Revolut, or a technical challenge at a Lisbon or Porto startup — and need real-time expert backup? Our experts join your session and provide live guidance.',
+  heroVariant:
+    "Portugal has emerged as one of Europe's most attractive tech hubs — and its engineering interview standards have risen accordingly. Farfetch — a global luxury e-commerce platform founded in Porto — runs engineering interviews at a global unicorn standard, assessing platform scalability, microservices architecture, and engineering depth. Feedzai — a pioneering AI-powered fraud detection platform — conducts rigorous ML engineering, data science, and real-time streaming system interviews. Revolut operates one of its largest engineering hubs in Lisbon and interviews at a fintech FAANG-equivalent level. Natixis, Siemens Portugal, and Vodafone Portugal run large-scale enterprise IT engineering assessments. Web Summit's Lisbon base has accelerated startup formation. Our experts are aligned to Portuguese WET/WEST hours — an hour behind most of Europe.",
+  heroUrgency: 'Portugal interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Portugal, Europe, Germany, UK, Canada, USA, Australia, and Singapore.',
+  timezoneNote: 'Available for interviews scheduled in WET (UTC+0) and WEST (UTC+1) time slots.',
+  techSnippet:
+    'Portugal interview technologies covered: Java, Python, React, Node.js, Scala, AWS, Azure, Kubernetes, Terraform, e-commerce tech, AI/ML (fraud, risk), fintech stack, data engineering, real-time streaming, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'Farfetch E-Commerce Engineering Interview Support',
+      description:
+        'Live guidance during Farfetch technical interviews — luxury e-commerce platform architecture at global scale, microservices and API design for fashion retail, checkout and order management systems, high-availability product catalogue engineering, and Farfetch\'s rigorous global engineering interview process conducted in Porto and Lisbon.',
+    },
+    {
+      title: 'Feedzai AI/ML & Fraud Detection Interview Help',
+      description:
+        'Real-time support during Feedzai ML engineering and data science interviews — real-time fraud detection system design, streaming data architecture (Kafka, Flink), machine learning model deployment at financial transaction scale, feature engineering for risk, and the deep AI/ML technical assessments of one of Portugal\'s most globally impactful tech companies.',
+    },
+    {
+      title: 'Revolut Portugal Fintech Interview Guidance',
+      description:
+        'Expert live help during Revolut\'s Lisbon engineering interviews — fintech platform architecture, mobile and backend engineering, payment system design, regulatory-aware neobank development, real-time data infrastructure, and the high-bar FAANG-equivalent technical assessment Revolut applies globally at its Lisbon hub.',
+    },
+    {
+      title: 'Natixis & Multinational IT Hub Interview Support',
+      description:
+        'Real-time guidance during Natixis Portugal, Siemens Portugal, Vodafone Portugal, and multinational IT shared-service centre interviews in Lisbon and Porto — financial services engineering, enterprise Java, cloud infrastructure, digital transformation architecture, and the structured technical competency assessments of global companies\' Portuguese IT operations.',
+    },
+    {
+      title: 'Lisbon & Porto Startup Interview Help',
+      description:
+        'Live proxy support for technical interviews at Lisbon and Porto-based startups and scale-ups — full-stack engineering, SaaS product development, microservices, cloud-native, DevOps/SRE, and the growing engineering culture of Portugal\'s rapidly expanding startup ecosystem (Unbabel, Talkdesk, Aptoide, CEiiA, Sword Health).',
+    },
+    {
+      title: 'DevOps, Cloud & Data Engineering Interview Guidance',
+      description:
+        'Real-time support for DevOps, cloud, and data engineering interviews at Portuguese tech companies — Kubernetes, Terraform, CI/CD, observability, data platforms, real-time streaming, MLOps, and cloud architecture for Portugal technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Portugal involve?',
+      answer:
+        'Portugal proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to Farfetch\'s global e-commerce engineering standards, Feedzai\'s AI/ML depth, Revolut\'s fintech FAANG-level process, and Lisbon and Porto startup interview formats — confidentially.',
+    },
+    {
+      question: 'Which Portuguese companies do you support?',
+      answer:
+        'We support candidates interviewing at all major Portuguese tech employers: Lisbon (Revolut Portugal, Natixis, Farfetch Lisbon, Feedzai Lisbon, Talkdesk, Unbabel, OutSystems, Sword Health, CEiiA, Vodafone Portugal IT, Google Portugal) and Porto (Farfetch Porto, Feedzai Porto, Blip, Jumia Portugal, Mindera, Critical Software, iCapital), plus Portuguese enterprise IT and startup companies.',
+    },
+    {
+      question: 'What technologies do your Portugal interview experts cover?',
+      answer:
+        'We cover all major Portuguese interview technologies: Java, Python, Scala, React, Node.js, .NET/C#, AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD, e-commerce tech, fintech stack (payment systems, neobanking), AI/ML (fraud detection, risk, NLP), data engineering (Kafka, Flink, Spark, dbt), real-time streaming, and DevOps/SRE.',
+    },
+    {
+      question: 'What is the timezone difference for Portugal tech interviews?',
+      answer:
+        'Portugal operates on WET (Western European Time, UTC+0) in winter and WEST (Western European Summer Time, UTC+1) in summer — one hour behind most of continental Europe (which uses CET/CEST). This means Portugal tech interviews start earlier in UTC terms than Germany or Netherlands interviews. Our experts are aligned to WET/WEST working hours and available for interviews in these time slots.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Portugal interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. We assess your employer, role, and technology stack, assign the right expert for your specific Portuguese employer format, and prepare them for your interview. Same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Portugal Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Farfetch Porto and Lisbon engineering interviews — e-commerce platform, microservices, API design, high-availability architecture',
+      'Feedzai ML and data engineering assessments — real-time fraud detection, streaming systems, ML at transaction scale',
+      'Revolut Lisbon fintech interviews — neobank platform, payment systems, regulatory-aware architecture',
+      'Natixis and multinational IT hub assessments — financial services engineering, enterprise Java, cloud transformation',
+      'Lisbon and Porto startup coding rounds — full-stack, SaaS, cloud-native, DevOps/SRE',
+      'AI/ML and data platform technical screens at Portuguese enterprise and scale-up tech companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Portugal Proxy Interview Support Works',
+    intro:
+      'Our Portugal proxy interview support is confidential, real-time, and calibrated to Portuguese employer interview formats. Whether facing a Farfetch e-commerce engineering panel, a Feedzai AI/ML assessment, a Revolut fintech round, or a Lisbon startup interview — our experts join your session and guide you.',
+    points: [
+      'Share your Portugal interview details via WhatsApp — employer, city, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and Portuguese employer type (e-commerce, AI/ML, fintech, enterprise, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your Portugal employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Portugal Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Portugal technical interviews — Farfetch, Feedzai, Revolut, and Lisbon/Porto tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Portugal', href: '/job-support-portugal/' },
+      { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'AI/ML proxy interview', href: '/ai-ml-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Europe', href: '/job-support-europe/' },
+      { label: 'Get interview scheduled Portugal', href: '/get-interview-scheduled-portugal/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — NEW ZEALAND ───────────────────────────────────────────
+
+export const proxyInterviewNewZealand: LandingPageConfig = {
+  slug: 'proxy-interview-new-zealand',
+  title: 'Proxy Interview Support New Zealand – Real-Time Technical Interview Help for NZ Tech Roles',
+  description:
+    'Need proxy interview support for New Zealand IT roles? Real-time live guidance during coding rounds, system design, cloud, and fintech interviews at Xero, Trade Me, ANZ NZ, and Auckland/Wellington tech companies. NZST/NZDT aligned.',
+  canonical: `${BASE_URL}/proxy-interview-new-zealand/`,
+  keywords: [
+    'proxy interview support New Zealand', 'proxy interview New Zealand', 'technical interview help New Zealand',
+    'Xero interview support', 'Trade Me interview support NZ', 'Auckland tech interview help',
+    'live interview guidance New Zealand', 'NZ tech interview support',
+  ],
+  ogTitle: 'Proxy Interview Support New Zealand – Live Technical Interview Guidance for NZ Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in New Zealand. Xero, Trade Me, ANZ NZ tech, ASB Bank tech, PaperCut, Auckland and Wellington companies. NZST/NZDT aligned.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in New Zealand',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at Xero, Trade Me, ANZ NZ, ASB Bank, PaperCut, and Auckland/Wellington tech companies — NZST/NZDT aligned.',
+  heroEyebrow: 'New Zealand Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a New Zealand IT role — an engineering round at Xero, a product and platform assessment at Trade Me, a banking IT panel at ANZ NZ or ASB, or a technical challenge at an Auckland or Wellington startup — and need real-time expert backup? Our experts join your session and provide live guidance.',
+  heroVariant:
+    "New Zealand's tech sector punches above its weight. Xero — the global cloud accounting software leader founded in Wellington — runs rigorous engineering interviews for its global product and platform teams, assessing cloud architecture, SaaS engineering, and financial software depth. Trade Me — NZ's largest online marketplace — interviews for full-stack, data, and platform engineering roles. ANZ New Zealand, ASB Bank, Westpac NZ, and BNZ run structured banking IT technical assessments. PaperCut Software builds print management platforms used globally and conducts thorough engineering interviews. Auckland's startup and scale-up scene is growing, with strong cloud and SaaS engineering talent pools. New Zealand's tech culture values pragmatism, honest technical depth, and collaborative engineering. Our experts are aligned to NZST/NZDT hours.",
+  heroUrgency: 'New Zealand interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for New Zealand, Australia, Singapore, UK, Canada, USA, Europe, and Germany.',
+  timezoneNote: 'Available for interviews scheduled in NZST (UTC+12) and NZDT (UTC+13) time slots.',
+  techSnippet:
+    'New Zealand interview technologies covered: Java, Python, React, Node.js, .NET, AWS, Azure, Kubernetes, Terraform, SaaS platform engineering, cloud accounting tech, banking IT, fintech, AI/ML, data engineering, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'Xero Cloud Accounting Engineering Interview Support',
+      description:
+        'Live guidance during Xero engineering interviews — global SaaS accounting platform architecture, multi-tenancy at cloud scale, financial data systems engineering, API and integration design for accounting ecosystems, and the thorough technical assessment process Xero uses for its global product engineering teams based in Wellington, Auckland, and worldwide.',
+    },
+    {
+      title: 'Trade Me Platform Engineering Interview Help',
+      description:
+        'Real-time support during Trade Me technical interviews — online marketplace platform engineering, full-stack development, data and analytics at NZ marketplace scale, search and recommendation systems, and the engineering culture of NZ\'s largest and most established digital commerce platform.',
+    },
+    {
+      title: 'ANZ NZ & New Zealand Banking IT Interview Guidance',
+      description:
+        'Expert live help during ANZ New Zealand, ASB Bank, Westpac NZ, and BNZ banking IT engineering interviews — enterprise Java and .NET, digital banking platform development, cloud migration for financial systems, open banking API design, and the structured technical assessments of New Zealand\'s major retail and commercial banks.',
+    },
+    {
+      title: 'PaperCut & NZ Software Product Interview Support',
+      description:
+        'Real-time guidance during PaperCut Software and New Zealand software product company engineering interviews — print management platform architecture, Windows and macOS systems engineering, network protocol integration, cross-platform product development, and the depth expected by established NZ independent software vendors.',
+    },
+    {
+      title: 'Auckland & Wellington Startup Interview Help',
+      description:
+        'Live proxy support for technical interviews at Auckland and Wellington-based startups and scale-ups — full-stack engineering, SaaS product development, cloud-native, DevOps/SRE, and the pragmatic, collaborative engineering depth NZ startup hiring teams expect.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, cloud, and AI/ML interviews at New Zealand tech companies — Kubernetes, Terraform, AWS NZ region deployments, CI/CD, observability, MLOps, and cloud architecture for New Zealand technology roles.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for New Zealand involve?',
+      answer:
+        'New Zealand proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to Xero\'s cloud SaaS engineering depth, Trade Me\'s full-stack and platform standards, NZ banking IT requirements, and Auckland and Wellington startup interview formats — confidentially.',
+    },
+    {
+      question: 'Which New Zealand companies do you support?',
+      answer:
+        'We support candidates interviewing at all major New Zealand tech employers: Wellington (Xero Wellington, Pushpay, Solnet, Catalyst IT, GreenButton), Auckland (Trade Me, Datacom, Orion Health, Fronde, Theta, Revera, PaperCut Auckland), and New Zealand banking tech (ANZ NZ, ASB Bank, Westpac NZ, BNZ, Kiwibank IT) across all major tech roles.',
+    },
+    {
+      question: 'What technologies do your New Zealand interview experts cover?',
+      answer:
+        'We cover all major New Zealand interview technologies: Java, Python, React, Node.js, .NET/C#, Ruby, AWS, Azure, Kubernetes, Terraform, Docker, CI/CD, SaaS platform engineering, cloud accounting (Xero tech stack), banking IT, fintech, AI/ML, data engineering (dbt, Snowflake, Redshift), and DevOps/SRE.',
+    },
+    {
+      question: 'How are New Zealand tech interviews different from Australian interviews?',
+      answer:
+        'New Zealand tech interviews share Australian directness but have their own distinct character. NZ tech companies are smaller and the market is more relationship-driven. Xero interviews are rigorous by global SaaS engineering standards. NZ banking interviews are structured but slightly less complex than Australian big-4 bank IT. NZ startup interviews tend to be pragmatic and candid, valuing genuine problem-solving and collaborative attitude. NZST is UTC+12 — well ahead of most markets, which affects scheduling and our availability patterns.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a New Zealand interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. New Zealand\'s advanced timezone means some interviews fall in unusual hours for other markets, but our team spans multiple timezones and we have availability for NZ interview slots. Same-day support is available for urgent requests.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+  ],
+  useCasesSection: {
+    title: 'New Zealand Interview Situations We Help Candidates Navigate',
+    cases: [
+      'Xero Wellington and Auckland engineering interviews — SaaS accounting platform, cloud architecture, financial data systems',
+      'Trade Me platform and full-stack engineering assessments — marketplace scale, data systems, product engineering',
+      'ANZ NZ and ASB Bank banking IT technical panels — enterprise Java/.NET, digital banking, cloud migration',
+      'PaperCut and NZ software product interviews — product platform engineering, systems integration, cross-platform development',
+      'Auckland and Wellington startup coding rounds — full-stack, cloud-native, microservices, DevOps/SRE',
+      'AI/ML and data engineering technical screens at NZ enterprise and tech companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our New Zealand Proxy Interview Support Works',
+    intro:
+      'Our New Zealand proxy interview support is confidential, real-time, and calibrated to NZ employer interview formats. Whether facing a Xero engineering panel, a Trade Me product interview, a NZ banking IT round, or an Auckland startup assessment — our experts join your session and guide you.',
+    points: [
+      'Share your New Zealand interview details via WhatsApp — employer, city, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and NZ employer type (Xero, banking, marketplace, startup)',
+      'Pre-interview alignment on your background and the specific expectations of your New Zealand employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'New Zealand Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for New Zealand technical interviews — Xero, Trade Me, ANZ NZ, and Auckland/Wellington tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support New Zealand', href: '/job-support-newzealand/' },
+      { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Australia', href: '/job-support-australia/' },
+      { label: 'Get interview scheduled New Zealand', href: '/get-interview-scheduled-new-zealand/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
+// ─── PROXY INTERVIEW — HONG KONG ──────────────────────────────────────────────
+
+export const proxyInterviewHongKong: LandingPageConfig = {
+  slug: 'proxy-interview-hong-kong',
+  title: 'Proxy Interview Support Hong Kong – Real-Time Technical Interview Help for HK Tech Roles',
+  description:
+    'Need proxy interview support for Hong Kong IT roles? Real-time live guidance during coding rounds, system design, banking tech, and fintech interviews at HSBC, Standard Chartered, Klook, and HK tech companies. HKT aligned.',
+  canonical: `${BASE_URL}/proxy-interview-hong-kong/`,
+  keywords: [
+    'proxy interview support Hong Kong', 'proxy interview Hong Kong', 'technical interview help Hong Kong',
+    'HSBC tech interview support', 'Standard Chartered interview support HK', 'Klook interview support',
+    'live interview guidance Hong Kong', 'HK fintech interview help',
+  ],
+  ogTitle: 'Proxy Interview Support Hong Kong – Live Technical Interview Guidance for HK Tech Roles',
+  ogDescription: 'Real-time proxy interview support for IT candidates facing technical rounds in Hong Kong. HSBC, Standard Chartered, Manulife Asia IT, Klook, HK fintech companies. HKT aligned. Same-day availability.',
+  h1: 'Proxy Interview Support for IT Professionals Facing Technical Interviews in Hong Kong',
+  tagline: 'Live, real-time technical interview guidance for candidates interviewing at HSBC, Standard Chartered, Manulife Asia IT, Klook, and Hong Kong tech companies — HKT aligned.',
+  heroEyebrow: 'Hong Kong Proxy Interview Support — Live, Real-Time, Confidential',
+  painIntro:
+    'Facing a technical interview for a Hong Kong IT role — a banking systems engineering round at HSBC or Standard Chartered, an insurance tech assessment at Manulife Asia or AIA, a consumer platform engineering interview at Klook, or a fintech challenge at a HK startup — and need real-time expert backup? Our experts join your session and provide live guidance.',
+  heroVariant:
+    "Hong Kong is Asia's most international financial centre, and its tech interview landscape reflects that. HSBC's global technology hub in Hong Kong runs large-scale banking IT engineering interviews — enterprise Java, cloud migration for financial systems, payments infrastructure, and regulatory-aware systems engineering. Standard Chartered's HK technology operations, Bank of China (Hong Kong), Hang Seng Bank, and the broader Hong Kong banking sector conduct thorough financial technology assessments. Manulife Asia and AIA Insurance run significant IT engineering programs interviewing for digital transformation roles. Klook — a Hong Kong-founded global travel and experiences platform — interviews at consumer tech engineering depth for its high-scale platform. Hong Kong's fintech sector — Bowtie, Neat, ZA Bank, WeLab — adds startup engineering opportunity. Our experts are aligned to HKT (UTC+8) hours.",
+  heroUrgency: 'Hong Kong interview today or tomorrow? Contact us on WhatsApp immediately — we respond fast.',
+  geoLine: 'Supporting interview candidates for Hong Kong, Singapore, Australia, UK, Canada, USA, Europe, and Germany.',
+  timezoneNote: 'Available for interviews scheduled in HKT (UTC+8) time slots.',
+  techSnippet:
+    'Hong Kong interview technologies covered: Java, Python, React, Node.js, AWS, Azure, Kubernetes, Terraform, banking/fintech stack, insurance tech, trading systems, consumer platform engineering, AI/ML, data engineering, and DevOps/SRE.',
+  highlights: [
+    {
+      title: 'HSBC & HK Banking IT Interview Support',
+      description:
+        'Live guidance during HSBC and Hong Kong banking technology interviews — enterprise Java for global banking systems, cloud migration in financial services, payment infrastructure engineering, trade finance platforms, regulatory-aware systems architecture (HKMA, SFC compliance), and the rigorous multi-round technical assessments of one of the world\'s largest banking technology operations.',
+    },
+    {
+      title: 'Standard Chartered & Bank IT Interview Help',
+      description:
+        'Real-time support during Standard Chartered, Bank of China (HK), Hang Seng, and HK banking IT interviews — core banking system engineering, digital banking platform development, mobile banking architecture, API and open banking design, and the structured technical competency panels of Hong Kong\'s major retail and investment banking technology teams.',
+    },
+    {
+      title: 'Manulife Asia & Insurance Tech Interview Guidance',
+      description:
+        'Expert live help during Manulife Asia, AIA IT, and Hong Kong insurance technology engineering interviews — digital insurance platform development, claims processing systems, policy management architecture, actuarial data engineering, customer-facing digital transformation, and the technical depth of Asia\'s major insurance technology operations based in Hong Kong.',
+    },
+    {
+      title: 'Klook & Consumer Tech Interview Support',
+      description:
+        'Real-time guidance during Klook and Hong Kong consumer technology platform interviews — travel and experiences booking platform at global scale, high-availability microservices, payment and checkout engineering, recommendation and search systems, mobile backend architecture, and the growth-stage consumer tech engineering depth Klook expects.',
+    },
+    {
+      title: 'Hong Kong Fintech & Startup Interview Help',
+      description:
+        'Live proxy support for technical interviews at HK fintech companies (ZA Bank, WeLab, Bowtie, Neat, TNG Wallet) and Hong Kong startups — digital banking platform engineering, payments, regulatory tech (RegTech), microservices, cloud-native development, and the fast-moving engineering culture of Hong Kong\'s growing fintech ecosystem.',
+    },
+    {
+      title: 'DevOps, Cloud & AI/ML Interview Guidance',
+      description:
+        'Real-time support for DevOps, cloud, and AI/ML interviews at Hong Kong tech companies — Kubernetes, Terraform, AWS HK region, CI/CD, observability, MLOps, trading system engineering, and cloud architecture for Hong Kong technology roles across banking, fintech, insurance, and consumer tech.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What does proxy interview support for Hong Kong involve?',
+      answer:
+        'Hong Kong proxy interview support means our expert joins your live technical interview and provides real-time, discreet guidance through coding problems, system design, and technical assessments. We are calibrated to HSBC and Standard Chartered banking IT depth, Manulife and AIA insurance tech requirements, Klook consumer platform engineering standards, and HK fintech startup interview formats — confidentially.',
+    },
+    {
+      question: 'Which Hong Kong companies do you support?',
+      answer:
+        'We support candidates interviewing at all major Hong Kong tech employers: Banking (HSBC Global Technology HK, Standard Chartered HK, Bank of China HK, Hang Seng Bank IT, BOCHK Technology), Insurance tech (Manulife Asia IT, AIA Technology, Prudential HK IT), Consumer tech (Klook, GOGOX, Lalamove), Fintech (ZA Bank, WeLab, Bowtie, Neat, TNG Wallet, HashKey), and multinational tech hubs in Hong Kong.',
+    },
+    {
+      question: 'How are Hong Kong tech interviews different from Singapore tech interviews?',
+      answer:
+        'Hong Kong tech interviews are heavily skewed towards financial services — banking, insurance, and fintech dominate HK tech hiring, whereas Singapore has a more diversified tech ecosystem including government tech (GovTech, Smart Nation), global tech company offices, regional headquarters, and a broader startup scene. HK banking interviews are particularly rigorous — HSBC and Standard Chartered run global engineering programs from HK with FAANG-adjacent technical depth. The regulatory context (HKMA, SFC vs MAS in Singapore) creates different domain knowledge requirements.',
+    },
+    {
+      question: 'What technologies do your Hong Kong interview experts cover?',
+      answer:
+        'We cover all major Hong Kong interview technologies: Java (Spring Boot, JEE, microservices, financial APIs), Python, React, Node.js, .NET/C#, AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD, banking/fintech stack (core banking, payments, trade finance, digital banking), insurance tech, consumer platform tech, trading systems, AI/ML, data engineering (Spark, Kafka, Flink), and DevOps/SRE.',
+    },
+    {
+      question: 'How quickly can I get proxy interview support for a Hong Kong interview?',
+      answer:
+        'Contact us on WhatsApp as soon as your interview is confirmed — even today or tomorrow. HKT (UTC+8) interviews may fall in morning hours for our India-based experts, but we maintain availability for early-morning support. We assess your employer, role, and technology stack, assign the right expert, and same-day support is available.',
+    },
+    {
+      question: 'Is this confidential?',
+      answer:
+        'Yes. All proxy interview support is completely confidential. We do not disclose client identities, employer names, or any interview details to any third party.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Hong Kong Interview Situations We Help Candidates Navigate',
+    cases: [
+      'HSBC and Standard Chartered HK banking IT interviews — enterprise Java, cloud migration, payments, regulatory-aware architecture',
+      'Manulife Asia and AIA insurance tech panels — digital insurance platform, claims systems, actuarial data engineering',
+      'Klook consumer tech interviews — booking platform at scale, microservices, payment checkout, mobile backend',
+      'ZA Bank, WeLab, and HK fintech interviews — digital banking, payments, regulatory tech, cloud-native development',
+      'Bank of China HK and Hang Seng banking IT assessments — core banking, digital transformation, open banking',
+      'DevOps and cloud engineering technical screens at Hong Kong enterprise and technology companies',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Hong Kong Proxy Interview Support Works',
+    intro:
+      'Our Hong Kong proxy interview support is confidential, real-time, and calibrated to HK employer interview formats. Whether facing an HSBC banking IT panel, a Manulife insurance tech round, a Klook consumer platform assessment, or a HK fintech startup interview — our experts join your session and guide you.',
+    points: [
+      'Share your Hong Kong interview details via WhatsApp — employer, role, technology stack, and format',
+      'We assign an in-house expert matched to your technology and HK employer type (banking, insurance, consumer tech, fintech)',
+      'Pre-interview alignment on your background and the specific expectations of your Hong Kong employer',
+      'Expert joins your live interview and provides real-time, discreet guidance throughout',
+      'Post-interview debrief and support for follow-up rounds',
+    ],
+  },
+  bottomCTAHeading: 'Hong Kong Interview Coming Up? Get Real-Time Expert Proxy Support Now',
+  bottomCTABody: 'Confidential live guidance for Hong Kong technical interviews — HSBC, Standard Chartered, Manulife Asia IT, and HK tech companies. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'IT job support Hong Kong', href: '/job-support-hong-kong/' },
+      { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
+    ],
+    techLinks: [
+      { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
+      { label: 'DevOps proxy interview', href: '/devops-proxy-interview-support/' },
+    ],
+    problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+    proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
+    blogLink: { label: 'Developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'IT job support Singapore', href: '/job-support-singapore/' },
+      { label: 'Get interview scheduled Hong Kong', href: '/get-interview-scheduled-hong-kong/' },
+      { label: 'All Locations', href: '/locations/' },
+    ],
+  },
+  lastmod: '2026-05-23T10:00:00.000Z',
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const allLandingPages: LandingPageConfig[] = [
@@ -7866,4 +10268,29 @@ export const allLandingPages: LandingPageConfig[] = [
   projectOnboardingHelpTexas,
   interviewProxySupportDallas,
   aiMlDevOpsSreJobSupportTexas,
+  // ── New Country Job Support pages ────────────────────────────────────────
+  jobSupportNetherlands,
+  jobSupportSweden,
+  jobSupportDenmark,
+  jobSupportFinland,
+  jobSupportNorway,
+  jobSupportSwitzerland,
+  jobSupportAustria,
+  jobSupportBelgium,
+  jobSupportSpain,
+  jobSupportPortugal,
+  jobSupportHongKong,
+  // ── New Country Proxy Interview pages ────────────────────────────────────
+  proxyInterviewNetherlands,
+  proxyInterviewSweden,
+  proxyInterviewDenmark,
+  proxyInterviewFinland,
+  proxyInterviewNorway,
+  proxyInterviewSwitzerland,
+  proxyInterviewAustria,
+  proxyInterviewBelgium,
+  proxyInterviewSpain,
+  proxyInterviewPortugal,
+  proxyInterviewNewZealand,
+  proxyInterviewHongKong,
 ];

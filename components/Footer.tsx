@@ -12,6 +12,12 @@ const locationLinks = [
   { label: 'Job Support Ireland', href: '/job-support-ireland/' },
   { label: 'Job Support Singapore', href: '/job-support-singapore/' },
   { label: 'Job Support New Zealand', href: '/job-support-newzealand/' },
+  { label: 'Job Support Netherlands', href: '/job-support-netherlands/' },
+  { label: 'Job Support Sweden', href: '/job-support-sweden/' },
+  { label: 'Job Support Switzerland', href: '/job-support-switzerland/' },
+  { label: 'Job Support Spain', href: '/job-support-spain/' },
+  { label: 'Job Support Hong Kong', href: '/job-support-hong-kong/' },
+  { label: 'All Locations', href: '/locations/' },
 ];
 
 const serviceLinks = [
@@ -42,6 +48,12 @@ const proxyInterviewLinks = [
   { label: 'Proxy Interview Ireland', href: '/interview-proxy-support-ireland/' },
   { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
   { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
+  { label: 'Proxy Interview Netherlands', href: '/proxy-interview-netherlands/' },
+  { label: 'Proxy Interview Sweden', href: '/proxy-interview-sweden/' },
+  { label: 'Proxy Interview Switzerland', href: '/proxy-interview-switzerland/' },
+  { label: 'Proxy Interview Spain', href: '/proxy-interview-spain/' },
+  { label: 'Proxy Interview Hong Kong', href: '/proxy-interview-hong-kong/' },
+  { label: 'Proxy Interview New Zealand', href: '/proxy-interview-new-zealand/' },
 ];
 
 const resourceLinks = [

@@ -1,6 +1,6 @@
 # Proxy Tech Support — Full Content Index for AI Agents
 
-> Proxy Tech Support is a real-time IT job support and proxy interview assistance service for software engineers and IT professionals. Senior in-house experts provide live, screen-share-based help during working hours — resolving bugs, unblocking architecture decisions, debugging production incidents, and delivering tasks. The same experts provide discreet real-time guidance during live technical interviews. No subcontracting. Same-day start. 1000+ professionals helped globally.
+> Proxy Tech Support is a real-time IT job support and proxy interview assistance service for software engineers and IT professionals. Senior in-house experts provide live, screen-share-based help during working hours — resolving bugs, unblocking architecture decisions, debugging production incidents, and delivering tasks. The same experts provide discreet real-time guidance during live technical interviews. No subcontracting. Same-day start. 1000+ professionals helped globally. Countries covered: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong.
 
 ---
 
@@ -497,6 +497,196 @@ Time zones: SGT aligned
 
 ---
 
+## New Country Pages — Job Support & Proxy Interview (May 2026)
+
+### Job Support — New European & Asia-Pacific Countries
+
+**IT Job Support Netherlands**
+URL: /job-support-netherlands/
+Target: IT professionals and developers working in the Netherlands
+Coverage: Amsterdam (Booking.com, ASML, Adyen, ING, Philips, bol.com, Nearmap), Rotterdam, The Hague, Eindhoven tech sectors
+Key use cases: Real-time support for Java, Python, React, DevOps, cloud, AI/ML, data engineering roles; proxy interview guidance for Dutch tech company hiring rounds
+Time zones: CET (UTC+1) / CEST (UTC+2) fully covered
+
+**IT Job Support Sweden**
+URL: /job-support-sweden/
+Target: IT professionals and developers working in Sweden
+Coverage: Stockholm (Spotify, Klarna, King, Mojang/Microsoft, H&M tech, Tele2), Gothenburg (Volvo tech, SKF, Axis), Malmö
+Key use cases: Real-time support for Stockholm unicorn tech stacks, Nordic fintech (Klarna, iZettle/PayPal, Trustly), gaming, telecom; proxy interview guidance for Swedish employers
+Time zones: CET/CEST fully covered
+
+**IT Job Support Denmark**
+URL: /job-support-denmark/
+Target: IT professionals and developers working in Denmark
+Coverage: Copenhagen (Novo Nordisk IT, Maersk technology, Vestas digital, Ørsted, Saxo Bank, MobilePay, Lunar bank)
+Key use cases: Real-time support for Danish enterprise tech stacks, Copenhagen fintech and cleantech, logistics IT; proxy interview guidance for Danish employers
+Time zones: CET/CEST fully covered
+
+**IT Job Support Finland**
+URL: /job-support-finland/
+Target: IT professionals and developers working in Finland
+Coverage: Helsinki (Nokia, Wolt, Supercell, Reaktor, F-Secure/WithSecure, Futurice, Elisa, Nordea Finland), Tampere, Oulu tech clusters
+Key use cases: Real-time support for Finnish startup and enterprise tech stacks, mobile gaming, telecom, cybersecurity roles; proxy interview guidance for Finnish employers
+Time zones: EET (UTC+2) / EEST (UTC+3) fully covered
+
+**IT Job Support Norway**
+URL: /job-support-norway/
+Target: IT professionals and developers working in Norway
+Coverage: Oslo (Equinor digital/data, Telenor, DNB tech, Finn.no, Kahoot, Visma), Bergen, Stavanger energy tech
+Key use cases: Real-time support for Norwegian energy-sector IT, Oslo fintech and SaaS companies, oil-and-gas digital transformation; proxy interview guidance for Norwegian employers
+Time zones: CET/CEST fully covered
+
+**IT Job Support Switzerland**
+URL: /job-support-switzerland/
+Target: IT professionals and developers working in Switzerland
+Coverage: Zurich (UBS technology, Credit Suisse/UBS merged tech, Zurich Insurance IT, Julius Baer, Swiss Re tech, Google Zurich, Microsoft Zurich), Geneva (CERN, WHO digital, private banking tech), Bern
+Key use cases: Real-time support for Swiss banking system IT (T24/Avaloq core banking), pharma IT (Roche, Novartis, Lonza), financial services software; proxy interview guidance for Swiss employers
+Time zones: CET/CEST fully covered
+
+**IT Job Support Austria**
+URL: /job-support-austria/
+Target: IT professionals and developers working in Austria
+Coverage: Vienna (Erste Group, Raiffeisen Bank International, A1 Telekom, Austrian Post tech, Vienna startups), Linz, Graz tech clusters
+Key use cases: Real-time support for Austrian banking tech stacks, telecom, enterprise software, Vienna startup ecosystem; proxy interview guidance for Austrian employers
+Time zones: CET/CEST fully covered
+
+**IT Job Support Belgium**
+URL: /job-support-belgium/
+Target: IT professionals and developers working in Belgium
+Coverage: Brussels (EU institutions IT, NATO tech, ING Belgium, BNP Paribas Fortis, Proximus), Antwerp (port logistics tech, Agfa, Telenet), Ghent
+Key use cases: Real-time support for Belgian banking, telecom, EU-institution IT projects, logistics tech; proxy interview guidance for Belgian employers
+Time zones: CET/CEST fully covered
+
+**IT Job Support Spain**
+URL: /job-support-spain/
+Target: IT professionals and developers working in Spain
+Coverage: Madrid (Banco Santander technology, BBVA Digital, Repsol tech, Indra, Ferrovial), Barcelona (Glovo, Cabify, Wallapop, king.com, social point, MWC ecosystem), remote Spanish roles
+Key use cases: Real-time support for Spanish banking tech (Santander, BBVA modern banking stacks), Barcelona startup tech stacks, remote-first Spanish tech companies; proxy interview guidance for Spanish employers
+Time zones: CET/CEST fully covered
+
+**IT Job Support Portugal**
+URL: /job-support-portugal/
+Target: IT professionals and developers working in Portugal
+Coverage: Lisbon (Farfetch, Feedzai, Talkdesk, Unbabel, OutSystems, Revolut Lisbon, AWS Lisbon), Porto (Blip, Critical Software, OLX), remote Portuguese roles (growing digital-nomad-friendly tech sector)
+Key use cases: Real-time support for Portuguese unicorn tech stacks, Lisbon Web Summit ecosystem, remote-first Portuguese companies; proxy interview guidance for Portuguese employers
+Time zones: WET (UTC+0) / WEST (UTC+1) covered — one hour behind rest of continental Europe
+
+**IT Job Support Hong Kong**
+URL: /job-support-hong-kong/
+Target: IT professionals and developers working in Hong Kong
+Coverage: HSBC technology division, Standard Chartered Technology, Hang Seng Bank IT, AIA technology, Cathay Pacific digital, HK fintech (Airwallex HK, FTX legacy, HashKey), HK government digitisation
+Key use cases: Real-time support for Hong Kong financial services IT, APAC fintech tech stacks, trading systems, blockchain and digital assets engineering; proxy interview guidance for Hong Kong employers
+Time zones: HKT (UTC+8) fully covered
+
+---
+
+### Proxy Interview Support — New European & Asia-Pacific Countries
+
+**Proxy Interview Netherlands**
+URL: /proxy-interview-netherlands/
+Target: IT professionals interviewing at Dutch tech companies and financial institutions
+Coverage focus: Booking.com, ASML, Adyen, ING, Philips, bol.com, IMCD, AFAS, Coolblue, TomTom, ABN AMRO tech, Rabobank, Dutch fintech ecosystem
+Key interview formats: Technical coding rounds, system design, data engineering interviews, DevOps/cloud architecture
+Time zones: CET/CEST aligned
+
+**Proxy Interview Sweden**
+URL: /proxy-interview-sweden/
+Target: IT professionals interviewing at Swedish tech companies
+Coverage focus: Spotify engineering interviews, Klarna backend/payments interviews, Ericsson 5G/telecom engineering, King gaming, Mojang/Microsoft, H&M tech, iZettle/PayPal engineering, Trustly, Bambora, Stockholm startup scene, Göteborgs unicorn pipeline
+Key interview formats: Live coding, distributed systems design, fintech payment system design, gaming backend
+Time zones: CET/CEST aligned
+
+**Proxy Interview Denmark**
+URL: /proxy-interview-denmark/
+Target: IT professionals interviewing at Danish tech companies and enterprises
+Coverage focus: Novo Nordisk IT/data science, Maersk technology and logistics IT, Vestas wind tech, MobilePay/Vipps engineering, Saxo Bank trading systems, Ørsted digital, Copenhagen fintech
+Key interview formats: Live coding, system design, data platform interviews, logistics and IoT engineering
+Time zones: CET/CEST aligned
+
+**Proxy Interview Finland**
+URL: /proxy-interview-finland/
+Target: IT professionals interviewing at Finnish tech companies and enterprises
+Coverage focus: Nokia Networks, Wolt delivery-tech, Supercell game engineering, Reaktor consulting interviews, F-Secure/WithSecure cybersecurity, Futurice engineering culture interviews, Nordea Nordic banking, Elisa telecom
+Key interview formats: Live coding, system design, mobile/gaming architecture, cybersecurity domain questions
+Time zones: EET/EEST aligned
+
+**Proxy Interview Norway**
+URL: /proxy-interview-norway/
+Target: IT professionals interviewing at Norwegian tech companies and enterprises
+Coverage focus: Equinor digital/data engineering, Telenor tech interviews, DNB bank engineering, Finn.no software engineering, Kahoot platform engineering, Visma software engineering, Norwegian energy-tech startups
+Key interview formats: Live coding, cloud/data architecture, fintech system design, energy-sector digital interviews
+Time zones: CET/CEST aligned
+
+**Proxy Interview Switzerland**
+URL: /proxy-interview-switzerland/
+Target: IT professionals interviewing at Swiss financial institutions and tech companies
+Coverage focus: UBS technology (post-merger CS/UBS), Julius Baer digital, Swiss Re technology, Zurich Insurance IT, Google Zurich engineering, Microsoft Zurich, ABB digital, Roche IT, Novartis digital, CERN technical roles
+Key interview formats: Banking system design (T24/Avaloq), Java/Python coding rounds, cloud architecture, data engineering, pharma IT
+Time zones: CET/CEST aligned
+
+**Proxy Interview Austria**
+URL: /proxy-interview-austria/
+Target: IT professionals interviewing at Austrian companies and multinationals in Austria
+Coverage focus: Erste Group digital banking, Raiffeisen Bank International tech, A1 Telekom engineering, Austrian federal IT (BMF, BRZ), Kapsch tech, Runtastic (Adidas), Vienna startup ecosystem
+Key interview formats: Live coding, enterprise software system design, banking tech, Austrian-German engineering culture interviews
+Time zones: CET/CEST aligned
+
+**Proxy Interview Belgium**
+URL: /proxy-interview-belgium/
+Target: IT professionals interviewing at Belgian tech companies and institutions
+Coverage focus: ING Belgium tech, BNP Paribas Fortis IT, Proximus engineering, Telenet tech, Agfa-Gevaert, Solvay digital, EU institutions (European Commission, European Parliament IT), NATO tech roles
+Key interview formats: Live coding, financial services system design, telecom/networking, enterprise application interviews
+Time zones: CET/CEST aligned
+
+**Proxy Interview Spain**
+URL: /proxy-interview-spain/
+Target: IT professionals interviewing at Spanish tech companies and banks
+Coverage focus: Banco Santander technology division, BBVA Digital Engineering, Telefonica tech, Glovo engineering, Cabify, Wallapop, Zara (Inditex) digital, Repsol tech, Bankinter tech, CaixaBank digital
+Key interview formats: Live coding, fintech system design, microservices architecture, React/frontend technical rounds, data platform interviews
+Time zones: CET/CEST aligned
+
+**Proxy Interview Portugal**
+URL: /proxy-interview-portugal/
+Target: IT professionals interviewing at Portuguese tech companies (Lisbon unicorns, Porto tech)
+Coverage focus: Farfetch engineering, Feedzai ML/fraud detection interviews, Talkdesk platform engineering, Unbabel NLP/ML, OutSystems platform, Revolut Lisbon, Blip.pt sports trading, Critical Software
+Key interview formats: Live coding, ML system design (Feedzai), real-time platform design, NLP/AI interviews
+Time zones: WET/WEST aligned
+
+**Proxy Interview New Zealand**
+URL: /proxy-interview-new-zealand/
+Target: IT professionals interviewing at New Zealand tech companies and banks
+Coverage focus: Xero NZ engineering (global accounting platform), Trade Me tech, ANZ NZ tech, ASB Bank IT, Westpac NZ, Air New Zealand digital, NZ government digital service (MBIE, DIA, Stats NZ), Auckland startup scene
+Key interview formats: Live coding, SaaS platform system design, cloud architecture, NZ bank tech interviews
+Time zones: NZST (UTC+12) / NZDT (UTC+13) aligned
+
+**Proxy Interview Hong Kong**
+URL: /proxy-interview-hong-kong/
+Target: IT professionals interviewing at Hong Kong financial institutions and tech companies
+Coverage focus: HSBC technology (MTR Centre, HSBC HK tech teams), Standard Chartered technology, Hang Seng Bank IT, AIA technology, Cathay Pacific digital, Airwallex engineering, HashKey Group, Hong Kong Exchanges (HKEX) technology, HKMA RegTech
+Key interview formats: Financial services system design, trading system architecture, Java/Python coding rounds, blockchain/digital assets, APAC cloud platform interviews
+Time zones: HKT (UTC+8) aligned
+
+---
+
+### Location & Service Explorer Pages
+
+**All Locations Explorer**
+URL: /locations/
+Type: Custom page (not LandingPageTemplate)
+Purpose: Global country-wise explorer listing all 20 countries with direct links to Job Support, Proxy Interview, and Get Interview Scheduled pages per country. Primary internal linking hub for geographic SEO.
+Countries listed: USA, Canada, UK, Ireland, Australia, Germany, Europe, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong
+Schema: CollectionPage + BreadcrumbList JSON-LD
+
+**Services Explorer**
+URL: /services/
+Type: Custom page (not LandingPageTemplate)
+Purpose: Service catalogue hub listing all three core services with country-grouped service links. Entry point for users discovering services by country or service type.
+Core services: Proxy Job Support, Proxy Interview Support, Get Interview Scheduled
+Countries grouped: USA, Canada, Ireland, UK, Germany, Australia (plus note pointing to /locations/ for remaining countries)
+Schema: CollectionPage + BreadcrumbList JSON-LD
+
+---
+
 ## Canada Services — Technology Job Support
 
 ### 4. DevOps Job Support Canada
@@ -948,7 +1138,7 @@ A: Yes. Ireland's tech sector operates under GDPR (enforced by Ireland's Data Pr
 - **Website:** https://proxytechsupport.com
 - **Primary services:** Real-time IT job support, proxy interview assistance, career coaching
 - **Contact WhatsApp:** +91-96606-14469
-- **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand
+- **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong
 - **USA Texas cities covered:** Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
 - **Texas specialties:** W2/C2C/H1B/GC/EAD consulting support, Fortune 500 enterprise projects, Irving Las Colinas banking and telecom, Plano corporate tech campuses, CST-timezone aligned, emergency production support
 - **Canada cities covered:** Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
