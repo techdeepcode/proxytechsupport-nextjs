@@ -32,7 +32,7 @@ export default function TopBar({ variant = 'legacyDark' }: Props) {
         >
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem', color: '#ffffff' }}>
             <span style={{ fontWeight: 500, lineHeight: 1.45 }}>
-              🔥 24×7 Proxy Interview Support · Job Support · Profile Engineering | USA • Canada • UK • Europe
+              🔥 24×7 Proxy Interview Support · Job Support · Profile Engineering | USA • Canada • UK • Europe • Australia
             </span>
           </div>
           <SocialIcons style={{ color: '#ffffff' }} />
