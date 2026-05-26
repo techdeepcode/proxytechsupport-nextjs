@@ -450,7 +450,7 @@ export const technologies: Technology[] = [
     href: '/workday-job-support/',
     title: 'Workday HCM, Finance & Integration',
     description:
-      'Real-time Workday job support and proxy interview assistance for HCM, Financial Management, Payroll, Integrations, Reporting, Security, Adaptive Planning, Recruiting, and 2026R1 release regression scenarios.',
+      'Real-time Workday HRIS, HCM, Payroll, Finance, Integrations, Reporting, Security, Adaptive Planning, and 2026R1 release support with proxy interview help and interview scheduling support.',
     challenges: [
       'Tenant Configuration After 2026R1 Release',
       'EIB / Core Connector / Studio Integration Failures',

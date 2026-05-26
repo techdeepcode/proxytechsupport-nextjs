@@ -151,7 +151,8 @@ export const workdayJobSupport: LandingPageConfig = {
   canonical: `${BASE_URL}/workday-job-support/`,
   keywords: [
     'Workday job support', 'Workday proxy job support', 'Workday real-time support',
-    'Workday HCM support', 'Workday production support', 'Workday tenant support',
+    'Workday HCM support', 'Workday HRIS job support', 'Workday HRIS support',
+    'Workday production support', 'Workday tenant support',
     'Workday integration support', 'Workday consultant help', '2026R1 Workday support',
   ],
   h1: 'Workday Job Support — Real-Time Expert Help for HCM, Finance & Integrations',
@@ -163,7 +164,7 @@ export const workdayJobSupport: LandingPageConfig = {
     'Workday environments are complex — HCM business processes, EIB/Studio integrations, security domain configurations, Adaptive Planning models, and Prism Analytics dashboards all interact in ways that take deep tenant-level experience to resolve quickly. Our in-house Workday experts join your session and provide hands-on real-time help — no sub-contracting, same-day available, all time zones covered. Updated for Workday 2026R1 release impact, AI-driven workflow changes, and current enterprise market demand.',
   geoLine: 'Supporting Workday consultants and employees across USA, Canada, UK, Europe, Ireland, Germany, Netherlands, France, Sweden, Switzerland, Australia, New Zealand, Singapore, UAE, and worldwide.',
   timezoneNote: 'Available across US, Canada, UK, European, Australian, and Asian Pacific business hours.',
-  techSnippet: 'We support all Workday modules: HCM, Financial Management, Payroll, Integrations (EIB, Core Connector, Studio, REST/SOAP), Adaptive Planning, Recruiting, Reporting, Prism Analytics, Security, Absence, Time Tracking, Benefits, Compensation, Workday Extend, and Workday 2026R1.',
+  techSnippet: 'We support all Workday modules: HCM, HRIS, Financial Management, Payroll, Integrations (EIB, Core Connector, Studio, REST/SOAP), Adaptive Planning, Recruiting, Reporting, Prism Analytics, Security, Absence, Time Tracking, Benefits, Compensation, Workday Extend, and Workday 2026R1.',
   highlights: workdayHighlights,
   faqs: workdayJobSupportFaqs(''),
   useCasesSection: {
@@ -208,6 +209,8 @@ export const workdayJobSupport: LandingPageConfig = {
       { label: 'Workday 2026R1 release support', href: '/workday-2026r1-release-support/' },
       { label: 'Workday job support Canada', href: '/workday-job-support-canada/' },
       { label: 'Workday job support Europe', href: '/workday-job-support-europe/' },
+      { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
+      { label: 'Workday HRIS proxy interview', href: '/workday-hris-proxy-interview-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -225,6 +228,7 @@ export const workdayProxyInterviewSupport: LandingPageConfig = {
     'Workday proxy interview support', 'Workday proxy interview', 'Workday interview help',
     'Workday interview assistance', 'Workday HCM interview support', 'Workday integration interview',
     'live Workday interview guidance', 'Workday consultant interview',
+    'Workday HRIS proxy interview support', 'HRIS Analyst interview support',
   ],
   h1: 'Workday Proxy Interview Support — Live Real-Time Guidance During Your Interview',
   tagline: 'Discreet real-time expert guidance during live Workday technical and functional interviews — HCM, Integration, Financials, Payroll, Reporting, Security, and 2026R1 topics covered.',
@@ -278,6 +282,7 @@ export const workdayProxyInterviewSupport: LandingPageConfig = {
       { label: 'Workday proxy interview UK', href: '/workday-proxy-interview-uk/' },
       { label: 'Workday proxy interview Europe', href: '/workday-proxy-interview-europe/' },
       { label: 'Proxy interview support global', href: '/proxy-interview-support/' },
+      { label: 'Workday HRIS proxy interview', href: '/workday-hris-proxy-interview-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -295,6 +300,7 @@ export const workdayInterviewScheduled: LandingPageConfig = {
     'get Workday interviews scheduled', 'Workday interview calls', 'Workday profile optimization',
     'Workday resume support', 'Workday LinkedIn optimization', 'Workday recruiter outreach',
     'Workday job search support', 'Workday interview scheduling',
+    'Workday HRIS interview scheduling', 'HRIS Analyst Workday interviews',
   ],
   h1: 'Get Workday Interviews Scheduled — Profile Engineering & Recruiter Outreach',
   tagline: 'Stop waiting for interview calls. We engineer your Workday profile for maximum recruiter visibility — HCM, Integration, Financials, Payroll, Reporting, and Security consultant roles.',
@@ -366,6 +372,7 @@ export const workdayHcmJobSupport: LandingPageConfig = {
     'Workday HCM job support', 'Workday Human Capital Management support', 'Workday Core HR help',
     'Workday HCM consultant support', 'Workday business process support', 'Workday staffing configuration',
     'Workday absence management support', 'Workday benefits configuration help',
+    'Workday HRIS job support', 'Workday HRIS Analyst support', 'HRIS production support',
   ],
   h1: 'Workday HCM Job Support — Real-Time Human Capital Management Expert Help',
   tagline: 'Live Workday HCM support during your working hours — Core HR, Staffing, Absence, Benefits, Compensation, Talent, and 2026R1 release regression coverage.',
@@ -376,7 +383,7 @@ export const workdayHcmJobSupport: LandingPageConfig = {
     'Workday HCM covers the entire employee lifecycle — from hiring and onboarding through compensation, absence, benefits, performance, and offboarding. Each module has interdependencies that require deep tenant-level experience to configure and troubleshoot. Workday 2026R1 introduced AI-driven enhancements to Staffing, Recruiting, and Talent modules — creating new regression scenarios for active implementations. Our in-house HCM experts cover all of it.',
   geoLine: 'Supporting Workday HCM consultants and employees across USA, Canada, UK, Europe, Ireland, Germany, Netherlands, and worldwide.',
   timezoneNote: 'Available across US, UK, European, and Asia Pacific business hours for Workday HCM support.',
-  techSnippet: 'We cover all Workday HCM modules: Core HR, Staffing, Absence Management, Benefits Administration, Compensation, Talent & Performance, Recruiting, Learning, Time Tracking, and 2026R1 AI-driven HCM workflow changes.',
+  techSnippet: 'We cover all Workday HCM and HRIS modules: Core HR, Staffing, Absence Management, Benefits Administration, Compensation, Talent & Performance, Recruiting, Learning, Time Tracking, HRIS Analyst daily support, and 2026R1 AI-driven HCM workflow changes.',
   highlights: workdayHighlights,
   faqs: workdayModuleFaqs('Workday HCM', 'Core HR configuration, staffing model setup, business process design, absence accrual rules, benefits eligibility, compensation plans, talent review cycles, and 2026R1 HCM release changes'),
   useCasesSection: {
@@ -420,6 +427,7 @@ export const workdayHcmJobSupport: LandingPageConfig = {
       { label: 'Workday security job support', href: '/workday-security-job-support/' },
       { label: 'Workday recruiting job support', href: '/workday-recruiting-job-support/' },
       { label: 'Workday 2026R1 release support', href: '/workday-2026r1-release-support/' },
+      { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -769,6 +777,7 @@ export const workdayReportingAnalyticsJobSupport: LandingPageConfig = {
     additionalLinks: [
       { label: 'Workday Adaptive Planning support', href: '/workday-adaptive-planning-job-support/' },
       { label: 'Workday security job support', href: '/workday-security-job-support/' },
+      { label: 'Workday HRIS reporting support', href: '/workday-hris-job-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -839,6 +848,7 @@ export const workdaySecurityJobSupport: LandingPageConfig = {
     additionalLinks: [
       { label: 'Workday 2026R1 release support', href: '/workday-2026r1-release-support/' },
       { label: 'Workday testing release support', href: '/workday-testing-release-support/' },
+      { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -1145,6 +1155,7 @@ export const workdayJobSupportUSA: LandingPageConfig = {
       { label: 'Workday integration job support', href: '/workday-integration-job-support/' },
       { label: 'Workday 2026R1 release support', href: '/workday-2026r1-release-support/' },
       { label: 'IT job support USA', href: '/job-support-usa/' },
+      { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -1344,6 +1355,7 @@ export const workdayJobSupportCanada: LandingPageConfig = {
     additionalLinks: [
       { label: 'IT job support Canada', href: '/job-support-canada/' },
       { label: 'Workday 2026R1 release support', href: '/workday-2026r1-release-support/' },
+      { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -1543,6 +1555,7 @@ export const workdayJobSupportUK: LandingPageConfig = {
     additionalLinks: [
       { label: 'IT job support UK', href: '/job-support-uk/' },
       { label: 'Workday 2026R1 release support', href: '/workday-2026r1-release-support/' },
+      { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -2601,6 +2614,207 @@ export const workdayJobSupportSaudiArabia: LandingPageConfig = {
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
+// WORKDAY HRIS PAGES
+// ═══════════════════════════════════════════════════════════════════════════
+
+export const workdayHrisJobSupport: LandingPageConfig = {
+  slug: 'workday-hris-job-support',
+  title: 'Workday HRIS Job Support — Real-Time HRIS Analyst & People Systems Help',
+  description:
+    'Workday HRIS issue blocking your day? Get real-time Workday HRIS job support for HRIS Analysts, People Systems Analysts, and HR Systems Analysts. Employee data management, worker changes, supervisory org issues, business process support, HR reporting, security access, and production tickets. Same-day start.',
+  canonical: `${BASE_URL}/workday-hris-job-support/`,
+  keywords: [
+    'Workday HRIS job support', 'Workday HRIS Analyst support', 'Workday People Systems Analyst support',
+    'Workday Systems Analyst support', 'HRIS production support', 'Workday employee data support',
+    'Workday HRIS reporting support', 'HRIS data management support', 'Workday worker data support',
+    'Workday HRIS production issues', 'HRIS Analyst Workday help',
+  ],
+  h1: 'Workday HRIS Job Support — Real-Time Help for HRIS Analysts & People Systems Teams',
+  tagline: 'Live Workday HRIS support during your working hours — employee data management, worker changes, supervisory org errors, business process issues, HR reporting, security access, and daily HRIS production ticket support.',
+  heroEyebrow: 'Workday HRIS Support — 2026R1 Ready',
+  painIntro:
+    'Employee data change failing? Supervisory org misconfigured? Position or job profile data error blocking a hire or transfer? Business process routing incorrectly for an HR workflow? Our in-house Workday HRIS experts fix it in real time — during your working hours.',
+  heroVariant:
+    'Workday HRIS Analysts and People Systems Analysts are the operational backbone of any Workday deployment — managing worker data, business process configurations, security access requests, HR operational reporting, and day-to-day production tickets. These roles carry significant responsibility with tight SLAs. Workday 2026R1 introduced HCM AI enhancements that affect HRIS daily workflows. Our experts provide same-day, real-time support calibrated to HRIS Analyst workloads.',
+  geoLine: 'Supporting Workday HRIS Analysts and People Systems teams across USA, Canada, UK, Europe, Australia, Singapore, and worldwide.',
+  timezoneNote: 'Available across US, Canadian, UK, European, and Asia Pacific business hours for Workday HRIS support.',
+  techSnippet: 'HRIS Analyst support areas: worker data changes, supervisory org management, position and job profile data, business process configuration, security group access, Workday HCM reporting, calculated fields, absence and time tracking, payroll and benefits coordination, and 2026R1 HRIS workflow changes.',
+  highlights: workdayHighlights,
+  faqs: [
+    {
+      question: 'What Workday HRIS job support do you provide for HRIS Analysts?',
+      answer:
+        'We provide real-time Workday HRIS job support for HRIS Analysts, People Systems Analysts, and HR Systems Analysts. Our in-house Workday experts help with employee data management — worker profile changes, supervisory org configuration, position and job profile data, business process troubleshooting, security access resolution, HR operational reporting, absence and time tracking issues, payroll and benefits coordination, and daily production ticket support. Same-day start, all time zones covered.',
+    },
+    {
+      question: 'Can you help with Workday employee data and worker change issues?',
+      answer:
+        'Yes. Worker data management is one of the most common HRIS support areas. We help resolve worker data validation errors, business process routing failures for hires/transfers/terminations, supervisory organization configuration issues, position data mismatches, job profile assignment errors, effective date sequencing problems, and data integrity issues affecting downstream Payroll and Benefits.',
+    },
+    {
+      question: 'Do you support Workday HRIS production tickets and daily operational support?',
+      answer:
+        'Yes. Daily HRIS production support is a core part of our service. HRIS Analyst roles often involve resolving a high volume of production incidents — security access requests, business process exceptions, worker data errors, report malfunctions, and system behavior questions from HR business partners. We provide expert backup during peak periods, go-live hypercare, or when your team is stuck on a complex issue.',
+    },
+    {
+      question: 'Do you provide Workday HRIS proxy interview support?',
+      answer:
+        'Yes. We provide real-time, discreet guidance during live Workday HRIS Analyst and People Systems Analyst interviews — HCM configuration scenarios, worker data management questions, business process walkthroughs, security access design, HR reporting scenarios, and operational support questions. See our dedicated Workday HRIS proxy interview support page.',
+    },
+    {
+      question: 'Do you support People Systems Analyst and Workday Systems Analyst roles?',
+      answer:
+        'Yes. People Systems Analysts, Workday Systems Analysts, and HR Systems Analysts all work within Workday HCM and HRIS environments. We provide support calibrated to each role — from operational HRIS data management through to system configuration, integrations with HR tools, and reporting. Whether in a purely functional HRIS role or a more technical people systems role, we have the right expert.',
+    },
+  ],
+  useCasesSection: {
+    title: 'Workday HRIS Issues We Help Resolve',
+    cases: [
+      'Employee worker data change failing — business process routing error or data validation issue',
+      'Supervisory org misconfiguration causing hire or transfer transactions to fail',
+      'Position or job profile data error blocking a workforce planning or compensation cycle',
+      'Security access issue — user missing HRIS data access or receiving incorrect data in reports',
+      'Absence plan accrual not calculating correctly for an employee population',
+      'HR operational report returning incorrect employee population after a business process change',
+    ],
+  },
+  proxySection: {
+    title: 'Workday HRIS Proxy Interview Support',
+    intro:
+      'HRIS Analyst and People Systems Analyst interviews test practical Workday knowledge — worker data scenarios, business process design, security access questions, HR reporting, and operational troubleshooting. Our experts guide you in real time.',
+    points: [
+      'Worker data management and supervisory org scenario questions',
+      'Business process design and approval chain configuration walkthroughs',
+      'Security access and domain security policy questions for HRIS roles',
+      'HR reporting — Advanced Report design, calculated fields, data source questions',
+      'Absence, time tracking, and benefits coordination scenario discussions',
+      'Workday 2026R1 HRIS workflow and AI-driven HCM change questions',
+    ],
+  },
+  bottomCTAHeading: 'Workday HRIS Issue? Get Expert Help Now',
+  bottomCTABody:
+    'Real-time Workday HRIS job support for HRIS Analysts, People Systems Analysts, and HR Systems Analysts — worker data, business processes, security access, reporting, and production support. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'Workday job support USA', href: '/workday-job-support-usa/' },
+      { label: 'Workday job support UK', href: '/workday-job-support-uk/' },
+    ],
+    techLinks: [
+      { label: 'Workday HCM job support', href: '/workday-hcm-job-support/' },
+      { label: 'Workday job support hub', href: '/workday-job-support/' },
+    ],
+    problemLink: { label: 'Workday HRIS proxy interview', href: '/workday-hris-proxy-interview-support/' },
+    proxyLink: { label: 'Workday reporting analytics support', href: '/workday-reporting-analytics-job-support/' },
+    blogLink: { label: 'Read IT job support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Workday security job support', href: '/workday-security-job-support/' },
+      { label: 'Workday payroll job support', href: '/workday-payroll-job-support/' },
+      { label: 'Workday recruiting job support', href: '/workday-recruiting-job-support/' },
+      { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+    ],
+  },
+  lastmod: LASTMOD,
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const workdayHrisProxyInterviewSupport: LandingPageConfig = {
+  slug: 'workday-hris-proxy-interview-support',
+  title: 'Workday HRIS Proxy Interview Support — HRIS Analyst & People Systems Interview Help',
+  description:
+    'Workday HRIS interview coming up? Get real-time proxy interview support for HRIS Analyst, People Systems Analyst, and Workday Systems Analyst roles. Worker data scenarios, business process questions, security access, HR reporting, and HRIS operations walkthroughs. Same-day available.',
+  canonical: `${BASE_URL}/workday-hris-proxy-interview-support/`,
+  keywords: [
+    'Workday HRIS proxy interview support', 'HRIS Analyst interview support', 'Workday HRIS interview help',
+    'People Systems Analyst interview support', 'Workday Systems Analyst interview help',
+    'Workday HRIS Analyst proxy interview', 'HRIS interview assistance', 'Workday HCM HRIS interview',
+    'HR systems analyst interview support', 'Workday HRIS interview guidance',
+  ],
+  h1: 'Workday HRIS Proxy Interview Support — Real-Time Help for HRIS Analyst & People Systems Roles',
+  tagline: 'Discreet real-time interview guidance for Workday HRIS Analyst, People Systems Analyst, and Workday Systems Analyst interviews — worker data scenarios, business process questions, security access, HR reporting, and operational walkthroughs.',
+  heroEyebrow: 'Workday HRIS Interview Support — 2026',
+  painIntro:
+    'HRIS Analyst or People Systems Analyst interview scheduled? Worried about Workday configuration scenario questions, employee data scenarios, or business process troubleshooting walkthroughs? Our in-house Workday HRIS experts join your interview and guide you through every question in real time.',
+  heroVariant:
+    'Workday HRIS and People Systems Analyst interviews test practical, operational Workday knowledge — not just theory. Interviewers ask about real business process configurations, worker data scenarios, security access troubleshooting, and HR reporting design. These roles are at major US, Canadian, and UK enterprises, and the interviews are conducted by senior Workday leads and HR operations managers. Our HRIS-specialized experts provide discreet real-time guidance calibrated to each interview format.',
+  geoLine: 'Supporting HRIS Analyst and People Systems Analyst interview candidates across USA, Canada, UK, Europe, Australia, Singapore, and worldwide.',
+  timezoneNote: 'Available for Workday HRIS interviews across all major time zones — EST, CST, PST, GMT, CET, AEST.',
+  highlights: workdayHighlights,
+  faqs: [
+    {
+      question: 'What Workday HRIS proxy interview support do you provide for HRIS Analyst roles?',
+      answer:
+        'We provide real-time, discreet proxy interview support for Workday HRIS Analyst, People Systems Analyst, HR Systems Analyst, and Workday Systems Analyst interviews. Our experts join your live interview and guide you through worker data scenarios, business process troubleshooting, security access design, HR reporting questions, absence and time tracking scenarios, and behavioral questions specific to HRIS operational roles. Available same-day.',
+    },
+    {
+      question: 'What interview formats do HRIS Analyst roles use?',
+      answer:
+        'Workday HRIS Analyst interviews typically include scenario-based technical rounds (how would you resolve this worker data issue?), operational knowledge checks (how do you process a retroactive hire?), system configuration walkthroughs, HR reporting design questions, and behavioral rounds focused on stakeholder management. We guide you through all formats in real time.',
+    },
+    {
+      question: 'Do you cover People Systems Analyst and Workday Systems Analyst interview questions?',
+      answer:
+        'Yes. People Systems Analyst and Workday Systems Analyst roles blend HRIS operational knowledge with more technical Workday configuration skills — business process design, security administration, integrations with other HR tools, and Workday reporting. Our experts cover both the operational HRIS side and the more technical people systems configuration side.',
+    },
+    {
+      question: 'Do you support HRIS interview candidates at specific companies?',
+      answer:
+        'Yes. We prepare candidates for HRIS Analyst and People Systems Analyst interviews at US Fortune 500 companies, mid-market tech firms, financial services companies, healthcare systems, and Workday consulting partners. We calibrate guidance to the specific employer type, interview format, and Workday module scope. Contact us on WhatsApp with the job description and employer for tailored support.',
+    },
+    {
+      question: 'Can you help with Workday HRIS job support after I get the role?',
+      answer:
+        'Yes. Once you start your HRIS Analyst or People Systems Analyst role, we provide ongoing real-time Workday HRIS job support during your working hours — daily production tickets, complex configuration questions, and escalated HRIS issues. Many clients use both our proxy interview support and post-hire HRIS job support. Same-day start, all time zones.',
+    },
+  ],
+  useCasesSection: {
+    title: 'HRIS Interview Scenarios We Help Candidates Navigate',
+    cases: [
+      'HRIS Analyst interview — worker data scenario: retroactive hire, data correction, effective date issue',
+      'People Systems Analyst panel — business process configuration and approval chain design walkthrough',
+      'Workday Systems Analyst interview — security access design and domain security policy questions',
+      'HR reporting round — Advanced Report design, calculated fields, and data source configuration scenarios',
+      'Absence and time tracking scenario — accrual plan configuration and employee exception handling',
+      'HRIS production support scenario — resolving a business process stuck in queue or a bulk data load issue',
+    ],
+  },
+  proxySection: {
+    title: 'How Our Workday HRIS Proxy Interview Support Works',
+    intro:
+      'Our HRIS interview support is calibrated to the practical, operational nature of HRIS Analyst interviews — covering both the technical configuration knowledge and operational judgment questions these roles require.',
+    points: [
+      'Share your interview date, role (HRIS Analyst / People Systems Analyst), employer, and likely topics via WhatsApp',
+      'Pre-interview alignment — we review your Workday background and calibrate answer depth to your experience',
+      'Expert joins your live interview and provides discreet real-time guidance through each scenario',
+      'Coverage for worker data, business process, security, reporting, and HRIS operations questions',
+      'Post-interview support available for follow-up rounds or additional HRIS interviews',
+    ],
+  },
+  bottomCTAHeading: 'Workday HRIS Interview Coming Up? Get Expert Support Now',
+  bottomCTABody:
+    'Real-time proxy interview guidance for HRIS Analyst, People Systems Analyst, and Workday Systems Analyst roles — same-day available. Contact us on WhatsApp now.',
+  relatedLinks: {
+    geoLinks: [
+      { label: 'Workday proxy interview USA', href: '/workday-proxy-interview-usa/' },
+      { label: 'Workday proxy interview Canada', href: '/workday-proxy-interview-canada/' },
+    ],
+    techLinks: [
+      { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
+      { label: 'Workday HCM job support', href: '/workday-hcm-job-support/' },
+    ],
+    problemLink: { label: 'Workday job support hub', href: '/workday-job-support/' },
+    proxyLink: { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+    blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Workday reporting analytics support', href: '/workday-reporting-analytics-job-support/' },
+      { label: 'Workday security job support', href: '/workday-security-job-support/' },
+      { label: 'Proxy interview support global', href: '/proxy-interview-support/' },
+    ],
+  },
+  lastmod: LASTMOD,
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
 // EXPORT: ALL WORKDAY PAGES
 // ═══════════════════════════════════════════════════════════════════════════
 
@@ -2609,6 +2823,9 @@ export const allWorkdayPages = [
   workdayJobSupport,
   workdayProxyInterviewSupport,
   workdayInterviewScheduled,
+  // HRIS pages
+  workdayHrisJobSupport,
+  workdayHrisProxyInterviewSupport,
   // Module pages
   workdayHcmJobSupport,
   workdayFinancialManagementJobSupport,

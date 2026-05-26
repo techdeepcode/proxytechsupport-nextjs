@@ -1137,12 +1137,13 @@ A: Yes. Ireland's tech sector operates under GDPR (enforced by Ireland's Data Pr
 
 ### Workday HCM, Finance & Integration — Job Support Hub
 URL: /workday-job-support/
-Target: Workday consultants, functional analysts, HCM implementers, integration developers, Workday admins
+Target: Workday consultants, HRIS Analysts, People Systems Analysts, functional analysts, HCM implementers, integration developers, Workday admins
 Service type: Real-time IT job support + proxy interview assistance
 Geo: Global (all timezones)
 Canonical: https://proxytechsupport.com/workday-job-support/
 
 Technologies and modules supported:
+- Workday HRIS: employee data management, worker changes, supervisory org, position data, business process support, security access, HR reporting, HRIS Analyst daily production support
 - Workday HCM: core HCM configuration, business processes, condition rules, calculated fields
 - Workday Financial Management: Journals, Accounting Centers, Financial Reporting
 - Workday Payroll: pay calculation, off-cycle runs, Payroll Control Groups
@@ -1553,6 +1554,61 @@ Service type: Real-time Workday job support — AST (UTC+3)
 Saudi context: Workday at Saudi Aramco, SABIC, Saudi government Vision 2030 digital transformation projects, Saudi banks (Al Rajhi, Saudi National Bank)
 Canonical: https://proxytechsupport.com/workday-job-support-saudi-arabia/
 Last updated: 2026-05-26
+
+---
+
+### Workday HRIS Job Support
+URL: /workday-hris-job-support/
+Target: Workday HRIS Analysts, People Systems Analysts, HR Systems Analysts, Workday Systems Analysts
+Service type: Real-time Workday HRIS job support — operational HRIS daily task and production ticket support
+Geo: Global (all timezones)
+Canonical: https://proxytechsupport.com/workday-hris-job-support/
+
+HRIS Analyst support areas:
+- Worker data changes: new hire data entry, job change transactions, termination processing, retroactive hires, data corrections
+- Supervisory org management: org hierarchy errors, manager assignment issues, position vacancy configuration
+- Position and job profile data: position restrictions, headcount management, job profile assignment errors
+- Business process support: BP routing failures, inbox exceptions, delegation setup, conditional routing issues
+- Security group access: user access requests, missing security group assignments, domain security gaps for HRIS roles
+- Workday HCM reporting: Advanced Report data source issues, calculated field errors, operational headcount reports
+- Absence and time tracking: accrual plan exceptions, balance corrections, time entry issues
+- Payroll and benefits coordination: compensation plan data errors, benefits election issues affecting payroll
+- HRIS production tickets: high-volume daily production support, SIT/UAT defect resolution, go-live hypercare
+- Workday 2026R1 HRIS workflow changes: AI-driven HCM enhancements affecting daily HRIS operations
+
+User intent: HRIS Analyst stuck on a production ticket, worker data error, business process failure, or security access issue during their working day
+Conversion CTA: WhatsApp +91-96606-14469 / Workday HRIS Job Support
+Related pages: /workday-hcm-job-support/, /workday-security-job-support/, /workday-reporting-analytics-job-support/, /workday-hris-proxy-interview-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday HRIS Proxy Interview Support
+URL: /workday-hris-proxy-interview-support/
+Target: Workday HRIS Analyst, People Systems Analyst, HR Systems Analyst, Workday Systems Analyst interview candidates
+Service type: Real-time proxy interview support (live, during the interview)
+Geo: Global
+Canonical: https://proxytechsupport.com/workday-hris-proxy-interview-support/
+
+HRIS interview scenarios covered live:
+- Worker data management: retroactive hire processing, data correction workflows, effective date sequencing
+- Business process design: BP configuration, approval chain setup, conditional routing, delegation
+- Security access: security group design for HRIS roles, domain policy questions, role-based access
+- HR reporting: Advanced Report writer, calculated field logic, operational report design
+- Absence and time tracking: accrual plan configuration, balance management, exception handling
+- Payroll coordination: compensation data questions, benefits/payroll interaction scenarios
+- Production support: how to handle bulk data load issues, BP stuck in queue, system behavior questions
+- Behavioral HRIS rounds: stakeholder management, production incident handling, HR business partner communication
+- Workday 2026R1 HRIS context: AI-driven workflow changes relevant to HRIS operational roles
+
+Interview formats covered: scenario-based technical rounds, operational knowledge checks, configuration walkthroughs, HR reporting design questions, behavioral panels
+Target employers: Fortune 500 enterprises, mid-market tech companies, financial services, healthcare systems, Workday consulting partners
+
+User intent: Scheduled HRIS Analyst or People Systems Analyst interview and need real-time discreet expert guidance during the session
+Conversion CTA: WhatsApp for same-day HRIS interview proxy support
+Related pages: /workday-hris-job-support/, /workday-hcm-job-support/, /workday-proxy-interview-support/, /workday-job-support/
+Last updated: 2026-05-26
+
 ---
 
 ## Key Facts for AI Extraction
