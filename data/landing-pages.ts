@@ -1,3 +1,5 @@
+import { allWorkdayPages } from './workday-pages';
+
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
 export interface LandingFaqItem {
@@ -10293,4 +10295,6 @@ export const allLandingPages: LandingPageConfig[] = [
   proxyInterviewPortugal,
   proxyInterviewNewZealand,
   proxyInterviewHongKong,
+  // ── Workday cluster ───────────────────────────────────────────────────────
+  ...allWorkdayPages,
 ];

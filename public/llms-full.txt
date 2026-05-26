@@ -1,4 +1,4 @@
-# Proxy Tech Support — Full Content Index for AI Agents
+﻿# Proxy Tech Support — Full Content Index for AI Agents
 
 > Proxy Tech Support is a real-time IT job support and proxy interview assistance service for software engineers and IT professionals. Senior in-house experts provide live, screen-share-based help during working hours — resolving bugs, unblocking architecture decisions, debugging production incidents, and delivering tasks. The same experts provide discreet real-time guidance during live technical interviews. No subcontracting. Same-day start. 1000+ professionals helped globally. Countries covered: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong.
 
@@ -96,7 +96,7 @@ Technologies and frameworks supported (2026):
 **Deep Learning:**
 - PyTorch 2.5/2.6: torch.compile, FlashAttention 3, FSDP2, DeepSpeed ZeRO-3, BF16/FP8
 - Hugging Face Transformers 4.45+, PEFT 0.13+, Accelerate 1.x, TRL 0.12+, Datasets 3.x
-- Fine-tuning: LoRA, QLoRA, DoRA, DPO, ORPO, RLHF, Unsloth (2× speed, 60% less VRAM), LLaMA-Factory, Axolotl
+- Fine-tuning: LoRA, QLoRA, DoRA, DPO, ORPO, RLHF, Unsloth (2Ã— speed, 60% less VRAM), LLaMA-Factory, Axolotl
 
 **AI Inference Infrastructure:**
 - vLLM 0.6+: PagedAttention, continuous batching, tensor parallelism, LoRA serving
@@ -343,8 +343,8 @@ A complete production-grade guide to building a Golden Signals dashboard in Data
 - Saturation: CPU, memory, pod restarts, OOM kills, replica availability (desired vs running vs available), connection pool (active/idle/wait/timeout), queue depth, consumer lag
 
 **Success Rate vs Availability (key distinction):**
-- Success Rate = Successful Requests / Total Requests × 100 (request-level reliability; degrades when service receives traffic and returns errors)
-- Availability = Successful Health Checks / Total Health Checks × 100 (reachability/uptime reliability; degrades when service is unreachable or failing health checks)
+- Success Rate = Successful Requests / Total Requests Ã— 100 (request-level reliability; degrades when service receives traffic and returns errors)
+- Availability = Successful Health Checks / Total Health Checks Ã— 100 (reachability/uptime reliability; degrades when service is unreachable or failing health checks)
 - Both metrics are required; they explain different failure modes
 - Data sources: Success Rate from APM traces and application metrics; Availability from Synthetic monitors, health check endpoints, uptime monitors, SLO availability rollup
 
@@ -363,8 +363,8 @@ A complete production-grade guide to building a Golden Signals dashboard in Data
 $env (env tag), $service (service tag), $region (region tag), $availability_zone (availability-zone tag), $cluster (kube_cluster_name), $namespace (kube_namespace), $pod (pod_name), $host (host), $version (version tag)
 
 **Widget Thresholds:**
-- Current Success Rate: green ≥99.9%, yellow 99.5–99.9%, red <99.5%
-- Current Availability: green ≥99.9%, yellow 99.5–99.9%, red <99.5%
+- Current Success Rate: green â‰¥99.9%, yellow 99.5–99.9%, red <99.5%
+- Current Availability: green â‰¥99.9%, yellow 99.5–99.9%, red <99.5%
 - Current Error Rate: green <0.1%, yellow 0.1–0.5%, red >0.5%
 - P95 Latency: green <500ms, yellow 500ms–1000ms, red >1000ms
 
@@ -375,16 +375,16 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 - Reference lines at 1, 6, and 14.4 on the burn rate timeseries widget
 
 **Troubleshooting Flows (5 symptom patterns):**
-1. Success Rate drops → Error Rate Over Time → HTTP Status Code Breakdown → Top Failing Endpoints → Error Type Breakdown → Recent Deployments → Dependency Health → Logs/Traces → Saturation
-2. Availability drops → Availability Monitor → Region/AZ Availability → Health Check Failures → Pod Restarts → Replica Availability → Load Balancer Health → Dependency Outage → Recent Deployments
-3. Latency increases → P95/P99 Latency → Slowest Endpoints → Dependency Latency → Database Latency → Queue Lag → CPU/Memory → Traffic Spike → Recent Deployment
-4. Traffic spike → Request Rate → Traffic by Endpoint → Traffic by Region → Error Rate → Saturation → Autoscaling/Replicas → Connection Pool
-5. Errors after deployment → Deployment Events overlay → Error Rate by Version → Success Rate by Version → Latency by Version → Logs/Traces filtered by version → Rollback decision
+1. Success Rate drops â†’ Error Rate Over Time â†’ HTTP Status Code Breakdown â†’ Top Failing Endpoints â†’ Error Type Breakdown â†’ Recent Deployments â†’ Dependency Health â†’ Logs/Traces â†’ Saturation
+2. Availability drops â†’ Availability Monitor â†’ Region/AZ Availability â†’ Health Check Failures â†’ Pod Restarts â†’ Replica Availability â†’ Load Balancer Health â†’ Dependency Outage â†’ Recent Deployments
+3. Latency increases â†’ P95/P99 Latency â†’ Slowest Endpoints â†’ Dependency Latency â†’ Database Latency â†’ Queue Lag â†’ CPU/Memory â†’ Traffic Spike â†’ Recent Deployment
+4. Traffic spike â†’ Request Rate â†’ Traffic by Endpoint â†’ Traffic by Region â†’ Error Rate â†’ Saturation â†’ Autoscaling/Replicas â†’ Connection Pool
+5. Errors after deployment â†’ Deployment Events overlay â†’ Error Rate by Version â†’ Success Rate by Version â†’ Latency by Version â†’ Logs/Traces filtered by version â†’ Rollback decision
 
 **Datadog Query Patterns:**
-- Success Rate: (sum of success metric / sum of total request metric) × 100, using .as_count() aggregation
-- Error Rate: (sum of error metric / sum of total request metric) × 100
-- Availability: (sum of healthy checks / sum of total checks) × 100
+- Success Rate: (sum of success metric / sum of total request metric) Ã— 100, using .as_count() aggregation
+- Error Rate: (sum of error metric / sum of total request metric) Ã— 100
+- Availability: (sum of healthy checks / sum of total checks) Ã— 100
 - SLO Burn Rate: error_rate_in_window / allowed_error_rate_for_SLO
 - P95 Latency by endpoint: p95 of latency metric grouped by resource_name
 - Pod restarts: sum of kubernetes.containers.restarts by pod_name as count
@@ -471,7 +471,7 @@ Coverage focus:
 - Hamburg & Stuttgart: Otto Group engineering, Daimler (now Mercedes-Benz) digital, Airbus DevOps/ML, Bosch IoT & AI
 - SAP ecosystem: ABAP/4, S/4HANA, SAP BTP (Business Technology Platform), SAP Analytics Cloud, SAP RISE, custom ABAP OOP development
 - EU Blue Card / Chancenkarte context: supporting international tech professionals working in Germany on skilled worker visas
-- German engineering culture: thorough technical depth expected (Gründlichkeit), whiteboard architecture, code-review-in-interview formats
+- German engineering culture: thorough technical depth expected (GrÃ¼ndlichkeit), whiteboard architecture, code-review-in-interview formats
 - Regulatory: BDSG (German data protection), BaFin (financial services), EU DORA compliance, GDPR implementation
 Time zones: CET (Central European Time) / CEST aligned
 
@@ -511,14 +511,14 @@ Time zones: CET (UTC+1) / CEST (UTC+2) fully covered
 **IT Job Support Sweden**
 URL: /job-support-sweden/
 Target: IT professionals and developers working in Sweden
-Coverage: Stockholm (Spotify, Klarna, King, Mojang/Microsoft, H&M tech, Tele2), Gothenburg (Volvo tech, SKF, Axis), Malmö
+Coverage: Stockholm (Spotify, Klarna, King, Mojang/Microsoft, H&M tech, Tele2), Gothenburg (Volvo tech, SKF, Axis), MalmÃ¶
 Key use cases: Real-time support for Stockholm unicorn tech stacks, Nordic fintech (Klarna, iZettle/PayPal, Trustly), gaming, telecom; proxy interview guidance for Swedish employers
 Time zones: CET/CEST fully covered
 
 **IT Job Support Denmark**
 URL: /job-support-denmark/
 Target: IT professionals and developers working in Denmark
-Coverage: Copenhagen (Novo Nordisk IT, Maersk technology, Vestas digital, Ørsted, Saxo Bank, MobilePay, Lunar bank)
+Coverage: Copenhagen (Novo Nordisk IT, Maersk technology, Vestas digital, Ã˜rsted, Saxo Bank, MobilePay, Lunar bank)
 Key use cases: Real-time support for Danish enterprise tech stacks, Copenhagen fintech and cleantech, logistics IT; proxy interview guidance for Danish employers
 Time zones: CET/CEST fully covered
 
@@ -592,14 +592,14 @@ Time zones: CET/CEST aligned
 **Proxy Interview Sweden**
 URL: /proxy-interview-sweden/
 Target: IT professionals interviewing at Swedish tech companies
-Coverage focus: Spotify engineering interviews, Klarna backend/payments interviews, Ericsson 5G/telecom engineering, King gaming, Mojang/Microsoft, H&M tech, iZettle/PayPal engineering, Trustly, Bambora, Stockholm startup scene, Göteborgs unicorn pipeline
+Coverage focus: Spotify engineering interviews, Klarna backend/payments interviews, Ericsson 5G/telecom engineering, King gaming, Mojang/Microsoft, H&M tech, iZettle/PayPal engineering, Trustly, Bambora, Stockholm startup scene, GÃ¶teborgs unicorn pipeline
 Key interview formats: Live coding, distributed systems design, fintech payment system design, gaming backend
 Time zones: CET/CEST aligned
 
 **Proxy Interview Denmark**
 URL: /proxy-interview-denmark/
 Target: IT professionals interviewing at Danish tech companies and enterprises
-Coverage focus: Novo Nordisk IT/data science, Maersk technology and logistics IT, Vestas wind tech, MobilePay/Vipps engineering, Saxo Bank trading systems, Ørsted digital, Copenhagen fintech
+Coverage focus: Novo Nordisk IT/data science, Maersk technology and logistics IT, Vestas wind tech, MobilePay/Vipps engineering, Saxo Bank trading systems, Ã˜rsted digital, Copenhagen fintech
 Key interview formats: Live coding, system design, data platform interviews, logistics and IoT engineering
 Time zones: CET/CEST aligned
 
@@ -1130,6 +1130,429 @@ A: Yes. Ireland uses IST (Irish Standard Time, UTC+1) in summer and GMT (UTC+0) 
 Q: Do you help with GDPR and EU AI Act compliance in Irish tech projects?
 A: Yes. Ireland's tech sector operates under GDPR (enforced by Ireland's Data Protection Commission, which is the lead supervisory authority for many US tech companies' EU operations) and increasingly under the EU AI Act. We assist with GDPR-compliant data pipeline architecture, data residency requirements, privacy-by-design implementation, and EU AI Act risk classification for AI systems developed by Irish-based teams.
 
+
+---
+
+## Workday Job Support & Proxy Interview Pages
+
+### Workday HCM, Finance & Integration — Job Support Hub
+URL: /workday-job-support/
+Target: Workday consultants, functional analysts, HCM implementers, integration developers, Workday admins
+Service type: Real-time IT job support + proxy interview assistance
+Geo: Global (all timezones)
+Canonical: https://proxytechsupport.com/workday-job-support/
+
+Technologies and modules supported:
+- Workday HCM: core HCM configuration, business processes, condition rules, calculated fields
+- Workday Financial Management: Journals, Accounting Centers, Financial Reporting
+- Workday Payroll: pay calculation, off-cycle runs, Payroll Control Groups
+- Workday Integrations: EIB (Enterprise Interface Builder), Core Connector, Studio (XSLT/XSLT Mappings), REST/SOAP APIs, Workday Extend
+- Workday Adaptive Planning: driver-based models, workforce plans, consolidation
+- Workday Recruiting & Talent: job requisition workflows, offer templates, onboarding
+- Workday Security: Security Groups (ISG, DSG, ASG, USG), domain security policies, business process security
+- Prism Analytics: Prism datasets, calculated fields, Discovery Boards, custom reports
+- Workday Reporting: Simple Reports, Advanced Reports, Matrix Reports, Composite Reports, BIRT
+- Workday 2026R1 Release: regression testing support, new feature adoption, tenant cutover readiness
+
+Common challenges resolved:
+- EIB / Core Connector / Studio integration failures and data mapping errors
+- Business process configuration bugs after 2026R1 tenant update
+- Payroll calculation errors and off-cycle batch processing failures
+- Security role misconfigurations blocking end-user access
+- Adaptive Planning model reconciliation and Sandbox refresh issues
+- Prism Analytics pipeline failures and dataset integration errors
+- Go-live hypercare support and SIT/UAT defect resolution
+- Workday proxy interview real-time guidance
+
+User intent: Stuck on a Workday task, bug, or integration error at work; preparing for a Workday proxy interview; needing help with 2026R1 post-release regression
+Conversion CTA: WhatsApp +91-96606-14469 / Explore Workday Support
+Related pages: /workday-proxy-interview-support/, /workday-hcm-job-support/, /workday-integration-job-support/, /workday-2026r1-release-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Proxy Interview Support
+URL: /workday-proxy-interview-support/
+Target: Workday consultants interviewing for HCM, Finance, Payroll, Integration, or Reporting roles
+Service type: Real-time proxy interview assistance (live, during the interview)
+Geo: Global
+Canonical: https://proxytechsupport.com/workday-proxy-interview-support/
+
+Modules and topics covered live during interviews:
+- HCM configuration questions: BP setup, condition rules, staffing models
+- Integration questions: EIB structure, Core Connector fields, Studio XSLT debugging
+- Reporting questions: Advanced Report writer, calculated fields, BIRT
+- Security questions: ISG/DSG/ASG setup, domain policies, permission conflicts
+- Payroll questions: pay calc triggers, retro pay, off-cycle processing
+- Adaptive Planning: driver-based models, scenario planning, P&L consolidation
+- 2026R1 release scenario questions: new features, regression, API changes
+
+User intent: Scheduled Workday technical interview (phone/video screen or panel) and need real-time expert support during the session
+Conversion CTA: WhatsApp for same-day proxy interview support
+Related pages: /workday-job-support/, /workday-interview-scheduled/, /workday-proxy-interview-usa/
+Last updated: 2026-05-26
+
+---
+
+### Workday Interview Scheduling Support
+URL: /workday-interview-scheduled/
+Target: Workday consultants seeking HCM, Finance, Payroll, or Integration roles
+Service type: Interview scheduling assistance (profile positioning, outreach, interview setup)
+Geo: Global
+Canonical: https://proxytechsupport.com/workday-interview-scheduled/
+
+Support areas:
+- Profile positioning for Workday functional and technical roles
+- Recruiter outreach and follow-up strategy for Workday consulting firms (Accenture, Deloitte, IBM, Cognizant, Infosys Workday practices)
+- Interview scheduling at Workday partner firms and direct enterprise employers
+- Resume alignment to Workday module keywords (HCM, Payroll, Integration, Reporting, Adaptive Planning)
+- Interview format preparation: HCM scenario questions, integration walkthrough demos
+
+User intent: Workday consultant not getting enough interview calls; needs help with positioning and outreach to land Workday HCM or Finance interviews
+Related pages: /workday-job-support/, /workday-proxy-interview-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday HCM Job Support
+URL: /workday-hcm-job-support/
+Target: Workday HCM functional analysts and consultants
+Service type: Real-time HCM task and implementation support
+Modules: Core HCM, Staffing, Compensation, Benefits, Absence, Time Tracking, Performance, Talent
+Common tasks supported: Business process configuration, condition rules, calculated fields, staffing event debugging, compensation plan setup, absence type configuration, performance review cycle issues
+User intent: Stuck on Workday HCM configuration or implementation task during active project
+Canonical: https://proxytechsupport.com/workday-hcm-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Financial Management Job Support
+URL: /workday-financial-management-job-support/
+Target: Workday Financials consultants and finance system analysts
+Service type: Real-time Financial Management task support
+Modules: Financial Accounting, Accounts Payable, Accounts Receivable, Expense Management, Procurement, Asset Management, Banking & Settlement, Financial Reporting
+Common tasks: Journal entry automation, Accounting Center config, financial close process setup, supplier invoice workflow, financial report design
+User intent: Stuck on Workday Financial Management configuration, journal issues, or reporting gaps
+Canonical: https://proxytechsupport.com/workday-financial-management-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Payroll Job Support
+URL: /workday-payroll-job-support/
+Target: Workday Payroll functional analysts and consultants
+Service type: Real-time Payroll configuration and debugging support
+Common tasks: Pay calculation debugging, off-cycle payroll processing, Payroll Control Group setup, retro pay handling, tax withholding configuration, year-end payroll close
+User intent: Payroll calculation errors, off-cycle run failures, or payroll configuration issues on live project
+Canonical: https://proxytechsupport.com/workday-payroll-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Adaptive Planning Job Support
+URL: /workday-adaptive-planning-job-support/
+Target: Adaptive Planning consultants and FP&A analysts
+Service type: Real-time Adaptive Planning model and configuration support
+Common tasks: Driver-based model setup, workforce planning configuration, consolidation logic, P&L model reconciliation, Sandbox refresh post-2026R1, scenario versioning
+User intent: Adaptive Planning model errors, consolidation mismatches, or Sandbox configuration issues
+Canonical: https://proxytechsupport.com/workday-adaptive-planning-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Integration Job Support
+URL: /workday-integration-job-support/
+Target: Workday integration developers and technical consultants
+Service type: Real-time integration build and debugging support
+Technologies: EIB (Enterprise Interface Builder), Core Connector, Workday Studio (XSLT), REST API, SOAP API, Workday Extend, RaaS
+Common tasks: EIB data mapping errors, Core Connector field mismatches, Studio XSLT transformation debugging, REST API authentication failures, outbound integration scheduling, inbound file processing errors
+User intent: Integration failing in Workday tenant, data not flowing correctly between Workday and external systems
+Canonical: https://proxytechsupport.com/workday-integration-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Reporting & Analytics Job Support
+URL: /workday-reporting-analytics-job-support/
+Target: Workday report writers, Prism Analytics developers, and data analysts
+Service type: Real-time reporting and analytics support
+Technologies: Simple Reports, Advanced Reports, Matrix Reports, Composite Reports, BIRT, Prism Analytics, Workday Calculated Fields, Discovery Boards
+Common tasks: Advanced Report field configuration, calculated field formula errors, Prism dataset pipeline failures, Discovery Board setup, report performance optimization
+User intent: Workday report returning wrong data, Prism pipeline failing, or report builder configuration issue
+Canonical: https://proxytechsupport.com/workday-reporting-analytics-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Security Job Support
+URL: /workday-security-job-support/
+Target: Workday security administrators and implementation consultants
+Service type: Real-time security configuration and troubleshooting support
+Topics: Security Groups (ISG, DSG, ASG, USG), Domain Security Policies, Business Process Security Policies, Role-Based Access Control, Segment-Based Security, Security Group audit and cleanup
+Common tasks: User missing access after BP change, security group conflict resolution, domain policy gaps, SIT security audit support
+User intent: Workday security misconfiguration blocking user access or failing SIT security test
+Canonical: https://proxytechsupport.com/workday-security-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Recruiting & Talent Job Support
+URL: /workday-recruiting-job-support/
+Target: Workday Recruiting and Talent consultants
+Service type: Real-time Recruiting/Talent module configuration support
+Topics: Job Requisition workflows, Offer Letter templates, Candidate Stage configuration, Onboarding task routing, Succession Planning, Career Hub, Performance Review cycles
+User intent: Recruiting workflow misconfiguration, offer letter template issues, or onboarding task routing failures
+Canonical: https://proxytechsupport.com/workday-recruiting-job-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Testing & Release Support
+URL: /workday-testing-release-support/
+Target: Workday QA analysts, test coordinators, and implementation project managers
+Service type: SIT/UAT testing support and release regression assistance
+Topics: Test script design for Workday modules, SIT defect triage and resolution, UAT test coordination, regression test planning for bi-annual releases, Workday tenant sandbox testing
+User intent: SIT/UAT defects during Workday implementation, release regression failures, or test coverage gaps
+Canonical: https://proxytechsupport.com/workday-testing-release-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday 2026R1 Release Support
+URL: /workday-2026r1-release-support/
+Target: Workday tenants upgrading to 2026R1 release
+Service type: Release regression support and new feature adoption assistance
+2026R1 key changes supported:
+- HCM AI-assisted workflows and Workday Illuminate features
+- Payroll compliance rule changes
+- Integration API deprecations and new endpoints
+- Prism Analytics pipeline breaking changes
+- Security policy framework updates
+- Adaptive Planning calculation engine updates
+User intent: Production issues or regression failures after 2026R1 tenant update; need expert help validating configurations and resolving release-specific bugs
+Canonical: https://proxytechsupport.com/workday-2026r1-release-support/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support USA
+URL: /workday-job-support-usa/
+Target: Workday consultants on US-based projects (W2, C2C, H1B, GC, EAD)
+Service type: Real-time Workday job support — EST/CST/MST/PST timezone coverage
+US context: Support for Workday implementations at US Fortune 500, healthcare (Epic + Workday integration), higher education, government/public sector
+Canonical: https://proxytechsupport.com/workday-job-support-usa/
+Related pages: /workday-proxy-interview-usa/, /workday-interview-scheduled-usa/
+Last updated: 2026-05-26
+
+---
+
+### Workday Proxy Interview Support USA
+URL: /workday-proxy-interview-usa/
+Target: Workday consultants with US-based technical interviews
+Service type: Real-time proxy interview support — EST/CST/MST/PST
+Canonical: https://proxytechsupport.com/workday-proxy-interview-usa/
+Related pages: /workday-job-support-usa/, /workday-interview-scheduled-usa/
+Last updated: 2026-05-26
+
+---
+
+### Workday Interview Scheduling Support USA
+URL: /workday-interview-scheduled-usa/
+Target: Workday consultants seeking US project roles
+Service type: Interview scheduling assistance for US Workday consulting firms
+Canonical: https://proxytechsupport.com/workday-interview-scheduled-usa/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Canada
+URL: /workday-job-support-canada/
+Target: Workday consultants on Canadian-based projects (Toronto, Vancouver, Calgary, Montreal)
+Service type: Real-time Workday job support — EST/PST/MST timezone coverage
+Canada context: Support for Workday at Canadian banks (RBC, TD, Scotiabank, CIBC, BMO), TELUS, Loblaw, Canadian public sector
+Canonical: https://proxytechsupport.com/workday-job-support-canada/
+Related pages: /workday-proxy-interview-canada/, /workday-interview-scheduled-canada/
+Last updated: 2026-05-26
+
+---
+
+### Workday Proxy Interview Support Canada
+URL: /workday-proxy-interview-canada/
+Target: Workday consultants with Canadian technical interviews
+Service type: Real-time proxy interview support — EST/PST/MST
+Canonical: https://proxytechsupport.com/workday-proxy-interview-canada/
+Last updated: 2026-05-26
+
+---
+
+### Workday Interview Scheduling Support Canada
+URL: /workday-interview-scheduled-canada/
+Target: Workday consultants seeking Canadian project roles
+Service type: Interview scheduling assistance for Canadian Workday consulting firms
+Canonical: https://proxytechsupport.com/workday-interview-scheduled-canada/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support UK
+URL: /workday-job-support-uk/
+Target: Workday consultants on UK-based projects (London, Manchester, Edinburgh)
+Service type: Real-time Workday job support — GMT/BST timezone coverage
+UK context: Workday at UK banks (Barclays, HSBC, Lloyds), retail (Tesco, M&S), public sector (NHS Workday implementation)
+Canonical: https://proxytechsupport.com/workday-job-support-uk/
+Related pages: /workday-proxy-interview-uk/, /workday-interview-scheduled-uk/
+Last updated: 2026-05-26
+
+---
+
+### Workday Proxy Interview Support UK
+URL: /workday-proxy-interview-uk/
+Target: Workday consultants with UK technical interviews
+Service type: Real-time proxy interview support — GMT/BST
+Canonical: https://proxytechsupport.com/workday-proxy-interview-uk/
+Last updated: 2026-05-26
+
+---
+
+### Workday Interview Scheduling Support UK
+URL: /workday-interview-scheduled-uk/
+Target: Workday consultants seeking UK project roles
+Service type: Interview scheduling assistance for UK Workday consulting firms
+Canonical: https://proxytechsupport.com/workday-interview-scheduled-uk/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Europe
+URL: /workday-job-support-europe/
+Target: Workday consultants on European-based projects
+Service type: Real-time Workday job support — CET/CEST timezone coverage
+Canonical: https://proxytechsupport.com/workday-job-support-europe/
+Related pages: /workday-proxy-interview-europe/, /workday-interview-scheduled-europe/
+Last updated: 2026-05-26
+
+---
+
+### Workday Proxy Interview Support Europe
+URL: /workday-proxy-interview-europe/
+Target: Workday consultants with European technical interviews
+Service type: Real-time proxy interview support — CET/CEST
+Canonical: https://proxytechsupport.com/workday-proxy-interview-europe/
+Last updated: 2026-05-26
+
+---
+
+### Workday Interview Scheduling Support Europe
+URL: /workday-interview-scheduled-europe/
+Target: Workday consultants seeking European project roles
+Service type: Interview scheduling assistance for European Workday consulting firms
+Canonical: https://proxytechsupport.com/workday-interview-scheduled-europe/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Ireland
+URL: /workday-job-support-ireland/
+Target: Workday consultants on Irish projects (Dublin, Cork, Galway)
+Service type: Real-time Workday job support — IST/GMT
+Ireland context: Workday at multinational EMEA HQs in Dublin (Google, Meta, Amazon, Accenture, Deloitte, IBM Irish practices)
+Canonical: https://proxytechsupport.com/workday-job-support-ireland/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Germany
+URL: /workday-job-support-germany/
+Target: Workday consultants on German-based projects
+Service type: Real-time Workday job support — CET/CEST
+Germany context: Workday at German enterprises (SAP ecosystem integrations, Siemens, Deutsche Bank, BMW Workday HCM)
+Canonical: https://proxytechsupport.com/workday-job-support-germany/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Netherlands
+URL: /workday-job-support-netherlands/
+Target: Workday consultants on Dutch projects (Amsterdam, Rotterdam)
+Service type: Real-time Workday job support — CET/CEST
+Canonical: https://proxytechsupport.com/workday-job-support-netherlands/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support France
+URL: /workday-job-support-france/
+Target: Workday consultants on French projects (Paris)
+Service type: Real-time Workday job support — CET/CEST
+Canonical: https://proxytechsupport.com/workday-job-support-france/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Sweden
+URL: /workday-job-support-sweden/
+Target: Workday consultants on Swedish projects (Stockholm, Gothenburg)
+Service type: Real-time Workday job support — CET/CEST
+Canonical: https://proxytechsupport.com/workday-job-support-sweden/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Switzerland
+URL: /workday-job-support-switzerland/
+Target: Workday consultants on Swiss projects (Zurich, Basel, Geneva)
+Service type: Real-time Workday job support — CET/CEST
+Canonical: https://proxytechsupport.com/workday-job-support-switzerland/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Australia
+URL: /workday-job-support-australia/
+Target: Workday consultants on Australian projects (Sydney, Melbourne, Brisbane)
+Service type: Real-time Workday job support — AEST/AEDT
+Australia context: Workday at Australian banks (ANZ, Commonwealth, Westpac, NAB), mining (BHP, Rio Tinto), public sector
+Canonical: https://proxytechsupport.com/workday-job-support-australia/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support New Zealand
+URL: /workday-job-support-new-zealand/
+Target: Workday consultants on New Zealand projects
+Service type: Real-time Workday job support — NZST/NZDT
+Canonical: https://proxytechsupport.com/workday-job-support-new-zealand/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Singapore
+URL: /workday-job-support-singapore/
+Target: Workday consultants on Singapore-based projects
+Service type: Real-time Workday job support — SGT (UTC+8)
+Singapore context: Workday at APAC regional HQs, MAS-regulated financial institutions, GovTech Singapore, Temasek portfolio companies
+Canonical: https://proxytechsupport.com/workday-job-support-singapore/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support UAE
+URL: /workday-job-support-uae/
+Target: Workday consultants on UAE-based projects (Dubai, Abu Dhabi)
+Service type: Real-time Workday job support — GST (UTC+4)
+UAE context: Workday at UAE government entities, ADNOC, Emirates Group, Majid Al Futtaim, UAE banking sector
+Canonical: https://proxytechsupport.com/workday-job-support-uae/
+Last updated: 2026-05-26
+
+---
+
+### Workday Job Support Saudi Arabia
+URL: /workday-job-support-saudi-arabia/
+Target: Workday consultants on Saudi Arabia-based projects (Riyadh, Jeddah)
+Service type: Real-time Workday job support — AST (UTC+3)
+Saudi context: Workday at Saudi Aramco, SABIC, Saudi government Vision 2030 digital transformation projects, Saudi banks (Al Rajhi, Saudi National Bank)
+Canonical: https://proxytechsupport.com/workday-job-support-saudi-arabia/
+Last updated: 2026-05-26
 ---
 
 ## Key Facts for AI Extraction

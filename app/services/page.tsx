@@ -130,6 +130,62 @@ const countryServices: CountryServiceGroup[] = [
   },
 ];
 
+type WorkdayServiceGroup = {
+  region: string;
+  links: { label: string; href: string }[];
+};
+
+const workdayServices: WorkdayServiceGroup[] = [
+  {
+    region: 'Workday Core',
+    links: [
+      { label: 'Workday Job Support', href: '/workday-job-support/' },
+      { label: 'Workday Proxy Interview', href: '/workday-proxy-interview-support/' },
+      { label: 'Workday Interview Scheduled', href: '/workday-interview-scheduled/' },
+    ],
+  },
+  {
+    region: 'Workday USA',
+    links: [
+      { label: 'Workday Job Support USA', href: '/workday-job-support-usa/' },
+      { label: 'Workday Proxy Interview USA', href: '/workday-proxy-interview-usa/' },
+      { label: 'Workday Interview Scheduled USA', href: '/workday-interview-scheduled-usa/' },
+    ],
+  },
+  {
+    region: 'Workday Canada',
+    links: [
+      { label: 'Workday Job Support Canada', href: '/workday-job-support-canada/' },
+      { label: 'Workday Proxy Interview Canada', href: '/workday-proxy-interview-canada/' },
+      { label: 'Workday Interview Scheduled Canada', href: '/workday-interview-scheduled-canada/' },
+    ],
+  },
+  {
+    region: 'Workday UK',
+    links: [
+      { label: 'Workday Job Support UK', href: '/workday-job-support-uk/' },
+      { label: 'Workday Proxy Interview UK', href: '/workday-proxy-interview-uk/' },
+      { label: 'Workday Interview Scheduled UK', href: '/workday-interview-scheduled-uk/' },
+    ],
+  },
+  {
+    region: 'Workday Europe',
+    links: [
+      { label: 'Workday Job Support Europe', href: '/workday-job-support-europe/' },
+      { label: 'Workday Proxy Interview Europe', href: '/workday-proxy-interview-europe/' },
+      { label: 'Workday Ireland', href: '/workday-job-support-ireland/' },
+    ],
+  },
+  {
+    region: 'Workday APAC & Middle East',
+    links: [
+      { label: 'Workday Job Support Australia', href: '/workday-job-support-australia/' },
+      { label: 'Workday Job Support Singapore', href: '/workday-job-support-singapore/' },
+      { label: 'Workday Job Support UAE', href: '/workday-job-support-uae/' },
+    ],
+  },
+];
+
 const resourceLinks = [
   { label: 'Technologies We Support', href: '/technologies/' },
   { label: 'Knowledge Base', href: '/knowledge-base/' },
@@ -234,6 +290,26 @@ export default function ServicesPage() {
             Portugal, Singapore, Hong Kong, New Zealand, and all of Europe.{' '}
             <Link href="/locations/" style={{ color: '#4fc3a1', textDecoration: 'none' }}>See all locations →</Link>
           </p>
+
+          <h2 className="svc-section-title">Workday HCM, Finance &amp; Integration Support</h2>
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+            Dedicated Workday job support and proxy interview assistance — HCM, Financial Management, Payroll, Integrations, Reporting, Security, Adaptive Planning, Recruiting, and 2026R1 release support.{' '}
+            <Link href="/workday-job-support/" style={{ color: '#4fc3a1', textDecoration: 'none' }}>View Workday Hub →</Link>
+          </p>
+          <div className="svc-country-grid">
+            {workdayServices.map((group) => (
+              <div className="svc-country-card" key={group.region}>
+                <div className="svc-country-name">{group.region}</div>
+                <ul>
+                  {group.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
 
           <h2 className="svc-section-title">Explore More Resources</h2>
           <div className="svc-resource-row">

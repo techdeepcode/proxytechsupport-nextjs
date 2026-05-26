@@ -165,17 +165,66 @@
 
 - [Golden Signals Dashboard for SRE: Datadog Success Rate, Availability, SLO, Error Budget and Troubleshooting Widgets](/blog/golden-signals-dashboard-sre-datadog-success-rate-availability/): Complete expert guide to building a production-grade Golden Signals dashboard in Datadog. Covers: Success Rate vs Availability definitions and formulas, 9-section dashboard layout (Current Health, Progression Over Time, Failure Analysis, Latency, Traffic, Saturation, Dependencies, Logs and Traces, Deployment Correlation), Datadog template variables ($env, $service, $region, $availability_zone, $cluster, $namespace, $pod, $host, $version), widget-by-widget implementation for all 29 widgets, troubleshooting flow for 5 symptom patterns (Success Rate drop, Availability drop, Latency spike, Traffic surge, Post-deployment errors), Datadog query formulas, SLO burn rate alerting, interview preparation for SRE/DevOps/Datadog roles, 9 FAQs with structured data, and CTAs to SRE job support and proxy interview support services.
 
+## Workday Job Support & Proxy Interview Pages
+
+- [Workday Job Support](/workday-job-support/): Real-time Workday job support hub — HCM, Financial Management, Payroll, Integrations (EIB/Studio/Core Connector), Adaptive Planning, Reporting, Prism Analytics, Security, Recruiting, and Workday 2026R1 release regression support. In-house Workday experts. Same-day start. Updated for May 2026.
+- [Workday Proxy Interview Support](/workday-proxy-interview-support/): Real-time live proxy interview guidance for Workday HCM, Integration, Financials, Payroll, Reporting, and Security consultant roles. Discreet, module-specific, 2026R1 topics covered. All time zones.
+- [Get Workday Interviews Scheduled](/workday-interview-scheduled/): Workday profile engineering and recruiter outreach service — keyword targeting, LinkedIn optimization, active outreach to Workday staffing firms. HCM, Integration, Financials, Payroll, Reporting roles. USA, Canada, UK, Europe.
+- [Workday HCM Job Support](/workday-hcm-job-support/): Real-time Workday Human Capital Management support — Core HR, Staffing, Absence, Benefits, Compensation, Talent, Recruiting, and 2026R1 HCM AI workflow changes.
+- [Workday Financial Management Job Support](/workday-financial-management-job-support/): Real-time Workday Finance support — GL, AP, AR, Procurement, Projects, Banking, period close, and 2026R1 Finance automation changes.
+- [Workday Payroll Job Support](/workday-payroll-job-support/): Workday Payroll calculation errors, off-cycle failures, tax configuration issues, garnishments, year-end (W-2/T4), and 2026R1 payroll compliance changes. USA/Canada/UK payroll expertise.
+- [Workday Adaptive Planning Job Support](/workday-adaptive-planning-job-support/): Workday Adaptive Planning (FP&A) model errors, driver-based forecasting failures, OfficeConnect, workforce planning, and 2026R1 AI forecasting changes.
+- [Workday Integration Job Support](/workday-integration-job-support/): Real-time Workday Integration support — EIB, Core Connector, Studio, XSLT, REST/SOAP, PECI/PICOF, Workday Extend, RAAS, and 2026R1 API changes.
+- [Workday Reporting & Analytics Job Support](/workday-reporting-analytics-job-support/): Workday Advanced Reports, Matrix Reports, Composite Reports, Calculated Fields, BIRT layouts, Prism Analytics, Data Cloud, and 2026R1 reporting framework changes.
+- [Workday Security Job Support](/workday-security-job-support/): Workday Security domain policies, role-based access, business process security, integration security, audit configuration, and 2026R1 Security framework changes.
+- [Workday Recruiting Job Support](/workday-recruiting-job-support/): Workday Recruiting requisition workflows, candidate pipeline, offer management, background check integrations, and 2026R1 AI recruiting and Skills Cloud enhancements.
+- [Workday Testing & Release Support](/workday-testing-release-support/): Workday SIT/UAT testing, 2026R1 regression testing, defect triage, hypercare support, and go-live production stabilization.
+- [Workday 2026R1 Release Support](/workday-2026r1-release-support/): Dedicated Workday 2026R1 release impact support — HCM AI workflow changes, Payroll compliance updates, Integration API changes, Prism Data Cloud schema updates, Security framework changes. Same-day.
+
+### Workday USA Pages
+- [Workday Job Support USA](/workday-job-support-usa/): Real-time Workday support for US projects — all US time zones (EST/CST/MST/PST). Big 4, boutique Workday partners, and direct enterprise. HCM, Finance, Payroll, Integrations.
+- [Workday Proxy Interview USA](/workday-proxy-interview-usa/): Live Workday interview guidance for US roles — Deloitte, Accenture, Collaborative Solutions, Sierra-Cedar, Alight, Mercer, and direct enterprise clients. All US time zones.
+- [Get Workday Interviews Scheduled USA](/workday-interview-scheduled-usa/): Workday profile engineering for US recruiter visibility — US Workday staffing firms, LinkedIn, Dice, Indeed. HCM, Integration, Financials, Payroll roles.
+
+### Workday Canada Pages
+- [Workday Job Support Canada](/workday-job-support-canada/): Real-time Workday support for Canadian projects — EST to PST. Canada-specific payroll (T4/ROE/CRA/provincial tax), banking HCM, and enterprise implementations.
+- [Workday Proxy Interview Canada](/workday-proxy-interview-canada/): Live Workday interview guidance for Canadian roles — major banks (RBC, TD, Scotiabank), insurance, consulting firms. Canada payroll compliance covered.
+- [Get Workday Interviews Scheduled Canada](/workday-interview-scheduled-canada/): Workday profile engineering for Canadian recruiter visibility — Canadian Workday staffing firms, LinkedIn, Canadian job portals.
+
+### Workday UK Pages
+- [Workday Job Support UK](/workday-job-support-uk/): Real-time Workday support for UK projects — GMT/BST. UK payroll compliance (P60/PAYE/NIC/RTI/IR35), financial services, NHS, consulting firms.
+- [Workday Proxy Interview UK](/workday-proxy-interview-uk/): Live Workday interview guidance for UK roles — Big 4 UK, financial services, NHS, boutique Workday partners. UK payroll compliance.
+- [Get Workday Interviews Scheduled UK](/workday-interview-scheduled-uk/): Workday profile engineering for UK recruiter visibility — UK Workday staffing firms, Reed, LinkedIn, CWJobs.
+
+### Workday Europe Pages
+- [Workday Job Support Europe](/workday-job-support-europe/): Real-time Workday support for pan-European projects — multi-country HCM, GDPR-aligned security, European payroll compliance. Ireland, Germany, Netherlands, France, Sweden, Switzerland.
+- [Workday Proxy Interview Europe](/workday-proxy-interview-europe/): Live Workday interview guidance for European roles — ASML, Booking.com, German enterprise, Dutch financial services, French multinationals, Swiss banking/pharma.
+- [Get Workday Interviews Scheduled Europe](/workday-interview-scheduled-europe/): Workday profile engineering for European recruiter visibility — multi-country HCM positioning, GDPR keywords, European job portals.
+
+### Workday Country Job Support Pages
+- [Workday Job Support Ireland](/workday-job-support-ireland/): Workday support for Irish projects — Dublin tech multinationals, IDA companies, enterprise HR. IST/GMT aligned. GDPR compliance.
+- [Workday Job Support Germany](/workday-job-support-germany/): Workday support for German projects — Betriebsrat workflows, German payroll social insurance (AHV/Krankenkasse), GDPR. CET/CEST.
+- [Workday Job Support Netherlands](/workday-job-support-netherlands/): Workday support for Dutch projects — ASML, ING, Adyen, Booking.com ecosystem. Dutch pension fund integrations. CET/CEST.
+- [Workday Job Support France](/workday-job-support-france/): Workday support for French projects — collective agreements, French payroll URSSAF/AGIRC-ARRCO, CSE workflows. CET/CEST.
+- [Workday Job Support Sweden](/workday-job-support-sweden/): Workday support for Swedish projects — Spotify, Klarna, Ericsson, Volvo tech. Swedish payroll compliance. CET/CEST.
+- [Workday Job Support Switzerland](/workday-job-support-switzerland/): Workday support for Swiss projects — banking (UBS), pharma (Roche/Novartis), Swiss payroll (AHV/BVG), multi-currency CHF/EUR. CET/CEST.
+- [Workday Job Support Australia](/workday-job-support-australia/): Workday support for Australian projects — STP2, superannuation, Award rates, PAYG. Sydney, Melbourne. AEST/AEDT.
+- [Workday Job Support New Zealand](/workday-job-support-new-zealand/): Workday support for NZ projects — KiwiSaver, PAYE/IRD, ACC. Auckland, Wellington. NZST/NZDT.
+- [Workday Job Support Singapore](/workday-job-support-singapore/): Workday support for Singapore projects — CPF integration, PDPA compliance, MAS-regulated finance. Multi-country APAC HCM. SGT.
+- [Workday Job Support UAE](/workday-job-support-uae/): Workday support for UAE projects — WPS compliance, gratuity, Emiratization (Nafis), AED/USD multi-currency. Dubai, Abu Dhabi. GST.
+- [Workday Job Support Saudi Arabia](/workday-job-support-saudi-arabia/): Workday support for Saudi Arabia projects — GOSI integration, Saudization/Nitaqat, Hijri calendar, SAR Finance. Vision 2030 enterprise. AST.
+
 ## Organization
 
 - Name: Proxy Tech Support
 - Website: https://proxytechsupport.com
 - Contact: WhatsApp +91-96606-14469
-- Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals
-- Coverage: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong
+- Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals, Workday job support, Workday proxy interview support, Workday interview scheduling
+- Coverage: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong, UAE, Saudi Arabia
 - USA Texas cities: Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
 - Canada cities: Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
 - Ireland cities: Dublin (IST), Cork (IST), Galway (IST), Limerick (IST)
-- Technologies: AI/ML, MLOps, DevOps, SRE, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET, Databases, Testing, Cybersecurity, Datadog (SLO/SLI/error budget/burn rate/Golden Signals dashboards/APM/Log Management/Synthetic Monitoring), Observability (Prometheus, Grafana, OpenTelemetry)
+- Technologies: AI/ML, MLOps, DevOps, SRE, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET, Databases, Testing, Cybersecurity, Workday (HCM/Financial Management/Payroll/Integrations/Adaptive Planning/Reporting/Security/Recruiting/2026R1), Datadog (SLO/SLI/error budget/burn rate/Golden Signals dashboards), Observability (Prometheus, Grafana, OpenTelemetry)
 - Texas specialties: W2/C2C/H1B consulting support, Dallas Fortune 500 enterprise projects, Irving Las Colinas banking and telecom, Plano corporate tech campuses, CST-timezone aligned, production incident support
 - Canada specialties: Banking Java systems (RBC/TD/Scotiabank), Canadian fintech APIs, PIPEDA-compliant cloud architectures, AI research ecosystem (Vector Institute Toronto, Mila Montreal), gaming industry (Vancouver, Montreal), energy sector tech (Calgary)
 

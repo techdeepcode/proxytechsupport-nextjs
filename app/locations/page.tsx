@@ -187,6 +187,96 @@ const countries: CountryEntry[] = [
   },
 ];
 
+type WorkdayCountryEntry = {
+  country: string;
+  links: { label: string; href: string }[];
+};
+
+const workdayCountries: WorkdayCountryEntry[] = [
+  {
+    country: 'Workday Hub',
+    links: [
+      { label: 'Workday Job Support', href: '/workday-job-support/' },
+      { label: 'Workday Proxy Interview', href: '/workday-proxy-interview-support/' },
+      { label: 'Workday Interview Scheduled', href: '/workday-interview-scheduled/' },
+    ],
+  },
+  {
+    country: 'USA',
+    links: [
+      { label: 'Workday Job Support USA', href: '/workday-job-support-usa/' },
+      { label: 'Workday Proxy Interview USA', href: '/workday-proxy-interview-usa/' },
+      { label: 'Workday Interview Scheduled USA', href: '/workday-interview-scheduled-usa/' },
+    ],
+  },
+  {
+    country: 'Canada',
+    links: [
+      { label: 'Workday Job Support Canada', href: '/workday-job-support-canada/' },
+      { label: 'Workday Proxy Interview Canada', href: '/workday-proxy-interview-canada/' },
+      { label: 'Workday Interview Scheduled Canada', href: '/workday-interview-scheduled-canada/' },
+    ],
+  },
+  {
+    country: 'UK',
+    links: [
+      { label: 'Workday Job Support UK', href: '/workday-job-support-uk/' },
+      { label: 'Workday Proxy Interview UK', href: '/workday-proxy-interview-uk/' },
+      { label: 'Workday Interview Scheduled UK', href: '/workday-interview-scheduled-uk/' },
+    ],
+  },
+  {
+    country: 'Europe',
+    links: [
+      { label: 'Workday Job Support Europe', href: '/workday-job-support-europe/' },
+      { label: 'Workday Proxy Interview Europe', href: '/workday-proxy-interview-europe/' },
+      { label: 'Workday Interview Scheduled Europe', href: '/workday-interview-scheduled-europe/' },
+    ],
+  },
+  {
+    country: 'Ireland',
+    links: [
+      { label: 'Workday Job Support Ireland', href: '/workday-job-support-ireland/' },
+    ],
+  },
+  {
+    country: 'Germany',
+    links: [
+      { label: 'Workday Job Support Germany', href: '/workday-job-support-germany/' },
+    ],
+  },
+  {
+    country: 'Netherlands',
+    links: [
+      { label: 'Workday Job Support Netherlands', href: '/workday-job-support-netherlands/' },
+    ],
+  },
+  {
+    country: 'Australia',
+    links: [
+      { label: 'Workday Job Support Australia', href: '/workday-job-support-australia/' },
+    ],
+  },
+  {
+    country: 'Singapore',
+    links: [
+      { label: 'Workday Job Support Singapore', href: '/workday-job-support-singapore/' },
+    ],
+  },
+  {
+    country: 'UAE',
+    links: [
+      { label: 'Workday Job Support UAE', href: '/workday-job-support-uae/' },
+    ],
+  },
+  {
+    country: 'Saudi Arabia',
+    links: [
+      { label: 'Workday Job Support Saudi Arabia', href: '/workday-job-support-saudi-arabia/' },
+    ],
+  },
+];
+
 const faqs = [
   {
     question: 'Do you provide IT job support for all countries listed on this page?',
@@ -335,6 +425,26 @@ export default function LocationsPage() {
 
           <div className="loc-grid">
             {countries.map((entry) => (
+              <div className="loc-card" key={entry.country}>
+                <div className="loc-card-country">{entry.country}</div>
+                <ul>
+                  {entry.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="loc-section-title">Workday Support by Country</h2>
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+            Dedicated Workday HCM, Financial Management, Payroll, Integration, and proxy interview support by region.{' '}
+            <Link href="/workday-job-support/" style={{ color: '#4fc3a1', textDecoration: 'none' }}>View Workday Hub →</Link>
+          </p>
+          <div className="loc-grid">
+            {workdayCountries.map((entry) => (
               <div className="loc-card" key={entry.country}>
                 <div className="loc-card-country">{entry.country}</div>
                 <ul>
