@@ -23,6 +23,12 @@ export const jobSupportLinks = [
   { label: 'Angular Job Support', href: '/angular-job-support/' },
   { label: 'React Native Job Support', href: '/react-native-job-support/' },
   { label: 'Digital Analytics & Marketing Tech', href: '/digital-analytics-job-support/' },
+  { label: 'Workday Job Support', href: '/workday-job-support/' },
+  { label: 'Workday HRIS Job Support', href: '/workday-hris-job-support/' },
+  { label: 'Workday HCM Job Support', href: '/workday-hcm-job-support/' },
+  { label: 'Workday Payroll Job Support', href: '/workday-payroll-job-support/' },
+  { label: 'Workday Integration Job Support', href: '/workday-integration-job-support/' },
+  { label: 'Workday 2026R1 Release Support', href: '/workday-2026r1-release-support/' },
 ];
 
 // ─── Location links (new — used in Navbar Locations dropdown + Footer) ─────

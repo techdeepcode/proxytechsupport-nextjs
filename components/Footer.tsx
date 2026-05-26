@@ -54,6 +54,11 @@ const proxyInterviewLinks = [
   { label: 'Proxy Interview Spain', href: '/proxy-interview-spain/' },
   { label: 'Proxy Interview Hong Kong', href: '/proxy-interview-hong-kong/' },
   { label: 'Proxy Interview New Zealand', href: '/proxy-interview-new-zealand/' },
+  { label: 'Workday Proxy Interview', href: '/workday-proxy-interview-support/' },
+  { label: 'Workday HRIS Proxy Interview', href: '/workday-hris-proxy-interview-support/' },
+  { label: 'Workday Proxy Interview USA', href: '/workday-proxy-interview-usa/' },
+  { label: 'Workday Proxy Interview Canada', href: '/workday-proxy-interview-canada/' },
+  { label: 'Workday Proxy Interview UK', href: '/workday-proxy-interview-uk/' },
 ];
 
 const resourceLinks = [
