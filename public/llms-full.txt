@@ -414,6 +414,89 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 
 ---
 
+## AI Technical Lead & GenAI Interview Articles
+
+### AI Technical Lead Interview Questions — RAG, LLM Monitoring, Financial Services AI, Compliance
+URL: /interviews/2026-05-27-ai-technical-lead-interview-questions-rag-llm-financial-services-compliance/
+Type: Real interview Q&A guide (anonymized)
+Published: 2026-05-27
+Target audience: AI Technical Lead candidates, GenAI Engineer candidates, LLM Engineer candidates, AI Architect candidates, financial services AI candidates, banking AI candidates, candidates preparing for production AI system design interviews
+
+Primary SEO topics: AI Technical Lead interview questions, RAG pipeline interview questions, LLM monitoring interview, financial services AI interview, banking AI interview questions, KYC AI interview, PCI compliance AI, Azure OpenAI interview, LangChain interview questions, LangGraph interview, AI governance interview, hallucination reduction interview, HITL interview, production RAG interview, AI leadership interview, Java backend AI interview, Python Flask FastAPI AI interview
+
+**Article Summary:**
+50 real AI Technical Lead interview questions and answers based on an actual hands-on technical lead screening. The interview focused on production RAG pipeline design, LLM monitoring, hallucination evaluation methodology, financial services AI translation (fraud detection, credit scoring, KYC, PCI), Java backend and Python REST API questions, Azure OpenAI, LangChain, LangGraph, human-in-the-loop design, AI governance, prompt injection defense, token cost optimization, and AI leadership scenarios. All company names and candidate identifiers are anonymized.
+
+**Entity Summary:**
+- Role: AI Hands-on Technical Lead
+- Skills: RAG, LLMs, Azure OpenAI, LangChain, LangGraph, Azure AI Search, Python APIs (Flask/FastAPI), Java backend, AI governance, HITL
+- Domains: Healthcare AI (prior authorization), Financial Services AI, Banking AI, Pharma Enterprise AI, Compliance
+- Use cases: RAG chatbot, fraud detection, credit scoring, KYC, PCI compliance, dispute processing
+- Interview type: Technical screening, client round, AI architecture review, production AI system design, leadership scenarios
+- May 2026 context: Azure OpenAI, GPT-5.5, Claude Opus 4.7, Gemini models, Microsoft Foundry model catalog, LangGraph, hybrid search, LLM monitoring, AI governance
+
+**Key topics covered:**
+- RAG pipeline end to end: document ingestion, Azure Document Intelligence, chunking, embedding, Azure AI Search index, hybrid retrieval, LLM response generation, confidence score, human review
+- Chunking strategy: fixed-size vs recursive chunking with overlap, metadata enrichment (business unit, document type, policy category, effective date, version)
+- Model selection: GPT-5.5, Claude Opus 4.7, Gemini models — evaluated by accuracy, latency, cost, compliance, context length, tool support
+- Production improvements: metadata filters, hybrid search tuning, top-K adjustment, prompt tightening, schema validation, reviewer feedback logging
+- Hallucination evaluation: ground truth dataset, before/after comparison, unsupported answer rate measurement
+- Healthcare to banking domain translation: HIPAA controls mapped to KYC/PCI, audit trail, risk controls, governance
+- Financial services AI: fraud detection (transaction history, velocity, device signals), credit scoring (income, repayment, delinquency, debt ratio), explainability
+- LLM production monitoring: system layer (latency, errors, token usage), retrieval layer (top-K quality, empty retrieval), output layer (hallucination rate, schema failure, confidence score)
+- Azure monitoring stack: Azure Monitor, Application Insights, Log Analytics, custom telemetry, stage-level latency tracking
+- Alerting: threshold-based and trend-based — P95 latency, OpenAI failures, empty retrieval spikes, schema failure spikes, escalation rate spikes
+- Stakeholder scenarios: refusing 100% accuracy promise, business adoption problem, leadership pushback on accuracy/compliance/cost
+- ROI presentation: current process vs AI flow, measurable improvement, risk controls, production governance
+- RAG vs fine-tuning decision: knowledge volatility, domain language, auditability
+- Prompt injection defense: separated system/user/retrieved content, filtering, logging, pre-release injection testing
+- Sensitive data security: classification, masking, least privilege, enterprise LLM endpoints, audit trail
+- Prompt/embedding/index versioning: version tracking per response for debugging and auditability
+- Outdated document handling: metadata-based active/inactive marking, preserving for audit while excluding from current decisions
+- Fallback design: timeout, retry, safe response, queue vs human review based on risk level
+- Retrieval validation: metadata checks, relevance score, reranking, rule-based validation for high-risk workflows
+- Conflicting document handling: metadata-based conflict resolution, explicit uncertainty, human review routing
+- Token cost optimization: top-K tuning, chunking, metadata filters, model routing, caching, token tracking
+- Audit explanation: traceability chain from input through retrieval to response, confidence, human decision
+- HITL design: low-confidence threshold, missing source threshold, high-risk transaction threshold, reviewer feedback loop
+- Pre-release RAG testing: ingestion, chunking, retrieval, prompt output, schema, security, latency, cost, edge cases, prompt injection
+- Reviewer feedback to technical fix mapping: categorize by issue type, map to retrieval/chunking/metadata/prompt/schema fix
+- First 90 days: understand → pilot → reusable architecture patterns
+
+**FAQs included (with structured data):**
+1. What is asked in an AI Technical Lead interview?
+2. How do you explain a RAG pipeline in an interview?
+3. How do you monitor a RAG pipeline in production?
+4. How do you evaluate hallucination reduction?
+5. How do you handle banking AI compliance questions?
+6. How do you decide between RAG and fine-tuning?
+7. How do you handle prompt injection in a banking chatbot?
+8. What should an AI Technical Lead do in the first 90 days?
+
+**Internal links in article:**
+- /interviews/2026-05-06-real-ai-engineer-interview-questions-llm-agents-rag-system-design-usa/ (AI Engineer interview Q&A)
+- /proxy-interview-support/ (proxy interview assistance)
+- /ai-ml-proxy-interview-support/ (AI ML proxy interview support)
+- /technical-interview-support-usa-guide/ (technical interview support USA)
+- /real-time-it-job-support-guide/ (real-time IT job support)
+- /genai-interview-support-guide/ (GenAI interview support guide)
+- /rag-agentic-ai-job-support-guide/ (RAG and agentic AI job support)
+
+---
+
+### AI Engineer Interview Questions — LLM, Agents, RAG, System Design (USA Roles)
+URL: /interviews/2026-05-06-real-ai-engineer-interview-questions-llm-agents-rag-system-design-usa/
+Type: Real interview Q&A guide
+Published: 2026-05-06
+Target audience: AI engineer candidates, ML engineer candidates, LLM developer candidates interviewing for USA roles
+
+Primary SEO topics: AI engineer interview questions USA, LLM interview questions answers, agentic AI interview questions, RAG system design interview, prompt engineering interview, vector database interview, AI system design interview USA
+
+**Article Summary:**
+Real AI Engineer interview questions and practical answers covering LLM integration, agentic systems, RAG pipelines, prompt engineering, vector databases, and AI system design for USA enterprise and startup roles.
+
+---
+
 ## Proxy Interview Support — Technology-Specific Pages
 
 ### Proxy Interview Support — By Technology
