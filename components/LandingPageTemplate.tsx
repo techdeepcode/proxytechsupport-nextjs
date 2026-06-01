@@ -89,6 +89,8 @@ function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (config.slug.includes('proxy-interview')) return true;
   if (IRELAND_GEO_SLUGS.has(config.slug)) return true;
   if (TEXAS_GEO_SLUGS.has(config.slug)) return true;
+  // All UiPath / RPA landing pages
+  if (config.slug.startsWith('uipath-') || config.slug.startsWith('rpa-')) return true;
   return false;
 }
 

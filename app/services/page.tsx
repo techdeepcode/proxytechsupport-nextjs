@@ -186,6 +186,70 @@ const workdayServices: WorkdayServiceGroup[] = [
   },
 ];
 
+const uipathServices: WorkdayServiceGroup[] = [
+  {
+    region: 'UiPath / RPA Core',
+    links: [
+      { label: 'UiPath Job Support', href: '/uipath-job-support/' },
+      { label: 'UiPath Proxy Interview', href: '/uipath-proxy-interview-support/' },
+      { label: 'Get UiPath Interviews', href: '/uipath-interview-scheduled/' },
+      { label: 'RPA Job Support', href: '/rpa-job-support/' },
+      { label: 'RPA Proxy Interview', href: '/rpa-proxy-interview-support/' },
+    ],
+  },
+  {
+    region: 'UiPath USA',
+    links: [
+      { label: 'UiPath Job Support USA', href: '/uipath-job-support-usa/' },
+      { label: 'UiPath Proxy Interview USA', href: '/uipath-proxy-interview-usa/' },
+      { label: 'UiPath Interviews USA', href: '/uipath-interview-scheduled-usa/' },
+    ],
+  },
+  {
+    region: 'UiPath Canada',
+    links: [
+      { label: 'UiPath Job Support Canada', href: '/uipath-job-support-canada/' },
+      { label: 'UiPath Proxy Interview Canada', href: '/uipath-proxy-interview-canada/' },
+      { label: 'UiPath Interviews Canada', href: '/uipath-interview-scheduled-canada/' },
+    ],
+  },
+  {
+    region: 'UiPath UK',
+    links: [
+      { label: 'UiPath Job Support UK', href: '/uipath-job-support-uk/' },
+      { label: 'UiPath Proxy Interview UK', href: '/uipath-proxy-interview-uk/' },
+      { label: 'UiPath Interviews UK', href: '/uipath-interview-scheduled-uk/' },
+    ],
+  },
+  {
+    region: 'UiPath Europe',
+    links: [
+      { label: 'UiPath Job Support Europe', href: '/uipath-job-support-europe/' },
+      { label: 'UiPath Proxy Interview Europe', href: '/uipath-proxy-interview-europe/' },
+      { label: 'UiPath Interviews Europe', href: '/uipath-interview-scheduled-europe/' },
+    ],
+  },
+  {
+    region: 'UiPath Healthcare & Epic',
+    links: [
+      { label: 'UiPath Healthcare Support', href: '/uipath-healthcare-job-support/' },
+      { label: 'UiPath Epic Automation', href: '/uipath-epic-automation-job-support/' },
+      { label: 'Epic Proxy Interview', href: '/uipath-epic-proxy-interview-support/' },
+      { label: 'HIPAA / PHI RPA Support', href: '/hipaa-phi-rpa-automation-support/' },
+    ],
+  },
+  {
+    region: 'UiPath Technical Modules',
+    links: [
+      { label: 'UiPath Studio Support', href: '/uipath-studio-job-support/' },
+      { label: 'Orchestrator Support', href: '/uipath-orchestrator-job-support/' },
+      { label: 'REFramework Support', href: '/uipath-reframework-job-support/' },
+      { label: 'Document Understanding', href: '/uipath-document-understanding-job-support/' },
+      { label: 'Agentic Automation', href: '/uipath-agentic-automation-job-support/' },
+    ],
+  },
+];
+
 const resourceLinks = [
   { label: 'Technologies We Support', href: '/technologies/' },
   { label: 'Knowledge Base', href: '/knowledge-base/' },
@@ -298,6 +362,26 @@ export default function ServicesPage() {
           </p>
           <div className="svc-country-grid">
             {workdayServices.map((group) => (
+              <div className="svc-country-card" key={group.region}>
+                <div className="svc-country-name">{group.region}</div>
+                <ul>
+                  {group.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="svc-section-title">UiPath / RPA Job Support &amp; Proxy Interview</h2>
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+            Real-time UiPath and RPA job support, proxy interview assistance, and interview scheduling — Studio, Orchestrator, REFramework, Queues, Document Understanding, Epic healthcare workflows, and modern agentic automation.{' '}
+            <Link href="/uipath-job-support/" style={{ color: '#4fc3a1', textDecoration: 'none' }}>View UiPath Job Support Hub →</Link>
+          </p>
+          <div className="svc-country-grid">
+            {uipathServices.map((group) => (
               <div className="svc-country-card" key={group.region}>
                 <div className="svc-country-name">{group.region}</div>
                 <ul>

@@ -91,6 +91,68 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ([url, lastModified]) => ({ url, lastModified }),
   );
 
+  const uipathTechRoutes: MetadataRoute.Sitemap = [
+    // UiPath technical module pages
+    { url: `${BASE}/uipath-studio-job-support/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/uipath-orchestrator-job-support/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/uipath-reframework-job-support/`, lastModified: today, priority: 0.85 },
+    { url: `${BASE}/uipath-queues-dispatcher-performer-support/`, lastModified: today, priority: 0.83 },
+    { url: `${BASE}/uipath-exception-handling-job-support/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/uipath-document-understanding-job-support/`, lastModified: today, priority: 0.83 },
+    { url: `${BASE}/uipath-ocr-computer-vision-job-support/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/uipath-apps-job-support/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/uipath-testing-job-support/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/uipath-api-integration-job-support/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/uipath-agentic-automation-job-support/`, lastModified: today, priority: 0.85 },
+    { url: `${BASE}/uipath-rag-llm-automation-support/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/uipath-production-support/`, lastModified: today, priority: 0.83 },
+    { url: `${BASE}/uipath-framework-design-support/`, lastModified: today, priority: 0.80 },
+    // UiPath healthcare & Epic pages
+    { url: `${BASE}/uipath-healthcare-job-support/`, lastModified: today, priority: 0.85 },
+    { url: `${BASE}/uipath-epic-automation-job-support/`, lastModified: today, priority: 0.85 },
+    { url: `${BASE}/uipath-epic-proxy-interview-support/`, lastModified: today, priority: 0.83 },
+    { url: `${BASE}/epic-hyperspace-uipath-automation-support/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/epic-hyperdrive-uipath-automation-support/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/epic-fhir-uipath-integration-support/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/healthcare-document-understanding-uipath-support/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/hipaa-phi-rpa-automation-support/`, lastModified: today, priority: 0.80 },
+    // UiPath core hub pages
+    { url: `${BASE}/uipath-job-support/`, lastModified: today, priority: 0.92 },
+    { url: `${BASE}/uipath-proxy-interview-support/`, lastModified: today, priority: 0.92 },
+    { url: `${BASE}/uipath-interview-scheduled/`, lastModified: today, priority: 0.87 },
+    { url: `${BASE}/rpa-job-support/`, lastModified: today, priority: 0.87 },
+    { url: `${BASE}/rpa-proxy-interview-support/`, lastModified: today, priority: 0.87 },
+    // UiPath USA pages
+    { url: `${BASE}/uipath-job-support-usa/`, lastModified: today, priority: 0.88 },
+    { url: `${BASE}/uipath-proxy-interview-usa/`, lastModified: today, priority: 0.88 },
+    { url: `${BASE}/uipath-interview-scheduled-usa/`, lastModified: today, priority: 0.83 },
+    // UiPath Canada pages
+    { url: `${BASE}/uipath-job-support-canada/`, lastModified: today, priority: 0.86 },
+    { url: `${BASE}/uipath-proxy-interview-canada/`, lastModified: today, priority: 0.86 },
+    { url: `${BASE}/uipath-interview-scheduled-canada/`, lastModified: today, priority: 0.82 },
+    // UiPath UK pages
+    { url: `${BASE}/uipath-job-support-uk/`, lastModified: today, priority: 0.86 },
+    { url: `${BASE}/uipath-proxy-interview-uk/`, lastModified: today, priority: 0.86 },
+    { url: `${BASE}/uipath-interview-scheduled-uk/`, lastModified: today, priority: 0.82 },
+    // UiPath Europe pages
+    { url: `${BASE}/uipath-job-support-europe/`, lastModified: today, priority: 0.84 },
+    { url: `${BASE}/uipath-proxy-interview-europe/`, lastModified: today, priority: 0.84 },
+    { url: `${BASE}/uipath-interview-scheduled-europe/`, lastModified: today, priority: 0.80 },
+    // UiPath European country pages
+    { url: `${BASE}/uipath-job-support-ireland/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/uipath-job-support-germany/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/uipath-job-support-netherlands/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/uipath-job-support-france/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/uipath-job-support-sweden/`, lastModified: today, priority: 0.76 },
+    { url: `${BASE}/uipath-job-support-switzerland/`, lastModified: today, priority: 0.76 },
+    // UiPath global country pages
+    { url: `${BASE}/uipath-job-support-australia/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/uipath-job-support-new-zealand/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/uipath-job-support-singapore/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/uipath-job-support-uae/`, lastModified: today, priority: 0.76 },
+    { url: `${BASE}/uipath-job-support-saudi-arabia/`, lastModified: today, priority: 0.74 },
+  ];
+
   const knowledgeBaseRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE}/knowledge-base/`, lastModified: today, priority: 0.85 },
     // Interview Support cluster
@@ -165,5 +227,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/europe-fullstack-backend-frontend-support-guide/`, lastModified: today, priority: 0.72 },
   ];
 
-  return [...staticRoutes, ...postRoutes, ...interviewRoutes, ...knowledgeBaseRoutes];
+  return [...staticRoutes, ...postRoutes, ...interviewRoutes, ...knowledgeBaseRoutes, ...uipathTechRoutes];
 }

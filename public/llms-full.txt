@@ -1694,6 +1694,640 @@ Last updated: 2026-05-26
 
 ---
 
+---
+
+## UiPath / RPA Job Support & Proxy Interview Cluster
+
+### UiPath Job Support (Hub)
+URL: /uipath-job-support/
+Target: UiPath developers, RPA developers, automation engineers, production support engineers working on UiPath projects
+Service type: Real-time job support (during working hours, live screen-share)
+Geo: Global — USA, Canada, UK, Europe, Australia, Singapore, UAE, worldwide
+Canonical: https://proxytechsupport.com/uipath-job-support/
+
+Technologies and modules supported:
+- UiPath Studio (2026 Modern Design Experience) — sequences, flowcharts, state machines, reusable libraries, debugging
+- UiPath Orchestrator — robots, queues, triggers, schedules, assets, credentials, monitoring, production bot management
+- REFramework — Init, Get Transaction Data, Process Transaction, End Process states, config file, retries, exception handling
+- Queues & Dispatcher/Performer — transaction design, queue architecture, retry strategy, SLA, bulk processing
+- Document Understanding — OCR, classification, extraction, Intelligent Keyword Classifier, ML Classifier, human validation
+- Citrix automation — CV activities, remote desktop UI, image-based selectors, anchors, dynamic elements
+- UiPath API Integration — HTTP Request, REST APIs, OAuth, JSON, Integration Service, API-first automation
+- UiPath Agentic Automation — Maestro, Autopilot, AI agents, multi-agent workflows, human-in-the-loop
+- UiPath Test Suite / Test Cloud — test cases, regression, SIT, UAT, agentic testing
+- Epic / Healthcare automation — Hyperspace, Hyperdrive, FHIR, Interconnect, PHI/HIPAA, clinical workflows
+- Production support — monitoring, job failures, queue backlogs, incident support, RCA, SLA, hypercare
+
+User intent: UiPath developer blocked on a production issue, Studio workflow problem, Orchestrator failure, REFramework bug, queue design question, Document Understanding pipeline issue, or healthcare/Epic automation challenge during working hours
+Conversion CTA: WhatsApp +91-96606-14469 / Get UiPath Job Support
+Related pages: /uipath-proxy-interview-support/, /rpa-job-support/, /uipath-reframework-job-support/, /uipath-production-support/, /uipath-healthcare-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Proxy Interview Support
+URL: /uipath-proxy-interview-support/
+Target: UiPath Developer, Senior UiPath Developer, RPA Developer, RPA Solution Designer, Healthcare Automation Developer interview candidates
+Service type: Real-time proxy interview support (live, during the interview)
+Geo: Global — USA, Canada, UK, Europe, Ireland, Australia, Singapore, UAE, worldwide
+Canonical: https://proxytechsupport.com/uipath-proxy-interview-support/
+
+Interview scenarios covered live:
+- REFramework design — state machine transitions, Init/Get/Process/End states, exception handling strategy
+- Dispatcher/Performer architecture — queue design, retry logic, transaction processing, SLA
+- Citrix automation — CV activities, dynamic selectors, anchor-based UI, image fallback
+- Document Understanding — classification pipeline, extraction, confidence scoring, human validation design
+- API vs UI automation decision logic — when to use HTTP Request vs UI selectors, OAuth, JSON handling
+- Epic Hyperspace/Hyperdrive automation — selector strategy, automation constraints, PHI/HIPAA awareness
+- Agentic automation — Maestro orchestration, AI agents, robots + humans + AI governance
+- Production bot stability — monitoring, RCA, SLA, retry design, hypercare, alerting
+- UiPath Test Suite / Test Cloud — regression strategy, SIT/UAT workflow, agentic testing
+
+Interview formats covered: scenario walkthroughs, design questions, whiteboard architecture, behavioral + technical panels
+Target employers: US healthcare systems, UK financial services, European manufacturing, Canadian banks, Big 4 consulting, UiPath partner firms
+
+User intent: UiPath or RPA interview scheduled and needs real-time discreet expert guidance during the live session
+Conversion CTA: WhatsApp for same-day UiPath proxy interview support
+Related pages: /uipath-job-support/, /rpa-proxy-interview-support/, /uipath-epic-proxy-interview-support/, /uipath-interview-scheduled/
+Last updated: 2026-05-28
+
+---
+
+### Get UiPath Interviews Scheduled
+URL: /uipath-interview-scheduled/
+Target: UiPath developers, RPA developers, automation consultants not getting interview calls
+Service type: Profile marketing, LinkedIn optimization, recruiter outreach
+Geo: USA, Canada, UK, Europe, Australia, Singapore, UAE, worldwide
+Canonical: https://proxytechsupport.com/uipath-interview-scheduled/
+
+Services provided:
+- UiPath resume engineering — keyword targeting for ATS and recruiter search filters
+- LinkedIn optimization — headline, summary, skills with REFramework, Document Understanding, Orchestrator, Maestro keywords
+- Recruiter outreach — UiPath staffing firms, direct employers, Big 4 consulting practices
+- Job portal optimization — Dice, LinkedIn, Indeed, Workday talent portals
+- Country-specific targeting — USA (healthcare, finance), Canada (banking, telecom), UK (financial services, NHS), Europe (manufacturing)
+- Profile positioning for 2026 UiPath market — agentic automation, Maestro, Epic/healthcare, Test Cloud keywords
+
+User intent: UiPath developer applying for roles but not receiving interview calls
+Conversion CTA: WhatsApp to start same-day profile engineering
+Related pages: /uipath-job-support/, /uipath-proxy-interview-support/, /rpa-job-support/
+Last updated: 2026-05-28
+
+---
+
+### RPA Job Support
+URL: /rpa-job-support/
+Target: RPA developers, automation engineers across UiPath, Power Automate, and Automation Anywhere platforms
+Service type: Real-time job support (during working hours)
+Geo: Global
+Canonical: https://proxytechsupport.com/rpa-job-support/
+
+Platforms and modules supported:
+- UiPath (primary) — Studio, Orchestrator, REFramework, queues, Document Understanding, Citrix, APIs, agentic automation
+- Power Automate — flow errors, connector issues, business process automation
+- Automation Anywhere — bot failures, control room issues, process development
+- RPA architecture — dispatcher/performer, transaction design, SLA, production stability
+
+User intent: RPA developer stuck on production bot issue, process automation delivery, or framework design problem
+Conversion CTA: WhatsApp +91-96606-14469
+Related pages: /uipath-job-support/, /uipath-proxy-interview-support/, /rpa-proxy-interview-support/
+Last updated: 2026-05-28
+
+---
+
+### RPA Proxy Interview Support
+URL: /rpa-proxy-interview-support/
+Target: RPA Developer, RPA Solution Designer, UiPath Developer interview candidates
+Service type: Real-time proxy interview support (live, during the interview)
+Geo: Global
+Canonical: https://proxytechsupport.com/rpa-proxy-interview-support/
+
+Interview scenarios covered live:
+- REFramework, dispatcher/performer, queue architecture
+- Citrix automation, dynamic selectors, Document Understanding
+- Exception handling — business vs system exceptions, retry scope
+- API vs UI automation strategy, OAuth, JSON handling
+- Epic automation, PHI/HIPAA awareness
+- Agentic automation, Maestro, AI agent orchestration
+- Production bot stability, RCA, SLA, hypercare
+
+User intent: RPA Developer interview scheduled and needs real-time live expert guidance
+Conversion CTA: WhatsApp for same-day RPA proxy interview support
+Related pages: /uipath-proxy-interview-support/, /rpa-job-support/, /uipath-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Studio Job Support
+URL: /uipath-studio-job-support/
+Target: UiPath developers working on Studio workflow design, debugging, and best practices
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-studio-job-support/
+
+Topics covered: sequences, flowcharts, state machines, variables, arguments, activities, packages, reusable libraries, NuGet, debugging, breakpoints, Watch panel, logging, Try Catch, Retry Scope, Git integration, naming conventions, selector reliability, workflow modularity, UiPath Studio 2026 Modern Design Experience
+
+User intent: UiPath developer stuck on Studio workflow design, debugging, or library architecture
+Related pages: /uipath-job-support/, /uipath-orchestrator-job-support/, /uipath-reframework-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Orchestrator Job Support
+URL: /uipath-orchestrator-job-support/
+Target: UiPath developers and RPA admins managing Orchestrator deployments
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-orchestrator-job-support/
+
+Topics covered: robots, machines, tenants, folders, assets, credentials, queues, triggers, schedules, jobs, logs, monitoring, role permissions, production bot management, Orchestrator cloud vs on-premises, robot connectivity, credential vault integration
+
+User intent: Orchestrator job failure, robot disconnection, credential error, queue backlog, or monitoring/alerting issue
+Related pages: /uipath-job-support/, /uipath-studio-job-support/, /uipath-reframework-job-support/, /uipath-production-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath REFramework Job Support
+URL: /uipath-reframework-job-support/
+Target: UiPath developers building or debugging REFramework-based automation
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-reframework-job-support/
+
+Topics covered: Init state, Get Transaction Data, Process Transaction, End Process, transaction item design, state machine transitions, config file management, assets and credentials, queue integration, retry logic, business exception vs system exception, logging, screenshots, recovery design, REFramework customization for healthcare/financial workflows
+
+User intent: REFramework state machine failures, unexpected transitions, retry design issues, or queue architecture problems
+Related pages: /uipath-job-support/, /uipath-queues-dispatcher-performer-support/, /uipath-exception-handling-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Queues & Dispatcher/Performer Support
+URL: /uipath-queues-dispatcher-performer-support/
+Target: UiPath developers designing queue-based automation
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-queues-dispatcher-performer-support/
+
+Topics covered: queue design, transaction architecture, dispatcher bot design, performer bot design, queue retry strategy, business exception vs system exception, SLA management, bulk processing, throughput optimization, parallel processing, queue backlog resolution, Orchestrator queue monitoring
+
+User intent: Queue dispatcher/performer design issues, queue backlog, SLA problems, or transaction retry failures
+Related pages: /uipath-reframework-job-support/, /uipath-orchestrator-job-support/, /uipath-production-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Exception Handling Job Support
+URL: /uipath-exception-handling-job-support/
+Target: UiPath developers building stable, production-grade exception handling
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-exception-handling-job-support/
+
+Topics covered: Try Catch, Retry Scope, Check App State, Global Exception Handler, business exception design, system/application exception handling, logging, screenshots on exception, recovery workflow design, failure classification, retry strategies, bot stability improvement
+
+User intent: Exception handling design issues, unhandled exceptions in production, retry logic failures, or bot instability
+Related pages: /uipath-reframework-job-support/, /uipath-production-support/, /uipath-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Document Understanding Job Support
+URL: /uipath-document-understanding-job-support/
+Target: UiPath developers building Document Understanding and IDP pipelines
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-document-understanding-job-support/
+
+Topics covered: Document Understanding framework, OCR engines (UiPath Document OCR, Microsoft Read, Google Document AI), document classification (Intelligent Keyword Classifier, ML Classifier), data extraction (Form Extractor, ML Extractor), validation station, confidence scoring, human-in-the-loop design, invoice processing, patient intake forms, clinical document processing, IXP/IDP patterns, training ML models in AI Center
+
+User intent: Document Understanding pipeline failures, classification accuracy issues, extraction errors, or human validation design problems
+Related pages: /uipath-healthcare-job-support/, /uipath-ocr-computer-vision-job-support/, /healthcare-document-understanding-uipath-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath OCR & Computer Vision Job Support
+URL: /uipath-ocr-computer-vision-job-support/
+Target: UiPath developers automating Citrix, remote desktop, and image-based UI
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-ocr-computer-vision-job-support/
+
+Topics covered: OCR activities, Computer Vision activities (CVClick, CVType, CVGetText), Citrix automation strategy, remote desktop UI automation, image-based selectors, anchor elements, dynamic UI element handling, CV fallback strategy, selector instability in Citrix, healthcare screen automation (Epic Hyperspace remote desktop)
+
+User intent: Citrix automation failures, CV activity errors, selector instability in remote desktop environments
+Related pages: /uipath-job-support/, /epic-hyperspace-uipath-automation-support/, /uipath-document-understanding-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Apps Job Support
+URL: /uipath-apps-job-support/
+Target: UiPath developers building Apps for human-in-the-loop and process workflows
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-apps-job-support/
+
+Topics covered: UiPath Apps designer, forms and input controls, data binding to processes, approval workflows, validation screens, app-to-process integration, human-in-the-loop task design, citizen developer patterns, Process Mining integration with Apps
+
+User intent: UiPath Apps design issues, app-to-process connectivity, or approval workflow configuration
+Related pages: /uipath-job-support/, /uipath-agentic-automation-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Testing Job Support
+URL: /uipath-testing-job-support/
+Target: UiPath automation testers, QA engineers, and RPA developers responsible for bot quality
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-testing-job-support/
+
+Topics covered: UiPath Test Suite, UiPath Test Cloud, test case design, test data management, regression testing, SIT (System Integration Testing), UAT (User Acceptance Testing), defect tracking, agentic testing concepts, production release validation, CI/CD integration for bot testing
+
+User intent: UiPath testing pipeline failures, regression test design, SIT/UAT coordination issues, or Test Cloud configuration
+Related pages: /uipath-job-support/, /uipath-production-support/, /uipath-framework-design-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath API Integration Job Support
+URL: /uipath-api-integration-job-support/
+Target: UiPath developers building API-driven automation
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-api-integration-job-support/
+
+Topics covered: HTTP Request activity, REST API design in UiPath, OAuth 2.0 token handling, JSON parsing and serialization, UiPath Integration Service (pre-built connectors), API-first automation strategy, when to use API vs UI automation, secure credential management for API keys, error handling for API calls, retry logic for unstable APIs
+
+User intent: API call failures, OAuth token issues, JSON parsing errors, or API vs UI automation design decisions
+Related pages: /uipath-job-support/, /uipath-agentic-automation-job-support/, /epic-fhir-uipath-integration-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Agentic Automation Job Support
+URL: /uipath-agentic-automation-job-support/
+Target: UiPath developers and architects working on agentic automation and AI integration
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-agentic-automation-job-support/
+
+Topics covered: UiPath Maestro (orchestrating robots, AI agents, and humans), UiPath Autopilot, agentic workflow design, multi-agent automation architecture, AI agent + RPA robot + human-in-the-loop patterns, governance for non-deterministic AI in enterprise automation, when to use RPA vs AI agents vs APIs, enterprise automation architecture 2026, deterministic vs non-deterministic process design
+
+User intent: Agentic automation design questions, Maestro orchestration issues, or AI agent + RPA integration architecture decisions
+Related pages: /uipath-job-support/, /uipath-rag-llm-automation-support/, /uipath-api-integration-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath RAG & LLM Automation Support
+URL: /uipath-rag-llm-automation-support/
+Target: UiPath developers integrating LLMs, RAG, and AI into automation workflows
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-rag-llm-automation-support/
+
+Topics covered: RAG (Retrieval-Augmented Generation) in UiPath automation, LangChain integration, LLM usage for document Q&A and classification, semantic search in enterprise automation, where LLMs fit alongside deterministic RPA, governance for AI-generated outputs, prompt safety in enterprise contexts, human validation for LLM outputs, auditability and compliance for AI-assisted automation
+
+User intent: LLM integration design issues, RAG pipeline decisions, or governance questions for AI in RPA
+Related pages: /uipath-agentic-automation-job-support/, /uipath-document-understanding-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Production Support
+URL: /uipath-production-support/
+Target: UiPath developers and support engineers managing production RPA environments
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-production-support/
+
+Topics covered: production bot stability monitoring, Orchestrator job failure analysis, queue backlog management, incident response for RPA failures, root cause analysis (RCA), SLA management, retry design for production stability, alerting configuration, logging for production diagnostics, hypercare support post-go-live, bot maintenance and health checks, production release validation
+
+User intent: Production bot failure, queue backlog, SLA breach, or hypercare support needed urgently
+Related pages: /uipath-job-support/, /uipath-orchestrator-job-support/, /uipath-framework-design-support/, /uipath-testing-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Framework Design Support
+URL: /uipath-framework-design-support/
+Target: UiPath architects and senior developers designing enterprise automation frameworks
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-framework-design-support/
+
+Topics covered: queue architecture for enterprise automation, reusable component design, framework design patterns beyond REFramework, config management strategy, credential management best practices, environment separation (dev/test/prod), deployment design, monitoring architecture, scalable bot infrastructure design, error handling framework design, logging standards
+
+User intent: Automation framework design decisions, scalable architecture for enterprise RPA deployments
+Related pages: /uipath-job-support/, /uipath-reframework-job-support/, /uipath-production-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Healthcare Job Support
+URL: /uipath-healthcare-job-support/
+Target: UiPath developers working on healthcare automation projects
+Service type: Real-time job support
+Geo: USA, UK, Canada, Europe, Australia — healthcare-focused
+Canonical: https://proxytechsupport.com/uipath-healthcare-job-support/
+
+Healthcare automation topics covered:
+- Patient intake automation — data entry, form processing, registration workflows
+- Clinical document automation — HIM, ClinDoc, clinical note processing
+- Insurance claim workflows — prior authorization, claim submission, denial management
+- Appointment scheduling automation — scheduling system integration, calendar workflows
+- Healthcare operations — revenue cycle, billing, back-office clinical ops
+- PHI/HIPAA awareness — secure logging, data masking, credential management, audit trails
+- Healthcare RPA production support — monitoring, SLA, incident handling for clinical systems
+
+User intent: UiPath developer stuck on a healthcare automation project, PHI compliance issue, or clinical workflow design
+Related pages: /uipath-job-support/, /uipath-epic-automation-job-support/, /hipaa-phi-rpa-automation-support/, /uipath-document-understanding-job-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Epic Automation Job Support
+URL: /uipath-epic-automation-job-support/
+Target: UiPath developers working on Epic EHR automation projects
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/uipath-epic-automation-job-support/
+
+Epic automation topics covered:
+- Epic Hyperspace UI automation — stable selector strategy for thick client, Citrix/RDP automation
+- Epic Hyperdrive — modern browser-based Epic, automation impact, updated selector design
+- Patient chart navigation — chart review automation, data extraction from patient records
+- Clinical workflow automation — HIM, ClinDoc, MyChart, clinical intake, order management
+- API vs UI automation decision for Epic — when to use Epic FHIR API instead of UI scraping
+- PHI/HIPAA constraints in Epic automation — what not to automate, safe logging design
+- Epic environment complexity — multi-environment access, test vs prod Epic instances
+
+User intent: UiPath developer working on Epic automation and needing expert guidance on selectors, Citrix strategy, or API vs UI decisions
+Related pages: /uipath-healthcare-job-support/, /epic-hyperspace-uipath-automation-support/, /epic-fhir-uipath-integration-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Epic Proxy Interview Support
+URL: /uipath-epic-proxy-interview-support/
+Target: UiPath Developer interview candidates for roles involving Epic EHR automation
+Service type: Real-time proxy interview support (live, during the interview)
+Canonical: https://proxytechsupport.com/uipath-epic-proxy-interview-support/
+
+Epic interview scenarios covered live:
+- Epic Hyperspace vs Hyperdrive automation differences — selector strategy, Citrix vs browser UI
+- FHIR API vs UI automation decision questions — OAuth, REST API, when to avoid UI scraping in Epic
+- PHI/HIPAA in RPA — secure logging, data masking, audit trail design
+- Clinical workflow automation questions — HIM, ClinDoc, patient charts, MyChart integration
+- Epic production support scenarios — monitoring, SLA, bot stability in clinical systems
+- Citrix/remote desktop Epic automation — CV activities, stable selector design
+
+User intent: Scheduled UiPath interview for an Epic healthcare automation role, needing real-time expert guidance
+Related pages: /uipath-proxy-interview-support/, /uipath-epic-automation-job-support/, /epic-fhir-uipath-integration-support/
+Last updated: 2026-05-28
+
+---
+
+### Epic Hyperspace UiPath Automation Support
+URL: /epic-hyperspace-uipath-automation-support/
+Target: UiPath developers automating Epic Hyperspace workflows
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/epic-hyperspace-uipath-automation-support/
+
+Topics covered: Epic Hyperspace thick client UI automation, stable selector design for Hyperspace, Citrix/RDP automation strategy for remote Epic access, patient chart navigation automation, clinical screen validation, avoiding unsafe automation in clinical systems, audit trail design for Hyperspace automation, common selector instability causes in Hyperspace, UiPath CV activities for Hyperspace Citrix environments
+
+User intent: Selector failures, Citrix automation issues, or stability problems with Epic Hyperspace automation
+Related pages: /uipath-epic-automation-job-support/, /epic-hyperdrive-uipath-automation-support/, /uipath-ocr-computer-vision-job-support/
+Last updated: 2026-05-28
+
+---
+
+### Epic Hyperdrive UiPath Automation Support
+URL: /epic-hyperdrive-uipath-automation-support/
+Target: UiPath developers navigating Epic Hyperdrive migration and automation updates
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/epic-hyperdrive-uipath-automation-support/
+
+Topics covered: Epic Hyperdrive (browser-based modern Epic UI), automation impact of Hyperspace-to-Hyperdrive migration, selector changes in Hyperdrive vs Hyperspace, browser automation strategy for Hyperdrive, URL-based navigation in Hyperdrive, new challenges for existing Hyperspace bots during migration, UiPath web automation for Hyperdrive workflows, Hyperdrive interview questions 2026
+
+User intent: Existing Epic Hyperspace bots breaking after Hyperdrive migration, or designing automation for Hyperdrive environments
+Related pages: /epic-hyperspace-uipath-automation-support/, /uipath-epic-automation-job-support/, /uipath-api-integration-job-support/
+Last updated: 2026-05-28
+
+---
+
+### Epic FHIR UiPath Integration Support
+URL: /epic-fhir-uipath-integration-support/
+Target: UiPath developers integrating with Epic FHIR APIs instead of or alongside UI automation
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/epic-fhir-uipath-integration-support/
+
+Topics covered: Epic FHIR R4 API, Epic Interconnect, OAuth 2.0 for Epic API authentication, REST API calls in UiPath (HTTP Request activity), JSON response parsing for FHIR resources, when to use FHIR API vs UI automation in Epic, patient data exchange via FHIR, secure token handling and refresh logic, API error handling and retry design, PHI data privacy in API-based automation
+
+User intent: Epic FHIR API integration failures, OAuth token issues, or strategic API vs UI automation decisions for Epic workflows
+Related pages: /uipath-epic-automation-job-support/, /uipath-api-integration-job-support/, /hipaa-phi-rpa-automation-support/
+Last updated: 2026-05-28
+
+---
+
+### Healthcare Document Understanding UiPath Support
+URL: /healthcare-document-understanding-uipath-support/
+Target: UiPath developers processing clinical and healthcare documents
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/healthcare-document-understanding-uipath-support/
+
+Topics covered: clinical document classification (admission forms, discharge summaries, clinical notes), extraction from healthcare documents, validation station design for clinical records, patient intake form automation, HIM document processing, insurance document classification, human validation workflow for clinical QA, PHI handling in Document Understanding, confidence scoring for healthcare document extraction, exception routing for low-confidence clinical documents
+
+User intent: Document Understanding pipeline failures for healthcare documents, PHI handling issues, or clinical document classification accuracy problems
+Related pages: /uipath-document-understanding-job-support/, /uipath-healthcare-job-support/, /hipaa-phi-rpa-automation-support/
+Last updated: 2026-05-28
+
+---
+
+### HIPAA & PHI RPA Automation Support
+URL: /hipaa-phi-rpa-automation-support/
+Target: UiPath developers building HIPAA-compliant RPA automation
+Service type: Real-time job support
+Canonical: https://proxytechsupport.com/hipaa-phi-rpa-automation-support/
+
+Topics covered: HIPAA compliance in RPA automation, PHI (Protected Health Information) handling in UiPath bots, secure logging (avoiding PHI in log messages and screenshots), data masking for sensitive healthcare data, credential management for healthcare systems, audit trail design for HIPAA compliance, least privilege principle in bot design, avoiding PHI leakage in Orchestrator logs, secure credential vault usage, BAA (Business Associate Agreement) awareness for RPA vendors
+
+User intent: HIPAA compliance questions for RPA bots, PHI leakage concerns in logs, or secure healthcare bot design
+Related pages: /uipath-healthcare-job-support/, /uipath-epic-automation-job-support/, /epic-fhir-uipath-integration-support/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Job Support USA
+URL: /uipath-job-support-usa/
+Target: UiPath and RPA developers on US projects
+Service type: Real-time job support + proxy interview support
+Geo: USA — EST, CST, MST, PST
+Canonical: https://proxytechsupport.com/uipath-job-support-usa/
+
+US-specific context: healthcare systems (Epic, Cerner), financial services, insurance, Big 4 consulting, W2/C2C/H1B roles, US staffing firm partnerships
+User intent: US-based UiPath developer needing real-time support or US UiPath interview proxy support
+Related pages: /uipath-job-support/, /uipath-proxy-interview-usa/, /uipath-interview-scheduled-usa/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Proxy Interview USA
+URL: /uipath-proxy-interview-usa/
+Target: UiPath and RPA Developer interview candidates for US roles
+Service type: Real-time proxy interview support
+Geo: USA — all US time zones
+Canonical: https://proxytechsupport.com/uipath-proxy-interview-usa/
+
+US interview context: healthcare systems (Epic, Cerner), financial services (banks, insurance), Big 4 consulting, FAANG-adjacent tech, US staffing firms
+User intent: UiPath interview scheduled for a US employer and needs live expert guidance during the session
+Related pages: /uipath-proxy-interview-support/, /uipath-job-support-usa/, /uipath-interview-scheduled-usa/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Interview Scheduled USA
+URL: /uipath-interview-scheduled-usa/
+Target: UiPath and RPA developers not getting interview calls for US roles
+Service type: Profile marketing, recruiter outreach
+Geo: USA
+Canonical: https://proxytechsupport.com/uipath-interview-scheduled-usa/
+
+User intent: Not getting UiPath interview calls for US roles despite having experience
+Related pages: /uipath-interview-scheduled/, /uipath-job-support-usa/, /uipath-proxy-interview-usa/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Job Support Canada
+URL: /uipath-job-support-canada/
+Target: UiPath and RPA developers on Canadian projects
+Service type: Real-time job support + proxy interview support
+Geo: Canada — Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
+Canonical: https://proxytechsupport.com/uipath-job-support-canada/
+
+Canada-specific context: Big 5 banks (RBC, TD, Scotiabank, CIBC, BMO), healthcare (provincial health authorities, Telus Health), telecom (Rogers, Bell), Big 4 consulting, PIPEDA awareness
+User intent: Canadian UiPath developer needing real-time support or Canadian UiPath interview proxy support
+Related pages: /uipath-job-support/, /uipath-proxy-interview-canada/, /uipath-interview-scheduled-canada/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Proxy Interview Canada
+URL: /uipath-proxy-interview-canada/
+Target: UiPath interview candidates for Canadian banking, healthcare, and consulting roles
+Service type: Real-time proxy interview support
+Geo: Canada
+Canonical: https://proxytechsupport.com/uipath-proxy-interview-canada/
+
+User intent: UiPath interview at a Canadian bank, health system, or consulting firm
+Related pages: /uipath-proxy-interview-support/, /uipath-job-support-canada/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Interview Scheduled Canada
+URL: /uipath-interview-scheduled-canada/
+Target: UiPath developers targeting Canadian banking, healthcare, telecom, and consulting roles
+Service type: Profile marketing, recruiter outreach
+Geo: Canada
+Canonical: https://proxytechsupport.com/uipath-interview-scheduled-canada/
+
+User intent: Not getting UiPath interview calls for Canadian roles
+Related pages: /uipath-interview-scheduled/, /uipath-job-support-canada/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Job Support UK
+URL: /uipath-job-support-uk/
+Target: UiPath and RPA developers on UK projects
+Service type: Real-time job support + proxy interview support
+Geo: UK — London, Manchester, Edinburgh, Birmingham (GMT/BST)
+Canonical: https://proxytechsupport.com/uipath-job-support-uk/
+
+UK-specific context: financial services (Lloyds, Barclays, HSBC, Aviva), NHS digital programmes, government automation, GDPR-aware automation
+User intent: UK-based UiPath developer needing real-time support or UK UiPath interview proxy support
+Related pages: /uipath-job-support/, /uipath-proxy-interview-uk/, /uipath-interview-scheduled-uk/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Proxy Interview UK
+URL: /uipath-proxy-interview-uk/
+Target: UiPath interview candidates for UK financial services, NHS, and consulting roles
+Service type: Real-time proxy interview support
+Geo: UK (GMT/BST)
+Canonical: https://proxytechsupport.com/uipath-proxy-interview-uk/
+
+User intent: UiPath interview at a UK bank, NHS trust, or consulting firm
+Related pages: /uipath-proxy-interview-support/, /uipath-job-support-uk/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Interview Scheduled UK
+URL: /uipath-interview-scheduled-uk/
+Target: UiPath developers targeting UK financial services, NHS, and consulting roles
+Service type: Profile marketing, recruiter outreach
+Geo: UK
+Canonical: https://proxytechsupport.com/uipath-interview-scheduled-uk/
+
+User intent: Not getting UiPath interview calls for UK roles
+Related pages: /uipath-interview-scheduled/, /uipath-job-support-uk/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Job Support Europe
+URL: /uipath-job-support-europe/
+Target: UiPath and RPA developers on European projects
+Service type: Real-time job support + proxy interview support
+Geo: Europe — Germany, Netherlands, France, Ireland, Sweden, Switzerland (CET/CEST)
+Canonical: https://proxytechsupport.com/uipath-job-support-europe/
+
+Europe-specific context: manufacturing ERP automation, European banking/insurance, GDPR compliance, shared services automation
+User intent: European UiPath developer needing real-time support or European UiPath interview proxy support
+Related pages: /uipath-job-support/, /uipath-proxy-interview-europe/, /uipath-interview-scheduled-europe/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Proxy Interview Europe
+URL: /uipath-proxy-interview-europe/
+Target: UiPath interview candidates for European manufacturing, banking, and consulting roles
+Service type: Real-time proxy interview support
+Geo: Europe (CET/CEST)
+Canonical: https://proxytechsupport.com/uipath-proxy-interview-europe/
+
+User intent: UiPath interview at a European manufacturer, bank, or consulting firm
+Related pages: /uipath-proxy-interview-support/, /uipath-job-support-europe/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Interview Scheduled Europe
+URL: /uipath-interview-scheduled-europe/
+Target: UiPath developers targeting European manufacturing, banking, and consulting roles
+Service type: Profile marketing, recruiter outreach
+Geo: Europe
+Canonical: https://proxytechsupport.com/uipath-interview-scheduled-europe/
+
+User intent: Not getting UiPath interview calls for European roles
+Related pages: /uipath-interview-scheduled/, /uipath-job-support-europe/
+Last updated: 2026-05-28
+
+---
+
+### UiPath Country Pages (Ireland, Germany, Netherlands, France, Sweden, Switzerland, Australia, New Zealand, Singapore, UAE, Saudi Arabia)
+
+| Page | URL | Geo | Context |
+|------|-----|-----|---------|
+| Ireland | /uipath-job-support-ireland/ | IST | Dublin MNCs, AIB, Bank of Ireland, pharma/medtech |
+| Germany | /uipath-job-support-germany/ | CET/CEST | Manufacturing (VW, BMW, Siemens), Deutsche Bank, SAP automation |
+| Netherlands | /uipath-job-support-netherlands/ | CET/CEST | ING, ABN AMRO, Shell, logistics, shared services |
+| France | /uipath-job-support-france/ | CET/CEST | BNP Paribas, Société Générale, telecom, government |
+| Sweden | /uipath-job-support-sweden/ | CET/CEST | Nordea, SEB, Volvo, Ericsson, healthcare |
+| Switzerland | /uipath-job-support-switzerland/ | CET/CEST | UBS, Novartis, Roche, Zurich Insurance |
+| Australia | /uipath-job-support-australia/ | AEST/AEDT | CBA, ANZ, Westpac, government, healthcare |
+| New Zealand | /uipath-job-support-new-zealand/ | NZST/NZDT | Banking, government, healthcare, utilities |
+| Singapore | /uipath-job-support-singapore/ | SGT (UTC+8) | DBS, OCBC, UOB, logistics, APAC shared services |
+| UAE | /uipath-job-support-uae/ | GST (UTC+4) | Emirates NBD, FAB, government digital, oil and gas |
+| Saudi Arabia | /uipath-job-support-saudi-arabia/ | AST (UTC+3) | Al Rajhi, Aramco, Vision 2030, healthcare |
+
+All country pages provide: real-time UiPath job support, proxy interview support for local employer interviews, and profile marketing for local RPA job market targeting. Contact: WhatsApp +91-96606-14469.
+
+---
+
 ## Key Facts for AI Extraction
 
 - **Organization name:** Proxy Tech Support

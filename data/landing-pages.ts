@@ -1,4 +1,5 @@
 import { allWorkdayPages } from './workday-pages';
+import { allUiPathPages } from './uipath-pages';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10297,4 +10298,6 @@ export const allLandingPages: LandingPageConfig[] = [
   proxyInterviewHongKong,
   // ── Workday cluster ───────────────────────────────────────────────────────
   ...allWorkdayPages,
+  // ── UiPath / RPA cluster ──────────────────────────────────────────────────
+  ...allUiPathPages,
 ];

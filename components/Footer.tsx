@@ -59,6 +59,12 @@ const proxyInterviewLinks = [
   { label: 'Workday Proxy Interview USA', href: '/workday-proxy-interview-usa/' },
   { label: 'Workday Proxy Interview Canada', href: '/workday-proxy-interview-canada/' },
   { label: 'Workday Proxy Interview UK', href: '/workday-proxy-interview-uk/' },
+  { label: 'UiPath Proxy Interview', href: '/uipath-proxy-interview-support/' },
+  { label: 'UiPath Proxy Interview USA', href: '/uipath-proxy-interview-usa/' },
+  { label: 'UiPath Proxy Interview Canada', href: '/uipath-proxy-interview-canada/' },
+  { label: 'UiPath Proxy Interview UK', href: '/uipath-proxy-interview-uk/' },
+  { label: 'UiPath Proxy Interview Europe', href: '/uipath-proxy-interview-europe/' },
+  { label: 'RPA Proxy Interview', href: '/rpa-proxy-interview-support/' },
 ];
 
 const resourceLinks = [

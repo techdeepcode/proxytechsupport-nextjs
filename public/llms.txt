@@ -316,3 +316,63 @@
 - [Europe DevOps, Cloud & SRE Support Guide](/europe-devops-cloud-sre-support-guide/): DevOps, cloud, and SRE job support for European IT roles.
 - [Europe AI/ML, RAG & MLOps Support Guide](/europe-ai-ml-rag-mlops-support-guide/): AI/ML and data engineering job support for European tech roles.
 - [Europe Full-Stack, Backend & Frontend Support Guide](/europe-fullstack-backend-frontend-support-guide/): Full-stack and developer job support for European IT roles.
+
+## UiPath / RPA Job Support & Proxy Interview
+
+### Core UiPath & RPA Pages
+- [UiPath Job Support](/uipath-job-support/): Real-time UiPath job support for RPA developers — Studio, Orchestrator, REFramework, queues, Document Understanding, Citrix automation, API integrations, Epic healthcare workflows, and agentic automation. Same-day start. All time zones.
+- [UiPath Proxy Interview Support](/uipath-proxy-interview-support/): Live proxy interview support for UiPath Developer, Senior RPA Developer, RPA Solution Designer, and healthcare automation roles — REFramework, dispatcher/performer, Citrix, Document Understanding, Epic, Maestro. Confidential.
+- [Get UiPath Interviews Scheduled](/uipath-interview-scheduled/): UiPath profile engineering, LinkedIn optimization, and recruiter outreach to generate interview calls for UiPath Developer and RPA consultant roles across USA, Canada, UK, and Europe.
+- [RPA Job Support](/rpa-job-support/): Real-time RPA job support for production bot failures, automation project delivery, and developer assistance — UiPath-first with broad RPA platform coverage. Same-day start.
+- [RPA Proxy Interview Support](/rpa-proxy-interview-support/): Live proxy interview support for RPA Developer roles — REFramework, queues, Citrix, Document Understanding, API automation, and agentic workflows. Confidential.
+
+### UiPath Technical Module Pages
+- [UiPath Studio Job Support](/uipath-studio-job-support/): Support for UiPath Studio workflows, sequences, flowcharts, state machines, reusable libraries, variables, arguments, debugging, logging, packages, and version control.
+- [UiPath Orchestrator Job Support](/uipath-orchestrator-job-support/): Support for Orchestrator robots, machines, tenants, folders, assets, queues, triggers, schedules, jobs, logs, monitoring, credentials, and production bot management.
+- [UiPath REFramework Job Support](/uipath-reframework-job-support/): Support for REFramework state machine design — Init, Get Transaction Data, Process Transaction, End Process — config file, assets, queues, retries, business/system exceptions, and logging.
+- [UiPath Queues & Dispatcher/Performer Support](/uipath-queues-dispatcher-performer-support/): Support for queue architecture, transaction design, dispatcher/performer splitting, retry strategy, SLA, bulk processing, and throughput optimization.
+- [UiPath Exception Handling Job Support](/uipath-exception-handling-job-support/): Support for Try Catch, Retry Scope, Check App State, Global Exception Handler, business vs system exceptions, screenshots, recovery, and bot stability.
+- [UiPath Document Understanding Job Support](/uipath-document-understanding-job-support/): Support for Document Understanding pipelines — OCR, classification, extraction, validation, Intelligent Keyword Classifier, ML Classifier, human validation, confidence scoring.
+- [UiPath OCR & Computer Vision Job Support](/uipath-ocr-computer-vision-job-support/): Support for OCR, Computer Vision activities, Citrix automation, remote desktop UI, image-based selectors, anchors, dynamic UI elements, and selector instability.
+- [UiPath Apps Job Support](/uipath-apps-job-support/): Support for UiPath Apps, forms, user inputs, human-in-the-loop workflows, process apps, approvals, validation screens, and citizen-user automation.
+- [UiPath Testing Job Support](/uipath-testing-job-support/): Support for UiPath Test Suite, Test Cloud, test cases, regression, SIT, UAT, bot testing, agentic testing, and production release validation.
+- [UiPath API Integration Job Support](/uipath-api-integration-job-support/): Support for HTTP Request activity, REST APIs, JSON, OAuth, Integration Service, API-first automation, secure credentials, token handling, and API error handling.
+- [UiPath Agentic Automation Job Support](/uipath-agentic-automation-job-support/): Support for UiPath agentic automation — Maestro, Autopilot, AI agents, multi-agent workflows, human-in-the-loop, robots + AI + humans, governance, and enterprise automation architecture.
+- [UiPath RAG & LLM Automation Support](/uipath-rag-llm-automation-support/): Support for RAG, LangChain, LLM usage in UiPath, semantic search, document Q&A, enterprise knowledge automation, governance, prompt safety, and auditability.
+- [UiPath Production Support](/uipath-production-support/): Support for production bot stability, monitoring, job failures, queue backlogs, incident support, RCA, SLA, retry design, alerting, hypercare, and bot maintenance.
+- [UiPath Framework Design Support](/uipath-framework-design-support/): Support for queue architecture, transaction design, reusable components, config management, credential management, environment separation, monitoring, and scalable bot architecture.
+
+### UiPath Healthcare & Epic Automation Pages
+- [UiPath Healthcare Job Support](/uipath-healthcare-job-support/): UiPath support for healthcare intake automation, patient data workflows, clinical documents, insurance forms, appointment workflows, claims support, PHI/HIPAA awareness, and healthcare RPA production support.
+- [UiPath Epic Automation Job Support](/uipath-epic-automation-job-support/): UiPath support for Epic automation — Hyperspace, Hyperdrive, patient charts, clinical workflows, HIM, ClinDoc, MyChart, healthcare intake, UI automation constraints, and API vs UI strategy.
+- [UiPath Epic Proxy Interview Support](/uipath-epic-proxy-interview-support/): Live proxy interview support for UiPath roles involving Epic — Hyperspace, Hyperdrive, FHIR, Interconnect, PHI/HIPAA, healthcare document automation, and clinical workflow scenarios.
+- [Epic Hyperspace UiPath Automation Support](/epic-hyperspace-uipath-automation-support/): Support for Epic Hyperspace UI automation — selectors, Citrix/remote UI challenges, stable automation design, patient chart navigation, screen validation, and audit trail considerations.
+- [Epic Hyperdrive UiPath Automation Support](/epic-hyperdrive-uipath-automation-support/): Support for Epic Hyperdrive automation — modern Epic UI changes, selector updates, browser-like behavior, and automation impact of Hyperdrive migration.
+- [Epic FHIR UiPath Integration Support](/epic-fhir-uipath-integration-support/): Support for Epic FHIR, Interconnect, REST APIs, OAuth, JSON, API vs UI strategy, secure token handling, and patient data privacy in UiPath automation.
+- [Healthcare Document Understanding UiPath Support](/healthcare-document-understanding-uipath-support/): Support for clinical document classification, extraction, validation, patient intake forms, HIM documents, insurance documents, human validation, PHI handling, and confidence scoring.
+- [HIPAA & PHI RPA Automation Support](/hipaa-phi-rpa-automation-support/): Support for HIPAA-compliant RPA — secure logging, data masking, credential management, audit trails, least privilege design, and avoiding PHI leakage in bot logs and screenshots.
+
+### UiPath Country / GEO Pages
+- [UiPath Job Support USA](/uipath-job-support-usa/): Real-time UiPath job support for US projects — all US time zones, healthcare/Epic, financial services, enterprise. EST/CST/MST/PST.
+- [UiPath Proxy Interview USA](/uipath-proxy-interview-usa/): Live UiPath proxy interview support for US roles — healthcare systems, banks, consulting firms. All US time zones.
+- [UiPath Interview Scheduled USA](/uipath-interview-scheduled-usa/): UiPath profile marketing and recruiter outreach for US RPA roles. Resume engineering for US ATS and recruiter keyword filtering.
+- [UiPath Job Support Canada](/uipath-job-support-canada/): Real-time UiPath job support for Canadian projects — banking (Big 5), healthcare, telecom. EST to PST.
+- [UiPath Proxy Interview Canada](/uipath-proxy-interview-canada/): Live UiPath proxy interview support for Canadian banking, healthcare, and consulting roles. EST to PST.
+- [UiPath Interview Scheduled Canada](/uipath-interview-scheduled-canada/): UiPath profile marketing for Canadian RPA roles — banking, healthcare, telecom, Big 4 consulting.
+- [UiPath Job Support UK](/uipath-job-support-uk/): Real-time UiPath job support for UK projects — financial services, NHS, government. GMT/BST aligned.
+- [UiPath Proxy Interview UK](/uipath-proxy-interview-uk/): Live UiPath proxy interview support for UK financial services, NHS, and consulting roles. GMT/BST.
+- [UiPath Interview Scheduled UK](/uipath-interview-scheduled-uk/): UiPath profile marketing for UK RPA roles — financial services, NHS, Big 4 consulting.
+- [UiPath Job Support Europe](/uipath-job-support-europe/): Real-time UiPath job support for European projects — manufacturing, banking, shared services. CET/CEST.
+- [UiPath Proxy Interview Europe](/uipath-proxy-interview-europe/): Live UiPath proxy interview support for European manufacturing, banking, and consulting roles. CET/CEST.
+- [UiPath Interview Scheduled Europe](/uipath-interview-scheduled-europe/): UiPath profile marketing for European RPA roles across Germany, Netherlands, France, Sweden, Switzerland.
+- [UiPath Job Support Ireland](/uipath-job-support-ireland/): UiPath job support for Ireland — Dublin MNCs, AIB, Bank of Ireland, pharma/medtech. IST.
+- [UiPath Job Support Germany](/uipath-job-support-germany/): UiPath job support for Germany — manufacturing (Volkswagen, Siemens, Bosch), banking (Deutsche Bank), SAP automation. CET/CEST.
+- [UiPath Job Support Netherlands](/uipath-job-support-netherlands/): UiPath job support for Netherlands — ING, ABN AMRO, Shell, logistics, shared services. CET/CEST.
+- [UiPath Job Support France](/uipath-job-support-france/): UiPath job support for France — BNP Paribas, Société Générale, telecom, government digital. CET/CEST.
+- [UiPath Job Support Sweden](/uipath-job-support-sweden/): UiPath job support for Sweden — Nordea, SEB, Volvo, Ericsson, healthcare automation. CET/CEST.
+- [UiPath Job Support Switzerland](/uipath-job-support-switzerland/): UiPath job support for Switzerland — UBS, Novartis, Roche, Zurich Insurance, private banking automation. CET/CEST.
+- [UiPath Job Support Australia](/uipath-job-support-australia/): UiPath job support for Australia — CBA, ANZ, Westpac, government, healthcare. AEST/AEDT.
+- [UiPath Job Support New Zealand](/uipath-job-support-new-zealand/): UiPath job support for New Zealand — banking, government, healthcare, utility automation. NZST/NZDT.
+- [UiPath Job Support Singapore](/uipath-job-support-singapore/): UiPath job support for Singapore — DBS, OCBC, UOB, logistics, APAC shared services. SGT (UTC+8).
+- [UiPath Job Support UAE](/uipath-job-support-uae/): UiPath job support for UAE — Emirates NBD, FAB, government digital transformation, oil and gas. GST (UTC+4).
+- [UiPath Job Support Saudi Arabia](/uipath-job-support-saudi-arabia/): UiPath job support for Saudi Arabia — Al Rajhi, Saudi Aramco, Vision 2030, oil and gas, healthcare. AST (UTC+3).

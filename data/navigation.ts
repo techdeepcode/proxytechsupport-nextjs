@@ -23,6 +23,7 @@ export const jobSupportLinks = [
   { label: 'Angular Job Support', href: '/angular-job-support/' },
   { label: 'React Native Job Support', href: '/react-native-job-support/' },
   { label: 'Digital Analytics & Marketing Tech', href: '/digital-analytics-job-support/' },
+  { label: 'UiPath / RPA Job Support', href: '/uipath-job-support/' },
   { label: 'Workday Job Support', href: '/workday-job-support/' },
   { label: 'Workday HRIS Job Support', href: '/workday-hris-job-support/' },
   { label: 'Workday HCM Job Support', href: '/workday-hcm-job-support/' },
