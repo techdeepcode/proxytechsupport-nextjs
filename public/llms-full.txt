@@ -416,6 +416,109 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 
 ## AI Technical Lead & GenAI Interview Articles
 
+### Senior AI/ML Engineer Interview Questions — Recommendation Systems, LLMs, MLOps & Data Drift
+URL: /interviews/2026-06-02-senior-ai-ml-engineer-interview-questions-recommendation-systems/
+Type: Real interview Q&A guide (anonymized)
+Published: 2026-06-02
+Canonical: https://proxytechsupport.com/interviews/2026-06-02-senior-ai-ml-engineer-interview-questions-recommendation-systems/
+Target audience: Senior AI/ML Engineer candidates, Data Science interview candidates, recommendation system interview candidates, MLOps engineers, personalization engineers, candidates preparing for AI/ML technical client rounds or system design interviews focused on recommendation and ranking systems
+
+Primary SEO topics: Senior AI ML Engineer interview questions, recommendation system interview questions, AI ML interview support, real-time ML interview questions, collaborative filtering interview answer, XGBoost reranking interview, NDCG explanation, MLflow lifecycle interview, data drift interview answer, LLM tokens interview, tiktoken explanation, Spark ML pipeline interview, personalization interview questions, knowledge graph interview questions, hybrid recommendation system interview, ALS recommendation interview, candidate generation explanation, Customer 360 interview, production ML debugging interview, overfitting XGBoost interview
+
+Secondary SEO topics: PySpark recommendation system, matrix factorization interview, Spark ALS recommendation, Precision@K Recall@K interview, A/B testing recommendation system, feature drift interview, Evidently AI drift monitoring, XGBoost hyperparameter tuning, LambdaMART ranking, two-tower model interview, Neo4j recommendation interview, record linkage interview, entity linkage interview, time-based train-test split interview, ML lifecycle flow interview, MLflow model registry interview
+
+**Article Summary:**
+42 real Senior AI/ML Engineer interview questions and short technical answers based on an actual technical/client round for a Senior AI/ML Engineer role focused on personalization and recommendation systems. Covers hybrid recommendation architecture, ALS collaborative filtering, XGBoost reranking, Spark-based ML pipelines, MLflow lifecycle management, LLM tokenization, tiktoken, data drift detection, production ML debugging, bias-variance tradeoff, overfitting, Customer 360, entity linkage, knowledge graphs, and Neo4j. All company names, candidate names, and private identifiers are fully anonymized. Designed for candidates who need to sound practical, technical, and production-ready.
+
+**Entity Summary:**
+- Role: Senior AI/ML Engineer
+- Skills: Python, PySpark, Spark, Kafka, XGBoost, MLflow, FastAPI, Kubernetes, LLMs, RAG, recommendation systems, feature engineering
+- Domains: Healthcare enterprise, financial services, telecom, customer personalization
+- Use cases: Recommendation systems, real-time personalization, ranking models, Customer 360, LLM integration, production ML monitoring and debugging
+- Interview type: Technical AI/ML client round — personalization and recommendation focus
+- June 2026 context: Recommendation systems, knowledge graphs, MLOps, LLM APIs, data drift monitoring, Spark-based large-scale ML, hybrid recommendation architectures
+- Key topics covered: Collaborative filtering, hybrid recommendation, ALS, XGBoost reranking, NDCG, entity linkage, MLflow, LLM training, tiktoken, data drift, overfitting, bias-variance, Neo4j
+
+**Key topics covered:**
+- Self-introduction for Senior AI/ML Engineer: 9 years experience, large-scale ML platforms, recommendation systems, Python, Spark, Kafka, FastAPI, MLflow, Kubernetes, LLM APIs
+- Recent project context: AI-powered analytics, recommendation-style personalization, Python services, Spark data processing, FastAPI, Kafka, Redis, Elasticsearch, Grafana
+- Cold start problem: collaborative filtering fails for new users — solved with hybrid combining collaborative signals, content-based features, popularity signals, reranking
+- Hybrid recommendation system: collaborative filtering + content-based filtering + popularity + recency + ranking layer — covers cold start, diversity, coverage
+- Recommendation models spectrum: collaborative filtering, matrix factorization, ALS, SVD, XGBoost ranking, LightGBM ranking, LambdaMART, two-tower models, Neural Collaborative Filtering, DeepFM, DLRM
+- Collaborative filtering: user behavior pattern matching, similar-user item recommendation, matrix factorization or ALS at scale, cold start limitation
+- ALS (Alternating Least Squares): matrix factorization for collaborative filtering, learns latent user/item factors, Spark-distributed, handles large recommendation datasets
+- Candidate generation pipeline: millions of items → ALS + content similarity + popularity + business rules → ~200 candidates → deduplication → ranking → Top K
+- XGBoost reranking: features (ALS score, content similarity, user engagement, category affinity, content popularity, recency, historical CTR) → predict engagement probability → sort → Top 10
+- XGBoost hyperparameters: max_depth, learning_rate, n_estimators, subsample, colsample_bytree, min_child_weight, gamma, scale_pos_weight for imbalanced click data
+- Proving recommendation improvement: A/B testing — control (old logic) vs treatment (new model), metrics CTR/conversion/session duration/repeat visits, guardrail metrics, statistical significance required
+- NDCG (Normalized Discounted Cumulative Gain): ranking quality metric, rewards relevant items at top positions, position-sensitive, higher = better ranking
+- Offline vs online metrics: offline (Precision@K, Recall@K, MAP, NDCG, coverage, diversity), online (CTR, conversion, engagement, revenue) — online A/B is the production decision
+- Spark in ML: distributed feature engineering, joins, aggregations, transformations, ALS training, handles billions of records, faster retraining, Delta table / feature store output
+- Training data pipeline: collect interactions → clean nulls/duplicates → generate user/item/interaction features → user-item pair rows → label (clicked=1/not=0) → time-based split → train → evaluate → MLflow register → deploy
+- Time-based train-test split: prevents data leakage — future behavior must not contaminate training; train on past, validate on recent weeks, simulates production behavior
+- Entity / record linkage: cross-system customer matching — standardization, blocking, similarity scoring (email, phone, name, address, DOB, embeddings), threshold — critical for Customer 360 recommendation quality
+- Customer 360: unified customer view across systems — profile, transactions, interactions, support history, marketing — improves recommendation context and relevance
+- Knowledge graphs: graph modeling of users, content, products, categories (viewed, clicked, purchased, belongs_to, similar_to, related_to relationships) — graph traversal for candidate generation, graph embeddings for ranking
+- Neo4j in recommendations: User→Viewed→Content, Content→BelongsTo→Category, Content→RelatedTo→Content — graph traversal for related item candidates + graph features in ranking model
+- Production model performance drop diagnosis: check business metrics → feature/data drift → feature pipeline validity (nulls, stale data, Kafka failures) → prediction distribution collapse → serving metrics (latency, timeouts, API errors) → segment analysis → then decide fix type before retraining
+- Data drift: production input distribution differs from training distribution — user population shift, new dominant content category — reduces model performance — detected by comparing feature distributions
+- Data drift monitoring tools: Evidently AI, MLflow Monitoring, Grafana, Datadog, ELK, CloudWatch — PSI, KL divergence, distribution comparison — alert threshold triggers fix/retrain decision
+- Overfitting: high training NDCG (0.95) but low validation NDCG (0.70) — not generalizing — caused by deep trees, too many estimators, weak regularization — fix: early stopping, regularization, lower max_depth, subsampling
+- Bias-variance tradeoff: high bias = underfitting (too simple), high variance = overfitting (too sensitive to training data) — balance both for generalization
+- LLM token: basic text processing unit — word, word-part, punctuation, number, symbol — impacts context window, latency, memory, API cost — controls RAG chunk size and prompt length
+- Tokenization libraries: tiktoken (OpenAI), AutoTokenizer / BertTokenizer / T5Tokenizer / LlamaTokenizer (Hugging Face) — count tokens, manage context size, control chunking, estimate cost
+- tiktoken: OpenAI tokenizer library — counts tokens before API calls, manages context limits, detects RAG context overflow, controls Top K reduction or prompt trimming — prevents overflow, cost waste, latency spikes
+- LLM APIs used: OpenAI APIs, Azure OpenAI APIs, embedding APIs, chat completion APIs, Hugging Face endpoints — with retry logic, timeout handling, rate limit handling, token monitoring, JSON schema validation
+- ML frameworks: LangChain, LangGraph, FastAPI, MLflow, PySpark, XGBoost, Scikit-learn, TensorFlow, PyTorch, Hugging Face Transformers; RAG: LangChain + vector DBs; deployment: Docker, Kubernetes, CI/CD, monitoring
+- ML lifecycle flow: data collection → clean/preprocess → feature engineering → train/validation/test split → train → evaluate → MLflow register → FastAPI/batch deploy → monitor (latency, errors, drift, business metrics) → retrain/rollback
+- MLflow lifecycle tracking: experiment tracking, model registry, versioning, metrics, artifacts, deployment stage (dev → staging → production → archived), traceability, rollback, reproducibility
+- MLflow logged items: hyperparameters, training metrics, validation metrics (NDCG, Precision@K, Recall@K, MAP, AUC), model artifacts, dataset/feature version, run ID, model version, model stage
+- LLM training: not trained specifically on interview questions — self-supervised learning on large text corpora using next-token prediction — pretraining then instruction tuning + RLHF — enterprise interview assistants use RAG or fine-tuning, not foundation model training
+- LLM training data: public/licensed/curated datasets — websites, books, Wikipedia-style content, technical docs, research papers, code, educational text — filtered for duplicates, spam, low quality, unsafe content — enterprise: RAG from internal documents preferred
+
+**FAQs included (with structured data):**
+1. What are the most important topics for a Senior AI/ML Engineer recommendation system interview?
+2. How should I explain XGBoost in a recommendation system interview?
+3. What is the best short answer for collaborative filtering?
+4. Why is NDCG important in recommendation systems?
+5. How do you prove recommendation systems improve user engagement?
+6. What is data drift in production ML?
+7. Where do you check data drift?
+8. What is MLflow used for in production ML?
+9. What is tiktoken in LLM projects?
+10. How are LLMs trained?
+
+**Internal links in article:**
+- /ai-ml-proxy-interview-support/ (real-time AI/ML technical interview support — natural anchor: "real-time AI/ML interview support")
+- /proxy-interview-support/ (proxy interview assistance — anchor: "real-time proxy interview assistance")
+- /agentic-ai-ml-job-support/ (AI/ML job support — anchor: "AI/ML job support")
+- /testing-quality-engineering-job-support/ (coding test support — anchor: "Coding test support")
+- /production-issue-support/ (production ML job support — anchor: "Job support for live AI/ML projects")
+- /real-time-it-job-support-guide/ (real-time project support — anchor: "real-time project support for AI/ML engineers")
+- /data-engineering-job-support-guide/ (data engineering job support — anchor: "data engineering job support")
+- /devops-job-support/ (DevOps job support — anchor: "DevOps job support")
+
+**Schema included:**
+- Article schema: type "Article", headline, description, datePublished (2026-06-02T12:00:00+05:30), dateModified, url, mainEntityOfPage, author (Organization: Proxy Tech Support), publisher (Organization: Proxy Tech Support with logo), image, speakable (cssSelector: h1, h2, h3, .post-content)
+- FAQPage schema: 10 FAQ items (collaborative filtering, XGBoost reranking, NDCG, A/B testing, data drift, MLflow, tiktoken, LLM training)
+- BreadcrumbList schema: Home (/) → Interview Questions (/interview-questions/) → Senior AI/ML Engineer Interview Questions on Recommendation Systems, LLMs, MLOps & Data Drift
+
+**OG / Twitter card:**
+- og:type = article
+- og:title = Senior AI/ML Engineer Interview Questions on Recommendation Systems, LLMs, MLOps & Data Drift | Proxy Tech Support
+- og:description = Real Senior AI/ML Engineer interview questions and short technical answers on recommendation systems, XGBoost reranking, Spark, MLflow, LLM tokens, and production ML.
+- og:url = https://proxytechsupport.com/interviews/2026-06-02-senior-ai-ml-engineer-interview-questions-recommendation-systems/
+- twitter:card = summary_large_image
+- twitter:title = Senior AI/ML Engineer Interview Questions on Recommendation Systems, LLMs, MLOps & Data Drift | Proxy Tech Support
+- twitter:description = 42 real Senior AI/ML Engineer interview questions on recommendation systems, XGBoost, Spark, MLflow, data drift, and LLMs.
+
+**Robots / indexing:**
+- robots: index, follow
+- canonical: https://proxytechsupport.com/interviews/2026-06-02-senior-ai-ml-engineer-interview-questions-recommendation-systems/
+- hreflang: en-US, en-CA, en-GB, en-AU, x-default — all pointing to canonical URL (no regional variants)
+
+---
+
 ### AI Technical Lead Interview Questions — RAG, LLM Monitoring, Financial Services AI, Compliance
 URL: /interviews/2026-05-27-ai-technical-lead-interview-questions-rag-llm-financial-services-compliance/
 Type: Real interview Q&A guide (anonymized)
