@@ -31,4 +31,16 @@ export const faqs = [
     question: 'Can you help me get more interview calls?',
     answer: 'Yes. Our profile engineering service improves recruiter visibility, LinkedIn search alignment, ATS-friendly technical positioning, and high-intent keyword targeting to increase interview call rates across USA, UK, and Canada markets.',
   },
+  {
+    question: 'Do you apply for jobs on behalf of candidates?',
+    answer: 'Yes. Our Job Application & Candidate Marketing service applies to relevant jobs on your behalf based on your profile, target role, location, and work authorization. We also contact recruiters, follow up professionally, track every application, and send weekly progress updates — so your profile stays active in the market every day.',
+  },
+  {
+    question: 'What is the difference between profile engineering and candidate marketing?',
+    answer: 'Profile Engineering prepares your resume, LinkedIn, and positioning so it can compete in the market. Candidate Marketing then actively moves that profile — applying to relevant jobs, reaching recruiters and vendors, following up, and tracking opportunities. Profile engineering comes first; candidate marketing runs the ongoing campaign.',
+  },
+  {
+    question: 'Which countries do you cover for job application support?',
+    answer: 'We run job search campaigns for candidates targeting USA, Canada, UK, Ireland, Germany, Australia, Europe, Singapore, Hong Kong, and UAE — including major cities like New York, Dallas, London, Toronto, Dubai, Sydney, and Berlin.',
+  },
 ];

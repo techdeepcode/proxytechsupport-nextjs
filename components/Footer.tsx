@@ -67,6 +67,27 @@ const proxyInterviewLinks = [
   { label: 'RPA Proxy Interview', href: '/rpa-proxy-interview-support/' },
 ];
 
+const candidateMarketingLinks = [
+  { label: 'Job Application & Candidate Marketing', href: '/job-application-candidate-marketing/' },
+  { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+  { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+  { label: 'Candidate Marketing UK', href: '/job-application-candidate-marketing-uk/' },
+  { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },
+  { label: 'Candidate Marketing Germany', href: '/job-application-candidate-marketing-germany/' },
+  { label: 'Candidate Marketing Australia', href: '/job-application-candidate-marketing-australia/' },
+  { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },
+  { label: 'Candidate Marketing Singapore', href: '/job-application-candidate-marketing-singapore/' },
+  { label: 'Candidate Marketing UAE', href: '/job-application-candidate-marketing-uae/' },
+  { label: 'Candidate Marketing New York', href: '/job-application-candidate-marketing-new-york/' },
+  { label: 'Candidate Marketing Dallas', href: '/job-application-candidate-marketing-dallas/' },
+  { label: 'Candidate Marketing London', href: '/job-application-candidate-marketing-london/' },
+  { label: 'Candidate Marketing Toronto', href: '/job-application-candidate-marketing-toronto/' },
+  { label: 'Candidate Marketing Dubai', href: '/job-application-candidate-marketing-dubai/' },
+  { label: 'Candidate Marketing Berlin', href: '/job-application-candidate-marketing-berlin/' },
+  { label: 'Candidate Marketing Sydney', href: '/job-application-candidate-marketing-sydney/' },
+  { label: 'Candidate Marketing Dublin', href: '/job-application-candidate-marketing-dublin/' },
+];
+
 const resourceLinks = [
   { label: 'Blog', href: '/blog/' },
   { label: 'Knowledge Base', href: '/knowledge-base/' },
@@ -236,6 +257,20 @@ export default function Footer() {
           <div>
             <FooterHeading>Resources</FooterHeading>
             <FooterLinks links={resourceLinks} />
+          </div>
+        </div>
+
+        <hr style={{ border: 0, borderTop: '1px solid var(--pts-footer-border)', margin: '0 0 2rem' }} />
+
+        {/* ── Job Application & Candidate Marketing section ──────────── */}
+        <div style={{ marginBottom: '2.5rem' }}>
+          <FooterHeading>Job Application &amp; Candidate Marketing</FooterHeading>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
+            {candidateMarketingLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 

@@ -38,6 +38,24 @@ export default function ServiceOfferIcon({ id }: { id: ServiceOfferIconId }) {
           <path d="M10 4h4M12 2v2" />
         </svg>
       );
+    case 'target':
+      /* Crosshair / target — represents profile engineering & recruiter visibility */
+      return (
+        <svg {...c} viewBox="0 0 24 24" aria-hidden>
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="6" />
+          <circle cx="12" cy="12" r="2" fill={GREEN} stroke="none" />
+          <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+        </svg>
+      );
+    case 'megaphone':
+      /* Megaphone / outreach — represents candidate marketing */
+      return (
+        <svg {...c} viewBox="0 0 24 24" aria-hidden>
+          <path d="M3 11v2a1 1 0 001 1h2l3 4h1V7H9L6 11H3z" />
+          <path d="M16 9.5a4 4 0 010 5M19.07 7.07a8 8 0 010 9.86" />
+        </svg>
+      );
     default:
       return null;
   }

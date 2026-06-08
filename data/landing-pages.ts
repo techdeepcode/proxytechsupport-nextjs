@@ -1,4 +1,4 @@
-import { allWorkdayPages } from './workday-pages';
+﻿import { allWorkdayPages } from './workday-pages';
 import { allUiPathPages } from './uipath-pages';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
@@ -252,6 +252,7 @@ export const jobSupportUSA: LandingPageConfig = {
       { label: 'USA Career Crisis Support', href: '/usa-it-career-crisis-support/' },
       { label: 'USA AI Era Job Support', href: '/usa-ai-era-job-support/' },
       { label: 'USA Remote Work IT Support', href: '/usa-remote-work-it-support/' },
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
     ],
   },
   caseStudySection: {
@@ -322,6 +323,9 @@ export const jobSupportUK: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy interview support UK', href: '/proxy-interview-uk/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Candidate Marketing UK', href: '/job-application-candidate-marketing-uk/' },
+    ],
   },
 };
 
@@ -390,6 +394,9 @@ export const jobSupportCanada: LandingPageConfig = {
       { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
       { label: 'Canada IT job support guide', href: '/blog/real-time-it-job-support-interview-proxy-usa-uk-canada-australia/' },
     ],
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],
   },
 };
 
@@ -452,6 +459,9 @@ export const jobSupportAustralia: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Candidate Marketing Australia', href: '/job-application-candidate-marketing-australia/' },
+    ],
   },
 };
 
@@ -514,6 +524,9 @@ export const jobSupportEurope: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },
+    ],
   },
 };
 
@@ -576,6 +589,9 @@ export const jobSupportGermany: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Candidate Marketing Germany', href: '/job-application-candidate-marketing-germany/' },
+    ],
   },
 };
 
@@ -638,6 +654,9 @@ export const jobSupportSingapore: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
+    additionalLinks: [
+      { label: 'Candidate Marketing Singapore', href: '/job-application-candidate-marketing-singapore/' },
+    ],
   },
 };
 
@@ -700,7 +719,10 @@ export const jobSupportNewZealand: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support globally', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },
+    ],},
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -780,7 +802,10 @@ export const javaJobSupportUSA: LandingPageConfig = {
     canadaLinks: [
       { label: 'Java job support Canada', href: '/java-job-support-canada/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -858,7 +883,10 @@ export const nodejsJobSupportUSA: LandingPageConfig = {
     canadaLinks: [
       { label: 'Node.js job support Canada', href: '/nodejs-job-support-canada/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -938,7 +966,10 @@ export const devopsJobSupportUSA: LandingPageConfig = {
     canadaLinks: [
       { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1061,7 +1092,10 @@ export const sreJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy job support', href: '/proxy-job-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1136,7 +1170,10 @@ export const dotnetJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1214,7 +1251,10 @@ export const reactJobSupportUSA: LandingPageConfig = {
     canadaLinks: [
       { label: 'React job support Canada', href: '/react-job-support-canada/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1292,7 +1332,10 @@ export const cloudJobSupportUSA: LandingPageConfig = {
     canadaLinks: [
       { label: 'Cloud job support Canada', href: '/cloud-job-support-canada/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1424,7 +1467,10 @@ export const agenticAiRagMlopsJobSupportUSA: LandingPageConfig = {
       label: 'RAG & MLOps deep-dive (guide)',
       href: '/blog/rag-aimlops-retrieval-augmented-generation-guide/',
     },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1525,7 +1571,10 @@ export const interviewSupportGlobal: LandingPageConfig = {
     problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Proxy interview support USA', href: '/proxy-interview-usa/' },
     blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },
+    ],},
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -1628,7 +1677,10 @@ export const strugglingInJob: LandingPageConfig = {
     problemLink: { label: 'Production issue support', href: '/production-issue-support/' },
     proxyLink: { label: 'Proxy job support', href: '/proxy-job-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1729,7 +1781,10 @@ export const productionIssueSupport: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy job support', href: '/proxy-job-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1830,7 +1885,10 @@ export const failedInterviewHelp: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Global interview support', href: '/interview-support-global/' },
     blogLink: { label: 'Read interview tips on our blog', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },
+    ],},
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -1995,7 +2053,8 @@ export const proxyInterviewSupport: LandingPageConfig = {
       { label: 'Proxy Interview Europe', href: '/proxy-interview-europe/' },
       { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
-    ],
+    
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },],
   },
 };
 
@@ -2097,7 +2156,10 @@ export const proxyJobSupport: LandingPageConfig = {
     problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Proxy interview support', href: '/proxy-interview-support/' },
     blogLink: { label: 'Read developer support articles', href: '/blog/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -2242,6 +2304,7 @@ export const proxyInterviewUSA: LandingPageConfig = {
     additionalLinks: [
       { label: 'USA IT Support Legacy Since 2008', href: '/usa-it-job-support-legacy/' },
       { label: 'USA Career Crisis Support', href: '/usa-it-career-crisis-support/' },
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
     ],
   },
 };
@@ -2384,6 +2447,7 @@ export const proxyInterviewUK: LandingPageConfig = {
       { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+      { label: 'Candidate Marketing UK', href: '/job-application-candidate-marketing-uk/' },
     ],
   },
 };
@@ -2526,6 +2590,7 @@ export const proxyInterviewCanada: LandingPageConfig = {
       { label: 'Proxy Interview Support UK', href: '/proxy-interview-uk/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
     ],
   },
 };
@@ -2659,7 +2724,8 @@ export const javaProxyInterviewSupport: LandingPageConfig = {
       { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
 };
 
@@ -2793,7 +2859,8 @@ export const devopsProxyInterviewSupport: LandingPageConfig = {
       { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: '2026 DevOps Market Context',
@@ -2936,6 +3003,7 @@ export const proxyInterviewAustralia: LandingPageConfig = {
       { label: 'Proxy Interview Support UK', href: '/proxy-interview-uk/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled-australia/' },
+      { label: 'Candidate Marketing Australia', href: '/job-application-candidate-marketing-australia/' },
     ],
   },
 };
@@ -3072,6 +3140,7 @@ export const proxyInterviewEurope: LandingPageConfig = {
       { label: 'Proxy Interview Support USA', href: '/proxy-interview-usa/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },
     ],
   },
 };
@@ -3208,6 +3277,7 @@ export const proxyInterviewSingapore: LandingPageConfig = {
       { label: 'Proxy Interview Support UK', href: '/proxy-interview-uk/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled-singapore/' },
+      { label: 'Candidate Marketing Singapore', href: '/job-application-candidate-marketing-singapore/' },
     ],
   },
 };
@@ -3352,7 +3422,8 @@ export const sreProxyInterviewSupport: LandingPageConfig = {
       { label: 'Proxy Interview Support Canada', href: '/proxy-interview-canada/' },
       { label: 'Proxy Job Support', href: '/proxy-job-support/' },
       { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
 };
 
@@ -3495,7 +3566,8 @@ export const aiMlProxyInterviewSupport: LandingPageConfig = {
       { label: 'Agentic AI & ML Job Support USA', href: '/agentic-ai-ml-job-support-usa/' },
       { label: 'RAG & MLOps Job Support USA', href: '/agentic-ai-rag-mlops-job-support-usa/' },
       { label: 'AI/ML Job Support Canada', href: '/ai-ml-job-support-canada/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
 };
 
@@ -3639,7 +3711,8 @@ export const mlopsProxyInterviewSupport: LandingPageConfig = {
       { label: 'RAG & MLOps Job Support USA', href: '/agentic-ai-rag-mlops-job-support-usa/' },
       { label: 'AI Workflow Automation Job Support', href: '/ai-workflow-automation-pipeline-job-support-usa/' },
       { label: 'AI/ML Job Support Canada', href: '/ai-ml-job-support-canada/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
 };
 
@@ -3798,7 +3871,10 @@ export const agenticAiMlJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Failed an AI/ML interview?', href: '/failed-interview-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
     blogLink: { label: 'AI/ML job support guide', href: '/agentic-ai-ml-job-support/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -3954,7 +4030,10 @@ export const aiWorkflowAutomationJobSupportUSA: LandingPageConfig = {
     problemLink: { label: 'Struggling in your DevOps job?', href: '/struggling-in-job-developer-help/' },
     proxyLink: { label: 'Global proxy interview support', href: '/proxy-interview-support/' },
     blogLink: { label: 'AI pipeline engineering guide', href: '/ai-workflow-automation-pipeline-job-support/' },
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4082,7 +4161,10 @@ export const devopsJobSupportCanada: LandingPageConfig = {
       { label: 'DevOps job support — expert article', href: '/devops-job-support/' },
       { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4206,7 +4288,10 @@ export const cloudJobSupportCanada: LandingPageConfig = {
       { label: 'Cloud technologies job support guide', href: '/cloud-technologies-job-support/' },
       { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4330,7 +4415,10 @@ export const reactJobSupportCanada: LandingPageConfig = {
       { label: 'React developer job support article', href: '/react-job-support/' },
       { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4454,7 +4542,10 @@ export const javaJobSupportCanada: LandingPageConfig = {
       { label: 'Java developer job support guide', href: '/java-job-support/' },
       { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4578,7 +4669,10 @@ export const pythonJobSupportCanada: LandingPageConfig = {
       { label: 'Python developer job support article', href: '/python-job-support/' },
       { label: 'IT job support Vancouver', href: '/it-job-support-vancouver/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4704,7 +4798,10 @@ export const aiMlJobSupportCanada: LandingPageConfig = {
       { label: 'AI/ML job support guide', href: '/ai-ml-job-support/' },
       { label: 'IT job support Montreal', href: '/it-job-support-montreal/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4828,7 +4925,10 @@ export const nodejsJobSupportCanada: LandingPageConfig = {
       { label: 'Node.js developer job support article', href: '/node-job-support/' },
       { label: 'IT job support Toronto', href: '/it-job-support-toronto/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -4955,7 +5055,10 @@ export const itJobSupportToronto: LandingPageConfig = {
       { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
       { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -5080,7 +5183,10 @@ export const itJobSupportVancouver: LandingPageConfig = {
       { label: 'AI/ML job support Canada', href: '/ai-ml-job-support-canada/' },
       { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -5205,7 +5311,10 @@ export const itJobSupportCalgary: LandingPageConfig = {
       { label: 'DevOps job support Canada', href: '/devops-job-support-canada/' },
       { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -5330,7 +5439,10 @@ export const itJobSupportMontreal: LandingPageConfig = {
       { label: 'Python job support Canada', href: '/python-job-support-canada/' },
       { label: 'IT job support proxy guide for Canada', href: '/proxy-job-support-interview-support-usa-uk-canada-australia/' },
     ],
-  },
+  
+    additionalLinks: [
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+    ],},
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -5476,6 +5588,7 @@ export const jobSupportIreland: LandingPageConfig = {
       { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
       { label: 'AI/ML DevOps SRE Ireland support', href: '/ai-ml-devops-sre-job-support-ireland/' },
       { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+      { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },
     ],
   },
 };
@@ -5616,7 +5729,8 @@ export const itJobSupportDublin: LandingPageConfig = {
       { label: 'AI/ML DevOps SRE Ireland support', href: '/ai-ml-devops-sre-job-support-ireland/' },
       { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
       { label: 'Project onboarding help Ireland', href: '/project-onboarding-help-ireland/' },
-    ],
+    
+      { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },],
   },
 };
 
@@ -5761,6 +5875,7 @@ export const interviewProxySupportIreland: LandingPageConfig = {
       { label: 'AI/ML DevOps SRE Ireland support', href: '/ai-ml-devops-sre-job-support-ireland/' },
       { label: 'Java proxy interview', href: '/java-proxy-interview-support/' },
       { label: 'SRE proxy interview', href: '/sre-proxy-interview-support/' },
+      { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },
     ],
   },
 };
@@ -5900,7 +6015,8 @@ export const productionSupportHelpIreland: LandingPageConfig = {
       { label: 'Ireland interview proxy support', href: '/interview-proxy-support-ireland/' },
       { label: 'Project onboarding help Ireland', href: '/project-onboarding-help-ireland/' },
       { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
-    ],
+    
+      { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },],
   },
 };
 
@@ -6045,7 +6161,8 @@ export const aiMlDevopsSreJobSupportIreland: LandingPageConfig = {
       { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
       { label: 'SRE proxy interview', href: '/sre-proxy-interview-support/' },
       { label: 'MLOps proxy interview', href: '/mlops-proxy-interview-support/' },
-    ],
+    
+      { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },],
   },
 };
 
@@ -6189,7 +6306,8 @@ export const projectOnboardingHelpIreland: LandingPageConfig = {
       { label: 'AI/ML DevOps SRE Ireland', href: '/ai-ml-devops-sre-job-support-ireland/' },
       { label: 'Get interview scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
       { label: 'Production support Ireland', href: '/production-support-help-ireland/' },
-    ],
+    
+      { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },],
   },
 };
 
@@ -6341,6 +6459,7 @@ export const proxyInterviewGermany: LandingPageConfig = {
       { label: 'AI/ML proxy interview', href: '/ai-ml-proxy-interview-support/' },
       { label: 'SRE proxy interview', href: '/sre-proxy-interview-support/' },
       { label: 'Get interview scheduled Germany', href: '/get-interview-scheduled-germany/' },
+      { label: 'Candidate Marketing Germany', href: '/job-application-candidate-marketing-germany/' },
     ],
   },
 };
@@ -6477,7 +6596,8 @@ export const jobSupportTexas: LandingPageConfig = {
       { label: 'IT job support Plano', href: '/it-job-support-plano/' },
       { label: 'Production support help Texas', href: '/production-support-help-texas/' },
       { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'Texas Consulting Market: Why CST-Timezone Support Matters',
@@ -6622,7 +6742,8 @@ export const itJobSupportDallas: LandingPageConfig = {
       { label: 'IT job support Plano', href: '/it-job-support-plano/' },
       { label: 'Production support help Texas', href: '/production-support-help-texas/' },
       { label: 'IT job support USA', href: '/job-support-usa/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'Why Dallas Consultants Need Specialized Real-Time Support',
@@ -6767,7 +6888,8 @@ export const itJobSupportIrving: LandingPageConfig = {
       { label: 'IT job support Plano', href: '/it-job-support-plano/' },
       { label: 'Production support help Texas', href: '/production-support-help-texas/' },
       { label: 'IT job support USA', href: '/job-support-usa/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: "Irving's Enterprise IT Corridor: The Consulting Reality",
@@ -6912,7 +7034,8 @@ export const itJobSupportPlano: LandingPageConfig = {
       { label: 'IT job support Irving', href: '/it-job-support-irving/' },
       { label: 'Production support help Texas', href: '/production-support-help-texas/' },
       { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: "Plano's Corporate Tech Corridor: High-Stakes Consulting Reality",
@@ -7057,7 +7180,8 @@ export const devopsJobSupportDallas: LandingPageConfig = {
       { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
       { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
       { label: 'IT job support Irving', href: '/it-job-support-irving/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'Dallas DevOps: High Ownership, Zero Margin for Error',
@@ -7202,7 +7326,8 @@ export const javaJobSupportIrving: LandingPageConfig = {
       { label: 'IT job support Dallas', href: '/it-job-support-dallas/' },
       { label: 'AI/ML DevOps SRE job support Texas', href: '/ai-ml-devops-sre-job-support-texas/' },
       { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'Irving Java Enterprise: Why Generic Java Help Fails Here',
@@ -7347,7 +7472,8 @@ export const productionSupportHelpTexas: LandingPageConfig = {
       { label: 'IT job support Irving', href: '/it-job-support-irving/' },
       { label: 'Java job support Irving', href: '/java-job-support-irving/' },
       { label: 'Production issue support', href: '/production-issue-support/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'Texas Production Incidents: The Consulting Pressure Behind Every Outage',
@@ -7493,7 +7619,8 @@ export const projectOnboardingHelpTexas: LandingPageConfig = {
       { label: 'IT job support Irving', href: '/it-job-support-irving/' },
       { label: 'IT job support Plano', href: '/it-job-support-plano/' },
       { label: 'Java job support Irving', href: '/java-job-support-irving/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'The Texas Consulting Onboarding Gap: Why New Assignments Are So Hard',
@@ -7638,7 +7765,8 @@ export const interviewProxySupportDallas: LandingPageConfig = {
       { label: 'Java job support Irving', href: '/java-job-support-irving/' },
       { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
       { label: 'Proxy interview support', href: '/proxy-interview-support/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'Dallas Interview Reality: What Fortune 500 Client Rounds Actually Test',
@@ -7784,7 +7912,8 @@ export const aiMlDevOpsSreJobSupportTexas: LandingPageConfig = {
       { label: 'AI/ML job support USA', href: '/agentic-ai-ml-job-support-usa/' },
       { label: 'DevOps job support USA', href: '/devops-job-support-usa/' },
       { label: 'Project onboarding help Texas', href: '/project-onboarding-help-texas/' },
-    ],
+    
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },],
   },
   caseStudySection: {
     heading: 'Texas High-Demand Tech: Why These Roles Need Specialized Support',
@@ -7866,7 +7995,8 @@ export const jobSupportNetherlands: LandingPageConfig = {
       { label: 'Proxy Interview Netherlands', href: '/proxy-interview-netherlands/' },
       { label: 'Get Interview Scheduled Netherlands', href: '/get-interview-scheduled-netherlands/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -7934,7 +8064,8 @@ export const jobSupportSweden: LandingPageConfig = {
       { label: 'Proxy Interview Sweden', href: '/proxy-interview-sweden/' },
       { label: 'Get Interview Scheduled Sweden', href: '/get-interview-scheduled-sweden/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8002,7 +8133,8 @@ export const jobSupportDenmark: LandingPageConfig = {
       { label: 'Proxy Interview Denmark', href: '/proxy-interview-denmark/' },
       { label: 'Get Interview Scheduled Denmark', href: '/get-interview-scheduled-denmark/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8070,7 +8202,8 @@ export const jobSupportFinland: LandingPageConfig = {
       { label: 'Proxy Interview Finland', href: '/proxy-interview-finland/' },
       { label: 'Get Interview Scheduled Finland', href: '/get-interview-scheduled-finland/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8138,7 +8271,8 @@ export const jobSupportNorway: LandingPageConfig = {
       { label: 'Proxy Interview Norway', href: '/proxy-interview-norway/' },
       { label: 'Get Interview Scheduled Norway', href: '/get-interview-scheduled-norway/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8206,7 +8340,8 @@ export const jobSupportSwitzerland: LandingPageConfig = {
       { label: 'Proxy Interview Switzerland', href: '/proxy-interview-switzerland/' },
       { label: 'Get Interview Scheduled Switzerland', href: '/get-interview-scheduled-switzerland/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8274,7 +8409,8 @@ export const jobSupportAustria: LandingPageConfig = {
       { label: 'Proxy Interview Austria', href: '/proxy-interview-austria/' },
       { label: 'Get Interview Scheduled Austria', href: '/get-interview-scheduled-austria/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8342,7 +8478,8 @@ export const jobSupportBelgium: LandingPageConfig = {
       { label: 'Proxy Interview Belgium', href: '/proxy-interview-belgium/' },
       { label: 'Get Interview Scheduled Belgium', href: '/get-interview-scheduled-belgium/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8410,7 +8547,8 @@ export const jobSupportSpain: LandingPageConfig = {
       { label: 'Proxy Interview Spain', href: '/proxy-interview-spain/' },
       { label: 'Get Interview Scheduled Spain', href: '/get-interview-scheduled-spain/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8478,7 +8616,8 @@ export const jobSupportPortugal: LandingPageConfig = {
       { label: 'Proxy Interview Portugal', href: '/proxy-interview-portugal/' },
       { label: 'Get Interview Scheduled Portugal', href: '/get-interview-scheduled-portugal/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8546,7 +8685,8 @@ export const jobSupportHongKong: LandingPageConfig = {
       { label: 'Proxy Interview Hong Kong', href: '/proxy-interview-hong-kong/' },
       { label: 'Get Interview Scheduled Hong Kong', href: '/get-interview-scheduled-hong-kong/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Hong Kong', href: '/job-application-candidate-marketing-hong-kong/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8688,7 +8828,8 @@ export const proxyInterviewNetherlands: LandingPageConfig = {
       { label: 'AI/ML proxy interview', href: '/ai-ml-proxy-interview-support/' },
       { label: 'Get interview scheduled Netherlands', href: '/get-interview-scheduled-netherlands/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8826,7 +8967,8 @@ export const proxyInterviewSweden: LandingPageConfig = {
       { label: 'AI/ML proxy interview', href: '/ai-ml-proxy-interview-support/' },
       { label: 'Get interview scheduled Sweden', href: '/get-interview-scheduled-sweden/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -8963,7 +9105,8 @@ export const proxyInterviewDenmark: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Denmark', href: '/get-interview-scheduled-denmark/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -9100,7 +9243,8 @@ export const proxyInterviewFinland: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Finland', href: '/get-interview-scheduled-finland/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -9237,7 +9381,8 @@ export const proxyInterviewNorway: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Norway', href: '/get-interview-scheduled-norway/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -9374,7 +9519,8 @@ export const proxyInterviewSwitzerland: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Switzerland', href: '/get-interview-scheduled-switzerland/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -9511,7 +9657,8 @@ export const proxyInterviewAustria: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Austria', href: '/get-interview-scheduled-austria/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -9648,7 +9795,8 @@ export const proxyInterviewBelgium: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Belgium', href: '/get-interview-scheduled-belgium/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -9785,7 +9933,8 @@ export const proxyInterviewSpain: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Spain', href: '/get-interview-scheduled-spain/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -9922,7 +10071,8 @@ export const proxyInterviewPortugal: LandingPageConfig = {
       { label: 'IT job support Europe', href: '/job-support-europe/' },
       { label: 'Get interview scheduled Portugal', href: '/get-interview-scheduled-portugal/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -10059,7 +10209,8 @@ export const proxyInterviewNewZealand: LandingPageConfig = {
       { label: 'IT job support Australia', href: '/job-support-australia/' },
       { label: 'Get interview scheduled New Zealand', href: '/get-interview-scheduled-new-zealand/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };
@@ -10196,7 +10347,8 @@ export const proxyInterviewHongKong: LandingPageConfig = {
       { label: 'IT job support Singapore', href: '/job-support-singapore/' },
       { label: 'Get interview scheduled Hong Kong', href: '/get-interview-scheduled-hong-kong/' },
       { label: 'All Locations', href: '/locations/' },
-    ],
+    
+      { label: 'Candidate Marketing Hong Kong', href: '/job-application-candidate-marketing-hong-kong/' },],
   },
   lastmod: '2026-05-23T10:00:00.000Z',
 };

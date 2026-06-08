@@ -33,6 +33,7 @@ const professionalService = {
     'Spain',
     'Portugal',
     'Hong Kong',
+    'United Arab Emirates',
   ],
   serviceType: [
     'Proxy Interview Support',
@@ -62,6 +63,10 @@ const professionalService = {
     'Cybersecurity Support',
     'Salesforce Job Support',
     'Dynamics 365 Job Support',
+    'Job Application Service',
+    'Candidate Marketing Service',
+    'Job Search Campaign Service',
+    'Recruiter Outreach Service',
   ],
   sameAs: [
     'https://www.linkedin.com/company/proxy-tech-support/',
@@ -130,6 +135,23 @@ const professionalService = {
           name: 'DevOps, SRE and Cloud Job Support',
           description:
             'Support for AWS, Azure, GCP, Kubernetes, Docker, Terraform, CI/CD, GitOps, SLO/SLI implementation, error budget tracking, incident management, chaos engineering, observability, and cloud-native infrastructure.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Job Application & Candidate Marketing',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Job Application & Candidate Marketing',
+          description:
+            'Structured job search campaign service for IT professionals — targeted job applications, recruiter outreach, vendor outreach, professional follow-ups, application tracking, and weekly progress updates. Available for USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, Hong Kong, and UAE.',
+          url: 'https://proxytechsupport.com/job-application-candidate-marketing/',
+          offers: {
+            '@type': 'Offer',
+            price: '800',
+            priceCurrency: 'USD',
+            description: 'Monthly job application and candidate marketing campaign',
+          },
         },
       },
     ],

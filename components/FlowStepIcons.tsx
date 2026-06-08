@@ -11,7 +11,7 @@ const base = {
   strokeLinejoin: 'round' as const,
 };
 
-export type FlowIconId = 'editDoc' | 'linkedin' | 'mentoring' | 'headset' | 'briefcase';
+export type FlowIconId = 'editDoc' | 'linkedin' | 'megaphone' | 'mentoring' | 'headset' | 'briefcase';
 
 export function FlowStepIcon({ id }: { id: FlowIconId }) {
   switch (id) {
@@ -27,6 +27,13 @@ export function FlowStepIcon({ id }: { id: FlowIconId }) {
         <svg viewBox="0 0 24 24" aria-hidden {...base}>
           <rect x="3" y="3" width="18" height="18" rx="2" />
           <path d="M8 10v7M8 7.5a1 1 0 011-1h.01M13 17v-4.5a2.5 2.5 0 015 0V17" />
+        </svg>
+      );
+    case 'megaphone':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden {...base}>
+          <path d="M3 11v2a1 1 0 001 1h2l3 4h1V7H9L6 11H3z" />
+          <path d="M16 9.5a4 4 0 010 5M19.07 7.07a8 8 0 010 9.86" />
         </svg>
       );
     case 'mentoring':

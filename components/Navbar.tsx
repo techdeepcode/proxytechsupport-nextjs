@@ -193,11 +193,13 @@ export default function Navbar({ variant = 'light' }: Props) {
 
   const dropdownLink: CSSProperties = {
     display: 'block',
-    padding: '0.5rem 1.25rem',
-    fontSize: '0.875rem',
+    padding: '0.42rem 0.75rem',
+    fontSize: '0.835rem',
     color: 'var(--pts-text-muted)',
-    whiteSpace: 'nowrap',
+    whiteSpace: 'normal',
+    lineHeight: 1.4,
     textDecoration: 'none',
+    borderRadius: '6px',
   };
 
   return (
@@ -286,21 +288,66 @@ export default function Navbar({ variant = 'light' }: Props) {
                   </button>
                   {openDropdown === 'jobSupport' && (
                     <div
-                      style={{ ...dropdownPanel, minWidth: '280px' }}
+                      style={{ ...dropdownPanel, left: 0, right: 'auto', padding: '1rem 0.5rem', display: 'grid', gridTemplateColumns: 'repeat(4, minmax(165px, 1fr))', gap: '0 0.25rem', width: 'max-content', maxWidth: '96vw' }}
                       role="menu"
                     >
-                      {jobSupportLinks.filter((item) => !item.hidden).map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          style={dropdownLink}
-                          role="menuitem"
-                          onClick={() => setOpenDropdown(null)}
-                          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pts-section-alt)'; }}
-                          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
-                        >
-                          {item.label}
-                        </Link>
+                      {[
+                        {
+                          label: 'AI / Cloud / DevOps',
+                          items: [
+                            { label: 'Agentic AI & Machine Learning', href: '/agentic-ai-ml-job-support/' },
+                            { label: 'AI Workflow & Pipeline Engineering', href: '/ai-workflow-automation-pipeline-job-support/' },
+                            { label: 'Data Science Job Support', href: '/data-science-job-support/' },
+                            { label: 'DevOps & Automation', href: '/devops-job-support/' },
+                            { label: 'SRE & Reliability Engineering', href: '/sre-job-support-usa/' },
+                            { label: 'Cloud Technologies', href: '/cloud-technologies-job-support/' },
+                            { label: 'AWS Job Support', href: '/aws-job-support/' },
+                          ],
+                        },
+                        {
+                          label: 'Backend / Full-Stack',
+                          items: [
+                            { label: 'Python Job Support', href: '/python-job-support/' },
+                            { label: 'Java Technology Stack', href: '/java-technologies-job-support/' },
+                            { label: 'Node.js Job Support', href: '/node-job-support/' },
+                            { label: '.NET Job Support', href: '/dotnet-job-support/' },
+                            { label: 'Backend & Enterprise', href: '/backend-enterprise-job-support/' },
+                            { label: 'Front-End / Full-Stack', href: '/frontend-fullstack-job-support/' },
+                            { label: 'React Job Support', href: '/react-job-support/' },
+                            { label: 'Angular Job Support', href: '/angular-job-support/' },
+                          ],
+                        },
+                        {
+                          label: 'Data / Security / QA',
+                          items: [
+                            { label: 'Databases & Data Platforms', href: '/databases-data-platforms-job-support/' },
+                            { label: 'Cybersecurity & AppSec', href: '/cybersecurity-job-support/' },
+                            { label: 'Testing & Quality Engineering', href: '/testing-quality-engineering-job-support/' },
+                            { label: 'Digital Analytics & MarTech', href: '/digital-analytics-job-support/' },
+                            { label: 'React Native Job Support', href: '/react-native-job-support/' },
+                          ],
+                        },
+                        {
+                          label: 'Enterprise Platforms',
+                          items: [
+                            { label: 'UiPath / RPA Job Support', href: '/uipath-job-support/' },
+                            { label: 'Workday Job Support', href: '/workday-job-support/' },
+                            { label: 'Workday HRIS Job Support', href: '/workday-hris-job-support/' },
+                            { label: 'Workday HCM Job Support', href: '/workday-hcm-job-support/' },
+                            { label: 'Workday Payroll Job Support', href: '/workday-payroll-job-support/' },
+                            { label: 'Workday Integration', href: '/workday-integration-job-support/' },
+                            { label: 'Workday 2026R1 Release', href: '/workday-2026r1-release-support/' },
+                          ],
+                        },
+                      ].map((col) => (
+                        <div key={col.label} style={{ padding: '0 0.5rem' }}>
+                          <p style={{ fontSize: '0.66rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pts-accent)', margin: '0 0 0.4rem', padding: '0 0.75rem 0.4rem', borderBottom: '1px solid var(--pts-border)' }}>{col.label}</p>
+                          {col.items.map((item) => (
+                            <Link key={item.href} href={item.href} style={dropdownLink} role="menuitem" onClick={() => setOpenDropdown(null)} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pts-section-alt)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}>
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
                       ))}
                     </div>
                   )}
@@ -345,22 +392,27 @@ export default function Navbar({ variant = 'light' }: Props) {
                   </button>
                   {openDropdown === 'locations' && (
                     <div
-                      style={{ ...dropdownPanel, minWidth: '220px' }}
+                      style={{ ...dropdownPanel, left: 'auto', right: 0, padding: '1rem 0.5rem', display: 'grid', gridTemplateColumns: 'repeat(3, minmax(175px, 1fr))', gap: '0 0.25rem', width: 'max-content', maxWidth: '90vw' }}
                       role="menu"
                     >
-                      {locationNavLinks.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          style={dropdownLink}
-                          role="menuitem"
-                          onClick={() => setOpenDropdown(null)}
-                          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pts-section-alt)'; }}
-                          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                      {(() => {
+                        const cols: { label: string; items: { label: string; href: string }[] }[] = [];
+                        let cur: { label: string; items: { label: string; href: string }[] } | null = null;
+                        for (const item of locationNavLinks) {
+                          if (item.divider) { cur = { label: item.groupLabel!, items: [] }; cols.push(cur); }
+                          else if (cur) cur.items.push({ label: item.label!, href: item.href! });
+                        }
+                        return cols.map((col) => (
+                          <div key={col.label} style={{ padding: '0 0.5rem' }}>
+                            <p style={{ fontSize: '0.66rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pts-accent)', margin: '0 0 0.4rem', padding: '0 0.75rem 0.4rem', borderBottom: '1px solid var(--pts-border)' }}>{col.label}</p>
+                            {col.items.map((item) => (
+                              <Link key={item.href} href={item.href} style={dropdownLink} role="menuitem" onClick={() => setOpenDropdown(null)} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pts-section-alt)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}>
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        ));
+                      })()}
                     </div>
                   )}
                 </div>
@@ -406,22 +458,27 @@ export default function Navbar({ variant = 'light' }: Props) {
                   </button>
                   {openDropdown === 'interview' && (
                     <div
-                      style={{ ...dropdownPanel, minWidth: '240px' }}
+                      style={{ ...dropdownPanel, left: 'auto', right: 0, padding: '1rem 0.5rem', display: 'grid', gridTemplateColumns: 'repeat(4, minmax(165px, 1fr))', gap: '0 0.25rem', width: 'max-content', maxWidth: '96vw' }}
                       role="menu"
                     >
-                      {interviewNavLinks.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          style={dropdownLink}
-                          role="menuitem"
-                          onClick={() => setOpenDropdown(null)}
-                          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pts-section-alt)'; }}
-                          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                      {(() => {
+                        const cols: { label: string; items: { label: string; href: string }[] }[] = [];
+                        let cur: { label: string; items: { label: string; href: string }[] } | null = null;
+                        for (const item of interviewNavLinks) {
+                          if (item.divider) { cur = { label: item.groupLabel!, items: [] }; cols.push(cur); }
+                          else if (cur) cur.items.push({ label: item.label!, href: item.href! });
+                        }
+                        return cols.map((col) => (
+                          <div key={col.label} style={{ padding: '0 0.5rem' }}>
+                            <p style={{ fontSize: '0.66rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pts-accent)', margin: '0 0 0.4rem', padding: '0 0.75rem 0.4rem', borderBottom: '1px solid var(--pts-border)' }}>{col.label}</p>
+                            {col.items.map((item) => (
+                              <Link key={item.href} href={item.href} style={dropdownLink} role="menuitem" onClick={() => setOpenDropdown(null)} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pts-section-alt)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}>
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        ));
+                      })()}
                     </div>
                   )}
                 </div>
@@ -622,21 +679,70 @@ export default function Navbar({ variant = 'light' }: Props) {
             </button>
             {mobileJobOpen && (
               <div style={{ paddingBottom: '0.5rem' }}>
-                {jobSupportLinks.filter((item) => !item.hidden).map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    style={{
-                      display: 'block',
-                      padding: '0.38rem 0 0.38rem 0.85rem',
-                      fontSize: '0.875rem',
-                      color: dark ? 'rgba(255,255,255,0.88)' : 'var(--pts-text-muted)',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    {item.label}
-                  </Link>
+                {[
+                  {
+                    label: 'AI / Cloud / DevOps',
+                    items: [
+                      { label: 'Agentic AI & Machine Learning', href: '/agentic-ai-ml-job-support/' },
+                      { label: 'AI Workflow & Pipeline Engineering', href: '/ai-workflow-automation-pipeline-job-support/' },
+                      { label: 'Data Science Job Support', href: '/data-science-job-support/' },
+                      { label: 'DevOps & Automation', href: '/devops-job-support/' },
+                      { label: 'SRE & Reliability Engineering', href: '/sre-job-support-usa/' },
+                      { label: 'Cloud Technologies', href: '/cloud-technologies-job-support/' },
+                      { label: 'AWS Job Support', href: '/aws-job-support/' },
+                    ],
+                  },
+                  {
+                    label: 'Backend / Full-Stack',
+                    items: [
+                      { label: 'Python Job Support', href: '/python-job-support/' },
+                      { label: 'Java Technology Stack', href: '/java-technologies-job-support/' },
+                      { label: 'Node.js Job Support', href: '/node-job-support/' },
+                      { label: '.NET Job Support', href: '/dotnet-job-support/' },
+                      { label: 'Backend & Enterprise', href: '/backend-enterprise-job-support/' },
+                      { label: 'Front-End / Full-Stack', href: '/frontend-fullstack-job-support/' },
+                      { label: 'React Job Support', href: '/react-job-support/' },
+                      { label: 'Angular Job Support', href: '/angular-job-support/' },
+                    ],
+                  },
+                  {
+                    label: 'Data / Security / QA',
+                    items: [
+                      { label: 'Databases & Data Platforms', href: '/databases-data-platforms-job-support/' },
+                      { label: 'Cybersecurity & AppSec', href: '/cybersecurity-job-support/' },
+                      { label: 'Testing & Quality Engineering', href: '/testing-quality-engineering-job-support/' },
+                      { label: 'Digital Analytics & MarTech', href: '/digital-analytics-job-support/' },
+                      { label: 'React Native Job Support', href: '/react-native-job-support/' },
+                    ],
+                  },
+                  {
+                    label: 'Enterprise Platforms',
+                    items: [
+                      { label: 'UiPath / RPA Job Support', href: '/uipath-job-support/' },
+                      { label: 'Workday Job Support', href: '/workday-job-support/' },
+                      { label: 'Workday HRIS Job Support', href: '/workday-hris-job-support/' },
+                      { label: 'Workday HCM Job Support', href: '/workday-hcm-job-support/' },
+                      { label: 'Workday Payroll Job Support', href: '/workday-payroll-job-support/' },
+                      { label: 'Workday Integration', href: '/workday-integration-job-support/' },
+                      { label: 'Workday 2026R1 Release', href: '/workday-2026r1-release-support/' },
+                    ],
+                  },
+                ].map((cat, idx) => (
+                  <div key={cat.label}>
+                    <p style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pts-accent)', padding: '0.55rem 0.85rem 0.2rem', margin: 0, borderTop: idx === 0 ? 'none' : '1px solid var(--pts-border)', marginTop: idx === 0 ? 0 : '0.25rem' }}>
+                      {cat.label}
+                    </p>
+                    {cat.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        style={{ display: 'block', padding: '0.38rem 0 0.38rem 0.85rem', fontSize: '0.875rem', color: dark ? 'rgba(255,255,255,0.88)' : 'var(--pts-text-muted)', textDecoration: 'none' }}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             )}
@@ -693,22 +799,22 @@ export default function Navbar({ variant = 'light' }: Props) {
             </button>
             {mobileLocOpen && (
               <div style={{ paddingBottom: '0.5rem' }}>
-                {locationNavLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    style={{
-                      display: 'block',
-                      padding: '0.38rem 0 0.38rem 0.85rem',
-                      fontSize: '0.875rem',
-                      color: dark ? 'rgba(255,255,255,0.88)' : 'var(--pts-text-muted)',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {locationNavLinks.map((item, idx) =>
+                  item.divider ? (
+                    <p key={`div-${idx}`} style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pts-accent)', padding: '0.55rem 0.85rem 0.2rem', margin: 0, borderTop: idx === 0 ? 'none' : '1px solid var(--pts-border)', marginTop: idx === 0 ? 0 : '0.25rem' }}>
+                      {item.groupLabel}
+                    </p>
+                  ) : (
+                    <Link
+                      key={item.href}
+                      href={item.href!}
+                      onClick={() => setMobileOpen(false)}
+                      style={{ display: 'block', padding: '0.38rem 0 0.38rem 0.85rem', fontSize: '0.875rem', color: dark ? 'rgba(255,255,255,0.88)' : 'var(--pts-text-muted)', textDecoration: 'none' }}
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
             )}
           </div>
@@ -763,22 +869,22 @@ export default function Navbar({ variant = 'light' }: Props) {
             </button>
             {mobileInterviewOpen && (
               <div style={{ paddingBottom: '0.5rem' }}>
-                {interviewNavLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    style={{
-                      display: 'block',
-                      padding: '0.38rem 0 0.38rem 0.85rem',
-                      fontSize: '0.875rem',
-                      color: dark ? 'rgba(255,255,255,0.88)' : 'var(--pts-text-muted)',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {interviewNavLinks.map((item, idx) =>
+                  item.divider ? (
+                    <p key={`div-${idx}`} style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pts-accent)', padding: '0.55rem 0.85rem 0.2rem', margin: 0, borderTop: idx === 0 ? 'none' : '1px solid var(--pts-border)', marginTop: idx === 0 ? 0 : '0.25rem' }}>
+                      {item.groupLabel}
+                    </p>
+                  ) : (
+                    <Link
+                      key={item.href}
+                      href={item.href!}
+                      onClick={() => setMobileOpen(false)}
+                      style={{ display: 'block', padding: '0.38rem 0 0.38rem 0.85rem', fontSize: '0.875rem', color: dark ? 'rgba(255,255,255,0.88)' : 'var(--pts-text-muted)', textDecoration: 'none' }}
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
             )}
           </div>

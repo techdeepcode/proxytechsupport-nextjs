@@ -222,12 +222,34 @@
 - [Workday Job Support UAE](/workday-job-support-uae/): Workday support for UAE projects — WPS compliance, gratuity, Emiratization (Nafis), AED/USD multi-currency. Dubai, Abu Dhabi. GST.
 - [Workday Job Support Saudi Arabia](/workday-job-support-saudi-arabia/): Workday support for Saudi Arabia projects — GOSI integration, Saudization/Nitaqat, Hijri calendar, SAR Finance. Vision 2030 enterprise. AST.
 
+## Job Application & Candidate Marketing Pages
+
+- [Job Application & Candidate Marketing](/job-application-candidate-marketing/): Structured job search campaign service for IT professionals — targeted job applications, recruiter outreach, vendor outreach, professional follow-ups, application tracking, and weekly progress updates. Separate from profile engineering and job support services. For candidates actively searching for IT roles across USA, Canada, UK, Ireland, Germany, Australia, Europe, Singapore, Hong Kong, and UAE.
+- [Candidate Marketing USA](/job-application-candidate-marketing-usa/): Job application and candidate marketing service for IT professionals in the USA — targeted applications, recruiter outreach, vendor contacts, follow-ups, and weekly progress tracking.
+- [Candidate Marketing Canada](/job-application-candidate-marketing-canada/): Job application and candidate marketing for IT professionals in Canada — Toronto, Vancouver, Calgary, Montreal, Ottawa markets covered.
+- [Candidate Marketing UK](/job-application-candidate-marketing-uk/): Job application and candidate marketing for IT professionals in the UK — London, Manchester, Birmingham and remote UK roles.
+- [Candidate Marketing Ireland](/job-application-candidate-marketing-ireland/): Job application and candidate marketing for IT professionals in Ireland — Dublin and Cork tech markets covered.
+- [Candidate Marketing Germany](/job-application-candidate-marketing-germany/): Job application and candidate marketing for IT professionals in Germany — Berlin, Munich, Frankfurt, Hamburg markets covered.
+- [Candidate Marketing Australia](/job-application-candidate-marketing-australia/): Job application and candidate marketing for IT professionals in Australia — Sydney, Melbourne, Brisbane, Perth markets covered.
+- [Candidate Marketing Europe](/job-application-candidate-marketing-europe/): Cross-European job application and candidate marketing for IT professionals across Netherlands, France, Sweden, Spain, Portugal, Belgium, Denmark, Finland, Norway, Switzerland, and Austria.
+- [Candidate Marketing Singapore](/job-application-candidate-marketing-singapore/): Job application and candidate marketing for IT professionals in Singapore — LinkedIn, JobsDB, MyCareersFuture.sg targeted outreach.
+- [Candidate Marketing Hong Kong](/job-application-candidate-marketing-hong-kong/): Job application and candidate marketing for IT professionals in Hong Kong — FinTech, banking tech, and enterprise IT markets.
+- [Candidate Marketing UAE](/job-application-candidate-marketing-uae/): Job application and candidate marketing for IT professionals in the UAE — Dubai Internet City, DIFC, Abu Dhabi Hub71 markets covered.
+- [Candidate Marketing New York](/job-application-candidate-marketing-new-york/): Job application and candidate marketing for IT professionals in New York — FinTech, media tech, and enterprise technology markets.
+- [Candidate Marketing Dallas](/job-application-candidate-marketing-dallas/): Job application and candidate marketing for IT professionals in Dallas-Fort Worth — banking tech, healthcare IT, and enterprise software.
+- [Candidate Marketing London](/job-application-candidate-marketing-london/): Job application and candidate marketing for IT professionals in London — Canary Wharf FinTech, City tech, and Shoreditch startups.
+- [Candidate Marketing Toronto](/job-application-candidate-marketing-toronto/): Job application and candidate marketing for IT professionals in Toronto — Bay Street FinTech, MaRS startup ecosystem, and enterprise tech.
+- [Candidate Marketing Dubai](/job-application-candidate-marketing-dubai/): Job application and candidate marketing for IT professionals in Dubai — DIFC FinTech, Dubai Internet City, and enterprise tech roles.
+- [Candidate Marketing Berlin](/job-application-candidate-marketing-berlin/): Job application and candidate marketing for IT professionals in Berlin — startup and scale-up tech ecosystem.
+- [Candidate Marketing Sydney](/job-application-candidate-marketing-sydney/): Job application and candidate marketing for IT professionals in Sydney — FinTech, banking tech, and enterprise software markets.
+- [Candidate Marketing Dublin](/job-application-candidate-marketing-dublin/): Job application and candidate marketing for IT professionals in Dublin — EMEA tech headquarters of Google, Meta, Microsoft, Amazon, and Salesforce.
+
 ## Organization
 
 - Name: Proxy Tech Support
 - Website: https://proxytechsupport.com
 - Contact: WhatsApp +91-96606-14469
-- Services: Real-time IT job support, proxy interview assistance, career coaching for IT professionals, Workday job support, Workday proxy interview support, Workday interview scheduling
+- Services: Real-time IT job support, proxy interview assistance, job application & candidate marketing, career coaching for IT professionals, Workday job support, Workday proxy interview support, Workday interview scheduling
 - Coverage: USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong, UAE, Saudi Arabia
 - USA Texas cities: Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
 - Canada cities: Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)

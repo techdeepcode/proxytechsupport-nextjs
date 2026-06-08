@@ -72,6 +72,13 @@ const coreServices: ServiceCard[] = [
     href: '/get-interview-scheduled/',
     cta: 'Get Interview Scheduled',
   },
+  {
+    title: 'Job Application & Candidate Marketing',
+    description:
+      'Structured job search campaign service — we apply to relevant jobs on your behalf, reach recruiters and vendors, follow up professionally, track applications, and deliver weekly progress updates. For IT professionals in the USA, Canada, UK, Ireland, Germany, Australia, Europe, Singapore, Hong Kong, and UAE.',
+    href: '/job-application-candidate-marketing/',
+    cta: 'Start Job Marketing',
+  },
 ];
 
 type CountryServiceGroup = {
@@ -86,6 +93,7 @@ const countryServices: CountryServiceGroup[] = [
       { label: 'IT Job Support USA', href: '/job-support-usa/' },
       { label: 'Proxy Interview USA', href: '/proxy-interview-usa/' },
       { label: 'Get Interview Scheduled USA', href: '/get-interview-scheduled-usa/' },
+      { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
     ],
   },
   {
@@ -94,6 +102,7 @@ const countryServices: CountryServiceGroup[] = [
       { label: 'IT Job Support Canada', href: '/job-support-canada/' },
       { label: 'Proxy Interview Canada', href: '/proxy-interview-canada/' },
       { label: 'Get Interview Scheduled Canada', href: '/get-interview-scheduled-canada/' },
+      { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
     ],
   },
   {
@@ -102,6 +111,7 @@ const countryServices: CountryServiceGroup[] = [
       { label: 'IT Job Support Ireland', href: '/job-support-ireland/' },
       { label: 'Proxy Interview Support Ireland', href: '/interview-proxy-support-ireland/' },
       { label: 'Get Interview Scheduled Ireland', href: '/get-interview-scheduled-ireland/' },
+      { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },
     ],
   },
   {
@@ -110,6 +120,7 @@ const countryServices: CountryServiceGroup[] = [
       { label: 'IT Job Support UK', href: '/job-support-uk/' },
       { label: 'Proxy Interview UK', href: '/proxy-interview-uk/' },
       { label: 'Get Interview Scheduled UK', href: '/get-interview-scheduled-uk/' },
+      { label: 'Candidate Marketing UK', href: '/job-application-candidate-marketing-uk/' },
     ],
   },
   {
@@ -118,6 +129,7 @@ const countryServices: CountryServiceGroup[] = [
       { label: 'IT Job Support Germany', href: '/job-support-germany/' },
       { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
       { label: 'Get Interview Scheduled Germany', href: '/get-interview-scheduled-germany/' },
+      { label: 'Candidate Marketing Germany', href: '/job-application-candidate-marketing-germany/' },
     ],
   },
   {
@@ -126,6 +138,7 @@ const countryServices: CountryServiceGroup[] = [
       { label: 'IT Job Support Australia', href: '/job-support-australia/' },
       { label: 'Proxy Interview Australia', href: '/proxy-interview-australia/' },
       { label: 'Get Interview Scheduled Australia', href: '/get-interview-scheduled-australia/' },
+      { label: 'Candidate Marketing Australia', href: '/job-application-candidate-marketing-australia/' },
     ],
   },
 ];

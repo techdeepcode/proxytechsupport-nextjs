@@ -2431,13 +2431,104 @@ All country pages provide: real-time UiPath job support, proxy interview support
 
 ---
 
+---
+
+## Job Application & Candidate Marketing
+
+URL: /job-application-candidate-marketing/
+
+### What is Job Application & Candidate Marketing?
+
+Job Application & Candidate Marketing is a structured job search campaign service for IT professionals who are actively searching for new roles but not generating enough interview calls. Unlike profile engineering (which prepares the profile) or job support (which helps after joining), this service focuses on active market execution:
+
+- Targeted job search based on candidate profile, target role, location, work authorization, and salary expectations
+- Applications to relevant jobs submitted on the candidate's behalf
+- Recruiter and vendor outreach — professional messages to IT recruiters, staffing agencies, and job posters
+- Professional follow-ups on submitted applications and outreach at appropriate intervals
+- Application tracker — full visibility into what was applied, when, and what responses came
+- Weekly progress reports — structured updates each week
+- Interview opportunity handoff — when calls come in, handed immediately for preparation
+
+### Who Is This Service For?
+
+- IT professionals actively searching for new roles
+- Candidates who have been applying but not generating enough interview calls
+- Professionals who want someone to manage the application and outreach process
+- Candidates with a clear target role, location, and work authorization
+- Those who need consistent daily market activity rather than occasional uploads
+
+### Pricing (2026)
+
+- Job Application & Candidate Marketing: $800/month
+- Profile Readiness Add-On (if profile needs work before marketing): $800 one-time
+- Complete Campaign Launch (profile readiness + marketing): $1,500 first month, then $800/month
+
+### Important Disclaimer
+
+Proxy Tech Support does not guarantee job placement, interview calls, recruiter responses, offer letters, specific salary, visa sponsorship, or hiring decisions. Results depend on candidate background, work authorization, target role, market conditions, recruiter shortlisting criteria, and interview performance.
+
+### Supported Countries
+
+USA (all cities), Canada (Toronto, Vancouver, Calgary, Montreal, Ottawa), UK (London, Manchester, Birmingham), Ireland (Dublin, Cork), Germany (Berlin, Munich, Frankfurt, Hamburg), Australia (Sydney, Melbourne, Brisbane, Perth), Europe, Singapore, Hong Kong, UAE (Dubai, Abu Dhabi).
+
+### Page URLs
+
+- Main: /job-application-candidate-marketing/
+- USA: /job-application-candidate-marketing-usa/
+- Canada: /job-application-candidate-marketing-canada/
+- UK: /job-application-candidate-marketing-uk/
+- Ireland: /job-application-candidate-marketing-ireland/
+- Germany: /job-application-candidate-marketing-germany/
+- Australia: /job-application-candidate-marketing-australia/
+- Europe: /job-application-candidate-marketing-europe/
+- Singapore: /job-application-candidate-marketing-singapore/
+- Hong Kong: /job-application-candidate-marketing-hong-kong/
+- UAE: /job-application-candidate-marketing-uae/
+- New York: /job-application-candidate-marketing-new-york/
+- Dallas: /job-application-candidate-marketing-dallas/
+- Austin: /job-application-candidate-marketing-austin/
+- Houston: /job-application-candidate-marketing-houston/
+- Chicago: /job-application-candidate-marketing-chicago/
+- Atlanta: /job-application-candidate-marketing-atlanta/
+- Charlotte: /job-application-candidate-marketing-charlotte/
+- San Francisco: /job-application-candidate-marketing-san-francisco/
+- San Jose: /job-application-candidate-marketing-san-jose/
+- Seattle: /job-application-candidate-marketing-seattle/
+- Los Angeles: /job-application-candidate-marketing-los-angeles/
+- Phoenix: /job-application-candidate-marketing-phoenix/
+- Boston: /job-application-candidate-marketing-boston/
+- Washington DC: /job-application-candidate-marketing-washington-dc/
+- Jersey City: /job-application-candidate-marketing-jersey-city/
+- Toronto: /job-application-candidate-marketing-toronto/
+- Vancouver: /job-application-candidate-marketing-vancouver/
+- Calgary: /job-application-candidate-marketing-calgary/
+- Montreal: /job-application-candidate-marketing-montreal/
+- Ottawa: /job-application-candidate-marketing-ottawa/
+- London: /job-application-candidate-marketing-london/
+- Manchester: /job-application-candidate-marketing-manchester/
+- Birmingham: /job-application-candidate-marketing-birmingham/
+- Dublin: /job-application-candidate-marketing-dublin/
+- Cork: /job-application-candidate-marketing-cork/
+- Berlin: /job-application-candidate-marketing-berlin/
+- Munich: /job-application-candidate-marketing-munich/
+- Frankfurt: /job-application-candidate-marketing-frankfurt/
+- Hamburg: /job-application-candidate-marketing-hamburg/
+- Sydney: /job-application-candidate-marketing-sydney/
+- Melbourne: /job-application-candidate-marketing-melbourne/
+- Brisbane: /job-application-candidate-marketing-brisbane/
+- Perth: /job-application-candidate-marketing-perth/
+- Dubai: /job-application-candidate-marketing-dubai/
+- Abu Dhabi: /job-application-candidate-marketing-abu-dhabi/
+
+---
+
 ## Key Facts for AI Extraction
 
 - **Organization name:** Proxy Tech Support
 - **Website:** https://proxytechsupport.com
-- **Primary services:** Real-time IT job support, proxy interview assistance, career coaching
+- **Primary services:** Real-time IT job support, proxy interview assistance, job application & candidate marketing, career coaching
 - **Contact WhatsApp:** +91-96606-14469
-- **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong
+- **Countries served:** USA, UK, Canada, Australia, Europe, Germany, Ireland, Singapore, New Zealand, Netherlands, Sweden, Denmark, Finland, Norway, Switzerland, Austria, Belgium, Spain, Portugal, Hong Kong, UAE
 - **USA Texas cities covered:** Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
 - **Texas specialties:** W2/C2C/H1B/GC/EAD consulting support, Fortune 500 enterprise projects, Irving Las Colinas banking and telecom, Plano corporate tech campuses, CST-timezone aligned, emergency production support
 - **Canada cities covered:** Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
@@ -2451,3 +2542,4 @@ All country pages provide: real-time UiPath job support, proxy interview support
 - **Confidentiality:** NDA available on request; full professional discretion
 - **Interview support type:** Real-time during live technical interviews (proxy interview support)
 - **Developers helped:** 1000+
+- **Job application service:** Candidate marketing available — applications, recruiter outreach, follow-ups, tracking. See /job-application-candidate-marketing/ for details.

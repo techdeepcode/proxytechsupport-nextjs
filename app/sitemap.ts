@@ -15,6 +15,64 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const [posts, interviews] = await Promise.all([getAllPosts(), getAllInterviews()]);
 
+  const candidateMarketingRoutes: MetadataRoute.Sitemap = [
+    // Main service page
+    { url: `${BASE}/job-application-candidate-marketing/`, lastModified: today, priority: 0.92 },
+    // Country pages
+    { url: `${BASE}/job-application-candidate-marketing-usa/`, lastModified: today, priority: 0.88 },
+    { url: `${BASE}/job-application-candidate-marketing-canada/`, lastModified: today, priority: 0.88 },
+    { url: `${BASE}/job-application-candidate-marketing-uk/`, lastModified: today, priority: 0.88 },
+    { url: `${BASE}/job-application-candidate-marketing-ireland/`, lastModified: today, priority: 0.86 },
+    { url: `${BASE}/job-application-candidate-marketing-germany/`, lastModified: today, priority: 0.86 },
+    { url: `${BASE}/job-application-candidate-marketing-australia/`, lastModified: today, priority: 0.86 },
+    { url: `${BASE}/job-application-candidate-marketing-europe/`, lastModified: today, priority: 0.84 },
+    { url: `${BASE}/job-application-candidate-marketing-singapore/`, lastModified: today, priority: 0.84 },
+    { url: `${BASE}/job-application-candidate-marketing-hong-kong/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/job-application-candidate-marketing-uae/`, lastModified: today, priority: 0.82 },
+    // USA city pages
+    { url: `${BASE}/job-application-candidate-marketing-new-york/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/job-application-candidate-marketing-dallas/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/job-application-candidate-marketing-austin/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-houston/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-chicago/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-atlanta/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-charlotte/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-san-francisco/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/job-application-candidate-marketing-san-jose/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-seattle/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-los-angeles/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-phoenix/`, lastModified: today, priority: 0.76 },
+    { url: `${BASE}/job-application-candidate-marketing-boston/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-washington-dc/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-jersey-city/`, lastModified: today, priority: 0.76 },
+    // Canada city pages
+    { url: `${BASE}/job-application-candidate-marketing-toronto/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-vancouver/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-calgary/`, lastModified: today, priority: 0.76 },
+    { url: `${BASE}/job-application-candidate-marketing-montreal/`, lastModified: today, priority: 0.76 },
+    { url: `${BASE}/job-application-candidate-marketing-ottawa/`, lastModified: today, priority: 0.74 },
+    // UK city pages
+    { url: `${BASE}/job-application-candidate-marketing-london/`, lastModified: today, priority: 0.82 },
+    { url: `${BASE}/job-application-candidate-marketing-manchester/`, lastModified: today, priority: 0.76 },
+    { url: `${BASE}/job-application-candidate-marketing-birmingham/`, lastModified: today, priority: 0.74 },
+    // Ireland city pages
+    { url: `${BASE}/job-application-candidate-marketing-dublin/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-cork/`, lastModified: today, priority: 0.72 },
+    // Germany city pages
+    { url: `${BASE}/job-application-candidate-marketing-berlin/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-munich/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-frankfurt/`, lastModified: today, priority: 0.76 },
+    { url: `${BASE}/job-application-candidate-marketing-hamburg/`, lastModified: today, priority: 0.74 },
+    // Australia city pages
+    { url: `${BASE}/job-application-candidate-marketing-sydney/`, lastModified: today, priority: 0.80 },
+    { url: `${BASE}/job-application-candidate-marketing-melbourne/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-brisbane/`, lastModified: today, priority: 0.74 },
+    { url: `${BASE}/job-application-candidate-marketing-perth/`, lastModified: today, priority: 0.72 },
+    // UAE city pages
+    { url: `${BASE}/job-application-candidate-marketing-dubai/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/job-application-candidate-marketing-abu-dhabi/`, lastModified: today, priority: 0.74 },
+  ];
+
   const getInterviewScheduledRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE}/get-interview-scheduled/`, lastModified: today },
     { url: `${BASE}/get-interview-scheduled-usa/`, lastModified: today },
@@ -227,5 +285,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/europe-fullstack-backend-frontend-support-guide/`, lastModified: today, priority: 0.72 },
   ];
 
-  return [...staticRoutes, ...postRoutes, ...interviewRoutes, ...knowledgeBaseRoutes, ...uipathTechRoutes];
+  return [...staticRoutes, ...postRoutes, ...interviewRoutes, ...knowledgeBaseRoutes, ...uipathTechRoutes, ...candidateMarketingRoutes];
 }

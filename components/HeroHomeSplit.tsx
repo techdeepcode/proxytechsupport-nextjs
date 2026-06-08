@@ -465,6 +465,76 @@ export default function HeroHomeSplit() {
             0%, 100% { box-shadow: 0 0 0 0 rgba(var(--pts-forest-rgb), 0.55); }
             60%       { box-shadow: 0 0 0 5px rgba(var(--pts-forest-rgb), 0); }
           }
+          /* ── Candidate Marketing strip ────────────────────────────────────── */
+          .hero-cm-strip {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            margin: 0 0 1.1rem;
+            padding: 0.65rem 0.95rem;
+            border-radius: 12px;
+            border: 1.5px solid rgba(234, 88, 12, 0.28);
+            background: linear-gradient(
+              110deg,
+              rgba(254, 215, 170, 0.28) 0%,
+              rgba(253, 186, 116, 0.12) 100%
+            );
+            box-shadow:
+              0 2px 8px rgba(234, 88, 12, 0.07),
+              inset 0 1px 0 rgba(255,255,255,0.85);
+          }
+          @media (min-width: 540px) {
+            .hero-cm-strip {
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              gap: 0.5rem 0.85rem;
+            }
+          }
+          .hero-cm-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            min-width: 0;
+            flex: 1 1 0;
+          }
+          .hero-cm-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ea580c;
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.22);
+            flex-shrink: 0;
+          }
+          .hero-cm-headline {
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: var(--pts-text);
+            margin: 0;
+            line-height: 1.35;
+          }
+          .hero-cm-headline em { font-style: normal; color: #c2410c; }
+          .hero-cm-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            flex-shrink: 0;
+            padding: 0.5rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #fff;
+            background: #ea580c;
+            border: 1px solid rgba(0,0,0,0.06);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background-color 0.15s ease;
+          }
+          .hero-cm-action:hover { background: #c2410c; color: #fff; }
+          @media (max-width: 539px) {
+            .hero-cm-action { width: 100%; }
+          }
           .hero-gis-strip {
             display: flex;
             flex-direction: column;
@@ -673,6 +743,23 @@ export default function HeroHomeSplit() {
               </Link>
             </div>
 
+            {/* ── Candidate Marketing strip — below GIS strip ── */}
+            <div className="hero-cm-strip">
+              <div className="hero-cm-inner">
+                <span className="hero-cm-dot" aria-hidden />
+                <p className="hero-cm-headline">Hundreds applied while you were waiting. <em>We apply daily, reach recruiters &amp; keep your search moving.</em></p>
+              </div>
+              <Link href="/job-application-candidate-marketing/" className="hero-cm-action">
+                <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden style={{ flexShrink: 0 }}>
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" />
+                  <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+                </svg>
+                Start Job Marketing
+              </Link>
+            </div>
+
             <div className="hero-subline-copy">
               <p className="hero-subline-lead">
                 <TargetIcon />
@@ -686,6 +773,7 @@ export default function HeroHomeSplit() {
                 <li>◆ Not confident in coding rounds or system design discussions?</li>
                 <li>◆ Worried about failing your next interview or client call?</li>
                 <li>◆ Profile invisible to recruiters? We engineer it to improve shortlisting.</li>
+                <li>◆ Applying daily but no interview calls? We run your job search campaign.</li>
               </ul>
             </div>
             <p className="hero-subline-2">
@@ -716,6 +804,9 @@ export default function HeroHomeSplit() {
               </Link>
               <Link href="/get-interview-scheduled/" className="hero-btn-muted">
                 Profile Engineering →
+              </Link>
+              <Link href="/job-application-candidate-marketing/" className="hero-btn-muted">
+                Job Marketing →
               </Link>
             </div>
             <a

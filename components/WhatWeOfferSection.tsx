@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { whatWeOffer } from '@/data/services';
 import ServiceOfferIcon, { BlueCheck } from '@/components/ServiceOfferIcons';
 
@@ -19,14 +20,36 @@ export default function WhatWeOfferSection() {
               gap: 1.5rem;
               width: 100%;
             }
-            @media (min-width: 1024px) {
+            @media (min-width: 768px) {
+              .offer-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+              }
+            }
+            @media (min-width: 1200px) {
               .offer-grid {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
               }
             }
+            .offer-card-link {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.35rem;
+              margin-top: 1.25rem;
+              font-size: 0.88rem;
+              font-weight: 700;
+              color: var(--pts-forest);
+              text-decoration: none;
+              border-bottom: 1.5px solid rgba(var(--pts-accent-rgb), 0.4);
+              padding-bottom: 0.1rem;
+              transition: border-color 0.15s, color 0.15s;
+            }
+            .offer-card-link:hover {
+              border-color: var(--pts-accent);
+              color: var(--pts-forest-hover);
+            }
           `}</style>
           {whatWeOffer.map((service) => (
-            <div key={service.id} className="pts-card-glass" style={{ padding: '2rem 1.75rem' }}>
+            <div key={service.id} className="pts-card-glass" style={{ padding: '2rem 1.75rem', display: 'flex', flexDirection: 'column' }}>
               <div style={{ marginBottom: '1rem' }}>
                 <ServiceOfferIcon id={service.icon} />
               </div>
@@ -52,6 +75,7 @@ export default function WhatWeOfferSection() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '0.65rem',
+                  flex: '1 1 auto',
                 }}
               >
                 {service.features.map((f) => (
@@ -71,6 +95,11 @@ export default function WhatWeOfferSection() {
                   </li>
                 ))}
               </ul>
+              {service.href && service.hrefLabel && (
+                <Link href={service.href} className="offer-card-link">
+                  {service.hrefLabel}
+                </Link>
+              )}
             </div>
           ))}
         </div>

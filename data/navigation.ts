@@ -34,8 +34,11 @@ export const jobSupportLinks = [
 
 // ─── Location links (new — used in Navbar Locations dropdown + Footer) ─────
 
-/** Geo pages for the nav dropdown — job support + proxy interview locations. */
-export const locationNavLinks = [
+export type NavLink = { label: string; href: string; divider?: never; groupLabel?: never } | { divider: true; groupLabel: string; label?: never; href?: never };
+
+/** Geo pages for the nav dropdown — job support + proxy interview + candidate marketing locations. */
+export const locationNavLinks: NavLink[] = [
+  { divider: true, groupLabel: 'Job Support' },
   { label: 'Job Support USA', href: '/job-support-usa/' },
   { label: 'Job Support Canada', href: '/job-support-canada/' },
   { label: 'Job Support UK', href: '/job-support-uk/' },
@@ -44,6 +47,7 @@ export const locationNavLinks = [
   { label: 'Job Support Singapore', href: '/job-support-singapore/' },
   { label: 'Job Support Ireland', href: '/job-support-ireland/' },
   { label: 'Job Support Germany', href: '/job-support-germany/' },
+  { divider: true, groupLabel: 'Proxy Interview' },
   { label: 'Proxy Interview USA', href: '/proxy-interview-usa/' },
   { label: 'Proxy Interview Canada', href: '/proxy-interview-canada/' },
   { label: 'Proxy Interview UK', href: '/proxy-interview-uk/' },
@@ -52,6 +56,17 @@ export const locationNavLinks = [
   { label: 'Proxy Interview Singapore', href: '/proxy-interview-singapore/' },
   { label: 'Proxy Interview Ireland', href: '/interview-proxy-support-ireland/' },
   { label: 'Proxy Interview Germany', href: '/proxy-interview-germany/' },
+  { divider: true, groupLabel: 'Candidate Marketing' },
+  { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+  { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+  { label: 'Candidate Marketing UK', href: '/job-application-candidate-marketing-uk/' },
+  { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },
+  { label: 'Candidate Marketing Germany', href: '/job-application-candidate-marketing-germany/' },
+  { label: 'Candidate Marketing Australia', href: '/job-application-candidate-marketing-australia/' },
+  { label: 'Candidate Marketing Singapore', href: '/job-application-candidate-marketing-singapore/' },
+  { label: 'Candidate Marketing UAE', href: '/job-application-candidate-marketing-uae/' },
+  { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },
+  { label: 'Candidate Marketing Hong Kong', href: '/job-application-candidate-marketing-hong-kong/' },
 ];
 
 /** All geo pages — used in Footer and internal links. */
@@ -69,14 +84,38 @@ export const allLocationLinks = [
 
 // ─── Interview nav links (used in Navbar Interview dropdown) ─────────────────
 
-export const interviewNavLinks = [
-  { label: 'Interview Proxy', href: '/proxy-interview-support/' },
+export const interviewNavLinks: NavLink[] = [
+  { divider: true, groupLabel: 'Core Services' },
+  { label: 'Interview Proxy Support', href: '/proxy-interview-support/' },
   { label: 'Get Interview Scheduled', href: '/get-interview-scheduled/' },
+  { label: 'Candidate Marketing', href: '/job-application-candidate-marketing/' },
+  { divider: true, groupLabel: 'Profile Engineering' },
+  { label: 'Profile Engineering USA', href: '/get-interview-scheduled-usa/' },
+  { label: 'Profile Engineering Canada', href: '/get-interview-scheduled-canada/' },
+  { label: 'Profile Engineering UK', href: '/get-interview-scheduled-uk/' },
+  { label: 'Profile Engineering Ireland', href: '/get-interview-scheduled-ireland/' },
+  { label: 'Profile Engineering Germany', href: '/get-interview-scheduled-germany/' },
+  { label: 'Profile Engineering Australia', href: '/get-interview-scheduled-australia/' },
+  { label: 'Profile Engineering Singapore', href: '/get-interview-scheduled-singapore/' },
+  { divider: true, groupLabel: 'Candidate Marketing' },
+  { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
+  { label: 'Candidate Marketing Canada', href: '/job-application-candidate-marketing-canada/' },
+  { label: 'Candidate Marketing UK', href: '/job-application-candidate-marketing-uk/' },
+  { label: 'Candidate Marketing Ireland', href: '/job-application-candidate-marketing-ireland/' },
+  { label: 'Candidate Marketing Germany', href: '/job-application-candidate-marketing-germany/' },
+  { label: 'Candidate Marketing Australia', href: '/job-application-candidate-marketing-australia/' },
+  { label: 'Candidate Marketing Singapore', href: '/job-application-candidate-marketing-singapore/' },
+  { label: 'Candidate Marketing UAE', href: '/job-application-candidate-marketing-uae/' },
+  { label: 'Candidate Marketing Europe', href: '/job-application-candidate-marketing-europe/' },
+  { divider: true, groupLabel: 'By Technology' },
   { label: 'AI/ML Proxy Interview', href: '/ai-ml-proxy-interview-support/' },
   { label: 'MLOps Proxy Interview', href: '/mlops-proxy-interview-support/' },
   { label: 'DevOps Proxy Interview', href: '/devops-proxy-interview-support/' },
   { label: 'SRE Proxy Interview', href: '/sre-proxy-interview-support/' },
   { label: 'Java Proxy Interview', href: '/java-proxy-interview-support/' },
+  { label: 'Workday Proxy Interview', href: '/workday-proxy-interview-support/' },
+  { label: 'Workday HRIS Proxy Interview', href: '/workday-hris-proxy-interview-support/' },
+  { label: 'GenAI Interview Support', href: '/genai-interview-support-guide/' },
   { label: 'Interview Questions', href: '/interview-questions/' },
 ];
 

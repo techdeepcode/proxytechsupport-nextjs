@@ -1,4 +1,4 @@
-export type ServiceOfferIconId = 'interview' | 'briefcase' | 'robot';
+export type ServiceOfferIconId = 'interview' | 'briefcase' | 'robot' | 'target' | 'megaphone';
 
 export type ServiceOffer = {
   id: string;
@@ -6,6 +6,8 @@ export type ServiceOffer = {
   title: string;
   description: string;
   features: string[];
+  href?: string;
+  hrefLabel?: string;
 };
 
 /** Primary "What We Offer" cards (legacy layout: icon, copy, checklist). */
@@ -24,6 +26,8 @@ export const whatWeOffer: ServiceOffer[] = [
       'Coding Round Assistance',
       'Final Round Support',
     ],
+    href: '/proxy-interview-support/',
+    hrefLabel: 'Explore Interview Proxy Support →',
   },
   {
     id: 'realtime',
@@ -39,6 +43,8 @@ export const whatWeOffer: ServiceOffer[] = [
       'Client Meeting Support',
       'Proxy Job Support',
     ],
+    href: '/job-support-usa/',
+    hrefLabel: 'Explore Job Support →',
   },
   {
     id: 'aiml',
@@ -54,10 +60,46 @@ export const whatWeOffer: ServiceOffer[] = [
       'Data Science',
       'AI Proxy Support',
     ],
+    href: '/ai-ml-proxy-interview-support/',
+    hrefLabel: 'Explore AI/ML Support →',
+  },
+  {
+    id: 'profile-engineering',
+    icon: 'target',
+    title: 'Profile Engineering & Get Interview Scheduled',
+    description:
+      'Not getting interview calls despite applying repeatedly? We engineer your resume, LinkedIn, and professional positioning to match recruiter search patterns, ATS keyword requirements, and high-paying IT role expectations — so your profile gets noticed and shortlisted.',
+    features: [
+      'Resume Engineering',
+      'LinkedIn Optimization',
+      'ATS Keyword Alignment',
+      'Role Positioning',
+      'Recruiter Visibility',
+      'Industry-Specific Targeting',
+    ],
+    href: '/get-interview-scheduled/',
+    hrefLabel: 'Get Interview Scheduled →',
+  },
+  {
+    id: 'candidate-marketing',
+    icon: 'megaphone',
+    title: 'Job Application & Candidate Marketing',
+    description:
+      'Profile ready but your job search is stalling? We run a structured job search campaign — applying to relevant roles daily, reaching recruiters and vendors, following up professionally, tracking every application, and sending weekly progress updates.',
+    features: [
+      'Daily Applications',
+      'Recruiter Outreach',
+      'Vendor Outreach',
+      'Follow-Up Campaign',
+      'Application Tracking',
+      'Weekly Progress Updates',
+    ],
+    href: '/job-application-candidate-marketing/',
+    hrefLabel: 'Start Job Marketing →',
   },
 ];
 
-export type CareerServiceIconId = 'document' | 'chat';
+export type CareerServiceIconId = 'document' | 'chat' | 'megaphone';
 
 export const careerServices = [
   {
@@ -73,6 +115,21 @@ export const careerServices = [
       'Recruiter visibility optimization',
       'ATS-friendly resume structuring',
       'USA market-oriented profile positioning',
+    ],
+  },
+  {
+    id: 'candidate-marketing',
+    title: 'Job Application & Candidate Marketing',
+    description:
+      'Profile engineered but still not getting enough interview calls? We run a structured job search campaign on your behalf — daily applications to relevant roles, direct recruiter and vendor outreach, professional follow-ups, application tracking, and weekly progress updates so your profile stays active in the market.',
+    icon: 'megaphone' as CareerServiceIconId,
+    features: [
+      'Targeted daily job applications',
+      'Recruiter & vendor outreach',
+      'Professional follow-up campaign',
+      'Application tracker',
+      'Weekly progress updates',
+      'Interview opportunity handoff',
     ],
   },
   {
@@ -93,10 +150,11 @@ export const careerServices = [
 ];
 
 export const careerFlowSteps = [
-  { id: 'resume', label: 'Profile Engineering / Optimization', icon: 'editDoc' as const },
+  { id: 'resume', label: 'Profile Engineering', icon: 'editDoc' as const },
   { id: 'linkedin', label: 'LinkedIn Optimization', icon: 'linkedin' as const },
+  { id: 'marketing', label: 'Job Application & Candidate Marketing', icon: 'megaphone' as const },
   { id: 'mentoring', label: 'Interview Mentoring', icon: 'mentoring' as const },
-  { id: 'proxy', label: 'Real-Time Interview Assistance / Proxy Support', icon: 'headset' as const },
+  { id: 'proxy', label: 'Interview Proxy Support', icon: 'headset' as const },
   { id: 'job', label: 'Job Support After Joining', icon: 'briefcase' as const },
 ];
 

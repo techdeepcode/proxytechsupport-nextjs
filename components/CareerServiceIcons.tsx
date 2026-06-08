@@ -1,7 +1,7 @@
 /** Icons for Career Support cards — brand forest green */
 const FG = 'var(--pts-forest)';
 
-export function CareerServiceIcon({ id }: { id: 'document' | 'chat' }) {
+export function CareerServiceIcon({ id }: { id: 'document' | 'chat' | 'megaphone' }) {
   const common = {
     width: 40,
     height: 40,
@@ -11,6 +11,15 @@ export function CareerServiceIcon({ id }: { id: 'document' | 'chat' }) {
     strokeLinecap: 'round' as const,
     strokeLinejoin: 'round' as const,
   };
+
+  if (id === 'megaphone') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden {...common}>
+        <path d="M3 11v2a1 1 0 001 1h2l3 4h1V7H9L6 11H3z" />
+        <path d="M16 9.5a4 4 0 010 5M19.07 7.07a8 8 0 010 9.86" />
+      </svg>
+    );
+  }
 
   if (id === 'document') {
     return (
