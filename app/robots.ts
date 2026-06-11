@@ -163,6 +163,74 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'omgili',
         allow: '/',
       },
+      // ── Yahoo! Search (Slurp) ────────────────────────────────────────────
+      {
+        userAgent: 'Slurp',
+        allow: '/',
+      },
+      // ── DuckDuckGo ───────────────────────────────────────────────────────
+      {
+        userAgent: 'DuckDuckBot',
+        allow: '/',
+      },
+      // ── Baidu ────────────────────────────────────────────────────────────
+      {
+        userAgent: 'Baiduspider',
+        allow: '/',
+      },
+      // ── Yandex ───────────────────────────────────────────────────────────
+      {
+        userAgent: 'YandexBot',
+        allow: '/',
+      },
+      // ── Naver (South Korean search engine) ──────────────────────────────
+      {
+        userAgent: 'NaverBot',
+        allow: '/',
+      },
+      // ── Sogou (Chinese search engine) ───────────────────────────────────
+      {
+        userAgent: 'Sogou',
+        allow: '/',
+      },
+      // ── Internet Archive / Wayback Machine ──────────────────────────────
+      {
+        userAgent: 'ia_archiver',
+        allow: '/',
+      },
+      // ── Social preview bots (link unfurling / OG card rendering) ────────
+      {
+        userAgent: 'Twitterbot',
+        allow: '/',
+      },
+      {
+        userAgent: 'LinkedInBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'facebookexternalhit',
+        allow: '/',
+      },
+      {
+        userAgent: 'WhatsApp',
+        allow: '/',
+      },
+      {
+        userAgent: 'Discordbot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Slackbot',
+        allow: '/',
+      },
+      {
+        userAgent: 'TelegramBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Iframely',
+        allow: '/',
+      },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

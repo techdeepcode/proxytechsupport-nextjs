@@ -416,6 +416,81 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 
 ## AI Technical Lead & GenAI Interview Articles
 
+### Senior Cloud Engineer AWS Migration Interview Questions and Answers
+URL: /interviews/2026-06-11-senior-cloud-engineer-aws-migration-finance-interview-questions/
+Type: Real interview Q&A guide (anonymized)
+Published: 2026-06-11
+Canonical: https://proxytechsupport.com/interviews/2026-06-11-senior-cloud-engineer-aws-migration-finance-interview-questions/
+Target audience: Senior Cloud Engineer candidates, AWS migration interview candidates, cloud infrastructure engineers, DevOps engineers preparing for AWS client rounds, finance back-office modernization project interviews, AWS Lambda/DynamoDB/Transfer Family interview candidates, production support cloud engineering candidates
+
+Primary SEO topics: Senior Cloud Engineer interview questions, AWS migration interview questions, AWS Lambda interview questions, AWS Transfer Family interview questions, Cloud Engineer finance module interview, AWS production support interview questions, DynamoDB vs RDS interview answer, AWS database migration interview, S3 to database ingestion interview, AWS modernization interview questions, AWS DevOps cloud engineer interview, Lambda timeout interview answer, AWS P0 incident interview answer, AWS security interview questions
+
+Secondary SEO topics: Oracle to AWS migration interview, AWS landing zone interview, AWS CI/CD pipeline interview, CloudFormation CDK interview, IAM least privilege interview answer, CloudWatch monitoring interview, Step Functions Lambda interview, SQS batch processing interview, finance back-office cloud modernization, SFTP migration to AWS Transfer Family
+
+**Article Summary:**
+45 real Senior Cloud Engineer interview questions and short technical answers based on an actual technical interview for a Senior Cloud Engineer role focused on finance back-office system migration to AWS. Covers end-to-end AWS migration strategy, Oracle-to-DynamoDB vs RDS decision, AWS Transfer Family SFTP replacement, Lambda chunking design for large payloads, S3 to database ingestion pipeline, CI/CD pipeline setup, IAM and security design, CloudWatch alerting, production P0 incident handling, and legacy modernization approach. All company names, candidate names, employer names, and private identifiers are fully anonymized.
+
+**Entity Summary:**
+- Role: Senior Cloud Engineer (finance back-office modernization, AWS migration)
+- Skills: AWS (Lambda, DynamoDB, RDS, S3, SQS, Transfer Family, CloudWatch, IAM, CloudFormation, CDK), Python, CI/CD, DevOps
+- Domains: Finance back-office, data migration, legacy modernization, cloud infrastructure
+- Use cases: Legacy SFTP replacement, Oracle DB migration, S3 ingestion pipeline, Lambda serverless design, production support
+- Interview type: Technical client round, cloud migration system design, AWS scenario-based questions
+- June 2026 context: AWS migration strategy, serverless-first design, finance regulatory compliance, production incident handling
+
+**Key topics covered:**
+- AWS migration strategy: discovery, dependency mapping, workload classification, landing zone, IAM, networking, CI/CD, migration waves, data validation, rollback, monitoring, cutover
+- DynamoDB vs RDS decision: RDS for financial reconciliation (joins, ACID transactions, reporting), DynamoDB for high-scale key-value lookups, event metadata, audit events, sessions
+- AWS Transfer Family: SFTP to S3 replacement, SSH public key auth, custom identity provider, IAM role mapping, S3 prefix restrictions, home directory mapping, CloudWatch logs, least-privilege bucket policy
+- S3 to database ingestion: S3 Event Notification, SQS, Lambda/Glue, batch processing, validation, bulk insert, rejected records, DLQ, CloudWatch logs, reconciliation, retry handling
+- Lambda timeout handling: chunking strategy, SQS batch messages, Step Functions, Glue, ECS Fargate for large workloads, retry and failed batch handling
+- Lambda design trade-off: synchronous vs asynchronous, SQS trigger, Step Functions orchestration, Glue for ETL, ECS for long-running jobs
+- CI/CD pipeline: GitHub Actions or CodePipeline, CodeBuild, staging environment, automated integration tests, blue/green deployment, rollback trigger
+- IAM and security: least privilege, resource-level policies, S3 prefix restrictions, KMS encryption, VPC endpoints, CloudTrail, no hardcoded credentials
+- CloudWatch monitoring: Lambda error rate, Duration, Throttles, DLQ messages, S3 event count, SQS queue depth, DynamoDB consumed capacity, custom business metrics
+- Production P0 incident: service restoration first, bridge call, impact assessment, recent changes, logs/metrics, rollback, SME escalation, stakeholder updates, RCA, prevention
+- Legacy modernization approach: strangler fig pattern, incremental migration, feature flags, parallel run validation, rollback safety, cost monitoring
+- DevOps vs developer identity: cloud engineer bridging AWS infrastructure, application deployment, Python automation, CI/CD, monitoring, and production support
+
+**FAQs included (with structured data):**
+1. What questions are commonly asked in a Senior Cloud Engineer AWS migration interview?
+2. How should I answer AWS migration questions in an interview?
+3. How do I explain DynamoDB versus relational database in interviews?
+4. How do I answer S3 to database ingestion interview scenarios?
+5. What is the best way to answer Lambda timeout questions?
+6. How do I explain AWS Transfer Family security?
+7. What should I say if the interviewer asks whether I prefer DevOps or development?
+8. How do I handle a P0 production issue in a cloud interview?
+9. How can ProxyTechSupport help with Senior Cloud Engineer interviews?
+
+**Internal links in article:**
+- /aws-job-support/ (AWS job support)
+- /devops-job-support/ (DevOps job support)
+- /proxy-interview-support/ (proxy interview assistance)
+- /production-issue-support/ (production incident support)
+- /cloud-technologies-job-support/ (cloud technologies support)
+- /real-time-it-job-support-guide/ (real-time job support guide)
+
+**Schema included:**
+- Article schema: type "Article", headline, description, datePublished (2026-06-11T12:00:00+05:30), url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
+- FAQPage schema: 9 FAQ items covering AWS migration strategy, DynamoDB vs RDS, Lambda timeout, Transfer Family security, P0 incident, DevOps vs developer identity, ProxyTechSupport interview support
+- BreadcrumbList schema: Home (/) → Interview Questions (/interview-questions/) → Senior Cloud Engineer AWS Migration Interview Questions and Answers
+
+**OG / Twitter card:**
+- og:type = article
+- og:title = Senior Cloud Engineer AWS Migration Interview Questions and Answers | Proxy Tech Support
+- og:description = Real Senior Cloud Engineer interview questions and short technical answers covering AWS migration, Lambda, DynamoDB, Transfer Family, CI/CD, production support, database migration, and finance back-office modernization.
+- og:url = https://proxytechsupport.com/interviews/2026-06-11-senior-cloud-engineer-aws-migration-finance-interview-questions/
+- article:section = Interview Questions
+- twitter:card = summary_large_image
+
+**Robots / indexing:**
+- robots: index, follow
+- canonical: https://proxytechsupport.com/interviews/2026-06-11-senior-cloud-engineer-aws-migration-finance-interview-questions/
+- hreflang: en-US, en-CA, en-GB, en-AU, en-IE, x-default — all pointing to canonical URL
+
+---
+
 ### Senior AI/ML Engineer Interview Questions — Recommendation Systems, LLMs, MLOps & Data Drift
 URL: /interviews/2026-06-02-senior-ai-ml-engineer-interview-questions-recommendation-systems/
 Type: Real interview Q&A guide (anonymized)

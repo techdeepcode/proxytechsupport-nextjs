@@ -13,6 +13,10 @@ type Props = {
   type?: 'BlogPosting' | 'Article' | 'TechArticle';
   /** Topic — TechArticle maps to `about` + `teaches`; BlogPosting sets schema.org `about` when present. */
   about?: string;
+  /** Comma-separated keywords string from meta.ts — emitted as schema `keywords`. */
+  keywords?: string;
+  /** Article section label (e.g. "Interview Questions"). Defaults to "IT Job Support" for TechArticle. */
+  articleSection?: string;
   /** FAQs to emit as an inline FAQPage schema alongside the article schema. */
   faqs?: ArticleFaq[];
 };
@@ -25,6 +29,8 @@ export default function ArticleStructuredData({
   url,
   type = 'BlogPosting',
   about,
+  keywords,
+  articleSection,
   faqs,
 }: Props) {
   const published = datePublished ? `${datePublished}T12:00:00+05:30` : undefined;
@@ -51,37 +57,25 @@ export default function ArticleStructuredData({
     },
     image: `${SITE_URL}/images/previewimg.png`,
     ...(published ? { datePublished: published, dateModified: modified ?? published } : {}),
-    /**
-     * Speakable specification — tells AI agents and voice assistants which
-     * CSS selectors contain the most important extractable content.
-     * h1 = canonical subject; h2 = section labels; .post-content = body text.
-     */
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    ...(keywords ? { keywords } : {}),
+    ...(articleSection ? { articleSection } : {}),
     speakable: {
       '@type': 'SpeakableSpecification',
       cssSelector: ['h1', 'h2', 'h3', '.post-content'],
     },
   };
 
-  if (type === 'BlogPosting' && about) {
-    articleSchema.about = {
-      '@type': 'Thing',
-      name: about,
-    };
+  if (about) {
+    articleSchema.about = { '@type': 'Thing', name: about };
   }
 
   // TechArticle-specific properties
   if (type === 'TechArticle') {
     articleSchema.proficiencyLevel = 'Expert';
-    articleSchema.articleSection = 'IT Job Support';
-    if (about) {
-      articleSchema.about = {
-        '@type': 'Thing',
-        name: about,
-      };
-      articleSchema.teaches = about;
-    }
-    articleSchema.inLanguage = 'en-US';
-    articleSchema.isAccessibleForFree = true;
+    if (!articleSection) articleSchema.articleSection = 'IT Job Support';
+    if (about) articleSchema.teaches = about;
   }
 
   const faqSchema = faqs && faqs.length > 0

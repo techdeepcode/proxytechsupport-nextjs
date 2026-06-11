@@ -1,9 +1,11 @@
 import type { ComponentType } from 'react';
 import { interviewArticleEntries } from '@/content/interview-articles';
 
+export type InterviewFaq = { q: string; a: string };
+
 export type InterviewData = {
   slug: string;
-  /** When set, SEO canonical + structured data use this slug’s URL (legacy alias). */
+  /** When set, SEO canonical + structured data use this slug's URL (legacy alias). */
   canonicalSlug?: string;
   /** YYYY-MM-DD — sitemap lastmod + article modified signals; overrides `date` when newer. */
   lastmod?: string;
@@ -12,6 +14,8 @@ export type InterviewData = {
   date: string;
   layout?: string;
   keywords?: string;
+  /** FAQ pairs emitted as FAQPage JSON-LD structured data on the detail page. */
+  faqs?: InterviewFaq[];
   /** Server Component that renders the interview body (HTML from body.html). */
   Article: ComponentType;
 };
@@ -28,6 +32,7 @@ function toInterviewData(): InterviewData[] {
     date: meta.date,
     layout: meta.layout,
     keywords: meta.keywords?.trim() ? meta.keywords : undefined,
+    faqs: (meta as { faqs?: InterviewFaq[] }).faqs ?? undefined,
     Article,
   }));
 }

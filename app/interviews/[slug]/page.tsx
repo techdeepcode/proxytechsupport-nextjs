@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'en-CA': canonical,
         'en-GB': canonical,
         'en-AU': canonical,
+        'en-IE': canonical,
         'x-default': canonical,
       },
     },
@@ -61,6 +62,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: interview.description,
       images: [defaultOgImage.url],
     },
+    other: {
+      'article:section': 'Interview Questions',
+      ...(interview.keywords
+        ? { 'article:tag': interview.keywords.split(',').map((k) => k.trim()).slice(0, 6).join(',') }
+        : {}),
+    },
   };
 }
 
@@ -81,6 +88,9 @@ export default async function InterviewPostPage({ params }: Props) {
         dateModified={interview.lastmod?.trim()}
         url={url}
         type="Article"
+        keywords={interview.keywords}
+        articleSection="Interview Questions"
+        faqs={interview.faqs}
       />
       <PostLayout
         title={interview.title}
