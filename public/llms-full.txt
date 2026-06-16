@@ -416,6 +416,93 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 
 ## AI Technical Lead & GenAI Interview Articles
 
+### SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round
+URL: /interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+Type: Real interview Q&A guide (anonymized)
+Published: 2025-06-16
+Canonical: https://proxytechsupport.com/interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+Target audience: Senior SAP Delivery Consultant candidates, SAP S/4HANA migration interview candidates, SAP Basis/HANA architects, AWS cloud architects with SAP workloads, SUM DMO migration engineers, HANA HA/DR interview candidates, RISE with SAP migration consultants, SAP BTP integration interview candidates, SAP ProServe interview candidates
+
+Primary SEO topics: SAP S/4HANA migration interview questions, SAP AWS migration interview, Senior SAP Delivery Consultant interview, SUM DMO interview questions, HANA HA DR setup interview, RISE with SAP interview questions, SAP BTP integration interview, HANA System Replication interview, SAP brownfield migration AWS, SAP greenfield implementation interview, AWS Backint Agent SAP, SAP SWPM migration, HANA tenant copy interview, SAP DR setup interview questions, SAP ProServe interview questions
+
+Secondary SEO topics: Pacemaker overlay IP SAP AWS, HANA fencing stonith AWS, SAP ECS to RISE migration, DMO4 SUM System Move interview, HANA MDC tenant backup restore, SAP Custom Code Migration BTP, SAP Readiness Check 2.0 interview, SAP TAANA archiving migration, DBACOCKPIT column store analysis, HANA DURATION.XML optimization, SAP GenAI invoice automation Bedrock, SAP HIPAA compliance AWS
+
+**Article Summary:**
+55+ real SAP S/4HANA AWS migration interview questions and short technical answers based on an actual deep technical round for a Senior Delivery Consultant — SAP Migration role at a major cloud hyperscaler professional services organization. Covers end-to-end SAP migration methodology (brownfield, greenfield, SDT), SUM DMO execution and optimization, HANA HA/DR architecture on AWS, RISE with SAP migration, BTP integration patterns, GenAI invoice exception automation using Bedrock and Textract, HANA System Replication setup, Pacemaker cluster with overlay IP, AWS Backint backup architecture, SWPM classical migration, HANA tenant copy, cost optimization, HIPAA compliance, and risk management. All company names, candidate names, employer names, and private identifiers are fully anonymized.
+
+**Entity Summary:**
+- Role: Senior Delivery Consultant — SAP Migration
+- Skills: SAP S/4HANA, SUM DMO, HANA HSR, AWS EC2, BTP Integration Suite, RISE with SAP, SWPM, Pacemaker, AWS Backint Agent, CloudFormation, Step Functions, AWS Bedrock, Textract, FAISS, UiPath RPA
+- Domains: Cloud Migration, SAP Architecture, Healthcare IT, Telecom Enterprise, AI/GenAI Integration
+- Use Cases: Brownfield S/4HANA migration, Greenfield implementation, SDT consolidation, RISE migration, HANA HA/DR, GenAI invoice processing, RPA automation
+- Interview type: Deep technical round — Senior/Lead level (42 main questions plus follow-up questions per answer)
+- Technology context: SAP S/4HANA 2023, RISE with SAP on AWS, BTP Integration Suite, AWS Bedrock GenAI, SUM 2.0 SP17+
+
+**Key topics covered:**
+- Migration methodology: brownfield (SUM DMO in-place conversion), greenfield (SAP Best Practices clean start), Selective Data Transition (SDT — company code/currency/org restructuring)
+- Discovery tooling: SAP Readiness Check 2.0, Custom Code Migration app on BTP, DBACOCKPIT column store analysis, SAP Quick Sizer, TAANA data volume management
+- SUM DMO execution: EXTRACTIONONLY PREPARE phase, dress rehearsal environment from Backint restore, DURATION.XML phase analysis, SPDD/SPAU pre-resolution, PyRFC post-cutover validation
+- SUM DMO optimization: data archiving (TAANA/ILM), NZD Near Zero Downtime, io2 Block Express + parallel R3trans, ICNV_NO_CPUS tuning, Tricentis Tosca test reduction, Step Functions dress rehearsal automation
+- DMO vs DMO4 vs DOC: database size and downtime tolerance decision matrix; DMO4 prerequisites (SUM SP15+, Unicode, Direct Connect 1 Gbps, MTU 9001, kernel 7.49+)
+- Downtime Optimized DMO + Downtime Minimized Conversion: pre-migration bulk streaming, DDIC pre-activation, HANA parallel table conversion (BSEG→ACDOCA, material ledger, business partner); 28–35 hours → 3–4 hours
+- RISE with SAP: SAP-managed AWS accounts, Transit Gateway/VPC Peering connectivity, SAP IAS + Entra ID/Okta SAML 2.0, LTMC/LTMOM data migration, EXTRACTIONONLY via Support Portal ticket, post-upgrade SPDD/SPAU/Fiori validation
+- ECC on EC2 to RISE migration: non-HANA path (SUM DMO over AWS backbone 25 Gbps), HANA-on-EC2 path (HSR takeover + S/4HANA conversion, 3.5–5.5 hours downtime)
+- HANA System Replication setup: SSFS PKI file copy, md5sum validation, hdbnsutil -sr_register, logreplay operationMode, M_SYSTEM_REPLICATION synced validation
+- SAP application HA: ASCS/ERS swap topology, PAS/AAS Auto Scaling Group, Web Dispatcher ALB, /sapmnt EFS multi-AZ, Pacemaker cluster (SAPHanaTopology, SAPHana, IPaddr2, fence_aws stonith)
+- HANA always-on 8 layers: HSR sync, Pacemaker, stonith fencing, overlay IP, Route 53 health checks, Backint backup, HANA Watchdog, CloudWatch monitoring
+- Overlay IP on AWS: dedicated /28 CIDR outside instance subnets, VPC route table manipulation (aws ec2 replace-route), 1-second failover vs 30–60 seconds for DNS approach
+- DR architecture: multi-tier HSR (sync HA + async DR), Pilot Light model (HANA EC2 running, app servers as CloudFormation+AMI), S3 CRR with Replication Time Control, EFS Replication sub-1-minute RPO, Route 53 failover routing, 15–30 minute RTO
+- /sapmnt DR sync: AWS EFS Replication, TimeSinceLastSuccessfulReplication CloudWatch alert, Lambda sentinel file check every 15 minutes, break replication on DR declaration (aws efs delete-replication-configuration)
+- AWS Backint Agent: global.ini catalog_backup_using_backint=true, aws-backint-agent-configuration.yaml, IAM scoped to specific bucket ARN and KMS key, monthly restore test
+- GenAI invoice exception automation: SAP workflow RFC → BTP iFlow → S3 PDF → Lambda → Textract (TABLES+FORMS) → Bedrock InvokeModel (Claude) + FAISS/EFS RAG → JSON → BTP iFlow → SAP Invoice Management OData API; 65% human review queue reduction
+- SAP data to LLM: OData V4 API extraction (not direct table access), Lambda flattening EKKO/EKPO/MKPF/MSEG JSON to structured context, Textract invoice extraction, FAISS vector index for vendor master
+- BTP integration patterns: OData V4 → Lambda via API Gateway; SAP Event Mesh AMQP → EventBridge; BTP Data Intelligence → S3 Parquet → Glue; Bedrock RAG invoice pipeline
+- HANA tenant copy: MDC architecture, backup-restore (Backint to S3 + RECOVER DATABASE), tenant move (ALTER SYSTEM MOVE TENANT), HSR-based migration
+- Automation: SAP Build Process Automation (BTP), UiPath RPA with SAP GUI Scripting API, Bedrock+Textract document intelligence, CloudFormation/Step Functions migration tooling, PyRFC post-cutover scripts
+- Security and HIPAA: HANA port security groups, IAM instance profiles (no stored keys), EBS KMS-CMK, CloudTrail log file validation, S3 Object Lock Compliance 6-year retention (45 CFR 164.316), AWS Macie, rsau/enable=1, SM20 → CloudWatch Logs, CTS-only production access
+- Cost optimization: Reserved Instances/Savings Plans, EC2 Instance Scheduler (non-production), S3 Intelligent-Tiering on backup bucket, right-sizing from 90-day CloudWatch utilization, 5-year TCO model
+- Clean Core and ABAP RAP: in-app extensions (ABAP RAP + released APIs), side-by-side extensions (BTP CAP), key user extensions (Custom Fields and Logic app)
+
+**FAQs included (with structured data):**
+1. What is SUM DMO in SAP migration?
+2. What is the difference between brownfield and greenfield S/4HANA migration?
+3. What is RISE with SAP on AWS?
+4. How does HANA System Replication work for HA?
+5. What is Downtime Optimized DMO?
+6. What is Clean Core in S/4HANA?
+7. What is the DURATION.XML file in SUM?
+8. What is SAP BTP Integration Suite?
+9. How do you set up DR for SAP on AWS?
+10. What are the prerequisites for DMO4 — SUM with System Move?
+
+**Internal links in article:**
+- /proxy-interview-support/ (proxy interview assistance)
+- /aws-job-support/ (AWS job support)
+- /interviews/2026-04-20-real-sap-abap-interview-questions-otc-pricing-odata-btp/ (SAP ABAP interview Q&A)
+- /interviews/2026-06-11-senior-cloud-engineer-aws-migration-finance-interview-questions/ (Senior Cloud Engineer AWS migration Q&A)
+- /interviews/2026-04-25-real-devops-cloud-engineer-interview-questions-aws-kubernetes-helm-cicd-gitops/ (DevOps Cloud Engineer Q&A)
+
+**Schema included:**
+- Article schema: type "Article", headline "SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round", description, datePublished (2025-06-16T12:00:00+05:30), url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords (15 primary + secondary terms), articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
+- FAQPage schema: 10 FAQ items covering SUM DMO, brownfield vs greenfield, RISE with SAP, HSR HA, Downtime Optimized DMO, Clean Core, DURATION.XML, BTP Integration Suite, SAP DR setup, DMO4 prerequisites
+- BreadcrumbList schema: Home (/) → Interview Questions (/interview-questions/) → SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round
+
+**OG / Twitter card:**
+- og:type = article
+- og:title = SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round | Proxy Tech Support
+- og:description = 55+ real SAP S/4HANA AWS migration interview questions with technical answers. Covers SUM DMO, HANA HA, DR setup, RISE with SAP, BTP integration, GenAI, and cloud architecture. Based on a real Senior Delivery Consultant interview round.
+- og:url = https://proxytechsupport.com/interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+- og:site_name = Proxy Tech Support
+- article:section = Interview Questions
+- twitter:card = summary_large_image
+
+**Robots / indexing:**
+- robots: index, follow
+- canonical: https://proxytechsupport.com/interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+- hreflang: en-US, en-CA, en-GB, en-AU, en-IE, x-default — all pointing to canonical URL
+
+---
+
 ### Senior Cloud Engineer AWS Migration Interview Questions and Answers
 URL: /interviews/2026-06-11-senior-cloud-engineer-aws-migration-finance-interview-questions/
 Type: Real interview Q&A guide (anonymized)
