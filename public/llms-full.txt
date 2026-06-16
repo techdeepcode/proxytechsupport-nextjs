@@ -419,7 +419,7 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 ### SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round
 URL: /interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
 Type: Real interview Q&A guide (anonymized)
-Published: 2025-06-16
+Published: 2026-06-16
 Canonical: https://proxytechsupport.com/interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
 Target audience: Senior SAP Delivery Consultant candidates, SAP S/4HANA migration interview candidates, SAP Basis/HANA architects, AWS cloud architects with SAP workloads, SUM DMO migration engineers, HANA HA/DR interview candidates, RISE with SAP migration consultants, SAP BTP integration interview candidates, SAP ProServe interview candidates
 
@@ -483,7 +483,7 @@ Secondary SEO topics: Pacemaker overlay IP SAP AWS, HANA fencing stonith AWS, SA
 - /interviews/2026-04-25-real-devops-cloud-engineer-interview-questions-aws-kubernetes-helm-cicd-gitops/ (DevOps Cloud Engineer Q&A)
 
 **Schema included:**
-- Article schema: type "Article", headline "SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round", description, datePublished (2025-06-16T12:00:00+05:30), url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords (15 primary + secondary terms), articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
+- Article schema: type "Article", headline "SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round", description, datePublished (2026-06-16T12:00:00+05:30), url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords (15 primary + secondary terms), articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
 - FAQPage schema: 10 FAQ items covering SUM DMO, brownfield vs greenfield, RISE with SAP, HSR HA, Downtime Optimized DMO, Clean Core, DURATION.XML, BTP Integration Suite, SAP DR setup, DMO4 prerequisites
 - BreadcrumbList schema: Home (/) → Interview Questions (/interview-questions/) → SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round
 

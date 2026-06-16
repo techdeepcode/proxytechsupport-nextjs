@@ -2,7 +2,7 @@ export const meta = {
   slug: "2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions",
   title: "SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round",
   description: "55+ real SAP S/4HANA AWS migration interview questions with technical answers. Covers SUM DMO, HANA HA, DR setup, RISE with SAP, BTP integration, GenAI, and cloud architecture. Based on a real Senior Delivery Consultant interview round.",
-  date: "2025-06-16",
+  date: "2026-06-16",
   keywords: "SAP S/4HANA migration interview questions, SAP AWS migration interview, Senior SAP Delivery Consultant interview, SUM DMO interview questions, HANA HA DR setup interview, RISE with SAP interview questions, SAP BTP integration interview, HANA System Replication interview, SAP brownfield migration AWS, SAP greenfield implementation interview, AWS Backint Agent SAP, SAP SWPM migration, HANA tenant copy interview, SAP DR setup interview questions, SAP ProServe interview questions",
   layout: "interview-post",
   faqs: [
