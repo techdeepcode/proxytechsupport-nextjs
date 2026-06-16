@@ -426,9 +426,9 @@
 <p>Setup steps:</p>
 <p>Copy SSFS PKI files from primary to secondary — identical files required for trusted channel. md5sum SSFS_SID.DAT on both nodes must match. Most common HSR setup failure when skipped.</p>
 <p>Stop HANA on secondary:</p>
-<pre><code>HDB stop</code></pre>
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>HDB stop</code></pre>
 <p>Register secondary to primary:</p>
-<pre><code>hdbnsutil -sr_register \
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>hdbnsutil -sr_register \
   --remoteHost=primary_hostname \
   --remoteInstance=00 \
   --replicationMode=sync \
@@ -436,10 +436,10 @@
   --name=SECONDARY_AZ2 \
   --remoteName=PRIMARY_AZ1</code></pre>
 <p>Start HANA on secondary:</p>
-<pre><code>HDB start</code></pre>
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>HDB start</code></pre>
 <p>Initial full data sync starts automatically — primary ships entire data volume to secondary.</p>
 <p>Validate:</p>
-<pre><code>hdbsql "select SITE_NAME, REPLICATION_STATUS, SHIPPED_LOG_POSITION, REPLAYED_LOG_POSITION from M_SYSTEM_REPLICATION"</code></pre>
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>hdbsql "select SITE_NAME, REPLICATION_STATUS, SHIPPED_LOG_POSITION, REPLAYED_LOG_POSITION from M_SYSTEM_REPLICATION"</code></pre>
 <p>REPLICATION_STATUS must show synced.</p>
 <p><strong>Follow-up defense:</strong></p>
 <ul>
@@ -567,7 +567,7 @@
 <p>Installation — /usr/sap/SID/SYS/global/hdb/opt/aws-backint-agent/</p>
 <p>Configuration file — aws-backint-agent-configuration.yaml — region, bucket, prefix, kms_key_id, compress=true.</p>
 <p>HANA global.ini configuration:</p>
-<pre><code>catalog_backup_using_backint = true</code></pre>
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>catalog_backup_using_backint = true</code></pre>
 <p>data_backup_parameter_file and log_backup_parameter_file pointing to Backint Agent config.</p>
 <p>Without catalog_backup_using_backint=true — backup catalog stays on local disk. Instance failure means catalog loss — cannot identify S3 objects for restore.</p>
 <p>IAM instance profile permissions — s3:PutObject, s3:GetObject, s3:ListBucket scoped to specific backup bucket ARN and prefix. kms:GenerateDataKey, kms:Decrypt scoped to specific KMS key ARN. No wildcards.</p>
