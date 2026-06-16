@@ -1,5 +1,5 @@
 export const meta = {
-  slug: "2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions",
+  slug: "2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions",
   title: "SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round",
   description: "55+ real SAP S/4HANA AWS migration interview questions with technical answers. Covers SUM DMO, HANA HA, DR setup, RISE with SAP, BTP integration, GenAI, and cloud architecture. Based on a real Senior Delivery Consultant interview round.",
   date: "2026-06-16",

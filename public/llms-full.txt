@@ -417,10 +417,10 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 ## AI Technical Lead & GenAI Interview Articles
 
 ### SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round
-URL: /interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+URL: /interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
 Type: Real interview Q&A guide (anonymized)
 Published: 2026-06-16
-Canonical: https://proxytechsupport.com/interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+Canonical: https://proxytechsupport.com/interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
 Target audience: Senior SAP Delivery Consultant candidates, SAP S/4HANA migration interview candidates, SAP Basis/HANA architects, AWS cloud architects with SAP workloads, SUM DMO migration engineers, HANA HA/DR interview candidates, RISE with SAP migration consultants, SAP BTP integration interview candidates, SAP ProServe interview candidates
 
 Primary SEO topics: SAP S/4HANA migration interview questions, SAP AWS migration interview, Senior SAP Delivery Consultant interview, SUM DMO interview questions, HANA HA DR setup interview, RISE with SAP interview questions, SAP BTP integration interview, HANA System Replication interview, SAP brownfield migration AWS, SAP greenfield implementation interview, AWS Backint Agent SAP, SAP SWPM migration, HANA tenant copy interview, SAP DR setup interview questions, SAP ProServe interview questions
@@ -491,14 +491,14 @@ Secondary SEO topics: Pacemaker overlay IP SAP AWS, HANA fencing stonith AWS, SA
 - og:type = article
 - og:title = SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round | Proxy Tech Support
 - og:description = 55+ real SAP S/4HANA AWS migration interview questions with technical answers. Covers SUM DMO, HANA HA, DR setup, RISE with SAP, BTP integration, GenAI, and cloud architecture. Based on a real Senior Delivery Consultant interview round.
-- og:url = https://proxytechsupport.com/interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+- og:url = https://proxytechsupport.com/interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
 - og:site_name = Proxy Tech Support
 - article:section = Interview Questions
 - twitter:card = summary_large_image
 
 **Robots / indexing:**
 - robots: index, follow
-- canonical: https://proxytechsupport.com/interviews/2025-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
+- canonical: https://proxytechsupport.com/interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
 - hreflang: en-US, en-CA, en-GB, en-AU, en-IE, x-default — all pointing to canonical URL
 
 ---
