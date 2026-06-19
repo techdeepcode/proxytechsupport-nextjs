@@ -1,5 +1,6 @@
 ﻿import { allWorkdayPages } from './workday-pages';
 import { allUiPathPages } from './uipath-pages';
+import { allDotnetClusterPages } from './dotnet-cluster-pages';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10452,4 +10453,6 @@ export const allLandingPages: LandingPageConfig[] = [
   ...allWorkdayPages,
   // ── UiPath / RPA cluster ──────────────────────────────────────────────────
   ...allUiPathPages,
+  // ── Modern .NET Azure AI cluster ─────────────────────────────────────────
+  ...allDotnetClusterPages,
 ];

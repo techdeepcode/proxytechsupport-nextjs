@@ -25,6 +25,16 @@ export default function Page() {
         { href: '/dotnet-job-support-usa/', label: '.NET Job Support USA' },
         { href: '/dotnet-job-support/', label: '.NET Job Support' },
         { href: '/backend-enterprise-job-support/', label: 'Backend & Enterprise Job Support' },
+        { href: '/modern-dotnet-azure-ai-job-support/', label: 'Modern .NET Azure AI Job Support Hub' },
+        { href: '/csharp-job-support/', label: 'C# Job Support' },
+        { href: '/aspnet-core-job-support/', label: 'ASP.NET Core Job Support' },
+        { href: '/dotnet-azure-job-support/', label: '.NET Azure Job Support' },
+        { href: '/ef-core-migrations-job-support/', label: 'EF Core Migrations Job Support' },
+        { href: '/dotnet-microservices-job-support/', label: '.NET Microservices Job Support' },
+        { href: '/dotnet-aspire-job-support/', label: '.NET Aspire Job Support' },
+        { href: '/dotnet-cqrs-mediatr-job-support/', label: 'CQRS + MediatR .NET Job Support' },
+        { href: '/dotnet-testing-job-support/', label: '.NET Testing Job Support' },
+        { href: '/dotnet-performance-job-support/', label: '.NET Performance Job Support' },
       ]}
       relatedGuides={[
         { href: '/java-job-support-guide/', label: 'Java Job Support Guide' },

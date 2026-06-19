@@ -67,6 +67,26 @@ const proxyInterviewLinks = [
   { label: 'RPA Proxy Interview', href: '/rpa-proxy-interview-support/' },
 ];
 
+const dotnetClusterLinks = [
+  { label: 'Modern .NET Azure AI Hub', href: '/modern-dotnet-azure-ai-job-support/' },
+  { label: 'C# Job Support', href: '/csharp-job-support/' },
+  { label: 'ASP.NET Core Job Support', href: '/aspnet-core-job-support/' },
+  { label: '.NET Azure Job Support', href: '/dotnet-azure-job-support/' },
+  { label: 'Semantic Kernel Job Support', href: '/semantic-kernel-job-support/' },
+  { label: 'RAG .NET Job Support', href: '/rag-dotnet-job-support/' },
+  { label: '.NET Aspire Job Support', href: '/dotnet-aspire-job-support/' },
+  { label: 'CQRS MediatR .NET', href: '/dotnet-cqrs-mediatr-job-support/' },
+  { label: 'EF Core Migrations', href: '/ef-core-migrations-job-support/' },
+  { label: '.NET Framework Migration', href: '/dotnet-framework-migration-job-support/' },
+  { label: '.NET Job Support UK', href: '/uk-dotnet-job-support/' },
+  { label: '.NET Job Support Canada', href: '/canada-dotnet-job-support/' },
+  { label: '.NET Job Support Australia', href: '/australia-dotnet-job-support/' },
+  { label: '.NET Cloud-Native Interview', href: '/dotnet-cloud-native-interview-proxy-support/' },
+  { label: '.NET Azure Proxy Interview', href: '/dotnet-azure-interview-proxy-support/' },
+  { label: '.NET AI Proxy Interview', href: '/dotnet-ai-interview-proxy-support/' },
+  { label: '.NET Architecture Interview', href: '/dotnet-architecture-interview-proxy-support/' },
+];
+
 const candidateMarketingLinks = [
   { label: 'Job Application & Candidate Marketing', href: '/job-application-candidate-marketing/' },
   { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
@@ -257,6 +277,20 @@ export default function Footer() {
           <div>
             <FooterHeading>Resources</FooterHeading>
             <FooterLinks links={resourceLinks} />
+          </div>
+        </div>
+
+        <hr style={{ border: 0, borderTop: '1px solid var(--pts-footer-border)', margin: '0 0 2rem' }} />
+
+        {/* ── .NET Azure AI Cluster section ──────────────────────────── */}
+        <div style={{ marginBottom: '2.5rem' }}>
+          <FooterHeading>Modern .NET Azure AI Job Support</FooterHeading>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
+            {dotnetClusterLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 

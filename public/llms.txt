@@ -256,7 +256,7 @@
 - USA Texas cities: Dallas (CST), Irving (CST), Plano (CST), Fort Worth (CST), Austin (CST), Houston (CST)
 - Canada cities: Toronto (EST), Vancouver (PST), Calgary (MST), Montreal (EST)
 - Ireland cities: Dublin (IST), Cork (IST), Galway (IST), Limerick (IST)
-- Technologies: AI/ML, MLOps, DevOps, SRE, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET, Databases, Testing, Cybersecurity, Workday (HCM/Financial Management/Payroll/Integrations/Adaptive Planning/Reporting/Security/Recruiting/2026R1), Datadog (SLO/SLI/error budget/burn rate/Golden Signals dashboards), Observability (Prometheus, Grafana, OpenTelemetry)
+- Technologies: AI/ML, MLOps, DevOps, SRE, Cloud (AWS/Azure/GCP), Java, Python, React, Angular, Node.js, .NET (C#, ASP.NET Core, Blazor, EF Core, Azure, Semantic Kernel, RAG, .NET Aspire, Dapr, CQRS, DDD, Clean Architecture, .NET Framework Migration), Databases, Testing, Cybersecurity, Workday (HCM/Financial Management/Payroll/Integrations/Adaptive Planning/Reporting/Security/Recruiting/2026R1), Datadog (SLO/SLI/error budget/burn rate/Golden Signals dashboards), Observability (Prometheus, Grafana, OpenTelemetry), UiPath (Studio/Orchestrator/REFramework/Document Understanding/Agentic/Epic/HIPAA)
 - Texas specialties: W2/C2C/H1B consulting support, Dallas Fortune 500 enterprise projects, Irving Las Colinas banking and telecom, Plano corporate tech campuses, CST-timezone aligned, production incident support
 - Canada specialties: Banking Java systems (RBC/TD/Scotiabank), Canadian fintech APIs, PIPEDA-compliant cloud architectures, AI research ecosystem (Vector Institute Toronto, Mila Montreal), gaming industry (Vancouver, Montreal), energy sector tech (Calgary)
 
@@ -401,3 +401,166 @@
 - [UiPath Job Support Singapore](/uipath-job-support-singapore/): UiPath job support for Singapore — DBS, OCBC, UOB, logistics, APAC shared services. SGT (UTC+8).
 - [UiPath Job Support UAE](/uipath-job-support-uae/): UiPath job support for UAE — Emirates NBD, FAB, government digital transformation, oil and gas. GST (UTC+4).
 - [UiPath Job Support Saudi Arabia](/uipath-job-support-saudi-arabia/): UiPath job support for Saudi Arabia — Al Rajhi, Saudi Aramco, Vision 2030, oil and gas, healthcare. AST (UTC+3).
+
+## Modern .NET Azure AI Job Support Cluster
+
+### Hub & Core .NET Pages
+
+- [Modern .NET Azure AI Job Support](/modern-dotnet-azure-ai-job-support/): Complete hub for Modern .NET job support — ASP.NET Core 8/9, Azure, AI/ML, Blazor, EF Core, C#, microservices, cloud-native, and legacy modernization. Same-day start. All time zones.
+- [C# Job Support](/csharp-job-support/): Real-time C# job support — async/await, LINQ, generics, records, pattern matching, C# 12/13 features, delegates, events, and production C# debugging.
+- [ASP.NET Core Job Support](/aspnet-core-job-support/): Expert ASP.NET Core job support — minimal APIs, middleware, dependency injection, controllers, Razor Pages, authentication, and deployment to IIS/Azure/Linux.
+- [.NET Microservices Job Support](/dotnet-microservices-job-support/): .NET microservices architecture support — service decomposition, Ocelot API gateway, gRPC, Kafka, distributed transactions, Docker, Kubernetes, and Dapr.
+- [.NET Cloud Job Support](/dotnet-cloud-job-support/): Cloud-first .NET support — Azure, AWS, and GCP deployments, containerization, serverless Functions, Kubernetes, cloud storage, and cloud-native design patterns.
+- [.NET Testing Job Support](/dotnet-testing-job-support/): .NET testing support — xUnit, NUnit, MSTest, Moq, FluentAssertions, integration testing, test containers, E2E testing with Playwright.
+- [.NET Senior Developer Support](/dotnet-senior-developer-support/): Senior .NET developer support — architecture reviews, technical debt resolution, code quality, performance optimization, and complex feature delivery.
+- [.NET Contractor Job Support](/dotnet-contractor-job-support/): Real-time .NET job support for contractors and consultants on C2C, W2, and H1B contracts — sprint delivery, production incidents, client calls, and onboarding.
+- [.NET Remote Job Support](/dotnet-remote-job-support/): Remote-first .NET job support for distributed teams — screen share, async delivery, stakeholder communication, and remote production debugging.
+- [C# Proxy Interview Support](/csharp-proxy-interview-support/): Live proxy interview guidance for C# roles — language internals, OOP design, SOLID principles, async patterns, and system design using C#.
+- [ASP.NET Core Proxy Interview Support](/aspnet-core-proxy-interview-support/): Real-time interview guidance for ASP.NET Core roles — middleware pipeline, DI, minimal APIs, REST design, security, and performance.
+- [.NET Architect Proxy Interview Support](/dotnet-architect-proxy-interview-support/): Live interview support for .NET Architect and Lead roles — distributed systems design, cloud architecture, event-driven patterns, and .NET platform depth.
+
+### .NET GEO — Country & City Pages
+
+- [.NET Job Support UK](/dotnet-job-support-uk/): Real-time .NET job support for UK projects — London banking tech, financial services, NHS .NET, insurance, and enterprise C# roles. GMT/BST aligned.
+- [.NET Job Support Canada](/dotnet-job-support-canada/): .NET job support for Canadian projects — Toronto banks, Vancouver tech, Calgary enterprise, and remote Canadian .NET roles. EST to PST.
+- [.NET Job Support Australia](/dotnet-job-support-australia/): .NET job support for Australian projects — Sydney banking (Commonwealth Bank, ANZ, NAB), government .NET, and enterprise roles. AEST/AEDT aligned.
+- [.NET Job Support Germany](/dotnet-job-support-germany/): .NET job support for German projects — Berlin startups, Munich enterprise (Siemens, BMW IT, SAP), Frankfurt banking, and remote German .NET roles. CET/CEST.
+- [.NET Job Support Ireland](/dotnet-job-support-ireland/): .NET job support for Irish projects — Dublin MNCs (Microsoft, Google), IDA companies, Irish banks, and enterprise .NET roles. IST/GMT aligned.
+- [.NET Job Support Singapore](/dotnet-job-support-singapore/): .NET job support for Singapore projects — DBS, GovTech, Singapore MNCs, and APAC enterprise .NET roles. SGT (UTC+8).
+- [.NET Job Support Toronto](/dotnet-job-support-toronto/): .NET job support for Toronto — Big Five banks (RBC, TD, Scotiabank, CIBC, BMO), fintech, and enterprise .NET roles. EST aligned.
+- [.NET Job Support Vancouver](/dotnet-job-support-vancouver/): .NET job support for Vancouver — gaming, cloud-native startups, enterprise .NET, and remote Canadian roles. PST aligned.
+- [.NET Job Support London](/dotnet-job-support-london/): .NET job support for London — Canary Wharf banking tech, City financial services, fintech, and enterprise C# roles. GMT/BST aligned.
+- [.NET Job Support Dublin](/dotnet-job-support-dublin/): .NET job support for Dublin — Google, Microsoft, Stripe, Irish banks, IDA companies, and enterprise .NET roles. IST aligned.
+- [.NET Job Support Sydney](/dotnet-job-support-sydney/): .NET job support for Sydney — Commonwealth Bank tech, ANZ digital, enterprise .NET, and government digital service roles. AEST/AEDT aligned.
+- [.NET Job Support Berlin](/dotnet-job-support-berlin/): .NET job support for Berlin — startup and scale-up .NET, German enterprise, fintech, and remote Berlin .NET roles. CET/CEST.
+- [.NET Proxy Interview UK](/dotnet-proxy-interview-uk/): Live .NET proxy interview guidance for UK company interviews — London banks, financial services, NHS, and enterprise C# roles. GMT/BST.
+- [.NET Proxy Interview Canada](/dotnet-proxy-interview-canada/): Real-time .NET interview support for Canadian roles — Big Five banks, Canadian fintech, enterprise .NET interviews. EST to PST.
+- [.NET Proxy Interview Australia](/dotnet-proxy-interview-australia/): Live .NET proxy interview support for Australian company interviews — CBA, ANZ, government, and enterprise .NET roles. AEST/AEDT.
+
+### .NET Platform & Framework Pages
+
+- [.NET MAUI Job Support](/dotnet-maui-job-support/): .NET MAUI cross-platform mobile and desktop app support — iOS, Android, Windows, and macOS with shared C# codebase.
+- [WPF Job Support](/dotnet-wpf-job-support/): WPF desktop application job support — MVVM, data binding, custom controls, animations, and WPF performance tuning.
+- [Blazor Server Job Support](/blazor-server-job-support/): Blazor Server job support — SignalR-backed components, server-side rendering, authentication, real-time UI updates, and deployment.
+- [SignalR Job Support](/dotnet-signal-r-job-support/): ASP.NET Core SignalR job support — real-time WebSocket communication, hubs, groups, connection management, and scaling with Redis backplane.
+- [gRPC .NET Job Support](/dotnet-grpc-job-support/): gRPC and ASP.NET Core Protobuf job support — service definitions, code generation, streaming, deadlines, and gRPC-Web for browser clients.
+- [IdentityServer Job Support](/dotnet-identity-server-job-support/): IdentityServer / Duende IdentityServer job support — OAuth2/OIDC flows, JWT, client credentials, authorization code + PKCE, and token validation.
+- [EF Core Job Support](/ef-core-job-support/): Entity Framework Core job support — migrations, relationships, raw SQL, performance optimization, query tracking, and EF Core 8/9 features.
+- [.NET Minimal API Job Support](/dotnet-minimal-api-job-support/): ASP.NET Core Minimal API job support — endpoint routing, filters, validation, OpenAPI/Swagger, and migration from controller-based APIs.
+- [.NET Worker Service Job Support](/dotnet-worker-service-job-support/): .NET Worker Service job support — hosted services, background processing, lifetime management, and deployment as Windows Service or systemd.
+- [.NET Background Jobs Job Support](/dotnet-background-jobs-job-support/): .NET background job support — Hangfire, Quartz.NET, hosted IHostedService, queue-based processing, and scheduled task management.
+- [.NET Performance Optimization Job Support](/dotnet-performance-optimization-job-support/): .NET performance job support — profiling, BenchmarkDotNet, memory allocation reduction, Span/Memory, async I/O, and production bottleneck resolution.
+- [.NET Security Job Support](/dotnet-security-job-support/): .NET application security job support — OWASP top 10, ASP.NET Core security middleware, JWT/cookie auth, CORS, CSRF, and secure deployment.
+
+### .NET Ecosystem & Runtime Pages
+
+- [Blazor Job Support](/blazor-job-support/): Full Blazor job support — Blazor WebAssembly, Blazor Server, and .NET 8/9 Blazor United (SSR, streaming, enhanced navigation).
+- [.NET 8 Job Support](/dotnet-8-job-support/): .NET 8 LTS job support — Native AOT, Frozen Collections, keyed DI, primary constructors, Time abstractions, and performance improvements.
+- [.NET 9 Job Support](/dotnet-9-job-support/): .NET 9 job support — LINQ improvements, Task.WhenEach, OpenAPI support, Blazor enhancements, C# 13 features, and .NET Aspire integration.
+- [.NET AWS Job Support](/dotnet-aws-job-support/): .NET on AWS job support — Lambda C# functions, Elastic Beanstalk, ECS, EKS, RDS, DynamoDB, S3, and AWS SDK for .NET.
+- [.NET GCP Job Support](/dotnet-gcp-job-support/): .NET on Google Cloud job support — Cloud Run, Cloud Functions, GKE, Cloud SQL, Firestore, and .NET on GCP deployment patterns.
+- [.NET Docker Kubernetes Job Support](/dotnet-docker-kubernetes-job-support/): .NET containerization job support — multi-stage Dockerfiles, .NET container images, Kubernetes deployments, Helm charts, and health probes.
+- [.NET Kafka Job Support](/dotnet-kafka-job-support/): .NET + Apache Kafka job support — Confluent.Kafka .NET client, producer/consumer patterns, Kafka Streams, and event-driven .NET architectures.
+- [.NET Redis Job Support](/dotnet-redis-job-support/): .NET + Redis job support — StackExchange.Redis, distributed caching, pub/sub, Redis Streams, and session storage in ASP.NET Core.
+- [.NET SignalR WebSocket Job Support](/dotnet-signalr-websocket-job-support/): Real-time .NET communication job support — SignalR hubs, WebSocket fallback, backplane configuration, scaling with Azure SignalR Service.
+- [.NET Full-Stack Job Support](/dotnet-fullstack-job-support/): Full-stack .NET job support — ASP.NET Core backend + React/Angular/Blazor frontend integration, API design, authentication flow, and deployment.
+- [.NET Desktop WPF WinForms Job Support](/dotnet-desktop-wpf-winforms-job-support/): .NET desktop application job support — WPF, Windows Forms, MAUI migration paths, and modernization of legacy desktop apps.
+
+### .NET Azure Integration Pages
+
+- [.NET Azure Job Support](/dotnet-azure-job-support/): Comprehensive .NET + Azure job support — Azure SDK for .NET, App Service, Functions, AKS, Cosmos DB, Service Bus, Key Vault, and Azure DevOps.
+- [Azure App Service .NET Job Support](/azure-app-service-dotnet-job-support/): Azure App Service .NET job support — deployment slots, scaling, custom domains, TLS, managed identity, and App Service Environment.
+- [Azure Functions .NET Job Support](/azure-functions-dotnet-job-support/): Azure Functions C# job support — isolated worker model, triggers (HTTP/Timer/Service Bus/Blob), Durable Functions, and deployment.
+- [Azure Service Bus .NET Job Support](/azure-service-bus-dotnet-job-support/): Azure Service Bus .NET job support — queues, topics, subscriptions, sessions, dead letter queues, and reliable messaging patterns with Azure.Messaging.ServiceBus.
+- [Azure Cosmos DB .NET Job Support](/azure-cosmos-db-dotnet-job-support/): Azure Cosmos DB .NET job support — SDK v3, partitioning strategy, change feed, consistency levels, point reads vs queries, and multi-region writes.
+- [Azure Storage .NET Job Support](/azure-storage-dotnet-job-support/): Azure Storage .NET job support — Blob Storage, Queue Storage, Table Storage, Azure.Storage.Blobs SDK, SAS tokens, and lifecycle management.
+- [Azure Key Vault .NET Job Support](/azure-key-vault-dotnet-job-support/): Azure Key Vault .NET job support — SecretClient, KeyClient, managed identity authentication, secret rotation, and secure configuration management.
+- [Azure API Management .NET Job Support](/azure-api-management-dotnet-job-support/): Azure API Management .NET job support — policies, rate limiting, OAuth2/JWT validation, versioning, developer portal, and backend .NET API integration.
+- [Azure Container Apps .NET Job Support](/azure-container-apps-dotnet-job-support/): Azure Container Apps .NET job support — KEDA scaling, Dapr integration, environment setup, ingress, managed identity, and CI/CD deployment.
+- [Azure AKS .NET Job Support](/azure-aks-dotnet-job-support/): Azure Kubernetes Service .NET job support — AKS cluster setup, .NET workload deployment, Helm, AGIC ingress, Azure Monitor, and managed identity.
+- [Azure Logic Apps .NET Job Support](/azure-logic-apps-dotnet-job-support/): Azure Logic Apps .NET job support — Standard vs Consumption, custom connectors, .NET integration, Service Bus triggers, and enterprise integration patterns.
+- [Azure Event Hub .NET Job Support](/azure-event-hub-dotnet-job-support/): Azure Event Hubs .NET job support — EventHubProducerClient, EventHubConsumerClient, checkpointing, consumer groups, and Azure Blob checkpointing.
+- [Azure SQL .NET Job Support](/azure-sql-dotnet-job-support/): Azure SQL Database .NET job support — connection resilience, elastic pools, managed identity, EF Core integration, Always Encrypted, and performance tuning.
+- [Azure Monitoring .NET Job Support](/azure-monitoring-dotnet-job-support/): Azure Monitor + Application Insights .NET job support — telemetry SDK, custom metrics, distributed tracing, alerts, Log Analytics queries, and dashboards.
+- [Azure DevOps .NET Job Support](/azure-devops-dotnet-job-support/): Azure DevOps .NET job support — YAML pipelines, multi-stage deployments, artifact feeds, test plans, boards, and .NET release automation.
+
+### .NET AI/ML & GenAI Pages
+
+- [.NET AI/ML Job Support](/dotnet-ai-ml-job-support/): .NET AI and machine learning job support — ML.NET, Semantic Kernel, Azure OpenAI, RAG pipelines, embedding services, and agentic AI with C#.
+- [Semantic Kernel Job Support](/semantic-kernel-job-support/): Microsoft Semantic Kernel job support — plugins, planners, memory stores, function calling, AI agents, and .NET Semantic Kernel 1.x patterns.
+- [RAG .NET Job Support](/rag-dotnet-job-support/): Retrieval-Augmented Generation (RAG) with .NET job support — Azure AI Search, Semantic Kernel, embedding pipelines, chunking, hybrid search, and LLM integration with C#.
+- [.NET OpenAI Job Support](/dotnet-openai-job-support/): OpenAI API .NET job support — Azure.AI.OpenAI SDK, chat completions, function calling, streaming, embeddings, and prompt engineering with C#.
+- [Azure AI Foundry .NET Job Support](/azure-ai-foundry-dotnet-job-support/): Azure AI Foundry .NET job support — model catalog, Azure OpenAI deployments, AI Agent Service, prompt flow, and AI Studio integration with C#.
+- [.NET Vector DB Job Support](/dotnet-vector-db-job-support/): .NET vector database job support — Azure AI Search, Qdrant, Milvus, pgvector, Chroma, Weaviate with Semantic Kernel and .NET SDK integration.
+- [.NET LangChain Job Support](/dotnet-langchain-job-support/): LangChain.NET / LangChain4CS job support — chains, agents, tools, memory, document loaders, and RAG pipelines using .NET LangChain-compatible libraries.
+- [ML.NET Job Support](/ml-net-job-support/): ML.NET job support — binary/multiclass classification, regression, clustering, anomaly detection, model training, AutoML, and .NET ML deployment.
+- [.NET Computer Vision Job Support](/dotnet-computer-vision-job-support/): .NET computer vision job support — Azure Cognitive Services Vision, Azure AI Vision 4.x, image classification, object detection, OCR, and C# integration.
+- [.NET NLP Job Support](/dotnet-nlp-job-support/): .NET natural language processing job support — Azure AI Language, text analytics, named entity recognition, sentiment analysis, and NLP pipelines with C#.
+- [.NET Agentic AI Job Support](/dotnet-agentic-ai-job-support/): Agentic AI .NET job support — Semantic Kernel agent framework, multi-agent orchestration, AutoGen .NET, tool use, planning loops, and AI agent deployment with C#.
+- [.NET LLM Fine-Tuning Job Support](/dotnet-llm-fine-tuning-job-support/): LLM fine-tuning .NET job support — Azure OpenAI fine-tuning, dataset preparation, JSONL format, fine-tuning runs, model evaluation, and .NET deployment.
+- [.NET AI Monitoring Job Support](/dotnet-ai-monitoring-job-support/): .NET AI system monitoring job support — Application Insights AI telemetry, Langfuse .NET integration, LLM observability, token cost tracking, and hallucination alerting.
+- [.NET AI Governance Job Support](/dotnet-ai-governance-job-support/): .NET AI governance job support — Azure AI Content Safety, responsible AI principles, PII detection, prompt injection defense, audit logging, and EUAI Act compliance.
+- [Ollama .NET Job Support](/ollama-dotnet-job-support/): Ollama + .NET job support — local LLM serving with Ollama, .NET Ollama SDK, model management, on-premise RAG, and private AI deployments.
+
+### .NET Cloud-Native & Architecture Pages
+
+- [.NET Aspire Job Support](/dotnet-aspire-job-support/): .NET Aspire job support — AppHost orchestration, service discovery, telemetry integration, Component model, local dev environment, and cloud deployment.
+- [Dapr .NET Job Support](/dotnet-dapr-job-support/): Dapr + .NET job support — service invocation, pub/sub, state management, secrets, bindings, actors, and Dapr Kubernetes deployment with .NET microservices.
+- [.NET OpenTelemetry Job Support](/dotnet-otel-job-support/): .NET OpenTelemetry job support — OTel SDK setup, custom traces/metrics/logs, OTLP exporter, .NET Activity API, and integration with Jaeger, Grafana Tempo.
+- [.NET Event Sourcing Job Support](/dotnet-event-sourcing-job-support/): .NET event sourcing job support — event store design, aggregate reconstruction, EventStoreDB, Marten, CQRS integration, and event-driven microservices with .NET.
+- [.NET Clean Architecture Job Support](/dotnet-clean-architecture-job-support/): Clean Architecture .NET job support — Onion/Hexagonal layering, domain entities, use cases, infrastructure adapters, and dependency inversion with C#.
+- [Vertical Slice .NET Job Support](/dotnet-vertical-slice-job-support/): Vertical Slice Architecture .NET job support — feature folders, MediatR handlers, validation, minimal API integration, and slice-based .NET project organization.
+- [CQRS MediatR Job Support](/dotnet-cqrs-mediatr-job-support/): CQRS + MediatR .NET job support — command/query separation, handler registration, pipeline behaviors, notifications, and MediatR 12.x patterns.
+- [.NET Feature Flags Job Support](/dotnet-feature-flags-job-support/): .NET feature flag job support — Azure App Configuration, LaunchDarkly .NET SDK, Microsoft.FeatureManagement, feature toggles, and A/B testing with C#.
+- [.NET Multi-Tenancy Job Support](/dotnet-multi-tenancy-job-support/): .NET multi-tenancy job support — tenant isolation strategies (schema-per-tenant, database-per-tenant), tenant resolution middleware, Finbuckle.MultiTenant, and Azure AD B2C.
+- [.NET Authentication Authorization Job Support](/dotnet-authentication-authorization-job-support/): ASP.NET Core auth job support — JWT bearer tokens, OAuth2/OIDC, cookie auth, policy-based authorization, resource-based authorization, and Azure AD integration.
+
+### .NET Architecture Patterns Pages
+
+- [.NET Architecture Patterns Job Support](/dotnet-architecture-patterns-job-support/): .NET architecture patterns job support — microservices, modular monolith, CQRS, event sourcing, clean architecture, DDD, vertical slice, and enterprise .NET design.
+- [Domain-Driven Design .NET Job Support](/dotnet-domain-driven-design-job-support/): DDD + .NET job support — bounded contexts, aggregates, domain events, repositories, value objects, and tactical DDD patterns with ASP.NET Core.
+- [Hexagonal Architecture .NET Job Support](/dotnet-hexagonal-architecture-job-support/): Hexagonal (Ports and Adapters) Architecture .NET job support — port interfaces, adapters, domain isolation, testability, and enterprise .NET architecture.
+- [.NET Modular Monolith Job Support](/dotnet-modular-monolith-job-support/): Modular Monolith .NET job support — module boundaries, internal APIs, shared kernel design, horizontal scalability, and migration path to microservices.
+- [Service Mesh .NET Job Support](/dotnet-service-mesh-job-support/): Service mesh .NET job support — Istio sidecar with .NET containers, mTLS, traffic management, observability, Linkerd for .NET microservices.
+- [.NET API Gateway Job Support](/dotnet-api-gateway-job-support/): .NET API gateway job support — Ocelot, YARP (Yet Another Reverse Proxy), Azure API Management, rate limiting, authentication, and gateway routing.
+- [.NET Circuit Breaker Job Support](/dotnet-circuit-breaker-job-support/): .NET resilience job support — Polly circuit breaker, retry policies, bulkhead isolation, timeout, fallback, and Microsoft.Extensions.Resilience.
+- [.NET Rate Limiting Job Support](/dotnet-rate-limiting-job-support/): ASP.NET Core rate limiting job support — built-in RateLimiter middleware, fixed/sliding/token bucket/concurrency limiters, and Redis-backed rate limiting.
+- [.NET Health Checks Job Support](/dotnet-health-checks-job-support/): ASP.NET Core health check job support — IHealthCheck implementations, readiness/liveness probes, health UI, database/external service checks, and Kubernetes probe integration.
+- [.NET Dependency Injection Job Support](/dotnet-dependency-injection-job-support/): .NET DI container job support — service lifetimes, factory patterns, keyed services (.NET 8), decorator pattern, Scrutor, and DI anti-patterns.
+
+### .NET Full-Stack Pages
+
+- [.NET React Job Support](/dotnet-react-job-support/): .NET backend + React frontend job support — ASP.NET Core Web API + React, JWT auth, CORS, SPA hosting, and full-stack deployment.
+- [.NET Angular Job Support](/dotnet-angular-job-support/): .NET backend + Angular frontend job support — ASP.NET Core API + Angular, OpenAPI code generation, authentication, and Azure Static Web Apps.
+- [.NET Blazor WebAssembly Job Support](/dotnet-blazor-wasm-job-support/): Blazor WebAssembly job support — WASM-hosted apps, pre-rendering, PWA support, auth with IdentityServer, and .NET 8 Blazor WASM patterns.
+- [.NET Next.js Job Support](/dotnet-nextjs-job-support/): .NET API + Next.js full-stack job support — ASP.NET Core backend with Next.js App Router frontend, API routes, authentication, and Azure deployment.
+- [.NET TypeScript Job Support](/dotnet-typescript-job-support/): .NET backend + TypeScript frontend job support — OpenAPI TypeScript SDK generation, API type safety, Zod validation, and full-stack type alignment.
+- [.NET SPA Job Support](/dotnet-spa-job-support/): .NET + Single Page Application job support — ASP.NET Core + React/Angular/Vue, CORS configuration, SPA authentication flows, and Azure CDN deployment.
+- [.NET Full-Stack Proxy Interview Support](/dotnet-fullstack-interview-proxy-support/): Live proxy interview support for full-stack .NET roles — API design, React/Angular integration, authentication flows, and system design for .NET full-stack interviews.
+
+### .NET Database Pages
+
+- [EF Core Migrations Job Support](/ef-core-migrations-job-support/): EF Core Migrations job support — code-first migrations, migration scripts, seed data, rollback strategies, and CI/CD database deployment.
+- [.NET SQL Server Job Support](/dotnet-sql-server-job-support/): .NET + SQL Server job support — ADO.NET, EF Core, stored procedures, query optimization, indexing, Always On, and Azure SQL.
+- [.NET PostgreSQL Job Support](/dotnet-postgresql-job-support/): .NET + PostgreSQL job support — Npgsql EF Core provider, connection pooling with PgBouncer, JSONB, full-text search, and Azure Database for PostgreSQL.
+- [.NET MongoDB Job Support](/dotnet-mongodb-job-support/): .NET + MongoDB job support — MongoDB .NET Driver 3.x, aggregation pipelines, change streams, Atlas Search, and repository pattern with .NET.
+- [.NET Redis Caching Job Support](/dotnet-redis-caching-job-support/): .NET + Redis distributed caching job support — StackExchange.Redis, IDistributedCache, cache-aside pattern, cache invalidation, and Redis Cluster.
+- [.NET Dapper Job Support](/dotnet-dapper-job-support/): Dapper .NET micro-ORM job support — SQL mapping, multi-mapping, async queries, dynamic parameters, stored procedure calls, and Dapper vs EF Core decisions.
+- [.NET Database Proxy Interview Support](/dotnet-database-interview-proxy-support/): Live proxy interview support for .NET database roles — EF Core internals, SQL Server optimization, NoSQL vs relational decisions, and data modeling.
+
+### .NET Legacy Modernization Pages
+
+- [.NET Framework Migration Job Support](/dotnet-framework-migration-job-support/): .NET Framework to .NET 8/9 migration job support — upgrade assistant, compatibility analysis, NuGet migration, and incremental migration strategy.
+- [.NET Framework to Core Job Support](/dotnet-framework-to-core-job-support/): .NET Framework → .NET Core/5/6/7/8 migration job support — API surface changes, HttpClient, Web API migration, WCF alternatives, and modernization.
+- [Legacy .NET API Modernization Job Support](/dotnet-legacy-api-modernization-job-support/): Legacy .NET REST API modernization support — SOAP to REST, Web API 2 to ASP.NET Core, Swagger/OpenAPI, and incremental API rewrite.
+- [WCF Migration Job Support](/dotnet-wcf-migration-job-support/): WCF → gRPC / CoreWCF migration job support — service contract migration, gRPC code generation, CoreWCF compatibility layer, and Azure migration.
+- [Windows Service Migration Job Support](/dotnet-windows-service-migration-job-support/): Windows Service → .NET Worker Service migration job support — hosted service pattern, systemd Linux deployment, Kubernetes CronJob, and lifecycle management.
+- [WebForms Migration Job Support](/dotnet-webforms-migration-job-support/): ASP.NET Web Forms → ASP.NET Core migration job support — Razor Pages, MVC migration, ViewState elimination, and modernization with .NET 8.
+- [.NET Modernization Proxy Interview Support](/dotnet-modernization-interview-proxy-support/): Live proxy interview support for .NET legacy modernization roles — migration strategy, strangler fig pattern, .NET upgrade paths, and architecture decisions.
+
+### .NET Proxy Interview Pages
+
+- [.NET Azure Proxy Interview Support](/dotnet-azure-interview-proxy-support/): Live proxy interview guidance for .NET + Azure roles — Azure SDK, App Service, Functions, Cosmos DB, Service Bus, managed identity, and Azure architecture.
+- [.NET AI Proxy Interview Support](/dotnet-ai-interview-proxy-support/): Real-time interview support for .NET AI/ML roles — Semantic Kernel, RAG pipelines, Azure OpenAI, ML.NET, and agentic AI with C# interview scenarios.
+- [.NET Architecture Proxy Interview Support](/dotnet-architecture-interview-proxy-support/): Live proxy interview support for .NET Architect and Senior Developer roles — DDD, CQRS, event sourcing, microservices, cloud-native design, and system design.
+- [.NET Cloud-Native Proxy Interview Support](/dotnet-cloud-native-interview-proxy-support/): Real-time interview support for cloud-native .NET roles — .NET Aspire, Dapr, Kubernetes, container design, distributed systems, and cloud-native C# architecture.

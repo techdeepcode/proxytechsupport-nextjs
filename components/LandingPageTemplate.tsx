@@ -6,6 +6,7 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import LandingFAQ from '@/components/LandingFAQ';
 import ActionBanner from '@/components/ActionBanner';
 import type { LandingPageConfig } from '@/data/landing-pages';
+import { allDotnetClusterPages } from '@/data/dotnet-cluster-pages';
 import { jobSupportLinks } from '@/data/navigation';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 import USALegacyTrustBanner from '@/components/USALegacyTrustBanner';
@@ -63,6 +64,11 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
     return [home, { label: 'Proxy Support', href: '/proxy-interview-support/' }, { label: shortTitle }];
   }
 
+  // .NET cluster pages — direct under Home (no intermediate "Developer Support")
+  if (DOTNET_CLUSTER_SLUGS.has(slug)) {
+    return [home, { label: shortTitle }];
+  }
+
   // Problem / catch-all pages
   return [home, { label: 'Developer Support' }, { label: shortTitle }];
 }
@@ -82,6 +88,8 @@ function isGeoLandingPage(config: LandingPageConfig): boolean {
   return config.slug in GEO_LABELS;
 }
 
+const DOTNET_CLUSTER_SLUGS = new Set(allDotnetClusterPages.map((p) => p.slug));
+
 /** Geo pages + USA tech landings + country-specific proxy pages — same hero layout with metrics on the right (desktop). */
 function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (isGeoLandingPage(config)) return true;
@@ -91,6 +99,8 @@ function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (TEXAS_GEO_SLUGS.has(config.slug)) return true;
   // All UiPath / RPA landing pages
   if (config.slug.startsWith('uipath-') || config.slug.startsWith('rpa-')) return true;
+  // All .NET cluster landing pages
+  if (DOTNET_CLUSTER_SLUGS.has(config.slug)) return true;
   return false;
 }
 

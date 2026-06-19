@@ -2684,6 +2684,482 @@ USA (all cities), Canada (Toronto, Vancouver, Calgary, Montreal, Ottawa), UK (Lo
 
 ---
 
+---
+
+## Modern .NET Azure AI Job Support Cluster (126 Pages)
+
+> This cluster covers every major .NET engineering domain: core C#/ASP.NET Core, Azure integration, AI/ML with Semantic Kernel and RAG, cloud-native patterns (.NET Aspire, Dapr, OpenTelemetry), architecture (DDD, CQRS, Clean Architecture), full-stack (.NET + React/Blazor), databases (EF Core, SQL Server, PostgreSQL), legacy modernization (.NET Framework to .NET 8/9), and proxy interview support for all domains. Same-day start. All time zones.
+
+---
+
+### Hub Page
+
+**Modern .NET Azure AI Job Support — Hub**
+URL: /modern-dotnet-azure-ai-job-support/
+Target: .NET developers, C# engineers, architects, and tech leads working in Azure-integrated, AI-enabled, or cloud-native .NET environments
+Description: The central hub for 126 .NET job support pages. Real-time expert assistance for C#, ASP.NET Core 8/9, Azure SDK, Semantic Kernel, RAG, Blazor, EF Core, Dapr, .NET Aspire, CQRS, DDD, and legacy modernization. All pages in this cluster link back to this hub.
+CTA: WhatsApp/Call +91 96606 14469. Same-day start.
+
+Technologies covered (hub-level summary):
+- **Core .NET:** C# 12/13, ASP.NET Core 8/9, minimal APIs, Blazor (Server/WASM/United), EF Core 8/9, MAUI, WPF, SignalR, gRPC, Worker Services
+- **Azure:** App Service, Functions (isolated), Service Bus, Cosmos DB, Key Vault, APIM, Container Apps, AKS, Event Hubs, Azure SQL, Azure Monitor / Application Insights, Azure DevOps
+- **AI/ML:** Semantic Kernel 1.x, Azure OpenAI, ML.NET, RAG pipelines, Azure AI Search, Ollama, LLM observability, AI governance
+- **Cloud-Native:** .NET Aspire, Dapr, OpenTelemetry, event sourcing, CQRS/MediatR, vertical slice, clean architecture, multi-tenancy, feature flags
+- **Architecture:** DDD, hexagonal/ports-and-adapters, modular monolith, service mesh, API gateway (YARP/Ocelot), circuit breaker (Polly), rate limiting
+- **Full-Stack:** .NET + React, .NET + Angular, Blazor WASM, .NET + Next.js, TypeScript alignment
+- **Databases:** EF Core migrations, SQL Server, PostgreSQL (Npgsql), MongoDB, Redis, Dapper
+- **Legacy:** .NET Framework → .NET 8 migration, WCF → gRPC, WebForms → Razor Pages, Windows Service → Worker Service
+
+---
+
+### Core .NET Pages
+
+**C# Job Support**
+URL: /csharp-job-support/
+Target: C# developers at all levels, from mid-level engineers to senior C# specialists
+Key topics: async/await, Task parallelism, LINQ (query syntax and method syntax), generics, constraints, delegates, events, Func/Action/Expression trees, records and init-only properties (C# 9+), pattern matching (C# 8–13), primary constructors (C# 12), collection expressions (C# 12), switch expressions, null-conditional operators, nullable reference types, unsafe code and Span<T>/Memory<T>, C# 12 features (primary constructors, collection literals, inline arrays), C# 13 features (partial properties, field keyword), dependency injection patterns, object-oriented design, SOLID principles, production C# debugging and profiling
+
+**ASP.NET Core Job Support**
+URL: /aspnet-core-job-support/
+Target: Backend .NET developers building web APIs and web applications
+Key topics: Request pipeline (middleware order), DI container registration (singleton/scoped/transient/keyed), controller-based APIs, minimal APIs, Razor Pages, model binding and validation (FluentValidation), IOptions pattern, configuration providers (appsettings, environment variables, Azure App Config), authentication middleware (JWT bearer, cookie, OpenID Connect), authorization (policies, requirements, resource-based), CORS configuration, output caching, response compression, background services (IHostedService), deployment targets (IIS, Kestrel, Azure App Service, Docker, Linux systemd), health checks, problem details RFC 9457
+
+**ASP.NET Core Proxy Interview Support**
+URL: /aspnet-core-proxy-interview-support/
+Type: Proxy interview support
+Target: .NET developers interviewing for backend, API, or full-stack .NET roles
+Topics: Middleware pipeline execution order, DI lifetime gotchas, minimal API vs controller trade-offs, authentication/authorization design, performance optimization in ASP.NET Core, REST design principles, API versioning strategies, production deployment architecture
+
+**C# Proxy Interview Support**
+URL: /csharp-proxy-interview-support/
+Type: Proxy interview support
+Target: C# developers facing technical interview rounds with C# language depth requirements
+Topics: Value types vs reference types, boxing/unboxing, garbage collection, GC generations, memory pressure, async state machine mechanics, Task vs ValueTask, LINQ execution model (deferred vs immediate), generic constraints, covariance/contravariance, interface explicit implementation, SOLID applied to C# codebases, design pattern identification
+
+**.NET Architect Proxy Interview Support**
+URL: /dotnet-architect-proxy-interview-support/
+Type: Proxy interview support
+Target: .NET Architects, Technical Leads, and Senior .NET Developers facing architecture-focused interviews
+Topics: Distributed system trade-offs, CAP theorem application, event-driven vs request-driven trade-offs, CQRS implementation depth, event sourcing mechanics, service communication patterns (sync vs async), deployment topology, Azure architecture for .NET, scaling .NET services, system design using .NET ecosystem
+
+**.NET Microservices Job Support**
+URL: /dotnet-microservices-job-support/
+Key topics: Service decomposition strategy, API gateway (Ocelot / YARP), inter-service communication (REST/gRPC/Kafka), Outbox pattern, Saga pattern (choreography vs orchestration), distributed transactions, Docker multi-service compose, Kubernetes .NET workloads, Dapr actors, health aggregation, .NET Aspire for local multi-service dev
+
+**.NET Cloud Job Support**
+URL: /dotnet-cloud-job-support/
+Key topics: Cloud-agnostic .NET patterns, Azure (primary), AWS and GCP (secondary), containerization with Docker, AKS/EKS, serverless Functions, cloud storage (Blob/S3), managed identity, VNet integration, CI/CD pipeline to cloud, cost optimization for .NET workloads
+
+**.NET Testing Job Support**
+URL: /dotnet-testing-job-support/
+Key topics: xUnit (Theory/Fact, fixtures, collections), NUnit (TestCase, SetUp/TearDown), MSTest, Moq (Setup/Verify, Mock<T>, InMemory), FluentAssertions, AutoFixture, Bogus, integration testing (WebApplicationFactory, TestServer), in-memory database with EF Core, TestContainers .NET, E2E with Playwright .NET, code coverage (coverlet, ReportGenerator), test pyramid strategy
+
+**.NET Senior Developer Support**
+URL: /dotnet-senior-developer-support/
+Key topics: Architecture review support, technical debt identification and resolution, code review guidance, performance profiling and memory analysis, complex feature delivery, mentoring junior developers, cross-team API contract design, production incident ownership
+
+**.NET Contractor Job Support**
+URL: /dotnet-contractor-job-support/
+Target: .NET contractors on C2C, W2, and H1B contracts at US/UK/Canada/Australia enterprises
+Key topics: Sprint task delivery under pressure, production incident support during contract hours, client call and standup preparation, onboarding to new .NET codebases, knowledge transfer documentation, and contractor-specific delivery challenges
+
+**.NET Remote Job Support**
+URL: /dotnet-remote-job-support/
+Key topics: Async task delivery, remote production debugging (screen share), distributed team communication patterns, documentation for remote delivery, PR review support, and remote standup/sprint preparation
+
+---
+
+### .NET GEO Pages (Country & City)
+
+**.NET Job Support UK** — /dotnet-job-support-uk/ — GMT/BST. London banking tech, financial services .NET (Barclays, HSBC, Lloyds), NHS .NET systems, insurance, and enterprise C# roles across England and Scotland.
+
+**.NET Job Support Canada** — /dotnet-job-support-canada/ — EST to PST. Big Five banks, Canadian fintech, Vancouver tech, Calgary enterprise, and remote Canadian .NET consultants.
+
+**.NET Job Support Australia** — /dotnet-job-support-australia/ — AEST/AEDT. Commonwealth Bank, ANZ, NAB, WBC, Services Australia, and enterprise .NET roles.
+
+**.NET Job Support Germany** — /dotnet-job-support-germany/ — CET/CEST. Berlin startups, Munich enterprise (Siemens, BMW IT), Frankfurt banking, SAP ecosystem, and remote German .NET roles.
+
+**.NET Job Support Ireland** — /dotnet-job-support-ireland/ — IST/GMT. Dublin MNCs (Microsoft EMEA, Google), IDA companies, AIB, Bank of Ireland, and enterprise .NET roles.
+
+**.NET Job Support Singapore** — /dotnet-job-support-singapore/ — SGT. DBS, GovTech, Singtel, and APAC enterprise .NET roles.
+
+**.NET Job Support Toronto** — /dotnet-job-support-toronto/ — EST. Big Five banks, Toronto fintech (Wealthsimple, FreshBooks), and enterprise .NET contractors.
+
+**.NET Job Support Vancouver** — /dotnet-job-support-vancouver/ — PST. Gaming studios, cloud-native startups, enterprise .NET, and remote Canadian .NET roles.
+
+**.NET Job Support London** — /dotnet-job-support-london/ — GMT/BST. Canary Wharf banking tech, City financial services, fintech (Revolut, Monzo, Starling), and enterprise .NET.
+
+**.NET Job Support Dublin** — /dotnet-job-support-dublin/ — IST. Google Dublin, Microsoft Dublin, Stripe, Irish banks, and IDA FDI company .NET roles.
+
+**.NET Job Support Sydney** — /dotnet-job-support-sydney/ — AEST/AEDT. Commonwealth Bank tech, ANZ digital, ServiceNSW, and enterprise .NET contractor roles.
+
+**.NET Job Support Berlin** — /dotnet-job-support-berlin/ — CET/CEST. Berlin startup and scale-up .NET, German enterprise modernization, and remote Berlin .NET roles.
+
+**.NET Proxy Interview UK** — /dotnet-proxy-interview-uk/ — GMT/BST. London banks, financial services, NHS, and enterprise C# interview guidance.
+
+**.NET Proxy Interview Canada** — /dotnet-proxy-interview-canada/ — EST to PST. Big Five banks, Canadian fintech, enterprise .NET interview guidance.
+
+**.NET Proxy Interview Australia** — /dotnet-proxy-interview-australia/ — AEST/AEDT. CBA, ANZ, government, enterprise .NET interview guidance.
+
+---
+
+### .NET Platform & Framework Pages
+
+**.NET MAUI Job Support** — /dotnet-maui-job-support/
+Key topics: MAUI project structure (Platforms/ folder, MauiProgram.cs), Shell navigation, MVVM with CommunityToolkit.Mvvm, data binding, platform-specific handlers, lifecycle events, MAUI Blazor Hybrid, NuGet packages for MAUI, iOS/Android/Windows/macOS deployment
+
+**WPF Job Support** — /dotnet-wpf-job-support/
+Key topics: XAML layout (Grid, StackPanel, DockPanel), data binding (INotifyPropertyChanged, IValueConverter), MVVM pattern (commands, ViewModels), resources and styles, control templates, animations and visual state, custom user controls, WPF performance (virtualization, Freezable), dependency properties, routed events
+
+**Blazor Server Job Support** — /blazor-server-job-support/
+Key topics: Component lifecycle (@oninitialized, @onaprameterssset, @ondispose), StateHasChanged vs InvokeAsync, SignalR connection management, cascading values/parameters, forms and EditContext, JS interop, Blazor Server scaling (sticky sessions, Azure SignalR), authentication with AuthenticationStateProvider
+
+**SignalR Job Support** — /dotnet-signal-r-job-support/
+Key topics: Hub methods (SendAsync, InvokeAsync), client proxy patterns, groups management, connection lifecycle events, IHubContext injection, Redis backplane for multi-instance, Azure SignalR Service managed mode, authentication in SignalR, reconnection strategy
+
+**gRPC .NET Job Support** — /dotnet-grpc-job-support/
+Key topics: Proto3 syntax, service/message definitions, code generation (Grpc.Tools), unary/server streaming/client streaming/bidirectional streaming, deadlines and cancellation, error status codes, gRPC-Web for browser, gRPC reflection, interceptors, .NET gRPC client factory
+
+**IdentityServer Job Support** — /dotnet-identity-server-job-support/
+Key topics: OAuth2 flows (authorization code + PKCE, client credentials, device), OIDC discovery, JWT validation (issuer/audience/signing key), refresh tokens, consent screens, external identity providers, Duende IdentityServer licensing, BFF (Backend for Frontend) pattern, token encryption
+
+**EF Core Job Support** — /ef-core-job-support/
+Key topics: DbContext configuration (OnModelCreating, Fluent API, Data Annotations), navigation properties, lazy/eager/explicit loading, tracking vs no-tracking queries, compiled queries, raw SQL (FromSqlRaw, ExecuteSqlRaw), migrations (Add-Migration, Update-Database, MigrationBuilder), concurrency tokens, EF Core 8 features (complex types, primitive collections, JSON columns), EF Core 9 improvements
+
+**Minimal API Job Support** — /dotnet-minimal-api-job-support/
+Key topics: MapGet/MapPost/MapPut/MapDelete, route groups, typed results (TypedResults), IEndpointFilter, EndpointRouteBuilderExtensions, OpenAPI/Swagger, request binding, validation with FluentValidation, minimal API auth, migration from controller-based APIs
+
+**Worker Service Job Support** — /dotnet-worker-service-job-support/
+Key topics: BackgroundService override (ExecuteAsync, CancellationToken), IHostedService, scoped service resolution within singleton worker, graceful shutdown, service lifetime, deployment as Windows Service (UseWindowsService), Linux systemd (UseSystemd), Kubernetes CronJob or Deployment
+
+**Background Jobs Job Support** — /dotnet-background-jobs-job-support/
+Key topics: Hangfire (fire-and-forget, delayed, recurring, batches), Quartz.NET (IJob, ITrigger, IScheduler, cron expressions), IHostedService for lightweight jobs, job persistence, distributed job locking, job failure handling and retry, monitoring dashboards
+
+**Performance Optimization Job Support** — /dotnet-performance-optimization-job-support/
+Key topics: BenchmarkDotNet profiling, dotMemory/dotTrace/PerfView analysis, GC pressure reduction (object pooling, ArrayPool<T>, MemoryPool<T>), Span<T>/ReadOnlySpan<T>/Memory<T> zero-copy patterns, stackalloc, async/await allocation overhead, Value Task, HTTP connection pooling, EF Core query optimization, string interning vs StringBuilder
+
+**Security Job Support** — /dotnet-security-job-support/
+Key topics: OWASP Top 10 in .NET context, SQL injection prevention (parameterized EF Core / Dapper), XSS protection (Razor encoding, CSP headers), CSRF (antiforgery tokens), HTTPS enforcement (HSTS, UseHttpsRedirection), data protection API, secret management (environment variables, Azure Key Vault, User Secrets), JWT security (algorithm validation, audience/issuer), secure headers middleware (NWebsec, SecurityHeaders.AspNetCore)
+
+---
+
+### .NET Ecosystem & Runtime Pages
+
+**Blazor Job Support** — /blazor-job-support/
+Key topics: Blazor United (.NET 8/9: Static SSR, Streaming, Interactive Server, Interactive WASM, Auto), render modes, enhanced navigation, form handling (EditContext, ValidationSummary), Blazor WASM publishing, Blazor + IdentityServer, Blazor Hybrid (MAUI/Electron)
+
+**.NET 8 Job Support** — /dotnet-8-job-support/
+Key topics: Native AOT publishing (constraints, trim analysis), Frozen Collections (FrozenDictionary/FrozenSet), keyed DI (IKeyedServiceProvider), primary constructors, Time abstraction (TimeProvider), new form binding in Blazor, Blazor SSR and streaming rendering, built-in AOT metrics, performance improvements (IEnumerable LINQ, EF Core 8 complex types)
+
+**.NET 9 Job Support** — /dotnet-9-job-support/
+Key topics: LINQ additions (CountBy, AggregateBy, Index()), Task.WhenEach, built-in OpenAPI support (Microsoft.AspNetCore.OpenApi), HybridCache (IHybridCacheSerializer), BinaryFormatter removal, C# 13 (partial properties, field keyword, ref locals in iterators), Blazor enhancements (reconnection UI, streaming improvements), .NET Aspire integration depth
+
+**.NET AWS Job Support** — /dotnet-aws-job-support/
+Key topics: Lambda C# (.NET 8 managed runtime, custom runtime, Lambda Annotations framework), API Gateway + Lambda, ECS Fargate .NET, EKS .NET workloads, Elastic Beanstalk, RDS (SQL Server / PostgreSQL on AWS), DynamoDB with .NET SDK, S3 with TransferUtility, SQS/SNS, Secrets Manager, AWS SDK for .NET v3
+
+**.NET GCP Job Support** — /dotnet-gcp-job-support/
+Key topics: Cloud Run .NET containers, Cloud Functions (gen2) C#, GKE .NET workloads, Cloud SQL (PostgreSQL / SQL Server), Firestore .NET SDK, Pub/Sub .NET, Secret Manager, Cloud Storage (Google.Cloud.Storage.V1), Workload Identity, .NET on Google Cloud deployment patterns
+
+**.NET Docker Kubernetes Job Support** — /dotnet-docker-kubernetes-job-support/
+Key topics: Multi-stage Dockerfile (build/publish/final stages), .NET chiseled base images (mcr.microsoft.com/dotnet), non-root container user, .NET 8 container publish (dotnet publish /t:PublishContainer), Kubernetes Deployment/Service/ConfigMap/Secret, Helm chart for .NET app, Horizontal Pod Autoscaler, liveness/readiness/startup probes, resource requests and limits
+
+**.NET Kafka Job Support** — /dotnet-kafka-job-support/
+Key topics: Confluent.Kafka .NET client (Producer/Consumer, IDeserializer/ISerializer), consumer group management, offset management (auto vs manual commit), partition assignment, error handling (transient vs fatal errors), schema registry (Avro, Protobuf), Kafka Streams .NET alternatives, event-driven microservices with Kafka + .NET
+
+**.NET Redis Job Support** — /dotnet-redis-job-support/
+Key topics: StackExchange.Redis (ConnectionMultiplexer, IDatabase), IDistributedCache (SetStringAsync, GetStringAsync), distributed session, Pub/Sub (ISubscriber), Redis Streams for event processing, cache-aside pattern implementation, Redis Cluster connection strings, Lua scripting, Redis Sentinel failover, Azure Cache for Redis
+
+**.NET SignalR WebSocket Job Support** — /dotnet-signalr-websocket-job-support/
+Key topics: Hub design for real-time scenarios, SignalR vs raw WebSocket trade-offs, backplane configuration (Redis pub/sub), Azure SignalR Service (serverless/default mode), authentication in SignalR, JavaScript/TypeScript client (@microsoft/signalr), connection state management, reconnection policies
+
+**.NET Full-Stack Job Support** — /dotnet-fullstack-job-support/
+Key topics: ASP.NET Core Web API as backend, React/Angular/Blazor as frontend, CORS setup, SPA hosting in .NET (UseSpa, MapFallbackToFile), JWT auth end-to-end flow, Swagger/OpenAPI contract-first design, file upload/download, API versioning, deployment to Azure App Service (dual frontend+backend)
+
+**.NET Desktop WPF WinForms Job Support** — /dotnet-desktop-wpf-winforms-job-support/
+Key topics: WPF on .NET 8/9, Windows Forms on .NET 8/9, legacy code migration from .NET Framework desktop apps, MVVM modernization, COM interop, P/Invoke, packaging with MSIX, Windows App SDK integration, MAUI as migration target
+
+---
+
+### .NET Azure Integration Pages
+
+**.NET Azure Job Support** — /dotnet-azure-job-support/
+Covers the full Azure SDK for .NET ecosystem: Azure.Core client library patterns (retry policies, pipelines, diagnostics), Azure Identity (DefaultAzureCredential, ManagedIdentityCredential, ChainedTokenCredential), All Azure service SDKs listed individually below.
+
+**Azure App Service .NET Job Support** — /azure-app-service-dotnet-job-support/
+Key topics: Deployment slots (swap, auto-swap), scale out/up configuration, Always On, Health Check path, custom domains and TLS (managed certs, SNI), Application Settings vs Connection Strings, managed identity, App Service Environment (ASE v3), deployment via ZIP deploy, GitHub Actions, Azure DevOps
+
+**Azure Functions .NET Job Support** — /azure-functions-dotnet-job-support/
+Key topics: Isolated worker model vs in-process model (.NET 8 isolated), function host configuration (host.json), HTTP trigger (routing, auth level), Timer trigger (NCRONTAB), Service Bus trigger, Blob trigger, Durable Functions (orchestration/activity/entity functions, Task.WhenAll fan-out), cold start mitigation, Azure Functions Flex Consumption plan
+
+**Azure Service Bus .NET Job Support** — /azure-service-bus-dotnet-job-support/
+Key topics: Azure.Messaging.ServiceBus SDK, ServiceBusClient, ServiceBusSender, ServiceBusReceiver, ServiceBusProcessor, message lock/renew, dead letter queue processing, sessions (FIFO guarantee), duplicate detection, topic subscriptions (SQL filters, correlation filters), Service Bus Explorer, message batching
+
+**Azure Cosmos DB .NET Job Support** — /azure-cosmos-db-dotnet-job-support/
+Key topics: SDK v3 (CosmosClient, Container.CreateItemAsync/ReadItemAsync/QueryItemsAsync), partition key design (hot partition avoidance), RU estimation and optimization, cross-partition queries, change feed processor (.NET), consistency levels (strong/bounded staleness/session/eventual), Cosmos DB Emulator for local dev, point-in-time restore, Cosmos DB for PostgreSQL
+
+**Azure Storage .NET Job Support** — /azure-storage-dotnet-job-support/
+Key topics: BlobServiceClient / BlobContainerClient / BlobClient (Azure.Storage.Blobs v12), SAS tokens (user delegation SAS, service SAS), access tiers (hot/cool/cold/archive), lifecycle management policies, soft delete, versioning, Blob Storage events + Event Grid, Queue Storage (Azure.Storage.Queues), Azure Files (SMB share mounting), Table Storage (legacy vs Cosmos DB for Table)
+
+**Azure Key Vault .NET Job Support** — /azure-key-vault-dotnet-job-support/
+Key topics: SecretClient, KeyClient, CertificateClient (Azure.Security.KeyVault), DefaultAzureCredential for managed identity, User Secrets (development) vs Key Vault (production), Azure App Configuration provider + Key Vault references, secret versioning, access policies vs RBAC, soft-delete and purge protection
+
+**Azure API Management .NET Job Support** — /azure-api-management-dotnet-job-support/
+Key topics: APIM policies (rate-limit-by-key, validate-jwt, rewrite-uri, set-header, cors), API import from OpenAPI spec, subscription keys, OAuth2 via Azure AD, versioning (URL path, header, query), developer portal customization, APIM consumption tier vs standard tier, self-hosted gateway, backend .NET API integration
+
+**Azure Container Apps .NET Job Support** — /azure-container-apps-dotnet-job-support/
+Key topics: Container Apps environment, ingress configuration (external/internal), KEDA-powered scaling rules (HTTP, CPU, Azure Queue, Service Bus), Dapr sidecar integration, managed identity on ACA, revision management (canary/blue-green), ACA Jobs for batch, Azure Container Registry, GitHub Actions deployment
+
+**Azure AKS .NET Job Support** — /azure-aks-dotnet-job-support/
+Key topics: AKS cluster provisioning (system/user node pools), Azure CNI vs kubenet, workload identity (azure-workload-identity), Application Gateway Ingress Controller (AGIC), Azure Monitor for containers, Kubernetes Event-Driven Autoscaler (KEDA) on AKS, Azure Disk / Azure Files PVC, .NET app deployment manifests, Helm chart deployment to AKS
+
+**Azure Logic Apps .NET Job Support** — /azure-logic-apps-dotnet-job-support/
+Key topics: Logic Apps Standard (Azure Functions-based runtime), workflow definitions, connectors (Service Bus, Blob, SQL, HTTP), custom connectors from .NET APIs (OpenAPI spec import), built-in operations vs managed API connectors, environment variables, local development with VS Code Logic Apps extension, deployment automation
+
+**Azure Event Hubs .NET Job Support** — /azure-event-hub-dotnet-job-support/
+Key topics: EventHubProducerClient (batching), EventHubConsumerClient, EventProcessorClient (checkpointing to Azure Blob), consumer groups (parallel processing), partition key design, capture to ADLS Gen2, Kafka protocol compatibility on Event Hubs, schema registry (Avro), Azure Event Hubs Emulator
+
+**Azure SQL .NET Job Support** — /azure-sql-dotnet-job-support/
+Key topics: Microsoft.Data.SqlClient connection resiliency (transient fault handling), elastic pools, serverless tier auto-pause, managed identity auth (no SQL password), EF Core with Azure SQL (performance considerations), Always Encrypted column-level encryption, geo-replication and failover groups, Query Store analysis, intelligent query processing
+
+**Azure Monitoring .NET Job Support** — /azure-monitoring-dotnet-job-support/
+Key topics: Application Insights SDK (Microsoft.ApplicationInsights.AspNetCore), custom events/metrics/traces, distributed tracing (correlation headers, operation_Id), dependency tracking, live metrics stream, availability tests, alert rules (metric/log/smart detection), Log Analytics KQL queries, Azure Monitor workbooks, Application Insights sampling
+
+**Azure DevOps .NET Job Support** — /azure-devops-dotnet-job-support/
+Key topics: YAML multi-stage pipelines (.NET build/test/publish/deploy), azure-pipelines.yml, environment deployments (approval gates), service connections (ARM/Docker/Kubernetes), artifact feeds (NuGet package publishing), pipeline templates, library variable groups + Key Vault integration, Azure Boards sprint planning, test plans for .NET
+
+---
+
+### .NET AI/ML & GenAI Pages
+
+**Semantic Kernel Job Support** — /semantic-kernel-job-support/
+Key topics: Kernel construction (builder pattern), plugins (KernelPlugin, KernelFunction, [KernelFunction] attribute), auto function calling (FunctionChoiceBehavior.Auto), planners (Handlebars, Function Calling Stepwise), memory/vector stores (InMemory, Azure AI Search, Qdrant), chat completion service, text embedding service, KernelArguments, streaming responses, Semantic Kernel 1.x vs 0.x migration
+
+**RAG .NET Job Support** — /rag-dotnet-job-support/
+Key topics: Document ingestion pipeline (Azure Document Intelligence, PdfSharpCore), text chunking (fixed-size, recursive, semantic), embedding generation (Azure OpenAI text-embedding-ada-002/3-small/3-large), vector storage (Azure AI Search with vector field, pgvector via Npgsql, Qdrant .NET client), hybrid search (BM25 + semantic + RRF re-ranking), context assembly, LLM response generation, citation extraction, confidence scoring
+
+**Azure AI Foundry .NET Job Support** — /azure-ai-foundry-dotnet-job-support/
+Key topics: Azure AI Foundry (formerly Azure AI Studio), model catalog (GPT-4o, GPT-4.1, Phi-4, Mistral), Azure AI Inference SDK (Azure.AI.Inference), Azure AI Agent Service, Prompt Flow in C#, responsible AI metrics, Azure AI Content Safety integration, model deployment and versioning
+
+**.NET OpenAI Job Support** — /dotnet-openai-job-support/
+Key topics: Azure.AI.OpenAI SDK v2.x (OpenAIClient, AzureOpenAIClient), chat completions (ChatCompletionOptions, ChatMessage), function/tool calling (ChatTool, ChatToolCall), streaming (StreamingChatCompletionUpdate), embeddings (EmbeddingClient), images (ImageClient / DALL-E 3), fine-tuning job management, token counting, prompt engineering patterns in C#
+
+**.NET Vector DB Job Support** — /dotnet-vector-db-job-support/
+Key topics: Azure AI Search (SearchClient, vector fields, SemanticConfiguration, hybrid search), Qdrant .NET client (QdrantClient, collections, payloads, filtering), pgvector with Npgsql (vector type, IVFFlat/HNSW index), Milvus .NET SDK, Chroma .NET client, Semantic Kernel memory store adapters, embedding dimensions and index configuration
+
+**ML.NET Job Support** — /ml-net-job-support/
+Key topics: MLContext, IDataView pipeline, estimator chains (Transforms + Trainer), binary/multiclass/regression/clustering/anomaly trainers, model training (Fit), evaluation metrics, model saving/loading (Save/Load), AutoML (mlnet auto-train), ONNX model export/import, integration with ASP.NET Core as prediction service
+
+**.NET LLM Fine-Tuning Job Support** — /dotnet-llm-fine-tuning-job-support/
+Key topics: Azure OpenAI fine-tuning API (FineTuningClient), JSONL dataset preparation (prompt/completion pairs), fine-tuning job monitoring, deployed fine-tuned model usage, evaluation against base model, cost implications, .NET SDK orchestration of fine-tuning workflows, Phi-4 fine-tuning on Azure AI Foundry
+
+**.NET AI Monitoring Job Support** — /dotnet-ai-monitoring-job-support/
+Key topics: Application Insights AI telemetry (custom events for LLM calls), Langfuse .NET SDK (LangfuseClient, trace/span/generation), token usage tracking, P95 latency for LLM calls, hallucination rate metrics, empty retrieval rate, schema validation failures, alerting thresholds, Azure Monitor + AI Foundry metrics
+
+**.NET AI Governance Job Support** — /dotnet-ai-governance-job-support/
+Key topics: Azure AI Content Safety (text analysis, image analysis, .NET SDK), PII detection (Microsoft.Recognizers.Text, Azure Text Analytics), prompt injection defense (system/user content separation, input validation), EUAI Act risk classification, responsible AI principles (fairness, reliability, privacy, inclusiveness), audit logging for AI decisions, GDPR-compliant AI systems
+
+**Ollama .NET Job Support** — /ollama-dotnet-job-support/
+Key topics: Ollama REST API, OllamaApiClient .NET SDK, model pulling and management, local LLM serving (Llama 3.2, Mistral, Phi-4), Semantic Kernel Ollama connector, on-premise RAG (private data + local LLM), .NET AI development with no cloud dependency, GPU and CPU inference configuration
+
+**.NET Agentic AI Job Support** — /dotnet-agentic-ai-job-support/
+Key topics: Semantic Kernel agent framework (ChatCompletionAgent, OpenAIAssistantAgent), multi-agent orchestration (AgentGroupChat, selection strategy), AutoGen .NET (dotnet-autogen), tool/plugin registration for agents, planning loops (ReAct pattern in SK), human-in-the-loop approval flows, agent memory (vector store), agent observability
+
+**.NET NLP Job Support** — /dotnet-nlp-job-support/
+Key topics: Azure AI Language (AnalyzeText, NER, key phrase extraction, sentiment analysis, language detection), Azure AI Translator, TextAnalyticsClient .NET SDK, PII entity recognition, custom NER training, conversation language understanding, orchestration workflow, custom text classification
+
+**.NET Computer Vision Job Support** — /dotnet-computer-vision-job-support/
+Key topics: Azure AI Vision 4.x (ImageAnalysisClient), image analysis (captions, dense captions, tags, objects, OCR read), Azure Document Intelligence (DocumentAnalysisClient, prebuilt/custom models, table extraction), Azure Custom Vision (training and prediction .NET SDK), ONNX model inference in .NET
+
+**.NET LangChain Job Support** — /dotnet-langchain-job-support/
+Key topics: LangChain.NET (LangChain.Providers.OpenAI, LangChain.DocumentLoaders), chain construction, agent patterns, document loaders, text splitters, in-memory and external vector stores, Semantic Kernel as primary alternative, RAG chain pattern in .NET LangChain, integration with Azure OpenAI
+
+---
+
+### .NET Cloud-Native & Architecture Pages
+
+**.NET Aspire Job Support** — /dotnet-aspire-job-support/
+Key topics: AppHost project (AddProject, AddRedis, AddPostgres, AddRabbitMQ, AddAzureServiceBus), service discovery (IServiceDiscovery, Aspire.HostingExtensions), Aspire Dashboard (OTLP telemetry viewer), Component model (Aspire.Hosting.*, Aspire.Component.*), local dev orchestration vs production deployment, Aspire + Kubernetes (Aspire.Hosting.Kubernetes), .NET 9 Aspire improvements
+
+**Dapr .NET Job Support** — /dotnet-dapr-job-support/
+Key topics: Dapr .NET SDK (DaprClient, IActorProxyFactory), service invocation (InvokeMethodAsync), state management (SaveStateAsync, GetStateAsync, Etag concurrency), pub/sub (PublishEventAsync, Topic subscription attribute), input/output bindings, secrets (GetSecretAsync), Dapr actors (IRemindable, timer/reminder), Dapr Kubernetes deployment (daprd sidecar), Dapr observability
+
+**.NET OpenTelemetry Job Support** — /dotnet-otel-job-support/
+Key topics: OpenTelemetry .NET SDK (OpenTelemetry.Extensions.Hosting), ActivitySource and Activity (.NET Activity API), OTLP exporter (OpenTelemetry.Exporter.OpenTelemetryProtocol), Prometheus exporter, Jaeger/Grafana Tempo export, custom metrics (Meter, Counter<T>, Histogram<T>), auto-instrumentation (ASP.NET Core, HttpClient, EF Core, SqlClient), baggage and context propagation
+
+**.NET Event Sourcing Job Support** — /dotnet-event-sourcing-job-support/
+Key topics: Event store design (append-only log), aggregate design (apply event handlers, uncommitted events), aggregate reconstitution from event stream, EventStoreDB (EventStoreClient .NET), Marten (IDocumentSession, IEventStore), snapshot strategy, event schema evolution, integration with MediatR (domain event dispatch), process managers/sagas in event-sourced systems
+
+**.NET Clean Architecture Job Support** — /dotnet-clean-architecture-job-support/
+Key topics: Layer separation (Domain / Application / Infrastructure / Presentation), dependency rule (inner layers know nothing of outer), domain entities (no framework dependencies), use case interactors (ICommandHandler, IQueryHandler), repository interfaces (IRepository<T>), infrastructure adapters (EF Core, HttpClient), Ardalis.CleanArchitecture and Jason Taylor templates
+
+**Vertical Slice .NET Job Support** — /dotnet-vertical-slice-job-support/
+Key topics: Feature folder structure (Features/Orders/CreateOrder/{Command, Handler, Validator, Endpoint}), MediatR handler per feature, FluentValidation validator per command, minimal API endpoint per slice, shared kernel (cross-cutting concerns), IFeatureFlag per slice, database migration per slice, avoiding shared repositories
+
+**CQRS MediatR Job Support** — /dotnet-cqrs-mediatr-job-support/
+Key topics: IRequest<TResponse> commands/queries, IRequestHandler<TCommand, TResponse>, INotification + INotificationHandler for domain events, IPipelineBehavior for cross-cutting concerns (logging, validation, caching), MediatR 12.x DI registration, read model optimization (Dapper vs EF Core for queries), dual-database CQRS (write store + read store)
+
+**.NET Feature Flags Job Support** — /dotnet-feature-flags-job-support/
+Key topics: Microsoft.FeatureManagement (IFeatureManager, FeatureGate attribute), configuration-based flags (appsettings.json), Azure App Configuration (feature flag management, percentage filter, targeting filter), LaunchDarkly .NET SDK (LdClient, LdValue), gradual rollout strategy, feature flag cleanup patterns, branching by abstraction vs feature flags
+
+**.NET Multi-Tenancy Job Support** — /dotnet-multi-tenancy-job-support/
+Key topics: Tenant resolution (subdomain, header, JWT claim), Finbuckle.MultiTenant (IMultiTenantStore, TenantInfo, MultiTenantMiddleware), EF Core multi-tenancy (global query filters per tenant, schema-per-tenant with HasDefaultSchema, database-per-tenant connection string per tenant), Azure AD B2C multi-tenant app, shared data vs isolated data trade-offs
+
+**.NET Authentication Authorization Job Support** — /dotnet-authentication-authorization-job-support/
+Key topics: AddAuthentication / AddJwtBearer / AddCookie / AddOpenIdConnect, IAuthorizationRequirement + IAuthorizationHandler (custom policies), resource-based authorization (IAuthorizationService.AuthorizeAsync), claims-based identity, role-based access, Azure AD / Azure AD B2C integration, OIDC middleware, token validation (issuer, audience, lifetime, signing key)
+
+---
+
+### .NET Architecture Patterns Pages
+
+**.NET Architecture Patterns Job Support** — /dotnet-architecture-patterns-job-support/
+Covers: Microservices vs modular monolith trade-offs, CQRS with dual stores, event sourcing mechanics, clean vs hexagonal vs vertical slice, service-to-service communication (REST/gRPC/message bus), distributed system patterns (saga, outbox, inbox), API gateway patterns, observable .NET systems
+
+**Domain-Driven Design .NET Job Support** — /dotnet-domain-driven-design-job-support/
+Key topics: Strategic DDD (bounded contexts, context maps, ubiquitous language, anti-corruption layer), tactical DDD (aggregates, aggregate roots, value objects, domain events, domain services, repositories), event storming output to .NET code, bounded context integration patterns (shared kernel, customer-supplier, conformist, ACL), DDD in ASP.NET Core monolith vs microservices
+
+**Hexagonal Architecture .NET Job Support** — /dotnet-hexagonal-architecture-job-support/
+Key topics: Ports (IOrderRepository, IEmailService) vs adapters (EfCoreOrderRepository, SendGridEmailAdapter), primary adapters (API controllers, CLI, event consumers), secondary adapters (DB, cache, external API), testability without infrastructure, Dependency Inversion Principle implementation in .NET, adapter replacement without domain change
+
+**.NET Modular Monolith Job Support** — /dotnet-modular-monolith-job-support/
+Key topics: Module boundary definition (vertical slice per module), module public API (interface-only exposure, no cross-module internal access), inter-module communication (in-process message bus via MediatR, or event bus), shared kernel (cross-cutting types), database per module vs shared schema (schema-per-module), migration strategy from modular monolith to microservices
+
+**Service Mesh .NET Job Support** — /dotnet-service-mesh-job-support/
+Key topics: Istio sidecar injection (istio-proxy alongside .NET container), mTLS between .NET services (PeerAuthentication), traffic management (VirtualService, DestinationRule, retries, circuit breaker in Istio), observability (Kiali, Zipkin via Istio), Linkerd 2.x with .NET (mTLS, traffic split), .NET Aspire service mesh patterns
+
+**.NET API Gateway Job Support** — /dotnet-api-gateway-job-support/
+Key topics: YARP (Yet Another Reverse Proxy) — route configuration, transforms, load balancing, health checks, middleware pipeline; Ocelot — routing, load balancing, rate limiting, auth delegation, service discovery; Azure API Management as external gateway; BFF (Backend for Frontend) pattern for Blazor WASM + SPA clients
+
+**.NET Circuit Breaker Job Support** — /dotnet-circuit-breaker-job-support/
+Key topics: Polly v8 (ResiliencePipelineBuilder, CircuitBreakerStrategyOptions, RetryStrategyOptions, TimeoutStrategyOptions, BulkheadStrategyOptions, FallbackStrategyOptions), Microsoft.Extensions.Resilience, pipeline composition, retry + circuit breaker ordering, half-open state testing, jitter for retry, HttpClient resilience (AddResilienceHandler), .NET 8 built-in resilience integration
+
+**.NET Rate Limiting Job Support** — /dotnet-rate-limiting-job-support/
+Key topics: ASP.NET Core RateLimiter middleware (UseRateLimiter, EnableRateLimiting attribute), RateLimitPartition (FixedWindow, SlidingWindow, TokenBucket, Concurrency), policy registration (AddRateLimiter), partition key (user ID, IP, API key), Redis-backed distributed rate limiting (RedisRateLimiter), rejected request handling (OnRejected)
+
+**.NET Health Checks Job Support** — /dotnet-health-checks-job-support/
+Key topics: IHealthCheck (CheckHealthAsync), health check registration (AddHealthChecks), AspNetCore.Diagnostics.HealthChecks (EF Core, SQL Server, Redis, Azure Service Bus, Azure Blob Storage checks), readiness vs liveness vs startup probe separation, health check UI (HealthChecks.UI), Kubernetes probe configuration (httpGet path=/health/ready)
+
+**.NET Dependency Injection Job Support** — /dotnet-dependency-injection-job-support/
+Key topics: IServiceCollection registration (AddSingleton/AddScoped/AddTransient), keyed services (.NET 8+, FromKeyedServices), open generic registration, factory delegate registration, IServiceProvider.GetRequiredService, Scrutor for assembly scanning and decoration, service locator anti-pattern, captive dependency anti-pattern, unit testing with IServiceCollection vs manual mocking
+
+---
+
+### .NET Full-Stack Pages
+
+**.NET React Job Support** — /dotnet-react-job-support/
+Key topics: ASP.NET Core Web API as backend, React (Vite / CRA / Next.js) as frontend, CORS policy configuration, JWT auth (login endpoint → token → localStorage vs httpOnly cookie), Swagger/OpenAPI → TypeScript client generation (NSwag, openapi-typescript), file upload (IFormFile + fetch), deployment (separate frontends + API, or spa in wwwroot), React Query for API calls
+
+**.NET Angular Job Support** — /dotnet-angular-job-support/
+Key topics: ASP.NET Core API + Angular 17/18, HttpClient with JWT interceptor, Angular AuthGuard + ASP.NET Core JWT auth, NSwag / OpenAPI Generator for Angular client, WebSockets with SignalR + @microsoft/signalr Angular client, Azure Static Web Apps hosting for Angular + API, Angular lazy loading + ASP.NET Core routing
+
+**.NET Blazor WASM Job Support** — /dotnet-blazor-wasm-job-support/
+Key topics: Blazor WASM hosted (ASP.NET Core host) vs standalone, authentication (OIDC with IdentityServer or Azure AD B2C), AuthenticationStateProvider, protected resources, PWA manifest, lazy loading assemblies, WebAssembly size reduction (dotnet wasm strip), pre-rendering, .NET 8 Blazor Auto render mode
+
+**.NET Next.js Job Support** — /dotnet-nextjs-job-support/
+Key topics: ASP.NET Core Web API + Next.js App Router, API Routes vs ASP.NET Core endpoints, JWT session (NextAuth.js + ASP.NET Core validation), CORS, Server Components calling ASP.NET Core API (fetch with caching), OpenAPI → TypeScript types (Orval/openapi-typescript-codegen), Azure (App Service for API + Static Web App for Next.js)
+
+**.NET TypeScript Job Support** — /dotnet-typescript-job-support/
+Key topics: OpenAPI → TypeScript client generation (NSwag, Kiota, openapi-typescript), type-safe API calls from React/Angular, Zod schema validation aligned with .NET FluentValidation, TypeScript strict mode, shared types from OpenAPI spec, end-to-end type safety in .NET + TypeScript full-stack apps
+
+**.NET SPA Job Support** — /dotnet-spa-job-support/
+Key topics: ASP.NET Core SPA middleware (UseReactDevelopmentServer), MapFallbackToFile for SPA routing, CORS in development vs production, SPA authentication flows (PKCE + BFF pattern), CDN deployment for static frontend + API backend, Azure Front Door + App Service architecture
+
+**.NET Full-Stack Proxy Interview Support** — /dotnet-fullstack-interview-proxy-support/
+Type: Proxy interview support
+Topics: REST API design for frontend consumption, authentication flow explanation (JWT/cookie/OAuth2), component-to-API data flow, error handling strategies, deployment architecture explanation, CORS and security in full-stack context, real-time features (SignalR), system design for .NET full-stack applications
+
+---
+
+### .NET Database Pages
+
+**EF Core Migrations Job Support** — /ef-core-migrations-job-support/
+Key topics: Code-first migration workflow (Add-Migration, Update-Database, Script-Migration), migration idempotency, production migration deployment (CI/CD pipeline, dotnet ef migrations script, MigrationRunner), seed data (HasData vs IDbSeeder), custom migration operations, migration squashing, migration conflicts in team environments, EF Core 8 migration improvements
+
+**.NET SQL Server Job Support** — /dotnet-sql-server-job-support/
+Key topics: Microsoft.Data.SqlClient, EF Core SQL Server provider, T-SQL stored procedures with EF Core (FromSqlRaw), table-valued parameters, query performance (execution plan analysis, index hints), Always On Availability Groups, SQL Server Agent jobs, columnstore indexes, temporal tables, EF Core global query filters, connection resiliency
+
+**.NET PostgreSQL Job Support** — /dotnet-postgresql-job-support/
+Key topics: Npgsql EF Core provider (UseNpgsql), JSONB columns (EF Core JSON mapping), full-text search (tsvector, to_tsquery via EF Core), array types (int[], string[]), PgBouncer connection pooling integration, LISTEN/NOTIFY with Npgsql, table partitioning, Npgsql bulk copy, Azure Database for PostgreSQL Flexible Server
+
+**.NET MongoDB Job Support** — /dotnet-mongodb-job-support/
+Key topics: MongoDB.Driver v3.x (MongoClient, IMongoDatabase, IMongoCollection<T>), BsonDocument vs POCO mapping (BsonClassMap), aggregation pipeline (.Aggregate()), change streams (Watch()), Atlas Search (CreateSearchIndex, $search stage), GridFS for large documents, transaction support (ClientSessionHandle), repository pattern with IMongoRepository<T>
+
+**.NET Redis Caching Job Support** — /dotnet-redis-caching-job-support/
+Key topics: StackExchange.Redis (IConnectionMultiplexer, IDatabase, HashSet/HashGet, SortedSet), IDistributedCache vs IConnectionMultiplexer trade-offs, cache-aside pattern (Try-Get → Cache-Miss → Store), sliding expiration vs absolute expiration, cache invalidation strategies (TTL, explicit delete, cache tags), Redis Cluster key slot distribution, .NET 9 HybridCache (L1 in-memory + L2 Redis)
+
+**.NET Dapper Job Support** — /dotnet-dapper-job-support/
+Key topics: Dapper Query<T> / QueryAsync<T>, QueryMultiple for multi-result, multi-mapping (splitOn), DynamicParameters, stored procedure calls (CommandType.StoredProcedure), Dapper Contrib (Insert/Update/Delete), custom type handlers (SqlMapper.AddTypeHandler), Dapper vs EF Core trade-offs (performance vs developer ergonomics), unit testing with Dapper
+
+**.NET Database Proxy Interview Support** — /dotnet-database-interview-proxy-support/
+Type: Proxy interview support
+Topics: EF Core change tracking internals, N+1 query problem and solutions, index design for .NET application query patterns, distributed transactions (saga vs 2PC), NoSQL vs relational decisions, sharding and partitioning for .NET applications, read replica routing, database migration strategy in production
+
+---
+
+### .NET Legacy Modernization Pages
+
+**.NET Framework Migration Job Support** — /dotnet-framework-migration-job-support/
+Key topics: .NET Upgrade Assistant (dotnet-upgrade-assistant CLI), compatibility analyzer, porting guide (Target Framework Moniker changes), NuGet package compatibility (TFM multitargeting), Windows-only API replacements, system.web removal, global.asax.cs → Program.cs + middleware, App_Start → middleware/DI registration
+
+**.NET Framework to Core Job Support** — /dotnet-framework-to-core-job-support/
+Key topics: ASP.NET MVC 4/5 → ASP.NET Core MVC/Razor Pages migration, System.Web.HttpContext → HttpContext replacement, FormsAuthentication → ASP.NET Core cookie auth, Bundle/Minification → Webpack/Vite, System.Web.SessionState → distributed session, HttpHandler/HttpModule → middleware, web.config → appsettings.json + environment variables
+
+**Legacy .NET API Modernization Job Support** — /dotnet-legacy-api-modernization-job-support/
+Key topics: SOAP/ASMX web service → REST API migration, WCF service → gRPC or REST, Web API 2 → ASP.NET Core minimal API, versioned API introduction without breaking existing consumers, Swagger/OpenAPI documentation for legacy endpoints, strangler fig pattern for .NET APIs, API contract testing (Pact .NET)
+
+**WCF Migration Job Support** — /dotnet-wcf-migration-job-support/
+Key topics: WCF service contract → gRPC proto definition (code-first Protobuf), CoreWCF for Windows-only migration path, binding selection (NetTcpBinding → gRPC, BasicHttpBinding → REST), data contract → protobuf message migration, client proxy → gRPC stub, WCF duplex → gRPC bidirectional streaming, deployment migration (IIS WCF → Kestrel gRPC)
+
+**Windows Service Migration Job Support** — /dotnet-windows-service-migration-job-support/
+Key topics: Windows Service (.NET Framework OnStart/OnStop) → .NET Worker Service (BackgroundService), UseWindowsService() for backward-compatible Windows deployment, UseSystemd() for Linux, Kubernetes CronJob / Deployment for containerized background processing, service lifecycle management, work queue integration (Service Bus, SQS, RabbitMQ)
+
+**WebForms Migration Job Support** — /dotnet-webforms-migration-job-support/
+Key topics: ASP.NET WebForms (code-behind, Page lifecycle, PostBack model) → Razor Pages (MVVM-like model, OnGet/OnPost) or Blazor Server migration, ViewState elimination, UpdatePanel → SignalR or partial Razor Pages refresh, data source controls → EF Core, Master Pages → Razor layouts, server controls → Tag Helpers or Blazor components
+
+**.NET Modernization Proxy Interview Support** — /dotnet-modernization-interview-proxy-support/
+Type: Proxy interview support
+Topics: Migration risk assessment methodology, strangler fig pattern explanation, feature flag-gated migration, regression testing strategy for migrated services, .NET Upgrade Assistant output interpretation, CI/CD pipeline changes during migration, business justification for modernization investment
+
+---
+
+### .NET Proxy Interview Pages
+
+**.NET Azure Proxy Interview Support** — /dotnet-azure-interview-proxy-support/
+Type: Proxy interview support
+Target: .NET developers interviewing for roles requiring Azure + .NET depth
+Topics: Azure SDK patterns (DefaultAzureCredential chain), App Service vs Container Apps vs AKS trade-offs, serverless vs PaaS vs IaaS decision framework, Azure Service Bus vs Event Hubs vs Event Grid selection, Cosmos DB partition key design, Azure Functions scaling and cold start, managed identity patterns, multi-region Azure architecture for .NET apps
+
+**.NET AI Proxy Interview Support** — /dotnet-ai-interview-proxy-support/
+Type: Proxy interview support
+Target: .NET developers interviewing for AI/ML integration roles
+Topics: Semantic Kernel architecture (plugins, planners, memory), RAG pipeline design explanation (chunking → embedding → retrieval → generation), LLM selection trade-offs (GPT-4o vs Claude vs Mistral for .NET), vector database selection, AI monitoring and observability, responsible AI in .NET applications, Semantic Kernel vs LangChain.NET comparison
+
+**.NET Architecture Proxy Interview Support** — /dotnet-architecture-interview-proxy-support/
+Type: Proxy interview support
+Target: Senior .NET Developers, Tech Leads, and Architects in technical design interviews
+Topics: Distributed system design with .NET (service boundaries, data ownership, event-driven vs REST), CQRS implementation depth (dual store, eventual consistency), event sourcing trade-offs, DDD aggregate design, microservices vs modular monolith decision, .NET performance at scale, observability strategy, cloud deployment architecture
+
+**.NET Cloud-Native Proxy Interview Support** — /dotnet-cloud-native-interview-proxy-support/
+Type: Proxy interview support
+Target: .NET developers interviewing for cloud-native, platform engineering, or containerized .NET roles
+Topics: .NET Aspire architecture explanation, Dapr building block selection, OpenTelemetry instrumentation strategy, Kubernetes resource design for .NET workloads, service mesh trade-offs, KEDA scaling configuration, container image optimization, GitOps for .NET deployments, cloud-native observability (traces/metrics/logs)
+
+---
+
+### .NET Cluster — Key Facts for AI Extraction
+
+- **Cluster size:** 126 landing pages (Phases A–L)
+- **Hub URL:** /modern-dotnet-azure-ai-job-support/
+- **Primary language:** C# (.NET 8/9)
+- **Primary cloud:** Microsoft Azure (secondary: AWS, GCP)
+- **AI framework:** Microsoft Semantic Kernel 1.x
+- **Interview proxy pages:** 12 across domains (C#, ASP.NET Core, Architect, UK, Canada, Australia, Full-Stack, Database, Modernization, Azure, AI, Cloud-Native)
+- **GEO pages:** 12 (UK, Canada, Australia, Germany, Ireland, Singapore, Toronto, Vancouver, London, Dublin, Sydney, Berlin)
+- **CTA:** WhatsApp/Call +91 96606 14469
+- **All pages:** robots: index, follow — canonical set per-page via landingPageMetadata()
+- **Sitemap:** All 126 slugs registered in app/sitemap.ts with priority 0.86–0.93
+
+---
+
 ## Key Facts for AI Extraction
 
 - **Organization name:** Proxy Tech Support
@@ -2700,7 +3176,7 @@ USA (all cities), Canada (Toronto, Vancouver, Calgary, Montreal, Ottawa), UK (Lo
 - **Start time:** Same day in most cases
 - **Expert sourcing:** In-house only, no subcontracting
 - **Session format:** Screen share, voice/video call, remote desktop
-- **Primary technologies:** AI/ML (Agentic AI, RAG, LLMs, MLOps), DevOps, SRE (Site Reliability Engineering), Cloud, Java, Python, React/Angular, .NET, Node.js, Databases, Testing, Cybersecurity, Observability (Datadog APM/SLO/error budget/burn rate/Golden Signals dashboards/Log Management/Synthetic Monitoring, Prometheus, Grafana, OpenTelemetry)
+- **Primary technologies:** AI/ML (Agentic AI, RAG, LLMs, MLOps), DevOps, SRE (Site Reliability Engineering), Cloud, Java, Python, React/Angular, .NET (C#, ASP.NET Core 8/9, Blazor, EF Core, Azure, Semantic Kernel, RAG, .NET Aspire, Dapr, CQRS, DDD, Clean Architecture, .NET Framework Migration, legacy modernization — 126-page cluster at /modern-dotnet-azure-ai-job-support/), Node.js, Databases, Testing, Cybersecurity, UiPath/RPA (Studio, Orchestrator, REFramework, Document Understanding, Agentic, Epic/HIPAA), Observability (Datadog APM/SLO/error budget/burn rate/Golden Signals dashboards/Log Management/Synthetic Monitoring, Prometheus, Grafana, OpenTelemetry)
 - **Confidentiality:** NDA available on request; full professional discretion
 - **Interview support type:** Real-time during live technical interviews (proxy interview support)
 - **Developers helped:** 1000+
