@@ -473,13 +473,13 @@ Secondary SEO topics: P6 WBS questions, Primavera P6 float questions, out of seq
 - /interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/ (SAP S/4HANA AWS migration delivery consultant interview Q&A)
 
 **Schema included:**
-- Article schema: type "Article", headline "Primavera P6 Scheduler Interview Questions and Answers", description, datePublished (2026-06-22T12:00:00+05:30), dateModified, url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords (13 primary + secondary terms), articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
+- Article schema: type "Article", headline "Primavera P6 Scheduler Interview Questions and Answers — Critical Path, Float, Baseline & WBS", description, datePublished (2026-06-22T12:00:00+05:30), dateModified, url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords (13 primary + secondary terms), articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
 - FAQPage schema: 10 FAQ items covering common P6 topics, CPM, Total vs Free Float, baseline purpose, out-of-sequence detection, Trace Logic, Data Date, baseline count, simulation prep, ProxyTechSupport support
-- BreadcrumbList schema: Home (/) → Interviews (/interviews/) → Primavera P6 Scheduler Interview Questions and Answers
+- BreadcrumbList schema: Home (/) → Interview Questions (/interview-questions/) → Primavera P6 Scheduler Interview Questions and Answers — Critical Path, Float, Baseline & WBS
 
 **OG / Twitter card:**
 - og:type = article
-- og:title = Primavera P6 Scheduler Interview Questions: Critical Path, Baseline, WBS, Float & Logic
+- og:title = Primavera P6 Scheduler Interview Questions and Answers — Critical Path, Float, Baseline & WBS | Proxy Tech Support
 - og:description = Real Primavera P6 scheduler interview questions with short answers covering milestones, CPM, total float, free float, baselines, WBS, EVM, activity codes, out-of-sequence logic, and P6 task simulations.
 - og:url = https://proxytechsupport.com/interviews/2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs/
 - og:site_name = Proxy Tech Support
