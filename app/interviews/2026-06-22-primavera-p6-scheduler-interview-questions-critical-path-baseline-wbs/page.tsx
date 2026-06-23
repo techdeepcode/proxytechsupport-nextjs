@@ -1,0 +1,462 @@
+import type { Metadata } from 'next';
+import PostLayout from '@/components/PostLayout';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
+import { defaultOgImage } from '@/lib/site-seo';
+
+/* ------------------------------------------------------------------ *
+ * Self-contained interview article.
+ * Kept OUT of content/interview-articles so the H1 ("…Questions and
+ * Answers") can differ from the exact SEO <title>. Reuses PostLayout,
+ * Breadcrumb (via PostLayout) and ArticleStructuredData so styling and
+ * structured-data stay identical to the rest of the /interviews/ set.
+ * ------------------------------------------------------------------ */
+
+const SLUG =
+  '2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs';
+const CANONICAL = `https://proxytechsupport.com/interviews/${SLUG}/`;
+
+const SEO_TITLE =
+  'Primavera P6 Scheduler Interview Questions: Critical Path, Baseline, WBS, Float & Logic';
+const H1 = 'Primavera P6 Scheduler Interview Questions and Answers';
+const META_DESCRIPTION =
+  'Real Primavera P6 scheduler interview questions with short answers covering milestones, CPM, total float, free float, baselines, WBS, EVM, activity codes, out-of-sequence logic, and P6 task simulations.';
+const PUBLISHED = '2026-06-22';
+
+const KEYWORDS = [
+  'Primavera P6 interview questions',
+  'Primavera P6 scheduler interview',
+  'P6 planner interview questions',
+  'Primavera P6 critical path questions',
+  'P6 baseline interview questions',
+  'P6 WBS questions',
+  'Primavera P6 float questions',
+  'out of sequence progress P6',
+  'P6 schedule log',
+  'P6 Trace Logic',
+  'P6 data date',
+  'EVM in Primavera P6',
+  'project scheduler interview questions',
+];
+
+/** Emitted as visible FAQ + FAQPage JSON-LD (only these 10 per spec). */
+const FAQS = [
+  {
+    q: 'What are the most common Primavera P6 interview topics?',
+    a: 'The most common topics are CPM, critical path, total float, free float, WBS, baselines, milestones, activity relationships, Data Date, schedule log, progress updates, and out-of-sequence progress.',
+  },
+  {
+    q: 'Is Primavera P6 based on CPM?',
+    a: 'Yes. Primavera P6 is primarily based on the Critical Path Method. It uses activities, durations, calendars, constraints, and relationships to calculate schedule dates and float.',
+  },
+  {
+    q: 'What is the difference between Total Float and Free Float in P6?',
+    a: 'Total Float is the delay allowed before the project finish is affected. Free Float is the delay allowed before the successor activity is affected.',
+  },
+  {
+    q: 'What is the purpose of a baseline in Primavera P6?',
+    a: 'A baseline is used to compare the current schedule against the original approved plan. It helps measure variance, slippage, and project performance.',
+  },
+  {
+    q: 'How do you identify out-of-sequence progress in P6?',
+    a: 'Run the scheduler and review the Schedule Log. You can also use filters and relationship analysis to find activities that started before their predecessors were complete.',
+  },
+  {
+    q: 'What is Trace Logic in Primavera P6?',
+    a: 'Trace Logic is a visual tool used to review predecessor and successor relationships for a selected activity. It helps identify driving logic and schedule issues.',
+  },
+  {
+    q: 'What does Data Date mean in Primavera P6?',
+    a: 'Data Date is the date from which Primavera P6 calculates remaining work and schedule status. It is critical during progress updates.',
+  },
+  {
+    q: 'How many baselines can be assigned in Primavera P6?',
+    a: 'Primavera P6 allows up to four assigned baselines: Project Baseline, Primary User Baseline, Secondary User Baseline, and Tertiary User Baseline.',
+  },
+  {
+    q: 'What is the best way to prepare for a Primavera P6 simulation test?',
+    a: 'Practice creating projects, adding activities, assigning relationships, creating baselines, assigning baselines, running the scheduler, reviewing schedule logs, and using Trace Logic.',
+  },
+  {
+    q: 'Does ProxyTechSupport provide real-time Primavera P6 interview support?',
+    a: 'Yes. ProxyTechSupport provides real-time Primavera P6 interview support, project scheduler preparation, technical interview assistance, and job support.',
+  },
+];
+
+export const metadata: Metadata = {
+  title: SEO_TITLE,
+  description: META_DESCRIPTION,
+  keywords: KEYWORDS,
+  alternates: {
+    canonical: CANONICAL,
+    languages: {
+      'en-US': CANONICAL,
+      'en-CA': CANONICAL,
+      'en-GB': CANONICAL,
+      'en-AU': CANONICAL,
+      'en-IE': CANONICAL,
+      'x-default': CANONICAL,
+    },
+  },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article',
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    url: CANONICAL,
+    siteName: 'Proxy Tech Support',
+    locale: 'en_US',
+    publishedTime: `${PUBLISHED}T12:00:00.000Z`,
+    modifiedTime: `${PUBLISHED}T12:00:00.000Z`,
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SEO_TITLE,
+    description: META_DESCRIPTION,
+    images: [defaultOgImage.url],
+  },
+  other: {
+    'article:section': 'Interview Questions',
+    'article:tag': KEYWORDS.slice(0, 6).join(','),
+  },
+};
+
+const bodyHtml = `
+<h2>Overview</h2>
+<p>This page contains 45 real Primavera P6 scheduler interview questions and short technical answers covering milestones, CPM, total float, free float, WBS, baselines, EVM, activity codes, schedule log, Trace Logic, data date, out-of-sequence progress, and hands-on P6 task simulations.</p>
+<p>The interview guide is based on a real technical assessment and simulation round style. All company names, candidate names, and private identifiers are anonymized.</p>
+<p>Use these answers as short, technical, interview-ready responses. If you want live help, we offer <a href="/proxy-interview-support/">real-time proxy interview assistance</a> and structured <a href="/interview-questions/">technical screening preparation</a>.</p>
+
+<h2>Entity Summary</h2>
+<p><strong>Role:</strong> Primavera P6 Scheduler / Project Planner / Planning Engineer</p>
+<p><strong>Skills:</strong> Primavera P6, CPM scheduling, WBS, baselines, float analysis, schedule logic, progress updates, EVM, schedule health checks</p>
+<p><strong>Domains:</strong> Construction, engineering, infrastructure, EPC, utilities, manufacturing, enterprise project delivery</p>
+<p><strong>Use cases:</strong> Project schedule creation, activity sequencing, critical path analysis, baseline comparison, schedule updates, delay review, progress reporting</p>
+<p><strong>Interview type:</strong> Technical screening, MCQ assessment, hands-on P6 simulation</p>
+<p><strong>Current technology context:</strong> Primavera P6 Professional, schedule log, Trace Logic, relationship management, baseline assignment, activity creation</p>
+<p><strong>Key topics covered:</strong> Critical Path Method, longest path, total float, free float, milestones, WBS, EVM, data date, activity codes, baselines, schedule logic, out-of-sequence progress</p>
+
+<h2>Need real-time Primavera P6 interview support?</h2>
+<p><strong>WhatsApp ProxyTechSupport: +91 96606 14469</strong><br>
+<a href="https://wa.me/919660614469" rel="nofollow">https://wa.me/919660614469</a></p>
+<p>We help with real-time IT job support, <a href="/proxy-interview-support/">proxy interview assistance</a>, live <a href="/interview-support-global/">technical interview support</a>, coding test support, <a href="/production-issue-support-for-it-professionals/">production issue support</a>, AI/ML support, DevOps support, QA support, data engineering support, backend/frontend support, and <a href="/real-time-it-job-support-guide/">real-time project support</a>.</p>
+
+<h2>How to Use This Guide</h2>
+<p>Read the question first. Practice the short answer. Then explain it in your own project context.</p>
+<p>For hands-on Primavera P6 tasks, focus on exact navigation, field values, and final validation.</p>
+<p>The goal is not only to know the answer, but to sound like a scheduler who understands schedule quality, logic, progress, and project control.</p>
+
+<hr>
+
+<h2>Primavera P6 Interview Questions and Answers</h2>
+
+<h3>1. What is the primary characteristic of a milestone in Primavera P6?</h3>
+<p>A milestone is a zero-duration activity used to represent a major project event or checkpoint.</p>
+<p>Examples include project start, permit approval, design complete, construction complete, or project finish.</p>
+<p>Milestones are used for tracking key deadlines and reporting major schedule achievements.</p>
+
+<h3>2. How should milestones be used for &ldquo;Permit Approval&rdquo; and &ldquo;Foundations Complete&rdquo;?</h3>
+<p>Use a Start Milestone for an event that triggers the start of work, such as permit approval.</p>
+<p>Use a Finish Milestone for a completed phase, such as foundations complete.</p>
+<p>Both should have zero-day duration.</p>
+
+<h3>3. By default, how does Primavera P6 define an activity as critical?</h3>
+<p>By default, P6 commonly identifies critical activities based on Total Float less than or equal to zero.</p>
+<p>That means the activity has no available float before it affects the project completion date.</p>
+
+<h3>4. What is the difference between Total Float and Longest Path in P6?</h3>
+<p>Total Float marks activities critical based on float value.</p>
+<p>Longest Path identifies the longest continuous driving path to the project finish.</p>
+<p>Longest Path is often more reliable when constraints or calendars distort float.</p>
+
+<h3>5. What does Total Float mean in Primavera P6?</h3>
+<p>Total Float is the amount of time an activity can be delayed without delaying the overall project finish.</p>
+<p>If Total Float is zero or negative, the activity may be critical.</p>
+
+<h3>6. What does Free Float mean in Primavera P6?</h3>
+<p>Free Float is the amount of time an activity can be delayed without delaying its immediate successor activity.</p>
+<p>It is useful when checking whether a task can slip without affecting the next linked activity.</p>
+
+<h3>7. If an activity has 10 days Total Float and 3 days Free Float, what does that mean?</h3>
+<p>The activity can be delayed up to 10 days before affecting the project completion date.</p>
+<p>But only 3 days can be used without delaying the start of its successor activity.</p>
+
+<h3>8. What is the purpose of Earned Value Management in P6?</h3>
+<p>Earned Value Management helps measure project performance by comparing planned work, earned work, and actual cost.</p>
+<p>It gives visibility into schedule and cost performance.</p>
+
+<h3>9. How does EVM provide early warning of project problems?</h3>
+<p>EVM integrates scope, schedule, and cost.</p>
+<p>It helps detect deviations from the plan early by comparing planned value, earned value, and actual cost.</p>
+
+<h3>10. What is the primary purpose of WBS in Primavera P6?</h3>
+<p>WBS organizes the project into a logical, hierarchical structure.</p>
+<p>It helps group activities by phase, deliverable, discipline, area, or work package.</p>
+
+<h3>11. What is a baseline in Primavera P6?</h3>
+<p>A baseline is a saved copy of the approved project plan.</p>
+<p>It is used to compare the current project status against the original approved schedule.</p>
+
+<h3>12. Why do we assign a baseline to a project?</h3>
+<p>We assign a baseline so we can measure variance between the current schedule and the approved plan.</p>
+<p>It helps track date slippage, progress variance, and project performance.</p>
+
+<h3>13. What best describes a P6 baseline?</h3>
+<p>The original approved project plan.</p>
+<p>It is not just a backup. It is a control reference for comparison and reporting.</p>
+
+<h3>14. How many baselines can be assigned to a project in Primavera P6?</h3>
+<p>Up to four baselines can be assigned:</p>
+<ul>
+<li>Project Baseline.</li>
+<li>Primary User Baseline.</li>
+<li>Secondary User Baseline.</li>
+<li>Tertiary User Baseline.</li>
+</ul>
+
+<h3>15. What is lag in Primavera scheduling?</h3>
+<p>Lag is a time delay or overlap applied between two linked activities.</p>
+<p>Positive lag creates a waiting period.</p>
+<p>Negative lag can create overlap, but it should be used carefully because it can reduce schedule clarity.</p>
+
+<h3>16. What does Progress Spotlight do in P6?</h3>
+<p>Progress Spotlight highlights activities due within a selected time frame.</p>
+<p>It helps the scheduler focus on activities that need progress updates.</p>
+
+<h3>17. Which P6 feature helps identify project delays?</h3>
+<p>The Critical Path Method helps identify activities that are driving the project finish date.</p>
+<p>If a critical activity slips, the project completion may also slip.</p>
+
+<h3>18. What type of scheduling method does Primavera P6 use?</h3>
+<p>Primavera P6 primarily uses the Critical Path Method, also called CPM.</p>
+<p>It calculates dates, float, and critical path based on activity durations, calendars, relationships, and constraints.</p>
+
+<h3>19. What is Trace Logic used for in P6?</h3>
+<p>Trace Logic is used to analyze predecessor and successor relationships for a selected activity.</p>
+<p>It helps identify the driving path and understand why an activity is scheduled where it is.</p>
+
+<h3>20. What does the Data Date represent in Primavera P6?</h3>
+<p>The Data Date is the effective date used for schedule calculations.</p>
+<p>Remaining work is calculated from the Data Date forward.</p>
+<p>It is very important during progress updates.</p>
+
+<h3>21. What does F5 do in P6?</h3>
+<p>F5 refreshes the data.</p>
+<p>It reloads the current view or project data.</p>
+
+<h3>22. What does F9 do in P6?</h3>
+<p>F9 schedules the project.</p>
+<p>It recalculates dates, float, and logic based on relationships, durations, calendars, and constraints.</p>
+
+<h3>23. What are activity codes used for in Primavera P6?</h3>
+<p>Activity codes are used to categorize, organize, filter, sort, and analyze project activities.</p>
+<p>They can represent discipline, area, contractor, phase, location, system, or responsibility.</p>
+
+<h3>24. How do you identify out-of-sequence activities in P6?</h3>
+<p>A standard method is to run the scheduler with the schedule log enabled and review the Schedule Log.</p>
+<p>The log can identify out-of-sequence progress and logic issues.</p>
+
+<h3>25. What is out-of-sequence progress in Primavera P6?</h3>
+<p>Out-of-sequence progress happens when an activity starts or progresses before its logical predecessor is complete.</p>
+<p>It usually indicates that field execution did not follow the planned logic.</p>
+
+<h3>26. How can you filter in-progress out-of-sequence activities?</h3>
+<p>A useful filter is:</p>
+<ul>
+<li>Activity Status equals In Progress.</li>
+<li>Remaining Early Start is not equal to the Data Date.</li>
+</ul>
+<p>This helps identify activities where remaining work is not properly aligned with the update date.</p>
+
+<h3>27. What is a loop or circular logic error in P6?</h3>
+<p>A loop happens when activities are linked in a circular dependency.</p>
+<p>For example, Activity A drives Activity B, Activity B drives Activity C, and Activity C drives Activity A.</p>
+<p>P6 cannot calculate the schedule correctly until the loop is corrected.</p>
+
+<h3>28. How do you resolve a loop or circular logic error?</h3>
+<p>Use the Schedule Log to identify the loop.</p>
+<p>Then use Trace Logic or relationship tabs to inspect the linked activities.</p>
+<p>Remove or correct the illogical relationship. Then rerun the scheduler.</p>
+
+<h3>29. What is the risk of using too many constraints in Primavera P6?</h3>
+<p>Too many constraints can distort float and critical path.</p>
+<p>They may hide the true logic-driven schedule and create misleading negative float.</p>
+<p>Constraints should be used only when there is a real contractual or external date requirement.</p>
+
+<h3>30. What happens when an activity with a Start On or After constraint is delayed past the constraint date?</h3>
+<p>The activity may show negative float.</p>
+<p>The constraint can distort the critical path and may misrepresent the true driving logic.</p>
+<p>The scheduler should review whether the constraint is still valid.</p>
+
+<h3>31. Why can Total Float sometimes misrepresent the true critical path?</h3>
+<p>Total Float can be affected by constraints, calendars, and imposed dates.</p>
+<p>An activity may show zero or negative float but may not be on the true driving path.</p>
+<p>That is why Longest Path and Trace Logic are useful checks.</p>
+
+<h3>32. Why may only one zero-float activity appear on the Longest Path?</h3>
+<p>Zero float and Longest Path are not always the same.</p>
+<p>Zero float is float-based. Longest Path is logic-based and focuses on the driving chain to project completion.</p>
+
+<h3>33. What is the difference between a predecessor and a successor?</h3>
+<p>A predecessor is an activity that controls or comes before another activity.</p>
+<p>A successor is an activity that follows after another activity.</p>
+<p>Relationships between them define project logic.</p>
+
+<h3>34. What are common relationship types in P6?</h3>
+<ul>
+<li>Finish-to-Start.</li>
+<li>Start-to-Start.</li>
+<li>Finish-to-Finish.</li>
+<li>Start-to-Finish.</li>
+</ul>
+<p>Finish-to-Start is the most common, but Start-to-Start and Finish-to-Finish are often used when activities overlap.</p>
+
+<h3>35. When would you use a Start-to-Start relationship?</h3>
+<p>Use Start-to-Start when two activities should begin at the same time or when one activity can start after another activity starts.</p>
+<p>For example, &ldquo;Construct Activity 2&rdquo; can start at the same time as &ldquo;Construct Activity 1.&rdquo;</p>
+
+<h3>36. How would you modify A1070 so it starts at the same time as A1060?</h3>
+<ul>
+<li>Select activity A1070.</li>
+<li>Open the Relationships or Predecessors tab.</li>
+<li>Add A1060 as the predecessor.</li>
+<li>Set relationship type to SS.</li>
+<li>Set lag to 0.</li>
+</ul>
+<p>The final logic should be: A1060 SS 0 to A1070.</p>
+
+<h3>37. How do you create a new project in Primavera P6?</h3>
+<ul>
+<li>Go to File, then New.</li>
+<li>Select the EPS location.</li>
+<li>Enter the Project ID and Project Name.</li>
+<li>Continue through the wizard and finish.</li>
+</ul>
+<p>Then verify the project appears in the project list.</p>
+
+<h3>38. How would you create a project with Project ID &ldquo;Talent&rdquo; and Project Name &ldquo;Talent Acquisition&rdquo;?</h3>
+<ul>
+<li>Open the new project wizard.</li>
+<li>Select the correct EPS.</li>
+<li>Set Project ID as Talent.</li>
+<li>Set Project Name as Talent Acquisition.</li>
+</ul>
+<p>Finish the wizard and confirm the project row is created correctly.</p>
+
+<h3>39. How do you create a new activity in P6?</h3>
+<ul>
+<li>Open the Activities view.</li>
+<li>Select the correct WBS or activity row.</li>
+<li>Click the Add activity button.</li>
+<li>Enter the Activity ID and Activity Name.</li>
+<li>Click outside the row to save.</li>
+</ul>
+
+<h3>40. How would you create activity ID &ldquo;GS01.5&rdquo; with name &ldquo;Shipment&rdquo;?</h3>
+<ul>
+<li>In Activities view, click Add.</li>
+<li>Enter Activity ID as GS01.5.</li>
+<li>Enter Activity Name as Shipment.</li>
+</ul>
+<p>Confirm the new activity appears in the activity table.</p>
+
+<h3>41. How do you create a baseline from the current project schedule?</h3>
+<ul>
+<li>Go to Project.</li>
+<li>Open Maintain Baselines.</li>
+<li>Click Add.</li>
+<li>Select the option to save a copy of the current project as a new baseline.</li>
+<li>Click OK and confirm the baseline is created.</li>
+</ul>
+
+<h3>42. How do you assign a baseline as the Project Baseline?</h3>
+<ul>
+<li>Go to Project.</li>
+<li>Open Assign Baselines.</li>
+<li>In the Project Baseline dropdown, select the required baseline.</li>
+<li>Click OK.</li>
+</ul>
+<p>Then confirm the baseline name appears as the assigned Project Baseline.</p>
+
+<h3>43. How would you assign &ldquo;Glider Simulation - B1&rdquo; as the Project Baseline?</h3>
+<ul>
+<li>Open Project, then Assign Baselines.</li>
+<li>In Project Baseline, select Glider Simulation - B1.</li>
+<li>Leave other baseline fields unchanged unless instructed.</li>
+<li>Click OK.</li>
+</ul>
+
+<h3>44. What checks would you perform before accepting a schedule update?</h3>
+<ul>
+<li>Check Data Date.</li>
+<li>Review actual starts and finishes.</li>
+<li>Run the scheduler.</li>
+<li>Review Schedule Log.</li>
+<li>Check out-of-sequence progress.</li>
+<li>Review critical path and negative float.</li>
+<li>Compare against baseline.</li>
+<li>Validate major milestone movement.</li>
+</ul>
+
+<h3>45. What makes a Primavera P6 schedule healthy?</h3>
+<p>A healthy schedule has clear logic, valid calendars, realistic durations, proper WBS structure, minimal unnecessary constraints, correct Data Date, assigned baseline, reviewed critical path, and no unresolved loops or out-of-sequence issues.</p>
+
+<hr>
+
+<h2>Related Interview Support</h2>
+<p>ProxyTechSupport helps candidates prepare for and complete real-time technical rounds across:</p>
+<ul>
+<li>Primavera P6 scheduler interviews.</li>
+<li>Project planner interviews.</li>
+<li>Construction planning interviews.</li>
+<li>EPC project control interviews.</li>
+<li>DevOps and cloud interviews.</li>
+<li>Data engineering interviews.</li>
+<li>QA automation interviews.</li>
+<li>Backend and frontend interviews.</li>
+<li>AI/ML and data science interviews.</li>
+<li>Production issue and project support.</li>
+</ul>
+<p>Explore <a href="/real-time-it-job-support-guide/">Primavera P6 job support</a> and live <a href="/interview-support-global/">technical interview support</a>, or read a related set in our <a href="/interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/">SAP S/4HANA AWS migration delivery consultant interview questions</a>.</p>
+<p>Need real-time Primavera P6 or project scheduler interview support?</p>
+<p><strong>WhatsApp ProxyTechSupport: +91 96606 14469</strong><br>
+<a href="https://wa.me/919660614469" rel="nofollow">https://wa.me/919660614469</a></p>
+
+<hr>
+
+<h2>FAQ</h2>
+${FAQS.map(
+  (f, i) => `<h3>${i + 1}. ${f.q}</h3>\n<p>${f.a}</p>`,
+).join('\n')}
+`;
+
+export default function PrimaveraP6SchedulerInterviewPage() {
+  return (
+    <>
+      <ArticleStructuredData
+        headline={H1}
+        description={META_DESCRIPTION}
+        datePublished={PUBLISHED}
+        dateModified={PUBLISHED}
+        url={CANONICAL}
+        type="Article"
+        keywords={KEYWORDS.join(', ')}
+        articleSection="Interview Questions"
+        faqs={FAQS}
+      />
+      <PostLayout
+        title={H1}
+        date={PUBLISHED}
+        showInterviewBanner
+        wrapWithBlogShell
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Interviews', href: '/interviews/' },
+          { label: H1 },
+        ]}
+      >
+        <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      </PostLayout>
+    </>
+  );
+}

@@ -107,6 +107,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/our-legacy/`, lastModified: today, priority: 0.7 },
     { url: `${BASE}/blog/`, lastModified: today },
     { url: `${BASE}/interviews/`, lastModified: today },
+    // Standalone interview article (not in content/interview-articles pipeline).
+    { url: `${BASE}/interviews/2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs/`, lastModified: '2026-06-22', priority: 0.8 },
     { url: `${BASE}/interview-questions/`, lastModified: today },
     { url: `${BASE}/technologies/`, lastModified: today },
     ...getInterviewScheduledRoutes,

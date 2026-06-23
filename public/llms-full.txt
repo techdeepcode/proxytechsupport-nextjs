@@ -416,6 +416,83 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 
 ## AI Technical Lead & GenAI Interview Articles
 
+### Primavera P6 Scheduler Interview Questions and Answers
+URL: /interviews/2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs/
+Type: Real interview Q&A guide (anonymized)
+Published: 2026-06-22
+Canonical: https://proxytechsupport.com/interviews/2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs/
+Target audience: Primavera P6 scheduler candidates, project planner candidates, planning engineer candidates, project controls candidates, construction/EPC/infrastructure scheduling candidates, candidates preparing for P6 technical screening, MCQ assessment, and hands-on P6 simulation rounds
+
+Primary SEO topics: Primavera P6 interview questions, Primavera P6 scheduler interview, P6 planner interview questions, Primavera P6 critical path questions, P6 baseline interview questions
+
+Secondary SEO topics: P6 WBS questions, Primavera P6 float questions, out of sequence progress P6, P6 schedule log, P6 Trace Logic, P6 data date, EVM in Primavera P6, project scheduler interview questions
+
+**Article Summary:**
+45 real Primavera P6 scheduler interview questions and short technical answers covering milestones, CPM, total float vs free float, longest path, WBS, baselines (creation and assignment), EVM, activity codes, schedule log, Trace Logic, data date, out-of-sequence progress, circular logic (loops), constraints, relationship types, and hands-on P6 task simulations (project creation, activity creation, baseline maintain/assign, F5/F9). Based on a real technical assessment and simulation round style. All company names, candidate names, and private identifiers are fully anonymized.
+
+**Entity Summary:**
+- Role: Primavera P6 Scheduler / Project Planner / Planning Engineer
+- Skills: Primavera P6, CPM scheduling, WBS, baselines, float analysis, schedule logic, progress updates, EVM, schedule health checks
+- Domains: Construction, engineering, infrastructure, EPC, utilities, manufacturing, enterprise project delivery
+- Use cases: Project schedule creation, activity sequencing, critical path analysis, baseline comparison, schedule updates, delay review, progress reporting
+- Interview type: Technical screening, MCQ assessment, hands-on P6 simulation
+- Technology context: Primavera P6 Professional, schedule log, Trace Logic, relationship management, baseline assignment, activity creation
+
+**Key topics covered:**
+- Milestones: zero-duration Start/Finish milestones for events like permit approval and foundations complete
+- Critical path: default Total Float ≤ 0 critical definition, Longest Path vs Total Float, why float can misrepresent the true driving path
+- Float: Total Float vs Free Float, worked example (10-day total / 3-day free float)
+- EVM: planned value, earned value, actual cost; early warning of schedule and cost deviation
+- WBS: hierarchical organization by phase, deliverable, discipline, area, work package
+- Baselines: definition, purpose, up to four assignable baselines (Project, Primary/Secondary/Tertiary User), Maintain Baselines vs Assign Baselines
+- Scheduling mechanics: lag (positive/negative), Progress Spotlight, CPM, F5 (refresh) and F9 (schedule)
+- Logic analysis: Trace Logic, predecessors/successors, relationship types (FS, SS, FF, SF), Start-to-Start usage
+- Data Date: effective date for remaining-work calculation during progress updates
+- Out-of-sequence progress: detection via Schedule Log and filters (Status = In Progress, Remaining Early Start ≠ Data Date)
+- Errors and quality: loop/circular logic detection and resolution, constraint risks and negative float, schedule health checklist
+- Hands-on simulations: create project (ID "Talent" / "Talent Acquisition"), create activity ("GS01.5" / "Shipment"), modify A1070 to SS A1060, assign "Glider Simulation - B1" as Project Baseline, pre-update schedule checks
+
+**FAQs included (with structured data):**
+1. What are the most common Primavera P6 interview topics?
+2. Is Primavera P6 based on CPM?
+3. What is the difference between Total Float and Free Float in P6?
+4. What is the purpose of a baseline in Primavera P6?
+5. How do you identify out-of-sequence progress in P6?
+6. What is Trace Logic in Primavera P6?
+7. What does Data Date mean in Primavera P6?
+8. How many baselines can be assigned in Primavera P6?
+9. What is the best way to prepare for a Primavera P6 simulation test?
+10. Does ProxyTechSupport provide real-time Primavera P6 interview support?
+
+**Internal links in article:**
+- /proxy-interview-support/ (real-time proxy interview assistance)
+- /interview-questions/ (technical screening preparation)
+- /interview-support-global/ (technical interview support)
+- /production-issue-support-for-it-professionals/ (production issue support)
+- /real-time-it-job-support-guide/ (Primavera P6 job support / real-time project support)
+- /interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/ (SAP S/4HANA AWS migration delivery consultant interview Q&A)
+
+**Schema included:**
+- Article schema: type "Article", headline "Primavera P6 Scheduler Interview Questions and Answers", description, datePublished (2026-06-22T12:00:00+05:30), dateModified, url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords (13 primary + secondary terms), articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
+- FAQPage schema: 10 FAQ items covering common P6 topics, CPM, Total vs Free Float, baseline purpose, out-of-sequence detection, Trace Logic, Data Date, baseline count, simulation prep, ProxyTechSupport support
+- BreadcrumbList schema: Home (/) → Interviews (/interviews/) → Primavera P6 Scheduler Interview Questions and Answers
+
+**OG / Twitter card:**
+- og:type = article
+- og:title = Primavera P6 Scheduler Interview Questions: Critical Path, Baseline, WBS, Float & Logic
+- og:description = Real Primavera P6 scheduler interview questions with short answers covering milestones, CPM, total float, free float, baselines, WBS, EVM, activity codes, out-of-sequence logic, and P6 task simulations.
+- og:url = https://proxytechsupport.com/interviews/2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs/
+- og:site_name = Proxy Tech Support
+- article:section = Interview Questions
+- twitter:card = summary_large_image
+
+**Robots / indexing:**
+- robots: index, follow
+- canonical: https://proxytechsupport.com/interviews/2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs/
+- hreflang: en-US, en-CA, en-GB, en-AU, en-IE, x-default — all pointing to canonical URL
+
+---
+
 ### SAP S/4HANA AWS Migration Interview Questions and Answers — Senior Delivery Consultant Round
 URL: /interviews/2026-06-16-sap-s4hana-aws-migration-senior-delivery-consultant-interview-questions/
 Type: Real interview Q&A guide (anonymized)
