@@ -1,4 +1,4 @@
-import type { LandingPageConfig, LandingHighlight, LandingFaqItem } from './landing-pages';
+import type { LandingPageConfig, LandingHighlight, LandingFaqItem, LandingRelatedLink } from './landing-pages';
 
 const BASE_URL = 'https://proxytechsupport.com';
 const LASTMOD = '2026-05-26T12:00:00.000Z';
@@ -211,6 +211,16 @@ export const workdayJobSupport: LandingPageConfig = {
       { label: 'Workday job support Europe', href: '/workday-job-support-europe/' },
       { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' },
       { label: 'Workday HRIS proxy interview', href: '/workday-hris-proxy-interview-support/' },
+      { label: 'Workday production support', href: '/workday-production-support/' },
+      { label: 'Workday implementation support', href: '/workday-implementation-support/' },
+      { label: 'Workday Business Analyst job support', href: '/workday-business-analyst-job-support/' },
+      { label: 'Workday Integration Consultant job support', href: '/workday-integration-consultant-job-support/' },
+      { label: 'Workday HCM Consultant job support', href: '/workday-hcm-consultant-job-support/' },
+      { label: 'Workday job support New York', href: '/new-york-workday-job-support/' },
+      { label: 'Workday job support London', href: '/london-workday-job-support/' },
+      { label: 'Workday job support Toronto', href: '/toronto-workday-job-support/' },
+      { label: 'Workday job support Dublin', href: '/dublin-workday-job-support/' },
+      { label: 'Workday job support Sydney', href: '/sydney-workday-job-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -283,6 +293,14 @@ export const workdayProxyInterviewSupport: LandingPageConfig = {
       { label: 'Workday proxy interview Europe', href: '/workday-proxy-interview-europe/' },
       { label: 'Proxy interview support global', href: '/proxy-interview-support/' },
       { label: 'Workday HRIS proxy interview', href: '/workday-hris-proxy-interview-support/' },
+      { label: 'Workday proxy interview Ireland', href: '/workday-proxy-interview-ireland/' },
+      { label: 'Workday proxy interview Germany', href: '/workday-proxy-interview-germany/' },
+      { label: 'Workday proxy interview Australia', href: '/workday-proxy-interview-australia/' },
+      { label: 'Workday proxy interview Singapore', href: '/workday-proxy-interview-singapore/' },
+      { label: 'Workday HCM interview support', href: '/workday-hcm-interview-support/' },
+      { label: 'Workday integration interview support', href: '/workday-integration-interview-support/' },
+      { label: 'Workday final round interview support', href: '/workday-final-round-interview-support/' },
+      { label: 'Workday live technical interview support', href: '/workday-live-technical-interview-support/' },
     ],
   },
   lastmod: LASTMOD,
@@ -353,6 +371,12 @@ export const workdayInterviewScheduled: LandingPageConfig = {
     additionalLinks: [
       { label: 'Get Workday interviews scheduled UK', href: '/workday-interview-scheduled-uk/' },
       { label: 'Get Workday interviews scheduled Europe', href: '/workday-interview-scheduled-europe/' },
+      { label: 'Get Workday interviews scheduled Ireland', href: '/workday-interview-scheduled-ireland/' },
+      { label: 'Get Workday interviews scheduled Germany', href: '/workday-interview-scheduled-germany/' },
+      { label: 'Get Workday interviews scheduled Australia', href: '/workday-interview-scheduled-australia/' },
+      { label: 'Get Workday interviews scheduled Singapore', href: '/workday-interview-scheduled-singapore/' },
+      { label: 'Get Workday interviews scheduled UAE', href: '/workday-interview-scheduled-uae/' },
+      { label: 'Job application & candidate marketing', href: '/job-application-candidate-marketing/' },
     ],
   },
   lastmod: LASTMOD,
@@ -2818,6 +2842,2813 @@ export const workdayHrisProxyInterviewSupport: LandingPageConfig = {
 // EXPORT: ALL WORKDAY PAGES
 // ═══════════════════════════════════════════════════════════════════════════
 
+// ═══════════════════════════════════════════════════════════════════════════
+// WORKDAY COUNTRY PROXY INTERVIEW PAGES (Phase 1) — factory
+// ═══════════════════════════════════════════════════════════════════════════
+
+interface WorkdayCountryProxyOpts {
+  country: string;
+  countrySlug: string;
+  tzShort: string;
+  tzLong: string;
+  cities: string;
+  market: string;
+  scenarios: string[];
+  regionalProxy: LandingRelatedLink;
+}
+
+function workdayCountryProxyPage(o: WorkdayCountryProxyOpts): LandingPageConfig {
+  return {
+    slug: `workday-proxy-interview-${o.countrySlug}`,
+    title: `Workday Proxy Interview Support ${o.country} — Live Interview Guidance`,
+    description: `Workday interview at a ${o.country} company? Get real-time proxy interview support from in-house Workday experts — HCM, Integration, Financials, Payroll, Reporting, and Security consultant roles. ${o.tzShort} aligned. Updated for May 2026 Workday market demand and current Workday release trends.`,
+    canonical: `${BASE_URL}/workday-proxy-interview-${o.countrySlug}/`,
+    keywords: [
+      `Workday proxy interview ${o.country}`, `Workday interview help ${o.country}`,
+      `Workday HCM interview ${o.country}`, `Workday integration interview ${o.country}`,
+      `live Workday interview guidance ${o.country}`, `Workday consultant interview ${o.country}`,
+    ],
+    h1: `Workday Proxy Interview Support ${o.country} — Real-Time Live Guidance for ${o.country} Workday Roles`,
+    tagline: `Discreet real-time Workday interview support for ${o.country} company interviews — HCM, Integration, Financials, Payroll, Reporting, and Security consultant roles. ${o.tzLong} covered.`,
+    heroEyebrow: `Workday ${o.country} Interview Support`,
+    painIntro: `${o.country} Workday consulting interview coming up? Technical functional panel, configuration walkthrough, or scenario-based round? Employers in ${o.country} run rigorous Workday interviews — our in-house experts join your session and guide you through every question in real time.`,
+    heroVariant: `${o.market} Our in-house Workday experts provide real-time, discreet guidance calibrated to ${o.country} hiring formats. Updated for May 2026 and current ${o.country} Workday hiring demand, including Workday 2026R1 release topics now common in interviews.`,
+    geoLine: `Supporting Workday interview candidates for ${o.country} roles across ${o.cities} and remote ${o.country} positions.`,
+    timezoneNote: `Available across ${o.tzLong} for Workday interview support.`,
+    highlights: workdayHighlights,
+    faqs: workdayProxyFaqs(`${o.country} Workday`),
+    useCasesSection: {
+      title: `${o.country} Workday Interview Scenarios We Help Navigate`,
+      cases: o.scenarios,
+    },
+    proxySection: {
+      title: `How Our ${o.country} Workday Proxy Interview Support Works`,
+      intro: `${o.country} Workday interviews are calibrated to specific employer formats. Our experts match your interview format and provide real-time guidance throughout — covering HCM, Integration, Financials, Payroll, Reporting, Security, and 2026R1 release topics.`,
+      points: [
+        `Share your ${o.country} employer, role, and interview format via WhatsApp — we assign the right Workday module expert`,
+        `Pre-interview brief aligned to your ${o.country} employer type and module focus`,
+        'Expert joins your live interview and provides discreet real-time guidance',
+        'Coverage for Workday 2026R1 release topics increasingly common in interviews',
+        'Post-interview debrief and next-round preparation',
+      ],
+    },
+    bottomCTAHeading: `${o.country} Workday Interview Coming Up? Get Expert Live Guidance Now`,
+    bottomCTABody: `Real-time proxy support for ${o.country} Workday HCM, Integration, Financials, Payroll, and Reporting interviews. ${o.tzShort} aligned. Contact us on WhatsApp now.`,
+    relatedLinks: {
+      geoLinks: [
+        { label: `Workday job support ${o.country}`, href: `/workday-job-support-${o.countrySlug}/` },
+        o.regionalProxy,
+      ],
+      techLinks: [
+        { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+        { label: 'Workday HCM job support', href: '/workday-hcm-job-support/' },
+      ],
+      problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+      proxyLink: { label: `Get Workday interviews scheduled ${o.country}`, href: `/workday-interview-scheduled-${o.countrySlug}/` },
+      blogLink: { label: 'Read developer support articles', href: '/blog/' },
+      additionalLinks: [
+        { label: 'Workday job support hub', href: '/workday-job-support/' },
+        { label: 'Get Workday interviews scheduled', href: '/workday-interview-scheduled/' },
+        { label: 'Job application & candidate marketing', href: '/job-application-candidate-marketing/' },
+      ],
+    },
+    lastmod: LASTMOD,
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// WORKDAY COUNTRY INTERVIEW SCHEDULED PAGES (Phase 2) — factory
+// ═══════════════════════════════════════════════════════════════════════════
+
+interface WorkdayCountryScheduledOpts {
+  country: string;
+  countrySlug: string;
+  tzShort: string;
+  cities: string;
+  marketScheduled: string;
+  scenarios: string[];
+  insightPoints: string[];
+  regionalScheduled: LandingRelatedLink;
+}
+
+function workdayCountryScheduledPage(o: WorkdayCountryScheduledOpts): LandingPageConfig {
+  return {
+    slug: `workday-interview-scheduled-${o.countrySlug}`,
+    title: `Get Workday Interviews Scheduled ${o.country} — Profile Optimization & Recruiter Outreach`,
+    description: `Not getting Workday interview calls from ${o.country} employers? We engineer your Workday profile and LinkedIn for ${o.country} recruiter visibility — HCM, Integration, Financials, Payroll roles — and drive active outreach to ${o.country} Workday staffing firms. Updated for May 2026.`,
+    canonical: `${BASE_URL}/workday-interview-scheduled-${o.countrySlug}/`,
+    keywords: [
+      `get Workday interviews scheduled ${o.country}`, `Workday interview calls ${o.country}`,
+      `Workday profile optimization ${o.country}`, `Workday resume ${o.country}`,
+      `Workday LinkedIn ${o.country}`, `Workday recruiter ${o.country}`,
+    ],
+    h1: `Get Workday Interviews Scheduled in ${o.country} — Profile Engineering & ${o.country} Recruiter Outreach`,
+    tagline: `Stop missing ${o.country} Workday interview calls. We engineer your profile for ${o.country} recruiter visibility and drive active outreach to ${o.country} Workday staffing firms and direct clients.`,
+    heroEyebrow: `Workday ${o.country} Interview Scheduling — May 2026`,
+    painIntro: `You have Workday experience but ${o.country} recruiters are not calling. The ${o.country} Workday market has active roles, but your profile is not surfacing in searches. We fix that with targeted keyword engineering and active outreach.`,
+    heroVariant: `${o.marketScheduled} ${o.country} recruiters search with very specific Workday terminology — we build your profile around those search patterns and get it in front of the right people. Updated for May 2026 Workday market demand and current Workday release trends.`,
+    geoLine: `Supporting Workday professionals targeting ${o.country} roles across ${o.cities} and remote ${o.country} positions.`,
+    timezoneNote: `Profile support and outreach aligned to ${o.country} market hours (${o.tzShort}).`,
+    highlights: workdayHighlights,
+    faqs: workdayScheduledFaqs(o.country),
+    useCasesSection: {
+      title: `${o.country} Workday Profile Situations We Resolve`,
+      cases: o.scenarios,
+    },
+    proxySection: {
+      title: `${o.country} Workday Job Market — What We Know About Getting Calls in 2026`,
+      intro: `${o.country} Workday recruiter search patterns have shifted with 2026R1. We position your profile to reflect current ${o.country} demand signals — AI-workflow experience, Skills Cloud, and Workday Extend are now differentiators.`,
+      points: o.insightPoints,
+    },
+    bottomCTAHeading: `Ready to Start Getting ${o.country} Workday Interview Calls?`,
+    bottomCTABody: `We engineer your Workday profile for ${o.country} recruiter visibility and drive active outreach — HCM, Integration, Financials, Payroll roles. Contact us on WhatsApp now.`,
+    relatedLinks: {
+      geoLinks: [
+        { label: `Workday job support ${o.country}`, href: `/workday-job-support-${o.countrySlug}/` },
+        o.regionalScheduled,
+      ],
+      techLinks: [
+        { label: 'Get Workday interviews scheduled', href: '/workday-interview-scheduled/' },
+        { label: `Workday proxy interview ${o.country}`, href: `/workday-proxy-interview-${o.countrySlug}/` },
+      ],
+      problemLink: { label: 'Struggling in your IT job?', href: '/struggling-in-job-developer-help/' },
+      proxyLink: { label: 'Get interview scheduled', href: '/get-interview-scheduled/' },
+      blogLink: { label: 'Read developer support articles', href: '/blog/' },
+      additionalLinks: [
+        { label: 'Workday job support hub', href: '/workday-job-support/' },
+        { label: 'Job application & candidate marketing', href: '/job-application-candidate-marketing/' },
+      ],
+    },
+    lastmod: LASTMOD,
+  };
+}
+
+// ─── Phase 1: Country proxy interview pages ──────────────────────────────────
+
+export const workdayProxyInterviewIreland = workdayCountryProxyPage({
+  country: 'Ireland', countrySlug: 'ireland', tzShort: 'IST/GMT',
+  tzLong: 'Irish Standard Time (IST) and GMT', cities: 'Dublin, Cork, and Galway',
+  market: "Ireland is one of the strongest Workday markets in EMEA — Workday's own EMEA headquarters is in Dublin, alongside Google, Meta, LinkedIn, Salesforce, and dozens of IDA-backed multinationals running Workday HCM and Financials, plus consultancies like Deloitte, Accenture, KPMG Ireland, and Kainos.",
+  regionalProxy: { label: 'Workday proxy interview UK', href: '/workday-proxy-interview-uk/' },
+  scenarios: [
+    'Dublin multinational Workday HCM Consultant panel — Core HR, staffing, and absence scenario questions',
+    'Kainos or Deloitte Ireland Workday Integration Developer round — EIB, Core Connector, Studio, PECI',
+    'Irish enterprise Workday Financials interview — GL, AP/AR, and period close configuration walkthrough',
+    'Dublin tech company Workday Reporting Specialist round — Advanced/Matrix reports, calculated fields, Prism',
+    'Irish shared-service centre Workday Security Administrator interview — domain policies and role-based access',
+    'GDPR-aware Workday data and security scenario questions common in Irish enterprise interviews',
+  ],
+});
+
+export const workdayProxyInterviewGermany = workdayCountryProxyPage({
+  country: 'Germany', countrySlug: 'germany', tzShort: 'CET/CEST',
+  tzLong: 'Central European Time (CET/CEST)', cities: 'Berlin, Munich, Frankfurt, and Hamburg',
+  market: 'Germany’s Workday market spans automotive, manufacturing, and enterprise (Siemens, Bosch, Deutsche Bank) plus large SAP-to-Workday migration programmes run by Deloitte, Accenture, and PwC.',
+  regionalProxy: { label: 'Workday proxy interview Europe', href: '/workday-proxy-interview-europe/' },
+  scenarios: [
+    'German enterprise Workday HCM Consultant panel — Betriebsrat/works-council-aware business process design',
+    'Workday Payroll interview with German social-insurance (Krankenkasse, pension) configuration questions',
+    'Workday Integration Consultant round at a German automotive or manufacturing client — Studio, PECI, REST/SOAP',
+    'SAP-to-Workday migration programme interview — data conversion, parallel run, and cutover scenarios',
+    'Workday Financials interview at a German multinational — multi-entity GL, intercompany, and close cycle',
+    'GDPR and data-residency security scenarios common in German Workday interviews',
+  ],
+});
+
+export const workdayProxyInterviewNetherlands = workdayCountryProxyPage({
+  country: 'Netherlands', countrySlug: 'netherlands', tzShort: 'CET/CEST',
+  tzLong: 'Central European Time (CET/CEST)', cities: 'Amsterdam, Rotterdam, and Eindhoven',
+  market: 'The Dutch Workday market is driven by ASML, ING, Adyen, Booking.com, Philips, and Shell, with strong demand for HCM, Integration, and Financials consultants and international shared-service operations.',
+  regionalProxy: { label: 'Workday proxy interview Europe', href: '/workday-proxy-interview-europe/' },
+  scenarios: [
+    'Amsterdam multinational Workday HCM Consultant panel — multi-country Core HR and staffing scenarios',
+    'Dutch pension-fund integration interview — EIB/Studio integration to pension and benefits providers',
+    'Workday Integration Consultant round at ASML or a Dutch enterprise — Core Connector, PECI, REST/SOAP',
+    'Workday Financials interview at a Dutch multinational — multi-currency GL and consolidation walkthrough',
+    'Workday Reporting Specialist round — Advanced/Composite reports and Prism Analytics for Dutch operations',
+    'GDPR-aligned Workday security and data scenarios common in Dutch enterprise interviews',
+  ],
+});
+
+export const workdayProxyInterviewFrance = workdayCountryProxyPage({
+  country: 'France', countrySlug: 'france', tzShort: 'CET/CEST',
+  tzLong: 'Central European Time (CET/CEST)', cities: 'Paris, Lyon, and Toulouse',
+  market: 'France’s Workday market centres on CAC 40 multinationals and consultancies running HR transformation and finance programmes, where collective-agreement-aware configuration and French payroll feature heavily.',
+  regionalProxy: { label: 'Workday proxy interview Europe', href: '/workday-proxy-interview-europe/' },
+  scenarios: [
+    'Paris multinational Workday HCM Consultant panel — collective-agreement-aware business process design',
+    'French payroll interview — URSSAF, AGIRC-ARRCO, and CSE-workflow configuration questions',
+    'Workday Integration Consultant round at a French enterprise — EIB, Studio, Core Connector, REST/SOAP',
+    'Workday Financials interview at a CAC 40 multinational — multi-entity GL and statutory reporting',
+    'Workday Reporting Specialist round — Advanced reports and Prism Analytics for French operations',
+    'GDPR and CNIL-aware Workday data/security scenarios common in French interviews',
+  ],
+});
+
+export const workdayProxyInterviewSweden = workdayCountryProxyPage({
+  country: 'Sweden', countrySlug: 'sweden', tzShort: 'CET/CEST',
+  tzLong: 'Central European Time (CET/CEST)', cities: 'Stockholm, Gothenburg, and Malmö',
+  market: 'Sweden’s Workday market is led by digital-first organizations like Spotify, Klarna, Ericsson, Volvo, and H&M, with demand for HCM, Reporting, Security, and integration consultants.',
+  regionalProxy: { label: 'Workday proxy interview Europe', href: '/workday-proxy-interview-europe/' },
+  scenarios: [
+    'Stockholm tech company Workday HCM Consultant panel — Core HR, staffing, and talent scenarios',
+    'Swedish payroll integration interview — collective-agreement and Skatteverket reporting configuration',
+    'Workday Integration Consultant round at Ericsson or Volvo — Studio, Core Connector, PECI, REST/SOAP',
+    'Workday Reporting Specialist round — Advanced/Matrix reports, calculated fields, and Prism Analytics',
+    'Workday Security Administrator interview — domain policies and role-based access design',
+    'GDPR-aligned Workday data and security scenarios common in Swedish enterprise interviews',
+  ],
+});
+
+export const workdayProxyInterviewSwitzerland = workdayCountryProxyPage({
+  country: 'Switzerland', countrySlug: 'switzerland', tzShort: 'CET/CEST',
+  tzLong: 'Central European Time (CET/CEST)', cities: 'Zurich, Geneva, and Basel',
+  market: 'Switzerland’s Workday market is anchored in banking (UBS), pharma (Roche, Novartis), and multinationals, with strong demand for Financials and Security consultants and multi-currency finance.',
+  regionalProxy: { label: 'Workday proxy interview Europe', href: '/workday-proxy-interview-europe/' },
+  scenarios: [
+    'Zurich banking Workday Financials interview — multi-currency CHF/EUR GL, consolidation, and close cycle',
+    'Swiss payroll interview — AHV/BVG social insurance and canton-level configuration questions',
+    'Pharma (Roche/Novartis) Workday HCM Consultant panel — Core HR, staffing, and compensation scenarios',
+    'Workday Security Administrator interview — audit-grade domain policies and segregation of duties',
+    'Workday Integration Consultant round at a Swiss bank or pharma — Studio, Core Connector, REST/SOAP',
+    'Workday Reporting Specialist round — Advanced/Composite reports and Prism Analytics for finance',
+  ],
+});
+
+export const workdayProxyInterviewAustralia = workdayCountryProxyPage({
+  country: 'Australia', countrySlug: 'australia', tzShort: 'AEST/AEDT',
+  tzLong: 'Australian Eastern Time (AEST/AEDT)', cities: 'Sydney, Melbourne, Brisbane, and Perth',
+  market: 'Australia’s Workday market spans banking (CBA, NAB, Westpac), government, mining, and retail, with STP2, superannuation, and Award-rate payroll complexity driving demand for HCM, Payroll, and Integration consultants.',
+  regionalProxy: { label: 'Workday proxy interview New Zealand', href: '/workday-proxy-interview-new-zealand/' },
+  scenarios: [
+    'Sydney bank Workday HCM Consultant panel — Core HR, staffing, and enterprise interview (CBA, NAB, Westpac)',
+    'Australian payroll interview — STP2, superannuation, and Award-rate configuration questions',
+    'Workday Integration Consultant round at an Australian enterprise — EIB, Studio, Core Connector, PECI',
+    'Government or mining Workday Financials interview — GL, procurement, and project costing walkthrough',
+    'Workday Reporting Specialist round — Advanced/Matrix reports and Prism Analytics for AU operations',
+    'Workday Security Administrator interview — domain policies and role-based access for regulated industries',
+  ],
+});
+
+export const workdayProxyInterviewNewZealand = workdayCountryProxyPage({
+  country: 'New Zealand', countrySlug: 'new-zealand', tzShort: 'NZST/NZDT',
+  tzLong: 'New Zealand Time (NZST/NZDT)', cities: 'Auckland and Wellington',
+  market: 'New Zealand’s Workday market includes banks, government agencies, and enterprise organizations, with KiwiSaver, PAYE/IRD, and ACC payroll requirements driving demand for HCM, Payroll, and Reporting consultants.',
+  regionalProxy: { label: 'Workday proxy interview Australia', href: '/workday-proxy-interview-australia/' },
+  scenarios: [
+    'Auckland enterprise Workday HCM Consultant panel — Core HR, staffing, and absence scenarios',
+    'New Zealand payroll interview — KiwiSaver, PAYE/IRD, and ACC configuration questions',
+    'Workday Integration Consultant round at a NZ bank or agency — EIB, Studio, Core Connector, REST/SOAP',
+    'Government Workday Financials interview — GL, procurement, and statutory reporting walkthrough',
+    'Workday Reporting Specialist round — Advanced reports, calculated fields, and Prism Analytics',
+    'Workday Security Administrator interview — domain policies and role-based access design',
+  ],
+});
+
+export const workdayProxyInterviewSingapore = workdayCountryProxyPage({
+  country: 'Singapore', countrySlug: 'singapore', tzShort: 'SGT',
+  tzLong: 'Singapore Time (SGT)', cities: 'Singapore CBD, Jurong, and one-north',
+  market: 'Singapore is the APAC Workday hub — regional shared-service centres, MAS-regulated finance, banking, and multinationals run multi-country HCM on Workday, driving strong demand for HCM, Integration, and Financials consultants.',
+  regionalProxy: { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+  scenarios: [
+    'Singapore regional HQ Workday HCM Consultant panel — multi-country Core HR and staffing scenarios',
+    'Singapore payroll interview — CPF integration and multi-country APAC payroll configuration',
+    'Workday Integration Consultant round at a Singapore bank or MNC — EIB, Studio, Core Connector, PECI',
+    'MAS-regulated Workday Financials interview — multi-entity GL, intercompany, and close cycle',
+    'Workday Reporting Specialist round — Advanced/Composite reports and Prism Analytics for APAC',
+    'PDPA-aware Workday security and data scenarios common in Singapore enterprise interviews',
+  ],
+});
+
+export const workdayProxyInterviewUAE = workdayCountryProxyPage({
+  country: 'UAE', countrySlug: 'uae', tzShort: 'GST',
+  tzLong: 'Gulf Standard Time (GST)', cities: 'Dubai and Abu Dhabi',
+  market: 'The UAE Workday market is growing fast across banking, aviation (Emirates), hospitality, and government, with WPS, gratuity, and Emiratization (Nafis) requirements driving demand for HCM, Payroll, and Finance consultants.',
+  regionalProxy: { label: 'Workday proxy interview Saudi Arabia', href: '/workday-proxy-interview-saudi-arabia/' },
+  scenarios: [
+    'Dubai enterprise Workday HCM Consultant panel — Core HR, staffing, and Emiratization scenarios',
+    'UAE payroll interview — WPS compliance, gratuity, and AED/USD multi-currency configuration',
+    'Workday Integration Consultant round at a UAE bank or airline — EIB, Studio, Core Connector, REST/SOAP',
+    'Workday Financials interview at a Gulf multinational — multi-currency GL and consolidation walkthrough',
+    'Workday Reporting Specialist round — Advanced reports and Prism Analytics for UAE operations',
+    'Workday Security Administrator interview — domain policies and role-based access for regulated sectors',
+  ],
+});
+
+export const workdayProxyInterviewSaudiArabia = workdayCountryProxyPage({
+  country: 'Saudi Arabia', countrySlug: 'saudi-arabia', tzShort: 'AST',
+  tzLong: 'Arabian Standard Time (AST)', cities: 'Riyadh, Jeddah, and Dammam',
+  market: 'Saudi Arabia’s Workday market is expanding rapidly with Vision 2030 — NEOM, PIF entities, banks, and government — with GOSI, Saudization/Nitaqat, and Hijri-calendar payroll requirements driving demand for HCM, Payroll, and Finance consultants.',
+  regionalProxy: { label: 'Workday proxy interview UAE', href: '/workday-proxy-interview-uae/' },
+  scenarios: [
+    'Riyadh enterprise Workday HCM Consultant panel — Core HR, staffing, and Saudization (Nitaqat) scenarios',
+    'Saudi payroll interview — GOSI integration, Hijri-calendar, and SAR configuration questions',
+    'Vision 2030 programme Workday Integration round — EIB, Studio, Core Connector, REST/SOAP',
+    'Workday Financials interview at a Saudi bank or PIF entity — multi-entity GL and close cycle',
+    'Workday Reporting Specialist round — Advanced reports and Prism Analytics for KSA operations',
+    'Workday Security Administrator interview — domain policies and role-based access for regulated sectors',
+  ],
+});
+
+// ─── Phase 2: Country interview scheduled pages ──────────────────────────────
+
+const euScheduledInsight = [
+  'European Workday recruiter keyword mapping — exact terms used by EU staffing firms in May 2026',
+  '2026R1 module feature keywords that European employers are actively searching for',
+  'LinkedIn positioning for European Workday recruiter visibility, including multi-country HCM signals',
+  'Active outreach to European Workday staffing firms and Big 4 / boutique partner recruiters',
+  'GDPR and data-residency keywords that strengthen European enterprise profiles',
+];
+
+export const workdayInterviewScheduledIreland = workdayCountryScheduledPage({
+  country: 'Ireland', countrySlug: 'ireland', tzShort: 'IST/GMT',
+  cities: 'Dublin, Cork, and Galway',
+  marketScheduled: 'The Irish Workday market in May 2026 is highly active — Workday’s EMEA HQ in Dublin, multinational shared-service centres, and consultancies (Kainos, Deloitte, Accenture) generate steady consultant demand.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled UK', href: '/workday-interview-scheduled-uk/' },
+  scenarios: [
+    'Experienced HCM consultant applying to Dublin roles for months with no response — keyword targeting issue',
+    'Workday Integration Developer with Studio experience not surfacing in Irish recruiter searches',
+    'Consultant transitioning into a Dublin multinational shared-service centre — positioning strategy',
+    'Overseas Workday professional targeting Irish remote/hybrid roles — geographic positioning',
+    'Recent Workday certification holder targeting entry-level Irish consultant roles',
+    'Senior consultant targeting Kainos, Deloitte Ireland, or direct multinational roles',
+  ],
+  insightPoints: euScheduledInsight,
+});
+
+export const workdayInterviewScheduledGermany = workdayCountryScheduledPage({
+  country: 'Germany', countrySlug: 'germany', tzShort: 'CET/CEST',
+  cities: 'Berlin, Munich, Frankfurt, and Hamburg',
+  marketScheduled: 'The German Workday market in May 2026 is driven by SAP-to-Workday migrations, enterprise HR transformation, and finance programmes across automotive, manufacturing, and banking.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled Europe', href: '/workday-interview-scheduled-europe/' },
+  scenarios: [
+    'Experienced HCM consultant applying to German roles with no response — German-market keyword issue',
+    'Workday Integration Developer not surfacing in German recruiter searches — Studio/PECI positioning',
+    'Consultant with SAP HR background transitioning into Workday migration programmes in Germany',
+    'Overseas Workday professional targeting German remote/hybrid roles — language and positioning strategy',
+    'Workday Payroll specialist positioning for German social-insurance and works-council-aware roles',
+    'Senior consultant targeting Deloitte, Accenture, or direct German enterprise roles',
+  ],
+  insightPoints: euScheduledInsight,
+});
+
+export const workdayInterviewScheduledNetherlands = workdayCountryScheduledPage({
+  country: 'Netherlands', countrySlug: 'netherlands', tzShort: 'CET/CEST',
+  cities: 'Amsterdam, Rotterdam, and Eindhoven',
+  marketScheduled: 'The Dutch Workday market in May 2026 is led by ASML, ING, Adyen, Booking.com, and Philips, with strong demand for HCM, Integration, and Financials consultants in international operations.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled Europe', href: '/workday-interview-scheduled-europe/' },
+  scenarios: [
+    'Experienced HCM consultant applying to Dutch roles with no response — keyword targeting issue',
+    'Workday Integration Developer not surfacing in Dutch recruiter searches — Core Connector/PECI positioning',
+    'Consultant targeting Amsterdam multinational shared-service centres — multi-country HCM positioning',
+    'Overseas Workday professional targeting Dutch remote/hybrid roles — geographic positioning',
+    'Workday Reporting specialist positioning for Dutch enterprise and finance roles',
+    'Senior consultant targeting ASML, ING, or direct Dutch enterprise roles',
+  ],
+  insightPoints: euScheduledInsight,
+});
+
+export const workdayInterviewScheduledFrance = workdayCountryScheduledPage({
+  country: 'France', countrySlug: 'france', tzShort: 'CET/CEST',
+  cities: 'Paris, Lyon, and Toulouse',
+  marketScheduled: 'The French Workday market in May 2026 is centred on CAC 40 multinationals and consultancies running HR transformation and finance programmes.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled Europe', href: '/workday-interview-scheduled-europe/' },
+  scenarios: [
+    'Experienced HCM consultant applying to French roles with no response — French-market keyword issue',
+    'Workday Integration Developer not surfacing in French recruiter searches — Studio/PECI positioning',
+    'Consultant positioning for collective-agreement-aware French HR transformation programmes',
+    'Overseas Workday professional targeting French remote/hybrid roles — language and positioning strategy',
+    'Workday Payroll specialist positioning for URSSAF and CSE-workflow-aware French roles',
+    'Senior consultant targeting CAC 40 multinationals or French consultancy roles',
+  ],
+  insightPoints: euScheduledInsight,
+});
+
+export const workdayInterviewScheduledSweden = workdayCountryScheduledPage({
+  country: 'Sweden', countrySlug: 'sweden', tzShort: 'CET/CEST',
+  cities: 'Stockholm, Gothenburg, and Malmö',
+  marketScheduled: 'The Swedish Workday market in May 2026 is led by digital-first organizations like Spotify, Klarna, Ericsson, and Volvo.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled Europe', href: '/workday-interview-scheduled-europe/' },
+  scenarios: [
+    'Experienced HCM consultant applying to Swedish roles with no response — keyword targeting issue',
+    'Workday Integration Developer not surfacing in Swedish recruiter searches — Studio positioning',
+    'Consultant targeting Stockholm tech companies — digital HR and Reporting positioning',
+    'Overseas Workday professional targeting Swedish remote/hybrid roles — geographic positioning',
+    'Workday Reporting and Security specialist positioning for Swedish enterprise roles',
+    'Senior consultant targeting Ericsson, Volvo, or direct Swedish enterprise roles',
+  ],
+  insightPoints: euScheduledInsight,
+});
+
+export const workdayInterviewScheduledSwitzerland = workdayCountryScheduledPage({
+  country: 'Switzerland', countrySlug: 'switzerland', tzShort: 'CET/CEST',
+  cities: 'Zurich, Geneva, and Basel',
+  marketScheduled: 'The Swiss Workday market in May 2026 is anchored in banking (UBS), pharma (Roche, Novartis), and multinationals, with strong demand for Financials and Security consultants.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled Europe', href: '/workday-interview-scheduled-europe/' },
+  scenarios: [
+    'Experienced Financials consultant applying to Swiss banking roles with no response — keyword issue',
+    'Workday Integration Developer not surfacing in Swiss recruiter searches — Studio positioning',
+    'Consultant targeting Zurich/Basel pharma and banking — multi-currency finance positioning',
+    'Overseas Workday professional targeting Swiss remote/hybrid roles — geographic positioning',
+    'Workday Security specialist positioning for audit-grade Swiss banking and pharma roles',
+    'Senior consultant targeting UBS, Roche, Novartis, or direct Swiss enterprise roles',
+  ],
+  insightPoints: euScheduledInsight,
+});
+
+export const workdayInterviewScheduledAustralia = workdayCountryScheduledPage({
+  country: 'Australia', countrySlug: 'australia', tzShort: 'AEST/AEDT',
+  cities: 'Sydney, Melbourne, Brisbane, and Perth',
+  marketScheduled: 'The Australian Workday market in May 2026 is active across banking, government, mining, and retail, with STP2, superannuation, and Award-rate payroll complexity driving consultant demand.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled New Zealand', href: '/workday-interview-scheduled-new-zealand/' },
+  scenarios: [
+    'Experienced HCM consultant applying to Australian roles with no response — keyword targeting issue',
+    'Workday Payroll specialist not surfacing in AU recruiter searches — STP2/superannuation positioning',
+    'Consultant targeting Sydney/Melbourne banks and government — enterprise positioning',
+    'Overseas Workday professional targeting Australian remote/hybrid roles — geographic positioning',
+    'Workday Integration Developer positioning for Australian enterprise and government roles',
+    'Senior consultant targeting CBA, NAB, Westpac, or direct Australian enterprise roles',
+  ],
+  insightPoints: [
+    'Australian Workday recruiter keyword mapping — exact terms used by AU staffing firms in May 2026',
+    '2026R1 and STP2/superannuation keywords that Australian employers are actively searching for',
+    'LinkedIn positioning for Australian Workday recruiter visibility',
+    'Active outreach to Australian Workday staffing firms — Hays, Robert Half, Talent International',
+    'Australian job board optimization — Seek, LinkedIn, and Indeed',
+  ],
+});
+
+export const workdayInterviewScheduledNewZealand = workdayCountryScheduledPage({
+  country: 'New Zealand', countrySlug: 'new-zealand', tzShort: 'NZST/NZDT',
+  cities: 'Auckland and Wellington',
+  marketScheduled: 'The New Zealand Workday market in May 2026 spans banks, government agencies, and enterprise, with KiwiSaver, PAYE/IRD, and ACC payroll requirements.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled Australia', href: '/workday-interview-scheduled-australia/' },
+  scenarios: [
+    'Experienced HCM consultant applying to NZ roles with no response — keyword targeting issue',
+    'Workday Payroll specialist not surfacing in NZ recruiter searches — KiwiSaver/PAYE positioning',
+    'Consultant targeting Auckland/Wellington enterprise and government — positioning strategy',
+    'Overseas Workday professional targeting NZ remote/hybrid roles — geographic positioning',
+    'Workday Reporting specialist positioning for New Zealand enterprise roles',
+    'Senior consultant targeting NZ banks, agencies, or direct enterprise roles',
+  ],
+  insightPoints: [
+    'New Zealand Workday recruiter keyword mapping — exact terms used by NZ staffing firms in May 2026',
+    '2026R1 and KiwiSaver/PAYE keywords that NZ employers are actively searching for',
+    'LinkedIn positioning for New Zealand Workday recruiter visibility',
+    'Active outreach to New Zealand Workday staffing firms — Hays, Robert Walters, Talent',
+    'New Zealand job board optimization — Seek, LinkedIn, and Trade Me Jobs',
+  ],
+});
+
+export const workdayInterviewScheduledSingapore = workdayCountryScheduledPage({
+  country: 'Singapore', countrySlug: 'singapore', tzShort: 'SGT',
+  cities: 'Singapore CBD, Jurong, and one-north',
+  marketScheduled: 'The Singapore Workday market in May 2026 is the APAC hub — regional shared-service centres, MAS-regulated finance, and multinationals running multi-country HCM.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled', href: '/workday-interview-scheduled/' },
+  scenarios: [
+    'Experienced HCM consultant applying to Singapore roles with no response — keyword targeting issue',
+    'Workday Integration Developer not surfacing in Singapore recruiter searches — PECI/Studio positioning',
+    'Consultant targeting Singapore regional HQs — multi-country APAC HCM positioning',
+    'Overseas Workday professional targeting Singapore roles — Employment Pass and positioning strategy',
+    'Workday Financials specialist positioning for MAS-regulated finance roles',
+    'Senior consultant targeting Singapore banks, MNCs, or direct enterprise roles',
+  ],
+  insightPoints: [
+    'Singapore Workday recruiter keyword mapping — exact terms used by SG staffing firms in May 2026',
+    '2026R1 and multi-country HCM keywords that Singapore employers are actively searching for',
+    'LinkedIn positioning for Singapore and APAC Workday recruiter visibility',
+    'Active outreach to Singapore Workday staffing firms — Robert Walters, Michael Page, Randstad',
+    'Singapore job board optimization — LinkedIn, JobStreet, and MyCareersFuture.sg',
+  ],
+});
+
+export const workdayInterviewScheduledUAE = workdayCountryScheduledPage({
+  country: 'UAE', countrySlug: 'uae', tzShort: 'GST',
+  cities: 'Dubai and Abu Dhabi',
+  marketScheduled: 'The UAE Workday market in May 2026 is growing across banking, aviation, hospitality, and government, with WPS, gratuity, and Emiratization (Nafis) requirements.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled Saudi Arabia', href: '/workday-interview-scheduled-saudi-arabia/' },
+  scenarios: [
+    'Experienced HCM consultant applying to UAE roles with no response — keyword targeting issue',
+    'Workday Payroll specialist not surfacing in UAE recruiter searches — WPS/gratuity positioning',
+    'Consultant targeting Dubai/Abu Dhabi enterprise — Emiratization-aware positioning',
+    'Overseas Workday professional targeting UAE roles — visa and geographic positioning strategy',
+    'Workday Integration Developer positioning for UAE banking and aviation roles',
+    'Senior consultant targeting Emirates, UAE banks, or direct enterprise roles',
+  ],
+  insightPoints: [
+    'UAE Workday recruiter keyword mapping — exact terms used by Gulf staffing firms in May 2026',
+    '2026R1 and WPS/Emiratization keywords that UAE employers are actively searching for',
+    'LinkedIn positioning for UAE and Gulf Workday recruiter visibility',
+    'Active outreach to UAE Workday staffing firms — Michael Page, Robert Half, Hays Gulf',
+    'UAE job board optimization — LinkedIn, Bayt, and Naukrigulf',
+  ],
+});
+
+export const workdayInterviewScheduledSaudiArabia = workdayCountryScheduledPage({
+  country: 'Saudi Arabia', countrySlug: 'saudi-arabia', tzShort: 'AST',
+  cities: 'Riyadh, Jeddah, and Dammam',
+  marketScheduled: 'The Saudi Workday market in May 2026 is expanding rapidly with Vision 2030 — NEOM, PIF entities, banks, and government — with GOSI, Saudization/Nitaqat, and Hijri-calendar payroll requirements.',
+  regionalScheduled: { label: 'Get Workday interviews scheduled UAE', href: '/workday-interview-scheduled-uae/' },
+  scenarios: [
+    'Experienced HCM consultant applying to Saudi roles with no response — keyword targeting issue',
+    'Workday Payroll specialist not surfacing in KSA recruiter searches — GOSI/Nitaqat positioning',
+    'Consultant targeting Riyadh/Jeddah enterprise and Vision 2030 programmes — positioning strategy',
+    'Overseas Workday professional targeting Saudi roles — visa and geographic positioning strategy',
+    'Workday Integration Developer positioning for Saudi banking and government roles',
+    'Senior consultant targeting PIF entities, Saudi banks, or direct enterprise roles',
+  ],
+  insightPoints: [
+    'Saudi Workday recruiter keyword mapping — exact terms used by KSA staffing firms in May 2026',
+    '2026R1 and GOSI/Saudization keywords that Saudi employers are actively searching for',
+    'LinkedIn positioning for Saudi Arabia and Gulf Workday recruiter visibility',
+    'Active outreach to Saudi Workday staffing firms — Michael Page, Hays Gulf, Cooper Fitch',
+    'Saudi job board optimization — LinkedIn, Bayt, and Naukrigulf',
+  ],
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+// WORKDAY CITY JOB SUPPORT PAGES (Phases 3–9) — factory
+// ═══════════════════════════════════════════════════════════════════════════
+
+interface WorkdayRegionConfig {
+  country: string;
+  countryJobHref: string;
+  proxyHref: string;
+  proxyLabel: string;
+  scheduledHref: string;
+  scheduledLabel: string;
+  generalSupport: LandingRelatedLink;
+  tzNote: string;
+}
+
+interface WorkdayCityOpts {
+  slug: string;
+  city: string;
+  area: string;
+  localAngle: string;
+  useCases: string[];
+  region: WorkdayRegionConfig;
+  geoExtra?: LandingRelatedLink;
+}
+
+function workdayCityPage(o: WorkdayCityOpts): LandingPageConfig {
+  const r = o.region;
+  return {
+    slug: o.slug,
+    title: `${o.city} Workday Job Support — Real-Time HCM, Finance & Integration Help`,
+    description: `Workday job support in ${o.city}, ${o.area}. Real-time help with tenant configuration, HCM, Payroll, Integrations, Reporting, Security, and 2026R1 release issues — plus Workday proxy interview support for ${o.city} roles. Same-day start. Updated for May 2026.`,
+    canonical: `${BASE_URL}/${o.slug}/`,
+    keywords: [
+      `Workday job support ${o.city}`, `Workday support ${o.city}`, `Workday consultant help ${o.city}`,
+      `Workday HCM support ${o.city}`, `Workday proxy interview ${o.city}`, `real-time Workday support ${o.city}`,
+    ],
+    h1: `Workday Job Support in ${o.city} — Real-Time Expert Help for HCM, Finance & Integrations`,
+    tagline: `Live Workday job support for ${o.city} consultants and employees — tenant issues, business process configuration, integration failures, payroll, reporting, security, and 2026R1 release regression support.`,
+    heroEyebrow: `Workday Job Support — ${o.city}, ${o.area}`,
+    painIntro: `Stuck on a Workday issue in ${o.city}? A broken business process after the 2026R1 update, a failing EIB or Studio integration, payroll errors before a deadline, or a production ticket with no resolution? You need a Workday expert — not a ticket queue.`,
+    heroVariant: `${o.localAngle} Our in-house Workday experts join your session and provide hands-on real-time help — HCM, Financials, Payroll, Integrations (EIB, Core Connector, Studio, REST/SOAP), Adaptive Planning, Reporting, Prism Analytics, and Security. ${r.tzNote} Updated for Workday 2026R1 release impact and current ${r.country} enterprise market demand.`,
+    geoLine: `Supporting Workday consultants and employees in ${o.city} and across ${r.country}.`,
+    timezoneNote: r.tzNote,
+    techSnippet: `${o.city} Workday coverage: HCM, HRIS, Financial Management, Payroll, Integrations (EIB/Core Connector/Studio/PECI/REST/SOAP), Adaptive Planning, Recruiting, Reporting, Prism Analytics, Security, and Workday 2026R1.`,
+    highlights: workdayHighlights,
+    faqs: workdayJobSupportFaqs(`${o.city} Workday`),
+    useCasesSection: {
+      title: `${o.city} Workday Situations We Help Resolve`,
+      cases: o.useCases,
+    },
+    proxySection: {
+      title: `Workday Proxy Interview Support for ${o.city} Roles`,
+      intro: `Workday consultant interviews for ${o.city} employers require deep module knowledge and real implementation experience. Our experts provide real-time, discreet guidance for ${o.city} Workday interviews — HCM, Integration, Financials, Payroll, Reporting, and Security.`,
+      points: [
+        `Real-time guidance during Workday HCM and Integration interviews for ${o.city} employers`,
+        'Support for Workday Financials, Payroll, and Reporting specialist interviews',
+        'Expert coaching through scenario-based configuration walkthroughs and tenant design questions',
+        'Coverage for Workday 2026R1 release topics now common in interviews',
+        `Mock Workday interviews calibrated to ${o.city} consulting and direct-client hiring formats`,
+      ],
+    },
+    bottomCTAHeading: `Need Real-Time Workday Support in ${o.city}? Get Expert Help Now`,
+    bottomCTABody: `Same-day Workday job support and proxy interview help for ${o.city} — tenant issues, integrations, payroll, reporting, security, or live interview guidance. Contact us on WhatsApp now.`,
+    relatedLinks: {
+      geoLinks: [
+        { label: `Workday job support ${r.country}`, href: r.countryJobHref },
+        { label: r.proxyLabel, href: r.proxyHref },
+      ],
+      techLinks: [
+        { label: 'Workday job support hub', href: '/workday-job-support/' },
+        { label: 'Workday HCM job support', href: '/workday-hcm-job-support/' },
+      ],
+      problemLink: { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+      proxyLink: { label: r.scheduledLabel, href: r.scheduledHref },
+      blogLink: { label: 'Read IT job support articles', href: '/blog/' },
+      additionalLinks: [
+        { label: 'Get Workday interviews scheduled', href: '/workday-interview-scheduled/' },
+        r.generalSupport,
+        { label: 'Job application & candidate marketing', href: '/job-application-candidate-marketing/' },
+        ...(o.geoExtra ? [o.geoExtra] : []),
+      ],
+    },
+    lastmod: LASTMOD,
+  };
+}
+
+// ─── Region configs ──────────────────────────────────────────────────────────
+
+const WD_REGION_USA: WorkdayRegionConfig = {
+  country: 'USA', countryJobHref: '/workday-job-support-usa/',
+  proxyHref: '/workday-proxy-interview-usa/', proxyLabel: 'Workday proxy interview USA',
+  scheduledHref: '/workday-interview-scheduled-usa/', scheduledLabel: 'Get Workday interviews scheduled USA',
+  generalSupport: { label: 'IT job support USA', href: '/job-support-usa/' },
+  tzNote: 'Available across all US time zones (EST, CST, MST, PST).',
+};
+
+// ─── Phase 3: USA city pages ─────────────────────────────────────────────────
+
+export const newYorkWorkdayJobSupport = workdayCityPage({
+  slug: 'new-york-workday-job-support', city: 'New York', area: 'NY',
+  localAngle: 'New York runs some of the largest Workday tenants in the world — Wall Street banks, asset managers, media, advertising, and healthcare systems all depend on Workday HCM, Financials, and Payroll.',
+  useCases: [
+    'Wall Street firm Workday Financials issue — multi-entity GL, intercompany, or period close before month-end',
+    'NYC enterprise Workday HCM business process broken after the 2026R1 tenant update',
+    'Media or advertising firm Workday Payroll error — off-cycle, bonus, or commission calculation issue',
+    'NYC healthcare system Workday Integration failure — EIB/Studio to a benefits or pension provider',
+    'New York Workday Reporting deadline — Advanced/Matrix reports, calculated fields, or a Prism dashboard',
+  ],
+  region: WD_REGION_USA,
+  geoExtra: { label: 'Workday job support Jersey City', href: '/jersey-city-workday-job-support/' },
+});
+
+export const dallasWorkdayJobSupport = workdayCityPage({
+  slug: 'dallas-workday-job-support', city: 'Dallas', area: 'TX',
+  localAngle: 'Dallas–Fort Worth is a major Workday market — telecom, airlines, insurance, and healthcare enterprises run large Workday HCM, Payroll, and Financials deployments.',
+  useCases: [
+    'Dallas telecom or airline Workday HCM business process or staffing configuration issue',
+    'DFW insurance firm Workday Payroll calculation error before a pay run',
+    'Dallas enterprise Workday Integration failure — Core Connector to a benefits or payroll vendor',
+    'Texas healthcare system Workday Financials period close or procurement issue',
+    'Dallas Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_USA,
+  geoExtra: { label: 'Workday job support Houston', href: '/houston-workday-job-support/' },
+});
+
+export const chicagoWorkdayJobSupport = workdayCityPage({
+  slug: 'chicago-workday-job-support', city: 'Chicago', area: 'IL',
+  localAngle: 'Chicago is a Workday hub for insurance, manufacturing, finance, and healthcare enterprises running complex HCM, Finance, and Payroll tenants.',
+  useCases: [
+    'Chicago insurance firm Workday HCM or Benefits configuration issue before open enrollment',
+    'Manufacturing enterprise Workday Financials period close or procurement issue',
+    'Chicago Workday Payroll off-cycle or garnishment calculation error',
+    'Chicago enterprise Workday Integration failure — EIB/Studio to a third-party vendor',
+    'Chicago Workday Reporting / Prism Analytics deadline — Advanced or Composite reports',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const atlantaWorkdayJobSupport = workdayCityPage({
+  slug: 'atlanta-workday-job-support', city: 'Atlanta', area: 'GA',
+  localAngle: 'Atlanta hosts Fortune 500 headquarters, fintech, and healthcare systems — many running Workday HCM, Financials, and Payroll at scale.',
+  useCases: [
+    'Atlanta Fortune 500 Workday HCM business process broken after the 2026R1 update',
+    'Atlanta fintech Workday Financials issue — GL, AP/AR, or revenue recognition',
+    'Atlanta healthcare system Workday Payroll or Time Tracking calculation error',
+    'Atlanta enterprise Workday Integration failure — Core Connector or Studio',
+    'Atlanta Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+  geoExtra: { label: 'Workday job support Charlotte', href: '/charlotte-workday-job-support/' },
+});
+
+export const houstonWorkdayJobSupport = workdayCityPage({
+  slug: 'houston-workday-job-support', city: 'Houston', area: 'TX',
+  localAngle: 'Houston’s energy, healthcare, and industrial enterprises run large Workday Financials, HCM, and Payroll tenants with complex cost and project structures.',
+  useCases: [
+    'Houston energy enterprise Workday Financials issue — project costing, GL, or close cycle',
+    'Houston healthcare system Workday HCM or staffing configuration issue',
+    'Houston Workday Payroll calculation or off-cycle error before a pay run',
+    'Houston enterprise Workday Integration failure — EIB/Studio to a vendor system',
+    'Houston Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const austinWorkdayJobSupport = workdayCityPage({
+  slug: 'austin-workday-job-support', city: 'Austin', area: 'TX',
+  localAngle: 'Austin’s tech companies, semiconductor firms, and fast-growing enterprises run modern Workday HCM, Financials, and Adaptive Planning environments.',
+  useCases: [
+    'Austin tech company Workday HCM business process or Skills Cloud configuration issue',
+    'Austin enterprise Workday Adaptive Planning model error or forecast reconciliation issue',
+    'Austin Workday Financials issue — GL, intercompany, or period close',
+    'Austin Workday Integration failure — Core Connector, Studio, or REST/SOAP',
+    'Austin Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const charlotteWorkdayJobSupport = workdayCityPage({
+  slug: 'charlotte-workday-job-support', city: 'Charlotte', area: 'NC',
+  localAngle: 'Charlotte is a major banking and financial-services centre — Bank of America, Wells Fargo, Truist, and insurers run large Workday HCM, Financials, and Payroll tenants.',
+  useCases: [
+    'Charlotte bank Workday Financials issue — multi-entity GL, intercompany, or close cycle',
+    'Charlotte financial-services Workday Security role or segregation-of-duties issue',
+    'Charlotte Workday Payroll calculation or off-cycle error before a pay run',
+    'Charlotte enterprise Workday Integration failure — Core Connector or Studio',
+    'Charlotte Workday Reporting / Prism Analytics deadline — Advanced or Composite reports',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const phoenixWorkdayJobSupport = workdayCityPage({
+  slug: 'phoenix-workday-job-support', city: 'Phoenix', area: 'AZ',
+  localAngle: 'Phoenix’s healthcare, fintech, insurance, and semiconductor enterprises run Workday HCM, Financials, and Payroll across multi-state operations.',
+  useCases: [
+    'Phoenix healthcare system Workday HCM or staffing configuration issue',
+    'Phoenix fintech Workday Financials issue — GL, AP/AR, or revenue recognition',
+    'Phoenix Workday Payroll multi-state calculation or tax configuration error',
+    'Phoenix enterprise Workday Integration failure — EIB/Studio to a vendor system',
+    'Phoenix Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const seattleWorkdayJobSupport = workdayCityPage({
+  slug: 'seattle-workday-job-support', city: 'Seattle', area: 'WA',
+  localAngle: 'Seattle’s technology, aerospace, and retail enterprises run advanced Workday HCM, Skills Cloud, Adaptive Planning, and Financials environments.',
+  useCases: [
+    'Seattle tech company Workday HCM, Skills Cloud, or Talent configuration issue',
+    'Seattle enterprise Workday Adaptive Planning model or workforce-planning error',
+    'Seattle Workday Financials issue — GL, intercompany, or period close',
+    'Seattle Workday Integration failure — Core Connector, Studio, or Workday Extend',
+    'Seattle Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+  geoExtra: { label: 'Workday job support San Francisco', href: '/san-francisco-workday-job-support/' },
+});
+
+export const sanFranciscoWorkdayJobSupport = workdayCityPage({
+  slug: 'san-francisco-workday-job-support', city: 'San Francisco', area: 'CA',
+  localAngle: 'San Francisco and the Bay Area run some of the most advanced Workday tenants — tech companies, fintech, and healthcare using Skills Cloud, Workday AI, and Extend.',
+  useCases: [
+    'SF tech company Workday HCM, Skills Cloud, or Workday AI workflow configuration issue',
+    'Bay Area fintech Workday Financials issue — GL, revenue recognition, or close cycle',
+    'SF Workday Payroll or equity/RSU-related earnings configuration error',
+    'SF enterprise Workday Integration failure — Workday Extend, Core Connector, or Studio',
+    'SF Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+  geoExtra: { label: 'Workday job support San Jose', href: '/san-jose-workday-job-support/' },
+});
+
+export const sanJoseWorkdayJobSupport = workdayCityPage({
+  slug: 'san-jose-workday-job-support', city: 'San Jose', area: 'CA',
+  localAngle: 'San Jose and Silicon Valley enterprises run modern Workday HCM, Skills Cloud, Adaptive Planning, and Financials with heavy integration and equity-compensation needs.',
+  useCases: [
+    'Silicon Valley tech company Workday HCM, Skills Cloud, or Talent configuration issue',
+    'San Jose Workday Compensation issue — equity, RSU, or bonus plan configuration',
+    'San Jose Workday Adaptive Planning model or headcount-planning error',
+    'San Jose enterprise Workday Integration failure — Workday Extend, Core Connector, or Studio',
+    'San Jose Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const losAngelesWorkdayJobSupport = workdayCityPage({
+  slug: 'los-angeles-workday-job-support', city: 'Los Angeles', area: 'CA',
+  localAngle: 'Los Angeles entertainment, media, healthcare, and aerospace enterprises run large Workday HCM, Payroll, and Financials tenants with complex union and project structures.',
+  useCases: [
+    'LA entertainment/media Workday Payroll issue — union, residual, or off-cycle calculation',
+    'LA enterprise Workday HCM business process broken after the 2026R1 update',
+    'LA healthcare system Workday Financials period close or procurement issue',
+    'LA Workday Integration failure — EIB/Studio to a benefits or payroll vendor',
+    'LA Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const bostonWorkdayJobSupport = workdayCityPage({
+  slug: 'boston-workday-job-support', city: 'Boston', area: 'MA',
+  localAngle: 'Boston’s biotech, healthcare, higher-education, and financial-services enterprises run Workday HCM, Financials, Grants, and Payroll tenants.',
+  useCases: [
+    'Boston biotech or higher-ed Workday Financials issue — grants, GL, or period close',
+    'Boston healthcare system Workday HCM or staffing configuration issue',
+    'Boston Workday Payroll calculation or off-cycle error before a pay run',
+    'Boston enterprise Workday Integration failure — Core Connector or Studio',
+    'Boston Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const washingtonDcWorkdayJobSupport = workdayCityPage({
+  slug: 'washington-dc-workday-job-support', city: 'Washington DC', area: 'DC',
+  localAngle: 'Washington DC’s federal contractors, nonprofits, associations, and public-sector enterprises run Workday HCM, Financials, and Grants with strict compliance and audit needs.',
+  useCases: [
+    'DC federal contractor Workday Financials issue — project costing, grants, or close cycle',
+    'DC nonprofit or association Workday HCM or Benefits configuration issue',
+    'DC Workday Security role or audit/segregation-of-duties configuration issue',
+    'DC enterprise Workday Integration failure — Core Connector or Studio',
+    'DC Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_USA,
+});
+
+export const jerseyCityWorkdayJobSupport = workdayCityPage({
+  slug: 'jersey-city-workday-job-support', city: 'Jersey City', area: 'NJ',
+  localAngle: 'Jersey City and northern New Jersey host Wall-Street-adjacent banks, asset managers, and pharma enterprises running large Workday Financials, HCM, and Payroll tenants.',
+  useCases: [
+    'Jersey City bank Workday Financials issue — multi-entity GL, intercompany, or close cycle',
+    'NJ pharma enterprise Workday HCM or staffing configuration issue',
+    'Jersey City Workday Payroll calculation or off-cycle error before a pay run',
+    'NJ enterprise Workday Integration failure — Core Connector or Studio',
+    'Jersey City Workday Reporting / Prism Analytics deadline — Advanced or Composite reports',
+  ],
+  region: WD_REGION_USA,
+  geoExtra: { label: 'Workday job support New York', href: '/new-york-workday-job-support/' },
+});
+
+export const tampaWorkdayJobSupport = workdayCityPage({
+  slug: 'tampa-workday-job-support', city: 'Tampa', area: 'FL',
+  localAngle: 'Tampa’s financial-services, healthcare, and insurance enterprises run Workday HCM, Financials, and Payroll across multi-state operations.',
+  useCases: [
+    'Tampa financial-services Workday Financials issue — GL, AP/AR, or close cycle',
+    'Tampa healthcare system Workday HCM or staffing configuration issue',
+    'Tampa Workday Payroll multi-state calculation or tax configuration error',
+    'Tampa enterprise Workday Integration failure — EIB/Studio to a vendor system',
+    'Tampa Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_USA,
+});
+
+// ─── Phase 4: Canada city pages ──────────────────────────────────────────────
+
+const WD_REGION_CANADA: WorkdayRegionConfig = {
+  country: 'Canada', countryJobHref: '/workday-job-support-canada/',
+  proxyHref: '/workday-proxy-interview-canada/', proxyLabel: 'Workday proxy interview Canada',
+  scheduledHref: '/workday-interview-scheduled-canada/', scheduledLabel: 'Get Workday interviews scheduled Canada',
+  generalSupport: { label: 'IT job support Canada', href: '/job-support-canada/' },
+  tzNote: 'Aligned with Canadian Eastern, Central, Mountain, and Pacific working hours.',
+};
+
+export const torontoWorkdayJobSupport = workdayCityPage({
+  slug: 'toronto-workday-job-support', city: 'Toronto', area: 'Ontario',
+  localAngle: 'Toronto is Canada’s largest Workday market — the big banks (RBC, TD, Scotiabank, BMO, CIBC), insurers (Sun Life, Manulife), and enterprises run major Workday HCM, Financials, and Canada Payroll tenants.',
+  useCases: [
+    'Toronto bank Workday Financials issue — multi-entity GL, intercompany, or close cycle',
+    'Workday Payroll for Canada T4/ROE error before year-end at a Toronto enterprise',
+    'Toronto enterprise Workday HCM business process broken after the 2026R1 update',
+    'Toronto Workday Integration failure — EIB/Studio to a benefits or pension provider',
+    'Toronto Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_CANADA,
+  geoExtra: { label: 'Workday job support Ottawa', href: '/ottawa-workday-job-support/' },
+});
+
+export const vancouverWorkdayJobSupport = workdayCityPage({
+  slug: 'vancouver-workday-job-support', city: 'Vancouver', area: 'British Columbia',
+  localAngle: 'Vancouver’s technology, film, mining, and public-sector enterprises run Workday HCM, Financials, and Canada Payroll with BC-specific compliance.',
+  useCases: [
+    'Vancouver enterprise Workday HCM or staffing configuration issue',
+    'Workday Payroll for Canada — BC provincial tax or ROE error before a pay run',
+    'Vancouver tech company Workday Integration failure — Core Connector or Studio',
+    'Vancouver Workday Financials period close or procurement issue',
+    'Vancouver Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_CANADA,
+});
+
+export const calgaryWorkdayJobSupport = workdayCityPage({
+  slug: 'calgary-workday-job-support', city: 'Calgary', area: 'Alberta',
+  localAngle: 'Calgary’s energy and enterprise sector runs large Workday Financials, HCM, and Canada Payroll tenants with complex cost and project structures.',
+  useCases: [
+    'Calgary energy enterprise Workday Financials issue — project costing, GL, or close cycle',
+    'Workday Payroll for Canada — Alberta provincial tax or T4 error before year-end',
+    'Calgary enterprise Workday HCM business process or staffing configuration issue',
+    'Calgary Workday Integration failure — EIB/Studio to a vendor system',
+    'Calgary Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_CANADA,
+});
+
+export const montrealWorkdayJobSupport = workdayCityPage({
+  slug: 'montreal-workday-job-support', city: 'Montreal', area: 'Quebec',
+  localAngle: 'Montreal enterprises run Workday HCM, Financials, and Canada Payroll with Quebec-specific compliance — provincial tax, RL-1, and bilingual operations.',
+  useCases: [
+    'Montreal enterprise Workday Payroll — Quebec provincial tax, RL-1, or QPP configuration error',
+    'Montreal Workday HCM business process or bilingual configuration issue',
+    'Montreal enterprise Workday Financials period close or procurement issue',
+    'Montreal Workday Integration failure — EIB/Studio to a benefits or pension provider',
+    'Montreal Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_CANADA,
+});
+
+export const ottawaWorkdayJobSupport = workdayCityPage({
+  slug: 'ottawa-workday-job-support', city: 'Ottawa', area: 'Ontario',
+  localAngle: 'Ottawa’s public-sector, technology, and enterprise organizations run Workday HCM, Financials, and Canada Payroll with strict compliance and audit needs.',
+  useCases: [
+    'Ottawa public-sector Workday Financials issue — GL, procurement, or close cycle',
+    'Workday Payroll for Canada — Ontario provincial tax or ROE error before a pay run',
+    'Ottawa enterprise Workday HCM or staffing configuration issue',
+    'Ottawa Workday Security role or audit/segregation-of-duties configuration issue',
+    'Ottawa Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_CANADA,
+  geoExtra: { label: 'Workday job support Toronto', href: '/toronto-workday-job-support/' },
+});
+
+// ─── Phase 5: UK city pages ──────────────────────────────────────────────────
+
+const WD_REGION_UK: WorkdayRegionConfig = {
+  country: 'UK', countryJobHref: '/workday-job-support-uk/',
+  proxyHref: '/workday-proxy-interview-uk/', proxyLabel: 'Workday proxy interview UK',
+  scheduledHref: '/workday-interview-scheduled-uk/', scheduledLabel: 'Get Workday interviews scheduled UK',
+  generalSupport: { label: 'IT job support UK', href: '/job-support-uk/' },
+  tzNote: 'Aligned with UK working hours (GMT/BST).',
+};
+
+export const londonWorkdayJobSupport = workdayCityPage({
+  slug: 'london-workday-job-support', city: 'London', area: 'England',
+  localAngle: 'London is the UK’s largest Workday market — financial services, professional services, retail, and media enterprises run major Workday HCM, Financials, and UK Payroll tenants.',
+  useCases: [
+    'London financial-services Workday Financials issue — multi-entity GL, intercompany, or close cycle',
+    'UK Payroll error — PAYE, NIC, RTI, or pension auto-enrolment before a London pay run',
+    'London enterprise Workday HCM business process broken after the 2026R1 update',
+    'London Workday Integration failure — EIB/Studio to a benefits or pension provider',
+    'London Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_UK,
+  geoExtra: { label: 'Workday job support Manchester', href: '/manchester-workday-job-support/' },
+});
+
+export const manchesterWorkdayJobSupport = workdayCityPage({
+  slug: 'manchester-workday-job-support', city: 'Manchester', area: 'England',
+  localAngle: 'Manchester’s growing technology, financial-services, and enterprise sector runs Workday HCM, Financials, and UK Payroll across the North West.',
+  useCases: [
+    'Manchester enterprise Workday HCM or staffing configuration issue',
+    'UK Payroll error — PAYE, NIC, or RTI before a Manchester pay run',
+    'Manchester Workday Financials period close or procurement issue',
+    'Manchester Workday Integration failure — Core Connector or Studio',
+    'Manchester Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_UK,
+});
+
+export const birminghamWorkdayJobSupport = workdayCityPage({
+  slug: 'birmingham-workday-job-support', city: 'Birmingham', area: 'England',
+  localAngle: 'Birmingham and the Midlands run Workday HCM, Financials, and UK Payroll across manufacturing, professional services, and public-sector enterprises.',
+  useCases: [
+    'Birmingham enterprise Workday HCM business process or staffing configuration issue',
+    'UK Payroll error — PAYE, NIC, RTI, or pension auto-enrolment before a pay run',
+    'Birmingham Workday Financials period close or procurement issue',
+    'Birmingham Workday Integration failure — EIB/Studio to a vendor system',
+    'Birmingham Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_UK,
+});
+
+export const leedsWorkdayJobSupport = workdayCityPage({
+  slug: 'leeds-workday-job-support', city: 'Leeds', area: 'England',
+  localAngle: 'Leeds is a UK financial-services and digital hub — banks, insurers, and enterprises run Workday HCM, Financials, and UK Payroll tenants.',
+  useCases: [
+    'Leeds financial-services Workday Financials issue — GL, AP/AR, or close cycle',
+    'UK Payroll error — PAYE, NIC, or RTI before a Leeds pay run',
+    'Leeds enterprise Workday HCM or staffing configuration issue',
+    'Leeds Workday Integration failure — Core Connector or Studio',
+    'Leeds Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_UK,
+});
+
+export const glasgowWorkdayJobSupport = workdayCityPage({
+  slug: 'glasgow-workday-job-support', city: 'Glasgow', area: 'Scotland',
+  localAngle: 'Glasgow’s financial-services, public-sector, and enterprise organizations run Workday HCM, Financials, and UK Payroll across Scotland.',
+  useCases: [
+    'Glasgow financial-services Workday Financials issue — GL, intercompany, or close cycle',
+    'UK Payroll error — PAYE, NIC, RTI, or Scottish income tax before a pay run',
+    'Glasgow enterprise Workday HCM or staffing configuration issue',
+    'Glasgow Workday Integration failure — EIB/Studio to a benefits or pension provider',
+    'Glasgow Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_UK,
+});
+
+// ─── Phase 6: Ireland city pages ─────────────────────────────────────────────
+
+const WD_REGION_IRELAND: WorkdayRegionConfig = {
+  country: 'Ireland', countryJobHref: '/workday-job-support-ireland/',
+  proxyHref: '/workday-proxy-interview-ireland/', proxyLabel: 'Workday proxy interview Ireland',
+  scheduledHref: '/workday-interview-scheduled-ireland/', scheduledLabel: 'Get Workday interviews scheduled Ireland',
+  generalSupport: { label: 'IT job support Ireland', href: '/job-support-ireland/' },
+  tzNote: 'Aligned with Irish working hours (IST/GMT).',
+};
+
+export const dublinWorkdayJobSupport = workdayCityPage({
+  slug: 'dublin-workday-job-support', city: 'Dublin', area: 'Ireland',
+  localAngle: 'Dublin is a premier Workday city — Workday’s own EMEA HQ, plus Google, Meta, LinkedIn, and dozens of multinational shared-service centres run Workday HCM, Financials, and multi-country Payroll.',
+  useCases: [
+    'Dublin multinational Workday HCM business process or multi-country configuration issue',
+    'Dublin shared-service centre Workday Payroll or multi-country integration error',
+    'Dublin enterprise Workday Financials period close or intercompany issue',
+    'Dublin Workday Integration failure — EIB/Studio/Core Connector to a vendor system',
+    'Dublin Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_IRELAND,
+  geoExtra: { label: 'Workday job support Cork', href: '/cork-workday-job-support/' },
+});
+
+export const corkWorkdayJobSupport = workdayCityPage({
+  slug: 'cork-workday-job-support', city: 'Cork', area: 'Ireland',
+  localAngle: 'Cork hosts major pharma, technology, and shared-service operations running Workday HCM, Financials, and multi-country Payroll.',
+  useCases: [
+    'Cork pharma or tech enterprise Workday HCM or staffing configuration issue',
+    'Cork shared-service centre Workday Payroll or multi-country integration error',
+    'Cork enterprise Workday Financials period close or procurement issue',
+    'Cork Workday Integration failure — EIB/Studio to a vendor system',
+    'Cork Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_IRELAND,
+});
+
+export const galwayWorkdayJobSupport = workdayCityPage({
+  slug: 'galway-workday-job-support', city: 'Galway', area: 'Ireland',
+  localAngle: 'Galway’s medtech, technology, and shared-service enterprises run Workday HCM, Financials, and multi-country Payroll.',
+  useCases: [
+    'Galway medtech or tech enterprise Workday HCM or staffing configuration issue',
+    'Galway shared-service centre Workday Payroll or multi-country integration error',
+    'Galway enterprise Workday Financials period close or procurement issue',
+    'Galway Workday Integration failure — EIB/Studio to a vendor system',
+    'Galway Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_IRELAND,
+  geoExtra: { label: 'Workday job support Dublin', href: '/dublin-workday-job-support/' },
+});
+
+// ─── Phase 7: Europe city pages ──────────────────────────────────────────────
+
+const WD_REGION_GERMANY: WorkdayRegionConfig = {
+  country: 'Germany', countryJobHref: '/workday-job-support-germany/',
+  proxyHref: '/workday-proxy-interview-germany/', proxyLabel: 'Workday proxy interview Germany',
+  scheduledHref: '/workday-interview-scheduled-germany/', scheduledLabel: 'Get Workday interviews scheduled Germany',
+  generalSupport: { label: 'IT job support Germany', href: '/job-support-germany/' },
+  tzNote: 'Aligned with Central European Time (CET/CEST) working hours.',
+};
+
+const WD_REGION_NETHERLANDS: WorkdayRegionConfig = {
+  country: 'Netherlands', countryJobHref: '/workday-job-support-netherlands/',
+  proxyHref: '/workday-proxy-interview-netherlands/', proxyLabel: 'Workday proxy interview Netherlands',
+  scheduledHref: '/workday-interview-scheduled-netherlands/', scheduledLabel: 'Get Workday interviews scheduled Netherlands',
+  generalSupport: { label: 'IT job support Netherlands', href: '/job-support-netherlands/' },
+  tzNote: 'Aligned with Central European Time (CET/CEST) working hours.',
+};
+
+const WD_REGION_FRANCE: WorkdayRegionConfig = {
+  country: 'France', countryJobHref: '/workday-job-support-france/',
+  proxyHref: '/workday-proxy-interview-france/', proxyLabel: 'Workday proxy interview France',
+  scheduledHref: '/workday-interview-scheduled-france/', scheduledLabel: 'Get Workday interviews scheduled France',
+  generalSupport: { label: 'IT job support Europe', href: '/job-support-europe/' },
+  tzNote: 'Aligned with Central European Time (CET/CEST) working hours.',
+};
+
+const WD_REGION_SWEDEN: WorkdayRegionConfig = {
+  country: 'Sweden', countryJobHref: '/workday-job-support-sweden/',
+  proxyHref: '/workday-proxy-interview-sweden/', proxyLabel: 'Workday proxy interview Sweden',
+  scheduledHref: '/workday-interview-scheduled-sweden/', scheduledLabel: 'Get Workday interviews scheduled Sweden',
+  generalSupport: { label: 'IT job support Sweden', href: '/job-support-sweden/' },
+  tzNote: 'Aligned with Central European Time (CET/CEST) working hours.',
+};
+
+const WD_REGION_SWITZERLAND: WorkdayRegionConfig = {
+  country: 'Switzerland', countryJobHref: '/workday-job-support-switzerland/',
+  proxyHref: '/workday-proxy-interview-switzerland/', proxyLabel: 'Workday proxy interview Switzerland',
+  scheduledHref: '/workday-interview-scheduled-switzerland/', scheduledLabel: 'Get Workday interviews scheduled Switzerland',
+  generalSupport: { label: 'IT job support Switzerland', href: '/job-support-switzerland/' },
+  tzNote: 'Aligned with Central European Time (CET/CEST) working hours.',
+};
+
+export const berlinWorkdayJobSupport = workdayCityPage({
+  slug: 'berlin-workday-job-support', city: 'Berlin', area: 'Germany',
+  localAngle: 'Berlin’s technology, startup, and enterprise sector runs modern Workday HCM, Financials, and German Payroll with works-council-aware configuration.',
+  useCases: [
+    'Berlin enterprise Workday HCM business process — works-council (Betriebsrat) aware configuration issue',
+    'Berlin Workday Payroll — German social-insurance (Krankenkasse, pension) configuration error',
+    'Berlin tech company Workday Integration failure — Studio, Core Connector, or REST/SOAP',
+    'Berlin enterprise Workday Financials period close or intercompany issue',
+    'Berlin Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_GERMANY,
+  geoExtra: { label: 'Workday job support Munich', href: '/munich-workday-job-support/' },
+});
+
+export const munichWorkdayJobSupport = workdayCityPage({
+  slug: 'munich-workday-job-support', city: 'Munich', area: 'Germany',
+  localAngle: 'Munich’s automotive, insurance, and technology enterprises run large Workday HCM, Financials, and German Payroll tenants — many migrating from SAP HR.',
+  useCases: [
+    'Munich enterprise SAP-to-Workday migration — data conversion, parallel run, or cutover issue',
+    'Munich Workday Payroll — German social-insurance or works-council-aware configuration error',
+    'Munich automotive/insurance Workday Financials period close or intercompany issue',
+    'Munich Workday Integration failure — Studio, Core Connector, PECI, or REST/SOAP',
+    'Munich Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_GERMANY,
+});
+
+export const frankfurtWorkdayJobSupport = workdayCityPage({
+  slug: 'frankfurt-workday-job-support', city: 'Frankfurt', area: 'Germany',
+  localAngle: 'Frankfurt’s banking and financial-services sector runs Workday HCM, Financials, and German Payroll with strict audit and compliance needs.',
+  useCases: [
+    'Frankfurt bank Workday Financials issue — multi-entity GL, intercompany, or close cycle',
+    'Frankfurt Workday Security role or audit/segregation-of-duties configuration issue',
+    'Frankfurt Workday Payroll — German social-insurance configuration error',
+    'Frankfurt Workday Integration failure — Studio, Core Connector, or REST/SOAP',
+    'Frankfurt Workday Reporting / Prism Analytics deadline — Advanced or Composite reports',
+  ],
+  region: WD_REGION_GERMANY,
+});
+
+export const hamburgWorkdayJobSupport = workdayCityPage({
+  slug: 'hamburg-workday-job-support', city: 'Hamburg', area: 'Germany',
+  localAngle: 'Hamburg’s logistics, media, and enterprise organizations run Workday HCM, Financials, and German Payroll across multi-entity operations.',
+  useCases: [
+    'Hamburg enterprise Workday HCM business process or works-council-aware configuration issue',
+    'Hamburg Workday Payroll — German social-insurance configuration error',
+    'Hamburg logistics/media Workday Financials period close or intercompany issue',
+    'Hamburg Workday Integration failure — Studio, Core Connector, or REST/SOAP',
+    'Hamburg Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_GERMANY,
+});
+
+export const amsterdamWorkdayJobSupport = workdayCityPage({
+  slug: 'amsterdam-workday-job-support', city: 'Amsterdam', area: 'Netherlands',
+  localAngle: 'Amsterdam is a major Workday hub — ASML, ING, Adyen, Booking.com, and Philips run multi-country HCM, Financials, and Dutch Payroll on Workday.',
+  useCases: [
+    'Amsterdam multinational Workday HCM — multi-country Core HR or staffing configuration issue',
+    'Amsterdam Workday Payroll or Dutch pension-fund integration error',
+    'Amsterdam enterprise Workday Financials — multi-currency GL or consolidation issue',
+    'Amsterdam Workday Integration failure — Core Connector, Studio, PECI, or REST/SOAP',
+    'Amsterdam Workday Reporting / Prism Analytics deadline — Advanced or Composite reports',
+  ],
+  region: WD_REGION_NETHERLANDS,
+  geoExtra: { label: 'Workday job support Rotterdam', href: '/rotterdam-workday-job-support/' },
+});
+
+export const rotterdamWorkdayJobSupport = workdayCityPage({
+  slug: 'rotterdam-workday-job-support', city: 'Rotterdam', area: 'Netherlands',
+  localAngle: 'Rotterdam’s logistics, energy, and enterprise organizations run Workday HCM, Financials, and Dutch Payroll across international operations.',
+  useCases: [
+    'Rotterdam enterprise Workday HCM or staffing configuration issue',
+    'Rotterdam Workday Payroll or Dutch pension-fund integration error',
+    'Rotterdam logistics/energy Workday Financials period close or procurement issue',
+    'Rotterdam Workday Integration failure — Core Connector, Studio, or REST/SOAP',
+    'Rotterdam Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_NETHERLANDS,
+});
+
+export const parisWorkdayJobSupport = workdayCityPage({
+  slug: 'paris-workday-job-support', city: 'Paris', area: 'France',
+  localAngle: 'Paris hosts CAC 40 multinationals and consultancies running Workday HCM, Financials, and French Payroll with collective-agreement-aware configuration.',
+  useCases: [
+    'Paris multinational Workday HCM — collective-agreement-aware business process issue',
+    'Paris Workday Payroll — URSSAF, AGIRC-ARRCO, or CSE-workflow configuration error',
+    'Paris enterprise Workday Financials — multi-entity GL or statutory reporting issue',
+    'Paris Workday Integration failure — EIB, Studio, Core Connector, or REST/SOAP',
+    'Paris Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_FRANCE,
+  geoExtra: { label: 'Workday job support Lyon', href: '/lyon-workday-job-support/' },
+});
+
+export const lyonWorkdayJobSupport = workdayCityPage({
+  slug: 'lyon-workday-job-support', city: 'Lyon', area: 'France',
+  localAngle: 'Lyon’s pharma, industrial, and enterprise organizations run Workday HCM, Financials, and French Payroll with collective-agreement-aware configuration.',
+  useCases: [
+    'Lyon enterprise Workday HCM — collective-agreement-aware business process issue',
+    'Lyon Workday Payroll — URSSAF or CSE-workflow configuration error',
+    'Lyon pharma/industrial Workday Financials period close or procurement issue',
+    'Lyon Workday Integration failure — EIB, Studio, Core Connector, or REST/SOAP',
+    'Lyon Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_FRANCE,
+});
+
+export const stockholmWorkdayJobSupport = workdayCityPage({
+  slug: 'stockholm-workday-job-support', city: 'Stockholm', area: 'Sweden',
+  localAngle: 'Stockholm’s digital-first organizations — Spotify, Klarna, Ericsson — run modern Workday HCM, Reporting, Security, and Swedish Payroll integrations.',
+  useCases: [
+    'Stockholm tech company Workday HCM, Talent, or staffing configuration issue',
+    'Stockholm Workday Payroll — collective-agreement or Skatteverket reporting configuration error',
+    'Stockholm enterprise Workday Financials period close or intercompany issue',
+    'Stockholm Workday Integration failure — Studio, Core Connector, PECI, or REST/SOAP',
+    'Stockholm Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_SWEDEN,
+});
+
+export const zurichWorkdayJobSupport = workdayCityPage({
+  slug: 'zurich-workday-job-support', city: 'Zurich', area: 'Switzerland',
+  localAngle: 'Zurich’s banking, insurance, and enterprise sector runs Workday Financials, HCM, and Swiss Payroll with multi-currency and audit-grade security needs.',
+  useCases: [
+    'Zurich bank Workday Financials issue — multi-currency CHF/EUR GL, consolidation, or close cycle',
+    'Zurich Workday Payroll — AHV/BVG social-insurance or canton-level configuration error',
+    'Zurich Workday Security role or audit/segregation-of-duties configuration issue',
+    'Zurich enterprise Workday Integration failure — Studio, Core Connector, or REST/SOAP',
+    'Zurich Workday Reporting / Prism Analytics deadline — Advanced or Composite reports',
+  ],
+  region: WD_REGION_SWITZERLAND,
+  geoExtra: { label: 'Workday job support Geneva', href: '/geneva-workday-job-support/' },
+});
+
+export const genevaWorkdayJobSupport = workdayCityPage({
+  slug: 'geneva-workday-job-support', city: 'Geneva', area: 'Switzerland',
+  localAngle: 'Geneva’s banking, international-organization, and enterprise sector runs Workday Financials, HCM, and Swiss Payroll with multi-currency and compliance needs.',
+  useCases: [
+    'Geneva bank or international-organization Workday Financials issue — multi-currency GL or close cycle',
+    'Geneva Workday Payroll — AHV/BVG social-insurance or canton-level configuration error',
+    'Geneva Workday Security role or audit/segregation-of-duties configuration issue',
+    'Geneva enterprise Workday Integration failure — Studio, Core Connector, or REST/SOAP',
+    'Geneva Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_SWITZERLAND,
+});
+
+// ─── Phase 8: Australia & New Zealand city pages ─────────────────────────────
+
+const WD_REGION_AUSTRALIA: WorkdayRegionConfig = {
+  country: 'Australia', countryJobHref: '/workday-job-support-australia/',
+  proxyHref: '/workday-proxy-interview-australia/', proxyLabel: 'Workday proxy interview Australia',
+  scheduledHref: '/workday-interview-scheduled-australia/', scheduledLabel: 'Get Workday interviews scheduled Australia',
+  generalSupport: { label: 'IT job support Australia', href: '/job-support-australia/' },
+  tzNote: 'Aligned with Australian Eastern Time (AEST/AEDT) working hours.',
+};
+
+const WD_REGION_NEW_ZEALAND: WorkdayRegionConfig = {
+  country: 'New Zealand', countryJobHref: '/workday-job-support-new-zealand/',
+  proxyHref: '/workday-proxy-interview-new-zealand/', proxyLabel: 'Workday proxy interview New Zealand',
+  scheduledHref: '/workday-interview-scheduled-new-zealand/', scheduledLabel: 'Get Workday interviews scheduled New Zealand',
+  generalSupport: { label: 'IT job support New Zealand', href: '/job-support-newzealand/' },
+  tzNote: 'Aligned with New Zealand Time (NZST/NZDT) working hours.',
+};
+
+const WD_REGION_SINGAPORE: WorkdayRegionConfig = {
+  country: 'Singapore', countryJobHref: '/workday-job-support-singapore/',
+  proxyHref: '/workday-proxy-interview-singapore/', proxyLabel: 'Workday proxy interview Singapore',
+  scheduledHref: '/workday-interview-scheduled-singapore/', scheduledLabel: 'Get Workday interviews scheduled Singapore',
+  generalSupport: { label: 'IT job support Singapore', href: '/job-support-singapore/' },
+  tzNote: 'Aligned with Singapore Time (SGT) working hours.',
+};
+
+const WD_REGION_UAE: WorkdayRegionConfig = {
+  country: 'UAE', countryJobHref: '/workday-job-support-uae/',
+  proxyHref: '/workday-proxy-interview-uae/', proxyLabel: 'Workday proxy interview UAE',
+  scheduledHref: '/workday-interview-scheduled-uae/', scheduledLabel: 'Get Workday interviews scheduled UAE',
+  generalSupport: { label: 'Proxy & real-time IT job support', href: '/proxy-job-support/' },
+  tzNote: 'Aligned with Gulf Standard Time (GST) working hours.',
+};
+
+const WD_REGION_SAUDI: WorkdayRegionConfig = {
+  country: 'Saudi Arabia', countryJobHref: '/workday-job-support-saudi-arabia/',
+  proxyHref: '/workday-proxy-interview-saudi-arabia/', proxyLabel: 'Workday proxy interview Saudi Arabia',
+  scheduledHref: '/workday-interview-scheduled-saudi-arabia/', scheduledLabel: 'Get Workday interviews scheduled Saudi Arabia',
+  generalSupport: { label: 'Proxy & real-time IT job support', href: '/proxy-job-support/' },
+  tzNote: 'Aligned with Arabian Standard Time (AST) working hours.',
+};
+
+export const sydneyWorkdayJobSupport = workdayCityPage({
+  slug: 'sydney-workday-job-support', city: 'Sydney', area: 'Australia',
+  localAngle: 'Sydney is Australia’s largest Workday market — banks (CBA, NAB, Westpac), government, and enterprise run major Workday HCM, Financials, and Australian Payroll (STP2) tenants.',
+  useCases: [
+    'Sydney bank Workday HCM business process or staffing configuration issue',
+    'Sydney Workday Payroll — STP2, superannuation, or Award-rate configuration error',
+    'Sydney enterprise Workday Financials period close or procurement issue',
+    'Sydney Workday Integration failure — EIB, Studio, Core Connector, or PECI',
+    'Sydney Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_AUSTRALIA,
+  geoExtra: { label: 'Workday job support Melbourne', href: '/melbourne-workday-job-support/' },
+});
+
+export const melbourneWorkdayJobSupport = workdayCityPage({
+  slug: 'melbourne-workday-job-support', city: 'Melbourne', area: 'Australia',
+  localAngle: 'Melbourne’s financial-services, healthcare, retail, and government enterprises run large Workday HCM, Financials, and Australian Payroll (STP2) tenants.',
+  useCases: [
+    'Melbourne enterprise Workday HCM business process or staffing configuration issue',
+    'Melbourne Workday Payroll — STP2, superannuation, or Award-rate configuration error',
+    'Melbourne Workday Financials period close or procurement issue',
+    'Melbourne Workday Integration failure — EIB, Studio, Core Connector, or PECI',
+    'Melbourne Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_AUSTRALIA,
+});
+
+export const brisbaneWorkdayJobSupport = workdayCityPage({
+  slug: 'brisbane-workday-job-support', city: 'Brisbane', area: 'Australia',
+  localAngle: 'Brisbane’s government, resources, and enterprise organizations run Workday HCM, Financials, and Australian Payroll (STP2) across Queensland.',
+  useCases: [
+    'Brisbane government or resources Workday HCM or staffing configuration issue',
+    'Brisbane Workday Payroll — STP2, superannuation, or Award-rate configuration error',
+    'Brisbane enterprise Workday Financials period close or procurement issue',
+    'Brisbane Workday Integration failure — EIB, Studio, or Core Connector',
+    'Brisbane Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_AUSTRALIA,
+});
+
+export const perthWorkdayJobSupport = workdayCityPage({
+  slug: 'perth-workday-job-support', city: 'Perth', area: 'Australia',
+  localAngle: 'Perth’s mining, resources, and enterprise sector runs Workday HCM, Financials, and Australian Payroll (STP2) with complex roster and cost structures.',
+  useCases: [
+    'Perth mining/resources Workday HCM, rostering, or staffing configuration issue',
+    'Perth Workday Payroll — STP2, superannuation, or Award-rate configuration error',
+    'Perth enterprise Workday Financials — project costing, GL, or close cycle issue',
+    'Perth Workday Integration failure — EIB, Studio, or Core Connector',
+    'Perth Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_AUSTRALIA,
+});
+
+export const aucklandWorkdayJobSupport = workdayCityPage({
+  slug: 'auckland-workday-job-support', city: 'Auckland', area: 'New Zealand',
+  localAngle: 'Auckland is New Zealand’s largest Workday market — banks, enterprise, and government run Workday HCM, Financials, and NZ Payroll (KiwiSaver, PAYE/IRD) tenants.',
+  useCases: [
+    'Auckland enterprise Workday HCM or staffing configuration issue',
+    'Auckland Workday Payroll — KiwiSaver, PAYE/IRD, or ACC configuration error',
+    'Auckland Workday Financials period close or procurement issue',
+    'Auckland Workday Integration failure — EIB, Studio, or Core Connector',
+    'Auckland Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_NEW_ZEALAND,
+  geoExtra: { label: 'Workday job support Wellington', href: '/wellington-workday-job-support/' },
+});
+
+export const wellingtonWorkdayJobSupport = workdayCityPage({
+  slug: 'wellington-workday-job-support', city: 'Wellington', area: 'New Zealand',
+  localAngle: 'Wellington’s government, public-sector, and enterprise organizations run Workday HCM, Financials, and NZ Payroll (KiwiSaver, PAYE/IRD) with strict compliance needs.',
+  useCases: [
+    'Wellington government Workday Financials issue — GL, procurement, or close cycle',
+    'Wellington Workday Payroll — KiwiSaver, PAYE/IRD, or ACC configuration error',
+    'Wellington enterprise Workday HCM or staffing configuration issue',
+    'Wellington Workday Integration failure — EIB, Studio, or Core Connector',
+    'Wellington Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_NEW_ZEALAND,
+});
+
+// ─── Phase 9: Singapore & Gulf city pages ────────────────────────────────────
+
+export const singaporeWorkdayJobSupport = workdayCityPage({
+  slug: 'singapore-workday-job-support', city: 'Singapore', area: 'Singapore',
+  localAngle: 'Singapore is the APAC Workday hub — regional shared-service centres, MAS-regulated finance, banks, and multinationals run multi-country HCM, Financials, and Payroll on Workday.',
+  useCases: [
+    'Singapore regional HQ Workday HCM — multi-country Core HR or staffing configuration issue',
+    'Singapore Workday Payroll — CPF integration or multi-country APAC payroll error',
+    'Singapore MAS-regulated Workday Financials — multi-entity GL, intercompany, or close cycle',
+    'Singapore Workday Integration failure — EIB, Studio, Core Connector, or PECI',
+    'Singapore Workday Reporting / Prism Analytics deadline — Advanced or Composite reports',
+  ],
+  region: WD_REGION_SINGAPORE,
+});
+
+export const dubaiWorkdayJobSupport = workdayCityPage({
+  slug: 'dubai-workday-job-support', city: 'Dubai', area: 'UAE',
+  localAngle: 'Dubai’s banking, aviation (Emirates), hospitality, and government enterprises run Workday HCM, Financials, and UAE Payroll (WPS, gratuity, Emiratization).',
+  useCases: [
+    'Dubai enterprise Workday HCM — Emiratization (Nafis) or staffing configuration issue',
+    'Dubai Workday Payroll — WPS compliance, gratuity, or AED/USD multi-currency error',
+    'Dubai bank or airline Workday Financials — multi-currency GL or close cycle issue',
+    'Dubai Workday Integration failure — EIB, Studio, Core Connector, or REST/SOAP',
+    'Dubai Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_UAE,
+  geoExtra: { label: 'Workday job support Abu Dhabi', href: '/abu-dhabi-workday-job-support/' },
+});
+
+export const abuDhabiWorkdayJobSupport = workdayCityPage({
+  slug: 'abu-dhabi-workday-job-support', city: 'Abu Dhabi', area: 'UAE',
+  localAngle: 'Abu Dhabi’s government, energy, and enterprise organizations run Workday HCM, Financials, and UAE Payroll (WPS, gratuity, Emiratization).',
+  useCases: [
+    'Abu Dhabi government or energy Workday Financials — GL, project costing, or close cycle',
+    'Abu Dhabi Workday Payroll — WPS compliance, gratuity, or Emiratization configuration error',
+    'Abu Dhabi enterprise Workday HCM or staffing configuration issue',
+    'Abu Dhabi Workday Integration failure — EIB, Studio, Core Connector, or REST/SOAP',
+    'Abu Dhabi Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_UAE,
+});
+
+export const riyadhWorkdayJobSupport = workdayCityPage({
+  slug: 'riyadh-workday-job-support', city: 'Riyadh', area: 'Saudi Arabia',
+  localAngle: 'Riyadh leads Saudi Arabia’s Vision 2030 Workday demand — PIF entities, banks, and government run Workday HCM, Financials, and Saudi Payroll (GOSI, Saudization/Nitaqat).',
+  useCases: [
+    'Riyadh enterprise Workday HCM — Saudization (Nitaqat) or staffing configuration issue',
+    'Riyadh Workday Payroll — GOSI integration, Hijri-calendar, or SAR configuration error',
+    'Riyadh bank or PIF-entity Workday Financials — multi-entity GL or close cycle issue',
+    'Riyadh Workday Integration failure — EIB, Studio, Core Connector, or REST/SOAP',
+    'Riyadh Workday Reporting / Prism Analytics deadline — Advanced reports or calculated fields',
+  ],
+  region: WD_REGION_SAUDI,
+  geoExtra: { label: 'Workday job support Jeddah', href: '/jeddah-workday-job-support/' },
+});
+
+export const jeddahWorkdayJobSupport = workdayCityPage({
+  slug: 'jeddah-workday-job-support', city: 'Jeddah', area: 'Saudi Arabia',
+  localAngle: 'Jeddah’s commercial, logistics, and enterprise organizations run Workday HCM, Financials, and Saudi Payroll (GOSI, Saudization/Nitaqat) across the Western Region.',
+  useCases: [
+    'Jeddah enterprise Workday HCM — Saudization (Nitaqat) or staffing configuration issue',
+    'Jeddah Workday Payroll — GOSI integration, Hijri-calendar, or SAR configuration error',
+    'Jeddah commercial/logistics Workday Financials period close or procurement issue',
+    'Jeddah Workday Integration failure — EIB, Studio, Core Connector, or REST/SOAP',
+    'Jeddah Workday Reporting / Prism Analytics deadline — calculated fields or dashboards',
+  ],
+  region: WD_REGION_SAUDI,
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+// WORKDAY MODULE & ROLE PAGES (Phase 10) — factory
+// ═══════════════════════════════════════════════════════════════════════════
+
+interface WorkdayModuleOpts {
+  slug: string;
+  title: string;
+  h1?: string;
+  label: string;            // subject used in body copy (e.g. 'Workday Business Analyst')
+  description: string;
+  keywords: string[];
+  heroEyebrow: string;
+  tagline: string;
+  painIntro: string;
+  heroVariant: string;
+  techSnippet: string;
+  coverageTitle: string;
+  coverage: string[];
+  faqTopics: string;
+  proxyIntro: string;
+  proxyPoints: string[];
+  techLinks: LandingRelatedLink[];
+  extraLinks?: LandingRelatedLink[];
+  bottomCTAHeading: string;
+  bottomCTABody: string;
+}
+
+function workdayModulePage(o: WorkdayModuleOpts): LandingPageConfig {
+  const self = `/${o.slug}/`;
+  const notSelf = (l: LandingRelatedLink) => l.href !== self;
+  const additional = [
+    { label: 'Workday production support', href: '/workday-production-support/' },
+    ...(o.extraLinks ?? []),
+    { label: 'Job application & candidate marketing', href: '/job-application-candidate-marketing/' },
+  ].filter(notSelf);
+  return {
+    slug: o.slug,
+    title: o.title,
+    description: o.description,
+    canonical: `${BASE_URL}/${o.slug}/`,
+    keywords: o.keywords,
+    h1: o.h1 ?? o.title,
+    tagline: o.tagline,
+    heroEyebrow: o.heroEyebrow,
+    painIntro: o.painIntro,
+    heroVariant: o.heroVariant,
+    geoLine: `Supporting ${o.label} professionals across USA, Canada, UK, Europe, Ireland, Australia, New Zealand, Singapore, UAE, Saudi Arabia, and worldwide.`,
+    timezoneNote: 'Available across US, Canada, UK, European, Australian, and Asian Pacific business hours.',
+    techSnippet: o.techSnippet,
+    highlights: workdayHighlights,
+    faqs: workdayModuleFaqs(o.label, o.faqTopics),
+    useCasesSection: { title: o.coverageTitle, cases: o.coverage },
+    proxySection: {
+      title: `${o.label} Interview Support`,
+      intro: o.proxyIntro,
+      points: o.proxyPoints,
+    },
+    bottomCTAHeading: o.bottomCTAHeading,
+    bottomCTABody: o.bottomCTABody,
+    relatedLinks: {
+      geoLinks: [
+        { label: 'Workday job support hub', href: '/workday-job-support/' },
+        { label: 'Workday job support USA', href: '/workday-job-support-usa/' },
+      ].filter(notSelf),
+      techLinks: o.techLinks.filter(notSelf),
+      problemLink: { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+      proxyLink: { label: 'Get Workday interviews scheduled', href: '/workday-interview-scheduled/' },
+      blogLink: { label: 'Read IT job support articles', href: '/blog/' },
+      additionalLinks: additional,
+    },
+    lastmod: LASTMOD,
+  };
+}
+
+const HCM_LINK = { label: 'Workday HCM job support', href: '/workday-hcm-job-support/' };
+const FIN_LINK = { label: 'Workday Financial Management job support', href: '/workday-financial-management-job-support/' };
+const PAY_LINK = { label: 'Workday Payroll job support', href: '/workday-payroll-job-support/' };
+const INT_LINK = { label: 'Workday Integration job support', href: '/workday-integration-job-support/' };
+const REP_LINK = { label: 'Workday Reporting & Analytics job support', href: '/workday-reporting-analytics-job-support/' };
+const SEC_LINK = { label: 'Workday Security job support', href: '/workday-security-job-support/' };
+const ADP_LINK = { label: 'Workday Adaptive Planning job support', href: '/workday-adaptive-planning-job-support/' };
+const HRIS_LINK = { label: 'Workday HRIS job support', href: '/workday-hris-job-support/' };
+const TEST_LINK = { label: 'Workday Testing & Release support', href: '/workday-testing-release-support/' };
+const R1_LINK = { label: 'Workday 2026R1 release support', href: '/workday-2026r1-release-support/' };
+const PROD_LINK = { label: 'Workday production support', href: '/workday-production-support/' };
+const IMPL_LINK = { label: 'Workday implementation support', href: '/workday-implementation-support/' };
+const TENANT_LINK = { label: 'Workday tenant configuration support', href: '/workday-tenant-configuration-support/' };
+const EIB_LINK = { label: 'Workday EIB integration job support', href: '/workday-eib-integration-job-support/' };
+const STUDIO_LINK = { label: 'Workday Studio integration job support', href: '/workday-studio-integration-job-support/' };
+const CC_LINK = { label: 'Workday Core Connectors job support', href: '/workday-core-connectors-job-support/' };
+const PECI_LINK = { label: 'Workday PECI integration job support', href: '/workday-peci-integration-job-support/' };
+const ADVREP_LINK = { label: 'Workday Advanced Reporting job support', href: '/workday-advanced-reporting-job-support/' };
+const CALC_LINK = { label: 'Workday calculated fields job support', href: '/workday-calculated-fields-job-support/' };
+
+// ─── Phase 10: Module & role pages ───────────────────────────────────────────
+
+export const workdayBusinessAnalystJobSupport = workdayModulePage({
+  slug: 'workday-business-analyst-job-support', label: 'Workday Business Analyst',
+  title: 'Workday Business Analyst Job Support — Real-Time BA Project & Production Help',
+  description: 'Real-time Workday Business Analyst job support — requirements, business process design, fit-gap analysis, configuration, testing coordination, and stakeholder demos. HCM, Financials, Payroll. 2026R1 ready. Same-day start.',
+  keywords: ['Workday Business Analyst job support', 'Workday BA support', 'Workday business process analysis', 'Workday requirements gathering', 'Workday fit-gap analysis', 'Workday BA interview support'],
+  heroEyebrow: 'Workday BA Support — Updated for 2026R1',
+  tagline: 'Live Workday Business Analyst support — requirements gathering, business process design, fit-gap analysis, configuration validation, and stakeholder demos across HCM, Financials, and Payroll.',
+  painIntro: 'Stuck translating business requirements into Workday configuration? Fit-gap analysis stalling, a business process design under review, or a demo to stakeholders tomorrow? Our Workday BA experts join your working hours and help you deliver.',
+  heroVariant: 'We help Workday Business Analysts with requirements workshops, business process (BP) design, fit-gap analysis, configuration workbooks, functional specs for integrations and reports, test scenario design, defect triage, and stakeholder demos. Updated for Workday 2026R1 release impact and AI-driven workflow changes across modules.',
+  techSnippet: 'Workday BA coverage: requirements, BP design, fit-gap, configuration workbooks, functional specs, test scenarios, UAT coordination, and 2026R1 release impact analysis across HCM, Financials, and Payroll.',
+  coverageTitle: 'Workday BA Situations We Help Resolve',
+  coverage: [
+    'Translating business requirements into Workday business process and configuration designs',
+    'Fit-gap analysis across HCM, Financials, or Payroll for a new module rollout',
+    'Writing functional specifications for integrations, EIBs, and custom reports',
+    'Designing UAT test scenarios and coordinating defect triage during testing cycles',
+    'Preparing and walking stakeholders through configuration demos and 2026R1 change impact',
+  ],
+  faqTopics: 'requirements gathering, business process design, fit-gap analysis, functional specifications, and UAT coordination',
+  proxyIntro: 'Workday BA interviews test functional knowledge, business process design, and the ability to translate requirements. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday BA functional and scenario-based interview rounds',
+    'Support explaining business process design and fit-gap analysis approaches',
+    'Coaching on requirements-to-configuration translation questions',
+    'Coverage for 2026R1 release impact questions',
+    'Mock Workday BA interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [HCM_LINK, REP_LINK],
+  extraLinks: [{ label: 'Workday business process configuration support', href: '/workday-business-process-configuration-support/' }, FIN_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday BA Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Business Analyst support — requirements, BP design, fit-gap, functional specs, and UAT coordination. Contact us on WhatsApp now.',
+});
+
+export const workdayFunctionalConsultantJobSupport = workdayModulePage({
+  slug: 'workday-functional-consultant-job-support', label: 'Workday Functional Consultant',
+  title: 'Workday Functional Consultant Job Support — Real-Time Configuration Help',
+  description: 'Real-time Workday Functional Consultant job support — HCM, Financials, Payroll configuration, business processes, security, and testing. Production and project delivery help. 2026R1 ready. Same-day start.',
+  keywords: ['Workday Functional Consultant job support', 'Workday functional consultant help', 'Workday HCM functional support', 'Workday configuration support', 'Workday functional interview support', 'Workday consultant support'],
+  heroEyebrow: 'Workday Functional Consultant Support — 2026R1',
+  tagline: 'Live Workday Functional Consultant support — HCM, Financials, and Payroll configuration, business processes, security, and testing across project and production work.',
+  painIntro: 'A Workday functional configuration not behaving as expected? Business process condition rules failing, a security domain blocking a task, or a client deadline closing in? Our functional consultants join your session and help you deliver.',
+  heroVariant: 'We help Workday Functional Consultants across Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, Financials, and Payroll — business process configuration, condition rules, security, calculated fields, EIB data loads, and testing. Updated for Workday 2026R1 release impact and AI-driven workflow changes.',
+  techSnippet: 'Workday functional coverage: HCM, Financials, Payroll configuration, business processes, condition rules, security, calculated fields, EIB loads, and 2026R1 release impact.',
+  coverageTitle: 'Workday Functional Consultant Situations We Help Resolve',
+  coverage: [
+    'Business process configuration, condition rules, and approval routing not behaving as designed',
+    'Module configuration across Core HR, Compensation, Benefits, Absence, or Time Tracking',
+    'Security domain and business process security troubleshooting',
+    'EIB data loads, calculated fields, and custom report configuration',
+    'Project delivery and production-support tasks under a client deadline',
+  ],
+  faqTopics: 'business process configuration, condition rules, module setup, security, and EIB data loads',
+  proxyIntro: 'Workday functional interviews test configuration depth and real-world implementation experience. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday functional configuration and scenario interviews',
+    'Support explaining business process and security configuration approaches',
+    'Coaching on module-specific configuration questions across HCM, Financials, Payroll',
+    'Coverage for 2026R1 release impact questions',
+    'Mock Workday functional interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [HCM_LINK, FIN_LINK],
+  extraLinks: [PAY_LINK, { label: 'Workday business process configuration support', href: '/workday-business-process-configuration-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Functional Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Functional Consultant support — configuration, business processes, security, and testing. Contact us on WhatsApp now.',
+});
+
+export const workdayTechnicalConsultantJobSupport = workdayModulePage({
+  slug: 'workday-technical-consultant-job-support', label: 'Workday Technical Consultant',
+  title: 'Workday Technical Consultant Job Support — Integrations, Reporting & Extend',
+  description: 'Real-time Workday Technical Consultant job support — integrations (EIB, Studio, Core Connector, PECI), reporting, calculated fields, Workday Extend, and RaaS. Production and project delivery help. 2026R1 ready.',
+  keywords: ['Workday Technical Consultant job support', 'Workday technical consultant help', 'Workday integration developer support', 'Workday Extend support', 'Workday RaaS support', 'Workday technical interview support'],
+  heroEyebrow: 'Workday Technical Consultant Support — 2026R1',
+  tagline: 'Live Workday Technical Consultant support — integrations (EIB, Studio, Core Connector, PECI), reporting, calculated fields, Workday Extend, and RaaS web services.',
+  painIntro: 'A Workday integration failing in production? Studio assembly throwing an error, an EIB transformation not mapping, or a calculated field returning the wrong value? Our technical consultants join your session and help you fix it fast.',
+  heroVariant: 'We help Workday Technical Consultants with EIB transformations, Studio assemblies, Core Connectors, PECI/PICOF, REST/SOAP web services, RaaS, calculated fields, advanced/BIRT reports, and Workday Extend apps. Updated for Workday 2026R1 API and release changes.',
+  techSnippet: 'Workday technical coverage: EIB, Studio, Core Connector, PECI/PICOF, REST/SOAP, RaaS, calculated fields, advanced/BIRT reporting, Workday Extend, and 2026R1 API changes.',
+  coverageTitle: 'Workday Technical Consultant Situations We Help Resolve',
+  coverage: [
+    'EIB transformation or Studio assembly failing in production before a deadline',
+    'Core Connector or PECI integration mapping or error-handling issue',
+    'REST/SOAP web service or RaaS report-as-a-service integration troubleshooting',
+    'Complex calculated fields, advanced reports, or BIRT layout debugging',
+    'Workday Extend app build or orchestration issue',
+  ],
+  faqTopics: 'EIB, Studio, Core Connector, PECI, web services, calculated fields, and Workday Extend',
+  proxyIntro: 'Workday technical interviews test integration architecture and hands-on development depth. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday integration and technical interview rounds',
+    'Support explaining EIB, Studio, Core Connector, and PECI architecture',
+    'Coaching on calculated fields, RaaS, and Workday Extend questions',
+    'Coverage for 2026R1 API and release-change questions',
+    'Mock Workday technical interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [INT_LINK, REP_LINK],
+  extraLinks: [STUDIO_LINK, EIB_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Technical Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Technical Consultant support — integrations, reporting, calculated fields, and Workday Extend. Contact us on WhatsApp now.',
+});
+
+export const workdayIntegrationConsultantJobSupport = workdayModulePage({
+  slug: 'workday-integration-consultant-job-support', label: 'Workday Integration Consultant',
+  title: 'Workday Integration Consultant Job Support — EIB, Studio, Core Connector, PECI',
+  description: 'Real-time Workday Integration Consultant job support — EIB, Studio, Core Connectors, PECI/PICOF, REST/SOAP, RaaS, and error handling. Production firefighting and project delivery. 2026R1 ready. Same-day start.',
+  keywords: ['Workday Integration Consultant job support', 'Workday integration support', 'Workday EIB support', 'Workday Studio support', 'Workday Core Connector support', 'Workday integration interview support'],
+  heroEyebrow: 'Workday Integration Consultant Support — 2026R1',
+  tagline: 'Live Workday Integration Consultant support — EIB, Studio, Core Connectors, PECI/PICOF, REST/SOAP, RaaS, and integration error handling.',
+  painIntro: 'A Workday integration breaking before a payroll cutover or go-live? Studio assembly erroring, a Core Connector field mapping wrong, or a PECI failing to deliver? Our integration consultants join your session and fix it fast.',
+  heroVariant: 'We help Workday Integration Consultants design and troubleshoot EIBs, Studio assemblies, Core Connectors, PECI/PICOF, REST/SOAP web services, and RaaS — including error handling, retry logic, security, and launch parameters. Updated for Workday 2026R1 API and release changes.',
+  techSnippet: 'Workday integration coverage: EIB, Studio, Core Connector, PECI/PICOF, REST/SOAP, RaaS, XSLT, error handling, integration security, and 2026R1 API changes.',
+  coverageTitle: 'Workday Integration Consultant Situations We Help Resolve',
+  coverage: [
+    'EIB or Studio integration failing before a payroll cutover or go-live',
+    'Core Connector field mapping, transformation, or output format issue',
+    'PECI/PICOF integration to a payroll or benefits provider failing',
+    'REST/SOAP web service or RaaS integration authentication or payload issue',
+    'Integration error handling, retry logic, and security configuration',
+  ],
+  faqTopics: 'EIB, Studio, Core Connector, PECI/PICOF, web services, and integration error handling',
+  proxyIntro: 'Workday integration interviews test integration architecture and hands-on development. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday integration technical interview rounds',
+    'Support explaining EIB, Studio, Core Connector, and PECI architecture and trade-offs',
+    'Coaching on integration security, error handling, and launch-parameter questions',
+    'Coverage for 2026R1 API and release-change questions',
+    'Mock Workday integration interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [INT_LINK, STUDIO_LINK],
+  extraLinks: [EIB_LINK, CC_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Integration Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Integration Consultant support — EIB, Studio, Core Connector, PECI, and web services. Contact us on WhatsApp now.',
+});
+
+export const workdayHcmConsultantJobSupport = workdayModulePage({
+  slug: 'workday-hcm-consultant-job-support', label: 'Workday HCM Consultant',
+  title: 'Workday HCM Consultant Job Support — Core HR, Staffing, Comp & Benefits',
+  description: 'Real-time Workday HCM Consultant job support — Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, Talent, and Skills Cloud. Production and project delivery help. 2026R1 ready. Same-day start.',
+  keywords: ['Workday HCM Consultant job support', 'Workday HCM support', 'Workday Core HR support', 'Workday compensation support', 'Workday benefits support', 'Workday HCM interview support'],
+  heroEyebrow: 'Workday HCM Consultant Support — 2026R1',
+  tagline: 'Live Workday HCM Consultant support — Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, Talent, and Skills Cloud.',
+  painIntro: 'A Workday HCM business process or staffing configuration not working? Compensation grid issue, benefits open-enrollment event failing, or absence accrual miscalculating? Our HCM consultants join your session and help you deliver.',
+  heroVariant: 'We help Workday HCM Consultants across Core HR, Staffing, Job and Position Management, Compensation, Benefits, Absence, Time Tracking, Talent, and Skills Cloud — business processes, eligibility rules, condition rules, and reporting. Updated for Workday 2026R1 HCM AI workflow changes.',
+  techSnippet: 'Workday HCM coverage: Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, Talent, Skills Cloud, business processes, and 2026R1 HCM changes.',
+  coverageTitle: 'Workday HCM Consultant Situations We Help Resolve',
+  coverage: [
+    'Core HR or staffing business process configuration not behaving as designed',
+    'Compensation grid, plan, or eligibility rule configuration issue',
+    'Benefits open-enrollment event or eligibility rule failure',
+    'Absence accrual or Time Tracking calculation error',
+    'Talent, Skills Cloud, or 2026R1 HCM AI workflow configuration',
+  ],
+  faqTopics: 'Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, and Skills Cloud',
+  proxyIntro: 'Workday HCM interviews test functional configuration depth and real implementation experience. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday HCM functional and scenario interview rounds',
+    'Support explaining business process, eligibility, and condition rule design',
+    'Coaching on Compensation, Benefits, Absence, and Skills Cloud questions',
+    'Coverage for 2026R1 HCM AI workflow questions',
+    'Mock Workday HCM interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [HCM_LINK, HRIS_LINK],
+  extraLinks: [{ label: 'Workday HCM interview support', href: '/workday-hcm-interview-support/' }, REP_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday HCM Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday HCM Consultant support — Core HR, Compensation, Benefits, Absence, and Skills Cloud. Contact us on WhatsApp now.',
+});
+
+export const workdayFinancialsConsultantJobSupport = workdayModulePage({
+  slug: 'workday-financials-consultant-job-support', label: 'Workday Financials Consultant',
+  title: 'Workday Financials Consultant Job Support — GL, AP, AR, Procurement & Close',
+  description: 'Real-time Workday Financials Consultant job support — GL, AP, AR, Procurement, Projects, Banking, and period close. Production and project delivery help. 2026R1 ready. Same-day start.',
+  keywords: ['Workday Financials Consultant job support', 'Workday Financial Management support', 'Workday GL support', 'Workday Procurement support', 'Workday financials interview support', 'Workday finance consultant support'],
+  heroEyebrow: 'Workday Financials Consultant Support — 2026R1',
+  tagline: 'Live Workday Financials Consultant support — GL, AP, AR, Procurement, Projects, Banking, and period close.',
+  painIntro: 'A Workday Financials period close stuck? GL account posting rules misfiring, AP supplier invoice failing, or intercompany not balancing before month-end? Our Financials consultants join your session and help you close on time.',
+  heroVariant: 'We help Workday Financials Consultants across the General Ledger, Accounting, AP, AR, Procurement, Projects, Banking, Business Assets, and period close — account posting rules, allocations, intercompany, and statutory reporting. Updated for Workday 2026R1 Finance automation changes.',
+  techSnippet: 'Workday Financials coverage: GL, Accounting, AP, AR, Procurement, Projects, Banking, period close, account posting rules, allocations, and 2026R1 Finance changes.',
+  coverageTitle: 'Workday Financials Consultant Situations We Help Resolve',
+  coverage: [
+    'Period close stuck — account posting rules, allocations, or intercompany not balancing',
+    'AP supplier invoice, payment, or settlement run failing',
+    'AR customer invoice, billing, or revenue configuration issue',
+    'Procurement, requisition, or supplier contract configuration problem',
+    'Projects costing, capitalization, or statutory reporting issue',
+  ],
+  faqTopics: 'General Ledger, AP, AR, Procurement, Projects, and period close',
+  proxyIntro: 'Workday Financials interviews test configuration depth and accounting knowledge. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday Financials functional and scenario interview rounds',
+    'Support explaining account posting rules, allocations, and close-cycle design',
+    'Coaching on AP, AR, Procurement, and Projects configuration questions',
+    'Coverage for 2026R1 Finance automation questions',
+    'Mock Workday Financials interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [FIN_LINK, ADP_LINK],
+  extraLinks: [{ label: 'Workday Financials interview support', href: '/workday-financials-interview-support/' }, REP_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Financials Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Financials Consultant support — GL, AP, AR, Procurement, Projects, and period close. Contact us on WhatsApp now.',
+});
+
+export const workdayPayrollConsultantJobSupport = workdayModulePage({
+  slug: 'workday-payroll-consultant-job-support', label: 'Workday Payroll Consultant',
+  title: 'Workday Payroll Consultant Job Support — Calculations, Compliance & Year-End',
+  description: 'Real-time Workday Payroll Consultant job support — pay calculations, earnings/deductions, taxes, off-cycle, garnishments, and year-end (W-2/T4/P60). USA, Canada, UK payroll. 2026R1 ready. Same-day start.',
+  keywords: ['Workday Payroll Consultant job support', 'Workday Payroll support', 'Workday payroll calculation support', 'Workday payroll compliance support', 'Workday payroll interview support', 'Workday year-end support'],
+  heroEyebrow: 'Workday Payroll Consultant Support — 2026R1',
+  tagline: 'Live Workday Payroll Consultant support — pay calculations, earnings/deductions, taxes, off-cycle runs, garnishments, and year-end (W-2/T4/P60).',
+  painIntro: 'A Workday Payroll calculation off before a pay run? Earnings or deduction code mapping wrong, an off-cycle failing, or year-end W-2/T4 not reconciling? Our Payroll consultants join your session and help you run clean payroll.',
+  heroVariant: 'We help Workday Payroll Consultants with pay calculation rules, earnings and deductions, run categories, taxes, off-cycle and on-demand payments, garnishments, retro processing, and year-end (W-2, T4, P60). USA, Canada, and UK payroll expertise. Updated for Workday 2026R1 payroll compliance changes.',
+  techSnippet: 'Workday Payroll coverage: pay calculation rules, earnings/deductions, run categories, taxes, off-cycle, garnishments, retro, year-end, and 2026R1 payroll changes.',
+  coverageTitle: 'Workday Payroll Consultant Situations We Help Resolve',
+  coverage: [
+    'Pay calculation rule, earnings, or deduction code returning the wrong result',
+    'Off-cycle or on-demand payment failing before a deadline',
+    'Tax setup, garnishment, or retro-processing configuration issue',
+    'Year-end W-2, T4, or P60 reconciliation problem',
+    'Country-specific payroll compliance (USA, Canada T4/ROE, UK PAYE/RTI)',
+  ],
+  faqTopics: 'pay calculations, earnings/deductions, taxes, off-cycle, garnishments, and year-end',
+  proxyIntro: 'Workday Payroll interviews test calculation logic and compliance knowledge. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday Payroll functional and scenario interview rounds',
+    'Support explaining pay calculation, run category, and earnings/deduction design',
+    'Coaching on tax, garnishment, retro, and year-end questions',
+    'Coverage for 2026R1 payroll compliance questions',
+    'Mock Workday Payroll interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [PAY_LINK, HCM_LINK],
+  extraLinks: [{ label: 'Workday Payroll interview support', href: '/workday-payroll-interview-support/' }, PECI_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Payroll Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Payroll Consultant support — calculations, taxes, off-cycle, garnishments, and year-end. Contact us on WhatsApp now.',
+});
+
+export const workdaySecurityConsultantJobSupport = workdayModulePage({
+  slug: 'workday-security-consultant-job-support', label: 'Workday Security Consultant',
+  title: 'Workday Security Consultant Job Support — Domains, Roles & Business Process Security',
+  description: 'Real-time Workday Security Consultant job support — domain security policies, role-based security, business process security, segregation of duties, and audit. Production and project help. 2026R1 ready.',
+  keywords: ['Workday Security Consultant job support', 'Workday Security support', 'Workday domain security support', 'Workday role-based security support', 'Workday security interview support', 'Workday segregation of duties'],
+  heroEyebrow: 'Workday Security Consultant Support — 2026R1',
+  tagline: 'Live Workday Security Consultant support — domain security policies, role-based security, business process security, segregation of duties, and audit.',
+  painIntro: 'A Workday security configuration blocking users or failing an audit? A domain security policy too tight or too loose, a business process security policy misfiring, or a segregation-of-duties conflict flagged? Our Security consultants join your session and help.',
+  heroVariant: 'We help Workday Security Consultants with domain security policies, role-based and user-based security, business process security, integration security, segregation of duties, and audit/compliance reporting. Updated for Workday 2026R1 Security framework changes.',
+  techSnippet: 'Workday Security coverage: domain security policies, role-based security, business process security, integration security, segregation of duties, audit, and 2026R1 Security changes.',
+  coverageTitle: 'Workday Security Consultant Situations We Help Resolve',
+  coverage: [
+    'Domain security policy too restrictive or too permissive — access troubleshooting',
+    'Business process security policy blocking an action or approval',
+    'Role-based vs. user-based security assignment design issue',
+    'Integration system security and ISU/ISSG configuration problem',
+    'Segregation-of-duties conflict, audit finding, or compliance reporting need',
+  ],
+  faqTopics: 'domain security policies, role-based security, business process security, and segregation of duties',
+  proxyIntro: 'Workday Security interviews test security model depth and audit awareness. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday Security functional and scenario interview rounds',
+    'Support explaining domain, role-based, and business process security design',
+    'Coaching on integration security and segregation-of-duties questions',
+    'Coverage for 2026R1 Security framework questions',
+    'Mock Workday Security interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [SEC_LINK, INT_LINK],
+  extraLinks: [{ label: 'Workday Security interview support', href: '/workday-security-interview-support/' }, TENANT_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Security Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Security Consultant support — domains, roles, business process security, and audit. Contact us on WhatsApp now.',
+});
+
+export const workdayReportingConsultantJobSupport = workdayModulePage({
+  slug: 'workday-reporting-consultant-job-support', label: 'Workday Reporting Consultant',
+  title: 'Workday Reporting Consultant Job Support — Advanced, Matrix, Composite & Prism',
+  description: 'Real-time Workday Reporting Consultant job support — Advanced, Matrix, Composite reports, calculated fields, BIRT, Prism Analytics, and Data Cloud. Production and project help. 2026R1 ready. Same-day start.',
+  keywords: ['Workday Reporting Consultant job support', 'Workday Reporting support', 'Workday advanced reporting support', 'Workday Prism Analytics support', 'Workday calculated fields support', 'Workday reporting interview support'],
+  heroEyebrow: 'Workday Reporting Consultant Support — 2026R1',
+  tagline: 'Live Workday Reporting Consultant support — Advanced, Matrix, Composite reports, calculated fields, BIRT layouts, Prism Analytics, and Data Cloud.',
+  painIntro: 'A Workday report not returning the right data before a deadline? A calculated field misfiring, a Composite report not aggregating, or a Prism data source failing? Our Reporting consultants join your session and help you deliver.',
+  heroVariant: 'We help Workday Reporting Consultants build and debug Advanced, Matrix, and Composite reports, calculated fields, BIRT layouts, Prism Analytics pipelines, and Data Cloud datasets — including report security and performance. Updated for Workday 2026R1 reporting framework changes.',
+  techSnippet: 'Workday Reporting coverage: Advanced, Matrix, Composite reports, calculated fields, BIRT, Prism Analytics, Data Cloud, report security, and 2026R1 reporting changes.',
+  coverageTitle: 'Workday Reporting Consultant Situations We Help Resolve',
+  coverage: [
+    'Advanced or Matrix report not returning the expected data set',
+    'Calculated field returning the wrong value or failing to evaluate',
+    'Composite report aggregation or sub-report configuration issue',
+    'BIRT layout formatting or Prism Analytics data-source failure',
+    'Report performance, security, or 2026R1 reporting-framework change impact',
+  ],
+  faqTopics: 'Advanced, Matrix, Composite reports, calculated fields, BIRT, and Prism Analytics',
+  proxyIntro: 'Workday Reporting interviews test report-building depth and calculated-field logic. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday Reporting functional and scenario interview rounds',
+    'Support explaining report types, calculated fields, and data-source design',
+    'Coaching on Prism Analytics and BIRT questions',
+    'Coverage for 2026R1 reporting-framework questions',
+    'Mock Workday Reporting interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [REP_LINK, ADVREP_LINK],
+  extraLinks: [CALC_LINK, { label: 'Workday Reporting interview support', href: '/workday-reporting-interview-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Reporting Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Reporting Consultant support — Advanced, Matrix, Composite reports, calculated fields, and Prism. Contact us on WhatsApp now.',
+});
+
+export const workdayImplementationSupport = workdayModulePage({
+  slug: 'workday-implementation-support', label: 'Workday Implementation',
+  title: 'Workday Implementation Support — Real-Time Deployment & Configuration Help',
+  description: 'Real-time Workday implementation support across all phases — Plan, Architect, Configure & Prototype, Test, Deploy. HCM, Financials, Payroll, Integrations. 2026R1 ready. Same-day expert help.',
+  keywords: ['Workday implementation support', 'Workday deployment support', 'Workday project support', 'Workday configuration support', 'Workday implementation help', 'Workday rollout support'],
+  heroEyebrow: 'Workday Implementation Support — 2026R1',
+  tagline: 'Live Workday implementation support across all deployment phases — Plan, Architect, Configure & Prototype, Test, and Deploy — for HCM, Financials, Payroll, and Integrations.',
+  painIntro: 'On a Workday implementation under pressure? Configure-and-prototype tenant behind schedule, a customer confirmation session approaching, or a deployment milestone slipping? Our implementation experts join your session and help you stay on track.',
+  heroVariant: 'We support Workday implementations across the deployment methodology — discovery and design workshops, tenant configuration, prototype builds, data conversion, integration build, testing cycles, and deployment. HCM, Financials, Payroll, and Integrations. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday implementation coverage: design workshops, tenant configuration, prototype builds, data conversion, integration build, testing, deployment, and 2026R1 impact.',
+  coverageTitle: 'Workday Implementation Situations We Help Resolve',
+  coverage: [
+    'Configure-and-prototype tenant build behind schedule before a customer confirmation session',
+    'Data conversion (iLoads/EIB) mapping or validation issues during a build phase',
+    'Integration build slipping against the deployment timeline',
+    'Testing cycle (unit, SIT, UAT) defect backlog threatening a milestone',
+    'Deployment / cutover planning and go-live readiness gaps',
+  ],
+  faqTopics: 'design workshops, tenant configuration, prototype builds, data conversion, and deployment',
+  proxyIntro: 'Workday implementation interviews test methodology knowledge and hands-on delivery experience. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday implementation methodology and scenario interviews',
+    'Support explaining deployment phases, design decisions, and delivery approaches',
+    'Coaching on data conversion, testing, and cutover questions',
+    'Coverage for 2026R1 release impact questions',
+    'Mock Workday implementation interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [TENANT_LINK, TEST_LINK],
+  extraLinks: [{ label: 'Workday data conversion & migration support', href: '/workday-data-conversion-migration-support/' }, { label: 'Workday go-live & hypercare support', href: '/workday-go-live-hypercare-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Implementation Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday implementation support — configuration, prototype, data conversion, testing, and deployment. Contact us on WhatsApp now.',
+});
+
+export const workdayProductionSupport = workdayModulePage({
+  slug: 'workday-production-support', label: 'Workday Production Support',
+  title: 'Workday Production Support — Real-Time Tickets, Defects & Incident Help',
+  description: 'Real-time Workday production support — incident firefighting, defect resolution, ticket backlog, business process fixes, integration failures, and post-release stabilization. HCM, Financials, Payroll. 2026R1 ready.',
+  keywords: ['Workday production support', 'Workday incident support', 'Workday defect resolution', 'Workday ticket support', 'Workday post-production support', 'Workday support analyst help'],
+  heroEyebrow: 'Workday Production Support — 2026R1',
+  tagline: 'Live Workday production support — incident firefighting, defect resolution, ticket backlog, business process fixes, integration failures, and post-release stabilization.',
+  painIntro: 'A Workday production incident with users blocked and an SLA ticking? A failed integration, a broken business process, or a defect backlog after the latest release? Our production-support experts join your session and help you resolve it fast.',
+  heroVariant: 'We provide Workday production support for live tenants — incident triage, root-cause analysis, defect resolution, business process fixes, integration failure recovery, security access issues, and post-release stabilization. HCM, Financials, Payroll, Integrations. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday production coverage: incident triage, root-cause analysis, defect resolution, business process fixes, integration recovery, security access, and 2026R1 stabilization.',
+  coverageTitle: 'Workday Production Support Situations We Help Resolve',
+  coverage: [
+    'Production incident with users blocked and an SLA at risk',
+    'Failed integration (EIB/Studio/Core Connector) in a live tenant',
+    'Broken business process or condition rule affecting daily operations',
+    'Defect backlog or regression issues after a release or 2026R1 update',
+    'Security access incident blocking critical HCM or Finance tasks',
+  ],
+  faqTopics: 'incident triage, defect resolution, business process fixes, and integration recovery',
+  proxyIntro: 'Workday production-support interviews test troubleshooting depth and incident-management experience. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday production-support and troubleshooting interviews',
+    'Support explaining incident triage, root-cause analysis, and resolution approaches',
+    'Coaching on integration recovery and business process fix questions',
+    'Coverage for 2026R1 release-stabilization questions',
+    'Mock Workday production-support interviews calibrated to enterprise formats',
+  ],
+  techLinks: [TEST_LINK, R1_LINK],
+  extraLinks: [{ label: 'Workday go-live & hypercare support', href: '/workday-go-live-hypercare-support/' }, INT_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Production Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday production support — incidents, defects, integration failures, and post-release stabilization. Contact us on WhatsApp now.',
+});
+
+export const workdayTenantConfigurationSupport = workdayModulePage({
+  slug: 'workday-tenant-configuration-support', label: 'Workday Tenant Configuration',
+  title: 'Workday Tenant Configuration Support — Setup, Migration & Tenant Management',
+  description: 'Real-time Workday tenant configuration support — tenant setup, configuration migration, foundation data, business processes, security, and tenant refresh. HCM, Financials, Payroll. 2026R1 ready.',
+  keywords: ['Workday tenant configuration support', 'Workday tenant setup support', 'Workday configuration migration', 'Workday tenant management', 'Workday foundation data support', 'Workday tenant refresh'],
+  heroEyebrow: 'Workday Tenant Configuration Support — 2026R1',
+  tagline: 'Live Workday tenant configuration support — tenant setup, configuration migration, foundation data, business processes, security, and tenant refresh.',
+  painIntro: 'Wrestling with Workday tenant configuration? A configuration migration between tenants failing, foundation data inconsistent, or a tenant refresh wiping changes? Our tenant-configuration experts join your session and help.',
+  heroVariant: 'We help with Workday tenant configuration — foundation data setup, organization structures, business processes, security, configuration migration between Sandbox/Implementation/Production tenants, and tenant refresh planning. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday tenant coverage: foundation data, organization structures, business processes, security, configuration migration, tenant refresh, and 2026R1 impact.',
+  coverageTitle: 'Workday Tenant Configuration Situations We Help Resolve',
+  coverage: [
+    'Configuration migration between Sandbox, Implementation, and Production tenants failing',
+    'Foundation data or organization-structure inconsistency across tenants',
+    'Business process or security configuration not migrating cleanly',
+    'Tenant refresh planning to avoid losing in-flight configuration',
+    'Post-2026R1 tenant update configuration review and remediation',
+  ],
+  faqTopics: 'foundation data, organization structures, configuration migration, and tenant refresh',
+  proxyIntro: 'Workday tenant-configuration interviews test environment-management and configuration depth. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday tenant-configuration and scenario interviews',
+    'Support explaining configuration migration and tenant-management strategy',
+    'Coaching on foundation data and organization-structure questions',
+    'Coverage for 2026R1 tenant-update questions',
+    'Mock Workday tenant-configuration interviews calibrated to enterprise formats',
+  ],
+  techLinks: [SEC_LINK, IMPL_LINK],
+  extraLinks: [HCM_LINK, { label: 'Workday business process configuration support', href: '/workday-business-process-configuration-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Tenant Configuration Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday tenant configuration support — setup, migration, foundation data, and tenant refresh. Contact us on WhatsApp now.',
+});
+
+export const workdayEibIntegrationJobSupport = workdayModulePage({
+  slug: 'workday-eib-integration-job-support', label: 'Workday EIB Integration',
+  title: 'Workday EIB Integration Job Support — Inbound/Outbound EIB & Transformations',
+  description: 'Real-time Workday EIB integration job support — inbound and outbound EIBs, spreadsheet templates, XSLT transformations, error handling, and scheduling. Production and project help. 2026R1 ready.',
+  keywords: ['Workday EIB integration job support', 'Workday EIB support', 'Workday inbound EIB', 'Workday outbound EIB', 'Workday EIB transformation', 'Workday EIB interview support'],
+  heroEyebrow: 'Workday EIB Integration Support — 2026R1',
+  tagline: 'Live Workday EIB integration support — inbound and outbound EIBs, spreadsheet templates, XSLT transformations, error handling, and scheduling.',
+  painIntro: 'A Workday EIB failing to load or deliver? Inbound spreadsheet template erroring, an outbound transformation mapping wrong, or a scheduled EIB not running? Our EIB experts join your session and fix it fast.',
+  heroVariant: 'We help with Workday inbound and outbound EIBs — spreadsheet and XML templates, XSLT transformations, custom report integrations, delivery (SFTP/email), error handling, and scheduling. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday EIB coverage: inbound/outbound EIBs, spreadsheet/XML templates, XSLT transformations, RaaS sources, delivery, error handling, scheduling, and 2026R1 impact.',
+  coverageTitle: 'Workday EIB Integration Situations We Help Resolve',
+  coverage: [
+    'Inbound EIB spreadsheet template load erroring or rejecting records',
+    'Outbound EIB transformation (XSLT) mapping the wrong fields or format',
+    'EIB delivery (SFTP/email) or scheduling failure',
+    'EIB error handling and reprocessing of failed records',
+    'Converting a manual data load into a repeatable, scheduled EIB',
+  ],
+  faqTopics: 'inbound/outbound EIBs, spreadsheet templates, XSLT transformations, and scheduling',
+  proxyIntro: 'Workday EIB interviews test integration-development depth and transformation logic. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday EIB and integration interview rounds',
+    'Support explaining inbound/outbound EIB design and XSLT transformations',
+    'Coaching on delivery, scheduling, and error-handling questions',
+    'Coverage for 2026R1 integration-change questions',
+    'Mock Workday EIB interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [INT_LINK, STUDIO_LINK],
+  extraLinks: [CC_LINK, { label: 'Workday Integration Consultant job support', href: '/workday-integration-consultant-job-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday EIB Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday EIB integration support — inbound/outbound EIBs, transformations, delivery, and scheduling. Contact us on WhatsApp now.',
+});
+
+export const workdayStudioIntegrationJobSupport = workdayModulePage({
+  slug: 'workday-studio-integration-job-support', label: 'Workday Studio Integration',
+  title: 'Workday Studio Integration Job Support — Assemblies, Orchestration & Debugging',
+  description: 'Real-time Workday Studio integration job support — Studio assemblies, orchestration, transformations, web service calls, error handling, and debugging. Production and project help. 2026R1 ready.',
+  keywords: ['Workday Studio integration job support', 'Workday Studio support', 'Workday Studio assembly', 'Workday Studio orchestration', 'Workday Studio debugging', 'Workday Studio interview support'],
+  heroEyebrow: 'Workday Studio Integration Support — 2026R1',
+  tagline: 'Live Workday Studio integration support — Studio assemblies, orchestration, transformations, web service calls, error handling, and debugging.',
+  painIntro: 'A Workday Studio integration throwing an error in production? An assembly step failing, a web service call timing out, or a transformation not parsing? Our Studio experts join your session and debug it with you.',
+  heroVariant: 'We help with complex Workday Studio integrations — multi-step assemblies, orchestration, MVEL expressions, XSLT/XPath transformations, REST/SOAP web service calls, looping and routing, error handling, and debugging. Updated for Workday 2026R1 API changes.',
+  techSnippet: 'Workday Studio coverage: assemblies, orchestration, MVEL, XSLT/XPath, REST/SOAP calls, routing, error handling, debugging, and 2026R1 API changes.',
+  coverageTitle: 'Workday Studio Integration Situations We Help Resolve',
+  coverage: [
+    'Studio assembly step failing or producing the wrong output in production',
+    'Web service (REST/SOAP) call timing out, authenticating, or returning an error',
+    'XSLT/XPath transformation or MVEL expression not evaluating correctly',
+    'Looping, routing, or conditional logic in a complex assembly misbehaving',
+    'Studio integration error handling, logging, and debugging',
+  ],
+  faqTopics: 'Studio assemblies, orchestration, transformations, web service calls, and debugging',
+  proxyIntro: 'Workday Studio interviews test advanced integration-development depth. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday Studio and advanced integration interviews',
+    'Support explaining assembly design, orchestration, and transformation logic',
+    'Coaching on web service, error-handling, and debugging questions',
+    'Coverage for 2026R1 API and integration-change questions',
+    'Mock Workday Studio interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [INT_LINK, EIB_LINK],
+  extraLinks: [CC_LINK, { label: 'Workday Integration Consultant job support', href: '/workday-integration-consultant-job-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Studio Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Studio integration support — assemblies, orchestration, web service calls, and debugging. Contact us on WhatsApp now.',
+});
+
+export const workdayCoreConnectorsJobSupport = workdayModulePage({
+  slug: 'workday-core-connectors-job-support', label: 'Workday Core Connectors',
+  title: 'Workday Core Connectors Job Support — Connector Templates & Field Mapping',
+  description: 'Real-time Workday Core Connectors job support — connector templates, field mapping, integration attributes, document transformations, and error handling. Production and project help. 2026R1 ready.',
+  keywords: ['Workday Core Connectors job support', 'Workday Core Connector support', 'Workday connector template', 'Workday integration field mapping', 'Workday PICOF support', 'Workday Core Connector interview support'],
+  heroEyebrow: 'Workday Core Connectors Support — 2026R1',
+  tagline: 'Live Workday Core Connectors support — connector templates, field mapping, integration attributes, document transformations, and error handling.',
+  painIntro: 'A Workday Core Connector not delivering the right data? Field mapping incomplete, an integration attribute misconfigured, or a document transformation failing? Our Core Connector experts join your session and help.',
+  heroVariant: 'We help with Workday Core Connectors — connector templates (Worker, Benefits, Payroll), field mapping and overrides, integration attributes and maps, integration services, document transformations, and error handling. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday Core Connector coverage: connector templates, field mapping, integration attributes/maps, services, document transformations, error handling, and 2026R1 impact.',
+  coverageTitle: 'Workday Core Connectors Situations We Help Resolve',
+  coverage: [
+    'Core Connector delivering incomplete or incorrect field data',
+    'Integration attribute, map, or override configuration issue',
+    'Document transformation on top of a connector failing',
+    'Connector template selection and enabling the right integration services',
+    'Connector error handling and reprocessing',
+  ],
+  faqTopics: 'connector templates, field mapping, integration attributes, and document transformations',
+  proxyIntro: 'Workday Core Connector interviews test integration-template depth and mapping logic. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday Core Connector and integration interviews',
+    'Support explaining connector templates, field mapping, and integration attributes',
+    'Coaching on document transformation and error-handling questions',
+    'Coverage for 2026R1 integration-change questions',
+    'Mock Workday Core Connector interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [INT_LINK, PECI_LINK],
+  extraLinks: [EIB_LINK, STUDIO_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Core Connector Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Core Connectors support — templates, field mapping, attributes, and document transformations. Contact us on WhatsApp now.',
+});
+
+export const workdayPeciIntegrationJobSupport = workdayModulePage({
+  slug: 'workday-peci-integration-job-support', label: 'Workday PECI Integration',
+  title: 'Workday PECI Integration Job Support — Payroll Effective Change Interface',
+  description: 'Real-time Workday PECI integration job support — Payroll Effective Change Interface configuration, change detection, field mapping, transformations, and payroll-vendor delivery. Production help. 2026R1 ready.',
+  keywords: ['Workday PECI integration job support', 'Workday PECI support', 'Workday Payroll Effective Change Interface', 'Workday PICOF support', 'Workday payroll integration support', 'Workday PECI interview support'],
+  heroEyebrow: 'Workday PECI Integration Support — 2026R1',
+  tagline: 'Live Workday PECI integration support — Payroll Effective Change Interface configuration, change detection, field mapping, transformations, and payroll-vendor delivery.',
+  painIntro: 'A Workday PECI not sending the right payroll changes to your vendor? Change detection missing records, field mapping wrong, or a transformation failing before a payroll cutover? Our PECI experts join your session and help.',
+  heroVariant: 'We help with Workday PECI (and legacy PICOF) integrations to payroll providers — change detection configuration, field mapping, effective-dating, transformations, and delivery to ADP, Alight, and other payroll vendors. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday PECI coverage: change detection, field mapping, effective-dating, transformations, payroll-vendor delivery (ADP/Alight), error handling, and 2026R1 impact.',
+  coverageTitle: 'Workday PECI Integration Situations We Help Resolve',
+  coverage: [
+    'PECI change detection missing or duplicating worker change records',
+    'Field mapping or effective-dating sending incorrect payroll data',
+    'Transformation to a payroll vendor format (ADP, Alight) failing',
+    'PECI integration failing before a payroll cutover or go-live',
+    'PECI error handling and reconciliation with the payroll provider',
+  ],
+  faqTopics: 'change detection, field mapping, effective-dating, transformations, and payroll-vendor delivery',
+  proxyIntro: 'Workday PECI interviews test payroll-integration depth and change-detection logic. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday PECI and payroll-integration interviews',
+    'Support explaining change detection, field mapping, and effective-dating',
+    'Coaching on payroll-vendor delivery and reconciliation questions',
+    'Coverage for 2026R1 integration-change questions',
+    'Mock Workday PECI interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [INT_LINK, PAY_LINK],
+  extraLinks: [CC_LINK, { label: 'Workday Integration Consultant job support', href: '/workday-integration-consultant-job-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday PECI Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday PECI integration support — change detection, field mapping, transformations, and vendor delivery. Contact us on WhatsApp now.',
+});
+
+export const workdayBirtReportingJobSupport = workdayModulePage({
+  slug: 'workday-birt-reporting-job-support', label: 'Workday BIRT Reporting',
+  title: 'Workday BIRT Reporting Job Support — Layouts, Print & Pixel-Perfect Reports',
+  description: 'Real-time Workday BIRT reporting job support — BIRT layouts, pixel-perfect print reports, payslips, purchase orders, data binding, and troubleshooting. Production and project help. 2026R1 ready.',
+  keywords: ['Workday BIRT reporting job support', 'Workday BIRT support', 'Workday BIRT layout', 'Workday print reports', 'Workday payslip BIRT', 'Workday BIRT interview support'],
+  heroEyebrow: 'Workday BIRT Reporting Support — 2026R1',
+  tagline: 'Live Workday BIRT reporting support — BIRT layouts, pixel-perfect print reports, payslips, purchase orders, data binding, and troubleshooting.',
+  painIntro: 'A Workday BIRT report not rendering correctly? A payslip or purchase-order layout misaligned, data binding failing, or a print run producing blank pages? Our BIRT experts join your session and help.',
+  heroVariant: 'We help with Workday BIRT report layouts — pixel-perfect print documents (payslips, purchase orders, offer letters), data binding to custom reports, conditional formatting, page layout, and rendering troubleshooting. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday BIRT coverage: layouts, pixel-perfect print documents, data binding, conditional formatting, page layout, rendering, and 2026R1 impact.',
+  coverageTitle: 'Workday BIRT Reporting Situations We Help Resolve',
+  coverage: [
+    'Payslip, purchase-order, or offer-letter BIRT layout misaligned',
+    'BIRT data binding to a custom report not returning data',
+    'Conditional formatting or grouping in a BIRT layout not working',
+    'Print run producing blank pages or rendering errors',
+    'Converting a custom report into a pixel-perfect BIRT document',
+  ],
+  faqTopics: 'BIRT layouts, print documents, data binding, and rendering troubleshooting',
+  proxyIntro: 'Workday BIRT interviews test layout-design and data-binding depth. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday BIRT and reporting interview rounds',
+    'Support explaining BIRT layout design and data binding',
+    'Coaching on conditional formatting and print-document questions',
+    'Coverage for 2026R1 reporting-change questions',
+    'Mock Workday BIRT interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [REP_LINK, ADVREP_LINK],
+  extraLinks: [CALC_LINK, { label: 'Workday Reporting interview support', href: '/workday-reporting-interview-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday BIRT Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday BIRT reporting support — layouts, print documents, data binding, and rendering. Contact us on WhatsApp now.',
+});
+
+export const workdayAdvancedReportingJobSupport = workdayModulePage({
+  slug: 'workday-advanced-reporting-job-support', label: 'Workday Advanced Reporting',
+  title: 'Workday Advanced Reporting Job Support — Advanced, Matrix & Composite Reports',
+  description: 'Real-time Workday Advanced Reporting job support — Advanced, Matrix, and Composite reports, data sources, filters, prompts, sub-filters, and report security. Production and project help. 2026R1 ready.',
+  keywords: ['Workday Advanced Reporting job support', 'Workday advanced report support', 'Workday matrix report', 'Workday composite report', 'Workday report data source', 'Workday reporting interview support'],
+  heroEyebrow: 'Workday Advanced Reporting Support — 2026R1',
+  tagline: 'Live Workday Advanced Reporting support — Advanced, Matrix, and Composite reports, data sources, filters, prompts, sub-filters, and report security.',
+  painIntro: 'A Workday advanced report not returning the right rows? A data source missing fields, a filter or prompt not behaving, or a Matrix report not summarizing? Our reporting experts join your session and help.',
+  heroVariant: 'We help build and debug Workday Advanced, Matrix, and Composite reports — choosing data sources, related business objects, filters, sub-filters, prompts, grouping, charting, and report security. Updated for Workday 2026R1 reporting framework changes.',
+  techSnippet: 'Workday Advanced Reporting coverage: data sources, related business objects, filters, sub-filters, prompts, Matrix/Composite reports, security, and 2026R1 changes.',
+  coverageTitle: 'Workday Advanced Reporting Situations We Help Resolve',
+  coverage: [
+    'Advanced report not returning expected rows — data source or filter issue',
+    'Matrix report grouping or summarization not working',
+    'Composite report combining multiple data sources incorrectly',
+    'Prompt, sub-filter, or related-business-object configuration problem',
+    'Report security or sharing not behaving as intended',
+  ],
+  faqTopics: 'data sources, filters, prompts, Matrix reports, and Composite reports',
+  proxyIntro: 'Workday Advanced Reporting interviews test report-building depth and data-source knowledge. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday Advanced Reporting interview rounds',
+    'Support explaining data sources, related business objects, and filters',
+    'Coaching on Matrix and Composite report questions',
+    'Coverage for 2026R1 reporting-framework questions',
+    'Mock Workday Advanced Reporting interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [REP_LINK, CALC_LINK],
+  extraLinks: [{ label: 'Workday BIRT reporting job support', href: '/workday-birt-reporting-job-support/' }, { label: 'Workday Reporting interview support', href: '/workday-reporting-interview-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Advanced Reporting Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday Advanced Reporting support — Advanced, Matrix, Composite reports, data sources, and filters. Contact us on WhatsApp now.',
+});
+
+export const workdayCalculatedFieldsJobSupport = workdayModulePage({
+  slug: 'workday-calculated-fields-job-support', label: 'Workday Calculated Fields',
+  title: 'Workday Calculated Fields Job Support — Logic, Functions & Troubleshooting',
+  description: 'Real-time Workday calculated fields job support — calculated field types, functions, lookups, evaluate expressions, instance retrieval, and troubleshooting. Reporting, integrations, business processes. 2026R1 ready.',
+  keywords: ['Workday calculated fields job support', 'Workday calculated field support', 'Workday calc field logic', 'Workday evaluate expression', 'Workday lookup related value', 'Workday calculated fields interview support'],
+  heroEyebrow: 'Workday Calculated Fields Support — 2026R1',
+  tagline: 'Live Workday calculated fields support — calculated field types, functions, lookups, evaluate expressions, instance retrieval, and troubleshooting.',
+  painIntro: 'A Workday calculated field returning the wrong value or a blank? An evaluate-expression condition misfiring, a lookup-related-value returning nothing, or a date-calc off by a day? Our experts join your session and help you fix the logic.',
+  heroVariant: 'We help build and debug Workday calculated fields — Extract Single/Multi Instance, Lookup Related Value, Evaluate Expression, Arithmetic, Date Calculation, Text/Format, and Aggregation — used across reports, integrations, business processes, and condition rules. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday calculated fields coverage: instance retrieval, lookup related value, evaluate expression, arithmetic, date calc, text/format, aggregation, and 2026R1 impact.',
+  coverageTitle: 'Workday Calculated Fields Situations We Help Resolve',
+  coverage: [
+    'Calculated field returning the wrong value or a blank result',
+    'Evaluate Expression condition logic not behaving as designed',
+    'Lookup Related Value or instance-retrieval calc returning nothing',
+    'Date calculation off, or text/format calc producing the wrong string',
+    'Nesting and chaining calculated fields for reports, integrations, or business processes',
+  ],
+  faqTopics: 'calculated field types, functions, lookups, evaluate expressions, and instance retrieval',
+  proxyIntro: 'Workday calculated-fields interviews test functional logic depth. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday calculated-fields and reporting interviews',
+    'Support explaining calculated field types and function selection',
+    'Coaching on evaluate-expression and lookup-related-value questions',
+    'Coverage for 2026R1 reporting/integration-change questions',
+    'Mock Workday calculated-fields interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [REP_LINK, ADVREP_LINK],
+  extraLinks: [{ label: 'Workday Reporting Consultant job support', href: '/workday-reporting-consultant-job-support/' }, INT_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Calculated Fields Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday calculated fields support — logic, functions, lookups, and troubleshooting. Contact us on WhatsApp now.',
+});
+
+export const workdayBusinessProcessConfigurationSupport = workdayModulePage({
+  slug: 'workday-business-process-configuration-support', label: 'Workday Business Process Configuration',
+  title: 'Workday Business Process Configuration Support — BP Design, Steps & Security',
+  description: 'Real-time Workday business process configuration support — BP definitions, steps, conditions, approvals, routing, notifications, and BP security. HCM, Financials, Payroll. 2026R1 ready. Same-day start.',
+  keywords: ['Workday business process configuration support', 'Workday BP configuration', 'Workday business process support', 'Workday condition rules', 'Workday approval routing', 'Workday business process security'],
+  heroEyebrow: 'Workday Business Process Support — 2026R1',
+  tagline: 'Live Workday business process configuration support — BP definitions, steps, condition rules, approvals, routing, notifications, and business process security.',
+  painIntro: 'A Workday business process not routing correctly? An approval step skipped, a condition rule not triggering, or a notification not firing? Our BP experts join your session and help you configure it right.',
+  heroVariant: 'We help configure and debug Workday business processes — BP definitions, steps and step order, condition rules, approval and approval-chain steps, to-dos, checklists, notifications, routing restrictions, and business process security. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday BP coverage: definitions, steps, condition rules, approvals, routing, notifications, checklists, business process security, and 2026R1 impact.',
+  coverageTitle: 'Workday Business Process Configuration Situations We Help Resolve',
+  coverage: [
+    'Business process not routing to the right approver or skipping a step',
+    'Condition rule not triggering or evaluating incorrectly',
+    'Approval chain, to-do, or checklist step misconfigured',
+    'Notification or alert not firing on a business process event',
+    'Business process security policy blocking an action',
+  ],
+  faqTopics: 'BP definitions, steps, condition rules, approvals, and business process security',
+  proxyIntro: 'Workday business-process interviews test configuration depth and design judgment. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday business-process configuration interviews',
+    'Support explaining BP step design, condition rules, and routing',
+    'Coaching on approval-chain and business-process-security questions',
+    'Coverage for 2026R1 release-impact questions',
+    'Mock Workday business-process interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [HCM_LINK, SEC_LINK],
+  extraLinks: [{ label: 'Workday Functional Consultant job support', href: '/workday-functional-consultant-job-support/' }, TENANT_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Business Process Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday business process configuration support — steps, conditions, approvals, routing, and security. Contact us on WhatsApp now.',
+});
+
+export const workdayDataConversionMigrationSupport = workdayModulePage({
+  slug: 'workday-data-conversion-migration-support', label: 'Workday Data Conversion & Migration',
+  title: 'Workday Data Conversion & Migration Support — iLoads, EIB & Validation',
+  description: 'Real-time Workday data conversion and migration support — iLoads, EIB data loads, conversion templates, data mapping, validation, reconciliation, and legacy migration. 2026R1 ready. Same-day start.',
+  keywords: ['Workday data conversion support', 'Workday data migration support', 'Workday iLoads support', 'Workday data load support', 'Workday conversion templates', 'Workday data validation support'],
+  heroEyebrow: 'Workday Data Conversion Support — 2026R1',
+  tagline: 'Live Workday data conversion and migration support — iLoads, EIB data loads, conversion templates, data mapping, validation, and reconciliation.',
+  painIntro: 'A Workday data conversion load failing or loading bad data? An iLoad rejecting records, a conversion template mapping wrong, or post-load validation not reconciling? Our data-conversion experts join your session and help.',
+  heroVariant: 'We help with Workday data conversion and migration — iLoads, EIB data loads, customer and Workday-delivered conversion templates, data mapping and cleansing, sequencing, validation, reconciliation, and legacy-to-Workday migration. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday data conversion coverage: iLoads, EIB loads, conversion templates, data mapping, cleansing, sequencing, validation, reconciliation, and 2026R1 impact.',
+  coverageTitle: 'Workday Data Conversion & Migration Situations We Help Resolve',
+  coverage: [
+    'iLoad or EIB data load rejecting records or loading incorrect values',
+    'Conversion template mapping, sequencing, or dependency issue',
+    'Foundation, worker, or financial data conversion not validating',
+    'Post-load reconciliation between legacy source and Workday',
+    'Legacy-to-Workday migration cutover data strategy',
+  ],
+  faqTopics: 'iLoads, EIB loads, conversion templates, data mapping, and validation',
+  proxyIntro: 'Workday data-conversion interviews test load-tooling and data-mapping depth. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday data-conversion and migration interviews',
+    'Support explaining iLoads, EIB loads, and conversion-template sequencing',
+    'Coaching on data mapping, validation, and reconciliation questions',
+    'Coverage for 2026R1 release-impact questions',
+    'Mock Workday data-conversion interviews calibrated to implementation formats',
+  ],
+  techLinks: [INT_LINK, IMPL_LINK],
+  extraLinks: [EIB_LINK, { label: 'Workday testing & UAT support', href: '/workday-testing-uat-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Data Conversion Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday data conversion and migration support — iLoads, EIB loads, mapping, validation, and reconciliation. Contact us on WhatsApp now.',
+});
+
+export const workdayTestingUatSupport = workdayModulePage({
+  slug: 'workday-testing-uat-support', label: 'Workday Testing & UAT',
+  title: 'Workday Testing & UAT Support — Test Planning, Execution & Defect Triage',
+  description: 'Real-time Workday testing and UAT support — test planning, scenario design, unit/SIT/UAT execution, defect triage, regression testing, and automation. 2026R1 regression ready. Same-day start.',
+  keywords: ['Workday testing support', 'Workday UAT support', 'Workday test planning', 'Workday SIT support', 'Workday regression testing', 'Workday test automation support'],
+  heroEyebrow: 'Workday Testing & UAT Support — 2026R1',
+  tagline: 'Live Workday testing and UAT support — test planning, scenario design, unit/SIT/UAT execution, defect triage, regression testing, and automation.',
+  painIntro: 'A Workday testing cycle slipping or a UAT defect backlog growing? Test scenarios incomplete, SIT failing, or 2026R1 regression overwhelming the team? Our testing experts join your session and help you get coverage and clear defects.',
+  heroVariant: 'We help with Workday testing across unit, SIT, UAT, and regression — test planning, scenario and test-case design, execution coordination, defect triage and retest, and 2026R1 release regression testing. We also advise on Workday test automation. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday testing coverage: test planning, scenario/test-case design, unit/SIT/UAT execution, defect triage, regression testing, automation, and 2026R1 regression.',
+  coverageTitle: 'Workday Testing & UAT Situations We Help Resolve',
+  coverage: [
+    'Test scenario and test-case design gaps across HCM, Financials, or Payroll',
+    'SIT or UAT execution coordination and defect backlog management',
+    'Defect triage, root-cause, and retest cycles under a deadline',
+    'Workday 2026R1 release regression testing and impact validation',
+    'Workday test automation strategy and tooling guidance',
+  ],
+  faqTopics: 'test planning, scenario design, SIT/UAT execution, defect triage, and regression testing',
+  proxyIntro: 'Workday testing/UAT interviews test QA methodology and regression knowledge. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday testing and QA interview rounds',
+    'Support explaining test planning, scenario design, and defect-triage approaches',
+    'Coaching on SIT/UAT and regression-testing questions',
+    'Coverage for 2026R1 regression-testing questions',
+    'Mock Workday testing interviews calibrated to consulting and direct-client formats',
+  ],
+  techLinks: [TEST_LINK, R1_LINK],
+  extraLinks: [{ label: 'Workday go-live & hypercare support', href: '/workday-go-live-hypercare-support/' }, PROD_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Testing & UAT Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday testing and UAT support — planning, execution, defect triage, and 2026R1 regression. Contact us on WhatsApp now.',
+});
+
+export const workdayGoLiveHypercareSupport = workdayModulePage({
+  slug: 'workday-go-live-hypercare-support', label: 'Workday Go-Live & Hypercare',
+  title: 'Workday Go-Live & Hypercare Support — Cutover, Stabilization & Daily Help',
+  description: 'Real-time Workday go-live and hypercare support — cutover execution, go-live readiness, post-go-live stabilization, incident triage, and daily hypercare. HCM, Financials, Payroll. 2026R1 ready.',
+  keywords: ['Workday go-live support', 'Workday hypercare support', 'Workday cutover support', 'Workday stabilization support', 'Workday post go-live support', 'Workday go-live readiness'],
+  heroEyebrow: 'Workday Go-Live & Hypercare Support — 2026R1',
+  tagline: 'Live Workday go-live and hypercare support — cutover execution, go-live readiness, post-go-live stabilization, incident triage, and daily hypercare.',
+  painIntro: 'A Workday go-live approaching or a hypercare period overwhelming the team? Cutover steps slipping, first payroll after go-live at risk, or an incident queue building during hypercare? Our experts join your session and help you stabilize.',
+  heroVariant: 'We provide Workday go-live and hypercare support — cutover planning and execution, go-live readiness checks, first-pay-run and first-close stabilization, incident triage and resolution, and daily hypercare coverage. HCM, Financials, Payroll, Integrations. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday go-live coverage: cutover planning/execution, readiness checks, first pay-run/close stabilization, incident triage, daily hypercare, and 2026R1 impact.',
+  coverageTitle: 'Workday Go-Live & Hypercare Situations We Help Resolve',
+  coverage: [
+    'Cutover plan execution slipping in the final days before go-live',
+    'First payroll run or first period close after go-live at risk',
+    'Incident queue building during the hypercare window',
+    'Integration or business process failures surfacing post-go-live',
+    'Go-live readiness gaps and stabilization planning',
+  ],
+  faqTopics: 'cutover, go-live readiness, post-go-live stabilization, and hypercare',
+  proxyIntro: 'Workday go-live/hypercare interviews test delivery and stabilization experience. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during Workday go-live and hypercare scenario interviews',
+    'Support explaining cutover planning, readiness, and stabilization approaches',
+    'Coaching on hypercare incident-management questions',
+    'Coverage for 2026R1 release-impact questions',
+    'Mock Workday go-live interviews calibrated to implementation formats',
+  ],
+  techLinks: [PROD_LINK, TEST_LINK],
+  extraLinks: [IMPL_LINK, R1_LINK],
+  bottomCTAHeading: 'Need Real-Time Workday Go-Live & Hypercare Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday go-live and hypercare support — cutover, stabilization, incident triage, and daily coverage. Contact us on WhatsApp now.',
+});
+
+export const workdayClientCallStandupSupport = workdayModulePage({
+  slug: 'workday-client-call-standup-support', label: 'Workday Client Call & Standup',
+  title: 'Workday Client Call & Standup Support — Meeting, Demo & Daily Task Help',
+  description: 'Real-time Workday client call and standup support — meeting preparation, live call backup, demo support, daily standup updates, and task delivery. Discreet expert backup during your working hours. 2026R1 ready.',
+  keywords: ['Workday client call support', 'Workday standup support', 'Workday meeting support', 'Workday demo support', 'Workday daily task support', 'Workday office hours support'],
+  heroEyebrow: 'Workday Client Call & Standup Support — 2026R1',
+  tagline: 'Live Workday client call and standup support — meeting preparation, live call backup, demo support, daily standup updates, and task delivery.',
+  painIntro: 'A Workday client call or demo you are not fully confident about? A daily standup where you need the right status and next steps, or a configuration demo to a client tomorrow? Our experts prepare you and provide discreet real-time backup.',
+  heroVariant: 'We provide discreet Workday client-call and standup support — preparing talking points and status updates, backing you up live during client calls and configuration demos, helping you answer technical questions in the moment, and helping you plan and deliver daily tasks. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday client-call coverage: meeting prep, live call backup, configuration demos, standup status/next steps, daily task planning, and 2026R1 talking points.',
+  coverageTitle: 'Workday Client Call & Standup Situations We Help With',
+  coverage: [
+    'Preparing status, blockers, and next steps for a daily standup',
+    'Live discreet backup during a client call or status meeting',
+    'Walking a client through a Workday configuration demo',
+    'Answering unexpected technical or functional questions during a call',
+    'Planning and prioritizing daily Workday tasks to hit commitments',
+  ],
+  faqTopics: 'meeting preparation, live call backup, configuration demos, and daily standup updates',
+  proxyIntro: 'Client-facing Workday interviews and presentations test communication and configuration confidence. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during client-facing Workday interview and presentation rounds',
+    'Support structuring status updates and demo walkthroughs',
+    'Coaching on answering live technical and functional questions',
+    'Coverage for 2026R1 talking points in client conversations',
+    'Mock client-call and demo rehearsals calibrated to your project',
+  ],
+  techLinks: [PROD_LINK, { label: 'Workday Functional Consultant job support', href: '/workday-functional-consultant-job-support/' }],
+  extraLinks: [{ label: 'Client call & standup support guide', href: '/client-call-and-standup-support-guide/' }, { label: 'Workday project onboarding support', href: '/workday-project-onboarding-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Client Call Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday client call and standup support — meeting prep, live backup, demos, and daily task delivery. Contact us on WhatsApp now.',
+});
+
+export const workdayProjectOnboardingSupport = workdayModulePage({
+  slug: 'workday-project-onboarding-support', label: 'Workday Project Onboarding',
+  title: 'Workday Project Onboarding Support — Ramp-Up, Tenant Orientation & First Tasks',
+  description: 'Real-time Workday project onboarding support — fast ramp-up on a new Workday project, tenant orientation, tooling setup, first-task delivery, and module orientation. HCM, Financials, Payroll. 2026R1 ready.',
+  keywords: ['Workday project onboarding support', 'Workday onboarding help', 'Workday ramp-up support', 'Workday new project support', 'Workday tenant orientation', 'Workday first task support'],
+  heroEyebrow: 'Workday Project Onboarding Support — 2026R1',
+  tagline: 'Live Workday project onboarding support — fast ramp-up on a new project, tenant orientation, tooling setup, first-task delivery, and module orientation.',
+  painIntro: 'Just started a new Workday project and need to ramp up fast? Unfamiliar tenant, new tooling, and first deliverables due before you have your bearings? Our experts join your session and help you onboard and deliver from day one.',
+  heroVariant: 'We help you onboard onto a new Workday project — orienting you in the tenant and configuration, setting up tools and access, understanding the implementation methodology and team processes, and delivering your first tasks confidently across HCM, Financials, Payroll, or Integrations. Updated for Workday 2026R1 release impact.',
+  techSnippet: 'Workday onboarding coverage: tenant orientation, tooling/access setup, methodology orientation, module ramp-up, first-task delivery, and 2026R1 context.',
+  coverageTitle: 'Workday Project Onboarding Situations We Help With',
+  coverage: [
+    'Ramping up quickly on an unfamiliar Workday tenant and configuration',
+    'Setting up tools, access, and understanding team processes',
+    'Orientation to the implementation methodology and project phase',
+    'Delivering your first configuration, report, or integration task',
+    'Module ramp-up across HCM, Financials, Payroll, or Integrations',
+  ],
+  faqTopics: 'tenant orientation, tooling setup, methodology orientation, and first-task delivery',
+  proxyIntro: 'New-project Workday interviews and onboarding assessments test breadth and adaptability. Our experts provide real-time, discreet guidance.',
+  proxyPoints: [
+    'Real-time guidance during onboarding assessments and early project reviews',
+    'Support orienting to a new tenant, methodology, and toolset',
+    'Coaching on first-task delivery and team-process questions',
+    'Coverage for 2026R1 context relevant to your new project',
+    'Mock onboarding and ramp-up sessions calibrated to your role',
+  ],
+  techLinks: [IMPL_LINK, { label: 'Workday Functional Consultant job support', href: '/workday-functional-consultant-job-support/' }],
+  extraLinks: [{ label: 'Project onboarding help (Ireland)', href: '/project-onboarding-help-ireland/' }, { label: 'Workday client call & standup support', href: '/workday-client-call-standup-support/' }],
+  bottomCTAHeading: 'Need Real-Time Workday Onboarding Support? Get Expert Help Now',
+  bottomCTABody: 'Same-day Workday project onboarding support — tenant orientation, tooling, methodology, and first-task delivery. Contact us on WhatsApp now.',
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+// WORKDAY INTERVIEW-FOCUSED TECHNICAL PAGES (Phase 11) — factory
+// ═══════════════════════════════════════════════════════════════════════════
+
+interface WorkdayInterviewOpts {
+  slug: string;
+  title: string;
+  description: string;
+  keywords: string[];
+  heroEyebrow: string;
+  tagline: string;
+  painIntro: string;
+  heroVariant: string;
+  scenariosTitle: string;
+  scenarios: string[];
+  prepTitle: string;
+  prepIntro: string;
+  prepPoints: string[];
+  faqContext: string;
+  moduleLink: LandingRelatedLink;
+  extraLinks?: LandingRelatedLink[];
+  bottomCTAHeading: string;
+  bottomCTABody: string;
+}
+
+function workdayInterviewSupportPage(o: WorkdayInterviewOpts): LandingPageConfig {
+  const self = `/${o.slug}/`;
+  const notSelf = (l: LandingRelatedLink) => l.href !== self;
+  return {
+    slug: o.slug,
+    title: o.title,
+    description: o.description,
+    canonical: `${BASE_URL}/${o.slug}/`,
+    keywords: o.keywords,
+    h1: o.title,
+    tagline: o.tagline,
+    heroEyebrow: o.heroEyebrow,
+    painIntro: o.painIntro,
+    heroVariant: o.heroVariant,
+    geoLine: 'Supporting Workday interview candidates across USA, Canada, UK, Europe, Ireland, Australia, New Zealand, Singapore, UAE, Saudi Arabia, and worldwide.',
+    timezoneNote: 'Available across all time zones for live Workday interview support.',
+    highlights: workdayHighlights,
+    faqs: workdayProxyFaqs(o.faqContext),
+    useCasesSection: { title: o.scenariosTitle, cases: o.scenarios },
+    proxySection: { title: o.prepTitle, intro: o.prepIntro, points: o.prepPoints },
+    bottomCTAHeading: o.bottomCTAHeading,
+    bottomCTABody: o.bottomCTABody,
+    relatedLinks: {
+      geoLinks: [
+        { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+        { label: 'Workday proxy interview USA', href: '/workday-proxy-interview-usa/' },
+      ].filter(notSelf),
+      techLinks: [
+        o.moduleLink,
+        { label: 'Workday job support hub', href: '/workday-job-support/' },
+      ].filter(notSelf),
+      problemLink: { label: 'Failed an interview?', href: '/failed-interview-help/' },
+      proxyLink: { label: 'Get Workday interviews scheduled', href: '/workday-interview-scheduled/' },
+      blogLink: { label: 'Read developer support articles', href: '/blog/' },
+      additionalLinks: [
+        ...(o.extraLinks ?? []),
+        { label: 'Job application & candidate marketing', href: '/job-application-candidate-marketing/' },
+      ].filter(notSelf),
+    },
+    lastmod: LASTMOD,
+  };
+}
+
+// ─── Phase 11: Interview-focused technical pages ─────────────────────────────
+
+export const workdayHcmInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-hcm-interview-support',
+  title: 'Workday HCM Interview Support — Live Guidance for HCM Consultant Rounds',
+  description: 'Real-time Workday HCM interview support — live guidance for Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, and Skills Cloud interview rounds. Scenario and configuration questions. All time zones.',
+  keywords: ['Workday HCM interview support', 'Workday HCM proxy interview', 'Workday HCM consultant interview', 'Workday Core HR interview', 'Workday compensation interview', 'Workday benefits interview'],
+  heroEyebrow: 'Workday HCM Interview Support',
+  tagline: 'Live, discreet Workday HCM interview support — Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, Talent, and Skills Cloud rounds.',
+  painIntro: 'Workday HCM consultant interview scheduled and unsure about scenario or configuration questions? Business process design, eligibility rules, or Skills Cloud topics likely to come up? Our HCM experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday HCM interview support covering Core HR, Staffing, Job/Position Management, Compensation, Benefits, Absence, Time Tracking, Talent, and Skills Cloud — including business process design, eligibility/condition rules, and 2026R1 HCM AI workflow questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday HCM Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Business process design and condition-rule scenario questions',
+    'Compensation grid, plan, and eligibility configuration questions',
+    'Benefits open-enrollment and eligibility-rule scenarios',
+    'Absence accrual and Time Tracking calculation questions',
+    'Talent, Skills Cloud, and 2026R1 HCM AI workflow questions',
+  ],
+  prepTitle: 'How Our Workday HCM Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time HCM guidance throughout — from functional panels to configuration walkthroughs.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign an HCM expert',
+    'Pre-interview brief on likely HCM scenario and configuration topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 HCM AI workflow questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday HCM',
+  moduleLink: HCM_LINK,
+  extraLinks: [{ label: 'Workday HCM Consultant job support', href: '/workday-hcm-consultant-job-support/' }],
+  bottomCTAHeading: 'Workday HCM Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday HCM interview support — Core HR, Compensation, Benefits, Absence, and Skills Cloud. Contact us on WhatsApp now.',
+});
+
+export const workdayIntegrationInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-integration-interview-support',
+  title: 'Workday Integration Interview Support — Live Guidance for Integration Rounds',
+  description: 'Real-time Workday integration interview support — live guidance for EIB, Studio, Core Connector, PECI, web services, and integration architecture rounds. Technical and scenario questions. All time zones.',
+  keywords: ['Workday integration interview support', 'Workday integration proxy interview', 'Workday EIB interview', 'Workday Studio interview', 'Workday Core Connector interview', 'Workday PECI interview'],
+  heroEyebrow: 'Workday Integration Interview Support',
+  tagline: 'Live, discreet Workday integration interview support — EIB, Studio, Core Connector, PECI/PICOF, REST/SOAP, RaaS, and integration architecture rounds.',
+  painIntro: 'Workday integration interview scheduled and unsure about architecture or hands-on questions? Studio assemblies, Core Connector mapping, or PECI change detection likely to come up? Our integration experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday integration interview support covering EIB, Studio, Core Connectors, PECI/PICOF, REST/SOAP web services, RaaS, error handling, and integration security — including architecture trade-offs and 2026R1 API-change questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Integration Interview Scenarios We Help Navigate',
+  scenarios: [
+    'EIB inbound/outbound and XSLT transformation questions',
+    'Studio assembly, orchestration, and web service call questions',
+    'Core Connector template, field mapping, and integration-attribute questions',
+    'PECI/PICOF change detection and payroll-vendor delivery questions',
+    'Integration security, error handling, and 2026R1 API-change questions',
+  ],
+  prepTitle: 'How Our Workday Integration Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time integration guidance throughout — from technical panels to architecture reviews.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign an integration expert',
+    'Pre-interview brief on likely integration architecture and hands-on topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 API and integration-change questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday integration',
+  moduleLink: INT_LINK,
+  extraLinks: [{ label: 'Workday Integration Consultant job support', href: '/workday-integration-consultant-job-support/' }, STUDIO_LINK],
+  bottomCTAHeading: 'Workday Integration Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday integration interview support — EIB, Studio, Core Connector, PECI, and web services. Contact us on WhatsApp now.',
+});
+
+export const workdayFinancialsInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-financials-interview-support',
+  title: 'Workday Financials Interview Support — Live Guidance for Finance Rounds',
+  description: 'Real-time Workday Financials interview support — live guidance for GL, AP, AR, Procurement, Projects, Banking, and period close interview rounds. Configuration and accounting scenario questions. All time zones.',
+  keywords: ['Workday Financials interview support', 'Workday finance proxy interview', 'Workday GL interview', 'Workday Procurement interview', 'Workday financials consultant interview', 'Workday accounting interview'],
+  heroEyebrow: 'Workday Financials Interview Support',
+  tagline: 'Live, discreet Workday Financials interview support — GL, AP, AR, Procurement, Projects, Banking, and period close rounds.',
+  painIntro: 'Workday Financials interview scheduled and unsure about configuration or accounting questions? Account posting rules, allocations, or close-cycle design likely to come up? Our Financials experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday Financials interview support covering the General Ledger, Accounting, AP, AR, Procurement, Projects, Banking, and period close — including account posting rules, allocations, intercompany, and 2026R1 Finance automation questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Financials Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Account posting rules, ledger account, and allocation questions',
+    'AP supplier invoice, payment, and settlement scenario questions',
+    'AR billing, customer invoice, and revenue questions',
+    'Procurement and Projects costing/capitalization questions',
+    'Period close, intercompany, and 2026R1 Finance automation questions',
+  ],
+  prepTitle: 'How Our Workday Financials Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time Financials guidance throughout — from functional panels to configuration walkthroughs.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign a Financials expert',
+    'Pre-interview brief on likely Financials configuration and accounting topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 Finance automation questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday Financials',
+  moduleLink: FIN_LINK,
+  extraLinks: [{ label: 'Workday Financials Consultant job support', href: '/workday-financials-consultant-job-support/' }],
+  bottomCTAHeading: 'Workday Financials Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday Financials interview support — GL, AP, AR, Procurement, Projects, and period close. Contact us on WhatsApp now.',
+});
+
+export const workdayPayrollInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-payroll-interview-support',
+  title: 'Workday Payroll Interview Support — Live Guidance for Payroll Rounds',
+  description: 'Real-time Workday Payroll interview support — live guidance for pay calculations, earnings/deductions, taxes, off-cycle, garnishments, and year-end interview rounds. USA, Canada, UK payroll. All time zones.',
+  keywords: ['Workday Payroll interview support', 'Workday payroll proxy interview', 'Workday payroll calculation interview', 'Workday payroll consultant interview', 'Workday year-end interview', 'Workday payroll compliance interview'],
+  heroEyebrow: 'Workday Payroll Interview Support',
+  tagline: 'Live, discreet Workday Payroll interview support — pay calculations, earnings/deductions, taxes, off-cycle, garnishments, and year-end rounds.',
+  painIntro: 'Workday Payroll interview scheduled and unsure about calculation logic or compliance questions? Run categories, earnings/deductions, or year-end processing likely to come up? Our Payroll experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday Payroll interview support covering pay calculation rules, earnings and deductions, run categories, taxes, off-cycle and retro processing, garnishments, and year-end (W-2/T4/P60) — including USA, Canada, and UK payroll compliance and 2026R1 changes. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Payroll Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Pay calculation rule, run category, and earnings/deduction questions',
+    'Tax setup, garnishment, and retro-processing questions',
+    'Off-cycle and on-demand payment scenario questions',
+    'Year-end (W-2/T4/P60) and compliance questions',
+    'Country-specific payroll (USA, Canada T4/ROE, UK PAYE/RTI) questions',
+  ],
+  prepTitle: 'How Our Workday Payroll Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time Payroll guidance throughout — from calculation logic to compliance discussions.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign a Payroll expert',
+    'Pre-interview brief on likely Payroll calculation and compliance topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 payroll compliance questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday Payroll',
+  moduleLink: PAY_LINK,
+  extraLinks: [{ label: 'Workday Payroll Consultant job support', href: '/workday-payroll-consultant-job-support/' }],
+  bottomCTAHeading: 'Workday Payroll Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday Payroll interview support — calculations, taxes, off-cycle, garnishments, and year-end. Contact us on WhatsApp now.',
+});
+
+export const workdaySecurityInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-security-interview-support',
+  title: 'Workday Security Interview Support — Live Guidance for Security Rounds',
+  description: 'Real-time Workday Security interview support — live guidance for domain security, role-based security, business process security, segregation of duties, and audit interview rounds. All time zones.',
+  keywords: ['Workday Security interview support', 'Workday security proxy interview', 'Workday domain security interview', 'Workday role-based security interview', 'Workday security consultant interview', 'Workday segregation of duties interview'],
+  heroEyebrow: 'Workday Security Interview Support',
+  tagline: 'Live, discreet Workday Security interview support — domain security, role-based security, business process security, segregation of duties, and audit rounds.',
+  painIntro: 'Workday Security interview scheduled and unsure about the security model questions? Domain vs. business process security, role-based design, or segregation of duties likely to come up? Our Security experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday Security interview support covering domain security policies, role-based and user-based security, business process security, integration security, segregation of duties, and audit/compliance — including 2026R1 Security framework questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Security Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Domain security policy vs. business process security questions',
+    'Role-based vs. user-based security assignment design questions',
+    'Integration system security (ISU/ISSG) questions',
+    'Segregation-of-duties and audit/compliance scenario questions',
+    'Security configuration migration and 2026R1 Security framework questions',
+  ],
+  prepTitle: 'How Our Workday Security Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time Security guidance throughout — from model-design panels to scenario discussions.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign a Security expert',
+    'Pre-interview brief on likely Security model and audit topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 Security framework questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday Security',
+  moduleLink: SEC_LINK,
+  extraLinks: [{ label: 'Workday Security Consultant job support', href: '/workday-security-consultant-job-support/' }],
+  bottomCTAHeading: 'Workday Security Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday Security interview support — domains, roles, business process security, and segregation of duties. Contact us on WhatsApp now.',
+});
+
+export const workdayReportingInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-reporting-interview-support',
+  title: 'Workday Reporting Interview Support — Live Guidance for Reporting Rounds',
+  description: 'Real-time Workday Reporting interview support — live guidance for Advanced, Matrix, Composite reports, calculated fields, BIRT, and Prism Analytics interview rounds. All time zones.',
+  keywords: ['Workday Reporting interview support', 'Workday reporting proxy interview', 'Workday advanced reporting interview', 'Workday calculated fields interview', 'Workday Prism interview', 'Workday reporting consultant interview'],
+  heroEyebrow: 'Workday Reporting Interview Support',
+  tagline: 'Live, discreet Workday Reporting interview support — Advanced, Matrix, Composite reports, calculated fields, BIRT, and Prism Analytics rounds.',
+  painIntro: 'Workday Reporting interview scheduled and unsure about report-building or calculated-field questions? Data sources, Matrix/Composite reports, or Prism likely to come up? Our Reporting experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday Reporting interview support covering Advanced, Matrix, and Composite reports, calculated fields, BIRT layouts, Prism Analytics, Data Cloud, and report security — including 2026R1 reporting-framework questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Reporting Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Report type selection, data source, and related-business-object questions',
+    'Calculated field type and function-selection questions',
+    'Matrix and Composite report design questions',
+    'BIRT layout and Prism Analytics questions',
+    'Report security, performance, and 2026R1 reporting-framework questions',
+  ],
+  prepTitle: 'How Our Workday Reporting Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time Reporting guidance throughout — from report-building panels to scenario discussions.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign a Reporting expert',
+    'Pre-interview brief on likely report-building and calculated-field topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 reporting-framework questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday Reporting',
+  moduleLink: REP_LINK,
+  extraLinks: [{ label: 'Workday Reporting Consultant job support', href: '/workday-reporting-consultant-job-support/' }],
+  bottomCTAHeading: 'Workday Reporting Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday Reporting interview support — Advanced, Matrix, Composite reports, calculated fields, and Prism. Contact us on WhatsApp now.',
+});
+
+export const workdayBusinessAnalystInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-business-analyst-interview-support',
+  title: 'Workday Business Analyst Interview Support — Live Guidance for BA Rounds',
+  description: 'Real-time Workday Business Analyst interview support — live guidance for requirements, business process design, fit-gap analysis, and functional specification interview rounds. All time zones.',
+  keywords: ['Workday Business Analyst interview support', 'Workday BA proxy interview', 'Workday business analyst interview', 'Workday requirements interview', 'Workday fit-gap interview', 'Workday BA scenario interview'],
+  heroEyebrow: 'Workday BA Interview Support',
+  tagline: 'Live, discreet Workday Business Analyst interview support — requirements, business process design, fit-gap analysis, and functional-spec rounds.',
+  painIntro: 'Workday BA interview scheduled and unsure about functional or process-design questions? Requirements-to-configuration translation, fit-gap, or UAT coordination likely to come up? Our BA experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday Business Analyst interview support covering requirements gathering, business process design, fit-gap analysis, functional specifications, and UAT coordination — across HCM, Financials, and Payroll, including 2026R1 release-impact questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday BA Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Requirements-gathering and stakeholder-workshop scenario questions',
+    'Business process design and fit-gap analysis questions',
+    'Requirements-to-configuration translation questions',
+    'Functional specification and UAT-coordination questions',
+    'Cross-module (HCM/Financials/Payroll) and 2026R1 impact questions',
+  ],
+  prepTitle: 'How Our Workday BA Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time BA guidance throughout — from functional panels to scenario discussions.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign a BA expert',
+    'Pre-interview brief on likely BA functional and process-design topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 release-impact questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday Business Analyst',
+  moduleLink: { label: 'Workday Business Analyst job support', href: '/workday-business-analyst-job-support/' },
+  extraLinks: [{ label: 'Workday business process configuration support', href: '/workday-business-process-configuration-support/' }],
+  bottomCTAHeading: 'Workday BA Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday Business Analyst interview support — requirements, business process design, fit-gap, and functional specs. Contact us on WhatsApp now.',
+});
+
+export const workdayFunctionalConsultantInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-functional-consultant-interview-support',
+  title: 'Workday Functional Consultant Interview Support — Live Configuration Guidance',
+  description: 'Real-time Workday Functional Consultant interview support — live guidance for HCM, Financials, and Payroll configuration, business process, and scenario interview rounds. All time zones.',
+  keywords: ['Workday Functional Consultant interview support', 'Workday functional proxy interview', 'Workday functional consultant interview', 'Workday configuration interview', 'Workday HCM functional interview', 'Workday scenario interview'],
+  heroEyebrow: 'Workday Functional Consultant Interview Support',
+  tagline: 'Live, discreet Workday Functional Consultant interview support — HCM, Financials, and Payroll configuration and scenario rounds.',
+  painIntro: 'Workday functional interview scheduled and unsure about configuration depth or scenario questions? Business processes, condition rules, or module setup likely to come up? Our functional experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday Functional Consultant interview support across Core HR, Compensation, Benefits, Absence, Time Tracking, Financials, and Payroll — business process configuration, condition rules, security, calculated fields, and 2026R1 release-impact questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Functional Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Business process and condition-rule configuration scenario questions',
+    'Module configuration questions across HCM, Financials, and Payroll',
+    'Security and calculated-field configuration questions',
+    'Real-world implementation and tenant-design walkthroughs',
+    'Cross-module integration touchpoints and 2026R1 impact questions',
+  ],
+  prepTitle: 'How Our Workday Functional Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time functional guidance throughout — from configuration panels to scenario discussions.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign a functional expert',
+    'Pre-interview brief on likely configuration and scenario topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 release-impact questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday functional consultant',
+  moduleLink: { label: 'Workday Functional Consultant job support', href: '/workday-functional-consultant-job-support/' },
+  extraLinks: [HCM_LINK, { label: 'Workday HCM interview support', href: '/workday-hcm-interview-support/' }],
+  bottomCTAHeading: 'Workday Functional Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday Functional Consultant interview support — configuration, business processes, security, and scenarios. Contact us on WhatsApp now.',
+});
+
+export const workdayTechnicalConsultantInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-technical-consultant-interview-support',
+  title: 'Workday Technical Consultant Interview Support — Live Integration & Reporting Guidance',
+  description: 'Real-time Workday Technical Consultant interview support — live guidance for integrations (EIB, Studio, Core Connector, PECI), reporting, calculated fields, and Workday Extend interview rounds. All time zones.',
+  keywords: ['Workday Technical Consultant interview support', 'Workday technical proxy interview', 'Workday technical consultant interview', 'Workday integration developer interview', 'Workday Extend interview', 'Workday RaaS interview'],
+  heroEyebrow: 'Workday Technical Consultant Interview Support',
+  tagline: 'Live, discreet Workday Technical Consultant interview support — integrations, reporting, calculated fields, and Workday Extend rounds.',
+  painIntro: 'Workday technical interview scheduled and unsure about integration or development questions? Studio assemblies, calculated fields, or Workday Extend likely to come up? Our technical experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday Technical Consultant interview support covering EIB, Studio, Core Connector, PECI, REST/SOAP web services, RaaS, calculated fields, advanced/BIRT reporting, and Workday Extend — including architecture trade-offs and 2026R1 API-change questions. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Technical Interview Scenarios We Help Navigate',
+  scenarios: [
+    'EIB, Studio, and Core Connector technical and architecture questions',
+    'PECI and web service (REST/SOAP, RaaS) questions',
+    'Complex calculated field and advanced/BIRT reporting questions',
+    'Workday Extend app and orchestration questions',
+    'Integration security, error handling, and 2026R1 API-change questions',
+  ],
+  prepTitle: 'How Our Workday Technical Interview Support Works',
+  prepIntro: 'We align to your interview format and provide real-time technical guidance throughout — from coding/configuration panels to architecture reviews.',
+  prepPoints: [
+    'Share the employer, role, and interview format via WhatsApp — we assign a technical expert',
+    'Pre-interview brief on likely integration, reporting, and Extend topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 API and release-change questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday technical consultant',
+  moduleLink: { label: 'Workday Technical Consultant job support', href: '/workday-technical-consultant-job-support/' },
+  extraLinks: [{ label: 'Workday integration interview support', href: '/workday-integration-interview-support/' }, STUDIO_LINK],
+  bottomCTAHeading: 'Workday Technical Interview Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday Technical Consultant interview support — integrations, reporting, calculated fields, and Workday Extend. Contact us on WhatsApp now.',
+});
+
+export const workdayFinalRoundInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-final-round-interview-support',
+  title: 'Workday Final Round Interview Support — Live Guidance for Final Workday Interviews',
+  description: 'Real-time Workday final round interview support — live guidance for final-stage technical, functional, and client-facing Workday interview rounds. HCM, Integration, Financials, Payroll, Reporting, Security. All time zones.',
+  keywords: ['Workday final round interview support', 'Workday final interview proxy', 'Workday final round proxy interview', 'Workday final stage interview', 'Workday client final round', 'Workday final technical interview'],
+  heroEyebrow: 'Workday Final Round Interview Support',
+  tagline: 'Live, discreet Workday final round interview support — final-stage technical, functional, and client-facing rounds across all Workday modules.',
+  painIntro: 'Workday final round coming up and need to perform at your best? A panel, a client-facing discussion, or a deep-dive on your strongest module — the final round decides the offer. Our experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday final round interview support across HCM, Integration, Financials, Payroll, Reporting, and Security — calibrated to the depth and client-facing nature of final-stage rounds, including scenario walkthroughs and 2026R1 topics. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Final Round Scenarios We Help Navigate',
+  scenarios: [
+    'Final-stage technical deep-dive on your strongest Workday module',
+    'Client-facing or hiring-manager final discussion',
+    'Scenario and tenant-design walkthrough questions',
+    'Behavioral and project-experience questions tied to Workday delivery',
+    'Cross-module and 2026R1 release-impact questions',
+  ],
+  prepTitle: 'How Our Workday Final Round Support Works',
+  prepIntro: 'We align to your final-round format and provide real-time guidance throughout — from deep-dives to client-facing discussions.',
+  prepPoints: [
+    'Share the employer, role, and final-round format via WhatsApp — we assign the right module expert',
+    'Pre-interview brief on likely final-round topics and your background alignment',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 release-impact questions',
+    'Post-interview debrief and offer-stage preparation',
+  ],
+  faqContext: 'Workday final round',
+  moduleLink: { label: 'Workday proxy interview support', href: '/workday-proxy-interview-support/' },
+  extraLinks: [{ label: 'Final round interview support guide', href: '/final-round-interview-support-guide/' }],
+  bottomCTAHeading: 'Workday Final Round Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday final round interview support — technical deep-dives, client-facing discussions, and scenario walkthroughs. Contact us on WhatsApp now.',
+});
+
+export const workdayLiveTechnicalInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-live-technical-interview-support',
+  title: 'Workday Live Technical Interview Support — Real-Time Guidance During Live Rounds',
+  description: 'Real-time Workday live technical interview support — discreet expert guidance during live configuration, integration, and reporting Workday interview rounds. Audio or chat. All time zones.',
+  keywords: ['Workday live technical interview support', 'Workday live interview proxy', 'Workday live technical proxy interview', 'Workday live configuration interview', 'Workday real-time interview support', 'Workday live coding interview'],
+  heroEyebrow: 'Workday Live Technical Interview Support',
+  tagline: 'Discreet real-time Workday support during live technical rounds — configuration, integration, and reporting walkthroughs while you interview.',
+  painIntro: 'Facing a live Workday technical round where you have to configure or explain in real time? A live tenant walkthrough, an integration design on the spot, or a reporting exercise? Our experts provide discreet real-time guidance as it happens.',
+  heroVariant: 'We provide real-time Workday support during live technical interviews — live configuration walkthroughs, integration design discussions, calculated-field and reporting exercises, and scenario questions — with discreet audio or chat guidance calibrated to the live format. Updated for 2026R1 topics.',
+  scenariosTitle: 'Workday Live Technical Interview Scenarios We Help Navigate',
+  scenarios: [
+    'Live tenant configuration walkthrough during the interview',
+    'On-the-spot integration design or troubleshooting discussion',
+    'Live calculated-field or reporting exercise',
+    'Real-time scenario and tenant-design questions',
+    'Live 2026R1 release-impact discussion',
+  ],
+  prepTitle: 'How Our Workday Live Technical Support Works',
+  prepIntro: 'We calibrate to your live-interview format and provide discreet real-time guidance throughout — keeping pace with live exercises.',
+  prepPoints: [
+    'Share the employer, role, and live-interview format via WhatsApp — we assign the right expert',
+    'Pre-interview brief on likely live exercises and topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 release-impact discussion',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday live technical',
+  moduleLink: { label: 'Workday Technical Consultant job support', href: '/workday-technical-consultant-job-support/' },
+  extraLinks: [{ label: 'How live technical interview support works', href: '/how-live-technical-interview-support-works/' }],
+  bottomCTAHeading: 'Live Workday Technical Round Coming Up? Get Real-Time Guidance Now',
+  bottomCTABody: 'Discreet real-time Workday support during live technical interviews — configuration, integration, and reporting. Contact us on WhatsApp now.',
+});
+
+export const workdayClientRoundInterviewSupport = workdayInterviewSupportPage({
+  slug: 'workday-client-round-interview-support',
+  title: 'Workday Client Round Interview Support — Live Guidance for Client-Facing Rounds',
+  description: 'Real-time Workday client round interview support — live guidance for client-facing Workday consultant interview rounds at Big 4, boutique partners, and direct enterprise clients. All time zones.',
+  keywords: ['Workday client round interview support', 'Workday client interview proxy', 'Workday client-facing interview', 'Workday consulting client round', 'Workday client interview support', 'Workday partner interview support'],
+  heroEyebrow: 'Workday Client Round Interview Support',
+  tagline: 'Live, discreet Workday client round interview support — client-facing consultant rounds at Big 4, boutique Workday partners, and direct enterprise clients.',
+  painIntro: 'A Workday client round where you have to impress the end client, not just the panel? Client-facing communication, configuration confidence, and the right consulting presence all matter. Our experts join your session and guide you live.',
+  heroVariant: 'We provide real-time Workday client round interview support — client-facing communication, configuration walkthroughs, scenario discussions, and consulting presence for Big 4, boutique Workday partner, and direct enterprise client rounds across all modules, including 2026R1 topics. Discreet audio or chat guidance.',
+  scenariosTitle: 'Workday Client Round Scenarios We Help Navigate',
+  scenarios: [
+    'Client-facing communication and consulting-presence questions',
+    'Configuration walkthrough and tenant-design discussion with the client',
+    'Scenario and requirements-clarification questions from the client',
+    'Module deep-dive aligned to the client’s Workday landscape',
+    'Cross-module and 2026R1 release-impact questions',
+  ],
+  prepTitle: 'How Our Workday Client Round Support Works',
+  prepIntro: 'We align to the client-round format and provide real-time guidance throughout — balancing technical depth and client-facing presence.',
+  prepPoints: [
+    'Share the employer/client, role, and round format via WhatsApp — we assign the right expert',
+    'Pre-interview brief on the client’s landscape and likely topics',
+    'Expert joins your live interview and provides discreet real-time guidance',
+    'Coverage for 2026R1 release-impact questions',
+    'Post-interview debrief and next-round preparation',
+  ],
+  faqContext: 'Workday client round',
+  moduleLink: { label: 'Workday Functional Consultant job support', href: '/workday-functional-consultant-job-support/' },
+  extraLinks: [{ label: 'Workday client call & standup support', href: '/workday-client-call-standup-support/' }],
+  bottomCTAHeading: 'Workday Client Round Coming Up? Get Live Expert Guidance Now',
+  bottomCTABody: 'Real-time Workday client round interview support — client-facing communication, configuration walkthroughs, and scenarios. Contact us on WhatsApp now.',
+});
+
 export const allWorkdayPages = [
   // Core hub + service pages
   workdayJobSupport,
@@ -2865,4 +5696,125 @@ export const allWorkdayPages = [
   workdayJobSupportSingapore,
   workdayJobSupportUAE,
   workdayJobSupportSaudiArabia,
+  // ── Phase 1: Country proxy interview pages ──────────────────────────────────
+  workdayProxyInterviewIreland,
+  workdayProxyInterviewGermany,
+  workdayProxyInterviewNetherlands,
+  workdayProxyInterviewFrance,
+  workdayProxyInterviewSweden,
+  workdayProxyInterviewSwitzerland,
+  workdayProxyInterviewAustralia,
+  workdayProxyInterviewNewZealand,
+  workdayProxyInterviewSingapore,
+  workdayProxyInterviewUAE,
+  workdayProxyInterviewSaudiArabia,
+  // ── Phase 2: Country interview scheduled pages ──────────────────────────────
+  workdayInterviewScheduledIreland,
+  workdayInterviewScheduledGermany,
+  workdayInterviewScheduledNetherlands,
+  workdayInterviewScheduledFrance,
+  workdayInterviewScheduledSweden,
+  workdayInterviewScheduledSwitzerland,
+  workdayInterviewScheduledAustralia,
+  workdayInterviewScheduledNewZealand,
+  workdayInterviewScheduledSingapore,
+  workdayInterviewScheduledUAE,
+  workdayInterviewScheduledSaudiArabia,
+  // ── Phase 3: USA city pages ─────────────────────────────────────────────────
+  newYorkWorkdayJobSupport,
+  dallasWorkdayJobSupport,
+  chicagoWorkdayJobSupport,
+  atlantaWorkdayJobSupport,
+  houstonWorkdayJobSupport,
+  austinWorkdayJobSupport,
+  charlotteWorkdayJobSupport,
+  phoenixWorkdayJobSupport,
+  seattleWorkdayJobSupport,
+  sanFranciscoWorkdayJobSupport,
+  sanJoseWorkdayJobSupport,
+  losAngelesWorkdayJobSupport,
+  bostonWorkdayJobSupport,
+  washingtonDcWorkdayJobSupport,
+  jerseyCityWorkdayJobSupport,
+  tampaWorkdayJobSupport,
+  // ── Phase 4: Canada city pages ──────────────────────────────────────────────
+  torontoWorkdayJobSupport,
+  vancouverWorkdayJobSupport,
+  calgaryWorkdayJobSupport,
+  montrealWorkdayJobSupport,
+  ottawaWorkdayJobSupport,
+  // ── Phase 5: UK city pages ──────────────────────────────────────────────────
+  londonWorkdayJobSupport,
+  manchesterWorkdayJobSupport,
+  birminghamWorkdayJobSupport,
+  leedsWorkdayJobSupport,
+  glasgowWorkdayJobSupport,
+  // ── Phase 6: Ireland city pages ─────────────────────────────────────────────
+  dublinWorkdayJobSupport,
+  corkWorkdayJobSupport,
+  galwayWorkdayJobSupport,
+  // ── Phase 7: Europe city pages ──────────────────────────────────────────────
+  berlinWorkdayJobSupport,
+  munichWorkdayJobSupport,
+  frankfurtWorkdayJobSupport,
+  hamburgWorkdayJobSupport,
+  amsterdamWorkdayJobSupport,
+  rotterdamWorkdayJobSupport,
+  parisWorkdayJobSupport,
+  lyonWorkdayJobSupport,
+  stockholmWorkdayJobSupport,
+  zurichWorkdayJobSupport,
+  genevaWorkdayJobSupport,
+  // ── Phase 8: Australia & New Zealand city pages ─────────────────────────────
+  sydneyWorkdayJobSupport,
+  melbourneWorkdayJobSupport,
+  brisbaneWorkdayJobSupport,
+  perthWorkdayJobSupport,
+  aucklandWorkdayJobSupport,
+  wellingtonWorkdayJobSupport,
+  // ── Phase 9: Singapore & Gulf city pages ────────────────────────────────────
+  singaporeWorkdayJobSupport,
+  dubaiWorkdayJobSupport,
+  abuDhabiWorkdayJobSupport,
+  riyadhWorkdayJobSupport,
+  jeddahWorkdayJobSupport,
+  // ── Phase 10: Module & role pages ───────────────────────────────────────────
+  workdayBusinessAnalystJobSupport,
+  workdayFunctionalConsultantJobSupport,
+  workdayTechnicalConsultantJobSupport,
+  workdayIntegrationConsultantJobSupport,
+  workdayHcmConsultantJobSupport,
+  workdayFinancialsConsultantJobSupport,
+  workdayPayrollConsultantJobSupport,
+  workdaySecurityConsultantJobSupport,
+  workdayReportingConsultantJobSupport,
+  workdayImplementationSupport,
+  workdayProductionSupport,
+  workdayTenantConfigurationSupport,
+  workdayEibIntegrationJobSupport,
+  workdayStudioIntegrationJobSupport,
+  workdayCoreConnectorsJobSupport,
+  workdayPeciIntegrationJobSupport,
+  workdayBirtReportingJobSupport,
+  workdayAdvancedReportingJobSupport,
+  workdayCalculatedFieldsJobSupport,
+  workdayBusinessProcessConfigurationSupport,
+  workdayDataConversionMigrationSupport,
+  workdayTestingUatSupport,
+  workdayGoLiveHypercareSupport,
+  workdayClientCallStandupSupport,
+  workdayProjectOnboardingSupport,
+  // ── Phase 11: Interview-focused technical pages ─────────────────────────────
+  workdayHcmInterviewSupport,
+  workdayIntegrationInterviewSupport,
+  workdayFinancialsInterviewSupport,
+  workdayPayrollInterviewSupport,
+  workdaySecurityInterviewSupport,
+  workdayReportingInterviewSupport,
+  workdayBusinessAnalystInterviewSupport,
+  workdayFunctionalConsultantInterviewSupport,
+  workdayTechnicalConsultantInterviewSupport,
+  workdayFinalRoundInterviewSupport,
+  workdayLiveTechnicalInterviewSupport,
+  workdayClientRoundInterviewSupport,
 ];

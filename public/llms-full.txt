@@ -2038,6 +2038,39 @@ Last updated: 2026-05-26
 
 ---
 
+### Workday Cluster Expansion — Country, City, Module & Interview Pages (May 2026)
+Additive expansion of the Workday cluster. All pages provide real-time Workday job support and/or live proxy interview support, are updated for Workday 2026R1 release impact, and funnel to WhatsApp/Call CTAs. Provider: Proxy Tech Support. Service type: Real-time IT job support + proxy interview assistance. Last updated: 2026-05-26.
+
+Country proxy interview pages (live interview guidance, areaServed = country):
+- /workday-proxy-interview-ireland/, /workday-proxy-interview-germany/, /workday-proxy-interview-netherlands/, /workday-proxy-interview-france/, /workday-proxy-interview-sweden/, /workday-proxy-interview-switzerland/, /workday-proxy-interview-australia/, /workday-proxy-interview-new-zealand/, /workday-proxy-interview-singapore/, /workday-proxy-interview-uae/, /workday-proxy-interview-saudi-arabia/
+Coverage: Workday HCM, Integration, Financials, Payroll, Reporting, Security consultant interviews with country-specific employer and payroll context (e.g. Germany works-council/social insurance, Australia STP2/superannuation, UAE WPS/Emiratization, Saudi GOSI/Saudization).
+
+Country interview-scheduling pages (profile engineering + recruiter outreach, areaServed = country):
+- /workday-interview-scheduled-ireland/, /workday-interview-scheduled-germany/, /workday-interview-scheduled-netherlands/, /workday-interview-scheduled-france/, /workday-interview-scheduled-sweden/, /workday-interview-scheduled-switzerland/, /workday-interview-scheduled-australia/, /workday-interview-scheduled-new-zealand/, /workday-interview-scheduled-singapore/, /workday-interview-scheduled-uae/, /workday-interview-scheduled-saudi-arabia/
+Coverage: Workday keyword engineering, LinkedIn positioning, and active outreach to country-specific Workday staffing firms and job boards.
+
+City job support pages (real-time Workday support + proxy interview help, areaServed = city):
+- USA: /new-york-workday-job-support/, /dallas-workday-job-support/, /chicago-workday-job-support/, /atlanta-workday-job-support/, /houston-workday-job-support/, /austin-workday-job-support/, /charlotte-workday-job-support/, /phoenix-workday-job-support/, /seattle-workday-job-support/, /san-francisco-workday-job-support/, /san-jose-workday-job-support/, /los-angeles-workday-job-support/, /boston-workday-job-support/, /washington-dc-workday-job-support/, /jersey-city-workday-job-support/, /tampa-workday-job-support/
+- Canada: /toronto-workday-job-support/, /vancouver-workday-job-support/, /calgary-workday-job-support/, /montreal-workday-job-support/, /ottawa-workday-job-support/
+- UK: /london-workday-job-support/, /manchester-workday-job-support/, /birmingham-workday-job-support/, /leeds-workday-job-support/, /glasgow-workday-job-support/
+- Ireland: /dublin-workday-job-support/, /cork-workday-job-support/, /galway-workday-job-support/
+- Europe: /berlin-workday-job-support/, /munich-workday-job-support/, /frankfurt-workday-job-support/, /hamburg-workday-job-support/, /amsterdam-workday-job-support/, /rotterdam-workday-job-support/, /paris-workday-job-support/, /lyon-workday-job-support/, /stockholm-workday-job-support/, /zurich-workday-job-support/, /geneva-workday-job-support/
+- Australia & New Zealand: /sydney-workday-job-support/, /melbourne-workday-job-support/, /brisbane-workday-job-support/, /perth-workday-job-support/, /auckland-workday-job-support/, /wellington-workday-job-support/
+- Singapore & Gulf: /singapore-workday-job-support/, /dubai-workday-job-support/, /abu-dhabi-workday-job-support/, /riyadh-workday-job-support/, /jeddah-workday-job-support/
+Coverage: tenant configuration, HCM, Financials, Payroll (with local compliance), Integrations (EIB/Studio/Core Connector/PECI), Reporting/Prism, Security, and 2026R1 release regression, with city-specific industry context.
+
+Module & role job support pages:
+- /workday-business-analyst-job-support/, /workday-functional-consultant-job-support/, /workday-technical-consultant-job-support/, /workday-integration-consultant-job-support/, /workday-hcm-consultant-job-support/, /workday-financials-consultant-job-support/, /workday-payroll-consultant-job-support/, /workday-security-consultant-job-support/, /workday-reporting-consultant-job-support/, /workday-implementation-support/, /workday-production-support/, /workday-tenant-configuration-support/, /workday-eib-integration-job-support/, /workday-studio-integration-job-support/, /workday-core-connectors-job-support/, /workday-peci-integration-job-support/, /workday-birt-reporting-job-support/, /workday-advanced-reporting-job-support/, /workday-calculated-fields-job-support/, /workday-business-process-configuration-support/, /workday-data-conversion-migration-support/, /workday-testing-uat-support/, /workday-go-live-hypercare-support/, /workday-client-call-standup-support/, /workday-project-onboarding-support/
+Coverage: role-specific and module-specific real-time delivery, production firefighting, implementation/deployment phases, integration development, reporting/calculated fields, business process configuration, data conversion, testing/UAT, go-live/hypercare, client-call backup, and onboarding.
+
+Interview-focused technical pages (live proxy interview support):
+- /workday-hcm-interview-support/, /workday-integration-interview-support/, /workday-financials-interview-support/, /workday-payroll-interview-support/, /workday-security-interview-support/, /workday-reporting-interview-support/, /workday-business-analyst-interview-support/, /workday-functional-consultant-interview-support/, /workday-technical-consultant-interview-support/, /workday-final-round-interview-support/, /workday-live-technical-interview-support/, /workday-client-round-interview-support/
+Coverage: module-specific, role-specific, final-round, live-technical, and client-round Workday interview guidance with 2026R1 topics.
+
+Funnel: Workday Job Support → Workday Proxy Interview Support → Workday Interview Scheduled → Job Application & Candidate Marketing → Main Services → Contact/WhatsApp CTA.
+
+---
+
 ## UiPath / RPA Job Support & Proxy Interview Cluster
 
 ### UiPath Job Support (Hub)

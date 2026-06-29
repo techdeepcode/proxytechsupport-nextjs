@@ -225,6 +225,138 @@
 - [Workday Job Support UAE](/workday-job-support-uae/): Workday support for UAE projects — WPS compliance, gratuity, Emiratization (Nafis), AED/USD multi-currency. Dubai, Abu Dhabi. GST.
 - [Workday Job Support Saudi Arabia](/workday-job-support-saudi-arabia/): Workday support for Saudi Arabia projects — GOSI integration, Saudization/Nitaqat, Hijri calendar, SAR Finance. Vision 2030 enterprise. AST.
 
+### Workday Country Proxy Interview Pages
+- [Workday Proxy Interview Ireland](/workday-proxy-interview-ireland/): Live Workday interview guidance for Irish roles — Workday EMEA HQ Dublin, multinationals, Kainos/Deloitte. HCM, Integration, Financials. IST/GMT.
+- [Workday Proxy Interview Germany](/workday-proxy-interview-germany/): Live Workday interview guidance for German roles — SAP-to-Workday migrations, works-council-aware HCM, German payroll. CET/CEST.
+- [Workday Proxy Interview Netherlands](/workday-proxy-interview-netherlands/): Live Workday interview guidance for Dutch roles — ASML, ING, Adyen, Booking.com. Pension integrations, multi-country HCM. CET/CEST.
+- [Workday Proxy Interview France](/workday-proxy-interview-france/): Live Workday interview guidance for French roles — CAC 40 multinationals, collective agreements, URSSAF payroll, CSE workflows. CET/CEST.
+- [Workday Proxy Interview Sweden](/workday-proxy-interview-sweden/): Live Workday interview guidance for Swedish roles — Spotify, Klarna, Ericsson, Volvo. HCM, Reporting, Security, Integration. CET/CEST.
+- [Workday Proxy Interview Switzerland](/workday-proxy-interview-switzerland/): Live Workday interview guidance for Swiss roles — banking (UBS), pharma (Roche/Novartis), AHV/BVG payroll, multi-currency finance. CET/CEST.
+- [Workday Proxy Interview Australia](/workday-proxy-interview-australia/): Live Workday interview guidance for Australian roles — CBA/NAB/Westpac, government, mining. STP2, superannuation, Award rates. AEST/AEDT.
+- [Workday Proxy Interview New Zealand](/workday-proxy-interview-new-zealand/): Live Workday interview guidance for NZ roles — banks, government, enterprise. KiwiSaver, PAYE/IRD, ACC. NZST/NZDT.
+- [Workday Proxy Interview Singapore](/workday-proxy-interview-singapore/): Live Workday interview guidance for Singapore roles — APAC hub, MAS-regulated finance, multi-country HCM. CPF, PDPA. SGT.
+- [Workday Proxy Interview UAE](/workday-proxy-interview-uae/): Live Workday interview guidance for UAE roles — banking, aviation (Emirates), government. WPS, gratuity, Emiratization. GST.
+- [Workday Proxy Interview Saudi Arabia](/workday-proxy-interview-saudi-arabia/): Live Workday interview guidance for Saudi roles — Vision 2030, PIF entities, banks, government. GOSI, Saudization/Nitaqat. AST.
+
+### Workday Country Interview Scheduling Pages
+- [Get Workday Interviews Scheduled Ireland](/workday-interview-scheduled-ireland/): Workday profile engineering and recruiter outreach for Irish roles — Dublin multinationals and consultancies. IST/GMT.
+- [Get Workday Interviews Scheduled Germany](/workday-interview-scheduled-germany/): Workday profile engineering and recruiter outreach for German roles — SAP-to-Workday migration and enterprise HR programmes. CET/CEST.
+- [Get Workday Interviews Scheduled Netherlands](/workday-interview-scheduled-netherlands/): Workday profile engineering and recruiter outreach for Dutch roles — ASML, ING, multi-country HCM. CET/CEST.
+- [Get Workday Interviews Scheduled France](/workday-interview-scheduled-france/): Workday profile engineering and recruiter outreach for French roles — CAC 40 multinationals and consultancies. CET/CEST.
+- [Get Workday Interviews Scheduled Sweden](/workday-interview-scheduled-sweden/): Workday profile engineering and recruiter outreach for Swedish roles — Spotify, Klarna, Ericsson, Volvo. CET/CEST.
+- [Get Workday Interviews Scheduled Switzerland](/workday-interview-scheduled-switzerland/): Workday profile engineering and recruiter outreach for Swiss roles — banking and pharma. CET/CEST.
+- [Get Workday Interviews Scheduled Australia](/workday-interview-scheduled-australia/): Workday profile engineering and recruiter outreach for Australian roles — Seek, LinkedIn, AU staffing firms. AEST/AEDT.
+- [Get Workday Interviews Scheduled New Zealand](/workday-interview-scheduled-new-zealand/): Workday profile engineering and recruiter outreach for NZ roles — Seek, Trade Me Jobs, NZ staffing firms. NZST/NZDT.
+- [Get Workday Interviews Scheduled Singapore](/workday-interview-scheduled-singapore/): Workday profile engineering and recruiter outreach for Singapore roles — APAC HCM positioning, MyCareersFuture.sg. SGT.
+- [Get Workday Interviews Scheduled UAE](/workday-interview-scheduled-uae/): Workday profile engineering and recruiter outreach for UAE roles — Bayt, Naukrigulf, Gulf staffing firms. GST.
+- [Get Workday Interviews Scheduled Saudi Arabia](/workday-interview-scheduled-saudi-arabia/): Workday profile engineering and recruiter outreach for Saudi roles — Vision 2030 positioning, Bayt, Gulf staffing firms. AST.
+
+### Workday USA City Job Support Pages
+- [Workday Job Support New York](/new-york-workday-job-support/): Real-time Workday job support and proxy interview help in New York — Wall Street finance, media, healthcare HCM/Financials/Payroll. All US time zones.
+- [Workday Job Support Dallas](/dallas-workday-job-support/): Real-time Workday support in Dallas–Fort Worth — telecom, airlines, insurance, healthcare HCM/Payroll/Financials.
+- [Workday Job Support Chicago](/chicago-workday-job-support/): Real-time Workday support in Chicago — insurance, manufacturing, finance, healthcare HCM/Finance/Payroll.
+- [Workday Job Support Atlanta](/atlanta-workday-job-support/): Real-time Workday support in Atlanta — Fortune 500, fintech, healthcare HCM/Financials/Payroll.
+- [Workday Job Support Houston](/houston-workday-job-support/): Real-time Workday support in Houston — energy, healthcare, industrial Financials/HCM/Payroll.
+- [Workday Job Support Austin](/austin-workday-job-support/): Real-time Workday support in Austin — tech, semiconductor, Adaptive Planning, HCM/Financials.
+- [Workday Job Support Charlotte](/charlotte-workday-job-support/): Real-time Workday support in Charlotte — banking and financial services HCM/Financials/Payroll/Security.
+- [Workday Job Support Phoenix](/phoenix-workday-job-support/): Real-time Workday support in Phoenix — healthcare, fintech, insurance, semiconductor HCM/Financials/Payroll.
+- [Workday Job Support Seattle](/seattle-workday-job-support/): Real-time Workday support in Seattle — tech, aerospace, retail; Skills Cloud, Adaptive Planning, HCM/Financials.
+- [Workday Job Support San Francisco](/san-francisco-workday-job-support/): Real-time Workday support in San Francisco/Bay Area — tech, fintech; Skills Cloud, Workday AI, Extend.
+- [Workday Job Support San Jose](/san-jose-workday-job-support/): Real-time Workday support in San Jose/Silicon Valley — tech HCM, Compensation/equity, Adaptive Planning.
+- [Workday Job Support Los Angeles](/los-angeles-workday-job-support/): Real-time Workday support in Los Angeles — entertainment, media, healthcare, aerospace HCM/Payroll/Financials.
+- [Workday Job Support Boston](/boston-workday-job-support/): Real-time Workday support in Boston — biotech, healthcare, higher-ed, finance HCM/Financials/Grants/Payroll.
+- [Workday Job Support Washington DC](/washington-dc-workday-job-support/): Real-time Workday support in Washington DC — federal contractors, nonprofits, public sector HCM/Financials/Grants.
+- [Workday Job Support Jersey City](/jersey-city-workday-job-support/): Real-time Workday support in Jersey City/NJ — banks, asset managers, pharma Financials/HCM/Payroll.
+- [Workday Job Support Tampa](/tampa-workday-job-support/): Real-time Workday support in Tampa — financial services, healthcare, insurance HCM/Financials/Payroll.
+
+### Workday Canada City Job Support Pages
+- [Workday Job Support Toronto](/toronto-workday-job-support/): Real-time Workday support in Toronto — big banks, insurers, enterprise HCM/Financials/Canada Payroll (T4/ROE/CRA).
+- [Workday Job Support Vancouver](/vancouver-workday-job-support/): Real-time Workday support in Vancouver — tech, film, mining, public sector HCM/Financials/BC Payroll.
+- [Workday Job Support Calgary](/calgary-workday-job-support/): Real-time Workday support in Calgary — energy and enterprise Financials/HCM/Alberta Payroll.
+- [Workday Job Support Montreal](/montreal-workday-job-support/): Real-time Workday support in Montreal — Quebec Payroll (RL-1/QPP), bilingual HCM/Financials.
+- [Workday Job Support Ottawa](/ottawa-workday-job-support/): Real-time Workday support in Ottawa — public sector, tech, enterprise HCM/Financials/Canada Payroll.
+
+### Workday UK City Job Support Pages
+- [Workday Job Support London](/london-workday-job-support/): Real-time Workday support in London — financial/professional services, retail, media HCM/Financials/UK Payroll (PAYE/NIC/RTI).
+- [Workday Job Support Manchester](/manchester-workday-job-support/): Real-time Workday support in Manchester — tech, financial services, enterprise HCM/Financials/UK Payroll.
+- [Workday Job Support Birmingham](/birmingham-workday-job-support/): Real-time Workday support in Birmingham/Midlands — manufacturing, professional services, public sector HCM/Financials.
+- [Workday Job Support Leeds](/leeds-workday-job-support/): Real-time Workday support in Leeds — financial services and digital hub HCM/Financials/UK Payroll.
+- [Workday Job Support Glasgow](/glasgow-workday-job-support/): Real-time Workday support in Glasgow/Scotland — financial services, public sector HCM/Financials/UK Payroll.
+
+### Workday Ireland City Job Support Pages
+- [Workday Job Support Dublin](/dublin-workday-job-support/): Real-time Workday support in Dublin — Workday EMEA HQ, multinationals, shared-service centres HCM/Financials/multi-country Payroll.
+- [Workday Job Support Cork](/cork-workday-job-support/): Real-time Workday support in Cork — pharma, tech, shared-service operations HCM/Financials/Payroll.
+- [Workday Job Support Galway](/galway-workday-job-support/): Real-time Workday support in Galway — medtech, tech, shared-service enterprises HCM/Financials/Payroll.
+
+### Workday Europe City Job Support Pages
+- [Workday Job Support Berlin](/berlin-workday-job-support/): Real-time Workday support in Berlin — tech, startup, enterprise HCM/Financials/German Payroll (works-council aware).
+- [Workday Job Support Munich](/munich-workday-job-support/): Real-time Workday support in Munich — automotive, insurance, tech; SAP-to-Workday migrations, German Payroll.
+- [Workday Job Support Frankfurt](/frankfurt-workday-job-support/): Real-time Workday support in Frankfurt — banking and financial services HCM/Financials/Security/German Payroll.
+- [Workday Job Support Hamburg](/hamburg-workday-job-support/): Real-time Workday support in Hamburg — logistics, media, enterprise HCM/Financials/German Payroll.
+- [Workday Job Support Amsterdam](/amsterdam-workday-job-support/): Real-time Workday support in Amsterdam — ASML, ING, Adyen, Booking.com; multi-country HCM/Financials/Dutch Payroll.
+- [Workday Job Support Rotterdam](/rotterdam-workday-job-support/): Real-time Workday support in Rotterdam — logistics, energy, enterprise HCM/Financials/Dutch Payroll.
+- [Workday Job Support Paris](/paris-workday-job-support/): Real-time Workday support in Paris — CAC 40 multinationals; collective-agreement HCM, URSSAF Payroll, Financials.
+- [Workday Job Support Lyon](/lyon-workday-job-support/): Real-time Workday support in Lyon — pharma, industrial, enterprise HCM/Financials/French Payroll.
+- [Workday Job Support Stockholm](/stockholm-workday-job-support/): Real-time Workday support in Stockholm — Spotify, Klarna, Ericsson; HCM/Reporting/Security/Swedish Payroll.
+- [Workday Job Support Zurich](/zurich-workday-job-support/): Real-time Workday support in Zurich — banking, insurance; multi-currency Financials, AHV/BVG Payroll, Security.
+- [Workday Job Support Geneva](/geneva-workday-job-support/): Real-time Workday support in Geneva — banking, international organizations; multi-currency Financials, Swiss Payroll.
+
+### Workday Australia & New Zealand City Job Support Pages
+- [Workday Job Support Sydney](/sydney-workday-job-support/): Real-time Workday support in Sydney — banks, government, enterprise HCM/Financials/Australian Payroll (STP2/super).
+- [Workday Job Support Melbourne](/melbourne-workday-job-support/): Real-time Workday support in Melbourne — financial services, healthcare, retail, government HCM/Financials/Payroll.
+- [Workday Job Support Brisbane](/brisbane-workday-job-support/): Real-time Workday support in Brisbane — government, resources, enterprise HCM/Financials/Australian Payroll.
+- [Workday Job Support Perth](/perth-workday-job-support/): Real-time Workday support in Perth — mining, resources, enterprise HCM/Financials/Australian Payroll.
+- [Workday Job Support Auckland](/auckland-workday-job-support/): Real-time Workday support in Auckland — banks, enterprise, government HCM/Financials/NZ Payroll (KiwiSaver/PAYE).
+- [Workday Job Support Wellington](/wellington-workday-job-support/): Real-time Workday support in Wellington — government, public sector, enterprise HCM/Financials/NZ Payroll.
+
+### Workday Singapore & Gulf City Job Support Pages
+- [Workday Job Support Singapore](/singapore-workday-job-support/): Real-time Workday support in Singapore — APAC hub, MAS-regulated finance, multi-country HCM/Financials/Payroll (CPF).
+- [Workday Job Support Dubai](/dubai-workday-job-support/): Real-time Workday support in Dubai — banking, aviation, hospitality, government HCM/Financials/UAE Payroll (WPS/gratuity).
+- [Workday Job Support Abu Dhabi](/abu-dhabi-workday-job-support/): Real-time Workday support in Abu Dhabi — government, energy, enterprise HCM/Financials/UAE Payroll.
+- [Workday Job Support Riyadh](/riyadh-workday-job-support/): Real-time Workday support in Riyadh — Vision 2030, PIF entities, banks, government HCM/Financials/Saudi Payroll (GOSI).
+- [Workday Job Support Jeddah](/jeddah-workday-job-support/): Real-time Workday support in Jeddah — commercial, logistics, enterprise HCM/Financials/Saudi Payroll.
+
+### Workday Module & Role Job Support Pages
+- [Workday Business Analyst Job Support](/workday-business-analyst-job-support/): Real-time Workday BA support — requirements, business process design, fit-gap, functional specs, UAT coordination.
+- [Workday Functional Consultant Job Support](/workday-functional-consultant-job-support/): Real-time Workday functional support — HCM/Financials/Payroll configuration, business processes, security, testing.
+- [Workday Technical Consultant Job Support](/workday-technical-consultant-job-support/): Real-time Workday technical support — EIB, Studio, Core Connector, PECI, calculated fields, Workday Extend, RaaS.
+- [Workday Integration Consultant Job Support](/workday-integration-consultant-job-support/): Real-time Workday integration support — EIB, Studio, Core Connectors, PECI/PICOF, REST/SOAP, error handling.
+- [Workday HCM Consultant Job Support](/workday-hcm-consultant-job-support/): Real-time Workday HCM support — Core HR, Staffing, Compensation, Benefits, Absence, Time Tracking, Talent, Skills Cloud.
+- [Workday Financials Consultant Job Support](/workday-financials-consultant-job-support/): Real-time Workday Financials support — GL, AP, AR, Procurement, Projects, Banking, period close.
+- [Workday Payroll Consultant Job Support](/workday-payroll-consultant-job-support/): Real-time Workday Payroll support — calculations, earnings/deductions, taxes, off-cycle, garnishments, year-end (W-2/T4/P60).
+- [Workday Security Consultant Job Support](/workday-security-consultant-job-support/): Real-time Workday Security support — domain policies, role-based security, business process security, segregation of duties, audit.
+- [Workday Reporting Consultant Job Support](/workday-reporting-consultant-job-support/): Real-time Workday Reporting support — Advanced/Matrix/Composite reports, calculated fields, BIRT, Prism Analytics.
+- [Workday Implementation Support](/workday-implementation-support/): Real-time Workday implementation support across deployment phases — configuration, prototype, data conversion, testing, deployment.
+- [Workday Production Support](/workday-production-support/): Real-time Workday production support — incident firefighting, defect resolution, ticket backlog, integration recovery, post-release stabilization.
+- [Workday Tenant Configuration Support](/workday-tenant-configuration-support/): Real-time Workday tenant configuration support — setup, configuration migration, foundation data, business processes, security, tenant refresh.
+- [Workday EIB Integration Job Support](/workday-eib-integration-job-support/): Real-time Workday EIB support — inbound/outbound EIBs, spreadsheet templates, XSLT transformations, delivery, scheduling.
+- [Workday Studio Integration Job Support](/workday-studio-integration-job-support/): Real-time Workday Studio support — assemblies, orchestration, MVEL, XSLT/XPath, REST/SOAP calls, debugging.
+- [Workday Core Connectors Job Support](/workday-core-connectors-job-support/): Real-time Workday Core Connector support — templates, field mapping, integration attributes, document transformations.
+- [Workday PECI Integration Job Support](/workday-peci-integration-job-support/): Real-time Workday PECI support — Payroll Effective Change Interface, change detection, mapping, payroll-vendor delivery (ADP/Alight).
+- [Workday BIRT Reporting Job Support](/workday-birt-reporting-job-support/): Real-time Workday BIRT support — pixel-perfect print layouts (payslips, POs), data binding, rendering.
+- [Workday Advanced Reporting Job Support](/workday-advanced-reporting-job-support/): Real-time Workday Advanced Reporting support — Advanced/Matrix/Composite reports, data sources, filters, prompts, security.
+- [Workday Calculated Fields Job Support](/workday-calculated-fields-job-support/): Real-time Workday calculated fields support — instance retrieval, lookup related value, evaluate expression, date calc.
+- [Workday Business Process Configuration Support](/workday-business-process-configuration-support/): Real-time Workday BP support — definitions, steps, condition rules, approvals, routing, notifications, BP security.
+- [Workday Data Conversion & Migration Support](/workday-data-conversion-migration-support/): Real-time Workday data conversion support — iLoads, EIB loads, conversion templates, mapping, validation, reconciliation.
+- [Workday Testing & UAT Support](/workday-testing-uat-support/): Real-time Workday testing support — test planning, scenario design, SIT/UAT execution, defect triage, 2026R1 regression.
+- [Workday Go-Live & Hypercare Support](/workday-go-live-hypercare-support/): Real-time Workday go-live support — cutover, readiness, post-go-live stabilization, incident triage, daily hypercare.
+- [Workday Client Call & Standup Support](/workday-client-call-standup-support/): Real-time discreet Workday client-call support — meeting prep, live backup, configuration demos, daily standup, task delivery.
+- [Workday Project Onboarding Support](/workday-project-onboarding-support/): Real-time Workday onboarding support — fast ramp-up, tenant orientation, tooling setup, first-task delivery.
+
+### Workday Interview-Focused Technical Support Pages
+- [Workday HCM Interview Support](/workday-hcm-interview-support/): Live Workday HCM interview guidance — Core HR, Compensation, Benefits, Absence, Skills Cloud scenario and configuration questions.
+- [Workday Integration Interview Support](/workday-integration-interview-support/): Live Workday integration interview guidance — EIB, Studio, Core Connector, PECI, web services, architecture questions.
+- [Workday Financials Interview Support](/workday-financials-interview-support/): Live Workday Financials interview guidance — GL, AP, AR, Procurement, Projects, period close scenario questions.
+- [Workday Payroll Interview Support](/workday-payroll-interview-support/): Live Workday Payroll interview guidance — calculations, taxes, off-cycle, garnishments, year-end (W-2/T4/P60) questions.
+- [Workday Security Interview Support](/workday-security-interview-support/): Live Workday Security interview guidance — domain/role-based/business process security, segregation of duties, audit questions.
+- [Workday Reporting Interview Support](/workday-reporting-interview-support/): Live Workday Reporting interview guidance — Advanced/Matrix/Composite reports, calculated fields, BIRT, Prism questions.
+- [Workday Business Analyst Interview Support](/workday-business-analyst-interview-support/): Live Workday BA interview guidance — requirements, business process design, fit-gap, functional specs, UAT questions.
+- [Workday Functional Consultant Interview Support](/workday-functional-consultant-interview-support/): Live Workday functional interview guidance — HCM/Financials/Payroll configuration and scenario questions.
+- [Workday Technical Consultant Interview Support](/workday-technical-consultant-interview-support/): Live Workday technical interview guidance — integrations, reporting, calculated fields, Workday Extend questions.
+- [Workday Final Round Interview Support](/workday-final-round-interview-support/): Live Workday final-round guidance — final-stage technical, functional, and client-facing rounds across all modules.
+- [Workday Live Technical Interview Support](/workday-live-technical-interview-support/): Discreet real-time guidance during live Workday technical rounds — configuration, integration, and reporting walkthroughs.
+- [Workday Client Round Interview Support](/workday-client-round-interview-support/): Live Workday client-round guidance — client-facing consultant rounds at Big 4, boutique partners, and direct enterprise clients.
+
 ## Job Application & Candidate Marketing Pages
 
 - [Job Application & Candidate Marketing](/job-application-candidate-marketing/): Structured job search campaign service for IT professionals — targeted job applications, recruiter outreach, vendor outreach, professional follow-ups, application tracking, and weekly progress updates. Separate from profile engineering and job support services. For candidates actively searching for IT roles across USA, Canada, UK, Ireland, Germany, Australia, Europe, Singapore, Hong Kong, and UAE.
