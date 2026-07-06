@@ -416,6 +416,82 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 
 ## AI Technical Lead & GenAI Interview Articles
 
+### ML & GenAI Platform Engineer Interview Questions on RAG, Agentic AI, MCP, LLMOps, Azure AI, and ML Deployment
+URL: /interviews/2026-07-06-ml-genai-platform-engineer-interview-questions-rag-agentic-ai/
+Type: Real interview Q&A guide (anonymized)
+Published: 2026-07-06
+Canonical: https://proxytechsupport.com/interviews/2026-07-06-ml-genai-platform-engineer-interview-questions-rag-agentic-ai/
+Target audience: ML Engineer candidates, GenAI Engineer candidates, AI Platform Engineer candidates, MLOps/LLMOps candidates, data engineering candidates, and candidates preparing for senior AI platform technical rounds, coding rounds, and system design discussions
+
+Primary SEO topics: ML GenAI Platform Engineer interview questions, RAG interview questions, Agentic AI interview questions, MCP interview questions, LLMOps interview questions, Azure AI interview questions
+
+Secondary SEO topics: LangGraph interview questions, Python ML coding interview, demand forecasting ML interview, fraud detection ML interview, Docker ML deployment, QLoRA interview questions, vector database interview questions, hybrid search RAG
+
+**Article Summary:**
+53 real ML & GenAI Platform Engineer interview questions and short technical answers covering RAG architecture, embeddings, vector databases, hybrid search, MCP protocol and transports, LangGraph, Azure AI (Azure OpenAI, Azure AI Search, Azure ML), LLMOps, model deployment, Docker, Kafka, fraud detection, anomaly detection, churn prediction, demand forecasting, MLP neural networks, tensor shapes, overfitting, regularization, QLoRA and quantization, and Python coding (first non-repeating character, reverse string, reverse words). Based on a real senior technical round style. All company names, candidate names, and private identifiers are fully anonymized.
+
+**Entity Summary:**
+- Role: ML & GenAI Platform Engineer
+- Skills: Python, Machine Learning, Deep Learning, Generative AI, RAG, Agentic AI, MCP, LangGraph, LangChain, Azure OpenAI, Azure AI Search, Azure ML, Databricks, Docker, Kubernetes, FastAPI, MLflow, LLMOps, MLOps
+- Domains: Healthcare, financial services, telecom, cloud AI platforms, enterprise AI systems
+- Use cases: RAG assistant, AI incident investigation, fraud detection, anomaly detection, churn prediction, demand forecasting, NLP classification, ticket summarization, model serving, AI observability
+- Interview type: Senior technical interview, AI platform engineering round, coding round, system design discussion
+- Technology context: Enterprise GenAI systems, production RAG, agentic AI workflows, MCP tools, cloud deployment, model monitoring, Responsible AI, scalable ML services
+
+**Key topics covered:**
+- RAG: retrieval-augmented generation definition, full RAG stack (ingestion, OCR, cleaning, chunking, embeddings, vector index, hybrid retrieval, reranking, prompt construction, generation, citation, monitoring), RBAC and audit
+- Embeddings: Azure OpenAI text-embedding-3-large, 3072 dimensions, same-space query embedding
+- Vector search: Azure AI Search, Pinecone, HNSW, cosine similarity vs dot product vs Euclidean
+- Hybrid search: BM25 + vector + ranking fusion + metadata filtering + reranking, healthcare medical terminology (ICD/CPT codes)
+- MCP: application-level JSON-RPC protocol, tool schemas, transports (stdio, HTTP/SSE, streamable HTTP), what is not an official transport
+- Fraud detection: Kafka real-time scoring pipeline, Captum explainability, Occlusion, supervised vs anomaly detection, 35M transaction imbalanced dataset (0.43% fraud), class weighting, shadow mode, SQS idempotency
+- Traditional ML: churn prediction (Logistic Regression, Random Forest, XGBoost), feature engineering, PySpark pipelines
+- Deep learning: PyTorch/TensorFlow, BERT intent classification, T5 summarization, MLP architecture, tensor shapes (32x120 → 32x100)
+- Overfitting: learning curves, dropout, L1/L2/Elastic Net, early stopping, batch normalization, data augmentation
+- Demand forecasting: regression from data to deployment, batch precompute architecture at scale, production prediction debugging (data drift, feature drift, stale model)
+- Cloud: Azure (OpenAI, ML, AI Search, Databricks, AKS, Key Vault, Entra ID) and AWS (S3, ECS, Lambda, IAM, CloudWatch, KMS), Docker containerization
+- GenAI fine-tuning: LoRA/QLoRA, Hugging Face Model Hub, MLflow Model Registry, QLoRA = Quantized Low-Rank Adaptation, quantization vs accuracy
+- Python coding: first non-repeating character (Counter), reverse string (slicing), reverse words in a sentence
+
+**FAQs included (with structured data):**
+1. What questions are asked in an ML & GenAI Platform Engineer interview?
+2. How should I answer RAG interview questions?
+3. What is the difference between RAG and Agentic AI?
+4. What is MCP in GenAI interviews?
+5. What metrics should I mention for LLMOps?
+6. How do I explain ML model deployment in interviews?
+7. What Python coding questions appear in ML interviews?
+8. How do I answer overfitting questions?
+9. What should I say if asked about QLoRA?
+10. Can ProxyTechSupport help with live AI/ML interviews?
+
+**Internal links in article:**
+- /ai-ml-proxy-interview-support/ (real-time ML & GenAI Platform Engineer interview support)
+- /proxy-interview-support/ (real-time proxy interview assistance)
+- /agentic-ai-ml-job-support/ (AI/ML job support)
+- /devops-job-support/ (DevOps and cloud deployment interviews)
+- /production-issue-support/ (production issue troubleshooting rounds)
+- /data-engineering-job-support-guide/ (data engineering and MLOps interviews)
+
+**Schema included:**
+- Article schema: type "Article", headline "ML & GenAI Platform Engineer Interview Questions on RAG, Agentic AI, MCP, LLMOps, Azure AI, and ML Deployment", description, datePublished (2026-07-06T12:00:00+05:30), dateModified, url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords, articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
+- FAQPage schema: 10 FAQ items covering ML/GenAI Platform Engineer topics, RAG, RAG vs Agentic AI, MCP, LLMOps metrics, model deployment, Python coding, overfitting, QLoRA, ProxyTechSupport support
+- BreadcrumbList schema: Home (/) → Interview Questions (/interview-questions/) → ML & GenAI Platform Engineer Interview Questions on RAG, Agentic AI, MCP, LLMOps, Azure AI, and ML Deployment
+
+**OG / Twitter card:**
+- og:type = article
+- og:title = ML & GenAI Platform Engineer Interview Questions on RAG, Agentic AI, MCP, LLMOps, Azure AI, and ML Deployment | Proxy Tech Support
+- og:description = Real ML & GenAI Platform Engineer interview questions with short technical answers on RAG, Agentic AI, MCP, LangGraph, Azure AI, LLMOps, model deployment, Docker, fraud detection, churn prediction, and Python coding.
+- og:url = https://proxytechsupport.com/interviews/2026-07-06-ml-genai-platform-engineer-interview-questions-rag-agentic-ai/
+- og:site_name = Proxy Tech Support
+- article:section = Interview Questions
+- twitter:card = summary_large_image
+
+**Robots / indexing:**
+- robots: index, follow
+- canonical: https://proxytechsupport.com/interviews/2026-07-06-ml-genai-platform-engineer-interview-questions-rag-agentic-ai/
+- hreflang: en-US, en-CA, en-GB, en-AU, en-IE, x-default — all pointing to canonical URL
+
 ### Primavera P6 Scheduler Interview Questions and Answers
 URL: /interviews/2026-06-22-primavera-p6-scheduler-interview-questions-critical-path-baseline-wbs/
 Type: Real interview Q&A guide (anonymized)

@@ -1,0 +1,919 @@
+<h1>ML &amp; GenAI Platform Engineer Interview Questions on RAG, Agentic AI, MCP, LLMOps, Azure AI, and ML Deployment</h1>
+
+<h2>Overview</h2>
+
+<p>This page contains 53 real ML &amp; GenAI Platform Engineer interview questions and short technical answers covering RAG, Agentic AI, MCP, LangGraph, Azure AI, LLMOps, model deployment, Docker, fraud detection, anomaly detection, churn prediction, demand forecasting, neural networks, overfitting, QLoRA, vector search, hybrid search, and Python coding.</p>
+
+<p>The interview guide is based on a real senior technical round style.</p>
+
+<p>All company names, candidate names, and private identifiers are anonymized.</p>
+
+<p>Use these answers as short, technical, interview-ready responses.</p>
+
+<hr>
+
+<h2>Entity Summary</h2>
+
+<ul>
+  <li><strong>Role:</strong> ML &amp; GenAI Platform Engineer</li>
+  <li><strong>Skills:</strong> Python, Machine Learning, Deep Learning, Generative AI, RAG, Agentic AI, MCP, LangGraph, LangChain, Azure OpenAI, Azure AI Search, Azure ML, Databricks, Docker, Kubernetes, FastAPI, MLflow, LLMOps, MLOps</li>
+  <li><strong>Domains:</strong> Healthcare, financial services, telecom, cloud AI platforms, enterprise AI systems</li>
+  <li><strong>Use cases:</strong> RAG assistant, AI incident investigation, fraud detection, anomaly detection, churn prediction, demand forecasting, NLP classification, ticket summarization, model serving, AI observability</li>
+  <li><strong>Interview type:</strong> Senior technical interview, AI platform engineering round, coding round, system design discussion</li>
+  <li><strong>Current technology context:</strong> Enterprise GenAI systems, production RAG, agentic AI workflows, MCP tools, cloud deployment, model monitoring, Responsible AI, and scalable ML services</li>
+  <li><strong>Key topics covered:</strong> RAG architecture, embeddings, vector databases, hybrid search, MCP protocol, Docker containers, cloud platforms, fraud models, QLoRA, neural networks, overfitting, demand forecasting, production troubleshooting, and Python coding</li>
+</ul>
+
+<hr>
+
+<h2>Need Real-Time ML &amp; GenAI Platform Engineer Interview Support?</h2>
+
+<p>Need <a href="/ai-ml-proxy-interview-support/">real-time ML &amp; GenAI Platform Engineer interview support</a>?</p>
+
+<p>WhatsApp ProxyTechSupport: +91 96606 14469</p>
+
+<p><a href="https://wa.me/919660614469" rel="noopener noreferrer">https://wa.me/919660614469</a></p>
+
+<p>We help with live technical interview support, proxy interview assistance, coding test support, AI/ML project support, GenAI support, DevOps support, cloud support, and production issue support.</p>
+
+<hr>
+
+<h2>How to Use This Guide</h2>
+
+<p>Use these answers as short speaking points during interview preparation.</p>
+
+<p>Do not memorize word by word.</p>
+
+<p>Understand the technical flow behind each answer.</p>
+
+<p>Practice follow-up questions on implementation, validation, deployment, monitoring, and production troubleshooting.</p>
+
+<p>For senior ML and GenAI roles, always explain what you owned, how the system worked, how it was validated, and how it behaved in production.</p>
+
+<hr>
+
+<h2>ML &amp; GenAI Platform Engineer Interview Questions and Answers</h2>
+
+<h3>1. Tell me about yourself.</h3>
+
+<p>I am an ML and Generative AI Platform Engineer with around 9 years of experience building production AI systems.</p>
+
+<p>My core work is around enterprise RAG, Agentic AI, model serving, Python services, Azure AI, and LLMOps.</p>
+
+<p>In recent projects, I owned backend AI platform modules using LangGraph, MCP tools, FastAPI, Docker, Kubernetes, Azure OpenAI, Azure AI Search, and MLflow.</p>
+
+<p>I have worked on production systems, not only proof of concepts.</p>
+
+<p>My focus has been building scalable, secure, observable, and production-ready AI platforms.</p>
+
+<hr>
+
+<h3>2. You have moved roles almost every one or two years. Why?</h3>
+
+<p>Most of my recent roles were project-based enterprise consulting assignments.</p>
+
+<p>Once the platform was delivered or moved to steady-state support, I moved to another AI transformation project.</p>
+
+<p>The progression was technical: ML engineering, enterprise RAG, GenAI platforms, then Agentic AI and MCP.</p>
+
+<p>I am now looking for a longer-term product-focused role where I can contribute to platform evolution, scalability, and technical ownership.</p>
+
+<hr>
+
+<h3>3. Are you a lead or hands-on engineer?</h3>
+
+<p>I am primarily a senior hands-on individual contributor with technical ownership.</p>
+
+<p>I have not been a people manager in the formal sense.</p>
+
+<p>I owned implementation areas like AI service design, APIs, orchestration workflows, deployment, monitoring, and production issue resolution.</p>
+
+<p>I also guided other engineers through design reviews, debugging, code reviews, and deployment best practices.</p>
+
+<p>So my role was closer to technical leadership than people management.</p>
+
+<hr>
+
+<h3>4. In a financial services project, you mentioned real-time fraud detection with Kafka. Explain it.</h3>
+
+<p>It was a real-time fraud scoring pipeline.</p>
+
+<p>Transaction events were published to Kafka by upstream payment systems.</p>
+
+<p>Our fraud scoring service consumed those events using Python Kafka consumers.</p>
+
+<p>Each event had transaction ID, customer ID, amount, merchant category, timestamp, device ID, IP address, geo-location, channel, and historical behavior features.</p>
+
+<p>We built a feature vector, called the fraud model, generated a fraud probability score, and published high-risk decisions to a downstream topic.</p>
+
+<p>We logged request ID, model version, score, latency, and decision reason for audit and monitoring.</p>
+
+<hr>
+
+<h3>5. What is Kafka?</h3>
+
+<p>Kafka is a distributed event streaming platform.</p>
+
+<p>A producer writes events to a topic.</p>
+
+<p>Kafka stores those events in partitions.</p>
+
+<p>Consumers read from those partitions independently.</p>
+
+<p>It decouples systems and supports real-time scalable processing.</p>
+
+<p>In fraud detection, payment systems publish transactions, and fraud services consume them without blocking the original payment flow.</p>
+
+<hr>
+
+<h3>6. What is Captum?</h3>
+
+<p>Captum is an explainable AI library for PyTorch models.</p>
+
+<p>It helps explain why a model made a prediction.</p>
+
+<p>It supports techniques like Integrated Gradients, DeepLift, Saliency, Gradient SHAP, and Occlusion.</p>
+
+<p>In a fraud use case, Captum can show which features pushed the model toward a fraud decision, such as transaction amount, device mismatch, location deviation, or velocity.</p>
+
+<p>This is useful for analyst review and auditability.</p>
+
+<hr>
+
+<h3>7. What is Occlusion in Captum?</h3>
+
+<p>Occlusion is an explainability technique.</p>
+
+<p>It masks one feature or a group of features and runs inference again.</p>
+
+<p>If the prediction changes significantly after masking that feature, the feature is important.</p>
+
+<p>For fraud detection, if masking device mismatch drops fraud probability from 90 percent to 55 percent, device mismatch had strong influence.</p>
+
+<p>The trade-off is cost because it requires multiple inference runs.</p>
+
+<hr>
+
+<h3>8. Was your project fraud detection or anomaly detection?</h3>
+
+<p>We used both, but for different purposes.</p>
+
+<p>Fraud detection was the supervised model using labeled fraud and non-fraud transactions.</p>
+
+<p>It predicted fraud probability using historical labeled data.</p>
+
+<p>Anomaly detection was used to catch unusual behavior that may not exist in training labels.</p>
+
+<p>Fraud detection handled known fraud patterns.</p>
+
+<p>Anomaly detection helped identify emerging or unknown patterns.</p>
+
+<hr>
+
+<h3>9. How large was the fraud dataset?</h3>
+
+<p>The training dataset was around 35 million historical transactions.</p>
+
+<p>Around 150,000 were confirmed fraud cases.</p>
+
+<p>The rest were legitimate transactions.</p>
+
+<p>That means fraud was less than 0.5 percent of the data.</p>
+
+<p>Because of this imbalance, we did not rely on accuracy.</p>
+
+<p>We used precision, recall, F1-score, PR-AUC, and threshold tuning.</p>
+
+<hr>
+
+<h3>10. How many fraud and non-fraud transactions were there?</h3>
+
+<p>Around 35 million total transactions.</p>
+
+<p>Around 34.85 million were non-fraud.</p>
+
+<p>Around 150,000 were confirmed fraud.</p>
+
+<p>That is roughly 99.57 percent non-fraud and 0.43 percent fraud.</p>
+
+<p>This imbalance required class weighting, careful validation, and business-approved thresholds.</p>
+
+<hr>
+
+<h3>11. How did you make sure the model correctly identified fraud in such imbalanced data?</h3>
+
+<p>First, we validated the labels from confirmed fraud investigations and chargeback outcomes.</p>
+
+<p>Then we removed duplicates and checked for conflicting labels.</p>
+
+<p>We used time-based train, validation, and test splits to avoid leakage.</p>
+
+<p>We used class weights instead of blindly oversampling.</p>
+
+<p>We evaluated using recall, precision, F1-score, PR-AUC, and confusion matrix.</p>
+
+<p>We manually reviewed false negatives and false positives with fraud analysts.</p>
+
+<p>Before production, we ran the model in shadow mode and compared output against existing fraud decisions.</p>
+
+<hr>
+
+<h3>12. How did you handle source data quality?</h3>
+
+<p>We had data quality checks before training.</p>
+
+<p>We validated schema, required fields, data types, null percentages, duplicate transaction IDs, invalid amounts, future timestamps, and inconsistent merchant or customer IDs.</p>
+
+<p>Critical invalid records were quarantined.</p>
+
+<p>We also checked class distribution and label consistency.</p>
+
+<p>Only validated data moved into feature engineering and model training.</p>
+
+<hr>
+
+<h3>13. What problem can happen with SQS in an ML pipeline?</h3>
+
+<p>The main issue is duplicate processing.</p>
+
+<p>SQS provides at-least-once delivery, so the same message can be delivered more than once.</p>
+
+<p>For a fraud scoring pipeline, we handle this using idempotency.</p>
+
+<p>We use transaction ID as the idempotency key.</p>
+
+<p>If the transaction was already scored, we skip duplicate inference.</p>
+
+<p>We also configure visibility timeout, retries, DLQ, queue depth monitoring, and age-of-oldest-message alerts.</p>
+
+<hr>
+
+<h3>14. What other AI/ML projects have you worked on apart from fraud?</h3>
+
+<p>I worked on customer churn prediction, ticket routing, intent classification, sentiment analysis, and ticket summarization.</p>
+
+<p>The traditional ML part used models like Logistic Regression, Random Forest, XGBoost, and clustering.</p>
+
+<p>The deep learning part used BERT and T5 for NLP tasks.</p>
+
+<p>The input data came from customer interactions, support tickets, service history, network events, and product usage.</p>
+
+<hr>
+
+<h3>15. What type of model was churn prediction?</h3>
+
+<p>Churn prediction was a supervised binary classification model.</p>
+
+<p>The target was churn or no churn.</p>
+
+<p>We started with Logistic Regression as baseline.</p>
+
+<p>Then we evaluated Random Forest and XGBoost.</p>
+
+<p>XGBoost performed better on tabular customer data.</p>
+
+<p>The model returned churn probability using predict_proba.</p>
+
+<p>Business teams used the score to prioritize retention actions.</p>
+
+<hr>
+
+<h3>16. What features did you use for churn prediction?</h3>
+
+<p>We used customer tenure, plan type, contract type, device age, region, monthly bill amount, payment delays, usage trend, dropped calls, support ticket count, complaint frequency, escalated tickets, and plan changes.</p>
+
+<p>We also created derived features like 30-day complaint count, 90-day usage average, billing trend, support ticket trend, and usage drop percentage.</p>
+
+<p>These features were built using Python, PySpark, Pandas, Scikit-learn, XGBoost, MLflow, and scheduled feature pipelines.</p>
+
+<hr>
+
+<h3>17. Which deep learning frameworks have you used?</h3>
+
+<p>I have used PyTorch and TensorFlow.</p>
+
+<p>For NLP, I used PyTorch with Hugging Face Transformers.</p>
+
+<p>I fine-tuned BERT for intent classification and T5 for summarization.</p>
+
+<p>For tabular ML, I preferred XGBoost or LightGBM because they usually perform better than neural networks on structured data.</p>
+
+<p>For text, transformers performed much better than classical ML.</p>
+
+<hr>
+
+<h3>18. Were these your own projects or customer projects?</h3>
+
+<p>These were customer-facing enterprise projects.</p>
+
+<p>They were not personal projects.</p>
+
+<p>They were built for enterprise business teams such as support operations, risk teams, healthcare operations, and platform teams.</p>
+
+<p>My ownership was technical implementation, service integration, validation, deployment, monitoring, and production troubleshooting.</p>
+
+<hr>
+
+<h3>19. Did you build any deep learning model using TensorFlow or PyTorch?</h3>
+
+<p>Yes, mainly for NLP use cases.</p>
+
+<p>One example was intent classification for customer support tickets.</p>
+
+<p>We cleaned text, removed PII, tokenized using Hugging Face tokenizer, created input IDs and attention masks, and fine-tuned BERT for sequence classification.</p>
+
+<p>The model returned intent class and confidence score.</p>
+
+<p>We evaluated class-wise precision, recall, F1-score, and confusion matrix.</p>
+
+<p>We deployed the model behind a REST API.</p>
+
+<hr>
+
+<h3>20. Are you familiar with MLP neural network architecture?</h3>
+
+<p>Yes.</p>
+
+<p>MLP means Multi-Layer Perceptron.</p>
+
+<p>It is a feed-forward neural network with input layer, hidden layers, and output layer.</p>
+
+<p>Each neuron performs weighted sum, adds bias, applies activation, and passes output to the next layer.</p>
+
+<p>Training uses forward propagation, loss calculation, backpropagation, and optimizer updates.</p>
+
+<p>MLP works for tabular classification or regression, but for NLP we usually use transformer architectures.</p>
+
+<hr>
+
+<h3>21. What does an MLP contain?</h3>
+
+<p>An MLP contains an input layer, hidden dense layers, output layer, weights, biases, activation functions, loss function, and optimizer.</p>
+
+<p>For binary classification, the final output layer usually has one neuron with sigmoid activation.</p>
+
+<p>For multiclass classification, the output layer has one neuron per class with softmax.</p>
+
+<p>Dropout, batch normalization, and regularization can be added to reduce overfitting.</p>
+
+<hr>
+
+<h3>22. In TensorFlow, if input is 120 dimensions and Dense layer has 100 neurons, what is the output shape?</h3>
+
+<p>For a single sample, the output shape is 100.</p>
+
+<p>For batch training, if batch size is 32, input shape is 32 by 120.</p>
+
+<p>The weight matrix shape is 120 by 100.</p>
+
+<p>The bias shape is 100.</p>
+
+<p>The output tensor shape is 32 by 100.</p>
+
+<p>The output dimension equals the number of neurons in the dense layer.</p>
+
+<hr>
+
+<h3>23. During training, what is the dense layer output tensor shape?</h3>
+
+<p>During training, the forward output shape is still batch_size by number_of_neurons.</p>
+
+<p>Training does not change the tensor shape.</p>
+
+<p>The difference is TensorFlow stores activations for backpropagation.</p>
+
+<p>For input 32 by 120 and dense layer with 100 neurons, output is 32 by 100.</p>
+
+<p>Gradients are also calculated for weights, bias, and previous layer inputs.</p>
+
+<hr>
+
+<h3>24. If a neural network is overfitting, how do you address it?</h3>
+
+<p>I first check learning curves.</p>
+
+<p>If training loss decreases but validation loss increases, it is overfitting.</p>
+
+<p>Then I reduce model complexity, add dropout, use L2 weight decay, apply early stopping, tune learning rate, increase data, or use data augmentation.</p>
+
+<p>I also validate with a separate holdout set.</p>
+
+<p>For production models, I monitor drift and retrain when validation or production behavior changes.</p>
+
+<hr>
+
+<h3>25. What are the techniques to reduce overfitting?</h3>
+
+<p>Common techniques are more data, data augmentation, reducing model complexity, dropout, L1 regularization, L2 regularization, Elastic Net, early stopping, batch normalization, feature selection, cross-validation, transfer learning, and ensemble methods.</p>
+
+<p>In deep learning projects, I used dropout, L2 weight decay, early stopping, batch normalization, and validation checkpointing most often.</p>
+
+<hr>
+
+<h3>26. Is L1 regularization the only regularization technique?</h3>
+
+<p>No.</p>
+
+<p>L1 is one regularization technique.</p>
+
+<p>L2, Elastic Net, dropout, early stopping, data augmentation, label smoothing, and batch normalization are also used to reduce overfitting.</p>
+
+<p>L1 can create sparse weights.</p>
+
+<p>L2 penalizes large weights.</p>
+
+<p>Dropout prevents neurons from depending too much on each other.</p>
+
+<p>Early stopping prevents memorization from too many epochs.</p>
+
+<hr>
+
+<h3>27. You implemented MCP server and client. What protocol is used?</h3>
+
+<p>MCP is an application-level protocol.</p>
+
+<p>It uses structured JSON-RPC style messages between client and server.</p>
+
+<p>The MCP server exposes tools with name, description, input schema, and output schema.</p>
+
+<p>The MCP client discovers tools, sends structured input, and receives structured output.</p>
+
+<p>In enterprise use, MCP becomes a controlled tool layer between LLM agents and internal systems.</p>
+
+<hr>
+
+<h3>28. What transports does MCP support?</h3>
+
+<p>MCP supports stdio, HTTP with SSE, and streamable HTTP.</p>
+
+<p>Stdio is used when the client starts the MCP server as a local process.</p>
+
+<p>HTTP with SSE is used for network-based servers and backward-compatible streaming.</p>
+
+<p>Streamable HTTP is the newer production-friendly transport for request-response and streaming over HTTP.</p>
+
+<p>The message format is still structured JSON-RPC.</p>
+
+<hr>
+
+<h3>29. Are TCP, WebSocket, or gRPC official MCP transports?</h3>
+
+<p>They are not the main official MCP transports.</p>
+
+<p>The common supported transports are stdio, HTTP/SSE, and streamable HTTP.</p>
+
+<p>Organizations can build custom adapters over other transports if needed.</p>
+
+<p>But in a standard MCP implementation, I would describe stdio and HTTP-based transports first.</p>
+
+<hr>
+
+<h3>30. What is RAG and why is it called Retrieval-Augmented Generation?</h3>
+
+<p>RAG means Retrieval-Augmented Generation.</p>
+
+<p>It is called that because before the LLM generates an answer, the system retrieves relevant external knowledge and adds it to the prompt.</p>
+
+<p>Retrieval gives the model current and enterprise-specific context.</p>
+
+<p>Generation creates the final natural language answer.</p>
+
+<p>RAG reduces hallucination because the answer is grounded in approved documents.</p>
+
+<hr>
+
+<h3>31. Explain the full RAG stack.</h3>
+
+<p>The stack starts with document ingestion.</p>
+
+<p>Documents come from PDFs, SharePoint, Confluence, databases, APIs, or cloud storage.</p>
+
+<p>Then text extraction, OCR if needed, cleaning, metadata creation, chunking, embedding generation, vector indexing, hybrid retrieval, reranking, prompt construction, LLM generation, citation, validation, and monitoring.</p>
+
+<p>Production RAG also includes RBAC, audit logs, prompt versioning, source citations, confidence score, fallback, and human review.</p>
+
+<hr>
+
+<h3>32. Which embedding model did you use?</h3>
+
+<p>In an Azure-based enterprise RAG setup, we used Azure OpenAI text-embedding-3-large.</p>
+
+<p>We evaluated smaller embeddings also, but selected the larger model for better semantic retrieval on domain-specific documents.</p>
+
+<p>Each chunk was embedded and stored with metadata in the vector index.</p>
+
+<p>At query time, the question was embedded using the same model so query and documents were in the same vector space.</p>
+
+<hr>
+
+<h3>33. What is the vector size of text-embedding-3-large?</h3>
+
+<p>The default embedding vector size is 3072 dimensions.</p>
+
+<p>Each chunk becomes a 3072-dimensional floating-point vector.</p>
+
+<p>The query also becomes a 3072-dimensional vector.</p>
+
+<p>The vector database compares the query vector with stored document vectors during retrieval.</p>
+
+<p>The dimension can be reduced in some configurations to optimize cost and storage.</p>
+
+<hr>
+
+<h3>34. Which vector database did you use?</h3>
+
+<p>In Azure-based enterprise environments, Azure AI Search is a strong choice because it supports vector search, keyword search, hybrid search, semantic ranking, RBAC integration, and enterprise governance.</p>
+
+<p>For POC or comparison, Pinecone can also be used.</p>
+
+<p>In production, the choice depends on cloud alignment, security, latency, cost, scaling, and operational governance.</p>
+
+<hr>
+
+<h3>35. What distance metric is used to find close documents?</h3>
+
+<p>Common metrics are cosine similarity, dot product, and Euclidean distance.</p>
+
+<p>For text embeddings, cosine similarity is commonly used.</p>
+
+<p>It compares the angle between vectors, which works well for semantic meaning.</p>
+
+<p>In Azure AI Search, approximate nearest neighbor retrieval can use HNSW indexing to find close vectors efficiently.</p>
+
+<p>Then results can be merged with keyword search for hybrid retrieval.</p>
+
+<hr>
+
+<h3>36. Where did you implement hybrid search?</h3>
+
+<p>Hybrid search was implemented in the retrieval service.</p>
+
+<p>The user query came to a FastAPI endpoint.</p>
+
+<p>The service generated query embedding using Azure OpenAI.</p>
+
+<p>Then it sent both keyword query and vector query to Azure AI Search.</p>
+
+<p>Azure AI Search performed BM25 keyword search and vector search, then combined results using ranking fusion.</p>
+
+<p>After that, metadata filters and reranking were applied before passing context to the LLM.</p>
+
+<hr>
+
+<h3>37. What is involved in hybrid search?</h3>
+
+<p>Hybrid search usually combines BM25 keyword search, vector similarity search, ranking fusion, metadata filtering, and sometimes semantic reranking.</p>
+
+<p>BM25 handles exact terms like codes, IDs, or product names.</p>
+
+<p>Vector search handles semantic meaning.</p>
+
+<p>Fusion combines both ranked lists.</p>
+
+<p>Reranking improves precision before the final chunks are sent to the LLM.</p>
+
+<hr>
+
+<h3>38. Where did medical terminology appear in RAG?</h3>
+
+<p>In a healthcare enterprise RAG use case.</p>
+
+<p>The documents included clinical policies, care guidelines, drug formularies, prior authorization policies, provider manuals, and internal SOPs.</p>
+
+<p>They contained terms like ICD codes, CPT codes, medication names, abbreviations, and treatment guidelines.</p>
+
+<p>Hybrid search was important because exact medical codes need keyword matching, while clinical questions need semantic retrieval.</p>
+
+<hr>
+
+<h3>39. A product manager wants a regression model for demand forecasting. Walk me through development from data to deployment.</h3>
+
+<p>I first clarify the target.</p>
+
+<p>For example, forecast next 7-day or 30-day demand per product-location.</p>
+
+<p>Then I define the data grain as product_id, location_id, and date.</p>
+
+<p>I clean missing dates, duplicates, negative sales, outliers, stockouts, and invalid IDs.</p>
+
+<p>Then I create lag features, rolling averages, seasonality features, promotion features, price features, holiday flags, and inventory indicators.</p>
+
+<p>I build a baseline like moving average or seasonal naive.</p>
+
+<p>Then I train LightGBM, XGBoost, or CatBoost.</p>
+
+<p>I use time-based train, validation, and test splits.</p>
+
+<p>I evaluate MAE, RMSE, MAPE, WMAPE, and bias.</p>
+
+<p>After error analysis, I register the model in MLflow and deploy batch scoring through Airflow or Azure ML pipelines.</p>
+
+<hr>
+
+<h3>40. What architecture would you use if millions of users use the forecasting system?</h3>
+
+<p>I would not make every user directly hit the model.</p>
+
+<p>Demand forecasting is mostly batch-based.</p>
+
+<p>I would precompute forecasts daily or weekly and store results in a forecast table or cache.</p>
+
+<p>The user-facing API would read precomputed forecasts.</p>
+
+<p>For scenario planning, the API can call a real-time model endpoint.</p>
+
+<p>The architecture includes data lake, feature pipeline, MLflow model registry, batch scoring job, forecast database, API layer, cache, Kubernetes autoscaling, monitoring, and retraining workflow.</p>
+
+<hr>
+
+<h3>41. Business says production predictions are bad. What could be the reason?</h3>
+
+<p>The issue can come from data drift, feature drift, pipeline mismatch, data quality issues, stockout handling, concept drift, stale model, wrong model version, wrong feature schema, or business definition mismatch.</p>
+
+<p>I would compare training data and production input data.</p>
+
+<p>Then I would check model version, feature values, prediction logs, source data freshness, drift dashboard, and error by product, region, time, and promotion type.</p>
+
+<p>Based on root cause, I would fix the pipeline, retrain, recalibrate, or adjust business rules.</p>
+
+<hr>
+
+<h3>42. Which cloud platforms are you familiar with?</h3>
+
+<p>My strongest experience is Azure for AI and ML platforms.</p>
+
+<p>I have worked with Azure OpenAI, Azure ML, Azure AI Search, Azure Databricks, Azure Data Lake, Blob Storage, AKS, Azure Monitor, Application Insights, Key Vault, Entra ID, and Synapse.</p>
+
+<p>I have also worked with AWS services like S3, ECS, Lambda, IAM, CloudWatch, and KMS.</p>
+
+<p>From an ML platform side, I am comfortable with deployment, containerization, CI/CD, monitoring, security, and production support across cloud platforms.</p>
+
+<hr>
+
+<h3>43. Do you have experience building Docker containers?</h3>
+
+<p>Yes.</p>
+
+<p>I have packaged FastAPI-based AI services, RAG services, MCP tool servers, and model-serving APIs into Docker containers.</p>
+
+<p>A typical Dockerfile starts from a Python slim base image, installs dependencies, copies code, exposes the port, and starts Uvicorn.</p>
+
+<p>In CI/CD, the image is built, tagged with commit ID or version, pushed to registry, and deployed to Kubernetes.</p>
+
+<p>I also optimize images using slim base images, dependency caching, non-root users, and minimal packages.</p>
+
+<hr>
+
+<h3>44. Which model did you fine-tune in Generative AI work?</h3>
+
+<p>For enterprise GenAI systems, I did not fine-tune GPT-4 directly.</p>
+
+<p>I used Azure OpenAI with RAG and prompt engineering for generation.</p>
+
+<p>For domain-specific NLP, I fine-tuned smaller transformer models like BERT, BioBERT-style models, or T5-type models using LoRA or QLoRA.</p>
+
+<p>The work included text preprocessing, tokenization, training adapters, evaluation, MLflow registration, API deployment, and monitoring.</p>
+
+<hr>
+
+<h3>45. Where did you get the model from?</h3>
+
+<p>We did not build transformer architecture from scratch.</p>
+
+<p>We started from pretrained models, usually from Hugging Face Model Hub or approved internal model repositories.</p>
+
+<p>We selected models based on task fit, benchmark quality, licensing, model size, latency, and infrastructure compatibility.</p>
+
+<p>Then we fine-tuned on de-identified domain-specific data and stored the final artifact in MLflow Model Registry.</p>
+
+<hr>
+
+<h3>46. What does QLoRA mean?</h3>
+
+<p>QLoRA means Quantized Low-Rank Adaptation.</p>
+
+<p>It keeps the base model frozen and quantizes the base weights, commonly to 4-bit.</p>
+
+<p>Then it trains small LoRA adapter weights instead of updating all model parameters.</p>
+
+<p>This reduces GPU memory and training cost.</p>
+
+<p>The original model stays frozen, and only adapter parameters are trained.</p>
+
+<p>It is useful when fine-tuning large models with limited GPU resources.</p>
+
+<hr>
+
+<h3>47. Does quantization increase accuracy?</h3>
+
+<p>No.</p>
+
+<p>Quantization does not increase accuracy.</p>
+
+<p>Its main purpose is reducing model size, memory usage, and inference cost.</p>
+
+<p>Aggressive quantization can reduce accuracy slightly.</p>
+
+<p>With QLoRA, accuracy stays close to full fine-tuning because adapters are trained while the frozen base model is quantized.</p>
+
+<p>If accuracy improves, that improvement comes from domain-specific fine-tuning, not quantization itself.</p>
+
+<hr>
+
+<h3>48. Write Python code to return the first non-repeating character from "swiss".</h3>
+
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>from collections import Counter
+
+def first_non_repeating(s: str):
+    freq = Counter(s)
+
+    for ch in s:
+        if freq[ch] == 1:
+            return ch
+
+    return None
+
+
+print(first_non_repeating("swiss"))  # w</code></pre>
+
+<p>The Counter counts character frequency.</p>
+
+<p>Then we scan the string in original order.</p>
+
+<p>The first character with frequency 1 is returned.</p>
+
+<p>For "swiss", the answer is "w".</p>
+
+<hr>
+
+<h3>49. Explain the first non-repeating character code.</h3>
+
+<p>Counter creates a frequency map.</p>
+
+<p>For "swiss", s appears 2 times, w appears 1 time, and i appears 1 time.</p>
+
+<p>Then the loop checks each character from left to right.</p>
+
+<p>s is skipped because frequency is 2.</p>
+
+<p>w is returned because frequency is 1.</p>
+
+<p>Time complexity is O(n).</p>
+
+<p>Space complexity is O(k), where k is the number of unique characters.</p>
+
+<hr>
+
+<h3>50. Write a function that returns a string in reverse order.</h3>
+
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>def reverse_string(s: str) -> str:
+    return s[::-1]
+
+
+print(reverse_string("swiss"))  # ssiws</code></pre>
+
+<p>Slicing with -1 moves backward one character at a time.</p>
+
+<p>Time complexity is O(n).</p>
+
+<p>Space complexity is O(n) because a new string is created.</p>
+
+<hr>
+
+<h3>51. Given a sentence, return words in reverse order.</h3>
+
+<pre style="overflow-x:auto;white-space:pre-wrap;word-break:break-all;background:var(--pts-section-alt,#f6f8fa);border:1px solid var(--pts-border,#e2e8f0);border-radius:6px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6;max-width:100%;"><code>def reverse_words(sentence: str) -> str:
+    words = sentence.split()
+    words.reverse()
+    return " ".join(words)
+
+
+print(reverse_words("I love Python programming"))
+# programming Python love I</code></pre>
+
+<p>split creates a list of words.</p>
+
+<p>reverse changes the word order.</p>
+
+<p>join converts the list back to a sentence.</p>
+
+<hr>
+
+<h3>52. Do you have any questions for us?</h3>
+
+<p>Yes.</p>
+
+<p>What is your current AI platform architecture, especially around RAG, Agentic AI, MCP, and production LLMOps?</p>
+
+<p>Are your GenAI applications already in production, or is the team moving from pilot to enterprise-scale deployment?</p>
+
+<p>How do you currently evaluate RAG quality, hallucination risk, retrieval accuracy, and production performance?</p>
+
+<p>What would success look like for this role in the first 3 to 6 months?</p>
+
+<hr>
+
+<h3>53. How do you thank the interviewer at the end?</h3>
+
+<p>Thank you very much for your time today.</p>
+
+<p>I really enjoyed the technical discussion.</p>
+
+<p>I appreciate the depth of your questions, especially around ML systems, RAG, MCP, deployment, and production troubleshooting.</p>
+
+<p>It was a good learning experience for me as well.</p>
+
+<p>Thank you for the opportunity, and I look forward to hearing from you.</p>
+
+<hr>
+
+<h2>Related Interview Support</h2>
+
+<p>ProxyTechSupport provides <a href="/proxy-interview-support/">real-time proxy interview assistance</a> and <a href="/agentic-ai-ml-job-support/">AI/ML job support</a> for:</p>
+
+<ul>
+  <li>ML Engineer interviews</li>
+  <li>Generative AI Engineer interviews</li>
+  <li>AI Platform Engineer interviews</li>
+  <li>RAG and LLMOps interviews</li>
+  <li>Agentic AI and MCP interviews</li>
+  <li>Python coding rounds</li>
+  <li>Machine learning system design interviews</li>
+  <li><a href="/devops-job-support/">DevOps and cloud deployment interviews</a></li>
+  <li><a href="/production-issue-support/">Production issue troubleshooting rounds</a></li>
+  <li><a href="/data-engineering-job-support-guide/">Data engineering and MLOps interviews</a></li>
+</ul>
+
+<hr>
+
+<h2>FAQ</h2>
+
+<h3>1. What questions are asked in an ML &amp; GenAI Platform Engineer interview?</h3>
+
+<p>Common questions cover RAG architecture, embeddings, vector databases, hybrid search, LangGraph, MCP, LLMOps, Azure AI, model serving, Docker, Kubernetes, monitoring, hallucination control, model evaluation, and Python coding.</p>
+
+<h3>2. How should I answer RAG interview questions?</h3>
+
+<p>Explain the full flow: document ingestion, OCR, cleaning, chunking, embeddings, vector index, hybrid retrieval, reranking, prompt construction, LLM call, source citation, evaluation, monitoring, and fallback.</p>
+
+<h3>3. What is the difference between RAG and Agentic AI?</h3>
+
+<p>RAG retrieves context and generates grounded answers.</p>
+
+<p>Agentic AI can plan, call tools, use memory, route tasks, evaluate outputs, and execute multi-step workflows.</p>
+
+<p>RAG can be one component inside an agentic AI system.</p>
+
+<h3>4. What is MCP in GenAI interviews?</h3>
+
+<p>MCP means Model Context Protocol.</p>
+
+<p>It standardizes how AI clients connect to tools, APIs, resources, and enterprise systems.</p>
+
+<p>It helps keep tool calling structured, reusable, secure, and observable.</p>
+
+<h3>5. What metrics should I mention for LLMOps?</h3>
+
+<p>Mention retrieval precision, context relevance, groundedness, faithfulness, hallucination rate, answer correctness, latency, token usage, cost per request, schema failure rate, fallback rate, and human escalation rate.</p>
+
+<h3>6. How do I explain ML model deployment in interviews?</h3>
+
+<p>Explain model registry, model version, Docker image, API endpoint, batch scoring job, CI/CD, monitoring, feature validation, rollback, drift tracking, and retraining process.</p>
+
+<h3>7. What Python coding questions appear in ML interviews?</h3>
+
+<p>Common questions include first non-repeating character, reverse string, reverse words in a sentence, duplicate detection, frequency count, list transformation, data parsing, and basic algorithmic logic.</p>
+
+<h3>8. How do I answer overfitting questions?</h3>
+
+<p>Explain training vs validation gap, dropout, L1/L2 regularization, early stopping, data augmentation, reducing model complexity, cross-validation, batch normalization, and monitoring production drift.</p>
+
+<h3>9. What should I say if asked about QLoRA?</h3>
+
+<p>Say QLoRA is Quantized Low-Rank Adaptation.</p>
+
+<p>It quantizes the frozen base model and trains small adapter weights.</p>
+
+<p>It reduces GPU memory and cost while keeping performance close to full fine-tuning.</p>
+
+<h3>10. Can ProxyTechSupport help with live AI/ML interviews?</h3>
+
+<p>Yes.</p>
+
+<p>ProxyTechSupport provides real-time AI/ML interview support, GenAI interview support, coding test support, project support, production issue support, and proxy interview assistance.</p>
+
+<p>WhatsApp: +91 96606 14469</p>
+
+<p><a href="https://wa.me/919660614469" rel="noopener noreferrer">https://wa.me/919660614469</a></p>
+
+<hr>
+
+<h2>Need Live Interview Support?</h2>
+
+<p>Preparing for an ML Engineer, GenAI Engineer, AI Platform Engineer, MLOps Engineer, or Data Engineer interview?</p>
+
+<p>ProxyTechSupport can help with real-time technical interview preparation, live coding support, production issue support, job support, and project support.</p>
+
+<p>WhatsApp: +91 96606 14469</p>
+
+<p><a href="https://wa.me/919660614469" rel="noopener noreferrer">https://wa.me/919660614469</a></p>
