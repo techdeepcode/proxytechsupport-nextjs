@@ -1,6 +1,7 @@
 ﻿import { allWorkdayPages } from './workday-pages';
 import { allUiPathPages } from './uipath-pages';
 import { allDotnetClusterPages } from './dotnet-cluster-pages';
+import { allAiMlClusterPages } from './aiml';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10455,4 +10456,6 @@ export const allLandingPages: LandingPageConfig[] = [
   ...allUiPathPages,
   // ── Modern .NET Azure AI cluster ─────────────────────────────────────────
   ...allDotnetClusterPages,
+  // ── Global AI/ML cluster (additive) ──────────────────────────────────────
+  ...allAiMlClusterPages,
 ];

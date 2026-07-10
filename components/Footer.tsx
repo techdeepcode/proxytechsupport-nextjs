@@ -87,6 +87,37 @@ const dotnetClusterLinks = [
   { label: '.NET Architecture Interview', href: '/dotnet-architecture-interview-proxy-support/' },
 ];
 
+const aiMlClusterLinks = [
+  { label: 'Global AI/ML Job Support', href: '/global-ai-ml-job-support/' },
+  { label: 'AI/ML Production Support', href: '/ai-ml-production-support/' },
+  { label: 'AI/ML Onboarding Support', href: '/ai-ml-project-onboarding-support/' },
+  { label: 'AI/ML Profile Positioning', href: '/ai-ml-profile-positioning-support/' },
+  { label: 'AI/ML Job Support USA', href: '/usa-ai-ml-job-support/' },
+  { label: 'AI/ML Job Support UK', href: '/uk-ai-ml-job-support/' },
+  { label: 'AI/ML Job Support Canada', href: '/canada-ai-ml-job-support/' },
+  { label: 'AI/ML Job Support Europe', href: '/europe-ai-ml-job-support/' },
+  { label: 'AI/ML Job Support Australia', href: '/australia-ai-ml-job-support/' },
+  { label: 'AI/ML Job Support Singapore', href: '/singapore-ai-ml-job-support/' },
+  { label: 'LLM Job Support', href: '/llm-job-support/' },
+  { label: 'Generative AI Job Support', href: '/generative-ai-job-support/' },
+  { label: 'RAG Job Support', href: '/rag-job-support/' },
+  { label: 'Agentic AI Job Support', href: '/agentic-ai-job-support/' },
+  { label: 'MLOps Job Support', href: '/mlops-job-support/' },
+  { label: 'Python AI/ML Job Support', href: '/python-ai-ml-job-support/' },
+  { label: 'AI Engineer Job Support', href: '/ai-engineer-job-support/' },
+  { label: 'ML Engineer Job Support', href: '/machine-learning-engineer-job-support/' },
+  { label: 'GenAI Engineer Job Support', href: '/genai-engineer-job-support/' },
+  { label: 'MLOps Engineer Job Support', href: '/mlops-engineer-job-support/' },
+  { label: 'Data Scientist Job Support', href: '/data-scientist-job-support/' },
+  { label: 'AI/ML Interview Proxy USA', href: '/ai-ml-interview-proxy-support-usa/' },
+  { label: 'GenAI Interview Proxy', href: '/genai-interview-proxy-support/' },
+  { label: 'AI/ML Candidate Marketing', href: '/ai-ml-candidate-marketing/' },
+  { label: 'Get AI/ML Interview Scheduled', href: '/get-ai-ml-interview-scheduled/' },
+  { label: 'Enterprise AI/ML Job Support', href: '/enterprise-ai-ml-job-support/' },
+  { label: 'What Is AI/ML Job Support', href: '/what-is-ai-ml-job-support/' },
+  { label: 'AI/ML Interview Preparation Guide', href: '/ai-ml-interview-preparation-guide/' },
+];
+
 const candidateMarketingLinks = [
   { label: 'Job Application & Candidate Marketing', href: '/job-application-candidate-marketing/' },
   { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
@@ -287,6 +318,20 @@ export default function Footer() {
           <FooterHeading>Modern .NET Azure AI Job Support</FooterHeading>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
             {dotnetClusterLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <hr style={{ border: 0, borderTop: '1px solid var(--pts-footer-border)', margin: '0 0 2rem' }} />
+
+        {/* ── Global AI/ML Job Support Cluster section ───────────────── */}
+        <div style={{ marginBottom: '2.5rem' }}>
+          <FooterHeading>Global AI/ML Job Support</FooterHeading>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
+            {aiMlClusterLinks.map((link) => (
               <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
                 {link.label}
               </Link>
