@@ -2,6 +2,7 @@
 import { allUiPathPages } from './uipath-pages';
 import { allDotnetClusterPages } from './dotnet-cluster-pages';
 import { allAiMlClusterPages } from './aiml';
+import { allAngularClusterPages } from './angular';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10458,4 +10459,6 @@ export const allLandingPages: LandingPageConfig[] = [
   ...allDotnetClusterPages,
   // ── Global AI/ML cluster (additive) ──────────────────────────────────────
   ...allAiMlClusterPages,
+  // ── Angular cluster (additive) ───────────────────────────────────────────
+  ...allAngularClusterPages,
 ];
