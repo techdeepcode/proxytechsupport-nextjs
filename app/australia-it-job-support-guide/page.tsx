@@ -11,6 +11,7 @@ export const metadata: Metadata = landingPageMetadata({
 export default function Page() {
   return (
     <KnowledgeGuidePage
+      salaryDisclaimer
       h1="Australia IT Job Support Guide: Real-Time Technical Help for Sydney and Melbourne Roles"
       intro="Australia is a significant IT employment market, with Sydney and Melbourne as the dominant centres and a growing remote-work culture that extends opportunity to Brisbane, Perth, Adelaide, and regional areas. Australian IT roles — at the Big Four banks, the growing fintech sector, government agencies, and the Australian tech company scene — carry specific professional and technical expectations. This guide covers IT job support in the Australian context."
       sections={[

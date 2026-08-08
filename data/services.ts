@@ -68,7 +68,7 @@ export const whatWeOffer: ServiceOffer[] = [
     icon: 'target',
     title: 'Profile Engineering & Get Interview Scheduled',
     description:
-      'Not getting interview calls despite applying repeatedly? We engineer your resume, LinkedIn, and professional positioning to match recruiter search patterns, ATS keyword requirements, and high-paying IT role expectations — so your profile gets noticed and shortlisted.',
+      'Not getting interview calls despite applying repeatedly? We engineer your resume, LinkedIn, and professional positioning to match recruiter search patterns, ATS keyword requirements, and high-paying IT role expectations — so your profile is clearly positioned for recruiter search and ATS discovery. Interview and hiring outcomes depend on your experience, preparation, and employer decisions.',
     features: [
       'Resume Engineering',
       'LinkedIn Optimization',
@@ -106,7 +106,7 @@ export const careerServices = [
     id: 'resume',
     title: 'Profile Engineering + LinkedIn Optimization',
     description:
-      'We do not offer basic profile writing. We focus on profile engineering and recruiter visibility optimization to help professionals get interview calls. Industry-specific positioning crafted to maximize your visibility to recruiters and hiring managers.',
+      'We do not offer basic profile writing. We focus on profile engineering and recruiter visibility optimization to help professionals improve how clearly their profile communicates their experience to recruiters. Industry-specific positioning crafted to strengthen your visibility to recruiters and hiring managers.',
     icon: 'document' as CareerServiceIconId,
     features: [
       'Industry-specific profile positioning',

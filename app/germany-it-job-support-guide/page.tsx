@@ -11,6 +11,7 @@ export const metadata: Metadata = landingPageMetadata({
 export default function Page() {
   return (
     <KnowledgeGuidePage
+      salaryDisclaimer
       h1="Germany IT Job Support Guide: Real-Time Technical Help for Berlin and Munich Roles"
       intro="Germany is one of Europe's largest IT employment markets, with Berlin as a major tech startup hub, Munich as the centre of enterprise and automotive technology, Frankfurt as the European financial technology capital, and Hamburg and Cologne as significant regional markets. German IT roles carry specific workplace culture expectations, language requirements, and technical environment characteristics that internationally-trained professionals need to navigate."
       sections={[

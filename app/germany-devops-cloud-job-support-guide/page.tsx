@@ -11,6 +11,7 @@ export const metadata: Metadata = landingPageMetadata({
 export default function Page() {
   return (
     <KnowledgeGuidePage
+      salaryDisclaimer
       h1="Germany DevOps & Cloud Job Support Guide: AWS, Azure, and Kubernetes Help for German IT Roles"
       intro="DevOps and cloud engineering is one of the highest-demand and highest-compensated IT specialties in Germany. German companies — from Berlin startups to Munich automotive technology teams to Frankfurt financial technology firms — are investing heavily in cloud-native infrastructure, Kubernetes platform engineering, and DevSecOps practices. This guide covers real-time job support for DevOps and cloud engineers in German roles."
       sections={[

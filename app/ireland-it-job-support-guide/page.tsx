@@ -11,6 +11,7 @@ export const metadata: Metadata = landingPageMetadata({
 export default function Page() {
   return (
     <KnowledgeGuidePage
+      salaryDisclaimer
       h1="Ireland IT Job Support Guide: Real-Time Technical Help for Dublin and Remote Roles"
       intro="Ireland has become one of Europe's most significant technology employment centres, with the European headquarters of Meta, Google, Apple, LinkedIn, Salesforce, Amazon, and Microsoft all based in Dublin. Irish IT roles — whether at multinational tech giants, Irish financial institutions, or the growing number of Irish-founded technology companies — carry significant expectations. This guide covers what IT job support looks like in the Irish context."
       sections={[

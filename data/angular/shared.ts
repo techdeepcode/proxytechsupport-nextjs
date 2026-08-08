@@ -38,7 +38,7 @@ export const jobSupportHighlights: LandingHighlight[] = [
   {
     title: 'Interview & Candidate Marketing',
     description:
-      'Angular proxy interview assistance, profile positioning, and candidate marketing to help you clear technical rounds and get more recruiter calls for Angular Developer, Frontend, and Full-Stack roles.',
+      'Angular proxy interview assistance, profile positioning, and candidate marketing to help you prepare for technical rounds and improve profile visibility and recruiter readiness for Angular Developer, Frontend, and Full-Stack roles.',
   },
 ];
 

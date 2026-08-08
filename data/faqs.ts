@@ -1,7 +1,7 @@
 export const faqs = [
   {
     question: 'What is IT job support service?',
-    answer: 'IT job support service provides real-time assistance to IT professionals working on live projects. We help with coding, debugging, architecture guidance, and task completion during your working hours. Our experts are available 24/7 to ensure you meet deadlines and deliver quality work.',
+    answer: 'IT job support service provides real-time assistance to IT professionals working on live projects. We help with coding, debugging, architecture guidance, and task completion during your working hours. Our experts are available 24/7 to help you meet deadlines and deliver quality work.',
   },
   {
     question: 'How does interview assistance work?',
@@ -29,7 +29,7 @@ export const faqs = [
   },
   {
     question: 'Can you help me get more interview calls?',
-    answer: 'Yes. Our profile engineering service improves recruiter visibility, LinkedIn search alignment, ATS-friendly technical positioning, and high-intent keyword targeting to increase interview call rates across USA, UK, and Canada markets.',
+    answer: 'Our profile engineering service is designed to improve recruiter visibility, LinkedIn search alignment, ATS-friendly technical positioning, and high-intent keyword targeting across USA, UK, and Canada markets. We do not sell or guarantee interviews — interview volume depends on your experience, target roles, and market conditions.',
   },
   {
     question: 'Do you apply for jobs on behalf of candidates?',

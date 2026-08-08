@@ -11,6 +11,7 @@ export const metadata: Metadata = landingPageMetadata({
 export default function Page() {
   return (
     <KnowledgeGuidePage
+      salaryDisclaimer
       h1="Canada Final Round Interview Support Guide: Panel and Executive Round Help"
       intro="Final round interviews at Canadian employers are high-stakes conversations that go beyond technical skills. They test cultural fit, leadership potential, long-term thinking, and communication under senior scrutiny. This guide covers what to expect in Canadian final rounds, what separates candidates who get offers from those who do not, and how expert support improves final-round performance."
       sections={[

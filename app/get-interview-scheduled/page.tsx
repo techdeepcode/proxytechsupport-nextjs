@@ -612,9 +612,9 @@ export default function GetInterviewScheduledPage() {
             {/* ── Right: metrics card ── */}
             <aside className="gis-metrics-card" aria-label="Trust indicators">
               {[
-                { stat: '1000+', label: 'IT Professionals Helped' },
+                { stat: '1000+', label: 'IT Professionals Supported' },
                 { stat: '24/7',  label: 'Support Available' },
-                { stat: '95%',   label: 'Success Rate' },
+                { stat: 'Since 2008', label: 'Trusted Experience' },
                 { stat: '50+',   label: 'Technologies Covered' },
               ].map((m) => (
                 <div key={m.stat} className="gis-metric-cell">

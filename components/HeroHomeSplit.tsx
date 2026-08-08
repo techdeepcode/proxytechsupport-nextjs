@@ -726,16 +726,16 @@ export default function HeroHomeSplit() {
             </div>
 
             <h1 className="hero-h1-serif hero-h1-stack" style={{ marginBottom: '0.9rem' }}>
-              <span className="hero-h1-line1">Struggling at Work or Need Urgent Proxy Interview Support?</span>
-              <span className="hero-h1-line2 hero-h1-accent">Get Real-Time Expert Support</span>
-              <span className="hero-h1-line3">For AI · ML · MLOps · DevOps · SRE · Cloud · Backend · Full-Stack Engineers</span>
+              <span className="hero-h1-line1">Technical Interview, Profile &amp;</span>
+              <span className="hero-h1-line2 hero-h1-accent">On-the-Job Support for IT Professionals</span>
+              <span className="hero-h1-line3">AI · ML · MLOps · DevOps · SRE · Cloud · Backend · Full-Stack Engineers</span>
             </h1>
 
             {/* ── Compact GIS strip — right below H1 ── */}
             <div className="hero-gis-strip">
               <div className="hero-gis-inner">
                 <span className="hero-gis-dot" aria-hidden />
-                <p className="hero-gis-headline">Profile invisible to recruiters? <em>We engineer it to get you shortlisted.</em></p>
+                <p className="hero-gis-headline">Profile invisible to recruiters? <em>We engineer it to improve recruiter visibility and shortlisting.</em></p>
               </div>
               <Link href="/get-interview-scheduled/" className="hero-gis-action">
                 <CalendarIcon />
@@ -764,7 +764,7 @@ export default function HeroHomeSplit() {
               <p className="hero-subline-lead">
                 <TargetIcon />
                 <span>
-                  Urgent proxy interview support & real-time IT job support — coding rounds, system design, production issues, client meetings, and high-pressure interview situations handled by expert developers, live, same timezone.
+                  Get role-specific proxy interview support, profile services and hands-on technical guidance across AI, cloud, DevOps, data and software engineering — coding rounds, system design, production issues and client meetings handled by expert developers, live, same timezone. Outcomes depend on each candidate&rsquo;s skills, experience, preparation and employer decisions.
                 </span>
               </p>
               <ul className="hero-subline-pains">
@@ -865,8 +865,8 @@ export default function HeroHomeSplit() {
                 }}
               >
                 {[
-                  { v: '1000+', l: 'Developers Helped' },
-                  { v: '98.9%', l: 'Success Rate' },
+                  { v: '1000+', l: 'Professionals Supported' },
+                  { v: 'Since 2008', l: 'Trusted Experience' },
                   { v: '50+', l: 'Technologies Covered' },
                   { v: '24×7', l: 'Live Support' },
                 ].map((cell) => (

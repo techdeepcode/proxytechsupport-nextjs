@@ -36,7 +36,7 @@ export const jobSupportHighlights: LandingHighlight[] = [
   {
     title: 'Interview & Candidate Marketing',
     description:
-      'AI/ML proxy interview assistance, profile positioning, and candidate marketing to help you clear technical rounds and get more recruiter calls for AI Engineer, ML Engineer, GenAI, and MLOps roles.',
+      'AI/ML proxy interview assistance, profile positioning, and candidate marketing to help you prepare for technical rounds and improve profile visibility and recruiter readiness for AI Engineer, ML Engineer, GenAI, and MLOps roles.',
   },
 ];
 

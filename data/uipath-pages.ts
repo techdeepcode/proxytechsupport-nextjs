@@ -327,7 +327,7 @@ export const uipathInterviewScheduled: LandingPageConfig = {
   tagline: 'Profile engineering, LinkedIn optimization, and recruiter outreach to generate UiPath and RPA developer interview calls across USA, Canada, UK, and Europe.',
   heroEyebrow: 'UiPath Job Search Support — Market Positioning',
   painIntro:
-    'Not getting UiPath interview calls despite having solid RPA experience? The problem is often profile positioning — not your skills. Our UiPath profile marketing service gets your resume and LinkedIn in front of the right recruiters and generates interview calls.',
+    'Not getting UiPath interview calls despite having solid RPA experience? The problem is often profile positioning — not your skills. Our UiPath profile marketing service puts your resume and LinkedIn in front of the right recruiters to improve profile visibility and recruiter outreach. Interview outcomes depend on your experience and employer decisions.',
   heroVariant:
     'The 2026 UiPath job market rewards specific keyword positioning. Roles now ask for REFramework, Document Understanding, Citrix automation, API integrations, Epic/healthcare automation, agentic workflows, and UiPath Test Suite — but most developer profiles list generic RPA bullets that fail recruiter ATS filters. We engineer your profile for the exact keywords, project framing, and technology depth that UiPath-focused recruiters and staffing firms actively search for.',
   geoLine: 'UiPath interview scheduling support for professionals targeting roles in USA, Canada, UK, Ireland, Germany, Netherlands, France, Sweden, Switzerland, Australia, Singapore, UAE, and Saudi Arabia.',

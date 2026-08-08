@@ -1,6 +1,16 @@
 import Link from 'next/link';
 import SocialIcons from '@/components/SocialIcons';
+import BusinessDisclaimer from '@/components/BusinessDisclaimer';
 import { jobSupportLinks } from '@/data/navigation';
+
+const legalLinks = [
+  { label: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Terms of Service', href: '/terms-of-service/' },
+  { label: 'Refund & Cancellation Policy', href: '/refund-cancellation-policy/' },
+  { label: 'Disclaimer', href: '/disclaimer/' },
+  { label: 'Service Delivery Policy', href: '/service-delivery-policy/' },
+  { label: 'About', href: '/about/' },
+];
 
 const locationLinks = [
   { label: 'Job Support USA', href: '/job-support-usa/' },
@@ -256,7 +266,7 @@ export default function Footer() {
               for developers and IT professionals across USA, Canada, UK, Europe, Australia, Germany, Singapore, and
               New Zealand. We help professionals handle urgent proxy interviews, production issues, debugging, client
               meetings, system design, cloud, DevOps, AI/ML, full-stack development, and high-pressure interview
-              situations across all major time zones. 1000+ IT professionals helped.
+              situations across all major time zones. 1000+ IT professionals supported.
             </p>
             <div style={{ display: 'flex', gap: '1.25rem', marginTop: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+919660614469" className="footer-link" style={{ fontWeight: 600 }}>
@@ -354,6 +364,45 @@ export default function Footer() {
         </div>
 
         <hr style={{ border: 0, borderTop: '1px solid var(--pts-footer-border)', margin: '0 0 1.5rem' }} />
+
+        {/* ── Legal / policy links ────────────────────────────────────── */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '0.5rem 1.25rem',
+            marginBottom: '1.1rem',
+          }}
+        >
+          {legalLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="footer-link">
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* ── How our service fees work (page bottom) ─────────────────── */}
+        <div style={{ maxWidth: '900px', margin: '0 auto 1.25rem', textAlign: 'center' }}>
+          <h4
+            style={{
+              color: 'var(--pts-footer-accent)',
+              fontWeight: 700,
+              fontSize: '0.9rem',
+              marginBottom: '0.5rem',
+            }}
+          >
+            How our service fees work
+          </h4>
+          <p style={{ fontSize: '0.82rem', lineHeight: 1.65, color: 'rgba(255, 255, 255, 0.55)' }}>
+            Our fees cover the specific support service, engagement, session, project or support period
+            agreed with the customer. Fees are not placement fees and are not payments in exchange for a
+            job, vacancy, interview call, recruiter response, offer, salary or employment outcome.
+          </p>
+        </div>
+
+        {/* ── Business / compliance disclaimer (full, at page bottom) ──── */}
+        <BusinessDisclaimer variant="full" showPolicyLinks tone="dark" style={{ marginBottom: '1.25rem' }} />
 
         {/* ── Copyright ───────────────────────────────────────────────── */}
         <p

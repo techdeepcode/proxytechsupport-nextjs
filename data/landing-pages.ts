@@ -123,7 +123,7 @@ const baseHighlights: LandingHighlight[] = [
   {
     title: 'Interview Assistance & Proxy Support',
     description:
-      'Expert-backed mock interviews, live interview guidance, and real-time coaching to help you clear technical rounds and land the role you want.',
+      'Expert-backed mock interviews, live interview guidance, and real-time coaching to help you prepare confidently for technical rounds and present your experience for the role you want.',
   },
   {
     title: 'AI / ML & Full-Stack Support',
@@ -148,7 +148,7 @@ function geoFaqs(country: string, timezone: string): LandingFaqItem[] {
     {
       question: 'Do you provide proxy interview support — real-time guidance during live interviews?',
       answer:
-        `Yes. Our proxy interview support service provides real-time, discreet guidance during your live technical interview. Our in-house expert joins your session and helps you think through coding problems, structure system design answers, and handle pressure rounds — giving you the confidence to perform at your best. This service has helped 1000+ developers land roles across ${country}, USA, UK, and globally.`,
+        `Yes. Our proxy interview support service provides real-time, discreet guidance during your live technical interview. Our in-house expert joins your session and helps you think through coding problems, structure system design answers, and handle pressure rounds — giving you the confidence to perform at your best. This service has supported 1000+ developers preparing for interviews across ${country}, USA, UK, and globally. We do not guarantee interview selection or employment — hiring decisions are made solely by employers.`,
     },
     {
       question: 'Is the service confidential?',
@@ -1482,7 +1482,7 @@ export const interviewSupportGlobal: LandingPageConfig = {
   slug: 'interview-support-global',
   title: 'Global Interview Support & Proxy Help – IT Experts',
   description:
-    'Struggling to clear IT interviews? Get live expert interview support & proxy assistance for USA, UK, Canada, Europe & Australia. Mock interviews + real-time coaching. 1000+ success stories.',
+    'Struggling to clear IT interviews? Get live expert interview support & proxy assistance for USA, UK, Canada, Europe & Australia. Mock interviews + real-time coaching. Trusted by 1000+ developers.',
   canonical: `${BASE_URL}/interview-support-global/`,
   keywords: [
     'global IT interview support', 'proxy interview support', 'live interview coaching',
@@ -1492,7 +1492,7 @@ export const interviewSupportGlobal: LandingPageConfig = {
   h1: 'Global IT Interview Support & Proxy Assistance – Live Expert Coaching',
   tagline: 'Mock interviews, live proxy coaching, and real-time interview guidance for IT professionals worldwide.',
   painIntro:
-    'Struggling to clear technical interviews? Failed a round you prepared hard for? Our experts have helped 1000+ developers across USA, UK, Canada, Europe, and Australia turn interview pressure into job offers.',
+    'Struggling to clear technical interviews? Failed a round you prepared hard for? Our experts have supported 1000+ developers across USA, UK, Canada, Europe, and Australia to prepare confidently and manage interview pressure. Outcomes depend on your skills, preparation, and employer decisions.',
   heroVariant:
     'The IT interview landscape is more competitive than ever — multi-stage coding rounds, system design marathons, and behavioral panels that reward not just technical knowledge but the ability to communicate clearly under pressure. Our global interview support service combines expert coaching, realistic mock interviews, and real-time proxy guidance during your live interviews — giving you a trusted expert in your corner when the stakes are highest.',
   geoLine: 'Serving IT professionals across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
@@ -1516,7 +1516,7 @@ export const interviewSupportGlobal: LandingPageConfig = {
     {
       question: 'What is proxy interview support — and how does it work?',
       answer:
-        'Proxy interview support means our in-house expert joins your live technical interview session in real-time and provides discreet guidance — helping you think through coding problems, structure system design answers, and handle pressure questions with confidence. The process is completely confidential and has helped 1000+ developers land roles at top companies across USA, UK, Canada, and globally.',
+        'Proxy interview support means our in-house expert joins your live technical interview session in real-time and provides discreet guidance — helping you think through coding problems, structure system design answers, and handle pressure questions with confidence. The process is completely confidential and has supported 1000+ developers preparing for interviews at top companies across USA, UK, Canada, and globally. Selection and employment decisions are made solely by employers.',
     },
     {
       question: 'Which technologies do you cover for interviews?',
@@ -1796,7 +1796,7 @@ export const failedInterviewHelp: LandingPageConfig = {
   slug: 'failed-interview-help',
   title: 'Failed IT Interview? Get Expert Help – Bounce Back',
   description:
-    'Failed a technical interview? Do not give up. Get expert coaching, proxy interview support & real-time assistance to ace your next round. 1000+ developers recovered & hired.',
+    'Failed a technical interview? Do not give up. Get expert coaching, proxy interview support & real-time assistance to prepare confidently for your next round. 1000+ developers supported through interview preparation and recovery.',
   canonical: `${BASE_URL}/failed-interview-help/`,
   keywords: [
     'failed IT interview help', 'interview failure recovery', 'technical interview coaching',
@@ -1808,7 +1808,7 @@ export const failedInterviewHelp: LandingPageConfig = {
   painIntro:
     "That rejection email stings. But failing a technical interview does not mean you are not good enough — it usually means you were unprepared for that specific format, company, or type of question.",
   heroVariant:
-    "We have helped hundreds of developers recover from interview failures — developers who failed FAANG coding rounds, senior system design interviews, and high-stakes technical screens. Most of them went on to successfully clear their next attempt with the right preparation, coaching, and real-time proxy interview support during their live sessions. You are not out — you just need the right expert in your corner.",
+    "We have helped hundreds of developers recover from interview failures — developers who failed FAANG coding rounds, senior system design interviews, and high-stakes technical screens. Many of them approached their next attempt with stronger preparation, coaching, and real-time proxy interview support during their live sessions. Outcomes vary and depend on your preparation and independent employer decisions. You are not out — you just need the right expert in your corner.",
   geoLine: 'Helping developers recover from interview failures across USA, UK, Canada, Australia, Europe, Germany, Singapore, and New Zealand.',
   timezoneNote: 'Available across all time zones — schedule recovery sessions that fit your timeline.',
   techSnippet: 'Interview recovery coaching available for Java, Python, React, Node.js, DevOps, AWS, Data Science, and 50+ other technology interview formats.',
@@ -5815,7 +5815,7 @@ export const interviewProxySupportIreland: LandingPageConfig = {
     {
       question: 'Is interview proxy support confidential?',
       answer:
-        'Completely. All sessions are conducted with full professional discretion. We never share your details with any third party, including the employer. We sign NDAs on request. Our service has helped hundreds of Ireland tech professionals clear critical interview rounds confidentially.',
+        'Completely. All sessions are conducted with full professional discretion. We never share your details with any third party, including the employer. We sign NDAs on request. Our service has supported hundreds of Ireland tech professionals through critical interview rounds confidentially.',
     },
     {
       question: 'Do you help with contractor screening interviews in Ireland?',

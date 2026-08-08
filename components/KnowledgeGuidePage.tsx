@@ -3,6 +3,7 @@ import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import SalaryDisclaimer from '@/components/SalaryDisclaimer';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
 export interface KBFaq {
@@ -30,6 +31,8 @@ export interface KnowledgeGuidePageProps {
   faqs: KBFaq[];
   ctaHref?: string;
   ctaLabel?: string;
+  /** Render the shared salary-benchmark disclaimer below the content sections. */
+  salaryDisclaimer?: boolean;
 }
 
 export default function KnowledgeGuidePage({
@@ -41,6 +44,7 @@ export default function KnowledgeGuidePage({
   faqs,
   ctaHref,
   ctaLabel,
+  salaryDisclaimer,
 }: KnowledgeGuidePageProps) {
   const primaryCtaLabel = ctaLabel ?? 'Get Expert Support Now';
 
@@ -336,6 +340,8 @@ export default function KnowledgeGuidePage({
               )}
             </section>
           ))}
+
+          {salaryDisclaimer && <SalaryDisclaimer style={{ marginTop: 0, marginBottom: '2rem' }} />}
 
           {/* Related support pages */}
           {relatedLinks.length > 0 && (

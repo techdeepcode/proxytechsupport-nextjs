@@ -15,7 +15,7 @@ export const testimonials = [
     role: 'Singapore | Power BI · SQL · Python',
   },
   {
-    quote: 'Excellent IT job support service! The expert helped me crack a React developer position. Professional, knowledgeable, and always available when needed.',
+    quote: 'Excellent IT job support service! The expert helped me prepare thoroughly and handle my React developer interview rounds with confidence. Professional, knowledgeable, and always available when needed.',
     name: 'Rajesh K.',
     role: 'React Developer, USA',
   },
@@ -25,7 +25,7 @@ export const testimonials = [
     role: '.Net Developer, UK',
   },
   {
-    quote: 'Amazing AWS interview assistance service. The expert had deep knowledge and helped me secure a cloud architect role. Thank you!',
+    quote: 'Amazing AWS interview assistance service. The expert had deep knowledge and helped me prepare confidently for my cloud architect interviews. Thank you!',
     name: 'Anil S.',
     role: 'Cloud Architect, Canada',
   },

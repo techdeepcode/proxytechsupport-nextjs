@@ -159,7 +159,7 @@ export default function Testimonials() {
         <div className="testimonials-header">
           <p className="testimonials-eyebrow">What our clients say</p>
           <h2 className="testimonials-title">Trusted by IT professionals worldwide</h2>
-          <p className="testimonials-sub">Real results from developers and engineers across USA, UK, and Canada.</p>
+          <p className="testimonials-sub">Individual experiences shared by developers and engineers across USA, UK, and Canada.</p>
         </div>
 
         <div className="testimonials-grid">
@@ -193,6 +193,23 @@ export default function Testimonials() {
             </article>
           ))}
         </div>
+
+        <p
+          style={{
+            textAlign: 'center',
+            fontSize: '0.8rem',
+            fontStyle: 'italic',
+            color: 'var(--pts-text-subtle)',
+            maxWidth: '760px',
+            margin: '1.75rem auto 0',
+            lineHeight: 1.6,
+          }}
+        >
+          These testimonials describe individual client experiences with our support services. Results
+          vary and are not guaranteed. Interview, selection, and employment outcomes depend on each
+          candidate&rsquo;s skills, experience, preparation, market conditions, and independent employer
+          decisions.
+        </p>
       </div>
     </section>
   );

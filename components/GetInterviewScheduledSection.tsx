@@ -48,7 +48,7 @@ export default function GetInterviewScheduledSection() {
           <p className="gis-home-eyebrow">Profile Engineering & Recruiter Visibility</p>
           <h2 className="gis-home-h2">Get Interview Scheduled</h2>
           <p className="gis-home-sub">
-            Not getting interview calls even after applying to hundreds of jobs? We help you build a high-visibility professional profile aligned with real hiring demand — so recruiters find you, not the other way around.
+            Not getting interview calls even after applying to hundreds of jobs? We help you build a high-visibility professional profile aligned with real hiring demand — so your experience is easier for recruiters to find. Interview and hiring outcomes depend on your background, preparation and employer decisions.
           </p>
           <Link href="/get-interview-scheduled/" className="gis-home-cta">
             <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>

@@ -77,7 +77,7 @@ export default function USALegacySection() {
       <section className="uls-root" aria-label="USA legacy trust section">
         <div className="uls-inner">
           <p className="uls-eyebrow"><span aria-hidden>✦</span> Since 2008 · USA-First</p>
-          <h2 className="uls-h2">Helping USA IT Professionals Survive Every Tech Crisis Since 2008</h2>
+          <h2 className="uls-h2">Supporting USA IT Professionals Through Every Tech Challenge Since 2008</h2>
           <p className="uls-para">
             Since 2008, Proxy Tech Support has helped USA-based developers, consultants, contractors, OPT/CPT/H1B professionals, and remote IT workers handle real job pressure — from the Great Recession to COVID remote work to today&apos;s AI-era layoffs and interview competition.
           </p>

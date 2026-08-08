@@ -164,9 +164,9 @@ function CTAButtons({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
 // ─── Trust strip data ────────────────────────────────────────────────────────
 
 const trustItems = [
-  { stat: '1000+', label: 'Developers Helped' },
+  { stat: '1000+', label: 'Professionals Supported' },
   { stat: '24/7', label: 'Availability' },
-  { stat: '98.9%', label: 'Success Rate' },
+  { stat: 'Since 2008', label: 'Trusted Experience' },
   { stat: '50+', label: 'Technologies' },
 ];
 

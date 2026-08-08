@@ -37,7 +37,7 @@ function buildScheduledPage(i: SchedInput): LandingPageConfig {
     heroEyebrow: 'AI/ML Interview Scheduling — 2026',
     painIntro: `You have real AI/ML skills but the ${i.market} interview calls are not coming. The problem is almost always positioning — your profile does not surface in recruiter searches or pass ATS filters for GenAI, LLM, RAG, and MLOps roles.`,
     heroVariant:
-      'We rebuild your resume and LinkedIn around the exact terms AI/ML recruiters search for, quantify your production impact, and then run active outreach to hiring managers and staffing firms — turning a silent job search into a real interview pipeline.',
+      'We rebuild your resume and LinkedIn around the exact terms AI/ML recruiters search for, quantify your production impact, and then run active outreach to hiring managers and staffing firms — building a more structured job-search and recruiter-outreach process.',
     geoLine: `Helping AI/ML professionals get interviews scheduled across ${i.market} and worldwide.`,
     timezoneNote: 'Profile support and outreach aligned to your target market and time zone.',
     highlights: marketingHighlights,
