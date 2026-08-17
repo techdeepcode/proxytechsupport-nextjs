@@ -416,6 +416,83 @@ $env (env tag), $service (service tag), $region (region tag), $availability_zone
 
 ## AI Technical Lead & GenAI Interview Articles
 
+### Healthcare AI/ML Solutions Architect Interview Questions: Bedrock, BERT, FHIR & Agentic AI
+URL: /interviews/2026-08-17-healthcare-ai-ml-solutions-architect-interview-questions-bedrock-bert-fhir-agentic-ai/
+Type: Real interview Q&A guide (anonymized)
+Published: 2026-08-17
+Canonical: https://proxytechsupport.com/interviews/2026-08-17-healthcare-ai-ml-solutions-architect-interview-questions-bedrock-bert-fhir-agentic-ai/
+Target audience: Healthcare AI/ML Solutions Architect candidates, AWS Solutions Architect (AI/ML) candidates, GenAI and agentic AI candidates, machine learning engineers, and candidates preparing for senior technical + Solutions Architect screening rounds in regulated healthcare and financial-services environments
+
+Primary SEO topics: Healthcare AI/ML Solutions Architect interview questions, AWS AI ML interview questions, healthcare AI interview questions, AWS Solutions Architect AI ML interview, Bedrock interview questions, Agentic AI interview questions
+
+Secondary SEO topics: BERT fine tuning interview questions, SageMaker interview questions, FHIR interview questions, HL7 interview questions, LoRA interview questions, catastrophic forgetting, Transformer architecture interview, Amazon Comprehend Medical, Amazon Transcribe Medical, SageMaker Model Monitor, AI model drift, AI model bias, Bedrock AgentCore, healthcare GenAI, production agentic AI, PEFT interview questions, RAG interview questions, healthcare machine learning, clinical NLP, AI Solutions Architect interview
+
+**Article Summary:**
+50 real Healthcare AI/ML Solutions Architect interview questions and short technical answers covering healthcare AI architecture, patient triage, BERT fine-tuning, SageMaker, HL7, FHIR, PHI security, model evaluation, false negatives, LoRA, catastrophic forgetting, Transformer internals, Generative AI, agentic AI, Bedrock AgentCore, model drift, bias detection, and production observability. Based on a real senior-level technical and Solutions Architect screening round style. All company names, candidate names, client names, phone numbers, email addresses, and private identifiers are fully anonymized.
+
+**Entity Summary:**
+- Role: Healthcare AI/ML Solutions Architect
+- Skills: AI/ML architecture, healthcare AI, Generative AI, BERT, SageMaker, Bedrock, RAG, agentic AI, Transformers, MLOps
+- Domains: Healthcare, regulated enterprise, financial services
+- Use cases: Patient triage, clinical NLP, enterprise GenAI, compliance automation, RAG, agent orchestration
+- Interview type: Senior technical + Solutions Architect screening
+- Technology context: AWS AI/ML, SageMaker, Bedrock, clinical NLP, FHIR, Transformers, production GenAI
+
+**Key topics covered:**
+- Business framing: customer problem first, business value, architecture decisions, trade-offs, risk, security, production readiness, adoption, cost, measurable outcomes
+- Healthcare interoperability: HL7 (Health Level Seven, OSI Layer 7), HL7 v2 messaging vs FHIR resources (Patient, Encounter, Observation), FHIR REST APIs, coexistence of both
+- Patient triage: AI-assisted routing, voice-to-triage flow, Amazon Transcribe Medical, Amazon Comprehend Medical clinical entities/PHI, human escalation of uncertain cases
+- BERT: bidirectional context, fixed-label classification vs generative LLM, fine-tuning in SageMaker, tokenizer/attention masks/classification head, 110M parameters, 12 layers, 12 heads, CPU vs GPU inference
+- PEFT: LoRA (Low-Rank Adaptation, ΔW = B × A), rank, dense low-rank matrices, catastrophic forgetting and mitigation
+- Data: governed S3 data lake, raw vs curated zones, de-identification, ground-truth labels, IAM/KMS, train/validation/test splits, JSONL/CSV/Parquet
+- Evaluation: recall for high-risk triage (Recall = TP / (TP + FN)), precision, F1, ROC-AUC vs PR-AUC, confusion matrices, thresholds, epochs/early stopping
+- Production ML: model drift (data vs performance), SageMaker Model Monitor, SageMaker Clarify, CloudWatch, bias detection across cohorts, GPU memory estimation
+- Transformers: self-attention (Attention(Q,K,V) = softmax(QKᵀ / √dk)V), multi-head attention, positional encoding, tokenization (WordPiece/BPE/SentencePiece), embedding-space specificity
+- Agentic AI: bounded autonomy, why PoCs fail in production, centralized observability with OpenTelemetry/X-Ray, Amazon Bedrock AgentCore (runtime, tools, identity, memory, observability), foundation model vs LLM
+
+**FAQs included (with structured data):**
+1. What topics are asked in a Healthcare AI/ML Solutions Architect interview?
+2. How should I explain a healthcare AI project in a Solutions Architect interview?
+3. Why is recall important for healthcare triage models?
+4. What is the difference between HL7 and FHIR?
+5. Why use BERT for clinical text classification instead of an LLM?
+6. What is LoRA and when should it be used?
+7. How do you monitor ML models in AWS?
+8. Why do agentic AI PoCs fail when moved to production?
+9. What is Bedrock AgentCore used for?
+10. Can ProxyTechSupport help with live Healthcare AI/ML interviews?
+
+**Internal links in article:**
+- /ai-ml-proxy-interview-support/ (real-time Healthcare AI/ML Solutions Architect interview support)
+- /genai-interview-proxy-support/ (live Generative AI interview guidance)
+- /aws-bedrock-job-support/ (AWS Bedrock project support)
+- /proxy-interview-support/ (discreet proxy interview assistance)
+- /proxy-interview-usa/ (support for US-based AI/ML interview rounds)
+- /job-support-usa/ (real-time AI/ML project support in the USA)
+- /aws-job-support-guide/ (AWS Solutions Architect support guide)
+- /interviews/2026-06-02-senior-ai-ml-engineer-interview-questions-recommendation-systems/ (senior AI/ML engineer interview questions on recommendation systems)
+- /interviews/2026-07-06-ml-genai-platform-engineer-interview-questions-rag-agentic-ai/ (ML and GenAI platform engineer question set on RAG and agentic AI)
+- /interviews/2026-05-06-real-ai-engineer-interview-questions-llm-agents-rag-system-design-usa/ (AI engineer interview questions on LLM agents, RAG, and system design)
+
+**Schema included:**
+- Article schema: type "Article", headline "Healthcare AI/ML Solutions Architect Interview Questions: Bedrock, BERT, FHIR & Agentic AI", description, datePublished (2026-08-17T12:00:00+05:30), dateModified, url, mainEntityOfPage, author/publisher (Organization: Proxy Tech Support), image, inLanguage: en-US, isAccessibleForFree: true, keywords, articleSection: "Interview Questions", speakable (cssSelector: h1, h2, h3, .post-content)
+- FAQPage schema: 10 FAQ items covering Healthcare AI/ML Solutions Architect topics, recall in triage, HL7 vs FHIR, BERT vs LLM, LoRA, AWS model monitoring, agentic AI in production, Bedrock AgentCore, ProxyTechSupport support
+- BreadcrumbList schema: Home (/) → Interview Questions (/interview-questions/) → Healthcare AI/ML Solutions Architect Interview Questions: Bedrock, BERT, FHIR & Agentic AI
+
+**OG / Twitter card:**
+- og:type = article
+- og:title = Healthcare AI/ML Solutions Architect Interview Questions: Bedrock, BERT, FHIR & Agentic AI | Proxy Tech Support
+- og:description = 50 real Healthcare AI/ML Solutions Architect interview questions covering BERT fine-tuning, SageMaker, FHIR, HL7, GenAI, Transformers, LoRA, drift, bias, Bedrock AgentCore and agentic AI.
+- og:url = https://proxytechsupport.com/interviews/2026-08-17-healthcare-ai-ml-solutions-architect-interview-questions-bedrock-bert-fhir-agentic-ai/
+- og:site_name = Proxy Tech Support
+- article:section = Interview Questions
+- twitter:card = summary_large_image
+
+**Robots / indexing:**
+- robots: index, follow
+- canonical: https://proxytechsupport.com/interviews/2026-08-17-healthcare-ai-ml-solutions-architect-interview-questions-bedrock-bert-fhir-agentic-ai/
+- hreflang: en-US, en-CA, en-GB, en-AU, en-IE, x-default — all pointing to canonical URL
+
 ### ML & GenAI Platform Engineer Interview Questions on RAG, Agentic AI, MCP, LLMOps, Azure AI, and ML Deployment
 URL: /interviews/2026-07-06-ml-genai-platform-engineer-interview-questions-rag-agentic-ai/
 Type: Real interview Q&A guide (anonymized)
