@@ -30,7 +30,7 @@ export const testimonials = [
     role: 'Cloud Architect, Canada',
   },
   {
-    quote: 'I had been applying on my own for months with almost no responses. Within the first three weeks of the job marketing campaign I started getting recruiter calls. The outreach and follow-up process made the difference.',
+    quote: 'I had been applying on my own for months with almost no responses. Once the job marketing campaign started, my search became far more active and the structured outreach and follow-up process made a real difference.',
     name: 'Java Backend Developer',
     role: 'USA | Spring Boot · AWS · Microservices',
   },
@@ -40,12 +40,12 @@ export const testimonials = [
     role: 'Canada | Kubernetes · Terraform · Azure',
   },
   {
-    quote: 'I had applied to over 200 jobs on my own with almost nothing back. The profile engineering completely changed how my experience read to recruiters. I started getting calls within two weeks of the rework.',
+    quote: 'I had applied to many jobs on my own with almost nothing back. The profile engineering completely changed how my experience read to recruiters, and the way my background was positioned improved noticeably after the rework.',
     name: 'Cloud Infrastructure Engineer',
     role: 'USA | AWS · Terraform · Kubernetes',
   },
   {
-    quote: 'My LinkedIn profile was being ignored by recruiters despite 8 years of DevOps experience. After profile engineering, the positioning was tightened for UK enterprise roles and I received three recruiter messages in the first week.',
+    quote: 'My LinkedIn profile was being ignored by recruiters despite 8 years of DevOps experience. After profile engineering, the positioning was tightened for UK enterprise roles and recruiter interest in my profile clearly picked up.',
     name: 'Senior DevOps Consultant',
     role: 'UK | Jenkins · Docker · Azure · GitOps',
   },

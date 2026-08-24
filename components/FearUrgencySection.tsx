@@ -37,7 +37,7 @@ export default function FearUrgencySection() {
               marginBottom: '0.85rem',
             }}
           >
-            Urgent Support
+            When You Need Support
           </p>
           <h2
             style={{
@@ -49,12 +49,12 @@ export default function FearUrgencySection() {
               marginBottom: '1rem',
             }}
           >
-            Don&apos;t Wait Until the Issue Escalates
+            Support Right When You Need It
           </h2>
           <p style={{ fontSize: '1rem', color: 'var(--pts-text-subtle)', lineHeight: 1.65 }}>
-            High-pressure IT situations move fast. One failed proxy interview, missed production deadline, weak standup,
-            or difficult client discussion can create serious career and income risk — especially on USA, UK, and Canada
-            remote projects.
+            A tough interview round, a production deadline, a demanding standup, or a difficult client discussion can be
+            stressful — especially on USA, UK, and Canada remote projects. We help you prepare and respond with
+            confidence through expert-led guidance and interview preparation.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function FearUrgencySection() {
               transition: 'filter 0.2s, transform 0.2s',
             }}
           >
-            Get Urgent Support Now
+            Talk to an Expert
           </a>
         </div>
       </div>

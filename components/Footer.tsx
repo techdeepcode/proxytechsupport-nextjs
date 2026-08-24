@@ -264,9 +264,14 @@ export default function Footer() {
             <p style={{ fontSize: '0.875rem', lineHeight: 1.75, maxWidth: '480px' }}>
               Real-time IT job support, proxy interview support, technical interview assistance, and profile engineering
               for developers and IT professionals across USA, Canada, UK, Europe, Australia, Germany, Singapore, and
-              New Zealand. We help professionals handle urgent proxy interviews, production issues, debugging, client
-              meetings, system design, cloud, DevOps, AI/ML, full-stack development, and high-pressure interview
-              situations across all major time zones. 1000+ IT professionals supported.
+              New Zealand. We support professionals with proxy interviews, production issues, debugging, client
+              meetings, system design, cloud, DevOps, AI/ML, full-stack development, and real-time interview
+              preparation across all major time zones. Trusted by IT professionals since 2008.
+            </p>
+            <p style={{ fontSize: '0.78rem', lineHeight: 1.65, maxWidth: '480px', color: 'rgba(255, 255, 255, 0.5)', marginTop: '0.75rem' }}>
+              ProxyTechSupport provides paid technical mentoring, interview preparation and IT support. We do not
+              substitute candidates, sit interviews on anyone&apos;s behalf, or guarantee jobs, interviews, recruiter
+              responses or salary outcomes.
             </p>
             <div style={{ display: 'flex', gap: '1.25rem', marginTop: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+919660614469" className="footer-link" style={{ fontWeight: 600 }}>

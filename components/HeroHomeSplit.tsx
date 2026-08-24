@@ -1,1013 +1,455 @@
 import Link from 'next/link';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 
-function SmallCheck() {
+/* ── Icons ─────────────────────────────────────────────────────────────── */
+function WhatsAppIcon() {
+  return (
+    <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+    </svg>
+  );
+}
+
+function CheckIcon() {
   return (
     <svg width={14} height={14} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <circle
-        cx="12"
-        cy="12"
-        r="10"
-        fill="rgba(var(--pts-accent-rgb), 0.12)"
-        stroke="var(--pts-accent)"
-        strokeWidth={1.5}
-      />
-      <path
-        d="M8 12l2.5 3L16 9"
-        stroke="var(--pts-forest)"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M8 12l2.5 3L16 9" stroke="var(--pts-forest)" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function BarCheck() {
-  return (
-    <svg
-      width={16}
-      height={16}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden
-      style={{ flexShrink: 0, marginTop: 1 }}
-    >
-      <path
-        d="M8 12l2.5 3L16 9"
-        stroke="var(--pts-accent)"
-        strokeWidth="2.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-const trustPills = [
-  '🔒 100% Confidential Support',
-  '👨‍💻 Senior Developers (10+ yrs experience)',
-  '⚡ Instant Response',
-  '🌍 USA / UK / Canada Timezones',
-];
-
-const barItems = [
-  'No Middlemen or Outsourcing',
-  'In House Expert Team',
-  'Secure & Confidential',
-  'Instant Response',
-  'Global Coverage',
-];
-
-const dashboardPills = ['No Middlemen', 'Same-Day Start', 'Job Support + Interview Proxy', 'Get Interview Scheduled'];
-
-function CalendarIcon() {
+function ArrowIcon() {
   return (
     <svg width={16} height={16} viewBox="0 0 24 24" fill="none" aria-hidden style={{ flexShrink: 0 }}>
-      <rect x="3" y="4" width="18" height="17" rx="2.5" stroke="currentColor" strokeWidth={1.8} />
-      <path d="M3 9h18" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" />
-      <path d="M8 2v4M16 2v4" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" />
-      <circle cx="8.5" cy="14" r="1.1" fill="currentColor" />
-      <circle cx="12" cy="14" r="1.1" fill="currentColor" />
-      <circle cx="15.5" cy="14" r="1.1" fill="currentColor" />
+      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function TargetIcon() {
-  return (
-    <svg width={17} height={17} viewBox="0 0 24 24" fill="none" aria-hidden style={{ flexShrink: 0 }}>
-      <circle cx="12" cy="12" r="10" stroke="var(--pts-accent)" strokeWidth={1.4} opacity={0.9} />
-      <circle cx="12" cy="12" r="6" stroke="var(--pts-accent)" strokeWidth={1.4} opacity={0.85} />
-      <circle cx="12" cy="12" r="2.25" fill="var(--pts-accent)" />
-    </svg>
-  );
-}
+/* ── Data ──────────────────────────────────────────────────────────────── */
+const trustChips = [
+  '100% Confidential',
+  'Senior Engineers · 10+ yrs',
+  'Start within 1 hour',
+  'USA · UK · Canada · Australia',
+];
 
-function DashPillCheck() {
-  return (
-    <svg width={13} height={13} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M8 12l2.5 3L16 9"
-        stroke="var(--pts-forest)"
-        strokeWidth={2.2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+const services = [
+  {
+    href: '/proxy-interview-support/',
+    title: 'Proxy Interview Support',
+    desc: 'Live, expert-guided support through your technical interview rounds.',
+  },
+  {
+    href: '/proxy-job-support/',
+    title: 'Proxy Job Support',
+    desc: 'Hands-on help with production issues, project tasks & client calls.',
+  },
+  {
+    href: '/get-interview-scheduled/',
+    title: 'Get Interview Scheduled',
+    desc: 'Profile engineering to improve recruiter visibility & shortlisting.',
+  },
+  {
+    href: '/job-application-candidate-marketing/',
+    title: 'Job Application & Marketing',
+    desc: 'We run your job-search campaign so your profile stays active.',
+  },
+];
+
+const trustStats = ['Since 2008', '1000+ professionals', '50+ technologies', '24×7 live'];
 
 export default function HeroHomeSplit() {
   return (
-    <div className="hero-banner-stack">
-      <section
-        id="home"
-        className="hero-split-section"
-        style={{
-          padding: 'clamp(2rem, 5vw, 4rem) 1rem 0',
-        }}
-      >
-        <style>{`
-          /*
-            Hero stack: nearly full viewport minus header; small bottom trim only.
-          */
-          .hero-banner-stack {
-            position: relative;
-            overflow-x: visible;
-            overflow-y: visible;
-            display: flex;
-            flex-direction: column;
-            min-height: calc(100dvh - var(--pts-sticky-header-offset) - clamp(0.5rem, 2vh, 1.25rem));
-            min-height: calc(100svh - var(--pts-sticky-header-offset) - clamp(0.5rem, 2vh, 1.25rem));
-            margin-bottom: 0;
-            background:
-              radial-gradient(ellipse 95% 58% at 12% 16%, rgba(var(--pts-accent-rgb), 0.14) 0%, transparent 56%),
-              radial-gradient(ellipse 78% 52% at 90% 80%, rgba(var(--pts-forest-rgb), 0.11) 0%, transparent 52%),
-              linear-gradient(168deg, #f3fcf9 0%, #e8f6ef 38%, #dff3ea 72%, #f4fbf7 100%);
+    <section id="home" className="hero-v2">
+      <style>{`
+        .hero-v2 {
+          position: relative;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          background:
+            radial-gradient(ellipse 90% 55% at 12% 14%, rgba(var(--pts-accent-rgb), 0.12) 0%, transparent 56%),
+            radial-gradient(ellipse 75% 50% at 92% 82%, rgba(var(--pts-forest-rgb), 0.10) 0%, transparent 52%),
+            linear-gradient(168deg, #f4fcf9 0%, #eaf7f0 46%, #eef9f3 100%);
+        }
+        .hero-v2-inner {
+          width: 100%;
+          max-width: var(--pts-content-max);
+          margin: 0 auto;
+          box-sizing: border-box;
+          padding: clamp(2rem, 5vw, 3.75rem) 1rem clamp(2rem, 4vw, 3rem);
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: clamp(1.75rem, 4vw, 3rem);
+          align-items: center;
+        }
+        @media (min-width: 1000px) {
+          .hero-v2-inner {
+            grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
           }
-          /* Graph-paper line grid (thin white lines on mint) — matches reference artwork */
-          .hero-banner-stack::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            opacity: 1;
-            background-image:
-              repeating-linear-gradient(
-                to bottom,
-                transparent 0,
-                transparent 19px,
-                rgba(255, 255, 255, 0.38) 19px,
-                rgba(255, 255, 255, 0.38) 20px
-              ),
-              repeating-linear-gradient(
-                to right,
-                transparent 0,
-                transparent 19px,
-                rgba(255, 255, 255, 0.38) 19px,
-                rgba(255, 255, 255, 0.38) 20px
-              );
-            mask-image: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 0.55) 0%,
-              rgba(0, 0, 0, 0.4) 45%,
-              rgba(0, 0, 0, 0.32) 100%
-            );
-            -webkit-mask-image: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 0.55) 0%,
-              rgba(0, 0, 0, 0.4) 45%,
-              rgba(0, 0, 0, 0.32) 100%
-            );
-          }
-          /* Slight depth: faint forest tint at intersections (optional subtle texture) */
-          .hero-banner-stack::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            opacity: 0.35;
-            background-image: radial-gradient(
-              rgba(var(--pts-forest-rgb), 0.09) 1px,
-              transparent 1px
-            );
-            background-size: 20px 20px;
-            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 100%);
-            -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 100%);
-          }
-          .hero-split-section {
-            box-sizing: border-box;
-            position: relative;
-            z-index: 1;
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            min-height: 0;
-          }
-          .hero-split-inner {
-            position: relative;
-            z-index: 1;
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-            width: 100%;
-            /* space before dark trust strip — was only <1024px; iPad landscape (≥1024) had none */
-            gap: clamp(1.35rem, 4vw, 2.5rem);
-          }
-          /* Fills space above the trust bar and vertically centers the grid — no mint gap under copy */
-          .hero-split-center {
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 0;
-            width: 100%;
-          }
-          @media (min-width: 1024px) {
-            .hero-split-inner {
-              width: 100%;
-            }
-          }
-          .hero-split-grid {
-            display: grid;
-            gap: 2.25rem;
-            width: 100%;
-            max-width: var(--pts-content-max);
-            margin: 0 auto;
-            align-items: start;
-          }
-          /* Let copy column shrink so long lines wrap instead of overlapping the dashboard */
-          .hero-split-copy {
-            min-width: 0;
-            max-width: 100%;
-          }
-          @media (min-width: 1024px) {
-            .hero-split-grid {
-              /* ~61% copy / ~39% dashboard — wider card, tighter gutter */
-              grid-template-columns: minmax(0, 11fr) minmax(0, 7fr);
-              column-gap: clamp(1.5rem, 3vw, 2.75rem);
-              row-gap: 2.5rem;
-              align-items: start;
-            }
-            /*
-              Dashboard top aligns with main headline (below 24×7 pill):
-              pill vertical padding + one text line + margin below pill (matches .hero-eyebrow-pill inline styles).
-            */
-            .hero-split-dashboard {
-              margin-top: calc(0.35rem + 0.35rem + 0.75rem * 1.35 + 1.25rem);
-            }
-          }
-          .hero-pill-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.4rem 0.85rem;
-            background: #f3f4f6;
-            border: 1px solid rgba(var(--pts-forest-rgb), 0.28);
-            border-radius: 999px;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            color: var(--pts-text-muted);
-            box-shadow:
-              0 1px 2px rgba(0, 0, 0, 0.04),
-              inset 0 1px 0 rgba(255, 255, 255, 0.75);
-          }
-          .hero-split-btns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-          }
-          /* Flat CTAs: no elevation, no glow (WhatsApp = solid green; middle = white; right = theme mint) */
-          .hero-split-btns .hero-btn-white,
-          .hero-split-btns .hero-btn-muted,
-          .hero-split-btns .hero-btn-wa {
-            box-shadow: none !important;
-            filter: none !important;
-            text-shadow: none;
-            text-decoration: none;
-            transition:
-              background-color 0.15s ease,
-              border-color 0.15s ease,
-              color 0.15s ease;
-          }
-          .hero-btn-white {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            background: #ffffff;
-            color: var(--pts-text);
-            padding: 0.75rem 1.35rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            border: 1px solid var(--pts-border);
-          }
-          .hero-btn-white:hover {
-            border-color: rgba(var(--pts-forest-rgb), 0.4);
-            color: var(--pts-forest);
-            background: #ffffff;
-          }
-          .hero-btn-muted {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            background: var(--pts-tech-header);
-            color: var(--pts-text);
-            padding: 0.75rem 1.35rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            border: 1px solid rgba(var(--pts-forest-rgb), 0.28);
-          }
-          .hero-btn-muted:hover {
-            border-color: rgba(var(--pts-forest-rgb), 0.45);
-            color: var(--pts-forest);
-            background: rgba(var(--pts-accent-rgb), 0.12);
-          }
-          .hero-btn-wa {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            background: #25d366;
-            color: #ffffff;
-            padding: 0.75rem 1.35rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.92rem;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-          }
-          .hero-btn-wa:hover {
-            background: #20bd5a;
-            color: #ffffff;
-          }
-          .hero-h1-line1,
-          .hero-h1-line2,
-          .hero-h1-line3 {
-            display: block;
-            white-space: normal;
-            overflow-wrap: break-word;
-          }
-          .hero-h1-serif.hero-h1-stack {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.22rem, 1vw, 0.42rem);
-          }
-          .hero-h1-serif {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-weight: 800;
-            color: var(--pts-text);
-            line-height: 1.22;
-            letter-spacing: -0.02em;
-            font-size: clamp(1.4rem, 2.9vw, 2.25rem);
-            text-wrap: balance;
-            max-width: 100%;
-          }
-          .hero-h1-accent {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-style: italic;
-            font-weight: 700;
-            color: var(--pts-accent);
-            line-height: 1.26;
-          }
-          .hero-h1-line3 {
-            font-weight: 800;
-            line-height: 1.26;
-            font-size: clamp(0.95em, 2.4vw, 1em);
-            letter-spacing: -0.018em;
-          }
-          @media (min-width: 1024px) {
-            .hero-h1-serif {
-              font-size: clamp(1.32rem, 1.65vw + 0.85rem, 2.05rem);
-              line-height: 1.2;
-            }
-            .hero-h1-serif.hero-h1-stack {
-              gap: clamp(0.28rem, 1.1vw, 0.48rem);
-            }
-          }
-          .hero-subline-copy {
-            margin-bottom: 0.65rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-          }
-          .hero-subline-lead {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.55rem;
-            margin: 0;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-            font-size: clamp(0.94rem, 1.5vw, 1rem);
-            font-weight: 500;
-            color: var(--pts-text-muted);
-            line-height: 1.65;
-            letter-spacing: 0.01em;
-          }
-          .hero-subline-lead > svg {
-            flex-shrink: 0;
-            margin-top: 0.22em;
-          }
-          .hero-subline-pains {
-            margin: 0;
-            padding: 0.65rem 0 0.65rem 0.85rem;
-            border-left: 2px solid rgba(var(--pts-accent-rgb), 0.45);
-            border-radius: 0 0 0 6px;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--pts-text-subtle);
-            line-height: 1.55;
-            list-style: none;
-          }
-          .hero-subline-pains li {
-            position: relative;
-            padding-left: 0.1rem;
-          }
-          .hero-subline-pains li + li {
-            margin-top: 0.35rem;
-          }
-          .hero-subline-2 {
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--pts-text-subtle);
-            margin-bottom: 0.85rem;
-            line-height: 1.55;
-          }
-          .dash-feature-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.4rem 0.75rem;
-            background: rgba(var(--pts-accent-rgb), 0.14);
-            border: 1px solid rgba(var(--pts-forest-rgb), 0.28);
-            border-radius: 999px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--pts-forest);
-            box-shadow:
-              0 1px 2px rgba(0, 0, 0, 0.04),
-              inset 0 1px 0 rgba(255, 255, 255, 0.65);
-          }
-          @keyframes hero-live-blink {
-            0%,
-            100% {
-              opacity: 1;
-            }
-            50% {
-              opacity: 0.35;
-            }
-          }
-          .hero-live-dot {
-            display: inline-block;
-            flex-shrink: 0;
-            border-radius: 50%;
-          }
-          .hero-live-dot--blink {
-            animation: hero-live-blink 1.15s ease-in-out infinite;
-            will-change: opacity;
-          }
-          .hero-live-badge {
-            animation: hero-live-blink 1.15s ease-in-out infinite;
-            will-change: opacity;
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .hero-live-dot--blink,
-            .hero-live-badge {
-              animation: none;
-            }
-          }
+        }
 
-          /* ── Get Interview Scheduled compact strip ────────────────────────── */
-          @keyframes gis-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(var(--pts-forest-rgb), 0.55); }
-            60%       { box-shadow: 0 0 0 5px rgba(var(--pts-forest-rgb), 0); }
-          }
-          /* ── Candidate Marketing strip ────────────────────────────────────── */
-          .hero-cm-strip {
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-            margin: 0 0 1.1rem;
-            padding: 0.65rem 0.95rem;
-            border-radius: 12px;
-            border: 1.5px solid rgba(234, 88, 12, 0.28);
-            background: linear-gradient(
-              110deg,
-              rgba(254, 215, 170, 0.28) 0%,
-              rgba(253, 186, 116, 0.12) 100%
-            );
-            box-shadow:
-              0 2px 8px rgba(234, 88, 12, 0.07),
-              inset 0 1px 0 rgba(255,255,255,0.85);
-          }
-          @media (min-width: 540px) {
-            .hero-cm-strip {
-              flex-direction: row;
-              align-items: center;
-              justify-content: space-between;
-              gap: 0.5rem 0.85rem;
-            }
-          }
-          .hero-cm-inner {
-            display: flex;
-            align-items: center;
-            gap: 0.55rem;
-            min-width: 0;
-            flex: 1 1 0;
-          }
-          .hero-cm-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #ea580c;
-            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.22);
-            flex-shrink: 0;
-          }
-          .hero-cm-headline {
-            font-size: 0.86rem;
-            font-weight: 700;
-            color: var(--pts-text);
-            margin: 0;
-            line-height: 1.35;
-          }
-          .hero-cm-headline em { font-style: normal; color: #c2410c; }
-          .hero-cm-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-            flex-shrink: 0;
-            padding: 0.5rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: #fff;
-            background: #ea580c;
-            border: 1px solid rgba(0,0,0,0.06);
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background-color 0.15s ease;
-          }
-          .hero-cm-action:hover { background: #c2410c; color: #fff; }
-          @media (max-width: 539px) {
-            .hero-cm-action { width: 100%; }
-          }
-          .hero-gis-strip {
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-            margin: 0 0 1.1rem;
-            padding: 0.65rem 0.95rem;
-            border-radius: 12px;
-            border: 1.5px solid rgba(var(--pts-forest-rgb), 0.35);
-            background: linear-gradient(
-              110deg,
-              rgba(var(--pts-accent-rgb), 0.13) 0%,
-              rgba(var(--pts-forest-rgb), 0.07) 100%
-            );
-            box-shadow:
-              0 2px 8px rgba(var(--pts-forest-rgb), 0.08),
-              inset 0 1px 0 rgba(255,255,255,0.8);
-          }
-          @media (min-width: 540px) {
-            .hero-gis-strip {
-              flex-direction: row;
-              align-items: center;
-              justify-content: space-between;
-              gap: 0.5rem 0.85rem;
-            }
-          }
-          .hero-gis-inner {
-            display: flex;
-            align-items: center;
-            gap: 0.55rem;
-            min-width: 0;
-            flex: 1 1 0;
-          }
-          .hero-gis-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--pts-forest);
-            flex-shrink: 0;
-            animation: gis-pulse 1.8s ease-in-out infinite;
-          }
-          @media (prefers-reduced-motion: reduce) { .hero-gis-dot { animation: none; } }
-          .hero-gis-headline {
-            font-size: 0.86rem;
-            font-weight: 700;
-            color: var(--pts-text);
-            margin: 0;
-            line-height: 1.35;
-          }
-          .hero-gis-headline em { font-style: normal; color: var(--pts-forest); }
-          .hero-gis-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-            flex-shrink: 0;
-            padding: 0.5rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: #fff;
-            background: var(--pts-forest);
-            border: 1px solid rgba(0,0,0,0.06);
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background-color 0.15s ease;
-          }
-          .hero-gis-action:hover { background: #166534; color: #fff; }
-          @media (max-width: 539px) {
-            .hero-gis-action { width: 100%; }
-          }
+        /* ── Eyebrow ── */
+        .hero-v2-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.35rem 0.9rem;
+          background: rgba(var(--pts-accent-rgb), 0.1);
+          border: 1px solid rgba(var(--pts-forest-rgb), 0.26);
+          border-radius: 999px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: var(--pts-forest);
+          margin-bottom: 1.25rem;
+          line-height: 1.35;
+        }
+        .hero-v2-eyebrow-dot {
+          width: 7px; height: 7px; border-radius: 50%;
+          background: var(--pts-forest);
+          box-shadow: 0 0 0 3px rgba(var(--pts-forest-rgb), 0.3);
+          flex-shrink: 0;
+        }
 
-          /* ── Mobile hero overrides (≤768px) ── */
-          @media (max-width: 768px) {
-            /* Let hero shrink to content height — no forced full-screen */
-            .hero-banner-stack {
-              min-height: unset !important;
-            }
-            /* Reduce top padding so H1 hits above-the-fold immediately */
-            .hero-split-section {
-              padding-top: 1.5rem !important;
-            }
-            /* Single column: copy then metrics card (compact, still readable) */
-            .hero-split-grid {
-              grid-template-columns: 1fr;
-              gap: 1.15rem;
-            }
-            .hero-split-dashboard > div:first-child {
-              padding: 0.85rem 0.95rem 1rem !important;
-            }
-            .hero-split-dashboard > div:first-child > p:first-of-type {
-              margin-bottom: 0.6rem !important;
-              font-size: 0.58rem !important;
-            }
-            .hero-split-dashboard > div:first-child > div:nth-child(2) {
-              gap: 0.5rem !important;
-            }
-            .hero-split-dashboard > div:first-child > div:nth-child(2) > div {
-              min-height: 4.1rem !important;
-              padding: 0.6rem 0.35rem !important;
-            }
-            .hero-split-dashboard > div:first-child > div:nth-child(2) > div > div:first-child {
-              font-size: 1.12rem !important;
-            }
-            .hero-split-dashboard > div:first-child > div:nth-child(2) > div > div:last-child {
-              font-size: 0.62rem !important;
-              margin-top: 0.28rem !important;
-            }
-            .hero-split-dashboard > div:last-child {
-              padding: 0.85rem 0.95rem 1rem !important;
-            }
-            .hero-split-dashboard > div:last-child > div:first-child {
-              margin-bottom: 0.65rem !important;
-              padding: 0.65rem 0.85rem !important;
-            }
-            .hero-split-dashboard > div:last-child > div:first-child > div:nth-child(2) > div:first-child {
-              font-size: 0.84rem !important;
-            }
-            .hero-split-dashboard > div:last-child > div:first-child > div:nth-child(2) > div:last-child {
-              font-size: 0.72rem !important;
-            }
-            /* Full-width CTA buttons, stacked, easy to tap */
-            .hero-split-btns {
-              flex-direction: column;
-              gap: 0.6rem;
-            }
-            .hero-btn-wa,
-            .hero-btn-white,
-            .hero-btn-muted {
-              width: 100%;
-              justify-content: center;
-              min-height: 52px;
-              font-size: 1rem;
-              border-radius: 12px;
-            }
-            /* Trust pills: wrap tighter */
-            .hero-pill-tag {
-              font-size: 0.75rem;
-              padding: 0.3rem 0.65rem;
-            }
-            /* Compact trust pill row spacing */
-            .hero-subline-copy {
-              gap: 0.6rem;
-            }
-            /* Reduce H1 bottom margin */
-            .hero-h1-serif.hero-h1-stack {
-              margin-bottom: 0.85rem !important;
-            }
-            /* Tighter pain list */
-            .hero-subline-pains {
-              padding-top: 0.45rem;
-              padding-bottom: 0.45rem;
-            }
-          }
-        `}</style>
+        /* ── Headline ── */
+        .hero-v2-h1 {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(0.2rem, 1vw, 0.4rem);
+          margin: 0 0 1.1rem;
+          font-family: Georgia, 'Times New Roman', serif;
+          font-weight: 800;
+          color: var(--pts-text);
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          font-size: clamp(1.55rem, 3vw, 2.35rem);
+          text-wrap: balance;
+        }
+        .hero-v2-h1 .accent {
+          font-style: italic;
+          font-weight: 700;
+          color: var(--pts-accent);
+        }
+        .hero-v2-h1 .tech {
+          font-weight: 800;
+          font-size: clamp(1.1rem, 2.1vw, 1.4rem);
+          letter-spacing: -0.015em;
+          color: var(--pts-text);
+        }
 
-        <div className="hero-split-inner">
-        <div className="hero-split-center">
-        <div className="hero-split-grid">
-          <div className="hero-split-copy">
-            <div
-              className="hero-eyebrow-pill"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.35rem 0.9rem',
-                background: 'rgba(var(--pts-accent-rgb), 0.1)',
-                border: '1px solid rgba(var(--pts-forest-rgb), 0.28)',
-                boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.65)',
-                borderRadius: 999,
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                color: 'var(--pts-forest)',
-                marginBottom: '1.25rem',
-                lineHeight: 1.35,
-              }}
-            >
-              <span
-                className="hero-live-dot hero-live-dot--blink"
-                style={{
-                  width: 8,
-                  height: 8,
-                  background: 'var(--pts-forest)',
-                  boxShadow: '0 0 0 3px rgba(var(--pts-forest-rgb), 0.35)',
-                }}
-                aria-hidden
-              />
-              24×7 Job Support · Interview Proxy · Get Interview Scheduled
-            </div>
+        /* ── Subline ── */
+        .hero-v2-sub {
+          margin: 0 0 1.25rem;
+          font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+          font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+          font-weight: 500;
+          color: var(--pts-text-muted);
+          line-height: 1.65;
+          max-width: 40rem;
+        }
 
-            <h1 className="hero-h1-serif hero-h1-stack" style={{ marginBottom: '0.9rem' }}>
-              <span className="hero-h1-line1">Technical Interview, Profile &amp;</span>
-              <span className="hero-h1-line2 hero-h1-accent">On-the-Job Support for IT Professionals</span>
-              <span className="hero-h1-line3">AI · ML · MLOps · DevOps · SRE · Cloud · Backend · Full-Stack Engineers</span>
-            </h1>
+        /* ── Capability list (safe scenario lines) ── */
+        .hero-v2-needs {
+          list-style: none;
+          margin: 0 0 1.15rem;
+          padding: 0.6rem 0 0.6rem 1rem;
+          border-left: 2px solid rgba(var(--pts-accent-rgb), 0.45);
+          display: flex;
+          flex-direction: column;
+          gap: 0.55rem;
+          max-width: 40rem;
+        }
+        .hero-v2-need {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+          font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: var(--pts-text-muted);
+          line-height: 1.5;
+        }
+        .hero-v2-need > svg { flex-shrink: 0; margin-top: 0.2em; }
+        .hero-v2-trustline {
+          margin: 0 0 1.35rem;
+          font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: var(--pts-text-subtle);
+          line-height: 1.5;
+        }
 
-            {/* ── Compact GIS strip — right below H1 ── */}
-            <div className="hero-gis-strip">
-              <div className="hero-gis-inner">
-                <span className="hero-gis-dot" aria-hidden />
-                <p className="hero-gis-headline">Profile invisible to recruiters? <em>We engineer it to improve recruiter visibility and shortlisting.</em></p>
-              </div>
-              <Link href="/get-interview-scheduled/" className="hero-gis-action">
-                <CalendarIcon />
-                Get Interview Scheduled
-              </Link>
-            </div>
+        /* ── CTA buttons ── */
+        .hero-v2-ctas {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+        }
+        .hero-v2-btn-wa,
+        .hero-v2-btn-call {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.8rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.95rem;
+          font-weight: 700;
+          text-decoration: none;
+          transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+        }
+        .hero-v2-btn-wa {
+          background: #25d366;
+          color: #fff;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .hero-v2-btn-wa:hover { background: #20bd5a; transform: translateY(-1px); }
+        .hero-v2-btn-call {
+          background: #fff;
+          color: var(--pts-text);
+          border: 1px solid var(--pts-border);
+          font-weight: 600;
+        }
+        .hero-v2-btn-call:hover { border-color: rgba(var(--pts-forest-rgb), 0.4); color: var(--pts-forest); }
 
-            {/* ── Candidate Marketing strip — below GIS strip ── */}
-            <div className="hero-cm-strip">
-              <div className="hero-cm-inner">
-                <span className="hero-cm-dot" aria-hidden />
-                <p className="hero-cm-headline">Hundreds applied while you were waiting. <em>We apply daily, reach recruiters &amp; keep your search moving.</em></p>
-              </div>
-              <Link href="/job-application-candidate-marketing/" className="hero-cm-action">
-                <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden style={{ flexShrink: 0 }}>
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" />
-                  <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
-                </svg>
-                Start Job Marketing
-              </Link>
-            </div>
+        /* ── Trust chips ── */
+        .hero-v2-chips {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem 0.75rem;
+          list-style: none;
+          margin: 0 0 1.15rem;
+          padding: 0;
+        }
+        .hero-v2-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: var(--pts-text-muted);
+        }
 
-            <div className="hero-subline-copy">
-              <p className="hero-subline-lead">
-                <TargetIcon />
-                <span>
-                  Get role-specific proxy interview support, profile services and hands-on technical guidance across AI, cloud, DevOps, data and software engineering — coding rounds, system design, production issues and client meetings handled by expert developers, live, same timezone. Outcomes depend on each candidate&rsquo;s skills, experience, preparation and employer decisions.
-                </span>
-              </p>
-              <ul className="hero-subline-pains">
-                <li>◆ Stuck on production issues or urgent project deadlines?</li>
-                <li>◆ Need live proxy support during technical interviews?</li>
-                <li>◆ Not confident in coding rounds or system design discussions?</li>
-                <li>◆ Worried about failing your next interview or client call?</li>
-                <li>◆ Profile invisible to recruiters? We engineer it to improve shortlisting.</li>
-                <li>◆ Applying daily but no interview calls? We run your job search campaign.</li>
-              </ul>
-            </div>
-            <p className="hero-subline-2">
-              Trusted by IT professionals across USA, UK, Canada, Europe &amp; Australia · ⚡ Start within 1 hour
-            </p>
+        .hero-v2-legacy {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: var(--pts-forest);
+          border: 1px solid rgba(var(--pts-forest-rgb), 0.22);
+          border-radius: 999px;
+          padding: 0.3rem 0.8rem;
+          text-decoration: none;
+          background: rgba(var(--pts-accent-rgb), 0.06);
+          transition: background 0.15s ease;
+        }
+        .hero-v2-legacy:hover { background: rgba(var(--pts-accent-rgb), 0.14); }
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.35rem' }}>
-              {trustPills.map((label) => (
-                <span key={label} className="hero-pill-tag">
-                  <SmallCheck />
-                  {label}
-                </span>
-              ))}
-            </div>
+        /* ── Right: service card ── */
+        .hero-v2-card {
+          background: #fff;
+          border: 1px solid rgba(var(--pts-forest-rgb), 0.16);
+          border-radius: 18px;
+          padding: 1.35rem 1.35rem 1.15rem;
+          box-shadow: 0 14px 44px rgba(3, 40, 30, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        .hero-v2-card-label {
+          font-size: 0.68rem;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: var(--pts-accent);
+          margin: 0 0 0.9rem;
+        }
+        .hero-v2-service {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.85rem;
+          padding: 0.85rem 0.75rem;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: background 0.15s ease, transform 0.15s ease;
+        }
+        .hero-v2-service + .hero-v2-service { margin-top: 0.25rem; }
+        .hero-v2-service:hover { background: rgba(var(--pts-accent-rgb), 0.09); }
+        .hero-v2-service-num {
+          flex-shrink: 0;
+          width: 30px; height: 30px;
+          border-radius: 9px;
+          display: flex; align-items: center; justify-content: center;
+          background: rgba(var(--pts-accent-rgb), 0.14);
+          color: var(--pts-forest);
+          font-weight: 800; font-size: 0.85rem;
+          margin-top: 0.1rem;
+        }
+        .hero-v2-service-body { min-width: 0; flex: 1 1 auto; }
+        .hero-v2-service-title {
+          display: flex; align-items: center; gap: 0.35rem;
+          font-size: 0.95rem; font-weight: 700; color: var(--pts-text);
+          line-height: 1.3;
+        }
+        .hero-v2-service-title .arrow { color: var(--pts-forest); opacity: 0; transform: translateX(-3px); transition: opacity 0.15s ease, transform 0.15s ease; }
+        .hero-v2-service:hover .hero-v2-service-title .arrow { opacity: 1; transform: translateX(0); }
+        .hero-v2-service-desc {
+          font-size: 0.82rem; color: var(--pts-text-subtle);
+          line-height: 1.5; margin: 0.2rem 0 0;
+        }
+        .hero-v2-card-stats {
+          display: flex; flex-wrap: wrap; gap: 0.4rem 0.85rem;
+          margin-top: 1rem; padding-top: 0.9rem;
+          border-top: 1px solid var(--pts-border);
+        }
+        .hero-v2-card-stat {
+          display: inline-flex; align-items: center; gap: 0.35rem;
+          font-size: 0.76rem; font-weight: 600; color: var(--pts-text-muted);
+        }
 
-            <div className="hero-split-btns" style={{ marginBottom: '1.25rem' }}>
-              <a href={WHATSAPP_ME_URL} target="_blank" rel="noopener noreferrer" className="hero-btn-wa">
-                <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
-                Get Instant Help on WhatsApp
-              </a>
-              <Link href="tel:+919660614469" className="hero-btn-white">
-                <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                </svg>
-                Talk to Expert Now
-              </Link>
-              <Link href="/get-interview-scheduled/" className="hero-btn-muted">
-                Profile Engineering →
-              </Link>
-              <Link href="/job-application-candidate-marketing/" className="hero-btn-muted">
-                Job Marketing →
-              </Link>
-            </div>
-            <a
-              href="/usa-it-job-support-legacy/"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                fontSize: '0.75rem', fontWeight: 600, color: 'var(--pts-forest)',
-                border: '1px solid rgba(var(--pts-forest-rgb), 0.22)', borderRadius: 999,
-                padding: '0.3rem 0.75rem', textDecoration: 'none',
-                background: 'rgba(var(--pts-accent-rgb), 0.06)',
-              }}
-            >
-              <span aria-hidden>✦</span> Trusted Since 2008 · USA IT Job Support
+        /* ── Compliance ribbon (smooth, full-width) ── */
+        .hero-v2-ribbon {
+          background: var(--pts-dark);
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          padding: 0.7rem 1rem;
+        }
+        .hero-v2-ribbon-inner {
+          width: 100%;
+          max-width: var(--pts-content-max);
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 0.35rem 0.85rem;
+          text-align: center;
+          font-size: 0.78rem;
+          line-height: 1.5;
+          color: rgba(255, 255, 255, 0.68);
+        }
+        .hero-v2-ribbon-inner a {
+          color: rgba(255, 255, 255, 0.88);
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+        .hero-v2-ribbon-inner a:hover { color: var(--pts-accent); }
+        .hero-v2-ribbon-sep { color: rgba(255, 255, 255, 0.28); }
+
+        @media (max-width: 640px) {
+          .hero-v2-ctas { flex-direction: column; }
+          .hero-v2-btn-wa, .hero-v2-btn-call { width: 100%; justify-content: center; min-height: 50px; }
+        }
+      `}</style>
+
+      <div className="hero-v2-inner">
+        {/* ── Left: copy ── */}
+        <div className="hero-v2-copy">
+          <span className="hero-v2-eyebrow">
+            <span className="hero-v2-eyebrow-dot" aria-hidden />
+            24×7 Live Job Support · Proxy Interview Support · Since 2008
+          </span>
+
+          <h1 className="hero-v2-h1">
+            <span>Technical Interview, Profile &amp;</span>
+            <span className="accent">On-the-Job Support for IT Professionals</span>
+            <span className="tech">AI · ML · MLOps · DevOps · SRE · Cloud · Backend · Full-Stack Engineers</span>
+          </h1>
+
+          <p className="hero-v2-sub">
+            Role-specific proxy interview support, profile engineering and hands-on technical guidance — coding rounds,
+            system design, production issues and client meetings handled live by senior engineers in your timezone.
+          </p>
+
+          <ul className="hero-v2-needs">
+            {[
+              'Live proxy interview support through technical rounds & system design',
+              'Hands-on help with production issues and project deadlines',
+              'Coding rounds, client calls & architecture discussions — with an expert beside you',
+              'Profile engineering to improve recruiter visibility & shortlisting',
+              'Job-search marketing that keeps your applications active with recruiters',
+            ].map((need) => (
+              <li key={need} className="hero-v2-need">
+                <CheckIcon />
+                <span>{need}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="hero-v2-trustline">
+            Trusted by IT professionals across USA, UK, Canada, Europe &amp; Australia · ⚡ Start within 1 hour
+          </p>
+
+          <div className="hero-v2-ctas">
+            <a href={WHATSAPP_ME_URL} target="_blank" rel="noopener noreferrer" className="hero-v2-btn-wa">
+              <WhatsAppIcon />
+              Get Instant Help on WhatsApp
             </a>
-
+            <Link href="tel:+919660614469" className="hero-v2-btn-call">
+              <PhoneIcon />
+              Talk to an Expert
+            </Link>
           </div>
 
-          {/* Live Dashboard card — on lg+ starts below 24×7 pill (aligned with headline) */}
-          <div
-            className="hero-split-dashboard"
-            style={{
-              borderRadius: 20,
-              overflow: 'hidden',
-              border: '1px solid rgba(var(--pts-forest-rgb), 0.28)',
-              boxShadow:
-                '0 12px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.92)',
-              background: '#fff',
-            }}
-          >
-            <div
-              style={{
-                position: 'relative',
-                background: 'var(--pts-dashboard-bg)',
-                padding: '1.15rem 1.2rem 1.35rem',
-                borderTop: '2px solid var(--pts-accent)',
-              }}
-            >
-              <p
-                style={{
-                  fontSize: '0.62rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  color: 'rgba(255, 255, 255, 0.88)',
-                  marginBottom: '0.95rem',
-                  fontFamily: 'system-ui, -apple-system, Segoe UI, sans-serif',
-                }}
-              >
-                LIVE SUPPORT STATUS
-              </p>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '0.75rem',
-                }}
-              >
-                {[
-                  { v: '1000+', l: 'Professionals Supported' },
-                  { v: 'Since 2008', l: 'Trusted Experience' },
-                  { v: '50+', l: 'Technologies Covered' },
-                  { v: '24×7', l: 'Live Support' },
-                ].map((cell) => (
-                  <div
-                    key={cell.l}
-                    style={{
-                      textAlign: 'center',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      minHeight: '5.25rem',
-                      padding: '1.05rem 0.55rem',
-                      borderRadius: 10,
-                      background: 'rgba(255, 255, 255, 0.04)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                    }}
-                  >
-                    <div style={{ fontSize: '1.28rem', fontWeight: 800, color: 'var(--pts-accent)', lineHeight: 1.15 }}>{cell.v}</div>
-                    <div style={{ fontSize: '0.68rem', color: 'rgba(255, 255, 255, 0.48)', marginTop: '0.4rem', lineHeight: 1.25 }}>
-                      {cell.l}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div style={{ padding: '1.15rem 1.2rem 1.25rem', background: '#fff' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.75rem',
-                  flexWrap: 'wrap',
-                  marginBottom: '0.95rem',
-                  padding: '0.85rem 1rem',
-                  borderRadius: 12,
-                  border: '1px solid rgba(var(--pts-forest-rgb), 0.28)',
-                  background: 'var(--pts-section-alt)',
-                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.85)',
-                }}
-              >
-                <span
-                  className="hero-live-dot hero-live-dot--blink"
-                  style={{
-                    width: 10,
-                    height: 10,
-                    background: 'var(--pts-forest)',
-                    boxShadow: '0 0 0 3px rgba(var(--pts-forest-rgb), 0.35)',
-                  }}
-                  aria-hidden
-                />
-                <div style={{ flex: '1 1 140px', minWidth: 0 }}>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--pts-text)', lineHeight: 1.25 }}>
-                    Experts Available for Same-Day Proxy Interview &amp; Job Support
-                  </div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--pts-text-subtle)', marginTop: '0.15rem' }}>
-                    Job support, interview proxy &amp; profile engineering
-                  </div>
-                </div>
-                <span
-                  className="hero-live-badge"
-                  style={{
-                    fontSize: '0.68rem',
-                    fontWeight: 700,
-                    color: '#15803d',
-                    background: 'rgba(34, 197, 94, 0.2)',
-                    padding: '0.3rem 0.65rem',
-                    borderRadius: 999,
-                    flexShrink: 0,
-                  }}
-                >
-                  Live
+          <ul className="hero-v2-chips">
+            {trustChips.map((chip) => (
+              <li key={chip} className="hero-v2-chip">
+                <CheckIcon />
+                {chip}
+              </li>
+            ))}
+          </ul>
+
+          <a href="/usa-it-job-support-legacy/" className="hero-v2-legacy">
+            <span aria-hidden>✦</span> Trusted Since 2008 · USA IT Job Support
+          </a>
+        </div>
+
+        {/* ── Right: service entry card ── */}
+        <aside className="hero-v2-card" aria-label="How we help">
+          <p className="hero-v2-card-label">How we help</p>
+          {services.map((s, i) => (
+            <Link key={s.href} href={s.href} className="hero-v2-service">
+              <span className="hero-v2-service-num" aria-hidden>{i + 1}</span>
+              <span className="hero-v2-service-body">
+                <span className="hero-v2-service-title">
+                  {s.title}
+                  <span className="arrow"><ArrowIcon /></span>
                 </span>
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {dashboardPills.map((p) => (
-                  <span key={p} className="dash-feature-pill">
-                    <DashPillCheck />
-                    {p}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-
-      {/* Dark feature bar — flush under hero content, full viewport width */}
-      <div
-        className="hero-trust-strip"
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          flexShrink: 0,
-          alignSelf: 'stretch',
-          width: 'calc(100% + 2rem)',
-          marginLeft: '-1rem',
-          marginRight: '-1rem',
-          boxSizing: 'border-box',
-          background: 'var(--pts-dark)',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-          padding: '0.65rem clamp(0.75rem, 2vw, 1.5rem)',
-        }}
-      >
-        <style>{`
-          .hero-feature-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 0.35rem 0;
-            width: 100%;
-            max-width: var(--pts-content-max);
-            margin: 0 auto;
-          }
-          .hero-feature-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            padding: 0.3rem 0.85rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.92);
-          }
-          @media (min-width: 1024px) {
-            .hero-feature-item:not(:last-child) {
-              border-right: 1px solid rgba(255, 255, 255, 0.15);
-            }
-          }
-        `}</style>
-        <div className="hero-feature-bar">
-          {barItems.map((text) => (
-            <div key={text} className="hero-feature-item">
-              <BarCheck />
-              <span>{text}</span>
-            </div>
+                <span className="hero-v2-service-desc">{s.desc}</span>
+              </span>
+            </Link>
           ))}
-        </div>
+          <div className="hero-v2-card-stats">
+            {trustStats.map((stat) => (
+              <span key={stat} className="hero-v2-card-stat">
+                <CheckIcon />
+                {stat}
+              </span>
+            ))}
+          </div>
+        </aside>
       </div>
-        </div>
-      </section>
-    </div>
+
+      {/* ── Compliance ribbon — smooth, on-brand full-width band ── */}
+      <div className="hero-v2-ribbon">
+        <p className="hero-v2-ribbon-inner">
+          <span>
+            Expert-led interview preparation, technical mentoring &amp; job support. We do not substitute candidates or
+            guarantee jobs, interviews or salary outcomes.
+          </span>
+          <span className="hero-v2-ribbon-sep" aria-hidden>·</span>
+          <Link href="/disclaimer/">Disclaimer</Link>
+          <span className="hero-v2-ribbon-sep" aria-hidden>·</span>
+          <Link href="/service-delivery-policy/">Service Delivery Policy</Link>
+        </p>
+      </div>
+    </section>
   );
 }

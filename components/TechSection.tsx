@@ -114,7 +114,7 @@ export default function TechSection() {
             Technologies <span className="pts-landing-title__accent">We</span> Support
           </h2>
           <p style={{ color: 'var(--pts-text-subtle)', fontSize: '1.05rem' }}>
-            Expert proxy support across all major IT technologies and frameworks — real-time assistance for production systems, AI infrastructure, cloud-native platforms, and high-pressure delivery environments.
+            Expert proxy support across all major IT technologies and frameworks — real-time assistance for production systems, AI infrastructure, cloud-native platforms, and fast-paced delivery environments.
           </p>
         </div>
 

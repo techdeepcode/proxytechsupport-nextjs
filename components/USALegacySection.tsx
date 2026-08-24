@@ -82,7 +82,7 @@ export default function USALegacySection() {
             Since 2008, Proxy Tech Support has helped USA-based developers, consultants, contractors, OPT/CPT/H1B professionals, and remote IT workers handle real job pressure — from the Great Recession to COVID remote work to today&apos;s AI-era layoffs and interview competition.
           </p>
           <p className="uls-para">
-            We support professionals facing USA client calls, production issues, sprint pressure, technical interviews, proxy interview needs, cloud and DevOps blockers, full-stack project pressure, and urgent office-hours support.
+            We support professionals facing USA client calls, production issues, sprint deadlines, technical interviews, proxy interview needs, cloud and DevOps blockers, full-stack project work, and day-to-day office-hours support.
           </p>
           <p className="uls-para">
             <span className="uls-para-strong">We are not a new support desk.</span> We are a veteran IT job support partner built around real USA job pressure.

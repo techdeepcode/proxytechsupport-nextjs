@@ -163,9 +163,9 @@ export default function ContactCTA() {
 
       <div className="contact-cta-inner">
         <p className="contact-cta-eyebrow">Ready to get started?</p>
-        <h2 className="contact-cta-title">Need Urgent Proxy Interview Support or IT Job Help?</h2>
+        <h2 className="contact-cta-title">Need Proxy Interview Support or IT Job Help?</h2>
         <p className="contact-cta-sub">
-          Get real-time support for proxy interviews, production issues, standups, coding rounds, client meetings, system design discussions, profile engineering, and high-pressure enterprise project situations.
+          Get real-time support for proxy interviews, production issues, standups, coding rounds, client meetings, system design discussions, profile engineering, and enterprise project situations.
         </p>
 
         <div className="contact-cta-btns">
@@ -189,7 +189,7 @@ export default function ContactCTA() {
         </div>
 
         <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-          ⚡ Same-day support may be available for urgent proxy interviews, production escalations, profile engineering, and critical technical situations.
+          ⚡ Same-day support may be available for proxy interviews, production issues, profile engineering, and time-sensitive technical situations.
         </p>
 
         <div className="contact-cta-contact-row">
