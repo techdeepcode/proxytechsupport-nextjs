@@ -8,6 +8,7 @@ import ActionBanner from '@/components/ActionBanner';
 import type { LandingPageConfig } from '@/data/landing-pages';
 import { allDotnetClusterPages } from '@/data/dotnet-cluster-pages';
 import { allAiMlClusterPages } from '@/data/aiml';
+import { allAwsClusterPages } from '@/data/aws';
 import { jobSupportLinks } from '@/data/navigation';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 import USALegacyTrustBanner from '@/components/USALegacyTrustBanner';
@@ -70,6 +71,12 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
     return [home, { label: shortTitle }];
   }
 
+  // AWS AI/ML cluster pages — under the AWS AI/ML hub
+  if (AWS_CLUSTER_SLUGS.has(slug)) {
+    if (slug === 'aws-ai-ml-job-support') return [home, { label: 'AWS AI/ML' }];
+    return [home, { label: 'AWS AI/ML', href: '/aws-ai-ml-job-support/' }, { label: shortTitle }];
+  }
+
   // Problem / catch-all pages
   return [home, { label: 'Developer Support' }, { label: shortTitle }];
 }
@@ -91,6 +98,7 @@ function isGeoLandingPage(config: LandingPageConfig): boolean {
 
 const DOTNET_CLUSTER_SLUGS = new Set(allDotnetClusterPages.map((p) => p.slug));
 const AIML_CLUSTER_SLUGS = new Set(allAiMlClusterPages.map((p) => p.slug));
+const AWS_CLUSTER_SLUGS = new Set(allAwsClusterPages.map((p) => p.slug));
 
 /** Geo pages + USA tech landings + country-specific proxy pages — same hero layout with metrics on the right (desktop). */
 function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
@@ -105,6 +113,8 @@ function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (DOTNET_CLUSTER_SLUGS.has(config.slug)) return true;
   // All global AI/ML cluster landing pages — metrics aside on the right (desktop)
   if (AIML_CLUSTER_SLUGS.has(config.slug)) return true;
+  // All AWS AI/ML cluster landing pages — metrics aside on the right (desktop)
+  if (AWS_CLUSTER_SLUGS.has(config.slug)) return true;
   return false;
 }
 

@@ -3,6 +3,7 @@ import { allUiPathPages } from './uipath-pages';
 import { allDotnetClusterPages } from './dotnet-cluster-pages';
 import { allAiMlClusterPages } from './aiml';
 import { allAngularClusterPages } from './angular';
+import { allAwsClusterPages } from './aws';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10461,4 +10462,6 @@ export const allLandingPages: LandingPageConfig[] = [
   ...allAiMlClusterPages,
   // ── Angular cluster (additive) ───────────────────────────────────────────
   ...allAngularClusterPages,
+  // ── AWS AI/ML + Generative AI + Agentic AI cluster (additive) ────────────
+  ...allAwsClusterPages,
 ];

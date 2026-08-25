@@ -263,6 +263,67 @@ const uipathServices: WorkdayServiceGroup[] = [
   },
 ];
 
+const awsAiServices: WorkdayServiceGroup[] = [
+  {
+    region: 'AWS AI/ML Core',
+    links: [
+      { label: 'AWS AI/ML Job Support Hub', href: '/aws-ai-ml-job-support/' },
+      { label: 'AWS AI Production Support', href: '/aws-ai-ml-production-support/' },
+      { label: 'AWS AI/ML Interview Support', href: '/aws-ai-ml-interview-support/' },
+      { label: 'AWS AI Candidate Marketing', href: '/aws-ai-ml-candidate-marketing/' },
+      { label: 'Get AWS AI Interview Scheduled', href: '/get-aws-ai-ml-interview-scheduled/' },
+    ],
+  },
+  {
+    region: 'Amazon Bedrock & GenAI',
+    links: [
+      { label: 'Amazon Bedrock Job Support', href: '/amazon-bedrock-job-support/' },
+      { label: 'Bedrock Knowledge Bases & RAG', href: '/amazon-bedrock-knowledge-bases-job-support/' },
+      { label: 'Bedrock Guardrails', href: '/amazon-bedrock-guardrails-job-support/' },
+      { label: 'Amazon Nova', href: '/amazon-nova-job-support/' },
+      { label: 'Bedrock Interview Support', href: '/amazon-bedrock-interview-proxy-support/' },
+    ],
+  },
+  {
+    region: 'AgentCore (Agentic AI)',
+    links: [
+      { label: 'Amazon Bedrock AgentCore', href: '/amazon-bedrock-agentcore-job-support/' },
+      { label: 'AgentCore Runtime', href: '/amazon-bedrock-agentcore-runtime-job-support/' },
+      { label: 'AgentCore Gateway & MCP', href: '/amazon-bedrock-agentcore-gateway-job-support/' },
+      { label: 'AgentCore Policy (Cedar)', href: '/amazon-bedrock-agentcore-policy-job-support/' },
+      { label: 'AgentCore Interview Support', href: '/amazon-bedrock-agentcore-interview-proxy-support/' },
+    ],
+  },
+  {
+    region: 'SageMaker & MLOps',
+    links: [
+      { label: 'Amazon SageMaker', href: '/amazon-sagemaker-job-support/' },
+      { label: 'Amazon SageMaker AI', href: '/amazon-sagemaker-ai-job-support/' },
+      { label: 'AWS MLOps', href: '/aws-mlops-job-support/' },
+      { label: 'SageMaker Interview Support', href: '/amazon-sagemaker-interview-proxy-support/' },
+    ],
+  },
+  {
+    region: 'AWS AI by Country',
+    links: [
+      { label: 'USA AWS AI/ML', href: '/usa-aws-ai-ml-job-support/' },
+      { label: 'Canada AWS AI/ML', href: '/canada-aws-ai-ml-job-support/' },
+      { label: 'UK AWS AI/ML', href: '/uk-aws-ai-ml-job-support/' },
+      { label: 'Australia AWS AI/ML', href: '/australia-aws-ai-ml-job-support/' },
+      { label: 'Europe AWS AI/ML', href: '/europe-aws-ai-ml-job-support/' },
+    ],
+  },
+  {
+    region: 'AWS AI Roles',
+    links: [
+      { label: 'AWS AI Engineer', href: '/aws-ai-engineer-job-support/' },
+      { label: 'AWS GenAI Engineer', href: '/aws-generative-ai-engineer-job-support/' },
+      { label: 'AWS ML Engineer', href: '/aws-ml-engineer-job-support/' },
+      { label: 'AWS AI Solutions Architect', href: '/aws-ai-solutions-architect-job-support/' },
+    ],
+  },
+];
+
 const resourceLinks = [
   { label: 'Technologies We Support', href: '/technologies/' },
   { label: 'Knowledge Base', href: '/knowledge-base/' },
@@ -395,6 +456,26 @@ export default function ServicesPage() {
           </p>
           <div className="svc-country-grid">
             {uipathServices.map((group) => (
+              <div className="svc-country-card" key={group.region}>
+                <div className="svc-country-name">{group.region}</div>
+                <ul>
+                  {group.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="svc-section-title">AWS AI/ML, Generative AI &amp; Agentic AI Support</h2>
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+            Real-time AWS AI/ML job support, production help, interview assistance, and candidate marketing — Amazon Bedrock, Bedrock AgentCore, Amazon Nova, Amazon SageMaker AI, RAG, and AWS MLOps, current through August 2026.{' '}
+            <Link href="/aws-ai-ml-job-support/" style={{ color: '#4fc3a1', textDecoration: 'none' }}>View AWS AI/ML Hub →</Link>
+          </p>
+          <div className="svc-country-grid">
+            {awsAiServices.map((group) => (
               <div className="svc-country-card" key={group.region}>
                 <div className="svc-country-name">{group.region}</div>
                 <ul>
