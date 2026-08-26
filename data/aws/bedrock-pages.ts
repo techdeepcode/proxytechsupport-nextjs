@@ -110,6 +110,7 @@ export const amazonBedrockHub: LandingPageConfig = awsPage({
       { label: 'Bedrock Converse API support', href: '/amazon-bedrock-converse-api-job-support/' },
       AGENTCORE_HUB_LINK, NOVA_HUB_LINK, AWS_PRODUCTION_LINK, AWS_INTERVIEW_HUB_LINK,
       EXISTING.awsBedrockJobSupport, EXISTING.genai, EXISTING.rag, EXISTING.bedrockVsAzure,
+      { label: 'Bedrock production architecture (2026 guide)', href: '/blog/amazon-bedrock-production-architecture-2026/' },
     ],
   }),
 });
@@ -158,6 +159,8 @@ export const bedrockKnowledgeBases: LandingPageConfig = awsServicePage({
       { label: 'Aurora pgvector RAG support', href: '/aurora-postgresql-pgvector-job-support/' },
       { label: 'Bedrock Guardrails support', href: '/amazon-bedrock-guardrails-job-support/' },
       AGENTCORE_HUB_LINK, BEDROCK_HUB_LINK, EXISTING.rag, EXISTING.vectorDb, EXISTING.ragEngineer,
+      { label: 'Build & troubleshoot Bedrock RAG (guide)', href: '/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/' },
+      { label: 'OpenSearch vs pgvector for Bedrock RAG', href: '/blog/opensearch-vs-pgvector-bedrock-rag-guide/' },
     ],
   }),
 });
@@ -206,6 +209,7 @@ export const bedrockRag: LandingPageConfig = awsServicePage({
       { label: 'Bedrock Guardrails support', href: '/amazon-bedrock-guardrails-job-support/' },
       { label: 'RAG vs fine-tuning on AWS', href: '/aws-rag-vs-fine-tuning-job-support/' },
       BEDROCK_HUB_LINK, EXISTING.rag, EXISTING.ragEngineer, EXISTING.vectorDb, EXISTING.langchain,
+      { label: 'Build & troubleshoot Bedrock RAG (guide)', href: '/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/' },
     ],
   }),
 });
@@ -639,7 +643,11 @@ export const bedrockInterviewProxy: LandingPageConfig = awsServicePage({
     ],
     problemLink: { label: 'Amazon Bedrock troubleshooting', href: '/amazon-bedrock-troubleshooting-support/' },
     proxyLink: EXISTING.awsBedrockInterview,
-    additionalLinks: [AWS_INTERVIEW_HUB_LINK, BEDROCK_HUB_LINK, EXISTING.awsBedrockInterview, EXISTING.genaiProxy],
+    additionalLinks: [
+      AWS_INTERVIEW_HUB_LINK, BEDROCK_HUB_LINK, EXISTING.awsBedrockInterview, EXISTING.genaiProxy,
+      { label: 'Amazon Bedrock interview questions (2026)', href: '/blog/amazon-bedrock-interview-questions-2026/' },
+      { label: 'How to explain a Bedrock project in an interview', href: '/blog/how-to-explain-amazon-bedrock-project-in-interview/' },
+    ],
   }),
 });
 

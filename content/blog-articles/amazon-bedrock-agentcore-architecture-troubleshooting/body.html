@@ -1,0 +1,85 @@
+<p><strong>Amazon Bedrock AgentCore</strong> is the managed, framework-agnostic foundation for running AI agents in production on AWS. Instead of stitching together your own execution sandbox, memory store, tool layer and auth, AgentCore gives you five production primitives — <strong>Runtime, Memory, Gateway, Identity and Policy</strong> — plus built-in <strong>Observability</strong>. It went GA in October 2025, and fine-grained <strong>Policy</strong> authorization with Cedar reached GA in March 2026. This guide explains how the pieces fit, how MCP tools plug in, and how to troubleshoot the session, tool and authorization failures that actually page you.</p>
+
+<hr>
+
+<h3>The five building blocks</h3>
+<ul>
+<li><strong>Runtime</strong> — executes your agent with strong <em>per-session isolation</em>, so one user's session cannot see another's state. It handles scaling and lifecycle; you bring the agent logic (any framework — Strands, LangGraph, CrewAI, or your own).</li>
+<li><strong>Memory</strong> — managed <em>short-term</em> (within a session) and <em>long-term</em> (across sessions) memory, so the agent remembers context and learned facts without you running a database.</li>
+<li><strong>Gateway</strong> — turns existing APIs, Lambda functions and services into <em>agent tools</em>, increasingly exposed over the <strong>Model Context Protocol (MCP)</strong>, so tools are discoverable and reusable across agents.</li>
+<li><strong>Identity</strong> — authenticated, <em>delegated</em> access to AWS and third-party resources on behalf of a user, so the agent acts with the right scoped credentials rather than a shared god-role.</li>
+<li><strong>Policy</strong> — fine-grained authorization with <strong>Cedar</strong> (GA March 2026): declarative rules for which agent/user can call which tool or resource, evaluated at request time.</li>
+</ul>
+<p>You can adopt these individually. A common path is Runtime + Memory first, then Gateway for tools, then Identity and Policy as security requirements harden. The conceptual model is covered in the <a href="/amazon-bedrock-agentcore-architecture-guide/">AgentCore architecture guide</a>.</p>
+
+<h3>A typical agent request flow</h3>
+<ul>
+<li>The client sends a request to your agent endpoint; <strong>Runtime</strong> spins up an isolated session.</li>
+<li>The agent loads relevant state from <strong>Memory</strong> and constructs its reasoning context.</li>
+<li>It calls a foundation model on Bedrock to decide the next step (often a tool call).</li>
+<li>The tool call goes through <strong>Gateway</strong>; <strong>Identity</strong> supplies delegated credentials and <strong>Policy</strong> authorizes the action with Cedar.</li>
+<li>The tool result returns, the agent iterates, and <strong>Observability</strong> records each reasoning step and tool call as a trace.</li>
+<li>Memory is updated; the final answer streams back.</li>
+</ul>
+
+<h3>Tools, MCP and Gateway</h3>
+<p><strong>Gateway</strong> is where most integration value lives. Rather than hand-coding each API call into the agent, you register APIs, Lambdas and MCP tool servers once and let the agent discover and invoke them. Using MCP means a tool server you build for one agent is reusable by any MCP-aware agent or framework — the same "USB-C for tools" idea that makes the ecosystem composable. For how this compares to building agents directly on a framework, see <a href="/agentcore-vs-langgraph-job-support/">AgentCore vs LangGraph</a>.</p>
+
+<h3>Troubleshooting: isolate the layer first</h3>
+<p>AgentCore problems are easiest to fix when you map the symptom to a layer instead of blindly editing the prompt. Read the <strong>Observability trace</strong> end to end, then:</p>
+
+<h4>Runtime — session, timeout, cold start</h4>
+<ul>
+<li>Sessions timing out on long tool chains → increase timeouts, parallelize independent tool calls, or break the task into steps.</li>
+<li>Cold-start latency on first request → keep the agent warm or accept the first-call penalty in SLAs.</li>
+<li>State bleeding between users → verify you are relying on Runtime's session isolation, not a shared global.</li>
+</ul>
+
+<h4>Memory — wrong or missing context</h4>
+<ul>
+<li>Agent "forgets" mid-session → short-term memory not being read/written on each turn.</li>
+<li>Agent ignores prior sessions → long-term memory not configured or not queried.</li>
+<li>Stale or contradictory facts → memory write strategy needs deduplication or recency weighting.</li>
+</ul>
+
+<h4>Gateway — tool not called or failing</h4>
+<ul>
+<li>Tool never invoked → the tool schema/description is unclear, so the model does not select it; sharpen the tool definition.</li>
+<li>Tool errors → connectivity, request-shape or MCP registration problems; test the tool directly, outside the agent.</li>
+<li>Timeouts → the downstream API is slow; add its own retry/timeout budget.</li>
+</ul>
+
+<h4>Identity &amp; Policy — AccessDenied on a tool</h4>
+<ul>
+<li>An authorization failure on a tool call is almost always <strong>Identity</strong> (missing/expired delegated credentials) or <strong>Policy</strong> (a Cedar rule denies the action). Check the policy decision in the trace before touching IAM.</li>
+<li>Over-broad access → tighten Cedar policies to least privilege per agent and per user.</li>
+</ul>
+
+<h4>Observability — loops and cost</h4>
+<ul>
+<li>Runaway token cost or latency → the trace will show a reasoning loop or repeated tool calls; add a step limit and a stop condition.</li>
+</ul>
+
+<p>For live help on a failing agent, see <a href="/amazon-bedrock-agentcore-troubleshooting-support/">AgentCore troubleshooting support</a> and the component pages for <a href="/amazon-bedrock-agentcore-runtime-job-support/">Runtime</a>, <a href="/amazon-bedrock-agentcore-memory-job-support/">Memory</a>, <a href="/amazon-bedrock-agentcore-gateway-job-support/">Gateway</a>, <a href="/amazon-bedrock-agentcore-identity-job-support/">Identity</a> and <a href="/amazon-bedrock-agentcore-policy-job-support/">Policy</a>.</p>
+
+<h3>Interview implications</h3>
+<p>Agent system-design rounds increasingly ask you to design a production agent: how you isolate sessions, where memory lives, how tools are authorized, and how you observe reasoning. Being able to name Runtime/Memory/Gateway/Identity/Policy and explain the request flow is a strong signal — prep with the <a href="/blog/amazon-bedrock-interview-questions-2026/">Amazon Bedrock interview questions</a> and the <a href="/amazon-bedrock-agentcore-interview-proxy-support/">AgentCore interview support</a> page.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>What is AgentCore?</strong><br>Managed, framework-agnostic building blocks for production agents — Runtime, Memory, Gateway, Identity, Policy and Observability. GA October 2025; Policy/Cedar GA March 2026.</p>
+<p><strong>How do you troubleshoot AgentCore?</strong><br>Isolate the layer: Runtime for session/timeout, Memory for context, Gateway for tools, Identity/Policy for authorization, Observability for loops and cost. Read the trace before editing the prompt.</p>
+<p><strong>Does AgentCore support MCP?</strong><br>Yes — Gateway increasingly exposes tools over MCP so tool servers are reusable across agents and frameworks.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>Concepts: <a href="/amazon-bedrock-agentcore-architecture-guide/">AgentCore architecture guide</a></li>
+<li>Architecture context: <a href="/blog/amazon-bedrock-production-architecture-2026/">Bedrock production architecture in 2026</a></li>
+<li>Hub: <a href="/amazon-bedrock-agentcore-job-support/">Amazon Bedrock AgentCore support</a> · <a href="/aws-ai-ml-job-support/">AWS AI/ML hub</a></li>
+</ul>
+
+<h3>Fighting a production agent issue?</h3>
+<p>Our AWS AI engineers debug live AgentCore systems — Runtime, Memory, Gateway, Identity and Cedar policies. Get <a href="/amazon-bedrock-agentcore-job-support/">AgentCore job support</a> or message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20help%20with%20Amazon%20Bedrock%20AgentCore">WhatsApp +91 96606 14469</a>.</p>

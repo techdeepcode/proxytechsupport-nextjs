@@ -1,0 +1,67 @@
+<p>When you build RAG on <strong>Amazon Bedrock Knowledge Bases</strong>, one decision shapes cost, latency and operations more than almost any other: the <strong>vector store</strong>. The two most common choices are <strong>Amazon OpenSearch Serverless</strong> and <strong>Aurora PostgreSQL with pgvector</strong>. The short answer: <strong>OpenSearch Serverless for large-scale, search-heavy workloads; Aurora pgvector when your data already lives in Postgres and scale is moderate.</strong> This guide compares them on the dimensions that actually decide production RAG.</p>
+
+<hr>
+
+<h3>The two options</h3>
+<ul>
+<li><strong>Amazon OpenSearch Serverless</strong> — a purpose-built, fully managed search and vector engine. It scales capacity automatically, supports approximate nearest-neighbor vector search plus rich keyword search, and is designed for large corpora and hybrid retrieval.</li>
+<li><strong>Aurora PostgreSQL + pgvector</strong> — the <code>pgvector</code> extension adds vector similarity search to a familiar relational database. Vectors live next to your relational data, so you query both with SQL and get Postgres transactions, backups and tooling.</li>
+</ul>
+<p>Both are supported targets for Bedrock Knowledge Bases; Bedrock manages ingestion and querying against whichever you configure. For the full RAG pipeline see <a href="/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/">build and troubleshoot Bedrock RAG</a>.</p>
+
+<h3>Comparison</h3>
+<table>
+<thead>
+<tr><th>Dimension</th><th>OpenSearch Serverless</th><th>Aurora pgvector</th></tr>
+</thead>
+<tbody>
+<tr><td>Type</td><td>Purpose-built search/vector engine</td><td>Relational DB with vector extension</td></tr>
+<tr><td>Scale</td><td>Large corpora, auto-scaling</td><td>Small–moderate; scales with instance sizing</td></tr>
+<tr><td>Hybrid search</td><td>Strong native keyword + vector</td><td>Possible via SQL + full-text, more manual</td></tr>
+<tr><td>Data co-location</td><td>Separate store</td><td>Vectors beside relational data</td></tr>
+<tr><td>Filtering</td><td>Rich metadata filtering</td><td>Native SQL WHERE filters</td></tr>
+<tr><td>Ops familiarity</td><td>Managed, search-oriented</td><td>Familiar Postgres for most teams</td></tr>
+<tr><td>Cost shape</td><td>Managed capacity units</td><td>Aurora instance/serverless cost</td></tr>
+</tbody>
+</table>
+
+<h3>Scale and performance</h3>
+<p>At large corpus sizes and high query volume, a purpose-built engine like OpenSearch Serverless tends to scale and perform more predictably — it's built for approximate nearest-neighbor search and auto-scales capacity. Aurora pgvector performs well at small-to-moderate scale; as vectors grow into the many millions, you manage index type/parameters and instance sizing more actively to hold latency down. Match the choice to your realistic corpus size, not a hypothetical.</p>
+
+<h3>Filtering and hybrid search</h3>
+<p>Metadata filtering is essential for multi-tenant or multi-product RAG (so retrieval doesn't cross boundaries). OpenSearch offers rich native filtering and strong <strong>hybrid search</strong> (combine keyword and vector for better precision on names, codes and exact terms). With pgvector you get filtering "for free" as SQL <code>WHERE</code> clauses and can combine with Postgres full-text search, though hybrid ranking is more hand-built. If hybrid search is core to quality, OpenSearch has the edge.</p>
+
+<h3>Data co-location and simplicity</h3>
+<p>If your source data already lives in Aurora/Postgres, pgvector is compelling: vectors sit beside the relational rows, one database backs up and secures both, and your team already knows the tooling. That operational simplicity is a real advantage for moderate-scale apps and often outweighs raw search features.</p>
+
+<h3>Cost</h3>
+<p>Neither is universally cheaper — it depends on corpus size and query volume. OpenSearch Serverless bills by managed capacity; Aurora bills by instance or serverless capacity. For a small RAG app on data already in Aurora, adding pgvector avoids a second system entirely. For a large, search-heavy corpus, OpenSearch's scaling usually justifies its cost. Model both against your real data volume and QPS.</p>
+
+<h3>How to choose</h3>
+<ul>
+<li><strong>Pick OpenSearch Serverless</strong> if: large corpus, high query volume, hybrid (keyword + vector) search matters, or you want a purpose-built managed vector engine.</li>
+<li><strong>Pick Aurora pgvector</strong> if: your data already lives in Postgres, you want vectors co-located with relational data and transactions, scale is moderate, and operational simplicity wins.</li>
+</ul>
+<p>Both integrate cleanly with Knowledge Bases, so this is a reversible decision for many teams — but re-embedding and re-ingesting to switch stores isn't free, so choose deliberately. For hands-on help see <a href="/amazon-bedrock-knowledge-bases-job-support/">Bedrock Knowledge Bases support</a>, and the commercial deep dive at <a href="/opensearch-vs-pgvector-job-support/">OpenSearch vs pgvector job support</a>.</p>
+
+<h3>Interview implications</h3>
+<p>"Which vector store would you use for this RAG system and why?" is a common AWS GenAI interview question. The strong answer names the deciding factors — scale, existing data location, hybrid-search need, operational preference — and maps them, rather than declaring a favorite. Prep with <a href="/blog/amazon-bedrock-interview-questions-2026/">Bedrock interview questions</a>.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>What vector database works with Bedrock Knowledge Bases?</strong><br>Several, most commonly OpenSearch Serverless and Aurora pgvector; Bedrock manages ingestion and querying against whichever you configure.</p>
+<p><strong>Should I use OpenSearch or pgvector?</strong><br>OpenSearch for large-scale, search-heavy, hybrid workloads; pgvector when data lives in Postgres and scale is moderate.</p>
+<p><strong>Is pgvector good enough for production?</strong><br>Yes for many small-to-moderate workloads; at very large scale or heavy hybrid search, a purpose-built engine scales more predictably.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>RAG build: <a href="/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/">Build &amp; troubleshoot Bedrock RAG</a> · <a href="/amazon-bedrock-rag-guide/">Bedrock RAG guide</a></li>
+<li>Managed vs custom: <a href="/bedrock-knowledge-bases-vs-custom-rag-job-support/">Knowledge Bases vs custom RAG</a></li>
+<li>Support: <a href="/amazon-bedrock-knowledge-bases-job-support/">Knowledge Bases support</a> · <a href="/amazon-bedrock-rag-job-support/">Bedrock RAG job support</a></li>
+</ul>
+
+<h3>Choosing a vector store for a real RAG system?</h3>
+<p>Our AWS AI engineers help you pick and implement the right store, tune retrieval, and ship production RAG. Explore <a href="/amazon-bedrock-rag-job-support/">Amazon Bedrock RAG job support</a> or message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20help%20choosing%20a%20Bedrock%20RAG%20vector%20store">WhatsApp +91 96606 14469</a>.</p>

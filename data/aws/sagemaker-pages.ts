@@ -224,7 +224,11 @@ export const sageMakerInterviewProxy: LandingPageConfig = awsServicePage({
     techLinks: [SAGEMAKER_AI_HUB_LINK, MLOPS_HUB_LINK],
     problemLink: { label: 'SageMaker inference troubleshooting', href: '/amazon-sagemaker-inference-troubleshooting-support/' },
     proxyLink: EXISTING.mlopsProxy,
-    additionalLinks: [AWS_INTERVIEW_HUB_LINK, SAGEMAKER_HUB_LINK, SAGEMAKER_AI_HUB_LINK, EXISTING.mlopsProxy],
+    additionalLinks: [
+      AWS_INTERVIEW_HUB_LINK, SAGEMAKER_HUB_LINK, SAGEMAKER_AI_HUB_LINK, EXISTING.mlopsProxy,
+      { label: 'SageMaker interview questions (2026)', href: '/blog/amazon-sagemaker-interview-questions-2026/' },
+      { label: 'How to explain a SageMaker MLOps project in an interview', href: '/blog/how-to-explain-sagemaker-mlops-project-in-interview/' },
+    ],
   }),
 });
 

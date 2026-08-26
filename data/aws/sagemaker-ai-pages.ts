@@ -110,6 +110,8 @@ export const sageMakerAiHub: LandingPageConfig = awsPage({
       { label: 'SageMaker Model Registry', href: '/amazon-sagemaker-model-registry-job-support/' },
       SAGEMAKER_HUB_LINK, MLOPS_HUB_LINK, AWS_PRODUCTION_LINK,
       EXISTING.mlops, EXISTING.modelDeployment, EXISTING.fineTuning,
+      { label: 'SageMaker AI production architecture (2026 guide)', href: '/blog/amazon-sagemaker-production-architecture-2026/' },
+      { label: 'SageMaker MLOps: Pipelines, MLflow & Model Registry', href: '/blog/amazon-sagemaker-mlops-pipelines-mlflow-model-registry/' },
     ],
   }),
 });
@@ -129,6 +131,9 @@ const smaiRelated = (self: string) =>
       { label: 'SageMaker Managed MLflow', href: '/amazon-sagemaker-mlflow-job-support/' },
       { label: 'SageMaker Model Registry', href: '/amazon-sagemaker-model-registry-job-support/' },
       SAGEMAKER_AI_HUB_LINK,
+      { label: 'SageMaker AI production architecture (2026 guide)', href: '/blog/amazon-sagemaker-production-architecture-2026/' },
+      { label: 'SageMaker MLOps: Pipelines, MLflow & Model Registry (guide)', href: '/blog/amazon-sagemaker-mlops-pipelines-mlflow-model-registry/' },
+      { label: 'SageMaker inference troubleshooting (guide)', href: '/blog/amazon-sagemaker-inference-troubleshooting-guide/' },
     ].filter((l) => l.href !== self),
   });
 
@@ -356,7 +361,10 @@ export const sageMakerInferenceTroubleshooting: LandingPageConfig = awsServicePa
     ],
     problemLink: AWS_PRODUCTION_LINK,
     proxyLink: EXISTING.mlopsProxy,
-    additionalLinks: [SAGEMAKER_AI_HUB_LINK, MLOPS_HUB_LINK, EXISTING.modelDeployment, EXISTING.production],
+    additionalLinks: [
+      SAGEMAKER_AI_HUB_LINK, MLOPS_HUB_LINK, EXISTING.modelDeployment, EXISTING.production,
+      { label: 'SageMaker inference troubleshooting (guide)', href: '/blog/amazon-sagemaker-inference-troubleshooting-guide/' },
+    ],
   }),
 });
 

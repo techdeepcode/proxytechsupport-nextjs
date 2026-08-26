@@ -1,0 +1,67 @@
+<p><strong>Amazon SageMaker AI production architecture in 2026</strong> is an end-to-end ML platform, not a single service: data in S3, managed <strong>training</strong> (estimator-driven TrainingJobs and HyperPod for large distributed runs), <strong>experiment tracking</strong> in Managed MLflow, <strong>model versioning</strong> in the Model Registry, orchestration with <strong>SageMaker Pipelines</strong> and CI/CD, and an <strong>inference</strong> layer (real-time, asynchronous or batch) with autoscaling — wrapped in IAM, KMS, VPC and CloudWatch. This guide walks the full architecture, the trade-offs you defend in reviews, and where the common production failures live. Where Bedrock is the managed foundation-model API, SageMaker AI is where you train, fine-tune and host models yourself.</p>
+
+<hr>
+
+<h3>The reference architecture</h3>
+<ul>
+<li><strong>Data</strong> — raw and curated datasets in S3; <strong>Processing Jobs</strong> for cleaning, feature engineering and validation.</li>
+<li><strong>Training</strong> — a SageMaker <code>estimator</code> launches a <strong>TrainingJob</strong> on managed instances, reading from S3 and writing a <strong>model artifact</strong> (a <code>model.tar.gz</code>) back to S3, using a built-in or custom <strong>ECR</strong> container image. For large models, <strong>HyperPod</strong> provides resilient, long-running distributed clusters.</li>
+<li><strong>Experiment tracking</strong> — <strong>Managed MLflow</strong> records runs, parameters, metrics and artifacts so results are reproducible and comparable.</li>
+<li><strong>Model governance</strong> — the <strong>Model Registry</strong> versions models and carries an <strong>approval status</strong> (Pending → Approved/Rejected) that gates deployment.</li>
+<li><strong>Orchestration</strong> — a <strong>SageMaker Pipeline</strong> chains process → train → evaluate → register → deploy, triggered by CI/CD.</li>
+<li><strong>Inference</strong> — real-time endpoints, asynchronous inference, or Batch Transform, with autoscaling.</li>
+<li><strong>Cross-cutting</strong> — IAM roles, KMS, VPC, and CloudWatch metrics/logs.</li>
+</ul>
+
+<h3>Training: from S3 to a registered model</h3>
+<p>The canonical flow: a Processing Job prepares features; an estimator launches a TrainingJob that pulls the training image from ECR and data from S3; the resulting artifact lands in S3 and is logged as an MLflow run; if metrics pass an evaluation step, the Pipeline registers a new <strong>model version</strong> in the Model Registry with Pending approval. Nothing deploys until a human or automated gate flips approval to Approved. For very large training, HyperPod adds cluster resilience so a single node failure doesn't kill a multi-day run. Deep dive: <a href="/blog/amazon-sagemaker-mlops-pipelines-mlflow-model-registry/">SageMaker MLOps with Pipelines, MLflow and Model Registry</a>.</p>
+
+<h3>Inference: choose the right serving mode</h3>
+<ul>
+<li><strong>Real-time endpoints</strong> — persistent, low-latency HTTPS endpoints for synchronous, interactive traffic. Pay for the instance while it runs.</li>
+<li><strong>Asynchronous inference</strong> — queues requests and handles large payloads or long processing without holding the connection; scales to zero when idle.</li>
+<li><strong>Batch Transform</strong> — offline scoring of a whole dataset; no persistent endpoint, ideal for scheduled bulk jobs.</li>
+</ul>
+<p>Choose by latency and volume: interactive apps → real-time; big payloads or spiky/long jobs → async; periodic full-dataset scoring → batch. Endpoint configuration, instance type (CPU vs GPU), and autoscaling policy are the levers. GenAI/LLM serving usually needs GPU endpoints tuned for throughput and time-to-first-token (TTFT).</p>
+
+<h3>Autoscaling and capacity</h3>
+<p>Attach an autoscaling policy to real-time endpoints keyed on invocations-per-instance or hardware utilization. The two production traps are scaling too slowly for bursty traffic (raise min capacity or pre-warm) and GPU capacity errors during scale-out (reserve capacity or use async to smooth spikes). Details in <a href="/blog/amazon-sagemaker-inference-troubleshooting-guide/">SageMaker inference troubleshooting</a>.</p>
+
+<h3>Security</h3>
+<ul>
+<li><strong>IAM</strong> — a dedicated execution role per training/endpoint with least-privilege S3, ECR and KMS access.</li>
+<li><strong>KMS</strong> — encrypt artifacts, volumes and endpoint data with customer-managed keys where required.</li>
+<li><strong>VPC</strong> — run training and endpoints in a VPC with private subnets and endpoints; disable direct internet access for regulated workloads.</li>
+</ul>
+
+<h3>Observability</h3>
+<p>Monitor endpoint <strong>invocation latency</strong>, <strong>ModelLatency</strong>, error rates (4xx/5xx), instance CPU/GPU/memory utilization, and — for GenAI — TTFT and throughput. Pipe CloudWatch metrics into alarms, and use MLflow to watch for training/serving skew over time. Add Model Monitor for data-quality and drift detection on production traffic.</p>
+
+<h3>Cost control</h3>
+<p>SageMaker cost is instance-hours. Levers: right-size instance types, use autoscaling (and async scale-to-zero) so you don't pay for idle GPUs, use Spot for interruptible training, prefer Batch Transform over always-on endpoints for periodic scoring, and shut down notebook/Studio compute. Model the endpoint 24×7 cost before committing to real-time.</p>
+
+<h3>SageMaker vs Bedrock in one line</h3>
+<p>Train/fine-tune and own the serving stack → SageMaker AI. Build on managed foundation models behind an API → Bedrock. Full comparison: <a href="/blog/amazon-bedrock-vs-sagemaker-ai-architecture-guide/">Bedrock vs SageMaker AI</a>.</p>
+
+<h3>Interview implications</h3>
+<p>An AWS ML system-design round will ask you to draw this platform: where data lives, how training produces a registered model, how approval gates deployment, and which inference mode you'd pick and why. Prepare with <a href="/blog/amazon-sagemaker-interview-questions-2026/">SageMaker interview questions</a>.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>What is Amazon SageMaker AI?</strong><br>The AWS platform to build, train and deploy ML and foundation models — training (incl. HyperPod), JumpStart, real-time/async/batch inference, and MLOps (Pipelines, Managed MLflow, Model Registry).</p>
+<p><strong>What's in a production SageMaker architecture?</strong><br>S3 data, Processing/Training jobs, MLflow tracking, Model Registry with approval, a Pipeline with CI/CD, an inference layer with autoscaling, and IAM/KMS/VPC + CloudWatch.</p>
+<p><strong>When SageMaker vs Bedrock?</strong><br>SageMaker to train/fine-tune and own serving; Bedrock to build on managed foundation models. Many teams use both.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>Concepts: <a href="/amazon-sagemaker-mlops-guide/">SageMaker MLOps guide</a></li>
+<li>MLOps deep dive: <a href="/blog/amazon-sagemaker-mlops-pipelines-mlflow-model-registry/">Pipelines, MLflow &amp; Model Registry</a></li>
+<li>Inference: <a href="/amazon-sagemaker-ai-inference-job-support/">SageMaker AI inference support</a> · <a href="/blog/amazon-sagemaker-inference-troubleshooting-guide/">inference troubleshooting</a></li>
+<li>Support: <a href="/amazon-sagemaker-ai-job-support/">SageMaker AI job support</a> · <a href="/aws-mlops-job-support/">AWS MLOps job support</a></li>
+</ul>
+
+<h3>Building or running an ML platform on SageMaker?</h3>
+<p>Our AWS ML engineers help you design and debug real SageMaker systems — training, Pipelines, endpoints and cost. Explore <a href="/amazon-sagemaker-ai-job-support/">Amazon SageMaker AI job support</a> or the <a href="/aws-ai-ml-job-support/">AWS AI/ML hub</a>. Message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20Amazon%20SageMaker%20job%20support">WhatsApp +91 96606 14469</a>.</p>

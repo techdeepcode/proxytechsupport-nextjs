@@ -1,0 +1,74 @@
+<p><strong>Amazon Bedrock Knowledge Bases</strong> give you managed retrieval-augmented generation (RAG): connect a data source, and Bedrock chunks it, embeds it, stores the vectors, and answers questions over it with citations. The build is straightforward; the hard part is production quality. This guide covers the full pipeline — <strong>ingestion, chunking, embeddings, vector store, Retrieve and RetrieveAndGenerate</strong> — and then the three failures that dominate real deployments: <strong>poor retrieval, ingestion/sync failures, and hallucinations</strong>. The short version: when RAG is bad, the model is rarely the problem — the pipeline is.</p>
+
+<hr>
+
+<h3>How a Knowledge Base actually works</h3>
+<p>A Bedrock Knowledge Base has two phases:</p>
+<ul>
+<li><strong>Ingestion (offline)</strong> — you point the KB at a data source (usually an S3 bucket). Bedrock reads the documents, splits them into <strong>chunks</strong>, generates <strong>embeddings</strong> for each chunk with a supported model (Amazon Titan/Nova embeddings or another), and writes the vectors plus metadata into a <strong>vector store</strong>: Amazon OpenSearch Serverless, Aurora PostgreSQL with <code>pgvector</code>, or another supported store.</li>
+<li><strong>Query (online)</strong> — your app calls <code>Retrieve</code> to get the top-k relevant chunks (for a custom prompt you build yourself), or <code>RetrieveAndGenerate</code> to retrieve and have a foundation model produce a grounded, cited answer in a single call.</li>
+</ul>
+
+<h3>Building the pipeline: the decisions that matter</h3>
+<h4>Chunking</h4>
+<p>Chunking is the single highest-leverage choice. Options are <strong>fixed-size</strong> (simple, predictable), <strong>semantic</strong> (splits on meaning; better for prose), and <strong>hierarchical</strong> (parent/child chunks; strong for long structured documents where you retrieve small but return larger context). Chunks that are too large dilute the embedding and pull in irrelevant text; too small and you lose the context needed to answer. Match the strategy to the document structure and test on real queries.</p>
+<h4>Embeddings and the vector index</h4>
+<p>The embedding model defines the vector dimension, and the vector index must be created with that exact dimension. A dimension mismatch between the embedding model and the OpenSearch/pgvector index is a classic ingestion failure. Keep the embedding model consistent between ingestion and query time — re-embedding with a different model invalidates the index.</p>
+<h4>Metadata and filtering</h4>
+<p>Attach metadata to documents (tenant, product, date, source) and apply <strong>metadata filters</strong> at query time. Without filters, a multi-tenant or multi-product KB will happily return the wrong tenant's chunk because it is semantically similar. Filtering is often the fastest fix for "the answer is confidently about the wrong thing."</p>
+<h4>Reranking and query reformulation</h4>
+<p>Add a reranking step to reorder retrieved chunks by true relevance, and query reformulation to expand terse user questions. Both raise precision measurably on messy real-world corpora.</p>
+
+<h3>Troubleshooting 1 — poor retrieval</h3>
+<p>Symptoms: irrelevant chunks, answers that miss obvious facts, citations pointing at the wrong section. Work the pipeline in this order:</p>
+<ul>
+<li><strong>Inspect what <code>Retrieve</code> returns</strong> before blaming generation. If the right chunk is not in the top-k, generation cannot fix it.</li>
+<li><strong>Revisit chunking</strong> — split differently (semantic or hierarchical), adjust chunk size/overlap, and re-ingest.</li>
+<li><strong>Add metadata filters</strong> so retrieval is scoped to the relevant subset.</li>
+<li><strong>Add reranking</strong> and increase top-k modestly, then rerank down.</li>
+<li><strong>Check the embedding model</strong> fits your domain; highly specialized jargon sometimes needs a stronger embedding model.</li>
+</ul>
+
+<h3>Troubleshooting 2 — ingestion and sync failures</h3>
+<p>Symptoms: an ingestion job stuck, partially complete, or reporting failed documents. Usual causes:</p>
+<ul>
+<li><strong>IAM</strong> — the KB service role lacks read on the S3 source or write on the vector store.</li>
+<li><strong>Format / size</strong> — unsupported or corrupt files, or documents over the size limit; the job reports which documents failed.</li>
+<li><strong>Index dimension mismatch</strong> — the vector index dimension does not equal the embedding model's dimension.</li>
+<li><strong>Throttling</strong> on very large ingestions — stagger or request quota increases.</li>
+</ul>
+<p>Read the ingestion job status and the per-document failure reasons, and correlate with CloudWatch logs. For hands-on help fixing a stuck sync, see <a href="/amazon-bedrock-rag-troubleshooting-support/">Bedrock RAG troubleshooting support</a>.</p>
+
+<h3>Troubleshooting 3 — hallucinations</h3>
+<p>Symptoms: fluent answers not supported by the source. Mitigations:</p>
+<ul>
+<li>Use <code>RetrieveAndGenerate</code> and <strong>return citations</strong>, so unsupported claims are visible.</li>
+<li>Enable <strong>Guardrails contextual grounding checks</strong> to score answer/context alignment.</li>
+<li>Tighten retrieval (metadata filters, reranking) so less unrelated context reaches the model.</li>
+<li>Instruct the model to answer only from context and to say it does not know otherwise.</li>
+</ul>
+
+<h3>Knowledge Bases vs custom RAG</h3>
+<p>Knowledge Bases remove the undifferentiated heavy lifting of ingestion and retrieval. A fully custom RAG stack (your own embeddings, store and orchestration) gives maximum control at higher operational cost. Most teams should start managed and only go custom for a specific requirement — see <a href="/bedrock-knowledge-bases-vs-custom-rag-job-support/">Bedrock Knowledge Bases vs custom RAG</a> and the vector-store choice in <a href="/blog/opensearch-vs-pgvector-bedrock-rag-guide/">OpenSearch vs pgvector for Bedrock RAG</a>.</p>
+
+<h3>Interview implications</h3>
+<p>RAG is the most common AWS GenAI interview topic. Expect: "how do Knowledge Bases work," "how would you debug poor retrieval," and "how do you prevent hallucinations." The diagnostic order above is exactly what interviewers want to hear — see <a href="/blog/amazon-bedrock-interview-questions-2026/">Amazon Bedrock interview questions</a>.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>How do Amazon Bedrock Knowledge Bases work?</strong><br>They connect a data source (usually S3), chunk and embed the documents, store the vectors in OpenSearch/pgvector, and answer queries via Retrieve or RetrieveAndGenerate with citations.</p>
+<p><strong>Why is my retrieval poor?</strong><br>Almost always the pipeline — chunk size/strategy, embedding fit, missing metadata filters, or no reranking. Inspect what Retrieve returns first, then fix chunking and filtering.</p>
+<p><strong>Why does ingestion fail?</strong><br>IAM permissions, unsupported/oversized files, a vector-index dimension that does not match the embedding model, or throttling on large jobs. Read the per-document failure reasons.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>Concepts: <a href="/amazon-bedrock-rag-guide/">Amazon Bedrock RAG guide</a> · <a href="/what-is-amazon-bedrock-guide/">What is Amazon Bedrock?</a></li>
+<li>Architecture context: <a href="/blog/amazon-bedrock-production-architecture-2026/">Bedrock production architecture in 2026</a></li>
+<li>Support: <a href="/amazon-bedrock-knowledge-bases-job-support/">Knowledge Bases support</a> · <a href="/amazon-bedrock-rag-job-support/">Bedrock RAG job support</a> · <a href="/amazon-bedrock-rag-troubleshooting-support/">RAG troubleshooting</a></li>
+</ul>
+
+<h3>Stuck on a Bedrock RAG problem?</h3>
+<p>We debug real Knowledge Base pipelines live — ingestion failures, retrieval quality, reranking and grounding. Get <a href="/amazon-bedrock-rag-job-support/">Amazon Bedrock RAG job support</a> or reach the wider <a href="/aws-ai-ml-job-support/">AWS AI/ML hub</a>. Message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20help%20with%20Amazon%20Bedrock%20RAG">WhatsApp +91 96606 14469</a>.</p>

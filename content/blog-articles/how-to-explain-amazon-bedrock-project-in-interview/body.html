@@ -1,0 +1,65 @@
+<p>The fastest way to lose an AWS GenAI interview is to describe your <strong>Amazon Bedrock project</strong> as a feature list — "we used Bedrock and a vector database." The fastest way to win it is a structured story that shows you understood the <em>why</em> behind every decision and can reason about what broke and how you fixed it. This guide gives you a repeatable five-part structure to explain a Bedrock project so you sound like the engineer who actually built it. It pairs well with the <a href="/how-to-explain-aws-ai-project-in-interview-guide/">general AWS AI project framework</a> and the <a href="/blog/amazon-bedrock-interview-questions-2026/">Bedrock interview questions</a>.</p>
+
+<hr>
+
+<h3>The five-part structure</h3>
+<ol>
+<li><strong>Problem &amp; constraints</strong> — one or two sentences on the business problem and the hard constraints (accuracy, latency, cost, compliance). Lead here, not with the tech.</li>
+<li><strong>Architecture</strong> — the walk-through: client/API layer → Bedrock Runtime (Converse) → Knowledge Bases/RAG with a vector store → Guardrails → security. Keep it to the components that mattered.</li>
+<li><strong>Your decisions</strong> — the three or four choices you owned and the trade-off behind each.</li>
+<li><strong>A real production issue</strong> — one concrete failure you diagnosed and fixed. This is the part that separates builders from demo-watchers.</li>
+<li><strong>Result &amp; trade-off</strong> — the measurable outcome and one thing you would revisit.</li>
+</ol>
+
+<h3>1. Frame the problem</h3>
+<p>Example: "Support engineers were spending hours searching a 40,000-document knowledge base, so we built a grounded assistant that answers from that corpus with citations. The constraints were: answers had to cite sources, p95 latency under three seconds, and no customer PII leaving our VPC."</p>
+<p>Now the interviewer knows what "good" means, so every decision you describe next can be justified against a constraint.</p>
+
+<h3>2. Walk the architecture</h3>
+<p>Move left to right: "A React client hits API Gateway and a Lambda orchestrator. Lambda calls the Bedrock Converse API through an application inference profile for cross-Region capacity. For retrieval we used a Bedrock Knowledge Base over an S3 corpus, embeddings in OpenSearch Serverless, and RetrieveAndGenerate for cited answers. A Guardrail handled PII and grounding. Everything ran over VPC endpoints with IAM least-privilege and KMS encryption." Two sentences of architecture is enough; depth comes in the decisions.</p>
+
+<h3>3. Explain your decisions (this is what they score)</h3>
+<ul>
+<li><strong>Converse over InvokeModel</strong> — "so we could A/B two models by changing the modelId without a rewrite."</li>
+<li><strong>Hierarchical chunking</strong> — "our docs were long and structured; small child chunks retrieved precisely while parent chunks preserved context."</li>
+<li><strong>OpenSearch Serverless over pgvector</strong> — "scale and search features mattered more than co-locating with relational data." (Reasoning: <a href="/blog/opensearch-vs-pgvector-bedrock-rag-guide/">OpenSearch vs pgvector</a>.)</li>
+<li><strong>Inference profile</strong> — "one Region's throttling shouldn't take down support."</li>
+</ul>
+<p>For each, state the alternative and why you rejected it. Interviewers are testing judgement, not recall.</p>
+
+<h3>4. Tell one production story</h3>
+<p>Pick a real incident and narrate the diagnosis: "Retrieval quality collapsed after a data refresh. Instead of tuning prompts, I inspected what Retrieve returned and found the new documents used a different structure, so fixed-size chunks were splitting tables mid-row. We switched those sources to semantic chunking, re-ingested, and added a metadata filter by document type. Retrieval precision recovered and hallucinations dropped." This one story proves more than a page of architecture. The method is in <a href="/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/">troubleshooting Bedrock RAG</a>.</p>
+
+<h3>5. Close with results and a trade-off</h3>
+<p>"Median answer time dropped from minutes to seconds, deflection rose measurably, and every answer carried a citation. If I rebuilt it, I'd add reranking from day one — we bolted it on later and it was the biggest single quality win." Ending with an honest trade-off signals maturity.</p>
+
+<h3>If you had help on the project</h3>
+<p>Interviews test what you <em>understand</em>, not who typed each line. Focus your preparation on being able to defend the architecture, the decisions, the failure modes and the fixes — reason about why each choice was made and what you would change. That depth is exactly what good mentoring and mock interviews build, which is the point of <a href="/amazon-bedrock-interview-proxy-support/">Amazon Bedrock interview support</a>.</p>
+
+<h3>Common mistakes to avoid</h3>
+<ul>
+<li>Leading with the tech stack instead of the problem.</li>
+<li>Claiming a component you can't explain — interviewers probe, and gaps show.</li>
+<li>No production story — everyone can describe a happy path; only builders can describe a failure.</li>
+<li>No numbers and no trade-off — vague outcomes read as vague ownership.</li>
+</ul>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>How do you explain a Bedrock project?</strong><br>Problem and constraints → architecture → your decisions and trade-offs → one real production issue you fixed → result and one thing you'd revisit.</p>
+<p><strong>What do interviewers want on a RAG project?</strong><br>That you understand the pipeline — chunking, embeddings, store choice, retrieval measurement, hallucination handling — with concrete numbers and one honest limitation.</p>
+<p><strong>How do you talk about a project you had help on?</strong><br>Emphasize what you understand and can defend; depth of reasoning is what's tested.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>Framework: <a href="/how-to-explain-aws-ai-project-in-interview-guide/">Explain your AWS AI project (guide)</a></li>
+<li>Questions: <a href="/blog/amazon-bedrock-interview-questions-2026/">Amazon Bedrock interview questions</a></li>
+<li>Architecture: <a href="/blog/amazon-bedrock-production-architecture-2026/">Bedrock production architecture</a></li>
+<li>Support: <a href="/amazon-bedrock-interview-proxy-support/">Bedrock interview support</a> · <a href="/aws-ai-ml-interview-support/">AWS AI/ML interview support</a></li>
+</ul>
+
+<h3>Want to rehearse this with an expert?</h3>
+<p>We run mock interviews and live interview mentoring so you can explain your Bedrock work with confidence. Explore <a href="/amazon-bedrock-interview-proxy-support/">Amazon Bedrock interview support</a> or message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20help%20explaining%20my%20Amazon%20Bedrock%20project">WhatsApp +91 96606 14469</a>.</p>

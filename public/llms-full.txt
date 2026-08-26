@@ -4262,3 +4262,94 @@ Topics: .NET Aspire architecture explanation, Dapr building block selection, Ope
 - [Bedrock Knowledge Bases vs Custom RAG — Managed vs Build-Your-Own](/bedrock-knowledge-bases-vs-custom-rag-job-support/): Amazon Bedrock Knowledge Bases vs custom RAG: when managed RAG is enough vs building your own retrieval pipeline for control, and real-time support for either on AWS.
 
 <!-- AWS-AIML-CLUSTER-END -->
+
+---
+
+## AWS AI/ML Blog Guides — Amazon Bedrock & SageMaker (2026)
+
+Deep technical blog articles that support the Amazon Bedrock and Amazon SageMaker service/guide pages. Intent is informational and interview-preparation; each article funnels contextual authority to the relevant job-support or interview-support page and the WhatsApp/contact funnel. Technical state reflects verified AWS through August 2026 (Bedrock AgentCore GA Oct 2025, Policy/Cedar GA Mar 2026; Amazon Nova 2 GA; SageMaker Unified Studio/Lakehouse GA 2025).
+
+### Amazon Bedrock Production Architecture in 2026
+URL: /blog/amazon-bedrock-production-architecture-2026/
+Type: Technical architecture guide (BlogPosting)
+Primary topics: Amazon Bedrock production architecture, Converse API, InvokeModel, application inference profiles, cross-Region inference, Knowledge Bases RAG, AgentCore, Guardrails, IAM/KMS/VPC, observability, cost.
+Summary: End-to-end reference architecture — client/API layer, Bedrock Runtime via inference profiles, Knowledge Bases + vector store, Guardrails, optional AgentCore, and the security/observability/cost layer. Covers Converse-first design, throughput modes, failure modes, and interview implications.
+Funnel target: /amazon-bedrock-job-support/. FAQs: what Bedrock is used for, what a production architecture includes, Converse vs InvokeModel, making Bedrock reliable under load.
+
+### How to Build and Troubleshoot Amazon Bedrock RAG with Knowledge Bases
+URL: /blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/
+Type: Implementation + troubleshooting guide (BlogPosting)
+Primary topics: Bedrock Knowledge Bases, ingestion, chunking (fixed/semantic/hierarchical), embeddings, vector index, metadata filters, reranking, Retrieve, RetrieveAndGenerate, poor retrieval, sync/ingestion failures, hallucinations.
+Summary: Full RAG pipeline plus the three dominant production failures — poor retrieval, ingestion/sync failures, hallucinations — with a diagnostic order (inspect Retrieve first, fix chunking and metadata, add reranking, ground and cite).
+Funnel target: /amazon-bedrock-rag-job-support/, /amazon-bedrock-knowledge-bases-job-support/, /amazon-bedrock-rag-troubleshooting-support/.
+
+### Amazon Bedrock AgentCore Architecture & Production Troubleshooting
+URL: /blog/amazon-bedrock-agentcore-architecture-troubleshooting/
+Type: Architecture + troubleshooting guide (BlogPosting)
+Primary topics: AgentCore Runtime, Memory, Gateway, Identity, Policy (Cedar), Observability, MCP tools, session isolation, agent request flow, tool/authorization failures.
+Summary: The five AgentCore building blocks, a typical agent request flow, MCP/Gateway tools, and a layer-by-layer troubleshooting method (Runtime, Memory, Gateway, Identity/Policy, Observability).
+Funnel target: /amazon-bedrock-agentcore-job-support/ and component pages; /amazon-bedrock-agentcore-interview-proxy-support/.
+
+### Amazon Bedrock Interview Questions (2026)
+URL: /blog/amazon-bedrock-interview-questions-2026/
+Type: Interview-preparation guide (BlogPosting)
+Primary topics: Bedrock interview questions, AWS GenAI interview, RAG, AgentCore, Guardrails, inference design, security/cost/observability, system design.
+Summary: Grouped Q&A (foundation models & inference; Knowledge Bases & RAG; agents & AgentCore; Guardrails; security/cost/observability) with the answers interviewers listen for, plus how to structure scenario responses.
+Funnel target: /amazon-bedrock-interview-proxy-support/, /aws-ai-ml-interview-support/.
+
+### How to Explain an Amazon Bedrock Project in a Technical Interview
+URL: /blog/how-to-explain-amazon-bedrock-project-in-interview/
+Type: Interview-preparation guide (BlogPosting)
+Primary topics: explaining a Bedrock/RAG project, problem framing, architecture walk-through, decisions and trade-offs, production story, results.
+Summary: A five-part structure (problem/constraints → architecture → decisions → one production incident → result/trade-off) with worked examples and common mistakes.
+Funnel target: /amazon-bedrock-interview-proxy-support/, /how-to-explain-aws-ai-project-in-interview-guide/.
+
+### Amazon SageMaker AI Production Architecture in 2026
+URL: /blog/amazon-sagemaker-production-architecture-2026/
+Type: Technical architecture guide (BlogPosting)
+Primary topics: SageMaker AI architecture, TrainingJob/estimator, HyperPod, Processing Jobs, Managed MLflow, Model Registry, Pipelines, real-time/async/batch inference, autoscaling, IAM/KMS/VPC, observability, cost.
+Summary: The end-to-end ML platform from S3 data to registered model to inference, the three serving modes and how to choose, security/observability/cost, and Bedrock-vs-SageMaker positioning.
+Funnel target: /amazon-sagemaker-ai-job-support/, /amazon-sagemaker-job-support/.
+
+### Amazon SageMaker MLOps Architecture: Pipelines, MLflow & Model Registry
+URL: /blog/amazon-sagemaker-mlops-pipelines-mlflow-model-registry/
+Type: MLOps implementation guide (BlogPosting)
+Primary topics: SageMaker Pipelines, Managed MLflow, Model Registry, approval status/gate, CI/CD, lineage, training-serving skew, drift.
+Summary: How the three pillars combine (Pipelines orchestrate; MLflow tracks; Model Registry governs via approval), the process→train→evaluate→register→approve→deploy flow, why the approval gate matters, and common failure modes.
+Funnel target: /amazon-sagemaker-mlflow-job-support/, /amazon-sagemaker-pipelines-job-support/, /amazon-sagemaker-model-registry-job-support/, /aws-mlops-job-support/.
+
+### Amazon SageMaker Inference Troubleshooting: Endpoint, GPU, Latency & Autoscaling
+URL: /blog/amazon-sagemaker-inference-troubleshooting-guide/
+Type: Troubleshooting guide (BlogPosting)
+Primary topics: endpoint deployment failures, ping/invocations contract, model artifact, GPU out-of-memory, InsufficientInstanceCapacity, ModelLatency vs OverheadLatency, TTFT, throughput, autoscaling, Batch Transform.
+Summary: The four inference failure buckets with a diagnostic order for each, using SageMaker/CloudWatch signals; how to isolate container vs model vs infrastructure vs scaling; picking the right serving mode.
+Funnel target: /amazon-sagemaker-inference-troubleshooting-support/, /amazon-sagemaker-ai-inference-job-support/.
+
+### Amazon SageMaker Interview Questions (2026)
+URL: /blog/amazon-sagemaker-interview-questions-2026/
+Type: Interview-preparation guide (BlogPosting)
+Primary topics: SageMaker interview questions, AWS ML engineer interview, training, inference modes, MLOps (Pipelines/MLflow/Model Registry), security, production scenarios, Bedrock vs SageMaker.
+Summary: Grouped Q&A across training, inference, MLOps, security and production scenarios with model answers and how to narrate diagnostic reasoning.
+Funnel target: /amazon-sagemaker-interview-proxy-support/, /aws-ai-ml-interview-support/.
+
+### How to Explain a SageMaker MLOps Project in an AWS ML Interview
+URL: /blog/how-to-explain-sagemaker-mlops-project-in-interview/
+Type: Interview-preparation guide (BlogPosting)
+Primary topics: explaining a SageMaker MLOps project, reproducibility, governance, automation, approval/rollback, drift.
+Summary: A five-part structure (problem/constraints → Pipelines/MLflow/Model Registry architecture → decisions → production incident → result/trade-off) with a drift-detection story and common mistakes.
+Funnel target: /amazon-sagemaker-interview-proxy-support/, /how-to-explain-aws-ai-project-in-interview-guide/.
+
+### Amazon Bedrock vs SageMaker AI: Architecture, Use Cases & Interview Decisions
+URL: /blog/amazon-bedrock-vs-sagemaker-ai-architecture-guide/
+Type: Comparison / decision guide (BlogPosting)
+Primary topics: Bedrock vs SageMaker AI, managed foundation models vs train-and-host, when to use each, when to use both, cost (tokens vs instance-hours), control trade-offs.
+Summary: A decision table plus when-to-choose-each and when-to-use-both sections, the cost/control trade-off, and how to defend the choice by naming deciding factors in an interview.
+Funnel target: /amazon-bedrock-job-support/, /amazon-sagemaker-ai-job-support/.
+
+### OpenSearch vs pgvector for Amazon Bedrock RAG
+URL: /blog/opensearch-vs-pgvector-bedrock-rag-guide/
+Type: Comparison / decision guide (BlogPosting)
+Primary topics: Amazon OpenSearch Serverless vs Aurora PostgreSQL pgvector, Bedrock Knowledge Bases vector store, scale, hybrid search, metadata filtering, data co-location, cost.
+Summary: A dimension-by-dimension comparison (scale, hybrid search, filtering, co-location, cost) with clear choose-X-if guidance for production Bedrock RAG.
+Funnel target: /amazon-bedrock-knowledge-bases-job-support/, /amazon-bedrock-rag-job-support/.
+

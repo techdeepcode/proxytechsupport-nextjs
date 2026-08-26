@@ -1,0 +1,73 @@
+<p><strong>SageMaker inference problems</strong> fall into four buckets: <strong>endpoint deployment failures</strong>, <strong>GPU capacity and out-of-memory errors</strong>, <strong>latency</strong> (including time-to-first-token for LLMs), and <strong>autoscaling</strong> that reacts too slowly. The key to fixing them fast is to isolate the layer — container vs model vs infrastructure vs scaling — before changing anything. This guide gives you the diagnostic order for each, using the signals SageMaker and CloudWatch actually expose. For live help, see <a href="/amazon-sagemaker-inference-troubleshooting-support/">SageMaker inference troubleshooting support</a>.</p>
+
+<hr>
+
+<h3>1. Endpoint deployment failures</h3>
+<p>Symptom: <code>CreateEndpoint</code>/<code>UpdateEndpoint</code> ends in <em>Failed</em>, or the endpoint cycles. Read the endpoint's failure reason and the container's CloudWatch logs, then check, in order:</p>
+<ul>
+<li><strong>Container contract</strong> — a real-time container must answer <code>/ping</code> (health) and <code>/invocations</code>. If the health check never passes, the deploy fails. Test the image locally first.</li>
+<li><strong>Model artifact</strong> — wrong S3 path, wrong format, or a <code>model.tar.gz</code> layout the inference code doesn't expect.</li>
+<li><strong>Inference code</strong> — an exception on model load (missing dependency, wrong framework version) kills the container at startup; the traceback is in the logs.</li>
+<li><strong>IAM</strong> — the execution role can't read the artifact from S3, pull the image from ECR, or use the KMS key.</li>
+<li><strong>Instance too small</strong> — the model doesn't fit in memory on the chosen instance; move to a larger or GPU instance.</li>
+</ul>
+<p>Rule of thumb: if it fails identically <em>locally</em>, it's your code/artifact; if it only fails in SageMaker, it's IAM, networking or instance sizing.</p>
+
+<h3>2. GPU capacity and out-of-memory</h3>
+<p>Two different problems that look similar:</p>
+<ul>
+<li><strong>Out-of-memory (OOM)</strong> — the model or batch doesn't fit in GPU memory. Fixes: reduce batch size or max sequence length, move to a larger-memory GPU, or apply quantization / an optimized serving stack. For LLMs, long context is a common OOM trigger.</li>
+<li><strong>Capacity / InsufficientInstanceCapacity on scale-out</strong> — the GPU instance type isn't available when you scale. Fixes: reserve capacity, raise the minimum instance count so you don't scale from zero into a shortage, or route spikes through <strong>asynchronous inference</strong> so demand is queued rather than demanding scarce instances instantly.</li>
+</ul>
+
+<h3>3. Latency: separate model time from overhead</h3>
+<p>CloudWatch splits endpoint latency into two metrics — use them:</p>
+<ul>
+<li><strong>ModelLatency</strong> — time inside your container. High here means the model/hardware is the bottleneck: wrong instance type, no GPU for a GPU-bound model, unbatched requests, or (for LLMs) large context and no serving optimization.</li>
+<li><strong>OverheadLatency</strong> — SageMaker's processing outside the model. High here, or rising queue depth, usually means under-provisioned capacity or requests waiting for an instance.</li>
+</ul>
+<p>For generative models, measure <strong>TTFT</strong> (time-to-first-token) and <strong>throughput</strong> (tokens/sec) directly — average latency hides the interactive experience. Enable response streaming so users see tokens sooner. Batching raises throughput but can raise TTFT; tune to the workload.</p>
+
+<h3>4. Autoscaling that reacts too slowly</h3>
+<p>Symptom: latency spikes at the start of every traffic burst, then recovers. Causes and fixes:</p>
+<ul>
+<li><strong>Slow scale-out</strong> — new instances take time to launch and load the model. Raise minimum capacity, pre-warm, or scale on a leading metric (invocations-per-instance) rather than a lagging one.</li>
+<li><strong>Thresholds too loose</strong> — the policy scales after users already feel pain; lower the target utilization.</li>
+<li><strong>Cold model load</strong> — large models load slowly on new instances; keep more warm capacity or use async for spiky traffic.</li>
+<li><strong>Scale-to-zero surprises</strong> — async endpoints that scaled to zero pay a cold-start on the next request; acceptable for background jobs, not for interactive traffic.</li>
+</ul>
+
+<h3>5. Batch Transform issues</h3>
+<p>For offline scoring, common problems are input partitioning (records split incorrectly), payload/timeout limits on large records, and IAM/S3 access to input/output prefixes. Match <code>MaxPayloadInMB</code> and <code>BatchStrategy</code> to your record sizes, and validate the output manifest.</p>
+
+<h3>Pick the right serving mode to avoid problems</h3>
+<p>Many "inference issues" are really the wrong mode: real-time for interactive low-latency, <strong>asynchronous</strong> for large payloads or spiky/long jobs (and to smooth GPU demand), and <strong>Batch Transform</strong> for periodic full-dataset scoring. The trade-offs are covered in <a href="/blog/amazon-sagemaker-production-architecture-2026/">SageMaker AI production architecture</a>.</p>
+
+<h3>Observability checklist</h3>
+<ul>
+<li>Alarm on ModelLatency, OverheadLatency, 5xx rate, and GPU/CPU/memory utilization.</li>
+<li>Track TTFT and throughput for generative endpoints.</li>
+<li>Watch invocations-per-instance to validate the autoscaling policy.</li>
+<li>Add Model Monitor for data drift that silently degrades quality.</li>
+</ul>
+
+<h3>Interview implications</h3>
+<p>"Your endpoint's latency spiked in production — walk me through it" is a favorite AWS ML interview scenario. The strong answer is this exact split: check ModelLatency vs OverheadLatency, look at utilization and queue depth, and decide whether it's a model, capacity or autoscaling problem. Prep with <a href="/blog/amazon-sagemaker-interview-questions-2026/">SageMaker interview questions</a>.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>How do I debug an endpoint deployment failure?</strong><br>Read the failure reason and container logs; check the ping/invocations contract, artifact path/format, inference code, IAM, and instance size. Reproduce locally to isolate code from infrastructure.</p>
+<p><strong>Why is my endpoint slow?</strong><br>Split ModelLatency (model/hardware) from OverheadLatency (capacity/queueing); for LLMs measure TTFT and throughput and enable streaming.</p>
+<p><strong>How do I fix GPU OOM or capacity errors?</strong><br>OOM: smaller batch/sequence, larger GPU, quantization. Capacity: reserve capacity, raise min instances, or use async to smooth spikes.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>Architecture: <a href="/blog/amazon-sagemaker-production-architecture-2026/">SageMaker AI production architecture</a></li>
+<li>Support: <a href="/amazon-sagemaker-ai-inference-job-support/">SageMaker AI inference support</a> · <a href="/amazon-sagemaker-inference-troubleshooting-support/">inference troubleshooting</a> · <a href="/amazon-sagemaker-ai-job-support/">SageMaker AI job support</a></li>
+</ul>
+
+<h3>Endpoint down or too slow right now?</h3>
+<p>Our AWS ML engineers debug live SageMaker endpoints — deployment failures, GPU/OOM, latency and autoscaling. Get <a href="/amazon-sagemaker-inference-troubleshooting-support/">SageMaker inference troubleshooting support</a> or message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20help%20with%20a%20SageMaker%20endpoint">WhatsApp +91 96606 14469</a>.</p>

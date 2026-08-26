@@ -83,6 +83,46 @@ export default async function BlogPage() {
           />
         </div>
 
+        {/* Featured cluster: AWS AI/ML — Amazon Bedrock & SageMaker */}
+        <section className="card" style={{ padding: '1.5rem', marginBottom: '2.5rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--pts-text)', marginBottom: '0.35rem' }}>
+            AWS AI/ML — Amazon Bedrock &amp; SageMaker
+          </h2>
+          <p style={{ fontSize: '0.9rem', color: 'var(--pts-text-muted)', marginBottom: '1rem', lineHeight: 1.6 }}>
+            Deep technical guides on Amazon Bedrock, RAG and AgentCore, and Amazon SageMaker training,
+            MLOps and inference — plus interview preparation for AWS GenAI and ML engineer roles.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {[
+              { label: 'Bedrock production architecture', href: '/blog/amazon-bedrock-production-architecture-2026/' },
+              { label: 'Build & troubleshoot Bedrock RAG', href: '/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/' },
+              { label: 'AgentCore architecture & troubleshooting', href: '/blog/amazon-bedrock-agentcore-architecture-troubleshooting/' },
+              { label: 'Bedrock interview questions', href: '/blog/amazon-bedrock-interview-questions-2026/' },
+              { label: 'Explain a Bedrock project in an interview', href: '/blog/how-to-explain-amazon-bedrock-project-in-interview/' },
+              { label: 'SageMaker production architecture', href: '/blog/amazon-sagemaker-production-architecture-2026/' },
+              { label: 'SageMaker MLOps: Pipelines, MLflow & Registry', href: '/blog/amazon-sagemaker-mlops-pipelines-mlflow-model-registry/' },
+              { label: 'SageMaker inference troubleshooting', href: '/blog/amazon-sagemaker-inference-troubleshooting-guide/' },
+              { label: 'SageMaker interview questions', href: '/blog/amazon-sagemaker-interview-questions-2026/' },
+              { label: 'Explain a SageMaker MLOps project', href: '/blog/how-to-explain-sagemaker-mlops-project-in-interview/' },
+              { label: 'Bedrock vs SageMaker AI', href: '/blog/amazon-bedrock-vs-sagemaker-ai-architecture-guide/' },
+              { label: 'OpenSearch vs pgvector for RAG', href: '/blog/opensearch-vs-pgvector-bedrock-rag-guide/' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{ fontSize: '0.82rem', color: 'var(--pts-forest)', textDecoration: 'none', fontWeight: 600, border: '1px solid var(--pts-border)', borderRadius: '6px', padding: '0.35rem 0.7rem', background: 'var(--pts-card-bg)' }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div style={{ marginTop: '1rem', fontSize: '0.85rem' }}>
+            <Link href="/aws-ai-ml-job-support/" style={{ color: 'var(--pts-accent)', fontWeight: 600 }}>
+              AWS AI/ML job support hub →
+            </Link>
+          </div>
+        </section>
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {posts.map((post) => {
             const href = getPostUrl(post);

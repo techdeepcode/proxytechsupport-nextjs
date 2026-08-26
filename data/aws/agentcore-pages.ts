@@ -112,6 +112,7 @@ export const agentCoreHub: LandingPageConfig = awsPage({
       { label: 'AgentCore interview support', href: '/amazon-bedrock-agentcore-interview-proxy-support/' },
       { label: 'MCP on AWS support', href: '/aws-mcp-agentcore-job-support/' },
       BEDROCK_HUB_LINK, AWS_PRODUCTION_LINK, EXISTING.agenticAi, EXISTING.langchain,
+      { label: 'AgentCore architecture & troubleshooting (guide)', href: '/blog/amazon-bedrock-agentcore-architecture-troubleshooting/' },
     ],
   }),
 });

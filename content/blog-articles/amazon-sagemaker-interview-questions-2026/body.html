@@ -1,0 +1,52 @@
+<p>This is a preparation guide of <strong>Amazon SageMaker interview questions</strong> for AWS ML engineer roles in 2026, grouped as interviews are structured: training, inference, MLOps (Pipelines/MLflow/Model Registry), security, and production troubleshooting. Each question includes the answer an interviewer is listening for. Use it to prepare and run mock interviews; for live, discreet mentoring see <a href="/amazon-sagemaker-interview-proxy-support/">SageMaker interview support</a>.</p>
+
+<hr>
+
+<h3>1. Training</h3>
+<p><strong>Q: Walk me through a SageMaker training job.</strong><br>An <code>estimator</code> defines the image (built-in or custom ECR), instance type/count and hyperparameters, then launches a <strong>TrainingJob</strong> that reads data from S3, trains on managed instances, and writes a model artifact (<code>model.tar.gz</code>) back to S3. A Processing Job typically prepares features first.</p>
+<p><strong>Q: What is HyperPod and when do you need it?</strong><br>HyperPod provides resilient, persistent clusters for large-scale distributed training. You need it when training runs for days across many nodes and you can't afford a single node failure to restart the whole job.</p>
+<p><strong>Q: How do you cut training cost?</strong><br>Spot/managed spot instances for interruptible training, right-sized instances, efficient data loading, and stopping early on plateaued metrics.</p>
+
+<h3>2. Inference</h3>
+<p><strong>Q: Real-time vs asynchronous vs Batch Transform?</strong><br>Real-time = persistent low-latency endpoint for interactive traffic. Asynchronous = queued, handles large payloads/long processing, scales to zero. Batch Transform = offline scoring of a whole dataset, no persistent endpoint. Choose by latency and volume.</p>
+<p><strong>Q: An endpoint failed to deploy — how do you debug it?</strong><br>Read the failure reason and container logs; check the ping/invocations contract, artifact path/format, inference code, IAM, and instance size; reproduce locally to isolate code from infrastructure. (Full method: <a href="/blog/amazon-sagemaker-inference-troubleshooting-guide/">SageMaker inference troubleshooting</a>.)</p>
+<p><strong>Q: Latency spiked in production — what do you look at?</strong><br>Split ModelLatency (model/hardware) from OverheadLatency (capacity/queueing); check utilization and autoscaling; for LLMs measure TTFT and throughput and enable streaming.</p>
+<p><strong>Q: How does endpoint autoscaling work?</strong><br>Attach a scaling policy keyed on invocations-per-instance or utilization; the trap is slow scale-out on bursty traffic, fixed by higher minimum capacity or async smoothing.</p>
+
+<h3>3. MLOps: Pipelines, MLflow, Model Registry</h3>
+<p><strong>Q: Design an MLOps platform on SageMaker.</strong><br>A SageMaker Pipeline orchestrates process → train → evaluate → register → deploy; training logs to Managed MLflow; a Condition step gates on metrics; passing models register in the Model Registry as Pending; approval flips them to Approved, which triggers CI/CD deployment. (Deep dive: <a href="/blog/amazon-sagemaker-mlops-pipelines-mlflow-model-registry/">SageMaker MLOps architecture</a>.)</p>
+<p><strong>Q: What does MLflow give you that the Model Registry doesn't?</strong><br>MLflow tracks experiments — params, metrics, artifacts — for reproducibility and comparison. The Model Registry versions the chosen model and governs deployment via approval. They're complementary.</p>
+<p><strong>Q: Why is the approval gate important?</strong><br>CI/CD only deploys Approved versions, giving governance, an audit trail, and trivial rollback to a prior Approved version.</p>
+
+<h3>4. Security</h3>
+<p><strong>Q: How do you secure a SageMaker workload?</strong><br>Least-privilege IAM execution roles per job/endpoint, KMS encryption for artifacts/volumes/endpoints, and VPC with private subnets/endpoints and no direct internet access for regulated data.</p>
+<p><strong>Q: A training job fails with AccessDenied. Where do you look?</strong><br>The execution role's S3/ECR/KMS permissions and the bucket/key policies; confirm with CloudTrail.</p>
+
+<h3>5. Production scenarios</h3>
+<p><strong>Q: Your model's accuracy degraded in production but the code didn't change. Why?</strong><br>Data/feature drift or training-serving skew. Use Model Monitor to detect drift and compare production feature distributions to training; retrain or fix the feature pipeline.</p>
+<p><strong>Q: GPU out-of-memory on an LLM endpoint — fixes?</strong><br>Reduce batch size/sequence length, use a larger-memory GPU, apply quantization or an optimized serving stack.</p>
+
+<h3>6. Bedrock vs SageMaker (expect this)</h3>
+<p><strong>Q: When would you use Bedrock instead of SageMaker?</strong><br>Bedrock to build on managed foundation models behind an API without operating training/GPU infrastructure; SageMaker to train/fine-tune and own the serving stack. Many architectures use both. (See <a href="/blog/amazon-bedrock-vs-sagemaker-ai-architecture-guide/">Bedrock vs SageMaker AI</a>.)</p>
+
+<h3>How to use these</h3>
+<p>Narrate the diagnostic order for scenario questions rather than guessing a fix, and ground your answers in a real project — see <a href="/blog/how-to-explain-sagemaker-mlops-project-in-interview/">how to explain a SageMaker MLOps project</a> and the framework in the <a href="/how-to-explain-aws-ai-project-in-interview-guide/">explain your AWS AI project guide</a>.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>What is asked in a SageMaker interview?</strong><br>Training, inference modes, MLOps (Pipelines/MLflow/Model Registry), security, and production troubleshooting — with architecture trade-offs for senior roles.</p>
+<p><strong>How do you prepare?</strong><br>Design an end-to-end platform, know the three inference modes, explain reproducibility and governance, and walk through a real failure diagnosis.</p>
+<p><strong>Coding or architecture?</strong><br>Both, but architecture and MLOps reasoning carry the most weight for platform roles.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>Framework: <a href="/how-to-explain-aws-ai-project-in-interview-guide/">Explain your AWS AI project (guide)</a></li>
+<li>Architecture: <a href="/blog/amazon-sagemaker-production-architecture-2026/">SageMaker AI production architecture</a> · <a href="/amazon-sagemaker-mlops-guide/">MLOps guide</a></li>
+<li>Support: <a href="/amazon-sagemaker-interview-proxy-support/">SageMaker interview support</a> · <a href="/aws-ai-ml-interview-support/">AWS AI/ML interview support</a></li>
+</ul>
+
+<h3>Preparing for an AWS ML interview?</h3>
+<p>We run calibrated mock interviews and live interview mentoring for SageMaker and AWS ML roles. Explore <a href="/amazon-sagemaker-interview-proxy-support/">SageMaker interview support</a> or message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20SageMaker%20interview%20support">WhatsApp +91 96606 14469</a>.</p>

@@ -444,3 +444,31 @@ a:hover {
   color: var(--pts-text-muted);
   padding: 0;
 }
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.post-content th,
+.post-content td {
+  border: 1px solid var(--pts-border);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+  color: var(--pts-text-muted);
+}
+
+.post-content th {
+  background: var(--pts-tech-header);
+  color: var(--pts-text);
+  font-weight: 700;
+}
+
+.post-content tbody tr:nth-child(even) td {
+  background: rgba(0, 223, 130, 0.04);
+}

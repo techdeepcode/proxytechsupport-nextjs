@@ -1,0 +1,51 @@
+<p>This is a preparation guide of <strong>Amazon Bedrock interview questions</strong> for AWS GenAI engineer roles in 2026, grouped the way real interviews are structured: foundation models and inference, Knowledge Bases and RAG, AgentCore, Guardrails and safety, and production/security scenarios. Each question includes the answer an interviewer is listening for. It is educational — use it to prepare, run mock interviews, and rehearse explaining your own projects. If you want live, discreet interview mentoring, that is what <a href="/amazon-bedrock-interview-proxy-support/">Amazon Bedrock interview support</a> is for.</p>
+
+<hr>
+
+<h3>1. Foundation models &amp; inference</h3>
+<p><strong>Q: What is Amazon Bedrock and when would you choose it over hosting your own model?</strong><br>Bedrock is a managed service exposing foundation models (Amazon Nova, Anthropic Claude, Meta Llama, Mistral, Cohere) behind one API, with managed RAG (Knowledge Bases), Guardrails, Flows and AgentCore. Choose it when you want to build on top-tier models without managing GPU infrastructure; choose SageMaker when you need to train/fine-tune and host custom models yourself. (See <a href="/blog/amazon-bedrock-vs-sagemaker-ai-architecture-guide/">Bedrock vs SageMaker AI</a>.)</p>
+<p><strong>Q: Converse API vs InvokeModel?</strong><br>Converse is the model-agnostic, multi-turn API with native tool use — the default for new apps, since switching models is a config change. InvokeModel is lower-level and model-specific; use it only for a field Converse does not expose.</p>
+<p><strong>Q: On-demand vs provisioned throughput, and what are inference profiles?</strong><br>On-demand suits spiky/moderate traffic; provisioned throughput buys dedicated capacity for predictable high volume. Application inference profiles route across Regions (cross-Region inference) so capacity and throttling are not pinned to one Region.</p>
+<p><strong>Q: How do you handle ThrottlingException in production?</strong><br>Exponential backoff with jitter, pre-launch quota increases, inference profiles for cross-Region capacity, caching, and model right-sizing — plus CloudWatch alarms on throttle rate.</p>
+
+<h3>2. Knowledge Bases &amp; RAG (the most-asked area)</h3>
+<p><strong>Q: How do Bedrock Knowledge Bases work end to end?</strong><br>Ingest a data source (S3) → chunk → embed → store vectors in OpenSearch Serverless or Aurora pgvector; at query time call Retrieve or RetrieveAndGenerate (which returns a grounded, cited answer).</p>
+<p><strong>Q: A RAG assistant returns irrelevant answers — how do you debug it?</strong><br>Inspect what Retrieve returns before blaming the model. Then fix chunking (size/strategy), add metadata filters, add reranking, and verify the embedding model fits the domain. The full method is in <a href="/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/">build and troubleshoot Bedrock RAG</a>.</p>
+<p><strong>Q: How do you prevent hallucinations?</strong><br>Ground strictly in retrieved context, return citations, enable Guardrails contextual grounding checks, tighten retrieval so less unrelated context reaches the model, and instruct the model to say "I don't know" when context is insufficient.</p>
+<p><strong>Q: OpenSearch vs pgvector for the vector store?</strong><br>OpenSearch Serverless for large-scale, search-heavy, fully managed vector workloads; Aurora pgvector when your data already lives in Postgres and you want vectors next to relational data. (Deep dive: <a href="/blog/opensearch-vs-pgvector-bedrock-rag-guide/">OpenSearch vs pgvector</a>.)</p>
+
+<h3>3. Agents &amp; AgentCore</h3>
+<p><strong>Q: What are the AgentCore components?</strong><br>Runtime (session-isolated execution), Memory (short/long-term state), Gateway (tools, often via MCP), Identity (delegated access), Policy (Cedar authorization), and Observability. GA October 2025; Policy/Cedar GA March 2026.</p>
+<p><strong>Q: Design a production agent that books travel.</strong><br>Runtime hosts the agent; Memory tracks the conversation and user preferences; Gateway exposes flight/hotel APIs as tools (MCP); Identity supplies delegated credentials per user; Policy authorizes each action with Cedar; Observability traces every step. Add step limits to prevent loops. (More in <a href="/blog/amazon-bedrock-agentcore-architecture-troubleshooting/">AgentCore architecture</a>.)</p>
+<p><strong>Q: An agent tool is never called — why?</strong><br>The tool's schema/description is unclear so the model does not select it. Sharpen the tool definition; test the tool directly outside the agent.</p>
+
+<h3>4. Guardrails &amp; safety</h3>
+<p><strong>Q: What can Bedrock Guardrails do?</strong><br>Content filters, denied topics, PII redaction, word filters, and contextual grounding checks — applied to input and output independent of the model.</p>
+<p><strong>Q: Guardrails are blocking valid answers. What do you do?</strong><br>The defaults are too aggressive for your domain; tune thresholds against real traffic and scope denied topics narrowly rather than disabling the guardrail.</p>
+
+<h3>5. Security, cost &amp; observability scenarios</h3>
+<p><strong>Q: A Bedrock call fails with AccessDenied. Walk through diagnosis.</strong><br>Check model access is enabled for that model, then the IAM policy for <code>bedrock:InvokeModel</code>/<code>bedrock:Converse</code> on the right resource, then KMS/VPC-endpoint policy if applicable. Confirm with CloudTrail and the request ID.</p>
+<p><strong>Q: How do you control Bedrock cost?</strong><br>Tokens dominate cost — right-size the model (intelligent prompt routing), retrieve fewer/better chunks, cache repeated prompts, trim system prompts, and alarm on token spend per inference profile.</p>
+<p><strong>Q: What do you monitor?</strong><br>Latency and time-to-first-token, throttle rate, error rate by exception, token usage per route, and RAG retrieval quality — CloudWatch plus OpenTelemetry traces.</p>
+
+<h3>How to use these in the interview</h3>
+<p>Interviewers reward structured reasoning over memorized facts. When you get a scenario ("RAG is bad," "requests are throttled"), narrate the diagnostic order rather than jumping to a fix. Ground answers in a real project — see <a href="/blog/how-to-explain-amazon-bedrock-project-in-interview/">how to explain an Amazon Bedrock project in an interview</a> and the general framework in the <a href="/how-to-explain-aws-ai-project-in-interview-guide/">explain your AWS AI project guide</a>.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+<p><strong>How do you prepare for an Amazon Bedrock interview?</strong><br>Cover inference, RAG, AgentCore, Guardrails and security/cost/observability; practice one system-design question and one production-debug scenario out loud.</p>
+<p><strong>What comes up most?</strong><br>RAG — how Knowledge Bases work, debugging retrieval, and preventing hallucinations — then inference design, agents, Guardrails and security.</p>
+<p><strong>Coding or system design?</strong><br>Usually both: a design round plus practical API/IAM/troubleshooting questions.</p>
+
+<hr>
+
+<h3>Related resources</h3>
+<ul>
+<li>Framework: <a href="/how-to-explain-aws-ai-project-in-interview-guide/">Explain your AWS AI project (guide)</a></li>
+<li>Architecture background: <a href="/blog/amazon-bedrock-production-architecture-2026/">Bedrock production architecture</a></li>
+<li>Support: <a href="/amazon-bedrock-interview-proxy-support/">Bedrock interview support</a> · <a href="/amazon-bedrock-agentcore-interview-proxy-support/">AgentCore interview support</a> · <a href="/aws-ai-ml-interview-support/">AWS AI/ML interview support</a></li>
+</ul>
+
+<h3>Preparing for a Bedrock or AWS GenAI interview?</h3>
+<p>We run calibrated mock interviews and provide live, discreet interview mentoring for Amazon Bedrock and AWS GenAI roles. Explore <a href="/amazon-bedrock-interview-proxy-support/">Amazon Bedrock interview support</a> or message us: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20Amazon%20Bedrock%20interview%20support">WhatsApp +91 96606 14469</a>.</p>
