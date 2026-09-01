@@ -5,6 +5,7 @@ import { allAiMlClusterPages } from './aiml';
 import { allAngularClusterPages } from './angular';
 import { allAwsClusterPages } from './aws';
 import { allAzureClusterPages } from './azure';
+import { allAmazonClusterPages } from './amazon';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10467,4 +10468,6 @@ export const allLandingPages: LandingPageConfig[] = [
   ...allAwsClusterPages,
   // ── Microsoft Azure AI/ML + Foundry + Generative AI + Agentic AI cluster (additive) ──
   ...allAzureClusterPages,
+  // ── Amazon global authority cluster (hiring, interview, LP, proxy interview/job, get-scheduled, candidate marketing) (additive) ──
+  ...allAmazonClusterPages,
 ];
