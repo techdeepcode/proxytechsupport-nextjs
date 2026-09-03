@@ -102,7 +102,7 @@ function proxyInterviewCity(c: City): LandingPageConfig {
   return amazonServicePage({
     slug: `amazon-proxy-interview-support-${c.proxyKey}`,
     title: `Amazon Proxy Interview Support ${c.name} | SDE, AWS & AI/ML`,
-    description: `Amazon proxy interview support in ${c.name} — technical preparation and mentoring for SDE, AWS, AI/ML, Data and Security loops, aligned to local hours. You attend your own interview. Independent of Amazon.`,
+    description: `Amazon proxy interview support in ${c.name} — real-time expert support for SDE, AWS, AI/ML, Data and Security loops, aligned to local hours. You attend your own interview. Independent of Amazon.`,
     keywords: [
       `amazon proxy interview support ${c.proxyKey}`, `amazon interview proxy support ${c.proxyKey}`,
       `proxy interview support ${c.proxyKey}`, `amazon interview support ${c.proxyKey}`,
@@ -112,13 +112,13 @@ function proxyInterviewCity(c: City): LandingPageConfig {
     h1: `Amazon Proxy Interview Support in ${c.name}`,
     tagline: `Technical proxy interview support for Amazon loops in ${c.name} — coding, system design, AWS, AI/ML, data, security and Leadership Principles, aligned to local hours.`,
     heroEyebrow: `Amazon Proxy Interview Support ${c.name}`,
-    painIntro: `Facing an Amazon interview in ${c.name}? Amazon proxy interview support (also searched as interview proxy support ${c.name}) gives you calibrated mock interviews and mentoring for the technical and behavioral rounds — aligned to your local hours.`,
-    heroVariant: `We support Amazon candidates in ${c.name} across the rounds Amazon uses — Online Assessment, technical phone screen, coding and system design, SQL/data and ML where relevant, and the behavioral Leadership Principles loop and Bar Raiser. ${c.context} Proxy interview support means expert technical preparation and mentoring — you attend and complete your own interview. Independent of Amazon; no guarantee of selection.`,
+    painIntro: `Facing an Amazon interview in ${c.name}? Amazon proxy interview support (also searched as interview proxy support ${c.name}) gives you real-time expert support for the technical and behavioral rounds — aligned to your local hours.`,
+    heroVariant: `We support Amazon candidates in ${c.name} across the rounds Amazon uses — Online Assessment, technical phone screen, coding and system design, SQL/data and ML where relevant, and the behavioral Leadership Principles loop and Bar Raiser. ${c.context} Proxy interview support means real-time expert technical help on the exact rounds your interview covers — you attend and complete your own interview. Independent of Amazon; no guarantee of selection.`,
     highlights: proxyInterviewHighlights,
     faqs: amazonProxyInterviewFaqs(`Amazon (${c.name})`),
     proxySection: {
       title: `What Amazon Proxy Interview Support Covers in ${c.name}`,
-      intro: `Calibrated, role-specific preparation for your Amazon loop in ${c.name}, aligned to local hours — you attend your own interview.`,
+      intro: `Real-time, role-specific support for your Amazon loop in ${c.name}, aligned to local hours — you attend your own interview.`,
       points: [
         'Coding, data structures, algorithms and system design (LLD and HLD)',
         'SQL, data, AWS, AI/ML and security where the role requires it',
@@ -129,7 +129,7 @@ function proxyInterviewCity(c: City): LandingPageConfig {
     },
     timezoneNote: `Available across ${c.timezone}.`,
     bottomCTAHeading: `Get Amazon Proxy Interview Support in ${c.name}`,
-    bottomCTABody: `In-house experts run calibrated Amazon mock interviews and Leadership Principles coaching for candidates in ${c.name}. You attend your own interview; we prepare you to perform. Independent of Amazon; no guarantee of selection. Talk to ProxyTechSupport on WhatsApp now.`,
+    bottomCTABody: `In-house experts provide real-time Amazon interview support and Leadership Principles support for candidates in ${c.name}. You attend your own interview; we back you to perform. Independent of Amazon; no guarantee of selection. Talk to ProxyTechSupport on WhatsApp now.`,
     relatedLinks: relatedLinks({
       geoLinks: [{ label: `Amazon hiring ${c.name}`, href: `/amazon-hiring-${c.key}/` }, countryLink(c)],
       techLinks: [{ label: 'Amazon SDE proxy interview support', href: '/amazon-sde-proxy-interview-support/' }, { label: 'Amazon system design interview', href: '/amazon-system-design-interview/' }],

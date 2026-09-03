@@ -40,7 +40,7 @@ const compare = (
     highlights: techHighlights,
     faqs: azureKbFaqs(pair),
     bottomCTAHeading: `Need Azure AI Proxy Job Support to Decide on ${pair}?`,
-    bottomCTABody: `We help teams choose and implement the right option for ${pair} with Azure AI proxy job support — technical guidance and mentoring on your real project, plus proxy interview support if you are preparing for interviews. Talk to ProxyTechSupport on WhatsApp.`,
+    bottomCTABody: `We help teams choose and implement the right option for ${pair} with Azure AI proxy job support — real-time technical guidance and implementation help on your real project, plus proxy interview support if you have interviews coming up. Talk to ProxyTechSupport on WhatsApp.`,
     relatedLinks: relatedLinks({
       geoLinks: [AZURE_HUB_LINK, AZURE_INTERVIEW_HUB_LINK],
       techLinks: tech,

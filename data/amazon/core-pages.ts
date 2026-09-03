@@ -55,7 +55,7 @@ export const amazonMasterHub: LandingPageConfig = amazonServicePage({
   painIntro:
     'Targeting Amazon — SDE, AWS, AI/ML, Applied Scientist, Data Engineering, Security or TPM — and want expert backing across the whole journey, from getting interview calls to clearing the loop and delivering once you are in the role?',
   heroVariant:
-    'This is the master hub for four connected services: Amazon Proxy Interview Support (calibrated mock interviews and mentoring on coding, system design and Leadership Principles — you attend your own interview), Get Amazon Interview Scheduled (role targeting, applications and recruiter outreach), Amazon Candidate Marketing (resume, LinkedIn and recruiter visibility), and Amazon Proxy Job Support (real-time technical help on the job). From here you can reach the Amazon hiring process, role-specific interview breakdowns, interview rounds, the Leadership Principles, and role/country/city pages. ProxyTechSupport is independent of Amazon and AWS and never guarantees interviews or offers.',
+    'This is the master hub for four connected services: Amazon Proxy Interview Support (real-time expert support on coding, system design and Leadership Principles rounds — you attend your own interview), Get Amazon Interview Scheduled (role targeting, applications and recruiter outreach), Amazon Candidate Marketing (resume, LinkedIn and recruiter visibility), and Amazon Proxy Job Support (real-time technical help on the job). From here you can reach the Amazon hiring process, role-specific interview breakdowns, interview rounds, the Leadership Principles, and role/country/city pages. ProxyTechSupport is independent of Amazon and AWS and never guarantees interviews or offers.',
   highlights: [
     {
       title: 'Amazon Proxy Interview Support',
@@ -77,12 +77,12 @@ export const amazonMasterHub: LandingPageConfig = amazonServicePage({
     {
       question: 'What does the Amazon interview & career support hub cover?',
       answer:
-        'It connects four services across the full Amazon career lifecycle: getting interview calls (Get Amazon Interview Scheduled and candidate marketing), preparing for and clearing the loop (Amazon proxy interview support and Leadership Principles coaching), and succeeding once hired (Amazon proxy job support). It also links to informational guides on the Amazon hiring process, role-specific interview breakdowns, interview rounds, and the Leadership Principles.',
+        'It connects four services across the full Amazon career lifecycle: getting interview calls (Get Amazon Interview Scheduled and candidate marketing), clearing the loop (Amazon proxy interview support and Leadership Principles support), and succeeding once hired (Amazon proxy job support). It also links to informational guides on the Amazon hiring process, role-specific interview breakdowns, interview rounds, and the Leadership Principles.',
     },
     {
       question: 'What is the difference between proxy interview support and proxy job support?',
       answer:
-        'Proxy interview support is technical preparation and mentoring for an upcoming Amazon interview — mock interviews, architecture and Leadership Principles coaching — where you attend and complete your own interview. Proxy job support is real-time technical help on live work once you are in the role — coding, debugging, architecture, AWS and production issues — where you remain the professional delivering the work. Neither means impersonation.',
+        'Proxy interview support is real-time technical help during an upcoming Amazon interview — coding, architecture and Leadership Principles rounds — where you attend and complete your own interview. Proxy job support is real-time technical help on live work once you are in the role — coding, debugging, architecture, AWS and production issues — where you remain the professional delivering the work. Neither means impersonation.',
     },
     {
       question: 'Do you guarantee an Amazon interview or offer?',
@@ -92,7 +92,7 @@ export const amazonMasterHub: LandingPageConfig = amazonServicePage({
     {
       question: 'Which Amazon roles do you support?',
       answer:
-        'SDE (I/II/III and Senior), SDM, Front-End Engineer, AWS/Solutions Architect, Applied Scientist, Research Scientist, Data Engineer, BIE, Security Engineer, Systems Development Engineer, TPM, PM-T and QAE — plus technology-specific and team-specific interview preparation, and AWS/AI-ML proxy job support.',
+        'SDE (I/II/III and Senior), SDM, Front-End Engineer, AWS/Solutions Architect, Applied Scientist, Research Scientist, Data Engineer, BIE, Security Engineer, Systems Development Engineer, TPM, PM-T and QAE — plus technology-specific and team-specific interview support, and AWS/AI-ML proxy job support.',
     },
     {
       question: 'Is ProxyTechSupport affiliated with Amazon?',
@@ -123,7 +123,7 @@ export const amazonProxyInterviewSupport: LandingPageConfig = amazonServicePage(
   slug: 'amazon-proxy-interview-support',
   title: 'Amazon Proxy Interview Support | SDE, AWS, AI/ML & Technical Roles',
   description:
-    'Amazon proxy interview support for technical roles — coding, data structures, system design, AWS, AI/ML, data, security and Leadership Principles. Calibrated mock interviews and expert mentoring; you attend your own interview. Independent of Amazon.',
+    'Amazon proxy interview support for technical roles — coding, data structures, system design, AWS, AI/ML, data, security and Leadership Principles. Real-time expert interview support; you attend your own interview. Independent of Amazon.',
   keywords: [
     'amazon proxy interview support', 'amazon interview proxy support', 'amazon proxy interview',
     'amazon technical proxy interview support', 'amazon interview support', 'interview proxy support for amazon',
@@ -135,13 +135,13 @@ export const amazonProxyInterviewSupport: LandingPageConfig = amazonServicePage(
     'Get expert technical proxy interview support for Amazon SDE, AWS, AI/ML, Applied Scientist, Data Engineering, Security, TPM and other technical interview rounds.',
   heroEyebrow: 'Amazon Proxy Interview Support',
   painIntro:
-    'Facing an Amazon interview loop and want an expert who knows exactly how Amazon interviews your role? Amazon proxy interview support (also searched as Amazon interview proxy support) gives you calibrated preparation and mentoring for the technical and behavioral rounds — coding, system design, AWS, AI/ML, data, security and the Leadership Principles.',
+    'Facing an Amazon interview loop and want an expert who knows exactly how Amazon interviews your role? Amazon proxy interview support (also searched as Amazon interview proxy support) gives you real-time expert support for the technical and behavioral rounds — coding, system design, AWS, AI/ML, data, security and the Leadership Principles.',
   heroVariant:
-    'We provide technical proxy interview support across the rounds Amazon actually uses — Online Assessment, technical phone screen, coding and data structures, algorithms, system design (LLD and HLD), SQL and data engineering, AWS and cloud architecture, DevOps, security, AI/ML including LLMs, GenAI and Applied Science, plus technical project discussion and the behavioral Leadership Principles loop and Bar Raiser. Proxy interview support means expert technical preparation and mentoring — you attend and complete your own interview. ProxyTechSupport is independent of Amazon and does not guarantee selection or employment.',
+    'We provide technical proxy interview support across the rounds Amazon actually uses — Online Assessment, technical phone screen, coding and data structures, algorithms, system design (LLD and HLD), SQL and data engineering, AWS and cloud architecture, DevOps, security, AI/ML including LLMs, GenAI and Applied Science, plus technical project discussion and the behavioral Leadership Principles loop and Bar Raiser. Proxy interview support means real-time expert technical help on the exact rounds your interview covers — you attend and complete your own interview. ProxyTechSupport is independent of Amazon and does not guarantee selection or employment.',
   highlights: proxyInterviewHighlights,
   faqs: amazonProxyInterviewFaqs('Amazon'),
   useCasesSection: {
-    title: 'Amazon Interview Situations We Prepare You For',
+    title: 'Amazon Interview Situations We Support You Through',
     cases: [
       'An SDE II or SDE III loop with coding, system design, and multiple Leadership Principles rounds',
       'An Applied Scientist loop with ML/science evaluation, coding, and research discussion',
@@ -154,7 +154,7 @@ export const amazonProxyInterviewSupport: LandingPageConfig = amazonServicePage(
   proxySection: {
     title: 'What Amazon Proxy Interview Support Covers',
     intro:
-      'Calibrated, role-specific preparation and mentoring for every stage of the Amazon loop — you attend your own interview. We help you tell truthful, well-structured stories and reason clearly under pressure.',
+      'Real-time, role-specific support for every stage of the Amazon loop — you attend your own interview. We help you tell truthful, well-structured stories and reason clearly under pressure.',
     points: [
       'Coding, data structures and algorithms — patterns, complexity, testing and clean implementation',
       'System design (LLD and HLD) — requirements, scale, data model, caching, queues, failure modes, trade-offs',
@@ -165,7 +165,7 @@ export const amazonProxyInterviewSupport: LandingPageConfig = amazonServicePage(
   },
   bottomCTAHeading: 'Get Amazon Proxy Interview Support Now',
   bottomCTABody:
-    'In-house Amazon SDE, AWS, AI/ML, Applied Science, Data and Security experts run calibrated mock interviews and Leadership Principles coaching for your loop. You attend your own interview; we prepare you to perform. Independent of Amazon; no guarantee of selection. Talk to ProxyTechSupport on WhatsApp now.',
+    'In-house Amazon SDE, AWS, AI/ML, Applied Science, Data and Security experts provide real-time interview support and Leadership Principles support for your loop. You attend your own interview; we back you to perform. Independent of Amazon; no guarantee of selection. Talk to ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [AMAZON_HUB_LINK, AMAZON_LP_HUB_LINK],
     techLinks: [AMAZON_SYSTEM_DESIGN_LINK, AMAZON_CODING_LINK],
@@ -494,7 +494,7 @@ export const amazonInterviewRounds: LandingPageConfig = amazonServicePage({
   painIntro:
     'Want to drill into a specific Amazon round? This hub links to detailed guides for each stage — what it tests, how to prepare, and the common mistakes — with the reminder that which rounds you see depends on your role, level and team.',
   heroVariant:
-    'From this hub you can dive into every documented Amazon interview round: Online Assessment, recruiter screen, technical phone screen, coding and data structures, algorithms, system design (low-level and high-level), SQL assessment, behavioral and Leadership Principles rounds, machine-learning and Applied Science evaluation, writing assessment, the interview loop, the Bar Raiser, and the debrief and result timeline. Each guide is informational; when you are ready to prepare, Amazon proxy interview support runs calibrated mock interviews for your exact loop.',
+    'From this hub you can dive into every documented Amazon interview round: Online Assessment, recruiter screen, technical phone screen, coding and data structures, algorithms, system design (low-level and high-level), SQL assessment, behavioral and Leadership Principles rounds, machine-learning and Applied Science evaluation, writing assessment, the interview loop, the Bar Raiser, and the debrief and result timeline. Each guide is informational; when you are ready, Amazon proxy interview support provides real-time expert help for your exact loop.',
   highlights: roleInfoHighlights,
   faqs: amazonInfoFaqs('Amazon interview rounds', 'Amazon interview rounds can include an Online Assessment, a technical phone screen, coding and system design loop rounds, SQL/data and ML/science rounds where relevant, and multiple behavioral Leadership Principles conversations plus a Bar Raiser.'),
   relatedLinks: infoRelated('/amazon-interview-rounds/', [AMAZON_LOOP_LINK, AMAZON_BAR_RAISER_LINK]),

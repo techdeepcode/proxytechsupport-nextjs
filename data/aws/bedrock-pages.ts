@@ -82,9 +82,9 @@ export const amazonBedrockHub: LandingPageConfig = awsPage({
   proxySection: {
     title: 'Bedrock Interview & Career Support',
     intro:
-      'Interviewing for a Bedrock or AWS GenAI role? We prepare you and can back you live during the real interview.',
+      'Interviewing for a Bedrock or AWS GenAI role? Our experts back you live, in real time, during the real interview.',
     points: [
-      'Bedrock architecture, inference, and RAG system-design preparation',
+      'Bedrock architecture, inference, and RAG system-design interview support',
       'Model selection, cost, and Guardrails trade-off questions',
       'Live, discreet proxy interview support during the real interview',
       'Profile positioning for Amazon Bedrock Developer and AWS GenAI Engineer roles',
@@ -597,21 +597,21 @@ export const bedrockRagTroubleshooting: LandingPageConfig = awsServicePage({
 
 export const bedrockInterviewProxy: LandingPageConfig = awsServicePage({
   slug: 'amazon-bedrock-interview-proxy-support',
-  title: 'Amazon Bedrock Interview Support — Live Proxy & Mock Prep',
+  title: 'Amazon Bedrock Interview Support — Live Proxy Interview Help',
   description:
-    'Real-time Amazon Bedrock interview support: architecture, inference, RAG, Guardrails, model selection, and system-design rounds. Calibrated mock interviews plus discreet live proxy support. Confidential.',
+    'Real-time Amazon Bedrock interview support: architecture, inference, RAG, Guardrails, model selection, and system-design rounds. Discreet, real-time live proxy interview support. Confidential.',
   keywords: [
     'Amazon Bedrock interview support', 'Bedrock interview questions', 'Bedrock system design interview',
     'Bedrock RAG interview', 'AWS GenAI interview Bedrock', 'Bedrock proxy interview',
   ],
   h1: 'Amazon Bedrock Interview Support — Architecture, RAG & System Design',
   tagline:
-    'Bedrock interviews go deep on inference, RAG, Guardrails, and cost. We prepare you and can back you live during the real thing.',
+    'Bedrock interviews go deep on inference, RAG, Guardrails, and cost. Our experts back you live, in real time, during the interview itself.',
   heroEyebrow: 'Bedrock Interview Support',
   painIntro:
     'An Amazon Bedrock or AWS GenAI interview coming up and unsure how deep they will push on inference profiles, Knowledge Base architecture, Guardrails, or model selection? Bedrock interviews reward specificity.',
   heroVariant:
-    'We prepare you across the Bedrock interview surface: model selection and evaluation, Converse API and tool use, on-demand vs provisioned throughput, inference profiles and cross-region inference, intelligent prompt routing, Knowledge Bases and RAG architecture (chunking, embeddings, OpenSearch, reranking, RetrieveAndGenerate), Guardrails and responsible AI, Bedrock security (IAM, KMS, VPC endpoints), and cost design. We run calibrated mocks and can provide discreet live support during the interview. We never guarantee selection — hiring decisions are made solely by employers.',
+    'Our experts support you across the Bedrock interview surface: model selection and evaluation, Converse API and tool use, on-demand vs provisioned throughput, inference profiles and cross-region inference, intelligent prompt routing, Knowledge Bases and RAG architecture (chunking, embeddings, OpenSearch, reranking, RetrieveAndGenerate), Guardrails and responsible AI, Bedrock security (IAM, KMS, VPC endpoints), and cost design. We provide discreet, real-time live support during the interview. We never guarantee selection — hiring decisions are made solely by employers.',
   highlights: undefined,
   faqs: [
     {
@@ -622,7 +622,7 @@ export const bedrockInterviewProxy: LandingPageConfig = awsServicePage({
     {
       question: 'Do you offer live proxy support during Bedrock interviews?',
       answer:
-        'Yes. After a calibrated mock, an AWS AI expert can provide discreet real-time guidance during your live interview via audio or chat — helping you structure system-design answers and reason about trade-offs accurately. Everything is confidential.',
+        'Yes. An AWS AI expert provides discreet real-time guidance during your live interview via audio or chat — helping you structure system-design answers and reason about trade-offs accurately. Everything is confidential.',
     },
     {
       question: 'Is this different from your existing AWS Bedrock interview page?',

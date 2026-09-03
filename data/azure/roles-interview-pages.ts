@@ -49,7 +49,7 @@ const rolePage = (
     highlights: roleHighlights,
     faqs: azureJobFaqs(role, focus),
     bottomCTAHeading: `Need ${role} Proxy Job Support or Proxy Interview Support?`,
-    bottomCTABody: `In-house Azure AI experts back you on your ${role} work same-day — proxy job support for live projects and production issues, or ${role} proxy interview support (technical preparation and mentoring; you attend your own interview). Talk to ProxyTechSupport on WhatsApp now.`,
+    bottomCTABody: `In-house Azure AI experts back you on your ${role} work same-day — proxy job support for live projects and production issues, or ${role} proxy interview support (real-time technical help; you attend your own interview). Talk to ProxyTechSupport on WhatsApp now.`,
     relatedLinks: relatedLinks({
       geoLinks: [AZURE_HUB_LINK, proxy],
       techLinks: tech,
@@ -178,10 +178,10 @@ const interviewPage = (
   azurePage({
     slug,
     title: `${entity} Proxy Interview Support | ${entity} Interview Proxy Help`,
-    description: `${entity} proxy interview support (also searched as ${entity} interview proxy support): calibrated mock interviews and expert technical mentoring for ${entity} technical and system-design rounds on Azure. You attend your own interview.`,
-    keywords: [`${entity} proxy interview support`, `${entity} interview proxy support`, `${entity} proxy interview`, `${entity} interview questions`, `${entity} mock interview`],
+    description: `${entity} proxy interview support (also searched as ${entity} interview proxy support): real-time expert help for ${entity} technical and system-design rounds on Azure. You attend your own interview.`,
+    keywords: [`${entity} proxy interview support`, `${entity} interview proxy support`, `${entity} proxy interview`, `${entity} interview questions`, `${entity} live interview support`],
     h1,
-    tagline: `${entity} proxy interview support (interview proxy support) plus calibrated mock interviews — technical, coding, and system-design rounds. Preparation and mentoring, not attending for you.`,
+    tagline: `${entity} proxy interview support (interview proxy support) — real-time help on technical, coding, and system-design rounds. You attend, we support; we never attend for you.`,
     heroEyebrow: `${entity} Proxy Interview Support`,
     painIntro,
     heroVariant,
@@ -190,7 +190,7 @@ const interviewPage = (
     highlights: interviewHighlights,
     faqs: azureInterviewFaqs(entity),
     bottomCTAHeading: `${entity} Proxy Interview Support — Interview Coming Up?`,
-    bottomCTABody: `Get calibrated mock interviews and ${entity} proxy interview support (interview proxy support) from in-house Azure AI experts — technical preparation and mentoring; you attend and complete your own interview. Message ProxyTechSupport on WhatsApp now.`,
+    bottomCTABody: `Get real-time ${entity} proxy interview support (interview proxy support) from in-house Azure AI experts — you attend and complete your own interview. Message ProxyTechSupport on WhatsApp now.`,
     relatedLinks: relatedLinks({
       geoLinks: [AZURE_INTERVIEW_HUB_LINK, AZURE_HUB_LINK],
       techLinks: tech,
@@ -204,7 +204,7 @@ const foundryInterview = interviewPage(
   'microsoft-foundry-proxy-interview-support', 'Microsoft Foundry',
   'Microsoft Foundry Proxy Interview Support — Architecture & System Design',
   'Microsoft Foundry interviews go deep on the resource/project model, agents, models, and RAG architecture. Underprepared system-design rounds cost strong engineers offers.',
-  'We prepare you for Microsoft Foundry interviews: the Foundry resource/project architecture, Foundry Models and Model Router, Foundry Agent Service and multi-agent design, RAG with Azure AI Search and Foundry IQ, evaluation and observability, and security — with mock interviews and live guidance calibrated to your role.',
+  'We support you through Microsoft Foundry interviews: the Foundry resource/project architecture, Foundry Models and Model Router, Foundry Agent Service and multi-agent design, RAG with Azure AI Search and Foundry IQ, evaluation and observability, and security — with real-time expert guidance calibrated to your role.',
   [FOUNDRY_HUB_LINK, AGENT_HUB_LINK], [A('Foundry Agent Service interview support', 'foundry-agent-service-proxy-interview-support'), A('Microsoft Foundry job support', 'microsoft-foundry-proxy-job-support')],
 );
 
@@ -212,7 +212,7 @@ const agentInterview = interviewPage(
   'foundry-agent-service-proxy-interview-support', 'Foundry Agent Service',
   'Foundry Agent Service Proxy Interview Support — Agent System Design',
   'Agent interviews test whether you can design reliable agents — Responses API, tools, memory, MCP, and multi-agent orchestration. It is easy to freeze on system design.',
-  'We prepare you for Foundry Agent Service interviews: the Responses API and Agent Runtime, prompt vs hosted agents, tools/MCP/A2A, memory, multi-agent workflows, evaluation and tracing, and migration from the Assistants API — with mock interviews and live guidance.',
+  'We support you through Foundry Agent Service interviews: the Responses API and Agent Runtime, prompt vs hosted agents, tools/MCP/A2A, memory, multi-agent workflows, evaluation and tracing, and migration from the Assistants API — with real-time expert guidance.',
   [AGENT_HUB_LINK, A('Microsoft Agent Framework interview support', 'microsoft-agent-framework-proxy-interview-support')], [A('Foundry Agent Service job support', 'microsoft-foundry-agent-service-proxy-job-support')],
 );
 
@@ -220,7 +220,7 @@ const ragInterview = interviewPage(
   'azure-rag-proxy-interview-support', 'Azure RAG',
   'Azure RAG Proxy Interview Support — Retrieval System Design',
   'Azure RAG interviews focus on retrieval architecture — chunking, embeddings, hybrid vs agentic retrieval, and grounding. Vague answers lose offers.',
-  'We prepare you for Azure RAG interviews: chunking and embeddings, Azure AI Search vector/hybrid/agentic retrieval, semantic ranking, Foundry IQ, citations and grounding, hallucination mitigation, and RAG evaluation — with mock interviews and live guidance.',
+  'We support you through Azure RAG interviews: chunking and embeddings, Azure AI Search vector/hybrid/agentic retrieval, semantic ranking, Foundry IQ, citations and grounding, hallucination mitigation, and RAG evaluation — with real-time expert guidance.',
   [RAG_HUB_LINK, SEARCH_HUB_LINK], [A('Azure AI Search interview support', 'azure-ai-search-proxy-interview-support'), A('Azure RAG job support', 'azure-rag-proxy-job-support')],
 );
 
@@ -228,7 +228,7 @@ const searchInterview = interviewPage(
   'azure-ai-search-proxy-interview-support', 'Azure AI Search',
   'Azure AI Search Proxy Interview Support — Search & Retrieval Rounds',
   'Azure AI Search interviews cover vector/hybrid search, indexers, semantic ranking, and now agentic retrieval. The depth surprises candidates.',
-  'We prepare you for Azure AI Search interviews: index and indexer design, vector/hybrid search, the semantic ranker, integrated vectorization, agentic retrieval with Knowledge Agents and Knowledge Sources, and RAG architecture — with mock interviews and live guidance.',
+  'We support you through Azure AI Search interviews: index and indexer design, vector/hybrid search, the semantic ranker, integrated vectorization, agentic retrieval with Knowledge Agents and Knowledge Sources, and RAG architecture — with real-time expert guidance.',
   [SEARCH_HUB_LINK, RAG_HUB_LINK], [A('Azure AI Search job support', 'azure-ai-search-proxy-job-support')],
 );
 
@@ -236,7 +236,7 @@ const mlInterview = interviewPage(
   'azure-ml-proxy-interview-support', 'Azure ML',
   'Azure ML Proxy Interview Support — Training, Deployment & MLOps Rounds',
   'Azure ML interviews test the full lifecycle — training, pipelines, endpoints, and MLOps. System-design rounds trip up strong practitioners.',
-  'We prepare you for Azure ML interviews: training and pipelines, MLflow and the model registry, online/batch endpoints, AutoML, distributed GPU training, and MLOps (CI/CD, monitoring, promotion) — with mock interviews and live guidance.',
+  'We support you through Azure ML interviews: training and pipelines, MLflow and the model registry, online/batch endpoints, AutoML, distributed GPU training, and MLOps (CI/CD, monitoring, promotion) — with real-time expert guidance.',
   [AZUREML_HUB_LINK, MLOPS_HUB_LINK], [A('Azure MLOps interview support', 'azure-mlops-proxy-interview-support'), A('Azure Machine Learning job support', 'azure-machine-learning-proxy-job-support')],
 );
 
@@ -244,7 +244,7 @@ const mlopsInterview = interviewPage(
   'azure-mlops-proxy-interview-support', 'Azure MLOps',
   'Azure MLOps Proxy Interview Support — CI/CD & Monitoring System Design',
   'Azure MLOps interviews are system-design heavy — CI/CD, promotion, monitoring, and retraining. Hand-wavy answers do not pass.',
-  'We prepare you for Azure MLOps interviews: ML CI/CD with Azure DevOps/GitHub Actions, registry-driven promotion, monitoring (drift/quality/health), retraining, IaC, and LLMOps for Azure OpenAI and Foundry — with mock interviews and live guidance.',
+  'We support you through Azure MLOps interviews: ML CI/CD with Azure DevOps/GitHub Actions, registry-driven promotion, monitoring (drift/quality/health), retraining, IaC, and LLMOps for Azure OpenAI and Foundry — with real-time expert guidance.',
   [MLOPS_HUB_LINK, AZUREML_HUB_LINK], [A('Azure MLOps job support', 'azure-mlops-proxy-job-support')],
 );
 
@@ -252,7 +252,7 @@ const aiEngineerInterview = interviewPage(
   'azure-ai-engineer-proxy-interview-support', 'Azure AI Engineer',
   'Azure AI Engineer Proxy Interview Support — End-to-End AI Rounds',
   'Azure AI Engineer interviews span Foundry, Azure OpenAI, RAG, agents, and coding. Breadth plus system design is hard to prepare alone.',
-  'We prepare you for Azure AI Engineer interviews: Microsoft Foundry and Azure OpenAI, RAG and Azure AI Search, Foundry agents, content safety and evaluation, security, and coding rounds — with mock interviews and live guidance calibrated to the role.',
+  'We support you through Azure AI Engineer interviews: Microsoft Foundry and Azure OpenAI, RAG and Azure AI Search, Foundry agents, content safety and evaluation, security, and coding rounds — with real-time expert guidance calibrated to the role.',
   [FOUNDRY_HUB_LINK, EXISTING.azureOpenAiJobSupport], [A('Azure AI Engineer job support', 'azure-ai-engineer-proxy-job-support'), EXISTING.azureOpenAiInterview],
 );
 
@@ -260,7 +260,7 @@ const architectInterview = interviewPage(
   'azure-ai-solutions-architect-proxy-interview-support', 'Azure AI Solutions Architect',
   'Azure AI Solutions Architect Proxy Interview Support — Architecture Deep-Dives',
   'Architect interviews are almost all system design — RAG, agents, security, cost, and platform trade-offs at scale. This is where preparation matters most.',
-  'We prepare you for Azure AI Solutions Architect interviews: end-to-end AI architecture, RAG and agent system design, Foundry vs Azure ML decisions, security and networking, cost and Model Router strategy, and reference architectures — with mock architecture rounds and live guidance.',
+  'We support you through Azure AI Solutions Architect interviews: end-to-end AI architecture, RAG and agent system design, Foundry vs Azure ML decisions, security and networking, cost and Model Router strategy, and reference architectures — with real-time expert guidance on architecture rounds.',
   [FOUNDRY_HUB_LINK, SECURITY_HUB_LINK], [A('Azure AI Solutions Architect job support', 'azure-ai-solutions-architect-proxy-job-support'), A('Microsoft Foundry architecture guide', 'microsoft-foundry-architecture-guide')],
 );
 
@@ -268,7 +268,7 @@ const agenticInterview = interviewPage(
   'azure-agentic-ai-proxy-interview-support', 'Azure Agentic AI',
   'Azure Agentic AI Proxy Interview Support — Agent Architecture Rounds',
   'Agentic AI interviews test agent and multi-agent design — tools, memory, MCP/A2A, and orchestration. The bar is high and rising.',
-  'We prepare you for Azure Agentic AI interviews: Foundry Agent Service, agent and multi-agent architecture, tools/MCP/A2A, memory, Microsoft Agent Framework, and evaluation/tracing — with mock interviews and live guidance.',
+  'We support you through Azure Agentic AI interviews: Foundry Agent Service, agent and multi-agent architecture, tools/MCP/A2A, memory, Microsoft Agent Framework, and evaluation/tracing — with real-time expert guidance.',
   [AGENT_HUB_LINK, A('Microsoft Agent Framework interview support', 'microsoft-agent-framework-proxy-interview-support')], [A('Azure Agentic AI Engineer job support', 'azure-agentic-ai-engineer-proxy-job-support')],
 );
 
@@ -276,7 +276,7 @@ const agentFrameworkInterview = interviewPage(
   'microsoft-agent-framework-proxy-interview-support', 'Microsoft Agent Framework',
   'Microsoft Agent Framework Proxy Interview Support — Framework & Workflows',
   'Agent Framework interviews probe the SK/AutoGen successor — agents, graph workflows, and migration. Fresh material that is hard to self-study.',
-  'We prepare you for Microsoft Agent Framework interviews: agents and function tools, graph-based (data-flow) workflows, multi-agent orchestration, relationship to Semantic Kernel and AutoGen and migration, MCP/A2A, and deployment as Foundry hosted agents — with mock interviews and live guidance.',
+  'We support you through Microsoft Agent Framework interviews: agents and function tools, graph-based (data-flow) workflows, multi-agent orchestration, relationship to Semantic Kernel and AutoGen and migration, MCP/A2A, and deployment as Foundry hosted agents — with real-time expert guidance.',
   [A('Microsoft Agent Framework job support', 'microsoft-agent-framework-job-support'), AGENT_HUB_LINK], [A('Azure agentic AI interview support', 'azure-agentic-ai-proxy-interview-support')],
 );
 

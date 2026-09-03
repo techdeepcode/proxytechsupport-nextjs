@@ -41,7 +41,7 @@ export const jobSupportHighlights: LandingHighlight[] = [
   {
     title: 'Interview & Candidate Marketing',
     description:
-      'AWS AI/ML proxy interview assistance, profile positioning, and candidate marketing for AWS AI Engineer, GenAI Engineer, Bedrock Developer, AgentCore, SageMaker, and AWS MLOps roles — preparation, recruiter readiness, and profile visibility.',
+      'AWS AI/ML proxy interview assistance, profile positioning, and candidate marketing for AWS AI Engineer, GenAI Engineer, Bedrock Developer, AgentCore, SageMaker, and AWS MLOps roles — real-time interview support, recruiter readiness, and profile visibility.',
   },
 ];
 
@@ -77,7 +77,7 @@ export const roleHighlights: LandingHighlight[] = [
   {
     title: 'Interview & Positioning',
     description:
-      'Role-targeted AWS AI/ML interview preparation, proxy interview assistance, and profile positioning to move into and up within the role.',
+      'Role-targeted AWS AI/ML proxy interview support, interview assistance, and profile positioning to move into and up within the role.',
   },
 ];
 
@@ -88,9 +88,9 @@ export const interviewHighlights: LandingHighlight[] = [
       'Discreet real-time expert support during your live AWS AI/ML technical interview — Bedrock and RAG architecture, AgentCore system design, SageMaker MLOps, and coding rounds.',
   },
   {
-    title: 'Mock Interviews & Prep',
+    title: 'Coding & System Design Coverage',
     description:
-      'Calibrated mock interviews and question banks for Amazon Bedrock, AgentCore, SageMaker, Nova, RAG, and AWS GenAI architecture rounds across FAANG, product, and consulting formats.',
+      'Live support across the real interview rounds — Amazon Bedrock, AgentCore, SageMaker, Nova, RAG, and AWS GenAI coding and architecture rounds across FAANG, product, and consulting formats.',
   },
   {
     title: 'Get Interviews Scheduled',
@@ -212,7 +212,7 @@ export function awsServiceFaqs(service: string, usage: string): LandingFaqItem[]
     },
     {
       question: `Do you cover ${service} interview questions?`,
-      answer: `Yes. We prepare you for ${service} interview questions — fundamentals, architecture and design trade-offs, IAM and security, scenario-based problems, and hands-on rounds — and can provide live proxy interview support during the real interview if needed. We calibrate to the exact role and company format.`,
+      answer: `Yes. We provide ${service} proxy interview support — real-time expert help on fundamentals, architecture and design trade-offs, IAM and security, scenario-based problems, and hands-on rounds — during your live interview. We calibrate to the exact role and company format.`,
     },
     {
       question: `Can you help if I just joined a project using ${service}?`,
@@ -231,7 +231,7 @@ export function awsInterviewFaqs(entity: string): LandingFaqItem[] {
   return [
     {
       question: `What ${entity} interview support do you provide?`,
-      answer: `We provide real-time, discreet proxy interview support for ${entity} interviews. Our in-house AWS AI experts join your live session and guide you through coding rounds, Bedrock and RAG architecture questions, AgentCore and multi-agent system design, SageMaker MLOps and deployment scenarios, AWS security (IAM, KMS, VPC) discussions, and behavioral rounds. We also run calibrated mock interviews before the real thing.`,
+      answer: `We provide real-time, discreet proxy interview support for ${entity} interviews. Our in-house AWS AI experts join your live session and guide you through coding rounds, Bedrock and RAG architecture questions, AgentCore and multi-agent system design, SageMaker MLOps and deployment scenarios, AWS security (IAM, KMS, VPC) discussions, and behavioral rounds.`,
     },
     {
       question: 'What AWS AI/ML interview formats do you support?',

@@ -74,7 +74,7 @@ const foundryHub: LandingPageConfig = azurePage({
     {
       question: 'Do you provide production support and interview help for Foundry?',
       answer:
-        'Both. We firefight live Foundry incidents (deployment, quota, RBAC, agent, and networking failures) and prepare you for Microsoft Foundry interviews with mock sessions and real-time guidance on architecture and system-design rounds. See our production support and interview support pages.',
+        'Both. We firefight live Foundry incidents (deployment, quota, RBAC, agent, and networking failures) and provide real-time Microsoft Foundry proxy interview support on architecture and system-design rounds. See our production support and interview support pages.',
     },
   ],
   useCasesSection: {
@@ -90,7 +90,7 @@ const foundryHub: LandingPageConfig = azurePage({
   },
   bottomCTAHeading: 'Need Microsoft Foundry Help Right Now?',
   bottomCTABody:
-    'In-house Microsoft Foundry experts available same-day — migration, agents, Foundry Models, Model Router, production fixes, or interview prep. Talk to ProxyTechSupport on WhatsApp now.',
+    'In-house Microsoft Foundry experts available same-day — migration, agents, Foundry Models, Model Router, production fixes, or proxy interview support. Talk to ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [AZURE_HUB_LINK, { label: 'Microsoft Foundry production support', href: '/microsoft-foundry-production-support/' }],
     techLinks: [AGENT_HUB_LINK, MODEL_ROUTER_LINK],

@@ -232,19 +232,19 @@ export const awsRagInterviewProxy: LandingPageConfig = awsServicePage({
   slug: 'aws-rag-interview-proxy-support',
   title: 'AWS RAG Interview Support — Retrieval & Bedrock RAG System Design',
   description:
-    'Real-time AWS RAG interview support: retrieval architecture, Bedrock Knowledge Bases, chunking, embeddings, reranking, evaluation, and RAG system design. Calibrated mocks plus live proxy support.',
+    'Real-time AWS RAG interview support: retrieval architecture, Bedrock Knowledge Bases, chunking, embeddings, reranking, evaluation, and RAG system design. Live, real-time proxy interview support.',
   keywords: [
     'AWS RAG interview support', 'Bedrock RAG interview', 'RAG system design interview AWS',
     'retrieval interview AWS', 'Knowledge Bases interview', 'AWS RAG proxy interview',
   ],
   h1: 'AWS RAG Interview Support — Ace Retrieval & RAG System Design',
   tagline:
-    'RAG interviews probe retrieval quality, not just prompts. We prepare you and can back you live during the real thing.',
+    'RAG interviews probe retrieval quality, not just prompts. Our experts back you live, in real time, during the interview itself.',
   heroEyebrow: 'AWS RAG Interview Support',
   painIntro:
     'An AWS RAG or GenAI interview coming up and unsure how deep they will go on chunking, embeddings, reranking, and RAG evaluation on Bedrock?',
   heroVariant:
-    'We prepare you across the AWS RAG interview surface: retrieval architecture, Bedrock Knowledge Bases, chunking strategies, embeddings and vector stores (OpenSearch, pgvector), reranking and query rewriting, RetrieveAndGenerate, grounding and Guardrails, and RAG evaluation. We run calibrated mocks and can provide discreet live support. We never guarantee selection — hiring decisions are made solely by employers.',
+    'Our experts support you across the AWS RAG interview surface: retrieval architecture, Bedrock Knowledge Bases, chunking strategies, embeddings and vector stores (OpenSearch, pgvector), reranking and query rewriting, RetrieveAndGenerate, grounding and Guardrails, and RAG evaluation. We provide discreet, real-time live support. We never guarantee selection — hiring decisions are made solely by employers.',
   highlights: interviewHighlights,
   faqs: awsInterviewFaqs('AWS RAG'),
   relatedLinks: relatedLinks({
@@ -265,19 +265,19 @@ export const awsAiArchitectInterviewProxy: LandingPageConfig = awsServicePage({
   slug: 'aws-ai-solutions-architect-interview-proxy-support',
   title: 'AWS AI Solutions Architect Interview Support — Enterprise AI Design',
   description:
-    'Real-time AWS AI Solutions Architect interview support: enterprise Bedrock/SageMaker/AgentCore architecture, security, cost, and scalability system design. Calibrated mocks plus live proxy support.',
+    'Real-time AWS AI Solutions Architect interview support: enterprise Bedrock/SageMaker/AgentCore architecture, security, cost, and scalability system design. Live, real-time proxy interview support.',
   keywords: [
     'AWS AI Solutions Architect interview', 'AWS GenAI architect interview', 'AWS AI architecture interview',
     'Bedrock architecture interview', 'AWS AI system design interview', 'AI architect proxy interview',
   ],
   h1: 'AWS AI Solutions Architect Interview Support — Enterprise AI System Design',
   tagline:
-    'Architect interviews are all system design and trade-offs. We prepare you across Bedrock, SageMaker, AgentCore, security, and cost.',
+    'Architect interviews are all system design and trade-offs. Our experts back you live across Bedrock, SageMaker, AgentCore, security, and cost.',
   heroEyebrow: 'AWS AI Architect Interview Support',
   painIntro:
     'An AWS AI Solutions Architect interview coming up with heavy system-design rounds on enterprise GenAI, security, and cost?',
   heroVariant:
-    'We prepare you across the AWS AI architecture interview surface: end-to-end Bedrock and RAG architecture, AgentCore agent platforms, SageMaker ML platforms, data and vector architecture, security (IAM, KMS, VPC/PrivateLink), governance, observability, scalability, and cost trade-offs. We run calibrated mocks and can provide discreet live support. We never guarantee selection — hiring decisions are made solely by employers.',
+    'Our experts support you across the AWS AI architecture interview surface: end-to-end Bedrock and RAG architecture, AgentCore agent platforms, SageMaker ML platforms, data and vector architecture, security (IAM, KMS, VPC/PrivateLink), governance, observability, scalability, and cost trade-offs. We provide discreet, real-time live support. We never guarantee selection — hiring decisions are made solely by employers.',
   highlights: interviewHighlights,
   faqs: awsInterviewFaqs('AWS AI Solutions Architect'),
   relatedLinks: relatedLinks({

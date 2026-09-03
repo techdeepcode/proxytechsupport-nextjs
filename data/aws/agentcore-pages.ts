@@ -80,9 +80,9 @@ export const agentCoreHub: LandingPageConfig = awsPage({
   proxySection: {
     title: 'AgentCore Interview & Career Support',
     intro:
-      'Interviewing for an AWS agentic AI or AgentCore role? We prepare you and can back you live during the real interview.',
+      'Interviewing for an AWS agentic AI or AgentCore role? Our experts back you live, in real time, during the real interview.',
     points: [
-      'AgentCore architecture and system-design preparation (Runtime, Memory, Gateway, Identity, Policy)',
+      'AgentCore architecture and system-design interview support (Runtime, Memory, Gateway, Identity, Policy)',
       'Multi-agent, MCP, and A2A design questions',
       'Live, discreet proxy interview support during the real interview',
       'Profile positioning for AWS Agentic AI / AgentCore Engineer roles',
@@ -423,20 +423,20 @@ export const agentCoreInterviewProxy: LandingPageConfig = awsServicePage({
   slug: 'amazon-bedrock-agentcore-interview-proxy-support',
   title: 'AgentCore Interview Support — Agentic AI System Design on AWS',
   description:
-    'Real-time Amazon Bedrock AgentCore interview support: agent architecture, Runtime/Memory/Gateway/Identity/Policy, multi-agent and MCP system design, and coding rounds. Calibrated mocks plus live proxy support.',
+    'Real-time Amazon Bedrock AgentCore interview support: agent architecture, Runtime/Memory/Gateway/Identity/Policy, multi-agent and MCP system design, and coding rounds. Live, real-time proxy interview support.',
   keywords: [
     'AgentCore interview support', 'AWS agentic AI interview', 'AgentCore system design interview',
     'agent architecture interview AWS', 'multi-agent interview AWS', 'AgentCore proxy interview',
   ],
   h1: 'Amazon Bedrock AgentCore Interview Support — Ace Agentic AI System Design',
   tagline:
-    'AgentCore interviews test whether you can architect production agents — Runtime, Memory, Gateway, Identity, Policy, and multi-agent design. We prepare you and back you live.',
+    'AgentCore interviews test whether you can architect production agents — Runtime, Memory, Gateway, Identity, Policy, and multi-agent design. Our experts back you live, in real time.',
   heroEyebrow: 'AgentCore Interview Support',
   painIntro:
     'An AWS agentic AI or AgentCore interview coming up and unsure how deep the system-design round will go on session isolation, memory strategies, tool authorization, and multi-agent orchestration?',
   heroVariant:
-    'We prepare you across the AgentCore interview surface: agent architecture on Runtime (session isolation, scaling, long-running workloads), Memory strategies (short/long-term, retrieval, personalization), Gateway (tools, MCP, authentication), Identity (workload/user, OAuth, IAM), Policy (Cedar, least privilege), Observability, and multi-agent/A2A design. We run calibrated mocks and can provide discreet live support. We never guarantee selection — hiring decisions are made solely by employers.',
-  faqs: awsServiceFaqs('AgentCore interview', 'We prepare you on agent architecture, Runtime, Memory, Gateway, Identity, Policy, Observability, and multi-agent design, with calibrated mocks and optional live support.'),
+    'Our experts support you across the AgentCore interview surface: agent architecture on Runtime (session isolation, scaling, long-running workloads), Memory strategies (short/long-term, retrieval, personalization), Gateway (tools, MCP, authentication), Identity (workload/user, OAuth, IAM), Policy (Cedar, least privilege), Observability, and multi-agent/A2A design. We provide discreet, real-time live support. We never guarantee selection — hiring decisions are made solely by employers.',
+  faqs: awsServiceFaqs('AgentCore interview', 'Our experts support you on agent architecture, Runtime, Memory, Gateway, Identity, Policy, Observability, and multi-agent design, with discreet real-time live support.'),
   relatedLinks: relatedLinks({
     geoLinks: [AWS_INTERVIEW_HUB_LINK, AGENTCORE_HUB_LINK],
     techLinks: [

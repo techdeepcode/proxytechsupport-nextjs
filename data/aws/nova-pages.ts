@@ -78,7 +78,7 @@ export const amazonNovaHub: LandingPageConfig = awsPage({
   proxySection: {
     title: 'Nova Interview & Career Support',
     intro:
-      'Interviewing on AWS foundation models? We prepare you on Nova and how it fits the Bedrock model catalog.',
+      'Interviewing on AWS foundation models? Our experts support you on Nova and how it fits the Bedrock model catalog.',
     points: [
       'Nova model selection and evaluation questions',
       'Multimodal, speech (Sonic), and browser (Act) use cases',

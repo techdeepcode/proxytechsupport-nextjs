@@ -44,7 +44,7 @@ const guide = (
     highlights: techHighlights,
     faqs: azureKbFaqs(topic),
     bottomCTAHeading: `Need Azure AI Proxy Job Support or Proxy Interview Support for ${topic}?`,
-    bottomCTABody: `Beyond this guide, we offer Azure AI proxy job support for live ${topic} projects and production issues, plus ${topic} proxy interview support (technical preparation and mentoring; you attend your own interview). Talk to ProxyTechSupport on WhatsApp.`,
+    bottomCTABody: `Beyond this guide, we offer Azure AI proxy job support for live ${topic} projects and production issues, plus ${topic} proxy interview support (real-time technical help; you attend your own interview). Talk to ProxyTechSupport on WhatsApp.`,
     relatedLinks: relatedLinks({
       geoLinks: [AZURE_HUB_LINK, AZURE_INTERVIEW_HUB_LINK],
       techLinks: tech,

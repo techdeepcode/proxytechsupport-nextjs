@@ -37,7 +37,7 @@ const mlHub: LandingPageConfig = azurePage({
   painIntro:
     'An Azure ML online endpoint stuck in Failed, a training job dying on GPU OOM, a pipeline that will not run, or MLflow tracking that lost your runs? An Azure ML expert on the call gets your workflow moving.',
   heroVariant:
-    'Azure Machine Learning (v2) is the platform for classic ML and custom model training and deployment on Azure. We cover the full lifecycle: workspaces and connections, compute (instances and clusters, GPU), training jobs and environments, pipelines, MLflow tracking and models, the model registry, AutoML, and managed online (real-time) and batch endpoints. We also cover current deprecations — MLflow Projects (MLproject) support fully retired September 2026, and Prompt Flow retiring April 20, 2027 (migrate to Microsoft Agent Framework). From daily job support to production endpoint incidents and interview prep, start here.',
+    'Azure Machine Learning (v2) is the platform for classic ML and custom model training and deployment on Azure. We cover the full lifecycle: workspaces and connections, compute (instances and clusters, GPU), training jobs and environments, pipelines, MLflow tracking and models, the model registry, AutoML, and managed online (real-time) and batch endpoints. We also cover current deprecations — MLflow Projects (MLproject) support fully retired September 2026, and Prompt Flow retiring April 20, 2027 (migrate to Microsoft Agent Framework). From daily job support to production endpoint incidents and proxy interview support, start here.',
   geoLine:
     'Azure ML support for engineers across USA, Canada, UK, Ireland, Germany, Netherlands, Australia, Singapore, UAE, and worldwide.',
   timezoneNote: 'Available across US, Canada, UK, European, Australian, and Asia-Pacific business hours.',
@@ -68,7 +68,7 @@ const mlHub: LandingPageConfig = azurePage({
     {
       question: 'Do you provide production and interview support for Azure ML?',
       answer:
-        'Both. We firefight live Azure ML incidents and prepare you for Azure ML and MLOps interviews with mock sessions and system-design practice. See our Azure ML production and interview support pages.',
+        'Both. We firefight live Azure ML incidents and provide real-time Azure ML and MLOps proxy interview support on coding and system-design rounds. See our Azure ML production and interview support pages.',
     },
   ],
   useCasesSection: {
@@ -84,7 +84,7 @@ const mlHub: LandingPageConfig = azurePage({
   },
   bottomCTAHeading: 'Need Azure Machine Learning Help Right Now?',
   bottomCTABody:
-    'In-house Azure ML experts available same-day — training, endpoints, pipelines, MLflow, production fixes, or interview prep. Talk to ProxyTechSupport on WhatsApp now.',
+    'In-house Azure ML experts available same-day — training, endpoints, pipelines, MLflow, production fixes, or proxy interview support. Talk to ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [AZURE_HUB_LINK, A('Azure ML production support', 'azure-ml-production-support')],
     techLinks: [A('Azure ML online endpoint job support', 'azure-ml-online-endpoint-job-support'), MLOPS_HUB_LINK],
@@ -346,7 +346,7 @@ const mlopsHub: LandingPageConfig = azurePage({
   },
   bottomCTAHeading: 'Need Azure MLOps Help Right Now?',
   bottomCTABody:
-    'In-house Azure MLOps experts available same-day — CI/CD, promotion, retraining, monitoring, or interview prep. Talk to ProxyTechSupport on WhatsApp now.',
+    'In-house Azure MLOps experts available same-day — CI/CD, promotion, retraining, monitoring, or proxy interview support. Talk to ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [AZURE_HUB_LINK, AZUREML_HUB_LINK],
     techLinks: [A('Azure MLOps CI/CD job support', 'azure-mlops-ci-cd-job-support'), A('Azure MLOps monitoring job support', 'azure-mlops-monitoring-job-support')],

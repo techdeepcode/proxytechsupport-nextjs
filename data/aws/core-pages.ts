@@ -69,7 +69,7 @@ export const awsAiMlHub: LandingPageConfig = awsPage({
     {
       question: 'Can you help me prepare for or clear AWS AI/ML interviews?',
       answer:
-        'Yes. We offer AWS AI/ML proxy interview support and get-interview-scheduled services for AWS AI Engineer, GenAI Engineer, Bedrock Developer, AgentCore, SageMaker, AWS MLOps, and AWS AI Solutions Architect roles — live guidance during interviews, calibrated mock interviews, and profile positioning so the calls come in the first place. Hiring decisions are always made solely by employers.',
+        'Yes. We offer AWS AI/ML proxy interview support and get-interview-scheduled services for AWS AI Engineer, GenAI Engineer, Bedrock Developer, AgentCore, SageMaker, AWS MLOps, and AWS AI Solutions Architect roles — live guidance during interviews, real-time interview support, and profile positioning so the calls come in the first place. Hiring decisions are always made solely by employers.',
     },
     {
       question: 'Is your content current with the latest AWS releases?',
@@ -99,7 +99,7 @@ export const awsAiMlHub: LandingPageConfig = awsPage({
       'Getting into and moving up in AWS AI roles takes more than skill — it takes interview readiness and a profile that recruiters actually find. We support both sides: live proxy interview assistance during your real interview, and candidate marketing to generate the calls.',
     points: [
       'Live, discreet guidance during Amazon Bedrock, AgentCore, SageMaker, and AWS GenAI interviews',
-      'Calibrated mock interviews for coding, RAG/LLM system design, and AWS AI architecture rounds',
+      'Live proxy interview support for coding, RAG/LLM system design, and AWS AI architecture rounds',
       'Profile positioning around the exact keywords AWS AI recruiters and ATS filters screen for',
       'Active candidate marketing and recruiter outreach to build a real interview pipeline',
       'End-to-end support: get the interview, clear it, then keep the role with real-time job support',
@@ -242,7 +242,7 @@ export const awsAiInterviewHub: LandingPageConfig = awsPage({
   slug: 'aws-ai-ml-interview-support',
   title: 'AWS AI/ML Interview Support — Bedrock, AgentCore & SageMaker Proxy Help',
   description:
-    'Real-time AWS AI/ML proxy interview support and mock interviews for Amazon Bedrock, Bedrock AgentCore, SageMaker AI, RAG, Nova, and AWS GenAI architecture rounds. Live guidance, calibrated prep, confidential.',
+    'Real-time AWS AI/ML proxy interview support for Amazon Bedrock, Bedrock AgentCore, SageMaker AI, RAG, Nova, and AWS GenAI architecture rounds — live guidance on coding, system design, and production scenarios, confidential.',
   keywords: [
     'AWS AI ML interview support', 'Amazon Bedrock interview support', 'AWS GenAI interview proxy',
     'AgentCore interview support', 'SageMaker interview support', 'AWS RAG interview support',
@@ -250,12 +250,12 @@ export const awsAiInterviewHub: LandingPageConfig = awsPage({
   ],
   h1: 'AWS AI/ML Interview Support — Live Proxy Help for Bedrock, AgentCore & SageMaker',
   tagline:
-    'From Bedrock RAG design to AgentCore system design and SageMaker MLOps, AWS AI interviews are dense. Get calibrated preparation and discreet real-time support during the real thing.',
+    'From Bedrock RAG design to AgentCore system design and SageMaker MLOps, AWS AI interviews are dense. Get discreet, real-time expert support during the interview itself.',
   heroEyebrow: 'AWS AI/ML Interview Support Hub',
   painIntro:
     'An AWS GenAI or ML interview coming up and unsure how deep they will go on Bedrock inference profiles, Knowledge Base architecture, AgentCore memory strategies, or SageMaker training and deployment? AWS AI interviews reward specificity that is hard to fake.',
   heroVariant:
-    'We prepare you across the full AWS AI interview surface: Amazon Bedrock (model selection, Converse API, on-demand vs provisioned throughput, cross-region inference, intelligent prompt routing), Knowledge Bases and RAG (chunking, embeddings, OpenSearch, reranking, RetrieveAndGenerate, evaluation), Guardrails and responsible AI, AgentCore (Runtime, Memory, Gateway, Identity, Policy/Cedar), Amazon Nova, SageMaker AI (training, HyperPod, endpoints, Pipelines, Managed MLflow, Model Registry), and AWS security and cost design. Then we back you live during the interview if you want it.',
+    'Our experts support you across the full AWS AI interview surface: Amazon Bedrock (model selection, Converse API, on-demand vs provisioned throughput, cross-region inference, intelligent prompt routing), Knowledge Bases and RAG (chunking, embeddings, OpenSearch, reranking, RetrieveAndGenerate, evaluation), Guardrails and responsible AI, AgentCore (Runtime, Memory, Gateway, Identity, Policy/Cedar), Amazon Nova, SageMaker AI (training, HyperPod, endpoints, Pipelines, Managed MLflow, Model Registry), and AWS security and cost design. Then we back you live during the interview if you want it.',
   geoLine:
     'AWS AI/ML interview support for candidates targeting roles across USA, Canada, UK, Europe, Australia, Singapore, UAE, and worldwide.',
   timezoneNote: 'Available across all major business hours and for interviews scheduled in any time zone.',
@@ -274,7 +274,7 @@ export const awsAiInterviewHub: LandingPageConfig = awsPage({
     {
       question: 'How does live proxy interview support work?',
       answer:
-        'Before the interview we align on the role, company format, and likely topics and run a calibrated mock. During the live interview, an AWS AI expert provides discreet real-time guidance via audio or chat — helping you structure system-design answers, reason about trade-offs, and handle deep-dive questions accurately. Everything is confidential.',
+        'Before the interview we align on the role, company format, and likely topics. During the live interview, an AWS AI expert provides discreet real-time guidance via audio or chat — helping you structure system-design answers, reason about trade-offs, and handle deep-dive questions accurately. Everything is confidential.',
     },
     {
       question: 'Do you also help me get the interviews?',
@@ -288,7 +288,7 @@ export const awsAiInterviewHub: LandingPageConfig = awsPage({
     },
   ],
   useCasesSection: {
-    title: 'AWS AI Interview Situations We Prepare You For',
+    title: 'AWS AI Interview Situations We Support You Through',
     cases: [
       'A system-design round asking you to architect a production RAG assistant on Bedrock Knowledge Bases',
       'A deep-dive on AgentCore Runtime, Memory, Gateway, and Policy for a production agent platform',
@@ -299,12 +299,12 @@ export const awsAiInterviewHub: LandingPageConfig = awsPage({
     ],
   },
   proxySection: {
-    title: 'Preparation Plus Live Support',
+    title: 'Live AWS AI Proxy Interview Support',
     intro:
-      'We pair structured preparation with optional discreet real-time support so you walk in ready and stay steady under pressure.',
+      'We provide discreet, real-time expert support during your actual interview so you walk in ready and stay steady under pressure.',
     points: [
-      'Calibrated mock interviews for Bedrock, AgentCore, SageMaker, and AWS GenAI architecture',
-      'Question banks and model answers grounded in current August 2026 AWS capabilities',
+      'Live support on Bedrock, AgentCore, SageMaker, and AWS GenAI architecture rounds',
+      'Real-time guidance grounded in current August 2026 AWS capabilities',
       'Live, discreet guidance during the real interview via audio or chat',
       'Profile positioning and candidate marketing so the calls come in the first place',
       'Confidential, in-house AWS AI experts — NDAs available',
@@ -312,7 +312,7 @@ export const awsAiInterviewHub: LandingPageConfig = awsPage({
   },
   bottomCTAHeading: 'AWS AI/ML Interview Coming Up? Get Proxy Support Now',
   bottomCTABody:
-    'Calibrated preparation and discreet real-time AWS AI interview support — Bedrock, AgentCore, SageMaker, and GenAI architecture. Contact ProxyTechSupport on WhatsApp now.',
+    'Discreet, real-time AWS AI proxy interview support — Bedrock, AgentCore, SageMaker, and GenAI architecture. Contact ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [
       AWS_HUB_LINK,

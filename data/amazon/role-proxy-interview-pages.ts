@@ -38,7 +38,7 @@ function proxyInterviewPage(input: RoleProxyInput): LandingPageConfig {
   return amazonServicePage({
     slug,
     title: input.title,
-    description: `Amazon ${role} proxy interview support — technical preparation and expert mentoring for ${focus} and the Leadership Principles. Calibrated mock interviews; you attend your own interview. Independent of Amazon.`,
+    description: `Amazon ${role} proxy interview support — real-time expert help for ${focus} and the Leadership Principles rounds. You attend your own interview. Independent of Amazon.`,
     keywords: [
       `amazon ${role.toLowerCase()} proxy interview support`, `amazon ${role.toLowerCase()} interview proxy support`,
       `amazon ${role.toLowerCase()} proxy interview`, `amazon ${role.toLowerCase()} interview support`,
@@ -48,23 +48,23 @@ function proxyInterviewPage(input: RoleProxyInput): LandingPageConfig {
     h1: `Amazon ${role} Proxy Interview Support`,
     tagline: `Technical proxy interview support for the Amazon ${role} loop — ${focus} and the behavioral Leadership Principles.`,
     heroEyebrow: `Amazon ${role} Proxy Interview Support`,
-    painIntro: `Facing an Amazon ${role} interview and want an expert who knows exactly how Amazon interviews this role? Amazon ${role} proxy interview support (also searched as ${role} interview proxy support) gives you calibrated mock interviews and mentoring for ${focus} and the Leadership Principles.`,
-    heroVariant: `We provide technical proxy interview support for the Amazon ${role} loop: ${focus}, plus the behavioral Leadership Principles rounds and the Bar Raiser. We calibrate to your exact level, team and format and run a pre-interview alignment session. Proxy interview support means expert technical preparation and mentoring — you attend and complete your own interview. ProxyTechSupport is independent of Amazon and does not guarantee selection or employment.`,
+    painIntro: `Facing an Amazon ${role} interview and want an expert who knows exactly how Amazon interviews this role? Amazon ${role} proxy interview support (also searched as ${role} interview proxy support) gives you real-time expert support for ${focus} and the Leadership Principles.`,
+    heroVariant: `We provide technical proxy interview support for the Amazon ${role} loop: ${focus}, plus the behavioral Leadership Principles rounds and the Bar Raiser. We calibrate to your exact level, team and format and run a pre-interview alignment session. Proxy interview support means real-time expert technical help on the exact rounds your interview covers — you attend and complete your own interview. ProxyTechSupport is independent of Amazon and does not guarantee selection or employment.`,
     highlights: proxyInterviewHighlights,
     faqs: amazonProxyInterviewFaqs(`Amazon ${role}`),
     proxySection: {
       title: `What Amazon ${role} Proxy Interview Support Covers`,
-      intro: `Role-specific, calibrated preparation for every stage of the Amazon ${role} loop — you attend your own interview. We help you reason clearly and tell truthful, well-structured Leadership Principles stories.`,
+      intro: `Role-specific, real-time support for every stage of the Amazon ${role} loop — you attend your own interview. We help you reason clearly and tell truthful, well-structured Leadership Principles stories.`,
       points: [
         `${focus}`,
         'Behavioral Leadership Principles rounds and the Bar Raiser — STAR stories with real ownership and metrics',
         'Calibration to your exact level, team and interview format',
-        'A pre-interview alignment session and mock interviews',
+        'A pre-interview alignment session and live, real-time interview support',
         'Independent of Amazon — no impersonation, no guarantee of selection',
       ],
     },
     bottomCTAHeading: `Get Amazon ${role} Proxy Interview Support Now`,
-    bottomCTABody: `In-house experts run calibrated ${role} mock interviews and Leadership Principles coaching for your loop. You attend your own interview; we prepare you to perform. Independent of Amazon; no guarantee of selection. Talk to ProxyTechSupport on WhatsApp now.`,
+    bottomCTABody: `In-house experts provide real-time ${role} interview support and Leadership Principles support for your loop. You attend your own interview; we back you to perform. Independent of Amazon; no guarantee of selection. Talk to ProxyTechSupport on WhatsApp now.`,
     relatedLinks: relatedLinks({
       geoLinks: [AMAZON_PROXY_INTERVIEW_LINK, AMAZON_HUB_LINK],
       techLinks: input.techLinks,

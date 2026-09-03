@@ -53,7 +53,7 @@ const countries: Country[] = [
     slug: 'canada-azure-ai-proxy-job-support', country: 'Canada', timezone: 'Eastern, Central, Mountain, and Pacific (Canada)',
     regions: 'Canada Central (Toronto) and Canada East (Quebec City)',
     heroVariant:
-      'Canada has strong Azure adoption in banking (Toronto’s Bay Street), insurance, government, and a growing AI scene in Toronto, Montreal, and Vancouver. Data residency matters — PIPEDA, provincial privacy laws, OSFI guidelines for financial institutions, and public-sector data-residency requirements make Canada Central/East regions and private networking important. We support Canadian teams on Foundry, Azure OpenAI, and Azure ML with compliance-aware architecture, and prepare candidates for Azure AI interviews across Canadian banks, insurers, and consultancies.',
+      'Canada has strong Azure adoption in banking (Toronto’s Bay Street), insurance, government, and a growing AI scene in Toronto, Montreal, and Vancouver. Data residency matters — PIPEDA, provincial privacy laws, OSFI guidelines for financial institutions, and public-sector data-residency requirements make Canada Central/East regions and private networking important. We support Canadian teams on Foundry, Azure OpenAI, and Azure ML with compliance-aware architecture, and support candidates through Azure AI interviews across Canadian banks, insurers, and consultancies.',
     cases: [
       'A Toronto bank or insurer needing OSFI/PIPEDA-aligned Azure OpenAI in Canada Central with data residency',
       'A Montreal or Vancouver AI team productionizing a Foundry agent or RAG system',
@@ -69,7 +69,7 @@ const countries: Country[] = [
     slug: 'uk-azure-ai-proxy-job-support', country: 'UK', timezone: 'GMT/BST (UK)',
     regions: 'UK South (London) and UK West (Cardiff)',
     heroVariant:
-      'The UK is a major Azure AI market, led by financial services and insurance in London, plus retail, telecom, public sector, and a strong consulting/SI presence. UK data residency (UK South/West), GDPR/UK-GDPR, and FCA expectations shape financial AI. Contract roles are common (inside/outside IR35). We support UK teams on Foundry, Azure OpenAI, Azure AI Search, and Azure ML, and prepare candidates for interviews across banks, insurers, and consultancies.',
+      'The UK is a major Azure AI market, led by financial services and insurance in London, plus retail, telecom, public sector, and a strong consulting/SI presence. UK data residency (UK South/West), GDPR/UK-GDPR, and FCA expectations shape financial AI. Contract roles are common (inside/outside IR35). We support UK teams on Foundry, Azure OpenAI, Azure AI Search, and Azure ML, and support candidates through interviews across banks, insurers, and consultancies.',
     cases: [
       'A London bank or insurer building FCA/GDPR-aligned Azure OpenAI with UK data residency',
       'A UK retailer or telecom scaling a RAG or agent feature on Foundry',
@@ -85,7 +85,7 @@ const countries: Country[] = [
     slug: 'ireland-azure-ai-proxy-job-support', country: 'Ireland', timezone: 'GMT/IST (Ireland)',
     regions: 'North Europe (Dublin)',
     heroVariant:
-      'Ireland hosts the North Europe Azure region (Dublin) and a dense concentration of multinational tech, pharma, medtech, and financial-services EMEA HQs. Many global Azure AI deployments run through Dublin, and demand for Azure AI and ML engineers is high across multinationals and consultancies. GDPR and EU data residency are central. We support Irish teams on Foundry, Azure OpenAI, and Azure ML, and prepare candidates for interviews at multinationals and SIs.',
+      'Ireland hosts the North Europe Azure region (Dublin) and a dense concentration of multinational tech, pharma, medtech, and financial-services EMEA HQs. Many global Azure AI deployments run through Dublin, and demand for Azure AI and ML engineers is high across multinationals and consultancies. GDPR and EU data residency are central. We support Irish teams on Foundry, Azure OpenAI, and Azure ML, and support candidates through interviews at multinationals and SIs.',
     cases: [
       'A multinational EMEA HQ in Dublin building GDPR-aligned Azure OpenAI in North Europe',
       'A pharma/medtech org building document RAG under regulatory constraints',
@@ -98,7 +98,7 @@ const countries: Country[] = [
     slug: 'germany-azure-ai-proxy-job-support', country: 'Germany', timezone: 'CET/CEST (Germany)',
     regions: 'Germany West Central (Frankfurt)',
     heroVariant:
-      'Germany is Europe’s largest economy with strict data-protection expectations (GDPR, BDSG) and demand for data residency and sovereignty. Azure adoption is strong in manufacturing/Industrie 4.0, automotive, financial services (Frankfurt), and enterprise SaaS. The Germany West Central region and EU Data Zone deployments matter for sovereignty. We support German teams on Foundry, Azure OpenAI, and Azure ML with data-residency-aware architecture, and prepare candidates for interviews across enterprises and Mittelstand.',
+      'Germany is Europe’s largest economy with strict data-protection expectations (GDPR, BDSG) and demand for data residency and sovereignty. Azure adoption is strong in manufacturing/Industrie 4.0, automotive, financial services (Frankfurt), and enterprise SaaS. The Germany West Central region and EU Data Zone deployments matter for sovereignty. We support German teams on Foundry, Azure OpenAI, and Azure ML with data-residency-aware architecture, and support candidates through interviews across enterprises and Mittelstand.',
     cases: [
       'A German manufacturer or automotive firm building Azure AI with data residency in Frankfurt',
       'A Frankfurt financial-services team needing EU Data Zone Azure OpenAI and private networking',
@@ -114,7 +114,7 @@ const countries: Country[] = [
     slug: 'netherlands-azure-ai-proxy-job-support', country: 'Netherlands', timezone: 'CET/CEST (Netherlands)',
     regions: 'West Europe (Amsterdam)',
     heroVariant:
-      'The Netherlands hosts the West Europe Azure region (Amsterdam) — a core EU location for Azure AI. Strong adoption in financial services, logistics, tech, and a highly digital public sector, with English-fluent teams and heavy EU data-residency focus. We support Dutch teams on Foundry, Azure OpenAI, and Azure ML with EU-compliant architecture, and prepare candidates for interviews across banks, scale-ups, and consultancies.',
+      'The Netherlands hosts the West Europe Azure region (Amsterdam) — a core EU location for Azure AI. Strong adoption in financial services, logistics, tech, and a highly digital public sector, with English-fluent teams and heavy EU data-residency focus. We support Dutch teams on Foundry, Azure OpenAI, and Azure ML with EU-compliant architecture, and support candidates through interviews across banks, scale-ups, and consultancies.',
     cases: [
       'An Amsterdam bank or fintech building GDPR-aligned Azure OpenAI in West Europe',
       'A logistics or tech scale-up productionizing a RAG or agent feature',
@@ -127,7 +127,7 @@ const countries: Country[] = [
     slug: 'france-azure-ai-proxy-job-support', country: 'France', timezone: 'CET/CEST (France)',
     regions: 'France Central (Paris)',
     heroVariant:
-      'France has a strong AI ecosystem and the France Central region (Paris), with adoption across banking, luxury/retail, telecom, aerospace, and the public sector. Data sovereignty and GDPR are prominent, and French-language NLP is a common requirement. We support French teams on Foundry, Azure OpenAI, and Azure ML with sovereignty-aware design and multilingual patterns, and prepare candidates for interviews across enterprises and consultancies.',
+      'France has a strong AI ecosystem and the France Central region (Paris), with adoption across banking, luxury/retail, telecom, aerospace, and the public sector. Data sovereignty and GDPR are prominent, and French-language NLP is a common requirement. We support French teams on Foundry, Azure OpenAI, and Azure ML with sovereignty-aware design and multilingual patterns, and support candidates through interviews across enterprises and consultancies.',
     cases: [
       'A Paris bank or enterprise building sovereignty-aware Azure OpenAI in France Central',
       'A retail/luxury or telecom team building French-language RAG and agents',
@@ -140,7 +140,7 @@ const countries: Country[] = [
     slug: 'sweden-azure-ai-proxy-job-support', country: 'Sweden', timezone: 'CET/CEST (Sweden)',
     regions: 'Sweden Central (Gävle/Sandviken)',
     heroVariant:
-      'Sweden hosts the Sweden Central region and a highly digital economy — strong in fintech, gaming, industrial tech, and telecom, with high AI maturity and English-fluent teams. EU data residency and sustainability are priorities. We support Swedish teams on Foundry, Azure OpenAI, and Azure ML, and prepare candidates for interviews across scale-ups and enterprises.',
+      'Sweden hosts the Sweden Central region and a highly digital economy — strong in fintech, gaming, industrial tech, and telecom, with high AI maturity and English-fluent teams. EU data residency and sustainability are priorities. We support Swedish teams on Foundry, Azure OpenAI, and Azure ML, and support candidates through interviews across scale-ups and enterprises.',
     cases: [
       'A Stockholm fintech or gaming company scaling a Foundry agent or RAG feature',
       'An industrial-tech firm building Azure ML pipelines with EU data residency',
@@ -152,7 +152,7 @@ const countries: Country[] = [
     slug: 'switzerland-azure-ai-proxy-job-support', country: 'Switzerland', timezone: 'CET/CEST (Switzerland)',
     regions: 'Switzerland North (Zurich) and Switzerland West (Geneva)',
     heroVariant:
-      'Switzerland has stringent data-protection expectations (revFADP) and demand for in-country data residency, led by banking/wealth management (Zurich), pharma (Basel), and insurance. The Switzerland North/West regions and private networking are important for regulated workloads. We support Swiss teams on Foundry, Azure OpenAI, and Azure ML with strict residency and confidentiality patterns, and prepare candidates for interviews across banks and pharma.',
+      'Switzerland has stringent data-protection expectations (revFADP) and demand for in-country data residency, led by banking/wealth management (Zurich), pharma (Basel), and insurance. The Switzerland North/West regions and private networking are important for regulated workloads. We support Swiss teams on Foundry, Azure OpenAI, and Azure ML with strict residency and confidentiality patterns, and support candidates through interviews across banks and pharma.',
     cases: [
       'A Zurich private bank needing Swiss-resident Azure OpenAI with strict confidentiality',
       'A Basel pharma org building document RAG under regulatory constraints',
@@ -165,7 +165,7 @@ const countries: Country[] = [
     slug: 'australia-azure-ai-proxy-job-support', country: 'Australia', timezone: 'AEST/AEDT and AWST (Australia)',
     regions: 'Australia East (Sydney) and Australia Southeast (Melbourne)',
     heroVariant:
-      'Australia has strong Azure adoption in banking, government (with IRAP/Essential Eight expectations), mining/resources, and retail, centered in Sydney and Melbourne. Data residency in Australia East/Southeast and government security frameworks shape regulated AI. We support Australian teams on Foundry, Azure OpenAI, and Azure ML with residency- and IRAP-aware design, aligned to APAC business hours, and prepare candidates for interviews across banks and government.',
+      'Australia has strong Azure adoption in banking, government (with IRAP/Essential Eight expectations), mining/resources, and retail, centered in Sydney and Melbourne. Data residency in Australia East/Southeast and government security frameworks shape regulated AI. We support Australian teams on Foundry, Azure OpenAI, and Azure ML with residency- and IRAP-aware design, aligned to APAC business hours, and support candidates through interviews across banks and government.',
     cases: [
       'A Sydney bank building APRA/IRAP-aligned Azure OpenAI with Australian data residency',
       'A government agency needing Essential Eight-aligned Azure AI with private networking',
@@ -181,7 +181,7 @@ const countries: Country[] = [
     slug: 'new-zealand-azure-ai-proxy-job-support', country: 'New Zealand', timezone: 'NZST/NZDT (New Zealand)',
     regions: 'New Zealand North (Auckland)',
     heroVariant:
-      'New Zealand now has the New Zealand North region (Auckland), enabling local data residency for government, banking, and enterprise. Adoption is growing across financial services, agritech, and the public sector. We support NZ teams on Foundry, Azure OpenAI, and Azure ML with local-residency design, aligned to NZ/APAC hours, and prepare candidates for interviews across banks and government.',
+      'New Zealand now has the New Zealand North region (Auckland), enabling local data residency for government, banking, and enterprise. Adoption is growing across financial services, agritech, and the public sector. We support NZ teams on Foundry, Azure OpenAI, and Azure ML with local-residency design, aligned to NZ/APAC hours, and support candidates through interviews across banks and government.',
     cases: [
       'An Auckland bank or government agency needing NZ-resident Azure OpenAI',
       'An agritech or enterprise building RAG or Azure ML pipelines',
@@ -193,7 +193,7 @@ const countries: Country[] = [
     slug: 'singapore-azure-ai-proxy-job-support', country: 'Singapore', timezone: 'SGT (Singapore)',
     regions: 'Southeast Asia (Singapore)',
     heroVariant:
-      'Singapore is the APAC hub for Azure AI — the Southeast Asia region (Singapore), strong banking/fintech, government (with MAS TRM and IMDA expectations), and regional HQs. The APAC Data Zone supports data-processing boundaries. We support Singapore teams on Foundry, Azure OpenAI, and Azure ML with MAS-aware and residency-conscious design, and prepare candidates for interviews across banks, fintechs, and regional HQs.',
+      'Singapore is the APAC hub for Azure AI — the Southeast Asia region (Singapore), strong banking/fintech, government (with MAS TRM and IMDA expectations), and regional HQs. The APAC Data Zone supports data-processing boundaries. We support Singapore teams on Foundry, Azure OpenAI, and Azure ML with MAS-aware and residency-conscious design, and support candidates through interviews across banks, fintechs, and regional HQs.',
     cases: [
       'A Singapore bank building MAS TRM-aligned Azure OpenAI with APAC data-zone processing',
       'A fintech or regional HQ scaling a Foundry agent or RAG feature across APAC',
@@ -205,7 +205,7 @@ const countries: Country[] = [
     slug: 'hong-kong-azure-ai-proxy-job-support', country: 'Hong Kong', timezone: 'HKT (Hong Kong)',
     regions: 'East Asia (Hong Kong)',
     heroVariant:
-      'Hong Kong is a major financial center with the East Asia Azure region, strong in banking, wealth management, insurance, and trading, plus regional HQs. HKMA expectations and data-handling requirements shape financial AI. We support Hong Kong teams on Foundry, Azure OpenAI, and Azure ML with finance-grade security and residency patterns, and prepare candidates for interviews across banks and insurers.',
+      'Hong Kong is a major financial center with the East Asia Azure region, strong in banking, wealth management, insurance, and trading, plus regional HQs. HKMA expectations and data-handling requirements shape financial AI. We support Hong Kong teams on Foundry, Azure OpenAI, and Azure ML with finance-grade security and residency patterns, and support candidates through interviews across banks and insurers.',
     cases: [
       'A Hong Kong bank or insurer building HKMA-aligned Azure OpenAI with private networking',
       'A trading or wealth-management firm scaling a RAG or agent feature',
@@ -217,7 +217,7 @@ const countries: Country[] = [
     slug: 'uae-azure-ai-proxy-job-support', country: 'UAE', timezone: 'GST (UAE)',
     regions: 'UAE North (Dubai)',
     heroVariant:
-      'The UAE is a fast-growing AI market with the UAE North region (Dubai), a national AI strategy, and heavy investment across government, banking, energy, and smart-city projects. Data residency and Arabic-language NLP are common requirements. We support UAE teams on Foundry, Azure OpenAI, and Azure ML with residency-aware and multilingual design, aligned to Gulf hours, and prepare candidates for interviews across government, banks, and enterprises.',
+      'The UAE is a fast-growing AI market with the UAE North region (Dubai), a national AI strategy, and heavy investment across government, banking, energy, and smart-city projects. Data residency and Arabic-language NLP are common requirements. We support UAE teams on Foundry, Azure OpenAI, and Azure ML with residency-aware and multilingual design, aligned to Gulf hours, and support candidates through interviews across government, banks, and enterprises.',
     cases: [
       'A Dubai or Abu Dhabi government/smart-city project building Azure AI with UAE data residency',
       'A UAE bank or energy firm scaling a Foundry agent or RAG feature',
@@ -230,7 +230,7 @@ const countries: Country[] = [
     slug: 'saudi-arabia-azure-ai-proxy-job-support', country: 'Saudi Arabia', timezone: 'AST (Saudi Arabia)',
     regions: 'Saudi Arabia (Microsoft cloud region, Riyadh area)',
     heroVariant:
-      'Saudi Arabia is investing heavily in AI under Vision 2030, with a Microsoft cloud region enabling local data residency, and large government, energy, banking, and giga-project programs (e.g. NEOM). Data residency and Arabic-language AI are central. We support Saudi teams on Foundry, Azure OpenAI, and Azure ML with residency-aware and Arabic-first design, aligned to Gulf hours, and prepare candidates for interviews across government and enterprise programs.',
+      'Saudi Arabia is investing heavily in AI under Vision 2030, with a Microsoft cloud region enabling local data residency, and large government, energy, banking, and giga-project programs (e.g. NEOM). Data residency and Arabic-language AI are central. We support Saudi teams on Foundry, Azure OpenAI, and Azure ML with residency-aware and Arabic-first design, aligned to Gulf hours, and support candidates through interviews across government and enterprise programs.',
     cases: [
       'A Riyadh government or giga-project program building Azure AI with in-Kingdom data residency',
       'A Saudi bank or energy firm scaling a Foundry agent or RAG feature',
@@ -242,7 +242,7 @@ const countries: Country[] = [
     slug: 'europe-azure-ai-proxy-job-support', country: 'Europe', timezone: 'European (CET/CEST, GMT/BST)',
     regions: 'West Europe, North Europe, Germany West Central, France Central, Sweden Central, and Switzerland North',
     heroVariant:
-      'Across Europe, Azure AI adoption is strong but shaped by GDPR, the EU AI Act, and data-sovereignty expectations. EU Data Zone deployments keep data processing within Europe, and multiple in-region datacenters (West/North Europe, Germany, France, Sweden, Switzerland) support residency. We support pan-European teams on Foundry, Azure OpenAI, and Azure ML with EU-compliant, sovereignty-aware architecture, and prepare candidates for interviews across European enterprises and consultancies.',
+      'Across Europe, Azure AI adoption is strong but shaped by GDPR, the EU AI Act, and data-sovereignty expectations. EU Data Zone deployments keep data processing within Europe, and multiple in-region datacenters (West/North Europe, Germany, France, Sweden, Switzerland) support residency. We support pan-European teams on Foundry, Azure OpenAI, and Azure ML with EU-compliant, sovereignty-aware architecture, and support candidates through interviews across European enterprises and consultancies.',
     cases: [
       'A pan-European enterprise standardizing Azure OpenAI on EU Data Zone deployments',
       'A team aligning Azure AI to GDPR and the EU AI Act with documentation and controls',
@@ -272,7 +272,7 @@ export const azureCountryPages: LandingPageConfig[] = countries.map((c) =>
     faqs: azureJobFaqs(`${c.country} Azure AI`, `Microsoft Foundry apps, Azure OpenAI integration, Foundry agents, Azure AI Search RAG, and Azure ML — with ${c.country} data-residency and compliance patterns`),
     useCasesSection: { title: `Common ${c.country} Azure AI Proxy Support Situations We Help With`, cases: c.cases },
     bottomCTAHeading: `Need ${c.country} Azure AI Proxy Job Support or Proxy Interview Support?`,
-    bottomCTABody: `In-house Microsoft Foundry, Azure OpenAI, and Azure ML experts available in ${c.country} hours — proxy job support for live projects and production issues, or proxy interview support (technical preparation; you attend your own interview). Talk to ProxyTechSupport on WhatsApp now.`,
+    bottomCTABody: `In-house Microsoft Foundry, Azure OpenAI, and Azure ML experts available in ${c.country} hours — proxy job support for live projects and production issues, or proxy interview support (real-time technical help; you attend your own interview). Talk to ProxyTechSupport on WhatsApp now.`,
     relatedLinks: relatedLinks({
       geoLinks: [AZURE_HUB_LINK, AZURE_INTERVIEW_HUB_LINK],
       techLinks: [FOUNDRY_HUB_LINK, AZUREML_HUB_LINK],

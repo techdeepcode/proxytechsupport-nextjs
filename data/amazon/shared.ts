@@ -50,17 +50,17 @@ export const proxyInterviewHighlights: LandingHighlight[] = [
   {
     title: 'Amazon Proxy Interview Support',
     description:
-      'Technical proxy interview support (also searched as interview proxy support) for Amazon SDE, AWS, AI/ML, Applied Scientist, Data Engineering, Security and TPM rounds — calibrated mock interviews and expert mentoring on coding, data structures, system design, and Leadership Principles. You attend and complete your own interview.',
+      'Technical proxy interview support (also searched as interview proxy support) for Amazon SDE, AWS, AI/ML, Applied Scientist, Data Engineering, Security and TPM rounds — real-time expert support on coding, data structures, system design, and Leadership Principles rounds. You attend and complete your own interview.',
   },
   {
-    title: 'Rounds We Prepare You For',
+    title: 'Rounds We Support You Through',
     description:
       'Online Assessment, technical phone screen, coding and data-structures rounds, system design (LLD and HLD), SQL and data rounds, ML/science evaluation, the behavioral Leadership Principles loop, and the Bar Raiser — mapped to your role, level and team.',
   },
   {
     title: 'Get Interviews & Position Your Profile',
     description:
-      'Beyond interview prep we help you get Amazon interview calls in the first place — profile engineering, Amazon keyword alignment, and recruiter outreach — then back you through the loop and into the offer.',
+      'Beyond interview support we help you get Amazon interview calls in the first place — profile engineering, Amazon keyword alignment, and recruiter outreach — then back you through the loop and into the offer.',
   },
 ];
 
@@ -114,7 +114,7 @@ export const marketingHighlights: LandingHighlight[] = [
   {
     title: 'Interview Pipeline Support',
     description:
-      'Once calls start, we back you with Amazon proxy interview support and Leadership Principles preparation to convert the loop into an offer.',
+      'Once calls start, we back you with Amazon proxy interview support and Leadership Principles interview support to convert the loop into an offer.',
   },
 ];
 
@@ -198,22 +198,22 @@ export function amazonProxyInterviewFaqs(entity: string): LandingFaqItem[] {
   return [
     {
       question: `What is ${entity} proxy interview support?`,
-      answer: `${entity} proxy interview support (also searched as ${entity} interview proxy support) is technical preparation and expert mentoring for your Amazon interview. We run calibrated mock interviews and guide you on the rounds Amazon actually uses for this profile — coding and data structures, system design (LLD and HLD), SQL and data where relevant, ML/science evaluation where relevant, and the behavioral Leadership Principles loop including the Bar Raiser. The exact sequence varies by team, level and location, so we calibrate to your specific loop. You attend and complete your own interview.`,
+      answer: `${entity} proxy interview support (also searched as ${entity} interview proxy support) is real-time, discreet technical help for your Amazon interview. Our experts support you on the rounds Amazon actually uses for this profile — coding and data structures, system design (LLD and HLD), SQL and data where relevant, ML/science evaluation where relevant, and the behavioral Leadership Principles loop including the Bar Raiser. The exact sequence varies by team, level and location, so we calibrate to your specific loop. You attend and complete your own interview.`,
     },
     {
       question: 'Does proxy interview support mean someone attends the interview for me?',
       answer:
-        'No. You attend and complete your own Amazon interview. Proxy interview support means technical guidance, preparation, mock interviews, architecture and Leadership Principles coaching, and scenario-based mentoring that get you ready to perform. We do not impersonate candidates or sit interviews on anyone’s behalf, and we do not guarantee selection or employment — hiring decisions are made solely by Amazon.',
+        'No. You attend and complete your own Amazon interview. Proxy interview support means real-time technical guidance, architecture and Leadership Principles support, and scenario-based help that get you ready to perform. We do not impersonate candidates or sit interviews on anyone’s behalf, and we do not guarantee selection or employment — hiring decisions are made solely by Amazon.',
     },
     {
       question: `Which Amazon rounds does ${entity} proxy interview support cover?`,
       answer:
-        'Online Assessment (coding, work-style, and where applicable SQL/work-simulation), the technical phone screen, the on-site/virtual loop — coding and data structures, algorithms, system design, low-level and high-level design, SQL and data rounds, machine-learning/science evaluation where the role requires it — and the behavioral Leadership Principles rounds. We also prepare you for the Bar Raiser, who is a trained interviewer from outside your team focused on Amazon’s hiring bar.',
+        'Online Assessment (coding, work-style, and where applicable SQL/work-simulation), the technical phone screen, the on-site/virtual loop — coding and data structures, algorithms, system design, low-level and high-level design, SQL and data rounds, machine-learning/science evaluation where the role requires it — and the behavioral Leadership Principles rounds. We also support you through the Bar Raiser round — a trained interviewer from outside your team focused on Amazon’s hiring bar.',
     },
     {
-      question: 'How do you prepare me for the Leadership Principles?',
+      question: 'How do you support me on the Leadership Principles?',
       answer:
-        'We map your real experience to the Leadership Principles that matter most for this role, build STAR-structured stories with genuine ownership and measurable results, and rehearse the follow-up probes interviewers use to test depth. We do not invent experience or fabricate metrics — strong, truthful stories that show ownership, judgment and impact are what actually pass the loop.',
+        'We map your real experience to the Leadership Principles that matter most for this role, build STAR-structured stories with genuine ownership and measurable results, and work through the follow-up probes interviewers use to test depth. We do not invent experience or fabricate metrics — strong, truthful stories that show ownership, judgment and impact are what actually pass the loop.',
     },
     {
       question: 'Is ProxyTechSupport affiliated with Amazon?',
@@ -282,7 +282,7 @@ export function amazonInfoFaqs(entity: string, sequenceLine: string): LandingFaq
     {
       question: `How can ProxyTechSupport help with the ${entity}?`,
       answer:
-        'Two ways. If you have an interview coming up, our Amazon proxy interview support provides calibrated mock interviews and expert mentoring on exactly these rounds — you attend your own interview. If you are still searching, Get Amazon Interview Scheduled and Amazon candidate marketing help you get relevant interview calls in the first place. We do not guarantee interviews or offers.',
+        'Two ways. If you have an interview coming up, our Amazon proxy interview support provides real-time expert help on exactly these rounds — you attend your own interview. If you are still searching, Get Amazon Interview Scheduled and Amazon candidate marketing help you get relevant interview calls in the first place. We do not guarantee interviews or offers.',
     },
     {
       question: 'Is ProxyTechSupport affiliated with Amazon?',
@@ -311,7 +311,7 @@ export function amazonLpFaqs(lp: string): LandingFaqItem[] {
     {
       question: `How does ProxyTechSupport help me prepare "${lp}" stories?`,
       answer:
-        'Our Amazon proxy interview support and STAR coaching help you select the right real experiences, structure them for this and related Leadership Principles, and rehearse the follow-up probes — calibrated to your role and level. We help you tell your genuine story well; we never fabricate experience or metrics, and you attend your own interview.',
+        'Our Amazon proxy interview support and STAR story support help you select the right real experiences, structure them for this and related Leadership Principles, and work through the follow-up probes — calibrated to your role and level. We help you tell your genuine story well; we never fabricate experience or metrics, and you attend your own interview.',
     },
     {
       question: 'Is ProxyTechSupport affiliated with Amazon?',
@@ -395,10 +395,10 @@ export function amazonServicePage(cfg: AmazonServicePageInput): LandingPageConfi
       'Support for Amazon candidates and engineers across the USA, India, Canada, UK, Germany, Ireland, Australia, Singapore and worldwide — remote and aligned to your local business hours.',
     timezoneNote:
       cfg.timezoneNote ?? 'Available across US, India, Canada, UK, European, Australian and Asia-Pacific business hours, plus 24/7 for urgent needs.',
-    bottomCTAHeading: cfg.bottomCTAHeading ?? 'Preparing for Amazon — or Already In the Role?',
+    bottomCTAHeading: cfg.bottomCTAHeading ?? 'Interviewing at Amazon — or Already In the Role?',
     bottomCTABody:
       cfg.bottomCTABody ??
-      'In-house Amazon SDE, AWS, AI/ML, Applied Science, Data and Security experts available same-day — Amazon proxy interview support (technical preparation and mentoring; you attend your own interview), Get Amazon Interview Scheduled, candidate marketing, and Amazon proxy job support for live projects. Independent of Amazon; no guarantees of interviews or offers. Talk to ProxyTechSupport on WhatsApp now.',
+      'In-house Amazon SDE, AWS, AI/ML, Applied Science, Data and Security experts available same-day — Amazon proxy interview support (real-time technical help; you attend your own interview), Get Amazon Interview Scheduled, candidate marketing, and Amazon proxy job support for live projects. Independent of Amazon; no guarantees of interviews or offers. Talk to ProxyTechSupport on WhatsApp now.',
     canonical: cfg.canonical ?? `${BASE_URL}/${cfg.slug}/`,
     lastmod: cfg.lastmod ?? LASTMOD,
   };

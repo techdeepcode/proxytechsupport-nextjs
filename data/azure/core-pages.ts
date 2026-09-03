@@ -75,7 +75,7 @@ export const azureAiMlHub: LandingPageConfig = azurePage({
     {
       question: 'Can you help me prepare for or clear Azure AI/ML interviews?',
       answer:
-        'Yes. We offer Azure AI/ML interview support and get-interview-scheduled services for Azure AI Engineer, Microsoft Foundry Engineer, Azure OpenAI Engineer, Azure Generative AI Engineer, Azure ML, Azure MLOps, and Azure AI Solutions Architect roles — live guidance during interviews, calibrated mock interviews, and profile positioning so the calls come in the first place. Hiring decisions are always made solely by employers.',
+        'Yes. We offer Azure AI/ML interview support and get-interview-scheduled services for Azure AI Engineer, Microsoft Foundry Engineer, Azure OpenAI Engineer, Azure Generative AI Engineer, Azure ML, Azure MLOps, and Azure AI Solutions Architect roles — live guidance during interviews, real-time interview support, and profile positioning so the calls come in the first place. Hiring decisions are always made solely by employers.',
     },
     {
       question: 'Is your content current with the latest Microsoft/Azure releases?',
@@ -105,7 +105,7 @@ export const azureAiMlHub: LandingPageConfig = azurePage({
       'Getting into and moving up in Azure AI roles takes more than skill — it takes interview readiness and a profile that recruiters actually find. We support both sides: live interview assistance during your real interview, and candidate marketing to generate the calls.',
     points: [
       'Live, discreet guidance during Microsoft Foundry, Azure OpenAI, Foundry Agent Service, and Azure ML interviews',
-      'Calibrated mock interviews for coding, RAG/LLM system design, and Azure AI architecture rounds',
+      'Live proxy interview support for coding, RAG/LLM system design, and Azure AI architecture rounds',
       'Profile positioning around the exact keywords Azure AI recruiters and ATS filters screen for',
       'Active candidate marketing and recruiter outreach to build a real interview pipeline',
       'End-to-end support: get the interview, clear it, then keep the role with real-time job support',
@@ -219,20 +219,20 @@ export const azureAiInterviewHub: LandingPageConfig = azurePage({
   slug: 'azure-ai-ml-proxy-interview-support',
   title: 'Azure AI & ML Proxy Interview Support | Interview Proxy Support',
   description:
-    'Azure AI & ML proxy interview support (also searched as interview proxy support): calibrated mock interviews and expert technical mentoring for Microsoft Foundry, Azure OpenAI, Foundry Agent Service, Azure AI Search, RAG, Azure ML, and MLOps roles. You attend your own interview.',
+    'Azure AI & ML proxy interview support (also searched as interview proxy support): real-time expert help for Microsoft Foundry, Azure OpenAI, Foundry Agent Service, Azure AI Search, RAG, Azure ML, and MLOps interview rounds — coding, system design, architecture and production scenarios. You attend your own interview.',
   keywords: [
     'Azure AI ML proxy interview support', 'Azure AI interview proxy support', 'Azure AI proxy interview',
     'Microsoft Foundry proxy interview support', 'Azure OpenAI proxy interview support', 'Azure ML proxy interview support',
     'Azure RAG proxy interview', 'Azure AI proxy interviewer support',
   ],
-  h1: 'Azure AI & ML Proxy Interview Support — Mock Interviews & System Design',
+  h1: 'Azure AI & ML Proxy Interview Support — Microsoft Foundry, Azure OpenAI, RAG & Azure ML',
   tagline:
-    'Implementation-level proxy interview support (interview proxy support) for Azure OpenAI, Microsoft Foundry, RAG, Azure ML, system design and production scenarios — calibrated mock interviews and expert mentoring. You attend and complete your own interview.',
+    'Implementation-level proxy interview support (interview proxy support) for Azure OpenAI, Microsoft Foundry, RAG, Azure ML, system design and production scenarios — real-time expert help calibrated to your role. You attend and complete your own interview.',
   heroEyebrow: 'Azure AI/ML Proxy Interview Support Hub — Updated August 2026',
   painIntro:
-    'Looking for Azure AI Proxy Interview Support — or Azure AI interview proxy support — for an Azure AI Engineer, Generative AI Engineer, Azure Solutions Architect or senior cloud AI role? ProxyTechSupport provides technical proxy interview support covering Microsoft Foundry, Azure OpenAI, RAG, Azure AI Search, Foundry Agent Service, Azure Machine Learning, system design and production troubleshooting scenarios. Proxy interview support means technical preparation, mock interview guidance, architecture discussion and expert mentoring — the candidate attends and completes their own interview.',
+    'Looking for Azure AI Proxy Interview Support — or Azure AI interview proxy support — for an Azure AI Engineer, Generative AI Engineer, Azure Solutions Architect or senior cloud AI role? ProxyTechSupport provides technical proxy interview support covering Microsoft Foundry, Azure OpenAI, RAG, Azure AI Search, Foundry Agent Service, Azure Machine Learning, system design and production troubleshooting scenarios. Azure AI/ML Proxy Interview Support gives you real-time, discreet expert help on the exact Azure AI technologies your interview covers — the candidate attends and completes their own interview.',
   heroVariant:
-    'We prepare you for the real Azure AI/ML interview and support you live if you need it. Coverage spans Microsoft Foundry (resource/project architecture, model deployments, Model Router), Azure OpenAI (Responses API, provisioned throughput, content filters), Foundry Agent Service (Agent Runtime, tools, memory, MCP, A2A), Azure AI Search (vector, hybrid, semantic ranker, agentic retrieval, Knowledge Agents), RAG architecture and evaluation, Azure Machine Learning (training, endpoints, pipelines), Azure MLOps (MLflow, registry, CI/CD), and Azure security and networking for AI workloads — calibrated to your exact role, seniority, and interview format.',
+    'You get real-time, discreet expert support during your actual Azure AI/ML interview. Coverage spans Microsoft Foundry (resource/project architecture, model deployments, Model Router), Azure OpenAI (Responses API, provisioned throughput, content filters), Foundry Agent Service (Agent Runtime, tools, memory, MCP, A2A), Azure AI Search (vector, hybrid, semantic ranker, agentic retrieval, Knowledge Agents), RAG architecture and evaluation, Azure Machine Learning (training, endpoints, pipelines), Azure MLOps (MLflow, registry, CI/CD), and Azure security and networking for AI workloads — calibrated to your exact role, seniority, and interview format.',
   geoLine:
     'Azure AI/ML interview support for candidates across USA, Canada, UK, Ireland, Germany, Netherlands, Australia, Singapore, UAE, and worldwide.',
   timezoneNote: 'Interview support available across all major time zones, including early-morning and late-evening interview slots.',
@@ -241,7 +241,7 @@ export const azureAiInterviewHub: LandingPageConfig = azurePage({
     {
       question: 'What Azure AI/ML interview support do you provide?',
       answer:
-        'Two things: calibrated mock interviews to prepare you, and real-time, discreet guidance during the live interview if you want it. We cover Microsoft Foundry and Azure OpenAI architecture, RAG and Azure AI Search design, Foundry Agent Service and multi-agent system design, Azure ML MLOps, coding rounds, and behavioral rounds — aligned to your specific role and company format.',
+        'Real-time, discreet expert support during your live Azure AI/ML interview. We cover Microsoft Foundry and Azure OpenAI architecture, RAG and Azure AI Search design, Foundry Agent Service and multi-agent system design, Azure ML MLOps, coding rounds, and behavioral rounds — aligned to your specific role and company format.',
     },
     {
       question: 'Which Azure AI/ML roles do you cover?',
@@ -251,22 +251,22 @@ export const azureAiInterviewHub: LandingPageConfig = azurePage({
     {
       question: 'What system-design topics come up in Azure AI interviews?',
       answer:
-        'Common ones: design an enterprise RAG system on Azure AI Search with agentic retrieval; design a multi-agent workflow on Foundry Agent Service with tools and memory; choose between Global Standard, Data Zone Standard, and provisioned throughput for an Azure OpenAI workload; design an Azure ML training-to-deployment pipeline with MLflow and the model registry; and secure an Azure AI workload with Entra ID, Managed Identity, Private Endpoints, and Key Vault. We rehearse these with you.',
+        'Common ones: design an enterprise RAG system on Azure AI Search with agentic retrieval; design a multi-agent workflow on Foundry Agent Service with tools and memory; choose between Global Standard, Data Zone Standard, and provisioned throughput for an Azure OpenAI workload; design an Azure ML training-to-deployment pipeline with MLflow and the model registry; and secure an Azure AI workload with Entra ID, Managed Identity, Private Endpoints, and Key Vault. Our experts support you through exactly these scenarios in real time.',
     },
     {
       question: 'Is interview support confidential and ethical?',
       answer:
-        'Yes. Every session is fully confidential. We provide technical interview support, mock interviews, and preparation — we never impersonate you and we do not guarantee selection or employment. Hiring decisions are made solely by employers. Guidance is delivered discreetly and calibrated to your real background so you can present your experience accurately and confidently.',
+        'Yes. Every session is fully confidential. We provide real-time technical interview support — we never impersonate you and we do not guarantee selection or employment. Hiring decisions are made solely by employers. Guidance is delivered discreetly and calibrated to your real background so you can present your experience accurately and confidently.',
     },
     {
       question: 'How do I get started?',
       answer:
-        'Message us on WhatsApp with your interview date, the role and company, and the likely topics. We assign the right Azure AI expert and run a pre-interview alignment session so preparation and any live guidance match your experience level.',
+        'Message us on WhatsApp with your interview date, the role and company, and the likely topics. We assign the right Azure AI expert and run a pre-interview alignment session so our real-time support matches your experience level.',
     },
   ],
   bottomCTAHeading: 'Azure AI/ML Interview Coming Up?',
   bottomCTABody:
-    'Get calibrated mock interviews and real-time Azure AI/ML interview support from in-house Microsoft Foundry, Azure OpenAI, and Azure ML experts. Message ProxyTechSupport on WhatsApp now.',
+    'Get real-time Azure AI/ML proxy interview support from in-house Microsoft Foundry, Azure OpenAI, and Azure ML experts. Message ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [
       { label: 'Azure AI/ML job support hub', href: '/azure-ai-ml-proxy-job-support/' },
@@ -389,12 +389,12 @@ export const azureGetScheduled: LandingPageConfig = azurePage({
   ],
   h1: 'Get Your Azure AI/ML Interview Scheduled',
   tagline:
-    'Targeted applications and recruiter outreach that get Azure AI/ML interviews on your calendar — then backed by mock interviews and real-time interview support.',
+    'Targeted applications and recruiter outreach that get Azure AI/ML interviews on your calendar — then backed by real-time proxy interview support.',
   heroEyebrow: 'Get Azure AI/ML Interview Scheduled',
   painIntro:
     'Applying into the void is exhausting and slow. If your Azure AI applications are not converting into scheduled interviews, the problem is usually targeting, positioning, and reach — not your ability.',
   heroVariant:
-    'We get Azure AI interviews scheduled by combining a keyword-optimized profile with targeted applications and direct recruiter and hiring-manager outreach for Microsoft Foundry, Azure OpenAI, Azure ML, and Azure MLOps roles. Once interviews are booked, we prepare you with calibrated mock interviews and can provide real-time interview support so you convert.',
+    'We get Azure AI interviews scheduled by combining a keyword-optimized profile with targeted applications and direct recruiter and hiring-manager outreach for Microsoft Foundry, Azure OpenAI, Azure ML, and Azure MLOps roles. Once interviews are booked, we back you with real-time proxy interview support so you convert.',
   geoLine:
     'Interview scheduling and outreach for Azure AI/ML candidates across USA, Canada, UK, Europe, Australia, Singapore, UAE, and worldwide.',
   timezoneNote: 'Outreach runs continuously; interviews scheduled to your preferred time zone.',
@@ -402,7 +402,7 @@ export const azureGetScheduled: LandingPageConfig = azurePage({
   faqs: azureMarketingFaqs('Azure AI/ML job seekers'),
   bottomCTAHeading: 'Want Azure AI Interviews On Your Calendar?',
   bottomCTABody:
-    'We position your profile, run targeted outreach, and prepare you to convert. Message ProxyTechSupport on WhatsApp now.',
+    'We position your profile, run targeted outreach, and back you with real-time interview support to convert. Message ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [
       { label: 'Azure AI/ML job support hub', href: '/azure-ai-ml-proxy-job-support/' },

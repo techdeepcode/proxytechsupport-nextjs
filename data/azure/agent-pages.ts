@@ -71,7 +71,7 @@ const agentHub: LandingPageConfig = azurePage({
     {
       question: 'Do you provide production and interview support for agents?',
       answer:
-        'Both. We firefight live agent incidents (tool/MCP failures, memory issues, missing traces, runtime errors) and prepare you for Foundry Agent Service interviews and multi-agent system-design rounds. See our agent production and interview support pages.',
+        'Both. We firefight live agent incidents (tool/MCP failures, memory issues, missing traces, runtime errors) and provide real-time proxy interview support for Foundry Agent Service and multi-agent system-design rounds. See our agent production and interview support pages.',
     },
   ],
   useCasesSection: {
@@ -87,7 +87,7 @@ const agentHub: LandingPageConfig = azurePage({
   },
   bottomCTAHeading: 'Need Foundry Agent Service Help Right Now?',
   bottomCTABody:
-    'In-house Foundry Agent Service experts available same-day — Responses API migration, tools, memory, MCP, A2A, production fixes, or interview prep. Talk to ProxyTechSupport on WhatsApp now.',
+    'In-house Foundry Agent Service experts available same-day — Responses API migration, tools, memory, MCP, A2A, production fixes, or proxy interview support. Talk to ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [FOUNDRY_HUB_LINK, A('Foundry Agent Service production support', 'foundry-agent-service-production-support')],
     techLinks: [A('Foundry Agent Runtime job support', 'foundry-agent-runtime-job-support'), A('Foundry agent MCP job support', 'foundry-agent-mcp-job-support')],

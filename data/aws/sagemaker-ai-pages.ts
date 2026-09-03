@@ -80,9 +80,9 @@ export const sageMakerAiHub: LandingPageConfig = awsPage({
   proxySection: {
     title: 'SageMaker AI Interview & Career Support',
     intro:
-      'Interviewing for a SageMaker or AWS ML Engineer role? We prepare you and can back you live.',
+      'Interviewing for a SageMaker or AWS ML Engineer role? Our experts back you live, in real time.',
     points: [
-      'Training, inference, and MLOps system-design preparation',
+      'Training, inference, and MLOps system-design interview support',
       'Pipelines, Managed MLflow, and Model Registry questions',
       'Live, discreet proxy interview support during the real interview',
       'Profile positioning for SageMaker and AWS ML Engineer roles',

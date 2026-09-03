@@ -51,7 +51,7 @@ export const jobSupportHighlights: LandingHighlight[] = [
   {
     title: 'Interview & Candidate Marketing',
     description:
-      'Azure AI/ML interview support, profile positioning, and candidate marketing for Azure AI Engineer, Microsoft Foundry Engineer, Azure OpenAI Engineer, Azure ML / MLOps, and Azure AI Solutions Architect roles — preparation, recruiter readiness, and profile visibility.',
+      'Azure AI/ML interview support, profile positioning, and candidate marketing for Azure AI Engineer, Microsoft Foundry Engineer, Azure OpenAI Engineer, Azure ML / MLOps, and Azure AI Solutions Architect roles — real-time interview support, recruiter readiness, and profile visibility.',
   },
 ];
 
@@ -87,7 +87,7 @@ export const roleHighlights: LandingHighlight[] = [
   {
     title: 'Interview & Positioning',
     description:
-      'Role-targeted Azure AI/ML interview preparation, interview assistance, and profile positioning to move into and up within the role.',
+      'Role-targeted Azure AI/ML proxy interview support, interview assistance, and profile positioning to move into and up within the role.',
   },
 ];
 
@@ -95,12 +95,12 @@ export const interviewHighlights: LandingHighlight[] = [
   {
     title: 'Azure Proxy Interview Support',
     description:
-      'Technical proxy interview support (also searched as interview proxy support) — calibrated mock interviews and expert mentoring on Microsoft Foundry and RAG architecture, Foundry Agent Service system design, Azure ML MLOps, and coding rounds. You attend and complete your own interview.',
+      'Real-time technical proxy interview support (also searched as interview proxy support) on Microsoft Foundry and RAG architecture, Foundry Agent Service system design, Azure ML MLOps, and coding rounds. You attend and complete your own interview.',
   },
   {
-    title: 'Mock Interviews & Prep',
+    title: 'Coding & System Design Coverage',
     description:
-      'Calibrated mock interviews and question banks for Microsoft Foundry, Azure OpenAI, Foundry Agent Service, Azure AI Search, RAG, and Azure ML architecture rounds across FAANG, product, and consulting formats.',
+      'Live support across the real interview rounds — Microsoft Foundry, Azure OpenAI, Foundry Agent Service, Azure AI Search, RAG, and Azure ML coding and architecture rounds across FAANG, product, and consulting formats.',
   },
   {
     title: 'Get Interviews Scheduled',
@@ -244,7 +244,7 @@ export function azureServiceFaqs(service: string, usage: string): LandingFaqItem
     },
     {
       question: `Do you provide ${service} proxy interview support and cover interview questions?`,
-      answer: `Yes. We provide ${service} proxy interview support (also searched as ${service} interview proxy support) — preparation, mock interviews, and technical mentoring on fundamentals, architecture and design trade-offs, security and identity, scenario-based problems, and hands-on rounds — calibrated to the exact role and company format. Proxy interview support means expert technical preparation and guidance; you attend and complete your own interview.`,
+      answer: `Yes. We provide ${service} proxy interview support (also searched as ${service} interview proxy support) — real-time expert help on fundamentals, architecture and design trade-offs, security and identity, scenario-based problems, and hands-on rounds — calibrated to the exact role and company format. Proxy interview support means real-time technical help on the exact areas your interview covers; you attend and complete your own interview.`,
     },
     {
       question: `Can you help if I just joined a project using ${service}?`,
@@ -263,12 +263,12 @@ export function azureInterviewFaqs(entity: string): LandingFaqItem[] {
   return [
     {
       question: `What is ${entity} proxy interview support?`,
-      answer: `${entity} proxy interview support (also searched as ${entity} interview proxy support) is technical preparation and expert mentoring for your ${entity} interview. We run calibrated mock interviews and guide you on coding rounds, Microsoft Foundry and Azure OpenAI RAG architecture questions, Foundry Agent Service and multi-agent system design, Azure ML MLOps and deployment scenarios, Azure security (Entra ID, Key Vault, Private Link) discussions, and behavioral rounds — so you walk in confident and ready.`,
+      answer: `${entity} proxy interview support (also searched as ${entity} interview proxy support) is real-time, discreet technical help for your ${entity} interview. Our experts support you on coding rounds, Microsoft Foundry and Azure OpenAI RAG architecture questions, Foundry Agent Service and multi-agent system design, Azure ML MLOps and deployment scenarios, Azure security (Entra ID, Key Vault, Private Link) discussions, and behavioral rounds — so you walk in confident and ready.`,
     },
     {
       question: 'Does proxy interview support mean someone attends the interview for me?',
       answer:
-        'No. The candidate attends and completes their own interview. Proxy interview support refers to technical guidance, preparation, mock interviews, architecture review, and scenario-based mentoring that get you ready to perform. We do not impersonate candidates or sit interviews on anyone’s behalf, and we do not guarantee selection or employment — hiring decisions are made solely by employers.',
+        'No. The candidate attends and completes their own interview. Proxy interview support refers to real-time technical guidance, architecture review, and scenario-based support that get you ready to perform. We do not impersonate candidates or sit interviews on anyone’s behalf, and we do not guarantee selection or employment — hiring decisions are made solely by employers.',
     },
     {
       question: `What Azure AI/ML topics does ${entity} proxy interview support cover?`,
@@ -283,7 +283,7 @@ export function azureInterviewFaqs(entity: string): LandingFaqItem[] {
     {
       question: 'How do I get started?',
       answer:
-        'Message us on WhatsApp with your interview date, the role, the company/format, and likely topics. We assign the right Azure AI expert and run a pre-interview alignment session so preparation matches your background and experience level.',
+        'Message us on WhatsApp with your interview date, the role, the company/format, and likely topics. We assign the right Azure AI expert and run a pre-interview alignment session so support matches your background and experience level.',
     },
   ];
 }
@@ -389,7 +389,7 @@ export function azureServicePage(cfg: AzureServicePageInput): LandingPageConfig 
     bottomCTAHeading: cfg.bottomCTAHeading ?? 'Need Azure AI Proxy Job Support or Proxy Interview Support Right Now?',
     bottomCTABody:
       cfg.bottomCTABody ??
-      'In-house Microsoft Foundry, Azure OpenAI, Foundry Agent Service, and Azure ML experts available same-day — Azure AI proxy job support for live projects and production issues, or proxy interview support (technical preparation and mentoring — you attend your own interview). Talk to ProxyTechSupport on WhatsApp now.',
+      'In-house Microsoft Foundry, Azure OpenAI, Foundry Agent Service, and Azure ML experts available same-day — Azure AI proxy job support for live projects and production issues, or proxy interview support (real-time technical help — you attend your own interview). Talk to ProxyTechSupport on WhatsApp now.',
     canonical: cfg.canonical ?? `${BASE_URL}/${cfg.slug}/`,
     lastmod: cfg.lastmod ?? LASTMOD,
   };

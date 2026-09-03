@@ -71,7 +71,7 @@ const searchHub: LandingPageConfig = azurePage({
     {
       question: 'Do you provide production and interview support for Azure AI Search?',
       answer:
-        'Both. We firefight live retrieval and indexer incidents and prepare you for Azure AI Search and RAG system-design interviews. See our Azure AI Search production and interview support pages.',
+        'Both. We firefight live retrieval and indexer incidents and provide real-time proxy interview support for Azure AI Search and RAG system-design rounds. See our Azure AI Search production and interview support pages.',
     },
   ],
   useCasesSection: {
@@ -87,7 +87,7 @@ const searchHub: LandingPageConfig = azurePage({
   },
   bottomCTAHeading: 'Need Azure AI Search Help Right Now?',
   bottomCTABody:
-    'In-house Azure AI Search experts available same-day — retrieval quality, indexers, agentic retrieval, production fixes, or interview prep. Talk to ProxyTechSupport on WhatsApp now.',
+    'In-house Azure AI Search experts available same-day — retrieval quality, indexers, agentic retrieval, production fixes, or proxy interview support. Talk to ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [AZURE_HUB_LINK, A('Azure AI Search production support', 'azure-ai-search-production-support')],
     techLinks: [A('Azure AI Search vector search', 'azure-ai-search-vector-search-job-support'), A('Azure AI Search agentic retrieval', 'azure-ai-search-agentic-retrieval-job-support')],
@@ -346,7 +346,7 @@ const ragHub: LandingPageConfig = azurePage({
   },
   bottomCTAHeading: 'Need Azure RAG Help Right Now?',
   bottomCTABody:
-    'In-house Azure RAG experts available same-day — retrieval quality, agentic retrieval, Foundry IQ, production fixes, or interview prep. Talk to ProxyTechSupport on WhatsApp now.',
+    'In-house Azure RAG experts available same-day — retrieval quality, agentic retrieval, Foundry IQ, production fixes, or proxy interview support. Talk to ProxyTechSupport on WhatsApp now.',
   relatedLinks: relatedLinks({
     geoLinks: [AZURE_HUB_LINK, A('Azure RAG production support', 'azure-rag-production-support')],
     techLinks: [SEARCH_HUB_LINK, A('Azure OpenAI RAG job support', 'azure-openai-rag-job-support')],

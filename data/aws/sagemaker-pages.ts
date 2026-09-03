@@ -81,9 +81,9 @@ export const sageMakerHub: LandingPageConfig = awsPage({
   proxySection: {
     title: 'SageMaker Interview & Career Support',
     intro:
-      'Interviewing for a SageMaker, ML, or AWS data-and-AI role? We prepare you and can back you live.',
+      'Interviewing for a SageMaker, ML, or AWS data-and-AI role? Our experts back you live, in real time.',
     points: [
-      'SageMaker platform and SageMaker AI architecture preparation',
+      'SageMaker platform and SageMaker AI architecture interview support',
       'Lakehouse, Catalog, and governance design questions',
       'Live, discreet proxy interview support during the real interview',
       'Profile positioning for SageMaker and AWS ML Engineer roles',
@@ -205,20 +205,20 @@ export const sageMakerInterviewProxy: LandingPageConfig = awsServicePage({
   slug: 'amazon-sagemaker-interview-proxy-support',
   title: 'Amazon SageMaker Interview Support — ML Platform & MLOps System Design',
   description:
-    'Real-time Amazon SageMaker interview support: SageMaker AI training and inference, Pipelines, Managed MLflow, Model Registry, Unified Studio, Lakehouse, and MLOps system design. Calibrated mocks plus live proxy support.',
+    'Real-time Amazon SageMaker interview support: SageMaker AI training and inference, Pipelines, Managed MLflow, Model Registry, Unified Studio, Lakehouse, and MLOps system design. Live, real-time proxy interview support.',
   keywords: [
     'SageMaker interview support', 'SageMaker AI interview', 'SageMaker MLOps interview',
     'SageMaker system design interview', 'AWS ML engineer interview SageMaker', 'SageMaker proxy interview',
   ],
   h1: 'Amazon SageMaker Interview Support — ML Platform, MLOps & Deployment',
   tagline:
-    'SageMaker interviews go deep on training, inference, Pipelines, MLflow, and deployment. We prepare you and can back you live during the real thing.',
+    'SageMaker interviews go deep on training, inference, Pipelines, MLflow, and deployment. Our experts back you live, in real time, during the interview itself.',
   heroEyebrow: 'SageMaker Interview Support',
   painIntro:
     'A SageMaker or AWS ML Engineer interview coming up and unsure how deep they will push on training options, endpoint types, Pipelines, Managed MLflow, and Model Registry?',
   heroVariant:
-    'We prepare you across the SageMaker interview surface: SageMaker AI training (jobs, distributed training, HyperPod), inference (real-time endpoints, serverless, asynchronous, Batch Transform, multi-model), MLOps (Pipelines, Managed MLflow, Model Registry, Experiments), the SageMaker platform (Unified Studio, Lakehouse, Catalog), and cost/security design. We run calibrated mocks and can provide discreet live support. We never guarantee selection — hiring decisions are made solely by employers.',
-  faqs: awsServiceFaqs('SageMaker interview', 'We prepare you on training, inference, Pipelines, Managed MLflow, Model Registry, the SageMaker platform, and MLOps system design, with calibrated mocks and optional live support.'),
+    'Our experts support you across the SageMaker interview surface: SageMaker AI training (jobs, distributed training, HyperPod), inference (real-time endpoints, serverless, asynchronous, Batch Transform, multi-model), MLOps (Pipelines, Managed MLflow, Model Registry, Experiments), the SageMaker platform (Unified Studio, Lakehouse, Catalog), and cost/security design. We provide discreet, real-time live support. We never guarantee selection — hiring decisions are made solely by employers.',
+  faqs: awsServiceFaqs('SageMaker interview', 'Our experts support you on training, inference, Pipelines, Managed MLflow, Model Registry, the SageMaker platform, and MLOps system design, with discreet real-time live support.'),
   relatedLinks: relatedLinks({
     geoLinks: [AWS_INTERVIEW_HUB_LINK, SAGEMAKER_HUB_LINK],
     techLinks: [SAGEMAKER_AI_HUB_LINK, MLOPS_HUB_LINK],

@@ -79,7 +79,7 @@ export const awsMlopsHub: LandingPageConfig = awsPage({
   proxySection: {
     title: 'MLOps Interview & Career Support',
     intro:
-      'Interviewing for an AWS MLOps role? We prepare you and can back you live.',
+      'Interviewing for an AWS MLOps role? Our experts back you live, in real time.',
     points: [
       'Pipelines, MLflow, Model Registry, and CI/CD system-design questions',
       'FMOps/LLMOps and GenAI operations',
