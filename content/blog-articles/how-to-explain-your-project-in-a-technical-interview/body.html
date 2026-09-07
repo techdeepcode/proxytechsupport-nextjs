@@ -1,0 +1,67 @@
+<p>"Tell me about a project you're proud of" sounds like an easy question and is one of the hardest rounds in a senior loop. It is where the interviewer decides whether you are an <strong>owner</strong> who understands what they built and why, or an <strong>observer</strong> who was nearby while it happened. The difference isn't the size of the project — it's the depth you can defend under follow-up pressure. This is a structure for the walkthrough, and a survival guide for the questions that come after.</p>
+
+<hr>
+
+<h3>Pick the right project first</h3>
+<p>Before structure, selection. Choose the project you <strong>know best</strong>, not the most impressive-sounding one. The deep-dive round rewards depth of ownership, and an interviewer probing a flagship system you only touched at the edges will find the gap in minutes. A modest service you designed, debugged and operated end to end gives you a defensible answer to every follow-up — which reads as far stronger than name-dropping something huge you can't explain at the component level.</p>
+<p><strong>Good candidate projects:</strong> something you made real decisions on, that had a genuine problem or failure, and that produced a measurable outcome. Avoid pure maintenance work and projects where your role was peripheral.</p>
+
+<h3>The layered structure</h3>
+<p>Do not narrate the project chronologically from kickoff to launch — that buries the signal in history. Lead with the <em>shape</em>, then go deep where pulled:</p>
+<ol>
+<li><strong>Context in one sentence.</strong> What the system did, who used it, and the scale that made it non-trivial. "A real-time fraud-scoring service handling ~5k requests/sec for our payments flow."</li>
+<li><strong>Your role and scope.</strong> Be precise and honest — what <em>you</em> owned versus the team. Interviewers score your contribution, not the org's.</li>
+<li><strong>Architecture at a high level.</strong> The main components and how data flows. A clean 60-second overview that gives the interviewer hooks to probe.</li>
+<li><strong>The two or three decisions that mattered.</strong> This is the core. Each decision, the alternative you rejected, and the trade-off.</li>
+<li><strong>A real problem or failure.</strong> Something that broke, how you diagnosed it, how you fixed it, what you changed afterward.</li>
+<li><strong>The result.</strong> A measurable outcome — latency, cost, reliability, delivery — tied back to the work.</li>
+</ol>
+<p>Steps 4 and 5 are where senior candidates win or lose. Everything else is setup.</p>
+
+<h3>Decisions and trade-offs are the signal</h3>
+<p>Features are forgettable; decisions are memorable. Compare:</p>
+<table>
+<thead><tr><th>Forgettable (feature)</th><th>Memorable (decision + trade-off)</th></tr></thead>
+<tbody>
+<tr><td>"We used Kafka."</td><td>"We chose Kafka over a simple queue because we needed event replay and multiple independent consumers, accepting the operational overhead of running it."</td></tr>
+<tr><td>"It was a microservices architecture."</td><td>"We split two services out of the monolith along the boundaries that scaled differently, and deliberately kept the rest together to avoid distributed-transaction pain."</td></tr>
+<tr><td>"We cached results."</td><td>"We added a read-through cache with a 30s TTL because the data tolerated brief staleness, trading consistency for a big drop in DB load."</td></tr>
+</tbody>
+</table>
+<p>The pattern: <strong>name the alternative you rejected and why.</strong> That single move demonstrates the judgment the round exists to assess.</p>
+
+<h3>Surviving the follow-up questions</h3>
+<p>The interviewer will probe every claim. Common lines of attack and how to handle them:</p>
+<ul>
+<li><strong>"Why that database/queue/language?"</strong> — Have the trade-off ready. If the honest answer is "it was already in the stack," say that <em>and</em> whether it turned out to be a good fit.</li>
+<li><strong>"What broke in production?"</strong> — Have a real incident: symptom, how you localised it, the fix, the follow-up. This is often the highest-signal answer in the whole round.</li>
+<li><strong>"What would you change now?"</strong> — Shows growth. A candidate who thinks their design was flawless reads as junior. Name a specific thing and why.</li>
+<li><strong>"How would you scale this 10×?"</strong> — Reason about the bottleneck that hits first (usually the write path or a hot resource), not a generic "add more servers."</li>
+<li><strong>"Walk me through the exact request path."</strong> — The ownership test. If you can trace a request from entry to storage and back, you built it; if you hand-wave, you didn't.</li>
+</ul>
+
+<h3>When you hit the edge of what you know</h3>
+<p>You will get a question past your knowledge. The move that keeps you strong is honesty plus reasoning: <em>"I didn't own that part, but here's how I'd reason about it…"</em> or <em>"I don't know for certain — my mental model is X, let me reason from there."</em> Interviewers detect fabricated depth almost instantly, and a confident wrong bluff costs far more than a graceful boundary. Reasoning from first principles at the edge of your knowledge is itself a positive signal.</p>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Chronological narration.</strong> "First we gathered requirements, then we…" — the interviewer stops listening before you reach the interesting part.</li>
+<li><strong>Feature tours.</strong> Listing what the system did without any decision or trade-off behind it.</li>
+<li><strong>Overclaiming scope.</strong> "We" everywhere, so the interviewer can't tell what you did — then can't credit you for it.</li>
+<li><strong>Choosing the impressive project over the owned one.</strong> Depth you can't defend is a liability.</li>
+<li><strong>No numbers.</strong> "It worked well" — versus "cut p99 from 800ms to 120ms." One is a claim, the other is evidence.</li>
+</ul>
+
+<h3>Prepare it in advance</h3>
+<p>This round is rehearsable. For your two or three best projects, pre-write: the one-sentence context, the three key decisions with rejected alternatives, one real failure story, the measurable result, and answers to the five follow-ups above. Say them out loud until the structure is automatic and you can go deep on any branch the interviewer chooses.</p>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/what-happens-in-senior-technical-interview/">What actually happens in a senior technical interview</a> — where this round fits in the loop.</li>
+<li>Depth to draw on for real decisions and failures: <a href="/blog/why-rag-retrieval-quality-drops-in-production/">production RAG debugging</a>, the <a href="/blog/kubernetes-oomkilled-troubleshooting/">OOMKilled root-cause guide</a>, and <a href="/blog/spark-job-slow-data-skew-troubleshooting/">Spark data-skew troubleshooting</a>.</li>
+<li><a href="/final-round-interview-support-guide/">Final round interview support guide</a> and <a href="/how-live-technical-interview-support-works/">how live technical interview support works</a>.</li>
+</ul>
+
+<p>If you have a project deep-dive round coming up and want a senior engineer to help you structure and pressure-test your walkthrough — and to support you live during the interview itself — that is exactly what <a href="/proxy-interview-support/">proxy interview support</a> provides, always framed around your own participation.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

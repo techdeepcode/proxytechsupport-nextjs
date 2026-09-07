@@ -1,0 +1,85 @@
+<p>A retrieval-augmented generation system that answered perfectly in the demo and then returns vague, wrong or "I don't have that information" answers in production is following a script every AI engineer eventually learns: <strong>the model is almost never the problem — retrieval is.</strong> If the correct chunk never lands in the context window, no upgrade from one frontier model to another will save the answer. This guide is the retrieval debugging checklist, in the order that finds the cause fastest.</p>
+
+<hr>
+
+<h3>First, split the pipeline in two</h3>
+<p>RAG has two stages that fail for completely different reasons: <strong>retrieval</strong> (find the relevant chunks) and <strong>generation</strong> (write the answer from those chunks). Before touching anything, take a failing query and log <em>what was actually retrieved</em>:</p>
+<ul>
+<li><strong>The correct information is not in the retrieved set</strong> → retrieval problem. Stop blaming the model. Everything below applies.</li>
+<li><strong>The correct chunk was retrieved but the answer is still wrong</strong> → generation/prompting problem (context ordering, prompt, model refusing to trust context, hallucination — see the companion piece).</li>
+</ul>
+<p>This one split resolves most "the LLM got dumber" complaints. They are almost always "the LLM never saw the answer." Measure <strong>recall</strong> (did we fetch the relevant chunk at all) separately from answer quality — they are different metrics with different fixes.</p>
+
+<h3>Cause 1 — Chunking that destroys the answer</h3>
+<p>Chunking is the highest-leverage and most-neglected knob. Failure modes:</p>
+<ul>
+<li><strong>Too small</strong> — the answer is split across two chunks, so no single retrieved chunk contains it, and the model gets half the story.</li>
+<li><strong>Too large</strong> — one chunk covers many topics; its embedding is an average that matches nothing sharply, so it loses to more focused chunks even when it holds the answer.</li>
+<li><strong>Structure-blind</strong> — fixed-character splitting cuts through tables, code blocks, or a heading and its paragraph, orphaning context.</li>
+<li><strong>No overlap</strong> — a fact that straddles a boundary is lost. Modest overlap (or semantic/structure-aware chunking) preserves it.</li>
+</ul>
+<p><strong>What I check first:</strong> pull the source document, find the passage that <em>should</em> answer the query, and look at how it was chunked. If the answer spans a boundary or sits in a giant mixed chunk, that is your bug — fix ingestion, not the model.</p>
+
+<h3>Cause 2 — Embedding mismatch</h3>
+<p>Embeddings decide what "similar" means. Common mismatches:</p>
+<ul>
+<li><strong>Index/query model mismatch</strong> — vectors were built with one embedding model and queries are embedded with a different one (or a different version). The spaces don't align and similarity is noise. Re-embed the whole corpus when you change the model.</li>
+<li><strong>Domain mismatch</strong> — a general-purpose model that has never seen your acronyms, part numbers or legal phrasing embeds them poorly. Domain-adapted or higher-quality embedding models help.</li>
+<li><strong>Asymmetry</strong> — short user questions and long document passages live in different regions of the space. Models trained for asymmetric retrieval (query vs passage) matter here; some need an instruction/prefix to work well.</li>
+</ul>
+
+<h3>Cause 3 — The query doesn't look like the source</h3>
+<p>Users ask "why is my invoice rejected?"; the document says "validation failure codes for AP submissions." Pure semantic similarity can bridge some of that gap, but not all. Two fixes:</p>
+<ul>
+<li><strong>Query transformation</strong> — rewrite or expand the user query (multi-query, HyDE-style hypothetical answer) before retrieval so it better matches source phrasing.</li>
+<li><strong>Hybrid search</strong> — combine dense vectors with keyword/BM25 so exact tokens (error codes, IDs, product names) are matched lexically while semantics handles paraphrase. This is often the single biggest production win — covered in depth in <a href="/blog/hybrid-search-vs-vector-search/">hybrid search vs vector search</a>.</li>
+</ul>
+
+<h3>Cause 4 — Missing metadata filtering</h3>
+<p>In a demo corpus of 50 documents, everything is findable. In production with 500,000 chunks, the right passage is buried under near-duplicates from other tenants, other product versions, or archived material. Without metadata filters (tenant, product version, date, document type, access scope) applied <em>before</em> or <em>during</em> vector search, you retrieve the semantically-closest chunk from the wrong context. Filtered retrieval is frequently the difference between a toy and a product — and it is also a security control (never retrieve a chunk the user isn't entitled to see).</p>
+
+<h3>Cause 5 — No reranking</h3>
+<p>Vector search is fast but approximate; it gets the right chunk into the top 20–50 far more reliably than into the top 3–5. But you can only afford to put a few chunks in the context window. A <strong>cross-encoder reranker</strong> re-scores the top candidates by true query–passage relevance and reorders them, so the chunk that matters rises into the small <code>k</code> you actually pass to the model. Reranking lifts precision-at-small-k dramatically — <em>when the correct chunk was retrieved at all.</em> It cannot rescue a chunk that chunking/embedding/hybrid failures never fetched, so fix those first.</p>
+
+<h3>The production drift you didn't cause</h3>
+<p>Retrieval quality can degrade over time without a code change:</p>
+<ul>
+<li><strong>Corpus growth</strong> — more documents means more near-neighbours competing for the top slots; thresholds tuned on a small corpus stop holding.</li>
+<li><strong>Stale index</strong> — ingestion silently failing means new documents never get embedded; users ask about content that isn't indexed.</li>
+<li><strong>Query distribution shift</strong> — real users ask differently than your test set; the queries you never evaluated are the ones failing.</li>
+</ul>
+
+<h3>A retrieval triage table</h3>
+<table>
+<thead><tr><th>Symptom</th><th>Most likely cause</th><th>First fix</th></tr></thead>
+<tbody>
+<tr><td>Right doc exists, never retrieved</td><td>Chunking or embedding mismatch</td><td>Inspect chunk boundaries; verify index/query model match</td></tr>
+<tr><td>Exact IDs/codes missed, paraphrase works</td><td>Pure vector, no lexical match</td><td>Add hybrid (BM25 + dense)</td></tr>
+<tr><td>Right chunk in top-30 but not top-5</td><td>No reranking</td><td>Add a cross-encoder reranker</td></tr>
+<tr><td>Wrong tenant/version chunk returned</td><td>No metadata filter</td><td>Filter by tenant/version/date/scope</td></tr>
+<tr><td>Worked, degraded over weeks</td><td>Corpus growth / stale index</td><td>Re-tune k/threshold; verify ingestion</td></tr>
+</tbody>
+</table>
+
+<h3>Measure it, don't guess</h3>
+<p>Build a small golden set of real queries with known-correct source passages and track <strong>retrieval recall@k</strong> and <strong>answer correctness</strong> separately on every change. Without this, every tweak is a vibe. Evaluation beyond raw accuracy — faithfulness, context precision/recall — is its own discipline; frameworks like RAGAS operationalise it.</p>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Swapping to a bigger LLM.</strong> If retrieval missed the chunk, a smarter model just hallucinates more confidently.</li>
+<li><strong>Cranking <code>k</code> to 50.</strong> Floods the context with noise, raises cost and latency, and can bury the right chunk in distractors.</li>
+<li><strong>Tuning the prompt to fix a retrieval miss.</strong> You cannot prompt your way to information that isn't in the context.</li>
+<li><strong>Re-embedding queries with a new model but not the corpus.</strong> Guarantees a broken vector space.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/hybrid-search-vs-vector-search/">Hybrid search vs vector search: a RAG retrieval decision guide</a>.</li>
+<li><a href="/blog/llm-hallucination-root-cause-analysis/">LLM hallucination: a root-cause analysis framework</a> — the generation-stage counterpart.</li>
+<li><a href="/blog/rag-aimlops-retrieval-augmented-generation-guide/">RAG explained: retrieval-augmented generation architecture</a> and, for AWS stacks, <a href="/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/">Bedrock Knowledge Bases RAG troubleshooting</a>.</li>
+<li><a href="/rag-agentic-ai-job-support-guide/">RAG &amp; Agentic AI job support guide</a> and <a href="/mlops-job-support-guide/">MLOps job support guide</a>.</li>
+</ul>
+
+<p>If a RAG system is misbehaving in a live project and you need a second senior opinion on whether it's retrieval or generation, <a href="/proxy-job-support/">real-time proxy job support</a> can work the pipeline with you. And if you're being interviewed on production RAG, being able to reason through this split is exactly what <a href="/aws-rag-interview-proxy-support/">RAG interview proxy support</a> and <a href="/genai-interview-proxy-support/">GenAI interview proxy support</a> prepare you for.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

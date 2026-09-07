@@ -2030,3 +2030,18 @@ Additive Amazon global authority cluster — Amazon hiring and interview process
 - [Amazon Hiring Melbourne](/amazon-hiring-melbourne/): Amazon and AWS hiring in Melbourne — the local campuses, teams and role families, plus how the interview process works and how to get interview calls. Current as of August 2026; openings change frequently.
 
 <!-- AMAZON-CLUSTER-END -->
+
+## Knowledge Base — Engineering Guides (2026)
+
+Deep, vendor-neutral engineering guides — troubleshooting decision trees, architecture explainers, comparison guides and interview-knowledge. Evergreen references (Last reviewed: September 2026). Each links to the relevant proxy interview / job-support resource.
+
+- [Kubernetes Pod Pending: Production Troubleshooting Decision Tree](/blog/kubernetes-pod-pending-troubleshooting/): A decision tree for a pod stuck Pending — separating scheduler resource failures from node selector/affinity, taints, PVC binding and cluster-autoscaler causes using kubectl describe and events.
+- [Kubernetes OOMKilled: Root-Cause Troubleshooting](/blog/kubernetes-oomkilled-troubleshooting/): Why containers get OOMKilled (exit code 137), how cgroup memory limits and the kernel OOM killer interact, and how to tell "limit too low" from a leak or a runtime heap sized above the container limit (JVM/Node/Python).
+- [Terraform State Locking and Drift: Diagnosis and Recovery](/blog/terraform-state-locking-drift-troubleshooting/): How state locking works, when force-unlock is safe, and a disciplined method to detect and reconcile drift with refresh-only plans without triggering destructive replacements.
+- [CI/CD Pipeline Failures: Application vs Infrastructure vs Runner](/blog/cicd-pipeline-failure-troubleshooting/): A triage method that localises a red pipeline to code, pipeline infrastructure, or the runner/agent — plus the flaky-pipeline "fixed by re-run" trap.
+- [Why RAG Retrieval Quality Drops in Production](/blog/why-rag-retrieval-quality-drops-in-production/): Splitting retrieval failures from generation failures, and the chunking, embedding, metadata-filter, query-transformation and reranking causes behind most production RAG regressions.
+- [Hybrid Search vs Vector Search: A RAG Retrieval Decision Guide](/blog/hybrid-search-vs-vector-search/): When pure vector search suffices, when you need keyword/BM25, and how fusion (reciprocal rank fusion, weighted scores) and reranking stack in a retrieval pipeline.
+- [LLM Hallucination: A Root-Cause Analysis Framework](/blog/llm-hallucination-root-cause-analysis/): A taxonomy of why models produce false statements — missing context, conflicting context, over-generalization, prompt ambiguity, format-forced fabrication — and the mitigation matched to each cause.
+- [Spark Job Running Slow: Data Skew and Shuffle Troubleshooting](/blog/spark-job-slow-data-skew-troubleshooting/): Reading the Spark UI to separate data skew from spill, small files and shuffle-heavy plans, and the fixes (AQE, broadcast joins, salting, partition sizing) that match each.
+- [What Actually Happens in a Senior Technical Interview](/blog/what-happens-in-senior-technical-interview/): A round-by-round breakdown — coding, system design, architecture deep-dive, behavioural — of what each round evaluates and why strong engineers still fail them.
+- [How to Explain a Complex Project in a Technical Interview](/blog/how-to-explain-your-project-in-a-technical-interview/): A structure for the project deep-dive round — context, role, architecture, key decisions and trade-offs, failure and recovery, results — and how to survive deep follow-up questions.

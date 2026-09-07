@@ -121,7 +121,40 @@ import { meta as meta_ai_ml_engineer_jobs_canada } from './ai-ml-engineer-jobs-c
 import Article_indian_masters_graduates_canada_it_career_breakthrough_2026 from './indian-masters-graduates-canada-it-career-breakthrough-2026/Article';
 import { meta as meta_indian_masters_graduates_canada_it_career_breakthrough_2026 } from './indian-masters-graduates-canada-it-career-breakthrough-2026/meta';
 
+// ─── Knowledge Base engineering cluster (Sept 2026; additive) ─────────────────
+import Article_kubernetes_pod_pending_troubleshooting from './kubernetes-pod-pending-troubleshooting/Article';
+import { meta as meta_kubernetes_pod_pending_troubleshooting } from './kubernetes-pod-pending-troubleshooting/meta';
+import Article_kubernetes_oomkilled_troubleshooting from './kubernetes-oomkilled-troubleshooting/Article';
+import { meta as meta_kubernetes_oomkilled_troubleshooting } from './kubernetes-oomkilled-troubleshooting/meta';
+import Article_terraform_state_locking_drift_troubleshooting from './terraform-state-locking-drift-troubleshooting/Article';
+import { meta as meta_terraform_state_locking_drift_troubleshooting } from './terraform-state-locking-drift-troubleshooting/meta';
+import Article_cicd_pipeline_failure_troubleshooting from './cicd-pipeline-failure-troubleshooting/Article';
+import { meta as meta_cicd_pipeline_failure_troubleshooting } from './cicd-pipeline-failure-troubleshooting/meta';
+import Article_why_rag_retrieval_quality_drops_in_production from './why-rag-retrieval-quality-drops-in-production/Article';
+import { meta as meta_why_rag_retrieval_quality_drops_in_production } from './why-rag-retrieval-quality-drops-in-production/meta';
+import Article_hybrid_search_vs_vector_search from './hybrid-search-vs-vector-search/Article';
+import { meta as meta_hybrid_search_vs_vector_search } from './hybrid-search-vs-vector-search/meta';
+import Article_llm_hallucination_root_cause_analysis from './llm-hallucination-root-cause-analysis/Article';
+import { meta as meta_llm_hallucination_root_cause_analysis } from './llm-hallucination-root-cause-analysis/meta';
+import Article_spark_job_slow_data_skew_troubleshooting from './spark-job-slow-data-skew-troubleshooting/Article';
+import { meta as meta_spark_job_slow_data_skew_troubleshooting } from './spark-job-slow-data-skew-troubleshooting/meta';
+import Article_what_happens_in_senior_technical_interview from './what-happens-in-senior-technical-interview/Article';
+import { meta as meta_what_happens_in_senior_technical_interview } from './what-happens-in-senior-technical-interview/meta';
+import Article_how_to_explain_your_project_in_a_technical_interview from './how-to-explain-your-project-in-a-technical-interview/Article';
+import { meta as meta_how_to_explain_your_project_in_a_technical_interview } from './how-to-explain-your-project-in-a-technical-interview/meta';
+
 export const blogArticleEntries = [
+  // ── Knowledge Base engineering cluster (Sept 2026) ──
+  { meta: meta_kubernetes_pod_pending_troubleshooting, Article: Article_kubernetes_pod_pending_troubleshooting },
+  { meta: meta_kubernetes_oomkilled_troubleshooting, Article: Article_kubernetes_oomkilled_troubleshooting },
+  { meta: meta_terraform_state_locking_drift_troubleshooting, Article: Article_terraform_state_locking_drift_troubleshooting },
+  { meta: meta_cicd_pipeline_failure_troubleshooting, Article: Article_cicd_pipeline_failure_troubleshooting },
+  { meta: meta_why_rag_retrieval_quality_drops_in_production, Article: Article_why_rag_retrieval_quality_drops_in_production },
+  { meta: meta_hybrid_search_vs_vector_search, Article: Article_hybrid_search_vs_vector_search },
+  { meta: meta_llm_hallucination_root_cause_analysis, Article: Article_llm_hallucination_root_cause_analysis },
+  { meta: meta_spark_job_slow_data_skew_troubleshooting, Article: Article_spark_job_slow_data_skew_troubleshooting },
+  { meta: meta_what_happens_in_senior_technical_interview, Article: Article_what_happens_in_senior_technical_interview },
+  { meta: meta_how_to_explain_your_project_in_a_technical_interview, Article: Article_how_to_explain_your_project_in_a_technical_interview },
   { meta: meta_amazon_bedrock_production_architecture_2026, Article: Article_amazon_bedrock_production_architecture_2026 },
   { meta: meta_amazon_bedrock_rag_knowledge_bases_troubleshooting, Article: Article_amazon_bedrock_rag_knowledge_bases_troubleshooting },
   { meta: meta_amazon_bedrock_agentcore_architecture_troubleshooting, Article: Article_amazon_bedrock_agentcore_architecture_troubleshooting },

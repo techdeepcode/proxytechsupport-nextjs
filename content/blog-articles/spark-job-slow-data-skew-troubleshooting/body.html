@@ -1,0 +1,81 @@
+<p>"The Spark job is slow" is where a lot of data engineers reach for more executors — and often make nothing faster while doubling the bill. Spark performance is a <strong>diagnosis problem before it is a tuning problem</strong>. The Spark UI already tells you whether you're fighting data skew, shuffle spill, a small-files explosion, or genuine under-provisioning. Each has a different fix, and applying the wrong one wastes cluster money. This guide is how to read the signal and match the remedy.</p>
+
+<hr>
+
+<h3>Start in the Spark UI, at the slowest stage</h3>
+<p>Don't guess. Open the <strong>Stages</strong> tab, sort by duration, and open the longest stage. The task-level summary metrics are the diagnosis:</p>
+<table>
+<thead><tr><th>What you see in the stage</th><th>Diagnosis</th></tr></thead>
+<tbody>
+<tr><td>Max task duration &raquo; median (a few stragglers)</td><td><strong>Data skew</strong> — a few partitions hold most rows</td></tr>
+<tr><td>Large Spill (memory) / Spill (disk)</td><td><strong>Memory pressure</strong> — data doesn't fit, going to disk</td></tr>
+<tr><td>Thousands of tiny tasks / tiny input files</td><td><strong>Small-files problem</strong> — overhead dominates</td></tr>
+<tr><td>Huge shuffle read/write bytes</td><td><strong>Shuffle-heavy plan</strong> — wide transformations moving too much</td></tr>
+<tr><td>GC time a large fraction of task time</td><td><strong>Executor memory</strong> undersized / caching pressure</td></tr>
+</tbody>
+</table>
+<p>The single most useful chart is the <strong>task duration distribution</strong> for the slow stage. Even task times → the stage is genuinely heavy (scale up or optimise the logic). A long tail where max is 20× the median → skew, and no amount of extra executors helps because the straggler task runs alone.</p>
+
+<h3>Data skew: the dominant cause</h3>
+<p>Spark parallelises by partition. Skew means one key value owns a disproportionate share of the rows, so after a shuffle (join or <code>groupBy</code>) one partition is enormous and its task becomes a straggler while every other core sits idle. The usual culprits:</p>
+<ul>
+<li>A join/group key dominated by <code>null</code>, an empty string, a <code>-1</code> sentinel, or "UNKNOWN".</li>
+<li>A natural hot key — one mega-customer, one country, one popular product.</li>
+<li>A default timestamp/date bucket that swallows unparseable rows.</li>
+</ul>
+
+<h4>Skew fixes, matched to the case</h4>
+<ol>
+<li><strong>Enable Adaptive Query Execution (AQE).</strong> Modern Spark can detect and <em>split skewed partitions</em> at runtime and coalesce shuffle partitions. Confirm <code>spark.sql.adaptive.enabled=true</code> and <code>spark.sql.adaptive.skewJoin.enabled=true</code>. This is the first, cheapest lever and often enough on its own.</li>
+<li><strong>Broadcast the small side.</strong> If a skewed join has one side small enough to fit in executor memory, a broadcast (map-side) join avoids the shuffle entirely — no shuffle, no skew. AQE can promote joins to broadcast automatically; you can also hint it.</li>
+<li><strong>Filter the sentinel first.</strong> If <code>null</code>/<code>-1</code> keys carry no business meaning in the join, drop them before the join. Often this single filter removes the entire skew.</li>
+<li><strong>Salt the hot key.</strong> For large–large joins or aggregations where the hot key is legitimate, add a random salt (e.g. key + a suffix 0..N) to spread it across N partitions, aggregate, then combine. More code, but the standard remedy when AQE and broadcast don't apply.</li>
+</ol>
+
+<h3>Shuffle spill and memory pressure</h3>
+<p>Spill is Spark writing intermediate shuffle/aggregation data to disk because it doesn't fit in execution memory, then reading it back — converting fast memory work into slow disk I/O. If the slow stage shows large spill:</p>
+<ul>
+<li><strong>Too few shuffle partitions</strong> makes each partition huge. Historically the default 200 is wrong for large data; let AQE coalesce, or set <code>spark.sql.shuffle.partitions</code> so each partition is a sane size (a few hundred MB, not many GB).</li>
+<li><strong>Skew</strong> concentrates data into one task's memory — fix the skew and the spill often disappears.</li>
+<li><strong>Under-sized executors</strong> — genuinely too little memory per core. Right-size executor memory and cores together; more, smaller executors sometimes beats a few giant ones for shuffle.</li>
+</ul>
+
+<h3>The small-files problem</h3>
+<p>Reading a million tiny files (or writing them) makes per-task and metadata overhead dominate actual work — you see a stage with a vast number of trivially short tasks. Fixes: compact input on ingestion, use columnar formats (Parquet) with reasonable file sizes, <code>coalesce</code>/<code>repartition</code> before writing, and on lakehouse tables use table optimisation (e.g. Delta <code>OPTIMIZE</code>/compaction) to keep file sizes healthy.</p>
+
+<h3>Reduce the shuffle, not just tune it</h3>
+<p>The fastest shuffle is the one you don't do. Before tuning a wide stage, ask whether the plan can avoid it:</p>
+<ul>
+<li>Filter and project <em>early</em> so less data reaches the shuffle (predicate/column pruning; check the physical plan).</li>
+<li>Pre-aggregate before a join where possible.</li>
+<li>Prefer broadcast joins for dimension tables.</li>
+<li>Persist/cache a DataFrame only when it's reused across actions — needless caching causes its own memory pressure.</li>
+</ul>
+
+<h3>A troubleshooting order that saves money</h3>
+<ol>
+<li>Find the slow <strong>stage</strong> and read the <strong>task distribution</strong>.</li>
+<li>Stragglers → treat as <strong>skew</strong> (AQE → broadcast → filter sentinel → salt).</li>
+<li>Spill/GC → <strong>memory/partition</strong> sizing.</li>
+<li>Tiny tasks → <strong>small files</strong>.</li>
+<li>Only after ruling the above out, scale the cluster.</li>
+</ol>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Adding executors to fix skew.</strong> The straggler task still runs on one core; you've paid for idle machines.</li>
+<li><strong>Blindly raising <code>spark.sql.shuffle.partitions</code>.</strong> Too many partitions creates scheduling overhead and tiny tasks — the opposite problem.</li>
+<li><strong>Caching everything.</strong> Cache pressure evicts real work and causes spill/GC.</li>
+<li><strong>Leaving AQE off.</strong> On modern Spark it fixes a large share of skew and partition-sizing issues for free.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/why-rag-retrieval-quality-drops-in-production/">Why RAG retrieval quality drops in production</a> — for the data pipelines feeding AI systems.</li>
+<li><a href="/blog/golden-signals-dashboard-sre-datadog-success-rate-availability/">Golden Signals dashboard for SRE</a> — observing batch/stream job health.</li>
+<li><a href="/data-engineering-job-support-guide/">Data Engineering job support guide</a> and <a href="/mlops-job-support-guide/">MLOps job support guide</a>.</li>
+</ul>
+
+<p>If a Spark job is blowing its SLA in a live pipeline and you need someone senior to read the UI with you and decide skew-vs-spill fast, that's exactly what <a href="/proxy-job-support/">real-time proxy job support</a> is for. And walking an interviewer through this diagnosis — UI to root cause to the matching fix — is the kind of depth <a href="/data-science-interview-proxy-support/">data engineering / data science interview proxy support</a> prepares you to demonstrate.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

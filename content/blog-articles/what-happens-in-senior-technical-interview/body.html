@@ -1,0 +1,72 @@
+<p>The senior technical interview is not a harder version of the junior one — it measures different things. A junior loop mostly asks "can this person code?" A senior loop asks "can this person make good decisions under ambiguity, at scale, and bring others along?" That shift explains the most frustrating pattern in hiring: <strong>genuinely strong engineers who fail interviews</strong> because they answer the round they expected instead of the round that's actually being run. This is what each round is really evaluating, and where good candidates lose signal.</p>
+
+<hr>
+
+<h3>The four rounds and their true purpose</h3>
+<table>
+<thead><tr><th>Round</th><th>Surface task</th><th>What it actually measures</th></tr></thead>
+<tbody>
+<tr><td>Coding</td><td>Solve a problem in code</td><td>Decomposition, correctness, edge cases, verification, communication while coding</td></tr>
+<tr><td>System design</td><td>Design a system at scale</td><td>Requirement gathering, trade-off judgment, ability to defend decisions</td></tr>
+<tr><td>Architecture / experience deep-dive</td><td>Walk through a real project</td><td>Depth of ownership, whether you understand what you built and why</td></tr>
+<tr><td>Behavioural</td><td>Tell me about a time…</td><td>Collaboration, conflict handling, judgment, influence, learning from failure</td></tr>
+</tbody>
+</table>
+<p>Most senior loops sample from this set, and as the level rises (senior → staff → principal) the weight moves away from coding toward design, experience and influence. Reading which round you're in — and answering <em>that</em> — is half the battle.</p>
+
+<h3>The coding round: it's not just the algorithm</h3>
+<p>At senior level, getting the right answer is table stakes; the signal is <em>how</em> you get there. Interviewers are scoring:</p>
+<ul>
+<li><strong>Clarification first</strong> — do you pin down inputs, constraints and edge cases before coding, or charge in?</li>
+<li><strong>Communication</strong> — do you narrate your approach so the interviewer can follow and course-correct, or go silent for ten minutes?</li>
+<li><strong>Clean, correct code</strong> — readable structure, sensible names, handled edge cases — not code-golf.</li>
+<li><strong>Complexity reasoning</strong> — can you state and justify time/space, and improve a brute force deliberately?</li>
+<li><strong>Verification</strong> — do you test your own solution with examples and edge cases, or declare victory and wait?</li>
+</ul>
+<p><strong>Where seniors lose points:</strong> treating it as a pure LeetCode sprint, skipping clarification, and not verifying. A correct answer delivered in silence with no edge-case handling reads as weaker than a slightly slower answer with clear communication and testing.</p>
+
+<h3>The system design round: judgment, out loud</h3>
+<p>This is the highest-signal round for senior roles, and the one most often failed by strong builders. The interviewer is not looking for <em>the</em> answer — there isn't one — they're looking for how you reason:</p>
+<ol>
+<li><strong>Gather requirements.</strong> Functional (what must it do) and non-functional (scale, latency, availability, consistency, cost). Jumping to a design without this is the number-one failure.</li>
+<li><strong>Estimate.</strong> Rough numbers — QPS, data volume, read/write ratio — because they drive every downstream choice.</li>
+<li><strong>Sketch the high-level design,</strong> then go deep where it matters: data model, storage choice, caching, the write path, the read path.</li>
+<li><strong>Name the trade-offs explicitly.</strong> "I'd choose eventual consistency here because the read path tolerates staleness and we need availability; if this were payments I'd choose otherwise." That sentence is the signal.</li>
+<li><strong>Handle scale and failure.</strong> Bottlenecks, hot partitions, what happens when a component dies.</li>
+</ol>
+<p><strong>Where seniors lose points:</strong> designing in silence, presenting one architecture as obviously correct, and being unable to say <em>why not</em> the alternatives. Design interviews reward the engineer who surfaces the fork in the road and picks a branch with reasons.</p>
+
+<h3>The architecture / experience deep-dive: the resume is the exam</h3>
+<p>You describe a real system you built; the interviewer probes it relentlessly. "Why that database? What broke in production? What would you change? How did you handle the migration? What was the hardest bug?" This round is almost impossible to fake, which is exactly why companies love it.</p>
+<p><strong>Where seniors lose points:</strong> listing projects they led at a distance but can't go three levels deep on. If your resume says you "architected a real-time pipeline," expect to defend every component, every trade-off, and every incident. Pick the projects you can go deepest on, not the most impressive-sounding ones. Our companion guide, <a href="/blog/how-to-explain-your-project-in-a-technical-interview/">how to explain a complex project in a technical interview</a>, is entirely about winning this round.</p>
+
+<h3>The behavioural round: judgment and collaboration are technical</h3>
+<p>Engineers routinely under-prepare this and it sinks otherwise strong loops. At senior level the company is buying judgment and influence, so the round probes real situations: a disagreement with a lead, a project that failed, a decision you made with incomplete information, how you brought a team along. Structured, specific stories (situation → your action → result → what you learned) beat vague generalities. Blame-shifting, "I had no failures," and inability to articulate your own impact are quiet rejections.</p>
+
+<h3>Why strong engineers still fail</h3>
+<ul>
+<li><strong>Generic when specifics are wanted.</strong> "We used microservices for scalability" is a non-answer; the decision, the alternative, and the trade-off are the answer.</li>
+<li><strong>Solution-first in design.</strong> Skipping requirements and estimation signals exactly the judgment gap the round exists to catch.</li>
+<li><strong>Shallow on their own resume.</strong> Depth you can't defend is worse than a smaller claim you own completely.</li>
+<li><strong>Silent problem-solving.</strong> Interviewers score reasoning they can hear; a right answer with no visible thinking is low-signal.</li>
+<li><strong>Treating behavioural as a formality.</strong> It's a real gate for senior hiring.</li>
+</ul>
+
+<h3>How to prepare for the loop you'll actually get</h3>
+<ul>
+<li>Practise <strong>talking while you solve</strong> — the skill is as much narration as computation.</li>
+<li>Rehearse system design as a <strong>conversation about trade-offs</strong>, not a diagram you memorised.</li>
+<li>Choose <strong>two or three projects</strong> you can defend to bedrock, and pre-write the follow-up answers.</li>
+<li>Prepare <strong>structured behavioural stories</strong> for conflict, failure, and a hard decision.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/how-to-explain-your-project-in-a-technical-interview/">How to explain a complex project in a technical interview</a> — the deep-dive round, solved.</li>
+<li><a href="/final-round-interview-support-guide/">Final round interview support guide</a> and <a href="/how-live-technical-interview-support-works/">how live technical interview support works</a>.</li>
+<li>For the engineering depth these rounds probe, the troubleshooting and architecture guides in our knowledge base — e.g. <a href="/blog/why-rag-retrieval-quality-drops-in-production/">production RAG debugging</a> or the <a href="/blog/kubernetes-pod-pending-troubleshooting/">Kubernetes pod Pending decision tree</a>.</li>
+</ul>
+
+<p>If you have a senior loop coming up and want expert guidance through exactly these rounds, that's the core of <a href="/proxy-interview-support/">proxy interview support</a> — real-time senior help during live technical interviews, framed around your own participation, not a substitute for it.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

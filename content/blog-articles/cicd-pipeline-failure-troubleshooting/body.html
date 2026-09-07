@@ -1,0 +1,81 @@
+<p>A red pipeline is a symptom, not a diagnosis. The fastest engineers do not start reading logs top-to-bottom — they first place the failure in one of three layers: <strong>the application</strong> (your code / tests are genuinely broken), <strong>the pipeline infrastructure</strong> (registry, cache, credentials, dependency sources, deploy target), or <strong>the runner/agent</strong> (the machine executing the job — disk, memory, tool versions). Fixing the wrong layer is how teams end up re-running jobs for an hour. This guide is the triage.</p>
+
+<hr>
+
+<h3>The one question that localises 80% of failures</h3>
+<p><strong>"Did this exact commit pass before?"</strong></p>
+<ul>
+<li><strong>A previously-green commit now fails, no code change</strong> → the environment changed. Infrastructure or runner. Suspect a moved dependency, an expired secret, a new base image, a full disk, a registry outage.</li>
+<li><strong>Failure started exactly on the commit that touched the relevant code, and reproduces locally</strong> → application. Fix the code/test.</li>
+<li><strong>Fails intermittently on the same commit</strong> → non-determinism: flaky test, race in parallel jobs, or a resource-starved runner. Do not "fix" it with a re-run.</li>
+</ul>
+
+<h3>Layer 1 — Application failures</h3>
+<p>These are legitimate and the pipeline is doing its job. Signals:</p>
+<ul>
+<li>Compile/type errors, unit or integration test assertions, lint/format gates, coverage thresholds.</li>
+<li>Reproduces locally with the same command the CI step runs.</li>
+<li>Localised to the build/test stage, tied to a specific diff.</li>
+</ul>
+<p><strong>What to check first:</strong> run the exact CI command locally (not your IDE's runner) with the same tool versions. Most "works on my machine" gaps are version drift — pin them (Step: Layer 2).</p>
+
+<h3>Layer 2 — Pipeline infrastructure failures</h3>
+<p>The code is fine; the plumbing broke. Signals and causes:</p>
+<table>
+<thead><tr><th>Failing stage</th><th>Likely infrastructure cause</th></tr></thead>
+<tbody>
+<tr><td>Checkout / clone</td><td>SCM auth token expired, LFS quota, network to the SCM</td></tr>
+<tr><td>Dependency fetch (npm/pip/maven)</td><td>Registry down, a version yanked, a transitive dep moved, lockfile not honoured</td></tr>
+<tr><td>Docker build</td><td>Base image tag changed under you, cache poisoned, build-arg/secret missing</td></tr>
+<tr><td>Image push</td><td>Registry credentials expired, repository quota, immutable-tag conflict</td></tr>
+<tr><td>Deploy</td><td>Cluster/target credentials rotated, changed manifest, environment gate, quota</td></tr>
+</tbody>
+</table>
+<p>The tell for infrastructure is that it fails <em>outside your source tree</em> — before your code even runs, or when talking to an external system. The fix is usually pinning and hardening: pin base images by digest, honour lockfiles, rotate secrets with overlap, and make external fetches retry with backoff.</p>
+
+<h3>Layer 3 — Runner / agent failures</h3>
+<p>The most under-diagnosed layer, because the logs often look like an application error. The machine itself is the problem:</p>
+<ul>
+<li><strong>Out of disk</strong> — accumulated Docker layers and build caches fill the agent; builds fail with "no space left on device" or cryptic tar/extract errors. Prune caches; size ephemeral runners.</li>
+<li><strong>Out of memory</strong> — parallel jobs or a heavy compile/test OOM the agent; the job is killed (137) and the log just stops mid-step. Reduce parallelism or use a bigger runner class.</li>
+<li><strong>Stale / poisoned cache</strong> — a corrupted dependency or Docker layer cache makes a good commit fail; a cache key that is too broad shares bad state across branches. Bust the cache key.</li>
+<li><strong>Version drift</strong> — the runner image updated its default Node/Java/Python/Docker and your build assumed the old one. Pin the toolchain in the pipeline, not the runner image.</li>
+<li><strong>Clock skew / TLS</strong> — a badly-timed agent breaks certificate validation on every HTTPS call.</li>
+</ul>
+<p><strong>The tell:</strong> multiple unrelated pipelines start failing at once, or the failure follows a specific runner/agent and clears on a different one. That is never your code.</p>
+
+<h3>Flaky pipelines: the "fixed by re-run" trap</h3>
+<p>A job that passes on re-run without any change is <strong>not fixed</strong> — it is flaky, and flakiness erodes trust in the whole pipeline until people reflexively re-run real failures too. Root-cause the flake:</p>
+<ul>
+<li><strong>Test flakiness</strong> — order dependence, shared fixtures, real time/network in tests, unmocked external calls. Isolate and quarantine, then fix; don't let it mask regressions.</li>
+<li><strong>Concurrency races</strong> — parallel jobs sharing a database, a port, a fixed resource name, or the same Terraform state lock (see the state-locking guide).</li>
+<li><strong>Resource starvation</strong> — the runner was momentarily out of memory/disk; intermittent by nature.</li>
+</ul>
+
+<h3>A triage checklist</h3>
+<ol>
+<li>Read the <strong>failing stage</strong>, not the whole log — it names the layer.</li>
+<li>Ask <strong>"did this commit pass before?"</strong> to split code-vs-environment.</li>
+<li>Check whether <strong>other pipelines</strong> are failing too (points to runner/infra).</li>
+<li>Reproduce the <strong>exact command</strong> locally with pinned versions.</li>
+<li>If intermittent, treat as <strong>flaky</strong> and root-cause — never accept a re-run as the fix.</li>
+</ol>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Re-running until green.</strong> Hides flakiness and burns CI minutes; the failure returns.</li>
+<li><strong>Editing application code to satisfy an infrastructure failure.</strong> e.g. loosening a test because the registry was down.</li>
+<li><strong>Widening cache keys to "speed things up."</strong> Broad keys share poisoned caches across branches.</li>
+<li><strong>Unpinned base images and toolchains.</strong> Guarantees future "green commit suddenly fails" incidents.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/terraform-state-locking-drift-troubleshooting/">Terraform state locking and drift</a> — a frequent source of pipeline concurrency failures.</li>
+<li><a href="/blog/kubernetes-pod-pending-troubleshooting/">Kubernetes pod Pending decision tree</a> — when the "runner" is a Kubernetes-based build pod that won't schedule.</li>
+<li><a href="/devops-job-support-guide/">DevOps job support guide</a> and <a href="/sre-job-support-guide/">SRE job support guide</a>.</li>
+</ul>
+
+<p>If a release pipeline is red and blocking a deploy right now, <a href="/proxy-job-support/">real-time proxy job support</a> can help you localise the layer and unblock the release. And explaining a CI/CD failure clearly — which layer, why, how you'd prevent it — is exactly the kind of scenario a <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a> session prepares you to handle.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

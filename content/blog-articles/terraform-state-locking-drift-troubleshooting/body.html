@@ -1,0 +1,91 @@
+<p>Two Terraform problems generate more 2 a.m. pages than any other: <strong>a state lock you cannot acquire</strong>, and <strong>drift between what state believes and what the cloud actually looks like</strong>. Both are recoverable, and both are dangerous if you reach for the aggressive fix first. <code>force-unlock</code> and a reflexive <code>apply</code> are exactly how a locked pipeline becomes a corrupted state file or a destroyed database. This guide covers the mechanism and the disciplined recovery for each.</p>
+
+<hr>
+
+<h3>Part 1 — State locking</h3>
+
+<h4>Why the lock exists</h4>
+<p>Terraform state is a single source of truth that must not be written by two processes at once. Backends that support locking (S3 with a DynamoDB lock table or S3 native locking, Azure Blob leases, GCS, Terraform Cloud, Consul) take a lock at the start of any operation that reads-then-writes state — <code>apply</code>, <code>plan</code> with refresh, <code>state</code> subcommands — and release it at the end. If a second run starts while the first holds the lock, you get:</p>
+<pre><code>Error: Error acquiring the state lock
+
+Lock Info:
+  ID:        9f3c1a2b-...        # the Lock ID you need for force-unlock
+  Path:      s3://.../terraform.tfstate
+  Operation: OperationTypeApply
+  Who:       jenkins@ci-agent-7
+  Created:   2026-09-07 01:12:44 UTC
+  Info:      </code></pre>
+
+<h4>Diagnose before you unlock</h4>
+<p>The Lock Info tells you almost everything. Ask, in order:</p>
+<ol>
+<li><strong>Is a real run in progress?</strong> Check CI (is there a running pipeline for this stack?) and ask the person in <code>Who</code>. If yes — wait. This is not a stale lock; unlocking it will corrupt state.</li>
+<li><strong>How old is <code>Created</code>?</strong> A lock from seconds ago is almost certainly live. A lock hours old whose owning job you can prove is dead (crashed agent, cancelled pipeline, killed laptop) is a <em>stale</em> lock.</li>
+<li><strong>Did a previous run crash?</strong> Network drops, <code>SIGKILL</code>, spot-instance reclaim of a CI runner, or Ctrl-C at the wrong moment all leave a lock behind because the release never ran.</li>
+</ol>
+
+<h4>Releasing a stale lock safely</h4>
+<p>Only once you have <em>confirmed</em> nothing is running:</p>
+<pre><code>terraform force-unlock &lt;LOCK_ID&gt;
+# use the exact ID from the error; do not force-unlock blindly</code></pre>
+<p>If you cannot use the CLI (backend broken), you can delete the lock item directly — e.g. the DynamoDB lock table row keyed on the state path — but treat that as a last resort and know exactly which item you are removing. <strong>The cardinal rule:</strong> a lock protects state integrity; removing it while an apply is mid-write means two writers and a good chance of a corrupted or half-written state file that then needs restoring from backend versioning.</p>
+
+<h4>Preventing lock incidents</h4>
+<ul>
+<li>Enable state file versioning on the backend bucket so you can roll back a bad write.</li>
+<li>Serialise applies per state in CI (concurrency group / mutex) so two pipelines never target the same state.</li>
+<li>Split large monolithic states so unrelated changes don't queue behind each other on one lock.</li>
+<li>Set sensible pipeline timeouts so a hung run fails and releases rather than holding the lock indefinitely.</li>
+</ul>
+
+<hr>
+
+<h3>Part 2 — Drift</h3>
+
+<h4>What drift is</h4>
+<p>Drift is any divergence between the real resource and what Terraform state records: a security group rule added in the console during an incident, a tag changed by a governance tool, an autoscaling group resized by hand, or a provider default that shifted between versions. Terraform is declarative — it will try to make reality match config on the next apply — so <strong>undetected drift plus a routine apply is how unrelated manual fixes silently get reverted.</strong></p>
+
+<h4>Detecting drift without changing anything</h4>
+<pre><code>terraform plan -refresh-only     # show ONLY drift: real state vs recorded state
+terraform plan                   # drift + the config changes you're about to make</code></pre>
+<p>Read a <code>-refresh-only</code> plan first. It answers "what changed underneath me?" without mixing in your own pending edits. Each drifted attribute is shown as recorded-value → real-value. Now decide, <em>per resource</em>, which side is right.</p>
+
+<h4>The reconciliation decision</h4>
+<table>
+<thead><tr><th>Situation</th><th>Correct action</th></tr></thead>
+<tbody>
+<tr><td>Manual change was intentional and should stay</td><td>Update the Terraform config to match reality, so the next plan is clean</td></tr>
+<tr><td>Manual change was a mistake / unauthorised</td><td>Run a normal <code>apply</code> to restore the declared state</td></tr>
+<tr><td>Resource was created outside Terraform</td><td><code>terraform import</code> it into state, then write matching config</td></tr>
+<tr><td>Plan shows <code>-/+</code> (replace) on a stateful resource</td><td>STOP — review before applying; a replace can destroy a database/volume</td></tr>
+</tbody>
+</table>
+
+<h4>The replace trap</h4>
+<p>The single most destructive drift outcome is a plan that quietly proposes to <strong>destroy and recreate</strong> a stateful resource — an RDS instance, an EBS volume, a stateful set's storage — because a "ForceNew" attribute drifted or your config changed one. Terraform marks these <code>-/+ resource must be replaced</code>. Never approve an apply without reading every replace line. When a change genuinely needs a replace but the data must survive, use <code>create_before_destroy</code>, snapshots, or a manual migration — not a blind apply.</p>
+
+<h4>Targeted, reviewable applies</h4>
+<ul>
+<li>Save the plan and apply exactly that: <code>terraform plan -out tf.plan</code> then <code>terraform apply tf.plan</code> — no surprises between review and execution.</li>
+<li>Scope risky changes: <code>terraform apply -target=aws_security_group.web</code> to fix one resource without touching the blast radius.</li>
+<li>For import-heavy reconciliation, prefer config-driven <code>import</code> blocks so the import is code-reviewed, not a one-off CLI command.</li>
+</ul>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>force-unlock as a reflex.</strong> If the lock is live, you have just set up a state-corrupting double write.</li>
+<li><strong>Applying to "clean up" drift without reading the plan.</strong> That reverts other people's legitimate emergency fixes and can trigger replacements.</li>
+<li><strong>Editing the state file by hand.</strong> Almost never necessary; use <code>terraform import</code>, <code>state mv</code>, <code>state rm</code>, which are validated operations.</li>
+<li><strong>One giant state for everything.</strong> Guarantees lock contention and makes every drift review enormous. Split by blast radius.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/cicd-pipeline-failure-troubleshooting/">CI/CD pipeline failures: application vs infrastructure vs runner</a> — where most stale locks are actually born.</li>
+<li><a href="/blog/kubernetes-pod-pending-troubleshooting/">Kubernetes pod Pending decision tree</a> for the workload side of the same platforms.</li>
+<li><a href="/devops-job-support-guide/">DevOps job support guide</a> and <a href="/sre-job-support-guide/">SRE job support guide</a>.</li>
+</ul>
+
+<p>If a Terraform apply is blocked or a drifted plan is proposing something frightening in a live environment, <a href="/proxy-job-support/">real-time proxy job support</a> gives you a second senior pair of eyes on the plan before you approve it. And if you are being asked to reason about state, locking and drift in a technical screen, that is standard ground for a <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a> session.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

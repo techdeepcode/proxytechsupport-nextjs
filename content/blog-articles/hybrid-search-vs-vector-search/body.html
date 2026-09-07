@@ -1,0 +1,88 @@
+<p>"Should we use vector search or keyword search for RAG?" is the wrong question. The right one is <strong>"which failures can we not afford?"</strong> — because dense (vector) and sparse (lexical/BM25) retrieval fail in opposite ways, and hybrid search exists precisely to cover both. This is a decision guide: what each method is good and bad at, when pure vector is genuinely enough, and how fusion actually works when you need both.</p>
+
+<hr>
+
+<h3>The two retrievers, and how they fail</h3>
+<table>
+<thead><tr><th></th><th>Vector / dense (embeddings)</th><th>Keyword / sparse (BM25)</th></tr></thead>
+<tbody>
+<tr><td>Matches on</td><td>Meaning — paraphrase, synonyms, concepts</td><td>Exact terms — tokens, stems</td></tr>
+<tr><td>Strength</td><td>"How do I cancel?" finds "terminating a subscription"</td><td>"ERR_4021", "SKU-8841", "getUserById" matched exactly</td></tr>
+<tr><td>Blind spot</td><td>Misses rare exact tokens: codes, IDs, names, symbols</td><td>Misses synonyms and rephrasing entirely</td></tr>
+<tr><td>Out-of-vocabulary</td><td>Embeds unseen jargon poorly</td><td>Handles any literal string</td></tr>
+<tr><td>Cost/infra</td><td>Embedding model + vector index (ANN)</td><td>Inverted index, cheap and mature</td></tr>
+</tbody>
+</table>
+<p>The key insight: <strong>their failure modes are complementary.</strong> The query dense search misses (an exact error code) is exactly the one BM25 nails, and vice versa. That is why fusing them beats either alone on mixed real-world traffic.</p>
+
+<h3>When pure vector search is enough</h3>
+<p>Don't add complexity you don't need. Dense-only is fine when:</p>
+<ul>
+<li>Queries and documents are <strong>natural-language paraphrases</strong> of each other (conceptual docs, FAQs, conversational Q&amp;A).</li>
+<li>The vocabulary is <strong>not dominated by identifiers</strong> — few part numbers, error codes, symbols, legal citations.</li>
+<li>You value recall of meaning over exact-term precision, and your evaluation set confirms dense-only recall is high enough.</li>
+</ul>
+
+<h3>When you need hybrid (or lexical) search</h3>
+<ul>
+<li><strong>Identifier-heavy domains</strong> — support tickets ("ORA-00600"), e-commerce (SKUs), code search (function names), finance/legal (citations, clause numbers). Pure vectors routinely miss these; users expect an exact-match to win.</li>
+<li><strong>Rare or new terms</strong> — a product launched last week, an internal acronym, a customer name. The embedding model never learned them; BM25 doesn't care.</li>
+<li><strong>Mixed query styles</strong> — some users type keywords, others type sentences. Hybrid serves both without forcing a mode.</li>
+<li><strong>High-stakes recall</strong> — when missing the one relevant document is a real cost, the redundancy of two retrievers is worth it.</li>
+</ul>
+<p>This is the single most common production upgrade for a RAG system that "mostly works but misses obvious exact matches." See the failure taxonomy in <a href="/blog/why-rag-retrieval-quality-drops-in-production/">why RAG retrieval quality drops in production</a>.</p>
+
+<h3>How hybrid fusion works</h3>
+<p>You run both retrievers and merge their ranked lists. Two mainstream methods:</p>
+<ul>
+<li><strong>Reciprocal Rank Fusion (RRF)</strong> — score each document as the sum of <code>1 / (k + rank)</code> across the lists it appears in (<code>k</code> a small constant, often 60). It uses only <em>ranks</em>, so it needs no score normalisation between the incompatible scales of cosine similarity and BM25. It is robust, parameter-light, and the default hybrid mode in many vector databases. Great starting point.</li>
+<li><strong>Weighted score fusion</strong> — normalise each retriever's scores (e.g. min-max) and combine as <code>α·dense + (1-α)·sparse</code>. More tunable — you can dial the dense/sparse balance per domain — but you own the normalisation and the tuning.</li>
+</ul>
+<p>Start with RRF; move to weighted fusion only when your evaluation set shows a domain-specific balance worth tuning.</p>
+
+<h3>Where hybrid sits in the pipeline</h3>
+<p>Retrieval quality is a pipeline, and these stages stack — they don't compete:</p>
+<ol>
+<li><strong>Hybrid retrieval</strong> → build a broad, high-recall candidate pool (say top 50) using dense + sparse fusion.</li>
+<li><strong>Reranking</strong> → a cross-encoder re-scores those candidates by true query–passage relevance, lifting precision at the small <code>k</code> you can afford.</li>
+<li><strong>Context assembly</strong> → pass the reranked top few chunks, with metadata filters already applied, to the model.</li>
+</ol>
+<p>Hybrid improves <em>what enters</em> the pool (recall); reranking improves <em>the order</em> of the pool (precision). Doing both is standard in strong systems.</p>
+
+<h3>Costs and trade-offs to be honest about</h3>
+<ul>
+<li><strong>Two indexes</strong> — you maintain and keep in sync a vector index and an inverted index (many engines — OpenSearch, Elasticsearch, pgvector-with-full-text, and purpose-built vector DBs — do both in one store, which simplifies this).</li>
+<li><strong>Latency</strong> — two retrievals plus fusion, then optional reranking, add milliseconds. Usually acceptable; measure it.</li>
+<li><strong>Tuning surface</strong> — fusion weights, per-retriever <code>k</code>, and reranker depth are all knobs. More power, more to get wrong. Anchor every change to an evaluation set.</li>
+</ul>
+
+<h3>A decision cheat-sheet</h3>
+<table>
+<thead><tr><th>Your corpus / queries</th><th>Start with</th></tr></thead>
+<tbody>
+<tr><td>Conceptual docs, conversational, few identifiers</td><td>Dense-only; add hybrid if recall gaps appear</td></tr>
+<tr><td>Support, code, commerce, finance, legal (identifier-heavy)</td><td>Hybrid (RRF) from day one</td></tr>
+<tr><td>Right chunk retrieved but ranked too low</td><td>Add reranking on top of your retriever</td></tr>
+<tr><td>Multi-tenant / versioned corpus</td><td>Metadata filtering + hybrid</td></tr>
+</tbody>
+</table>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Assuming "semantic search" is strictly better.</strong> It isn't for exact tokens; that's a category error that quietly loses support and code queries.</li>
+<li><strong>Adding hybrid without measuring.</strong> Build a golden query set and confirm the recall lift before shipping fusion weights.</li>
+<li><strong>Expecting hybrid to fix bad chunking or an embedding mismatch.</strong> It won't — those are upstream and dominate.</li>
+<li><strong>Skipping reranking because "we added hybrid."</strong> They address different stages; the best systems use both.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/why-rag-retrieval-quality-drops-in-production/">Why RAG retrieval quality drops in production</a> — the full retrieval debugging checklist.</li>
+<li><a href="/blog/opensearch-vs-pgvector-bedrock-rag-guide/">OpenSearch vs pgvector for Bedrock RAG</a> — choosing the store that runs your hybrid search.</li>
+<li><a href="/blog/rag-aimlops-retrieval-augmented-generation-guide/">RAG explained</a> and <a href="/blog/llm-hallucination-root-cause-analysis/">LLM hallucination root-cause analysis</a>.</li>
+<li><a href="/rag-agentic-ai-job-support-guide/">RAG &amp; Agentic AI job support guide</a>.</li>
+</ul>
+
+<p>If you're choosing a retrieval strategy for a live RAG project and want a senior engineer to pressure-test the trade-offs with you, that's what <a href="/proxy-job-support/">real-time proxy job support</a> is for. And explaining <em>why</em> you chose hybrid over dense-only — with the failure modes to back it — is exactly the depth <a href="/aws-rag-interview-proxy-support/">RAG interview proxy support</a> prepares you to demonstrate.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

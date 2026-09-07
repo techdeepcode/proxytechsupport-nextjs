@@ -1,0 +1,96 @@
+<p>A pod in <code>Pending</code> is one of the most common — and most misdiagnosed — states in Kubernetes. <strong>Pending means the API server has accepted the pod but it is not yet bound to a node and running.</strong> That is a narrow window: it rules out image pulls, container crashes and readiness probes (those happen <em>after</em> scheduling) and points you at one of four families of cause — the scheduler cannot fit the pod, a placement constraint excludes every node, storage has not bound, or the cluster is out of capacity and waiting on the autoscaler. This guide is the decision tree a reliability engineer actually walks, in order.</p>
+
+<hr>
+
+<h3>Step 0: read the events, not the status</h3>
+<p>The pod phase (<code>Pending</code>) tells you almost nothing. The <em>events</em> tell you everything. Start here every time:</p>
+<pre><code>kubectl describe pod &lt;name&gt; -n &lt;namespace&gt;
+# scroll to the Events section at the bottom
+kubectl get events -n &lt;namespace&gt; --sort-by=.lastTimestamp</code></pre>
+<p>A pod that cannot be scheduled emits a <code>FailedScheduling</code> event from the <code>default-scheduler</code> with a per-node tally, for example:</p>
+<pre><code>0/6 nodes are available: 3 Insufficient cpu, 2 node(s) had untolerated taint
+{node-role.kubernetes.io/control-plane: }, 1 node(s) didn't match
+Pod's node affinity/selector.</code></pre>
+<p>That single line usually ends the investigation — it tells you exactly how many nodes failed for each reason. If there is <strong>no</strong> <code>FailedScheduling</code> event at all, the pod is not stuck on the scheduler; jump to the storage branch (Step 4) or check whether the scheduler itself is healthy (Step 6).</p>
+
+<h3>Step 1: resource requests vs allocatable — "Insufficient cpu/memory"</h3>
+<p>This is the number-one cause. The scheduler places pods by their <strong>requests</strong>, not their limits and not their actual usage. A node with 60% idle CPU can still reject a pod if its <em>requested</em> CPU is already committed to other pods.</p>
+<ul>
+<li>Check what the pod asks for: <code>kubectl get pod &lt;name&gt; -o jsonpath='{.spec.containers[*].resources.requests}'</code>.</li>
+<li>Check what nodes can offer: <code>kubectl describe node &lt;node&gt;</code> and read <code>Allocatable</code> and the <code>Allocated resources</code> table (requests vs limits already committed).</li>
+<li>Common trap: a request of <code>cpu: 4</code> on a cluster whose largest node is 4 vCPU — after system daemons and kube-reserved, no single node has 4 whole cores allocatable, so the pod is unschedulable <em>forever</em>, not just temporarily.</li>
+</ul>
+<p><strong>What I check first:</strong> is the request physically satisfiable by any single node? If not, this is a manifest bug (right-size the request) or a node-pool sizing problem — no amount of waiting fixes it.</p>
+
+<h3>Step 2: node selectors, affinity and topology spread</h3>
+<p>If the event says <code>didn't match Pod's node affinity/selector</code> or <code>didn't match pod topology spread constraints</code>, a placement rule is excluding nodes:</p>
+<ul>
+<li><code>nodeSelector</code> / <code>nodeAffinity</code> — the pod demands a label (e.g. <code>disktype=ssd</code>, <code>gpu=true</code>, a specific <code>topology.kubernetes.io/zone</code>) that no available node carries. Verify with <code>kubectl get nodes --show-labels</code>.</li>
+<li><code>podAntiAffinity</code> with <code>requiredDuringScheduling</code> — a hard "do not co-locate" rule that leaves no legal node once replicas are spread. This bites when you scale replicas past the number of eligible nodes/zones.</li>
+<li><code>topologySpreadConstraints</code> with <code>whenUnsatisfiable: DoNotSchedule</code> — the pod cannot be placed without violating the spread budget across zones.</li>
+</ul>
+<p>The fix is almost always to relax a <code>required</code> rule to <code>preferred</code>, or to add nodes/labels in the zone the constraint demands.</p>
+
+<h3>Step 3: taints and tolerations — "untolerated taint"</h3>
+<p>Nodes advertise taints; pods must carry a matching toleration to land on them. If every fitting node is tainted (GPU pools, control-plane nodes, spot pools tainted for eviction), the pod stays Pending.</p>
+<pre><code>kubectl describe node &lt;node&gt; | grep -i taint
+# add a toleration to the pod spec, or remove/adjust the taint on the node</code></pre>
+<p>Watch for the built-in taints Kubernetes adds during trouble: <code>node.kubernetes.io/not-ready</code>, <code>node.kubernetes.io/unreachable</code>, <code>node.kubernetes.io/disk-pressure</code>, <code>memory-pressure</code>. If nodes are tainted with a pressure condition, the real problem is node health, not your toleration.</p>
+
+<h3>Step 4: storage — PersistentVolumeClaim not bound</h3>
+<p>A pod that mounts a PVC will not schedule until that claim is <code>Bound</code>. Check the claim, not just the pod:</p>
+<pre><code>kubectl get pvc -n &lt;namespace&gt;
+kubectl describe pvc &lt;claim&gt; -n &lt;namespace&gt;</code></pre>
+<p>Typical failures:</p>
+<ul>
+<li><strong>No matching StorageClass / no default</strong> — dynamic provisioning never fires; the PVC sits <code>Pending</code> with a <code>ProvisioningFailed</code> or "no persistent volumes available" event.</li>
+<li><strong><code>volumeBindingMode: WaitForFirstConsumer</code></strong> — this is <em>expected</em>: the volume binds only once a pod is scheduled, so PVC-Pending and pod-Pending can be a chicken-and-egg that resolves as soon as a node is chosen. If it never resolves, it usually collapses back to a Step 1/2 scheduling problem in the target zone.</li>
+<li><strong>Zone mismatch</strong> — an EBS/PD volume already provisioned in <code>us-east-1a</code> cannot attach to a node in <code>1b</code>; the scheduler correctly refuses. This is a very common multi-AZ trap.</li>
+</ul>
+
+<h3>Step 5: capacity and the cluster autoscaler</h3>
+<p>If the pod fits <em>logically</em> but there is simply no room, a healthy cluster autoscaler (or Karpenter) should add a node within a minute or two. Confirm it is actually trying:</p>
+<pre><code>kubectl get events --sort-by=.lastTimestamp | grep -i -E "scale|autoscaler|provision"
+# Karpenter:
+kubectl logs -n karpenter deploy/karpenter | tail -50</code></pre>
+<p>Reasons a scale-up never happens: the node group is at its <code>max</code> size; the cloud provider is out of the requested instance type or hit a quota; the pod requests a resource no node <em>shape</em> in the group can provide (e.g. a GPU the group has none of); or the autoscaler is scoped away from the relevant node group. Karpenter will log a specific reason such as <code>incompatible with nodepool</code> or an instance-type constraint — read it verbatim.</p>
+
+<h3>Step 6: the scheduler itself, quotas and admission</h3>
+<p>If there is no <code>FailedScheduling</code> event and no scale activity, look one layer up:</p>
+<ul>
+<li><strong>ResourceQuota</strong> — a namespace quota that is exhausted blocks admission with a clear message; <code>kubectl describe quota -n &lt;ns&gt;</code>.</li>
+<li><strong>Missing PriorityClass / preemption</strong> — low-priority pods can be stuck behind higher-priority workloads that own the capacity.</li>
+<li><strong>Scheduler unhealthy</strong> — on self-managed clusters, confirm <code>kube-scheduler</code> is running (<code>kubectl get pods -n kube-system</code>). No scheduler means <em>nothing</em> gets bound and every new pod is Pending.</li>
+</ul>
+
+<h3>The decision tree, condensed</h3>
+<table>
+<thead><tr><th>Event / symptom</th><th>Most likely cause</th><th>First action</th></tr></thead>
+<tbody>
+<tr><td><code>Insufficient cpu/memory</code></td><td>Requests exceed allocatable</td><td>Right-size requests or add/upsize nodes</td></tr>
+<tr><td><code>didn't match node affinity/selector</code></td><td>Label/affinity rule too strict</td><td>Fix label or relax <code>required</code>→<code>preferred</code></td></tr>
+<tr><td><code>untolerated taint</code></td><td>Node tainted, pod lacks toleration</td><td>Add toleration or clear taint; check pressure taints</td></tr>
+<tr><td><code>topology spread</code> violation</td><td>Spread budget can't be met</td><td>Add nodes in the deficit zone or relax spread</td></tr>
+<tr><td>PVC <code>Pending</code></td><td>No StorageClass / zone mismatch / WaitForFirstConsumer</td><td>Fix StorageClass, align zones</td></tr>
+<tr><td>No <code>FailedScheduling</code>, no scale-up</td><td>Autoscaler capped / wrong instance type / scheduler down</td><td>Check autoscaler logs, quotas, kube-scheduler health</td></tr>
+</tbody>
+</table>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Deleting and recreating the pod.</strong> A Deployment reschedules the identical spec into the identical constraints — you get the same Pending pod with a new name.</li>
+<li><strong>Raising <code>limits</code>.</strong> Limits do not affect scheduling; only <code>requests</code> do. Raising limits changes nothing about a Pending pod.</li>
+<li><strong>Blaming the image or the registry.</strong> Those show as <code>ImagePullBackOff</code> after scheduling — a different problem entirely.</li>
+<li><strong>Waiting.</strong> If the request is physically unsatisfiable, waiting is infinite. Decide early whether the cause is transient (capacity) or structural (manifest/node sizing).</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/kubernetes-oomkilled-troubleshooting/">Kubernetes OOMKilled: root-cause troubleshooting</a> — the other end of the lifecycle, once the pod is finally running.</li>
+<li><a href="/blog/cicd-pipeline-failure-troubleshooting/">CI/CD pipeline failures: application vs infrastructure vs runner</a> — when the Pending pod is actually your build agent.</li>
+<li><a href="/kubernetes-job-support-guide/">Kubernetes job support guide</a> and the <a href="/devops-job-support-guide/">DevOps job support guide</a> for the wider operational context.</li>
+</ul>
+
+<p>If you are debugging a Pending pod live in a production cluster and the clock is running, real-time <a href="/proxy-job-support/">proxy job support</a> puts a senior Kubernetes engineer on the screen share with you. And if you are being asked to reason through exactly this decision tree in a technical screen, that is the core of a <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a> session.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

@@ -1,0 +1,15 @@
+export const meta = {
+  slug: "what-happens-in-senior-technical-interview",
+  permalink: "/blog/what-happens-in-senior-technical-interview/",
+  title: "What Actually Happens in a Senior Technical Interview (2026)",
+  description: "A round-by-round breakdown of the modern senior engineering interview — coding, system design, architecture deep-dive and behavioural — what each round really evaluates, and why strong engineers still fail them.",
+  date: "2026-09-07",
+  keywords: "senior technical interview, system design interview, coding interview vs system design, architecture round, staff engineer interview, why senior engineers fail interviews, behavioural interview, hiring signal",
+  about: "How senior technical interviews are structured and evaluated",
+  faqs: [
+    { q: "What are the rounds in a senior technical interview?", a: "A senior loop typically has four kinds of round: a coding round (problem-solving and clean implementation under time), a system design round (design a system at scale, discussing trade-offs), an architecture / experience deep-dive (a real project you have shipped, probed hard), and a behavioural round (collaboration, conflict, leadership, judgment). Not every company runs all four, but most senior loops sample from this set, and the weighting shifts toward design and experience the more senior the role." },
+    { q: "Why do experienced engineers fail technical interviews?", a: "Usually not from lack of skill but from mismatches with what the round measures: giving generic, high-level answers when the interviewer wants specific decisions and trade-offs; jumping to a solution in system design without clarifying requirements; being unable to go deep on a project they list on their resume; or treating the coding round as a pure algorithm test and neglecting communication, edge cases and verification. Seniority raises the bar on depth and judgment, not just correctness." },
+    { q: "What is the difference between the coding and system design rounds?", a: "The coding round evaluates whether you can decompose a problem, write correct, readable code, reason about complexity, handle edge cases and verify your solution while communicating. The system design round evaluates architectural judgment: gathering requirements, estimating scale, choosing components and data models, and defending trade-offs (consistency vs availability, cost vs latency) out loud. Coding is depth-in-the-small; system design is judgment-in-the-large." },
+    { q: "How much does the behavioural round matter for senior roles?", a: "More than most engineers assume. At senior and staff levels, companies are hiring judgment, collaboration and influence, not just coding. The behavioural round probes how you handle disagreement, drive decisions, learn from failure and work across teams. A strong technical loop can still be sunk by a behavioural round that signals poor collaboration, blame-shifting or inability to articulate impact, because those predict day-to-day effectiveness at the level." },
+  ],
+} as const;

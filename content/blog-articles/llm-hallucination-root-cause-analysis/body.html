@@ -1,0 +1,70 @@
+<p>"The LLM hallucinated" is a symptom description, not a diagnosis — and treating it as one bug leads to one blunt fix (usually "add a stern prompt") that works for maybe a third of cases. Hallucination is <strong>several distinct failure modes</strong> that happen to share a surface: the model stated something false with confidence. This framework classifies <em>why</em> a specific false statement happened, because the mitigation that works depends entirely on the cause.</p>
+
+<hr>
+
+<h3>Why models hallucinate at all</h3>
+<p>An LLM generates the most probable continuation of the text so far. It is optimised to be fluent and plausible, not to be correct — there is no internal "I don't actually know this" gate unless the training and prompting create one. When the context and its priors don't pin down the answer, the model still produces <em>something</em>, and that something is a confident guess. So the engineering question is never "how do I make it stop guessing" but "how do I make sure it has what it needs, and make its guesses rare, visible and low-consequence."</p>
+
+<h3>The first cut: retrieval failure vs true hallucination</h3>
+<p>In any RAG or tool-augmented system, do this before anything else. Take the failing output and inspect the context the model actually received:</p>
+<ul>
+<li><strong>The answer was not in the context</strong> → this is a <em>retrieval failure</em> wearing a hallucination costume. No prompt or model swap fixes information the model never saw. Go fix retrieval — see <a href="/blog/why-rag-retrieval-quality-drops-in-production/">why RAG retrieval quality drops in production</a>.</li>
+<li><strong>The answer was in the context, and the model still invented or contradicted it</strong> → a true grounding/generation problem. The framework below applies.</li>
+</ul>
+<p>This single check reclassifies the majority of "hallucinations" in production RAG as retrieval bugs. Skipping it sends teams down the wrong path for weeks.</p>
+
+<h3>The root-cause taxonomy</h3>
+<table>
+<thead><tr><th>Root cause</th><th>What it looks like</th><th>Mitigation that matches</th></tr></thead>
+<tbody>
+<tr><td><strong>Missing context</strong></td><td>Answer absent from context; model fills gap from priors</td><td>Fix retrieval; let the model abstain ("say if not in the context")</td></tr>
+<tr><td><strong>Conflicting context</strong></td><td>Two retrieved chunks disagree (v1 vs v2 docs); model blends them</td><td>Metadata filter by version/date; dedupe; prefer authoritative source</td></tr>
+<tr><td><strong>Over-generalization</strong></td><td>Model applies a general pattern to a case where the specifics differ</td><td>Provide the specific facts in context; constrain scope in prompt</td></tr>
+<tr><td><strong>Prompt ambiguity</strong></td><td>Under-specified request; model picks an interpretation and commits</td><td>Disambiguate the task; ask clarifying question; structured input</td></tr>
+<tr><td><strong>Overconfidence / no abstention</strong></td><td>Model answers when it should decline</td><td>Explicit permission to say "I don't know"; verification gate</td></tr>
+<tr><td><strong>Format-forced fabrication</strong></td><td>Schema demands a field the source doesn't contain, so it's invented</td><td>Make fields nullable; allow "not stated"</td></tr>
+</tbody>
+</table>
+<p>Notice that "add a better prompt" only addresses two of six rows. The others need retrieval, data hygiene, or schema changes.</p>
+
+<h3>Cause deep-dives</h3>
+<h4>Conflicting context is the sneaky one</h4>
+<p>When retrieval returns the v1 manual and the v2 manual, both semantically relevant, the model has no reliable way to know which is current — so it merges them into a plausible hybrid that matches neither. This reads exactly like a hallucination but is a <em>data</em> problem: you retrieved contradictory sources. Fix it upstream with version/date metadata filters and deduplication, not with prompting.</p>
+
+<h4>Format-forced fabrication</h4>
+<p>A strict output schema ("return name, revenue, founding_year") applied to a source that only mentions the name will pressure the model to fill <code>revenue</code> and <code>founding_year</code> with invented values, because the format says a value is required. Make extraction fields explicitly nullable and instruct "use null / 'not stated' when the source does not contain it." Fabrication drops sharply.</p>
+
+<h4>No permission to abstain</h4>
+<p>If the prompt implies every question has an answer, the model will produce one. Explicitly granting "if the provided context does not contain the answer, say you don't have that information" converts a class of confident fabrications into honest declines — which are almost always the safer failure.</p>
+
+<h3>Mitigations, in order of leverage</h3>
+<ol>
+<li><strong>Ground it.</strong> Retrieve the right facts into the context (fix retrieval first). Ungrounded generation is the highest-hallucination configuration.</li>
+<li><strong>Constrain and permit abstention.</strong> "Answer only from the context; if it's not there, say so." Cheap, high-impact.</li>
+<li><strong>Verify faithfulness.</strong> Add a check — a second pass, a contextual-grounding/faithfulness score, or a classifier — that confirms each claim is supported by the retrieved passages. Managed options exist (e.g. Bedrock Guardrails contextual grounding checks).</li>
+<li><strong>Cite sources.</strong> Return the passages behind each claim so an unsupported statement is visible to the user and to your evals.</li>
+<li><strong>Human-in-the-loop for high stakes.</strong> For medical, legal, financial or irreversible actions, a verification step is architecture, not paranoia.</li>
+</ol>
+
+<h3>Measure faithfulness, not vibes</h3>
+<p>You cannot manage what you don't measure. Build a golden set and track <strong>faithfulness</strong> (is the answer supported by the context) separately from <strong>answer relevance</strong> and <strong>context precision/recall</strong>. Frameworks like RAGAS give repeatable numbers so you can tell whether a change actually reduced unsupported claims or just moved them around. A hallucination rate you can trend is a hallucination rate you can drive down.</p>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Adding "do not hallucinate" to the prompt.</strong> The model has no reliable internal truth signal to obey it; this barely moves the needle.</li>
+<li><strong>Assuming a bigger/newer model fixes it.</strong> Better models hallucinate less on average but still fabricate ungrounded facts — and do so more convincingly.</li>
+<li><strong>Lowering temperature to 0 and calling it solved.</strong> Determinism ≠ correctness; a deterministic wrong answer is still wrong.</li>
+<li><strong>Treating every wrong answer as the same bug.</strong> Without the taxonomy you apply the wrong fix and the failure persists.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/why-rag-retrieval-quality-drops-in-production/">Why RAG retrieval quality drops in production</a> — because most "hallucinations" start here.</li>
+<li><a href="/blog/hybrid-search-vs-vector-search/">Hybrid search vs vector search</a> and <a href="/blog/rag-aimlops-retrieval-augmented-generation-guide/">RAG explained</a>.</li>
+<li><a href="/blog/amazon-bedrock-rag-knowledge-bases-troubleshooting/">Bedrock Knowledge Bases RAG troubleshooting</a> for grounding on AWS.</li>
+<li><a href="/genai-interview-support-guide/">GenAI interview support guide</a> and <a href="/rag-agentic-ai-job-support-guide/">RAG &amp; Agentic AI job support guide</a>.</li>
+</ul>
+
+<p>If you're chasing an intermittent hallucination in a live LLM feature and need help classifying the cause quickly, <a href="/proxy-job-support/">real-time proxy job support</a> can work through the taxonomy with you on the actual traces. And reasoning about hallucination as a set of distinct, mitigable failure modes is precisely the depth that <a href="/llm-interview-proxy-support/">LLM interview proxy support</a> and <a href="/genai-interview-proxy-support/">GenAI interview proxy support</a> prepare you to show.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

@@ -1,0 +1,81 @@
+<p><code>OOMKilled</code> with <strong>exit code 137</strong> is the kernel telling you a container crossed its memory limit and was killed with <code>SIGKILL</code>. It is abrupt and non-negotiable — no graceful shutdown, no flush, no chance to finish in-flight requests. The instinct is to bump <code>limits.memory</code> and move on, but that only masks the two questions that actually matter: <strong>is the limit wrong, or is the app wrong?</strong> This guide walks the mechanism and the methodology to answer that correctly instead of playing limit-whack-a-mole.</p>
+
+<hr>
+
+<h3>What actually happens: cgroups and the OOM killer</h3>
+<p>A container's <code>resources.limits.memory</code> becomes a cgroup memory limit on the host. When the processes in that cgroup try to allocate past the limit and the kernel cannot reclaim enough reclaimable memory (page cache, etc.), the kernel OOM killer fires and kills the largest offending process in that cgroup. Kubernetes reports it as:</p>
+<pre><code>    State:      Waiting  (CrashLoopBackOff)
+    Last State: Terminated
+      Reason:   OOMKilled
+      Exit Code: 137</code></pre>
+<p>137 = 128 + 9 (SIGKILL). The key implications:</p>
+<ul>
+<li>The limit is a <strong>hard ceiling</strong>. Unlike CPU (which throttles), memory over-limit means death.</li>
+<li>It is scoped to the <strong>container cgroup</strong>, so a container can be OOMKilled while the node has gigabytes free.</li>
+<li>Page cache counts toward the cgroup's memory usage, which is why heavy file I/O can appear to inflate "memory" even without a leak.</li>
+</ul>
+
+<h3>Step 1: confirm it is OOMKilled, and which container</h3>
+<pre><code>kubectl describe pod &lt;name&gt; -n &lt;ns&gt;   # read Last State / Reason / Exit Code per container
+kubectl get pod &lt;name&gt; -o jsonpath='{.status.containerStatuses[*].lastState}'</code></pre>
+<p>In a multi-container pod, identify <em>which</em> container died — the sidecar and the app have separate limits and separate cgroups. Exit code 137 without <code>Reason: OOMKilled</code> can also be an external SIGKILL (e.g. a failed liveness probe escalating, or a manual delete), so check the reason string, not just the code.</p>
+
+<h3>Step 2: separate "limit too low" from "app uses too much"</h3>
+<p>This is the fork in the road. Look at the working set over time, not a single snapshot:</p>
+<pre><code>kubectl top pod &lt;name&gt; --containers          # instantaneous
+# better: the container_memory_working_set_bytes series in Prometheus/Grafana</code></pre>
+<p>Interpret the shape of the curve:</p>
+<table>
+<thead><tr><th>Memory-over-time shape</th><th>Diagnosis</th><th>Direction</th></tr></thead>
+<tbody>
+<tr><td>Flat, sits just under limit, killed at peak load</td><td>Limit genuinely too low for the working set</td><td>Raise limit to peak + headroom</td></tr>
+<tr><td>Sawtooth that keeps climbing across requests</td><td>Leak or unbounded growth (cache, connections, goroutines)</td><td>Fix the app — a bigger limit only delays the kill</td></tr>
+<tr><td>Spikes on specific inputs (large upload, big query)</td><td>Unbounded per-request allocation</td><td>Stream/paginate; cap request size</td></tr>
+<tr><td>Steady, but killed right after start</td><td>Runtime heap sized above the container limit</td><td>Size the runtime to the cgroup (Step 3)</td></tr>
+</tbody>
+</table>
+<p><strong>The rule:</strong> a monotonic climb is a leak and no limit will save you; a flat line at peak is a sizing problem you fix with the limit.</p>
+
+<h3>Step 3: runtimes that ignore the cgroup limit</h3>
+<p>The most common "mystery" OOMKill is a managed runtime whose default heap is based on the <em>host's</em> total memory, not the container limit:</p>
+<ul>
+<li><strong>JVM</strong> — modern JVMs are container-aware and read the cgroup limit, but only if you let them. Prefer <code>-XX:MaxRAMPercentage=75.0</code> over a fixed <code>-Xmx</code> so the heap tracks the limit. Remember the JVM also needs off-heap: metaspace, thread stacks, direct byte buffers, GC structures. A 1Gi limit with <code>-Xmx1g</code> is an OOMKill waiting to happen — the heap alone consumes the whole cgroup.</li>
+<li><strong>Node.js</strong> — the V8 old-space default (~2GB historically, higher on big hosts) can exceed a small container limit. Set <code>--max-old-space-size</code> to comfortably below the container limit (e.g. <code>~75%</code>).</li>
+<li><strong>Python</strong> — no single heap cap; watch for large DataFrames, model weights loaded eagerly, and multiprocessing workers that each carry a full copy of memory.</li>
+</ul>
+<p><strong>What I check first for a runtime:</strong> does the configured heap + expected off-heap fit inside the container limit with headroom? If heap ≈ limit, that is the bug.</p>
+
+<h3>Step 4: requests, limits and QoS</h3>
+<p>OOMKilled is about <em>limits</em>, but the requests/limits relationship governs eviction behaviour:</p>
+<ul>
+<li><strong>Guaranteed</strong> (requests == limits) — most protected from node-pressure eviction, but still OOMKilled if it exceeds its own limit.</li>
+<li><strong>Burstable</strong> (requests &lt; limits) — the pod can use more than it reserved, which is efficient but means memory the scheduler didn't account for; under node pressure these are evicted before Guaranteed.</li>
+<li><strong>BestEffort</strong> (no requests/limits) — first to be evicted, and the cgroup has no memory ceiling, so it can trigger <em>node</em>-level OOM. Avoid in production.</li>
+</ul>
+<p>For latency-critical, memory-stable services, setting requests == limits both stabilises scheduling and removes eviction surprises. It does not fix a leak.</p>
+
+<h3>Step 5: OOMKilled vs node MemoryPressure eviction</h3>
+<p>Do not confuse the two:</p>
+<ul>
+<li><strong>OOMKilled</strong> — one container exceeded its own cgroup limit; kernel kills the process; <code>Reason: OOMKilled</code>. Fix at the container.</li>
+<li><strong>Eviction</strong> — the <em>node</em> is low on memory; the kubelet proactively evicts whole pods (BestEffort/Burstable-over-requests first) and the pod shows <code>Status: Evicted</code> with a <code>The node was low on resource: memory</code> event. Fix at the node — right-size requests so the scheduler stops overcommitting, or add capacity.</li>
+</ul>
+
+<h3>Common wrong approaches</h3>
+<ul>
+<li><strong>Reflexively doubling the limit.</strong> For a leak this just moves the kill 30 minutes later and hides the regression.</li>
+<li><strong>Setting <code>-Xmx</code> equal to the container limit.</strong> Leaves nothing for off-heap; the JVM OOMKills before it ever hits its own heap limit.</li>
+<li><strong>Removing the limit entirely.</strong> Now one leaky pod can take down the node and its neighbours — a much worse incident.</li>
+<li><strong>Ignoring the restart count.</strong> A pod quietly OOM-restarting every few minutes drops in-flight requests and corrupts latency SLOs long before anyone declares an incident.</li>
+</ul>
+
+<h3>Related resources</h3>
+<ul>
+<li><a href="/blog/kubernetes-pod-pending-troubleshooting/">Kubernetes pod Pending: a production troubleshooting decision tree</a> — the pre-scheduling counterpart to this post-scheduling failure.</li>
+<li><a href="/blog/golden-signals-dashboard-sre-datadog-success-rate-availability/">Golden Signals dashboard for SRE</a> — how memory kills surface as saturation and error-rate signals.</li>
+<li><a href="/kubernetes-job-support-guide/">Kubernetes job support guide</a>, <a href="/sre-job-support-guide/">SRE job support guide</a> and the <a href="/devops-job-support-guide/">DevOps job support guide</a>.</li>
+</ul>
+
+<p>If a service is OOM-restarting in production right now, <a href="/proxy-job-support/">real-time proxy job support</a> can put a senior engineer alongside you to read the memory curve and decide leak-vs-sizing quickly. If you are being interviewed on exactly this kind of production reasoning, it maps directly to what a <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a> session prepares you for.</p>
+
+<p><em>Last reviewed: September 2026.</em></p>

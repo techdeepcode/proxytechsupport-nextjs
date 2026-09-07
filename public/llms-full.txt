@@ -4848,3 +4848,50 @@ Additive Amazon global authority cluster — Amazon hiring and interview process
 - [Amazon Hiring Melbourne](/amazon-hiring-melbourne/): Amazon and AWS hiring in Melbourne — the local campuses, teams and role families, plus how the interview process works and how to get interview calls. Current as of August 2026; openings change frequently.
 
 <!-- AMAZON-CLUSTER-END -->
+
+---
+
+## Expert Engineering Guides — Knowledge Base (September 2026)
+
+Vendor-neutral, senior-level engineering guides that answer real technical questions independently of the commercial service. Evergreen references (Last reviewed: September 2026). HTML is canonical at the URLs below. Each guide ends with related resources and a single contextual link to the relevant proxy interview support or proxy job support resource.
+
+### DevOps & Infrastructure Troubleshooting
+
+- [Kubernetes Pod Pending: A Production Troubleshooting Decision Tree](/blog/kubernetes-pod-pending-troubleshooting/)
+  - Definition: `Pending` is the pre-scheduling/pre-binding state — the API server accepted the pod but it is not yet bound to a node.
+  - Decision tree: read the `FailedScheduling` event first, then work four families of cause — (1) resource requests exceeding node allocatable ("Insufficient cpu/memory"), (2) nodeSelector/affinity/topology-spread constraints excluding nodes, (3) taints without tolerations, (4) unbound PersistentVolumeClaim (StorageClass, WaitForFirstConsumer, AZ mismatch) — then cluster-autoscaler/Karpenter capacity, quotas and scheduler health.
+  - Key correction: `limits` do not affect scheduling; only `requests` do. Image issues appear as ImagePullBackOff, not Pending.
+- [Kubernetes OOMKilled: Root-Cause Troubleshooting for Production Pods](/blog/kubernetes-oomkilled-troubleshooting/)
+  - Definition: OOMKilled (exit code 137 = 128 + SIGKILL) means the kernel OOM killer terminated a container that exceeded its cgroup memory limit (`limits.memory`).
+  - Method: split "limit too low" (flat working set at peak) from "app uses too much" (monotonic climb = leak) using the memory-over-time curve; check runtimes whose heap defaults ignore the cgroup (JVM `MaxRAMPercentage`, Node `--max-old-space-size`); distinguish per-container OOMKilled from node MemoryPressure eviction.
+- [Terraform State Locking and Drift: Diagnosis and Recovery](/blog/terraform-state-locking-drift-troubleshooting/)
+  - Locking: "Error acquiring the state lock" means the backend holds a lock; diagnose live-vs-stale from the Lock Info (Who/Created/Operation) before `force-unlock`; unlocking a live apply corrupts state.
+  - Drift: detect with `terraform plan -refresh-only`; reconcile per resource (update config to reality, re-apply to restore, or `import`); never approve a plan that shows `-/+` replace on a stateful resource without review.
+- [CI/CD Pipeline Failures: Application vs Infrastructure vs Runner](/blog/cicd-pipeline-failure-troubleshooting/)
+  - Triage: the question "did this commit pass before?" splits code from environment; the failing stage localises the layer (compile/test = app; checkout/dependency/push/deploy = infrastructure; disk/memory/version-drift/cache = runner).
+  - "Fixed by re-run" is a flaky-pipeline signal to root-cause, not a resolution.
+
+### AI / RAG / LLM
+
+- [Why RAG Retrieval Quality Drops in Production (and How to Fix It)](/blog/why-rag-retrieval-quality-drops-in-production/)
+  - Core split: inspect retrieved chunks for a failing query — answer absent = retrieval problem (no model swap fixes it); answer present but wrong = generation problem. Measure recall@k separately from answer quality.
+  - Causes: chunking that splits/dilutes the answer; embedding mismatch (index/query model, domain, asymmetry); query not matching source text (query transformation, hybrid search); missing metadata filtering; no reranking.
+- [Hybrid Search vs Vector Search: A RAG Retrieval Decision Guide](/blog/hybrid-search-vs-vector-search/)
+  - Dense (embeddings) matches meaning but misses exact tokens; sparse/BM25 matches exact terms but misses synonyms — complementary failure modes. Pure vector suffices for conceptual/paraphrase corpora; identifier-heavy domains (codes, SKUs, symbols, citations) need hybrid.
+  - Fusion: reciprocal rank fusion (rank-based, no score normalisation) or weighted score fusion. Hybrid improves recall; reranking improves precision at small k — they stack.
+- [LLM Hallucination: A Root-Cause Analysis Framework](/blog/llm-hallucination-root-cause-analysis/)
+  - Taxonomy: missing context, conflicting context (version/date), over-generalization, prompt ambiguity, overconfidence/no abstention, format-forced fabrication — each with a matched mitigation. "Add a better prompt" only addresses two of six.
+  - Mitigations by leverage: ground it (fix retrieval) → constrain + permit abstention → verify faithfulness (grounding checks) → cite sources → human-in-the-loop for high stakes. Measure faithfulness, not vibes.
+
+### Data Engineering
+
+- [Spark Job Running Slow: Data Skew and Shuffle Troubleshooting](/blog/spark-job-slow-data-skew-troubleshooting/)
+  - Diagnose in the Spark UI at the slowest stage: max-vs-median task duration gap = data skew/stragglers; large spill = memory pressure; many tiny tasks = small-files; high GC = executor memory.
+  - Skew fixes matched to case: enable AQE (skew-join split), broadcast the small side, filter null/sentinel keys, salt the hot key. Adding executors does not fix a straggler.
+
+### Interview Knowledge (supports Proxy Interview Support)
+
+- [What Actually Happens in a Senior Technical Interview](/blog/what-happens-in-senior-technical-interview/)
+  - Four rounds and their true measures: coding (decomposition, correctness, edge cases, verification, communication), system design (requirements → estimation → trade-off judgment out loud), architecture/experience deep-dive (depth of ownership), behavioural (collaboration, conflict, judgment). Why strong engineers fail: generic answers, solution-first design, shallow on their own resume, silent problem-solving.
+- [How to Explain a Complex Project in a Technical Interview](/blog/how-to-explain-your-project-in-a-technical-interview/)
+  - Structure: one-sentence context → your role/scope → high-level architecture → the two or three decisions that mattered (with rejected alternatives) → a real failure and recovery → measurable result. Pick the project you know best, not the biggest. Survive follow-ups by owning depth and reasoning honestly at the edge of your knowledge.
