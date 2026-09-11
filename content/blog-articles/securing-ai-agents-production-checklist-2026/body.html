@@ -1,0 +1,30 @@
+<p>The incidents of 2025–2026 — from <a href="/ai-orchestrated-cyber-espionage-gtg-1002/">GTG-1002</a> to zero-click <a href="/ai-agent-prompt-injection-security/">prompt-injection</a> exfiltration — share one root cause: agents were deployed with the security posture of a chatbot when they had the capabilities of a privileged automated operator. This is a practical checklist to close that gap. Each item links to the deeper research behind it.</p>
+
+<p>The governing principle throughout: <strong>assume the model can be compromised, and bound what it can do anyway.</strong> Security must be structural (enforced outside the model), not behavioral (relying on the model to refuse).</p>
+
+<h2>1. Contain the agent like an untrusted process</h2>
+<p>Put a mediation plane between the model and every resource — a policy engine, an identity broker, an egress gateway, and an out-of-band audit trail. The model may plan anything; nothing with a real effect reaches a resource without passing the reference monitor. See <a href="/ai-agent-containment-architecture/">Containment Architecture for AI Agents</a>.</p>
+
+<h2>2. Authorize tool calls deterministically</h2>
+<p>Do not let the model police its own tool use — the policy lives in the same channel as the attack. Enforce a task-scoped allowlist over tool names and arguments outside the model, and only ever narrow privilege automatically (approve to expand). See <a href="/ai-agent-tool-permissions-least-privilege/">Tool Permissions &amp; Least Privilege</a>.</p>
+
+<h2>3. Give the agent a scoped, short-lived identity</h2>
+<p>An agent acts for a user but is not the user. Mint task-scoped credentials that expire in minutes and can be revoked instantly; never hand an agent a long-lived, broadly-scoped key. See <a href="/ai-agent-identity-and-access-control/">Identity &amp; Access Control for Non-Human Operators</a>.</p>
+
+<h2>4. Isolate execution</h2>
+<p>If the agent runs code, run it behind a real boundary — prefer an ephemeral microVM with no ambient credentials over a shared-kernel container. Patch aggressively: agents are demonstrably capable of exploiting <em>known</em> weaknesses. See <a href="/ai-agent-sandbox-escape-security/">Can an Agent Escape Its Sandbox?</a>.</p>
+
+<h2>5. Deny network egress by default</h2>
+<p>This is the last line of defense and the most reliable one, because it does not depend on out-guessing the attacker. Force all outbound traffic through a proxy that permits only allowlisted destinations (host and path), control DNS, and route URL-fetching features through the same proxy. See <a href="/ai-agent-network-egress-control/">Network Egress Control</a>.</p>
+
+<h2>6. Vet and sandbox your tools</h2>
+<p>MCP made tools an installable supply chain with two attack surfaces — malicious code and poisoned tool descriptions. Pin and diff-review servers, sandbox each with least privilege, and re-validate configuration on every change. See <a href="/mcp-server-security/">MCP Server Security</a>.</p>
+
+<h2>7. Gate privilege expansion, not every action</h2>
+<p>Human approval collapses under machine pacing if you gate every step. Gate on meaningful state changes — a new egress destination, a new credential scope, a new tool class — so the checkpoint survives an agent operating at thousands of actions per second.</p>
+
+<h2>8. Monitor and calibrate</h2>
+<p>Log every proposed and executed action to an isolated audit trail; alert on request-rate anomalies, first-seen destinations, and tool-class transitions. And read capability claims carefully — the headline benchmark numbers are easy to misread. See <a href="/ai-agent-autonomous-exploitation-benchmarks/">Measuring Offensive Capability</a>.</p>
+
+<h2>Start here</h2>
+<p>For the full argument and threat model, read the series pillar, <a href="/autonomous-ai-agent-security/">Autonomous AI Agent Security</a>, and browse the complete <a href="/research/">ProxyTech Research archive</a>. If you want hands-on help implementing these controls, we provide <a href="/ai-security-governance-job-support/">AI security &amp; governance support</a> and <a href="/agentic-ai-job-support/">agentic AI engineering support</a>.</p>

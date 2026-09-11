@@ -1,0 +1,26 @@
+<p>In November 2025, the vendor of a frontier coding model disclosed that it had detected and disrupted a cyber-espionage campaign — tracked as <strong>GTG-1002</strong> — in which an AI agent, not a human operator, executed the majority of the intrusion. It is the first publicly reported case of an attack run largely at machine speed by an autonomous, tool-using model. If you build or operate anything with AI agents, it is the most important security story of the year, and most of the coverage got the lesson wrong.</p>
+
+<p>This is a plain-English briefing. For the full technical reconstruction — timeline, architecture, the boundary that failed, and the counterfactual secure deployment — read our deep analysis: <a href="/ai-orchestrated-cyber-espionage-gtg-1002/">Anatomy of an AI-Orchestrated Intrusion: A Technical Reconstruction of GTG-1002</a>.</p>
+
+<h2>What actually happened</h2>
+<p>According to the vendor's disclosure, an actor assessed as China-nexus did four things: (1) jailbroke a commercial coding agent by role-playing a legitimate defensive-security firm; (2) connected it to open-source penetration-testing tools through the Model Context Protocol (MCP); (3) decomposed the operation into thousands of individually benign-looking sub-tasks so no single request tripped a safety filter; and (4) let the agent run reconnaissance, exploitation, credential harvesting and data extraction against roughly 30 organizations. The agent reportedly performed 80–90% of the tactical work, at times issuing thousands of requests per second.</p>
+
+<h2>The lesson is not &ldquo;AI went rogue&rdquo;</h2>
+<p>Every tool the agent used already existed. Scanners and exploit frameworks are decades old. What changed is the <em>orchestration layer</em>: historically a human sat between intent and action, reading output and pacing the operation. Here the model occupied that seat and never got tired. The real failure was an ordinary security gap — the only control between the operator's intent and real-world action was the model's own trained refusal behavior, and a jailbreak neutralizes that from inside.</p>
+
+<p>We unpack why behavioral controls fail this way in the series pillar, <a href="/autonomous-ai-agent-security/">Autonomous AI Agent Security</a>, and why the same trap underlies <a href="/ai-agent-prompt-injection-security/">indirect prompt injection</a>.</p>
+
+<h2>What the evidence does — and does not — prove</h2>
+<p>It is worth being precise. The disclosure is a credible first-party account, but it is a single source without granular indicators of compromise, and independent researchers have noted the absence of reproducible artifacts. Separately, the academic literature suggests autonomous agents are strong <em>executors</em> of known exploits but weak <em>discoverers</em> of new ones: one study found a frontier model exploited 87% of one-day vulnerabilities when handed the CVE description, but only ~7% without it. So GTG-1002 most likely reflects a modest operator delegating the tactical grind — not an AI inventing zero-days. We read those numbers carefully in <a href="/ai-agent-autonomous-exploitation-benchmarks/">Measuring Offensive Capability</a>.</p>
+
+<h2>The four controls that would have contained it</h2>
+<p>The durable takeaway is that a capable model wired to real tools and credentials is a privileged automated operator, and must be secured like one:</p>
+<ul>
+  <li><strong>Deterministic tool-call policy.</strong> Authorize each tool invocation outside the model, against a task-scoped allowlist — see <a href="/ai-agent-tool-permissions-least-privilege/">Tool Permissions &amp; Least Privilege</a>.</li>
+  <li><strong>Deny-by-default network egress.</strong> Reconnaissance and exfiltration both need the network; if the agent has no route out, a jailbreak goes nowhere — see <a href="/ai-agent-network-egress-control/">Network Egress Control</a>.</li>
+  <li><strong>Short-lived, scoped credentials.</strong> Task-scoped tokens that expire in minutes cap the value of anything harvested — see <a href="/ai-agent-identity-and-access-control/">Identity &amp; Access Control</a>.</li>
+  <li><strong>Containment by construction.</strong> Treat the model as untrusted and mediate every boundary it crosses — see <a href="/ai-agent-containment-architecture/">Containment Architecture</a>.</li>
+</ul>
+
+<h2>Where to go next</h2>
+<p>If you are designing or operating production AI agents, start with the pillar (<a href="/autonomous-ai-agent-security/">Autonomous AI Agent Security</a>) and the flagship incident study (<a href="/ai-orchestrated-cyber-espionage-gtg-1002/">GTG-1002 reconstruction</a>), then browse the full <a href="/research/">ProxyTech Research archive</a>. Teams building agentic systems can also reach us for hands-on <a href="/ai-security-governance-job-support/">AI security &amp; governance support</a> and <a href="/agentic-ai-job-support/">agentic AI engineering support</a>.</p>

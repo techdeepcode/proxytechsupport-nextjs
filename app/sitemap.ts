@@ -4,6 +4,7 @@ import { getCanonicalUrlForPost } from '@/lib/post-canonical';
 import { getAllInterviews } from '@/lib/interviews';
 import { getInterviewCanonicalUrl } from '@/lib/interview-canonical';
 import { allLandingPages } from '@/data/landing-pages';
+import { PUBLICATIONS, publicationUrl } from '@/data/research/cluster';
 
 /** Required so `output: 'export'` can emit `/sitemap.xml` at build time. */
 export const dynamic = 'force-static';
@@ -432,5 +433,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/dotnet-cloud-native-interview-proxy-support/`, lastModified: today, priority: 0.90 },
   ];
 
-  return [...staticRoutes, ...postRoutes, ...interviewRoutes, ...knowledgeBaseRoutes, ...uipathTechRoutes, ...candidateMarketingRoutes, ...dotnetClusterRoutes];
+  // ── ProxyTech Research: Autonomous AI Agent Security cluster ─────────────
+  const researchRoutes: MetadataRoute.Sitemap = [
+    { url: `${BASE}/research/`, lastModified: today, priority: 0.9 },
+    ...PUBLICATIONS.map((p) => ({
+      url: publicationUrl(p.slug),
+      lastModified: p.updated || today,
+      priority: p.isFlagship ? 0.9 : p.seriesIndex === 1 ? 0.88 : 0.82,
+    })),
+  ];
+
+  return [...staticRoutes, ...postRoutes, ...interviewRoutes, ...knowledgeBaseRoutes, ...uipathTechRoutes, ...candidateMarketingRoutes, ...dotnetClusterRoutes, ...researchRoutes];
 }

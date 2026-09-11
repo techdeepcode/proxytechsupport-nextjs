@@ -159,6 +159,14 @@ import { meta as meta_huggingface_quantization_bitsandbytes_gptq_awq_guide } fro
 import Article_huggingface_smolagents_code_agents_guide from './huggingface-smolagents-code-agents-guide/Article';
 import { meta as meta_huggingface_smolagents_code_agents_guide } from './huggingface-smolagents-code-agents-guide/meta';
 
+// ─── ProxyTech Research: Autonomous AI Agent Security funnel blogs (Sept 2026) ──
+import Article_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons from './gtg-1002-ai-orchestrated-cyberattack-engineering-lessons/Article';
+import { meta as meta_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons } from './gtg-1002-ai-orchestrated-cyberattack-engineering-lessons/meta';
+import Article_ai_agent_prompt_injection_echoleak_camoleak_explained from './ai-agent-prompt-injection-echoleak-camoleak-explained/Article';
+import { meta as meta_ai_agent_prompt_injection_echoleak_camoleak_explained } from './ai-agent-prompt-injection-echoleak-camoleak-explained/meta';
+import Article_securing_ai_agents_production_checklist_2026 from './securing-ai-agents-production-checklist-2026/Article';
+import { meta as meta_securing_ai_agents_production_checklist_2026 } from './securing-ai-agents-production-checklist-2026/meta';
+
 export const blogArticleEntries = [
   // ── Hugging Face / LLM engineering blog cluster (Sept 2026) ──
   { meta: meta_huggingface_cuda_out_of_memory_fine_tuning_fix, Article: Article_huggingface_cuda_out_of_memory_fine_tuning_fix },
@@ -238,4 +246,8 @@ export const blogArticleEntries = [
   { meta: meta_react_developer_jobs_canada, Article: Article_react_developer_jobs_canada },
   { meta: meta_java_developer_canada_banking, Article: Article_java_developer_canada_banking },
   { meta: meta_ai_ml_engineer_jobs_canada, Article: Article_ai_ml_engineer_jobs_canada },
+  // ── ProxyTech Research funnel blogs ──
+  { meta: meta_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons, Article: Article_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons },
+  { meta: meta_ai_agent_prompt_injection_echoleak_camoleak_explained, Article: Article_ai_agent_prompt_injection_echoleak_camoleak_explained },
+  { meta: meta_securing_ai_agents_production_checklist_2026, Article: Article_securing_ai_agents_production_checklist_2026 },
 ] as const;

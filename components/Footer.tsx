@@ -166,6 +166,21 @@ const huggingFaceClusterLinks = [
   { label: 'Hugging Face Job Support Canada', href: '/hugging-face-proxy-job-support-canada/' },
 ];
 
+const researchClusterLinks = [
+  { label: 'Research Archive', href: '/research/' },
+  { label: 'Autonomous AI Agent Security', href: '/autonomous-ai-agent-security/' },
+  { label: 'GTG-1002 Incident Analysis', href: '/ai-orchestrated-cyber-espionage-gtg-1002/' },
+  { label: 'AI Agent Prompt Injection', href: '/ai-agent-prompt-injection-security/' },
+  { label: 'AI Coding Agent Security', href: '/ai-coding-agent-security/' },
+  { label: 'MCP Server Security', href: '/mcp-server-security/' },
+  { label: 'AI Agent Sandbox Escape', href: '/ai-agent-sandbox-escape-security/' },
+  { label: 'AI Agent Containment Architecture', href: '/ai-agent-containment-architecture/' },
+  { label: 'AI Agent Identity & Access', href: '/ai-agent-identity-and-access-control/' },
+  { label: 'AI Agent Tool Permissions', href: '/ai-agent-tool-permissions-least-privilege/' },
+  { label: 'AI Agent Network Egress Control', href: '/ai-agent-network-egress-control/' },
+  { label: 'AI Agent Exploitation Benchmarks', href: '/ai-agent-autonomous-exploitation-benchmarks/' },
+];
+
 const candidateMarketingLinks = [
   { label: 'Job Application & Candidate Marketing', href: '/job-application-candidate-marketing/' },
   { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
@@ -190,6 +205,7 @@ const candidateMarketingLinks = [
 const resourceLinks = [
   { label: 'Blog', href: '/blog/' },
   { label: 'Knowledge Base', href: '/knowledge-base/' },
+  { label: 'Research', href: '/research/' },
   { label: 'Interview Questions', href: '/interview-questions/' },
   { label: 'Technologies', href: '/#tech' },
   { label: 'FAQ', href: '/#faq' },
@@ -399,6 +415,20 @@ export default function Footer() {
           <FooterHeading>Hugging Face &amp; LLM Engineering Job Support</FooterHeading>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
             {huggingFaceClusterLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <hr style={{ border: 0, borderTop: '1px solid var(--pts-footer-border)', margin: '0 0 2rem' }} />
+
+        {/* ── ProxyTech Research: Autonomous AI Agent Security cluster ── */}
+        <div style={{ marginBottom: '2.5rem' }}>
+          <FooterHeading>ProxyTech Research — AI Agent Security</FooterHeading>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
+            {researchClusterLinks.map((link) => (
               <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
                 {link.label}
               </Link>

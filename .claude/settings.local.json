@@ -110,7 +110,12 @@
       "PowerShell(Get-ChildItem -Path . -Directory | Where-Object { $_.Name -ne 'node_modules' -and $_.Name -ne '.git' -and $_.Name -ne '.next' } | Select-Object Name; Write-Output \"---SCRIPTS---\"; Get-ChildItem -Path .\\\\scripts -File -ErrorAction SilentlyContinue | Select-Object Name; Write-Output \"---PKG---\"; Get-Content package.json)",
       "PowerShell(Write-Output \"===DATA DIR===\"; Get-ChildItem -Path .\\\\data -Recurse -File | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\\(Get-Location\\).Path + '\\\\',''\\) }; Write-Output \"===APP TOP===\"; Get-ChildItem -Path .\\\\app -Directory | Select-Object Name)",
       "PowerShell(Get-ChildItem -Path .\\\\app -Directory | Where-Object { $_.Name -match 'aws|bedrock|sagemaker|amazon|nova|agentcore|genai|generative|mlops|\\\\brag\\\\b|opensearch|textract|rekognition|comprehend|trainium|inferentia' } | Select-Object -ExpandProperty Name)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:snyk.io)",
+      "WebFetch(domain:incidentdatabase.ai)",
+      "WebFetch(domain:socradar.io)",
+      "WebFetch(domain:red.anthropic.com)"
     ]
   }
 }
