@@ -1,5 +1,5 @@
 export const meta = {
-  slug: 'ai-agent-prompt-injection-echoleak-camoleak-explained',
+  slug: "ai-agent-prompt-injection-echoleak-camoleak-explained",
   title: 'Prompt Injection Is Now Remote Code Execution: EchoLeak & CamoLeak Explained',
   description:
     'EchoLeak and CamoLeak turned zero-click prompt injection into real data theft from Microsoft 365 Copilot and GitHub Copilot in 2025. Here is why injection is a control-flow bug, not a content bug — and what actually stops it.',

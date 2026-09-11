@@ -1,5 +1,5 @@
 export const meta = {
-  slug: 'gtg-1002-ai-orchestrated-cyberattack-engineering-lessons',
+  slug: "gtg-1002-ai-orchestrated-cyberattack-engineering-lessons",
   title: 'GTG-1002: What the First AI-Orchestrated Cyberattack Means for Engineers',
   description:
     'In November 2025 a coding agent ran most of a real intrusion campaign at machine speed. Here is what actually failed, what the disclosure does and does not prove, and the four controls that would have contained it — a plain-English lead-in to our deep GTG-1002 research.',

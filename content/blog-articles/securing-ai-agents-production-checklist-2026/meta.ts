@@ -1,5 +1,5 @@
 export const meta = {
-  slug: 'securing-ai-agents-production-checklist-2026',
+  slug: "securing-ai-agents-production-checklist-2026",
   title: 'Securing AI Agents in Production: A 2026 Engineering Checklist',
   description:
     'A practical, evidence-based checklist for deploying autonomous AI agents safely in 2026: containment, deterministic tool permissions, scoped identity, deny-by-default egress, and monitoring — with links to the research behind each control.',
