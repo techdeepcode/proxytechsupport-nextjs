@@ -1,0 +1,122 @@
+<h2>Adapters are small files that cause big confusion</h2>
+<p>LoRA and QLoRA made fine-tuning cheap, but they moved the pain from training time to <em>loading and serving</em> time. A LoRA checkpoint is a handful of megabytes, not a multi-gigabyte model — which is wonderful until you try to load it, merge it, and discover the outputs are identical to the base model, or that merging a 4-bit QLoRA adapter throws a dtype error you've never seen before. This guide is the practical map: what a PEFT adapter actually is, how to load one (or several), how to merge correctly, and the dtype pitfall that trips up almost everyone doing QLoRA.</p>
+<p>If you'd rather have someone walk through your specific adapter on a call, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team does exactly that. For the training side of the story, the <a href="/peft-fine-tuning-job-support/">PEFT fine-tuning job support</a> page pairs with everything below.</p>
+<hr />
+<h2>What a PEFT adapter actually is</h2>
+<p>A LoRA adapter does not contain your model. It contains two small low-rank matrices (A and B) per targeted layer, plus a tiny <code>adapter_config.json</code> that records the base model name, the rank <code>r</code>, <code>lora_alpha</code>, and the <code>target_modules</code> they attach to. At inference the adapter computes <code>ΔW = (alpha / r) · B·A</code> and adds it to the frozen base weight. That is the entire trick — and it explains every downstream gotcha: the adapter is meaningless without the <em>exact</em> base model it was trained against.</p>
+<p>When you save with PEFT you get something like:</p>
+<pre><code class="language-python">adapter_model.safetensors   # the A/B matrices, in safetensors format
+adapter_config.json         # base_model_name_or_path, r, alpha, target_modules
+README.md                   # optional model card</code></pre>
+<p>Note what's <em>not</em> there: no <code>model.safetensors</code> with billions of parameters, no tokenizer necessarily. That is the point — you version and ship kilobytes, not gigabytes.</p>
+<hr />
+<h2>Saving adapters vs saving a full model</h2>
+<p>There are two fundamentally different artifacts you can produce after training, and confusing them is the root of most "my adapter does nothing" tickets.</p>
+<pre><code class="language-python"># 1) Save ONLY the adapter (recommended default) — small, portable
+trainer.model.save_pretrained("out/my-lora")   # writes adapter_model.safetensors
+
+# 2) Merge into the base and save a standalone full model — large, self-contained
+merged = trainer.model.merge_and_unload()
+merged.save_pretrained("out/merged-model", safe_serialization=True)</code></pre>
+<p>Option 1 keeps the adapter separate and requires the base at load time. Option 2 produces a normal Transformers model with the adapter baked in — no PEFT needed to serve it. Which you want depends on how you serve, which we'll get to.</p>
+<hr />
+<h2>Loading an adapter with PeftModel.from_pretrained</h2>
+<p>To use a saved adapter you load the base model first, then wrap it. The base you load <strong>must match</strong> the <code>base_model_name_or_path</code> in the adapter config — same repo, same revision, ideally the same dtype family.</p>
+<pre><code class="language-python">import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import PeftModel
+
+base_id = "meta-llama/Llama-3.1-8B"
+base = AutoModelForCausalLM.from_pretrained(
+    base_id, torch_dtype=torch.bfloat16, device_map="auto"
+)
+tok = AutoTokenizer.from_pretrained(base_id)
+
+model = PeftModel.from_pretrained(base, "out/my-lora")   # attaches A/B matrices
+model.eval()</code></pre>
+<p>At this point the adapter is active but <em>not</em> merged — the forward pass adds <code>ΔW</code> on the fly. This is perfect for inference when you want to keep the base shared across many adapters. The interview-style reasoning behind "why load base then wrap" comes up often; see our <a href="/hugging-face-proxy-interview-support/">Hugging Face proxy interview support</a> if you're prepping for that.</p>
+<hr />
+<h2>Loading and switching multiple adapters</h2>
+<p>One base can host several adapters — a support-tone adapter, a summarization adapter, a JSON-mode adapter — and you switch between them without reloading gigabytes. Give each a name when you load it:</p>
+<pre><code class="language-python">model = PeftModel.from_pretrained(base, "out/support-lora", adapter_name="support")
+model.load_adapter("out/summarize-lora", adapter_name="summarize")
+
+model.set_adapter("support")     # route the next calls through the support adapter
+# ... generate ...
+model.set_adapter("summarize")   # hot-swap, no base reload</code></pre>
+<p>You can also combine adapters with weighted merges using <code>add_weighted_adapter</code> for ensembling, or disable them entirely with the <code>model.disable_adapter()</code> context manager to get raw base outputs — a handy A/B test when you suspect an adapter is a no-op.</p>
+<hr />
+<h2>Merging with merge_and_unload()</h2>
+<p>Merging folds <code>ΔW</code> into the base weights and returns a plain model with no PEFT wrapper and no runtime add overhead. This is what you do before exporting for high-throughput serving.</p>
+<pre><code class="language-python">from peft import PeftModel
+
+merged = model.merge_and_unload()          # W := W + (alpha/r)·B·A
+merged.save_pretrained("out/merged", safe_serialization=True)
+tok.save_pretrained("out/merged")</code></pre>
+<p>After <code>merge_and_unload()</code> the object is a standard <code>AutoModelForCausalLM</code> — it serializes to <code>model.safetensors</code> like any other model and can be loaded without PEFT installed. There is a subtlety, though, and it is the number-one QLoRA support ticket.</p>
+<hr />
+<h2>The dtype pitfall: you cannot merge into a 4-bit base</h2>
+<p>Here is the trap. You trained with QLoRA, so your base is loaded in 4-bit NF4. You call <code>merge_and_unload()</code> and either get a dtype error, a warning about merging into a quantized module, or — worse — a silent, low-quality merge. The reason is fundamental: LoRA math is fp16/bf16, but the base weights are packed 4-bit integers. You cannot add a bf16 <code>ΔW</code> into a 4-bit quantized weight and expect a faithful result. bitsandbytes quantized layers are not designed to absorb a merge cleanly.</p>
+<p>The correct procedure is to <strong>dequantize by reloading the base in fp16/bf16</strong>, re-attach the adapter, then merge:</p>
+<pre><code class="language-python">import torch
+from transformers import AutoModelForCausalLM
+from peft import PeftModel
+
+# WRONG: base is still 4-bit here
+# base_4bit = AutoModelForCausalLM.from_pretrained(base_id, quantization_config=bnb_config)
+# PeftModel.from_pretrained(base_4bit, adapter_dir).merge_and_unload()  # dtype pitfall
+
+# RIGHT: reload base WITHOUT quantization, in bf16, then merge
+base_fp16 = AutoModelForCausalLM.from_pretrained(
+    base_id,
+    torch_dtype=torch.bfloat16,     # NOT load_in_4bit
+    device_map="auto",
+)
+model = PeftModel.from_pretrained(base_fp16, "out/my-qlora")
+merged = model.merge_and_unload()   # now A/B and W share bf16 — clean merge
+merged.save_pretrained("out/merged-bf16", safe_serialization=True)</code></pre>
+<p>The adapter itself was trained against the 4-bit base, but the LoRA A/B matrices are stored in higher precision, so merging into the bf16 base reproduces the trained behavior faithfully. The merged model is a bf16 model; if you want it quantized for serving, quantize <em>after</em> merging (GPTQ/AWQ), not before. Details on that post-merge quantization path are in our <a href="/huggingface-quantization-job-support/">Hugging Face quantization job support</a> guide.</p>
+<hr />
+<h2>Choosing target_modules</h2>
+<p>Which layers you adapt affects both quality and whether a merge even changes anything meaningful. The common choices:</p>
+<ul>
+<li><strong><code>target_modules="all-linear"</code></strong> — adapts every linear layer (attention projections + MLP). Highest quality, most parameters. A good default in 2026.</li>
+<li><strong>Attention only</strong> — <code>["q_proj", "k_proj", "v_proj", "o_proj"]</code>. Lighter, often sufficient for style/format tasks.</li>
+<li><strong>Explicit list</strong> — needed for architectures where module names differ (e.g. fused <code>c_attn</code>, or MoE experts). Inspect with <code>print(model)</code> and match names exactly.</li>
+</ul>
+<p>A frequent bug: the adapter's <code>target_modules</code> names don't exist in the base you loaded (wrong architecture or a renamed layer), so PEFT attaches nothing and your adapter is a silent no-op. Always confirm the config's targets match the base's actual module names. The training-side selection of rank, alpha, and targets is covered in our <a href="/qlora-fine-tuning-job-support/">QLoRA fine-tuning job support</a> resource.</p>
+<hr />
+<h2>"My adapter isn't affecting outputs"</h2>
+<p>When a loaded adapter appears to do nothing, it is almost always one of these:</p>
+<ul>
+<li><strong>Wrong base model or revision.</strong> The adapter was trained on <code>Llama-3.1-8B</code> but you loaded <code>Llama-3.1-8B-Instruct</code>. The weights don't line up, so <code>ΔW</code> lands on the wrong values.</li>
+<li><strong>Adapter never attached.</strong> <code>target_modules</code> didn't match any layer names — check for the "no trainable/attached modules" condition.</li>
+<li><strong>You saved the base, not the adapter.</strong> If you called <code>save_pretrained</code> on an unwrapped model, or merged before saving expecting a small file, you may be loading the wrong artifact.</li>
+<li><strong>Adapter disabled.</strong> A stray <code>disable_adapter()</code> context, or you forgot <code>set_adapter()</code> after loading multiple.</li>
+<li><strong>Chat template mismatch.</strong> The adapter learned a specific prompt format; feeding raw text bypasses the behavior it was trained to trigger.</li>
+</ul>
+<p>A fast diagnostic: generate with the adapter, then inside <code>with model.disable_adapter():</code> generate again on the same prompt. If the two outputs are identical, the adapter is not engaged — work down the list above.</p>
+<hr />
+<h2>Serving: merged model vs adapter on the fly</h2>
+<p>Two valid strategies, chosen by your traffic pattern:</p>
+<ul>
+<li><strong>Merge, then serve the standalone model.</strong> Best for a single fine-tune in production. No PEFT at runtime, no per-request add overhead, and engines like vLLM/TGI/SGLang consume it as an ordinary Transformers v5 model. Quantize after merging if you need it.</li>
+<li><strong>Keep the base loaded and apply adapters dynamically.</strong> Best when you serve many fine-tunes of the same base — vLLM's multi-LoRA support and TGI can hot-swap adapters per request, sharing one copy of the base in VRAM. Far cheaper than N merged models.</li>
+</ul>
+<p>The rule of thumb: one adapter and latency-sensitive → merge; many adapters and memory-sensitive → dynamic. The serving mechanics tie into our <a href="/huggingface-transformers-inference-job-support/">Transformers inference job support</a> and, for throughput tuning, <a href="/huggingface-gpu-optimization-job-support/">GPU optimization job support</a>.</p>
+<hr />
+<h2>Pushing adapters to the Hub</h2>
+<p>Because adapters are tiny, the Hub is an excellent place to version them. Using the modern <code>hf</code> CLI (with Xet storage) and the <code>push_to_hub</code> API, publishing is a one-liner. Set the base model in the card so consumers know exactly what to load underneath.</p>
+<pre><code class="language-python">from huggingface_hub import login
+login()   # or: hf auth login
+
+model.push_to_hub("your-org/my-lora-adapter")   # pushes adapter_model.safetensors + config
+tok.push_to_hub("your-org/my-lora-adapter")
+
+# Anyone can then load it against the recorded base:
+from peft import PeftModel
+reloaded = PeftModel.from_pretrained(base, "your-org/my-lora-adapter")</code></pre>
+<p>Everything ships in safetensors format, and Xet-backed uploads deduplicate blocks so re-pushing a lightly-changed adapter transfers only the delta. Hub workflows, private repos, and revisions are covered in our <a href="/huggingface-hub-job-support/">Hugging Face Hub job support</a> page.</p>
+<hr />
+<h2>Get it right the first time</h2>
+<p>Adapters reward precision: match the base, confirm the targets attach, dequantize before merging a QLoRA adapter, and pick a serving strategy that fits your traffic. Miss one of those and you'll ship a model that quietly ignores everything you trained into it. If an adapter is misbehaving — merging with dtype errors, or generating like the base — bring it to our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team and we'll get it loading, merging, and serving correctly on your stack.</p>

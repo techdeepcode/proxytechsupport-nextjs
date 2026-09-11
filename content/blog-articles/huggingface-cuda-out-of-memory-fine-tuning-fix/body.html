@@ -1,0 +1,145 @@
+<h2>The message that eats your afternoon</h2>
+<p>Nothing derails a fine-tuning run faster than a wall of red text ending in <code>torch.cuda.OutOfMemoryError</code>. It usually shows up minutes into training, after you've already downloaded weights, tokenized a dataset, and warmed the GPU — which is exactly why it stings. The good news is that CUDA out-of-memory (OOM) during Hugging Face fine-tuning is one of the most <em>predictable</em> failures in the stack. Once you understand the memory budget and apply fixes in order of impact, you can almost always land a model that "shouldn't fit" on the hardware you have.</p>
+<p>This guide walks through reading the error, decomposing GPU memory into its four consumers, and then a prioritized list of fixes — from QLoRA down to activation offloading — with realistic <code>TrainingArguments</code> and TRL <code>SFTConfig</code> snippets you can paste into a run. If you get stuck on a specific stack trace, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team debugs exactly these situations live.</p>
+<hr />
+<h2>Reading the OOM error correctly</h2>
+<p>A typical message looks like this:</p>
+<pre><code class="language-python">torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB.
+GPU 0 has a total capacity of 23.68 GiB of which 512.00 MiB is free.
+Process has 23.18 GiB memory in use. Of the allocated memory
+21.90 GiB is allocated by PyTorch, and 640.00 MiB is reserved by
+PyTorch but unallocated.</code></pre>
+<p>Three numbers matter. <strong>Total capacity</strong> is your card (here a 24&nbsp;GB GPU). <strong>Allocated by PyTorch</strong> is memory holding live tensors — weights, gradients, optimizer state, activations. <strong>Reserved but unallocated</strong> is the caching allocator's fragmentation headroom; if this number is large while allocation still fails, you have fragmentation, not a true capacity problem. The "Tried to allocate" figure tells you the size of the single allocation that tipped you over — often an activation buffer during the forward pass or an optimizer state during the first step.</p>
+<p>A practical first move is to set the allocator to expandable segments, which dramatically reduces fragmentation-driven OOMs:</p>
+<pre><code class="language-python">import os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"</code></pre>
+<hr />
+<h2>The memory budget: where your VRAM actually goes</h2>
+<p>During training, GPU memory is consumed by four things. Understanding their relative sizes tells you which fix will help most.</p>
+<ul>
+<li><strong>Model weights.</strong> In fp16/bf16, a parameter costs 2 bytes. A 7B model is ~14&nbsp;GB just to hold the weights. In 4-bit (NF4) it drops to roughly 3.5–4&nbsp;GB.</li>
+<li><strong>Gradients.</strong> One gradient per trainable parameter, same dtype as the parameter. Full fine-tuning a 7B model adds another ~14&nbsp;GB. This is the number LoRA slashes: you only have gradients for the tiny adapter.</li>
+<li><strong>Optimizer states.</strong> Adam keeps two moments per parameter. In fp32 that's 8 bytes per parameter — for a 7B model, ~56&nbsp;GB. This is usually the single biggest consumer in full fine-tuning and the reason naive full-FT of a 7B on a 24&nbsp;GB card is impossible.</li>
+<li><strong>Activations.</strong> Intermediate tensors kept for the backward pass. These scale with batch size × sequence length × hidden size × layers, and they are the part that grows when you increase either batch size or <code>max_seq_length</code>.</li>
+</ul>
+<p>The takeaway: weights are fixed, but gradients and optimizer states are what you attack with parameter-efficient methods, and activations are what you attack with checkpointing and shorter sequences. Now let's fix things in order of impact.</p>
+<hr />
+<h2>Fix 1 (biggest win): QLoRA — 4-bit base + LoRA adapters</h2>
+<p>If you are OOMing on a single consumer GPU, the highest-leverage change by far is QLoRA. It loads the base model in 4-bit NF4 (via bitsandbytes), freezes it, and trains only small low-rank LoRA adapters on top. Because the frozen 4-bit base has no gradients and no optimizer state, you eliminate the two largest consumers in one move. Combined with a paged optimizer, QLoRA routinely fits 7B–13B fine-tuning on a 24&nbsp;GB card.</p>
+<pre><code class="language-python">import torch
+from transformers import AutoModelForCausalLM, BitsAndBytesConfig
+from peft import LoraConfig
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_use_double_quant=True,      # extra ~0.4 bits/param saved
+    bnb_4bit_compute_dtype=torch.bfloat16,
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-3.1-8B",
+    quantization_config=bnb_config,
+    device_map="auto",
+    attn_implementation="flash_attention_2",
+)
+
+peft_config = LoraConfig(
+    r=16, lora_alpha=32, lora_dropout=0.05,
+    target_modules="all-linear",   # covers q,k,v,o + MLP projections
+    task_type="CAUSAL_LM",
+)</code></pre>
+<p>The <code>bnb_4bit_compute_dtype</code> is the dtype used for the matmuls (weights are dequantized on the fly), not the storage dtype — keep it bf16 on Ampere or newer. For a deeper treatment of adapter configuration and the training loop, see our <a href="/qlora-fine-tuning-job-support/">QLoRA fine-tuning job support</a> and the broader <a href="/peft-fine-tuning-job-support/">PEFT fine-tuning job support</a> pages.</p>
+<hr />
+<h2>Fix 2: Gradient checkpointing</h2>
+<p>Gradient (activation) checkpointing trades compute for memory: instead of keeping every intermediate activation for the backward pass, it keeps a few checkpoints and recomputes the rest on demand. This cuts activation memory dramatically — often 60–70% — at the cost of roughly a 20–30% slowdown. It is almost always worth enabling when you are memory-bound.</p>
+<pre><code class="language-python">from trl import SFTConfig
+
+args = SFTConfig(
+    output_dir="out",
+    gradient_checkpointing=True,
+    gradient_checkpointing_kwargs={"use_reentrant": False},  # required with PEFT
+    bf16=True,
+)</code></pre>
+<p>The <code>use_reentrant: False</code> flag matters: the non-reentrant implementation is the supported path with PEFT and avoids the "does not require grad" warnings that otherwise silently disable checkpointing. If you also see a warning about inputs not requiring gradients, call <code>model.enable_input_require_grads()</code> before training.</p>
+<hr />
+<h2>Fix 3: Gradient accumulation instead of a big batch</h2>
+<p>A common misconception is that you need a large physical batch. You don't — you need a large <em>effective</em> batch. Gradient accumulation runs several small micro-batches, sums their gradients, and steps once. The activation memory is set by the micro-batch (<code>per_device_train_batch_size</code>), while the effective batch is that times <code>gradient_accumulation_steps</code>.</p>
+<pre><code class="language-python">args = SFTConfig(
+    output_dir="out",
+    per_device_train_batch_size=1,       # tiny micro-batch = low activation memory
+    gradient_accumulation_steps=16,      # effective batch = 16
+    gradient_checkpointing=True,
+    bf16=True,
+)</code></pre>
+<p>Effective batch = <code>per_device_train_batch_size × gradient_accumulation_steps × num_gpus</code>. When you hit OOM, drop the micro-batch to 1 and raise accumulation to keep the effective batch (and therefore your learning dynamics) unchanged. This is the cheapest knob that preserves training quality.</p>
+<hr />
+<h2>Fix 4: Paged 8-bit optimizer</h2>
+<p>Even with LoRA, Adam's optimizer state can spike memory during the first optimizer step. The <code>paged_adamw_8bit</code> optimizer stores state in 8-bit and uses NVIDIA unified memory to page state to CPU RAM when the GPU is tight, preventing the classic "OOM on step 1" that catches people who thought their run was safe.</p>
+<pre><code class="language-python">args = SFTConfig(
+    output_dir="out",
+    optim="paged_adamw_8bit",
+    learning_rate=2e-4,
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=16,
+    gradient_checkpointing=True,
+    gradient_checkpointing_kwargs={"use_reentrant": False},
+    bf16=True,
+)</code></pre>
+<p>This pairing — QLoRA base, LoRA adapters, gradient checkpointing, accumulation, and a paged 8-bit optimizer — is the canonical single-GPU recipe. If it still won't fit, the next levers are sequence length and sharding.</p>
+<hr />
+<h2>Fix 5: Reduce max_seq_length</h2>
+<p>Activation memory grows roughly linearly with sequence length (and quadratically for non-flash attention). If your data is mostly short, a 4096-token context is wasted VRAM. Cap it, and use packing so short samples are concatenated to fill the window efficiently rather than padded.</p>
+<pre><code class="language-python">args = SFTConfig(
+    output_dir="out",
+    max_length=1024,     # was 4096 — big activation savings
+    packing=True,        # concatenate short samples, avoid pad waste
+)</code></pre>
+<p>Halving sequence length can free several gigabytes. Profile your token-length distribution before committing to a large context — many datasets have a p95 well under 1024. The TRL configuration surface is covered further in our <a href="/huggingface-sft-job-support/">Hugging Face SFT job support</a> and <a href="/trl-job-support/">TRL job support</a> resources.</p>
+<hr />
+<h2>Fix 6: device_map="auto" for inference-time offload</h2>
+<p>For loading and evaluation (not the training step itself), <code>device_map="auto"</code> uses Accelerate to lay the model across available GPUs, then CPU RAM, then disk. It is how you load a model that is larger than one card. Note the caveat: naive <code>device_map</code> offloading is for inference and single-adapter QLoRA, not a substitute for proper sharded training — for multi-GPU <em>training</em> you want FSDP or DeepSpeed below.</p>
+<pre><code class="language-python">model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-3.1-8B",
+    quantization_config=bnb_config,
+    device_map="auto",
+    max_memory={0: "22GiB", "cpu": "64GiB"},   # cap per device to leave headroom
+)</code></pre>
+<hr />
+<h2>Fix 7: Shard with FSDP or DeepSpeed ZeRO via Accelerate</h2>
+<p>When you have multiple GPUs, sharding is the real answer to full fine-tuning. Fully Sharded Data Parallel (FSDP) and DeepSpeed ZeRO both partition parameters, gradients, and optimizer states across ranks so no single GPU holds the whole thing. ZeRO-3 shards all three; ZeRO-2 shards gradients and optimizer states only. Both are driven through Accelerate — start with <code>accelerate config</code>, then launch with <code>accelerate launch</code>.</p>
+<pre><code class="language-yaml"># fsdp_config.yaml (generated by `accelerate config`)
+compute_environment: LOCAL_MACHINE
+distributed_type: FSDP
+mixed_precision: bf16
+fsdp_config:
+  fsdp_sharding_strategy: FULL_SHARD
+  fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  fsdp_offload_params: true        # offload sharded params to CPU when idle
+  fsdp_state_dict_type: SHARDED_STATE_DICT</code></pre>
+<pre><code class="language-python">accelerate launch --config_file fsdp_config.yaml train.py</code></pre>
+<p>With <code>fsdp_offload_params: true</code> you can even fine-tune models that exceed aggregate GPU memory, at the cost of PCIe traffic. The mechanics of multi-GPU launches and the trade-offs between FSDP and ZeRO are exactly what our <a href="/accelerate-distributed-training-job-support/">Accelerate distributed training job support</a> covers.</p>
+<hr />
+<h2>Fix 8: Flash Attention, cache clearing, and activation offload</h2>
+<p><strong>Flash attention.</strong> FlashAttention-2/3 computes attention without materializing the full N×N score matrix, turning attention's memory from quadratic to linear in sequence length. Pass <code>attn_implementation="flash_attention_2"</code> at load time (shown in Fix 1). This is a strict win for long contexts and is now the default path many Transformers v5 models expect.</p>
+<p><strong>Clearing the cache.</strong> Between evaluation and training, or after loading, fragmentation can leave "reserved but unallocated" memory. Reclaim it:</p>
+<pre><code class="language-python">import gc, torch
+gc.collect()
+torch.cuda.empty_cache()
+torch.cuda.reset_peak_memory_stats()
+print(torch.cuda.memory_summary())   # inspect what actually holds memory</code></pre>
+<p><strong>Activation / CPU offload.</strong> If you are still a few hundred megabytes short, offloading activations or optimizer state to CPU (via DeepSpeed ZeRO-Offload or FSDP CPU offload) buys the final headroom. It is slower per step but often the difference between running and not running.</p>
+<p>Related tuning — quantization choices (bitsandbytes vs GPTQ vs AWQ) and broader throughput work — is covered in our <a href="/huggingface-quantization-job-support/">Hugging Face quantization job support</a> and <a href="/huggingface-gpu-optimization-job-support/">GPU optimization job support</a> pages.</p>
+<hr />
+<h2>A decision checklist</h2>
+<ul>
+<li><strong>Single 24&nbsp;GB GPU, 7B–13B:</strong> QLoRA + gradient checkpointing + accumulation + <code>paged_adamw_8bit</code> + flash attention. Cap <code>max_length</code>.</li>
+<li><strong>OOM on step 1 specifically:</strong> switch to a paged/8-bit optimizer — that spike is optimizer state.</li>
+<li><strong>OOM mid-epoch on long samples:</strong> lower <code>max_length</code>, enable packing, confirm flash attention is active.</li>
+<li><strong>"Reserved but unallocated" is large:</strong> set <code>expandable_segments:True</code> and clear the cache — it's fragmentation.</li>
+<li><strong>Multi-GPU full fine-tuning:</strong> FSDP FULL_SHARD or DeepSpeed ZeRO-3 through Accelerate, with CPU offload if needed.</li>
+</ul>
+<p>Most OOMs fall to the first recipe. When they don't, it is usually a subtle interaction — checkpointing silently disabled, a stray fp32 optimizer, or a <code>device_map</code> that put a layer where it shouldn't be. The general training and inference mechanics behind all of this live in our <a href="/huggingface-transformers-training-job-support/">Transformers training job support</a> and <a href="/huggingface-transformers-inference-job-support/">Transformers inference job support</a> guides.</p>
+<hr />
+<h2>Get unblocked fast</h2>
+<p>If you're staring at a stack trace on a deadline and none of the standard fixes are landing, don't burn the afternoon guessing. Our engineers pair with you on your actual repo, GPU, and dataset to get the run green. Start with <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> and we'll help you turn that red OOM wall into a training curve.</p>

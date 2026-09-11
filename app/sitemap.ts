@@ -243,6 +243,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/qa-automation-job-support-guide/`, lastModified: today, priority: 0.75 },
     { url: `${BASE}/data-engineering-job-support-guide/`, lastModified: today, priority: 0.75 },
     { url: `${BASE}/cybersecurity-devsecops-job-support-guide/`, lastModified: today, priority: 0.75 },
+    // Hugging Face / LLM engineering cluster
+    { url: `${BASE}/hugging-face-job-support-guide/`, lastModified: today, priority: 0.78 },
+    { url: `${BASE}/hugging-face-fine-tuning-job-support-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/hugging-face-inference-deployment-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/hugging-face-rag-embeddings-guide/`, lastModified: today, priority: 0.75 },
+    { url: `${BASE}/hugging-face-interview-support-guide/`, lastModified: today, priority: 0.75 },
     // Canada cluster
     { url: `${BASE}/why-canada-it-resume-gets-no-calls/`, lastModified: today, priority: 0.78 },
     { url: `${BASE}/how-to-get-it-interviews-scheduled-in-canada/`, lastModified: today, priority: 0.78 },

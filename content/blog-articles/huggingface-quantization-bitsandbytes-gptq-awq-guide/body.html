@@ -1,0 +1,92 @@
+<h2>Quantization is how big models fit on the GPU you actually have</h2>
+<p>A 70B-parameter model in 16-bit precision needs about 140 GB just for weights — more than any single consumer or mid-range data-center GPU. Quantization shrinks those weights from 16 bits to 8, 4, or even fewer bits per parameter, cutting VRAM roughly proportionally and, on memory-bound inference, boosting throughput because you move less data. The catch is that "quantization" is not one technique: bitsandbytes, GPTQ, and AWQ solve different problems, and picking the wrong one costs you either accuracy or the ability to train at all.</p>
+<p>This guide untangles the three, when each applies, and the dtype errors that make loading a quantized model feel like a coin flip. If you hit one of these on a live project, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team troubleshoots them on call, and the focused <a href="/huggingface-quantization-job-support/">quantization job support</a> page carries the deeper reference.</p>
+<hr />
+<h2>Why quantize: VRAM and throughput</h2>
+<p>There are two distinct wins, and conflating them leads to bad choices:</p>
+<ul>
+<li><strong>Memory.</strong> Going from FP16 (2 bytes/param) to 4-bit (0.5 bytes/param) is a 4x reduction in weight memory. That is the difference between a model that OOMs and one that fits — the difference between renting an 80 GB A100 and running on a 24 GB card.</li>
+<li><strong>Throughput.</strong> LLM decoding is usually <em>memory-bandwidth bound</em>: each generated token requires reading the entire weight matrix from GPU memory. Smaller weights mean less to read, so tokens/sec can rise even though the arithmetic is technically the same or more (there's a dequantize step). This only pays off with kernels written for it — which is why the serving story matters as much as the format.</li>
+</ul>
+<p>The trade is accuracy. Fewer bits means coarser weights, and past a point the model degrades. The art is choosing a method whose error is small enough to be invisible for your task. The related <a href="/huggingface-gpu-optimization-job-support/">GPU optimization job support</a> page covers the memory-vs-throughput math in more detail.</p>
+<hr />
+<h2>Two different jobs: training vs inference quantization</h2>
+<p>This is the single most important distinction, and it maps almost perfectly onto the three methods.</p>
+<ul>
+<li><strong>Quantization for training (QLoRA) — use bitsandbytes NF4.</strong> Here you quantize the frozen base model to 4-bit to fit it in memory, then train small LoRA adapters in higher precision on top. The quantization is applied on-the-fly at load time; no calibration dataset, no offline conversion. bitsandbytes owns this workflow.</li>
+<li><strong>Quantization for inference (GPTQ / AWQ) — use a pre-quantized checkpoint.</strong> Here the model is already trained and you want it small and fast to serve. GPTQ and AWQ run an offline, calibration-based pass that carefully rounds weights to minimize output error, producing a checkpoint you load and serve. These are not for training.</li>
+</ul>
+<p>Put simply: <strong>bitsandbytes is for making training fit; GPTQ/AWQ are for making inference cheap.</strong> Reaching for the wrong tool — trying to fine-tune a GPTQ checkpoint, or serving a bitsandbytes-4bit model at scale — is the root of a large share of the confusion.</p>
+<hr />
+<h2>bitsandbytes with BitsAndBytesConfig</h2>
+<p>In Transformers v5 you enable bitsandbytes quantization by passing a <code>BitsAndBytesConfig</code> to <code>from_pretrained</code>. The canonical QLoRA setup is 4-bit NF4 with a bfloat16 compute dtype and double quantization:</p>
+<pre><code class="language-python">import torch
+from transformers import AutoModelForCausalLM, BitsAndBytesConfig
+
+bnb = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",              # NF4 beats plain fp4 for LLM weights
+    bnb_4bit_compute_dtype=torch.bfloat16,  # math runs in bf16 after dequant
+    bnb_4bit_use_double_quant=True,         # quantize the quantization constants too
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-3.1-8B",
+    quantization_config=bnb,
+    device_map="auto",
+)</code></pre>
+<p>What each knob means: <strong>NF4</strong> (4-bit NormalFloat) is a data type shaped to the roughly-normal distribution of neural network weights, so it loses less information than uniform 4-bit. The <strong>compute dtype</strong> is the precision the actual matrix multiply runs in — weights are stored in 4-bit but dequantized to bf16 on the fly for the math. <strong>Double quantization</strong> squeezes a little more by also quantizing the per-block scaling constants. For 8-bit, swap to <code>load_in_8bit=True</code>, which is a gentler, higher-accuracy option that halves rather than quarters memory.</p>
+<hr />
+<h2>Loading a GPTQ or AWQ model</h2>
+<p>GPTQ and AWQ checkpoints come pre-quantized on the Hub — you do not quantize at load time, you just load. Transformers detects the quantization from the model config, so loading is nearly identical to a normal model:</p>
+<pre><code class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer
+
+# A GPTQ or AWQ repo already carries its quantization config
+model = AutoModelForCausalLM.from_pretrained(
+    "TheBloke/Llama-2-7B-AWQ",   # or a -GPTQ repo
+    device_map="auto",
+)
+tok = AutoTokenizer.from_pretrained("TheBloke/Llama-2-7B-AWQ")</code></pre>
+<p>The conceptual difference between the two: <strong>GPTQ</strong> quantizes layer by layer, using second-order (Hessian) information from a small calibration set to compensate rounding error as it goes. <strong>AWQ</strong> (Activation-aware Weight Quantization) observes which weight channels correspond to the largest activations and protects those, scaling them so they survive quantization better. In practice both hit 4-bit with small accuracy loss; AWQ often edges ahead on throughput with modern kernels, while GPTQ has the broadest tooling support. If you need to produce your own quantized checkpoint rather than download one, you run the calibration pass once with a representative dataset and push the result to the Hub.</p>
+<hr />
+<h2>The dtype and compute-dtype errors everyone hits</h2>
+<p>Quantized loading fails in a few predictable ways. Knowing the signature saves hours:</p>
+<ul>
+<li><strong>"Your GPU does not support bfloat16" / silent slowness.</strong> <code>bnb_4bit_compute_dtype=torch.bfloat16</code> needs an Ampere-or-newer GPU. On older cards fall back to <code>torch.float16</code>, or you get errors or degraded speed.</li>
+<li><strong>Mismatched compute dtype vs adapter dtype.</strong> In QLoRA, if your LoRA adapters are fp16 but compute dtype is bf16 (or vice versa), you get dtype-mismatch runtime errors in the forward pass. Keep them aligned. This overlaps with adapter-loading pitfalls covered under <a href="/huggingface-transformers-inference-job-support/">Transformers inference job support</a>.</li>
+<li><strong>Passing a BitsAndBytesConfig to an already-quantized GPTQ/AWQ model.</strong> You cannot bitsandbytes-quantize a model that is already GPTQ/AWQ. Pick one path; stacking them errors out.</li>
+<li><strong>bitsandbytes on CPU / no CUDA.</strong> bitsandbytes 4-bit paths require a CUDA GPU. On CPU-only boxes you get import or runtime errors — use a GGUF build with llama.cpp instead for CPU inference.</li>
+</ul>
+<hr />
+<h2>Accuracy trade-offs</h2>
+<p>Bits are not free. A rough field guide:</p>
+<ul>
+<li><strong>8-bit (INT8 / bitsandbytes 8-bit):</strong> essentially lossless for most tasks. Use it when 4-bit degrades quality and you can afford the extra memory.</li>
+<li><strong>4-bit NF4 (QLoRA):</strong> excellent for training-time memory savings; the LoRA adapters compensate for base-model quantization error during fine-tuning.</li>
+<li><strong>4-bit GPTQ / AWQ (inference):</strong> small, usually acceptable loss on general tasks. Watch for degradation on long-context reasoning, code, and math — the tasks most sensitive to weight precision.</li>
+<li><strong>Below 4-bit:</strong> quality falls off sharply for most models; treat as experimental.</li>
+</ul>
+<p>The only trustworthy answer is to evaluate on <em>your</em> task. Run your real eval suite on both the full-precision and quantized model and compare — a 4-bit model that loses two points on a benchmark you don't care about but holds steady on your task is a great trade. This "measure, don't assume" habit is also what interviewers probe; the <a href="/hugging-face-proxy-interview-support/">Hugging Face proxy interview support</a> page covers how to talk about quantization trade-offs credibly.</p>
+<hr />
+<h2>Serving quantized models on vLLM</h2>
+<p>For production inference, throughput comes from a serving engine with quantization-aware kernels, not from raw Transformers. <strong>vLLM</strong> natively serves GPTQ and AWQ checkpoints and pairs them with paged attention and continuous batching:</p>
+<pre><code class="language-python"># vLLM auto-detects AWQ/GPTQ from the checkpoint; you can also be explicit
+from vllm import LLM
+
+llm = LLM(
+    model="TheBloke/Llama-2-7B-AWQ",
+    quantization="awq",          # or "gptq"
+    dtype="float16",
+    gpu_memory_utilization=0.90,
+)
+print(llm.generate("Explain NF4 in one sentence.")[0].outputs[0].text)</code></pre>
+<p>A key production note: bitsandbytes 4-bit is designed for training-time memory savings and is not the fastest choice for high-QPS serving — for that, serve a GPTQ or AWQ checkpoint on vLLM. The engine's kernels turn the smaller weights into real throughput gains via reduced memory bandwidth. For tuning batch size, KV-cache memory, and tensor parallelism, see <a href="/vllm-inference-job-support/">vLLM inference job support</a> and the broader <a href="/huggingface-llm-serving-job-support/">LLM serving job support</a> guide.</p>
+<hr />
+<h2>Choosing a method</h2>
+<p>Collapse the decision to three questions:</p>
+<ul>
+<li><strong>Are you fine-tuning?</strong> Use bitsandbytes 4-bit NF4 (QLoRA). It is the only one of the three built for training.</li>
+<li><strong>Are you serving at scale on GPU?</strong> Use a GPTQ or AWQ checkpoint on vLLM. Prefer AWQ for throughput, GPTQ for the widest tooling; benchmark both on your model.</li>
+<li><strong>Are you running on CPU or a laptop?</strong> Use GGUF with llama.cpp — it is purpose-built for CPU and Apple Silicon inference and sits outside the bitsandbytes/GPTQ/AWQ GPU story.</li>
+</ul>
+<p>Get the job-to-tool mapping right and quantization stops being a source of mysterious errors and becomes what it should be: a straightforward lever for fitting bigger models on smaller GPUs. If you are staring at an OOM, a dtype traceback, or a throughput regression on a real deployment, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> engineers can jump on a call, read your config, and get the model loading and serving the way you need.</p>

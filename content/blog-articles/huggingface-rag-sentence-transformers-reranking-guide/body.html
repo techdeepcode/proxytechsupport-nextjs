@@ -1,0 +1,120 @@
+<h2>Why most RAG systems fail at retrieval, not generation</h2>
+<p>When a Retrieval-Augmented Generation system gives wrong or vague answers, the instinct is to blame the language model. In practice, the model is usually doing fine with the context it was handed — the problem is that the context was the wrong context. If the top-k chunks you feed the model do not actually contain the answer, no amount of prompt engineering will save you. This is why the single highest-leverage architecture in production RAG is <strong>retrieve-then-rerank</strong>: cast a wide net cheaply, then re-order precisely.</p>
+<p>This guide walks through building that pipeline with the Hugging Face stack — Sentence Transformers v5+ for embeddings and reranking, plus Text Embeddings Inference (TEI) for serving. If you want a second pair of eyes on a real pipeline, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team debugs these daily, and the dedicated <a href="/huggingface-semantic-search-job-support/">semantic search job support</a> page covers the retrieval side in depth.</p>
+<hr />
+<h2>The retrieve-then-rerank architecture</h2>
+<p>The core idea is a two-stage funnel that trades cost for accuracy at exactly the right point:</p>
+<ul>
+<li><strong>Stage 1 — Retrieve (bi-encoder).</strong> A <em>bi-encoder</em> embeds every document chunk once, offline, into a fixed vector. At query time you embed the query once and do a fast approximate-nearest-neighbour search over the vector index. This is cheap and scales to millions of chunks, but it is a lossy comparison: query and document never "see" each other, so subtle relevance signals are lost. You retrieve a generous <code>top_k</code> — say 50 candidates — knowing recall matters more than precision here.</li>
+<li><strong>Stage 2 — Rerank (cross-encoder).</strong> A <em>cross-encoder</em> takes the query and one candidate together in a single forward pass and scores their relevance directly. This is far more accurate because attention runs across both texts, but it is O(k) model calls, so you only apply it to the 50 candidates from stage 1, keeping the best 5–8.</li>
+</ul>
+<p>You get the recall of cheap vector search and the precision of a heavyweight relevance model, without paying cross-encoder cost across your whole corpus. The <a href="/huggingface-reranking-job-support/">reranking job support</a> page goes deeper on tuning stage 2, and <a href="/huggingface-embeddings-job-support/">embeddings job support</a> covers picking and fine-tuning the stage 1 model.</p>
+<hr />
+<h2>Bi-encoder embeddings with Sentence Transformers</h2>
+<p>A bi-encoder is a <code>SentenceTransformer</code> model. In v5+ the API is stable and batteries-included: load a model, call <code>encode</code>, and you get normalized dense vectors ready for cosine similarity.</p>
+<pre><code class="language-python">from sentence_transformers import SentenceTransformer
+
+# A strong general-purpose bi-encoder; swap for a domain model if you have one
+model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+
+docs = [
+    "The refund window is 30 days from delivery.",
+    "Enterprise plans include priority phone support.",
+    "API rate limits reset every 60 seconds.",
+]
+
+# encode once at index time; normalize so dot product == cosine similarity
+doc_emb = model.encode(docs, normalize_embeddings=True, batch_size=32)
+
+query = "how long do I have to return an item?"
+q_emb = model.encode(query, normalize_embeddings=True)
+
+scores = q_emb @ doc_emb.T          # cosine similarities
+top = scores.argsort()[::-1][:3]    # rank descending
+for i in top:
+    print(f"{scores[i]:.3f}  {docs[i]}")</code></pre>
+<p>Two things matter enormously here and are the most common source of "my retrieval is garbage" tickets. First, <strong>use the right model for your data</strong> — a general English model will underperform on legal, medical, or multilingual corpora. Second, <strong>be consistent</strong>: the exact same model and the same <code>normalize_embeddings</code> setting must be used for both indexing and querying. Mixing models or forgetting normalization silently destroys relevance.</p>
+<hr />
+<h2>Chunking: the failure mode nobody watches</h2>
+<p>Before a single vector is computed, you decide how to split documents into chunks — and that decision caps your ceiling. A bi-encoder compresses each chunk into one vector; if a chunk mixes three topics, the vector is a blurry average that matches nothing well. If a chunk is split mid-sentence, the answer gets severed across two chunks and neither one is fully retrievable.</p>
+<p>Practical rules that survive contact with production:</p>
+<ul>
+<li><strong>Respect structure.</strong> Split on headings, paragraphs, and list boundaries before falling back to token counts. A recursive splitter that prefers semantic boundaries beats a naive fixed-window splitter.</li>
+<li><strong>Size to your embedding model.</strong> Most bi-encoders truncate around 512 tokens. Chunks of roughly 200–400 tokens leave headroom and keep vectors focused.</li>
+<li><strong>Overlap a little.</strong> A 10–20% overlap between adjacent chunks prevents answers from falling into the crack between two chunks.</li>
+<li><strong>Keep metadata.</strong> Store the source, section title, and position with each chunk so you can inject citations and filter later.</li>
+</ul>
+<pre><code class="language-python">def chunk(text, size=350, overlap=60):
+    words = text.split()
+    step = size - overlap
+    return [" ".join(words[i:i + size]) for i in range(0, len(words), step)]</code></pre>
+<p>Word-based chunking is a rough approximation; for production, tokenize with the model's own tokenizer so you never silently overrun its context window and get truncated (and therefore wrong) embeddings.</p>
+<hr />
+<h2>The three ways retrieval collapses</h2>
+<p>When a RAG system "can't find" answers that are demonstrably in the corpus, it is almost always one of three failures — and they compound:</p>
+<ul>
+<li><strong>Bad chunking.</strong> The answer is spread across chunk boundaries, or chunks are so large the relevant sentence is diluted. No reranker can recover information that was never in a single retrievable unit.</li>
+<li><strong>Wrong embedding model.</strong> A model trained on generic web text used on dense domain jargon produces vectors that cluster by surface wording instead of meaning. Symptom: keyword-matching queries work, paraphrased queries fail.</li>
+<li><strong>No reranker.</strong> Bi-encoder scores are noisy; the truly relevant chunk often sits at rank 8, not rank 1. If you feed only the top 3 raw vector hits to the LLM, you frequently miss it entirely.</li>
+</ul>
+<p>The fix order is deterministic: get chunking right, pick a domain-appropriate embedding model, then add a reranker. Skipping to the reranker without fixing chunking is the most common wasted effort we see on <a href="/hugging-face-proxy-job-support/">Hugging Face support calls</a>.</p>
+<hr />
+<h2>Adding a CrossEncoder reranker</h2>
+<p>The reranker is where accuracy jumps. A <code>CrossEncoder</code> concatenates the query and each candidate and outputs a single relevance score. Sentence Transformers v5+ gives you a convenient <code>rank</code> helper that returns candidates sorted by score.</p>
+<pre><code class="language-python">from sentence_transformers import CrossEncoder
+
+reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L6-v2")
+
+query = "how long do I have to return an item?"
+candidates = [docs[i] for i in top_50]   # 50 hits from stage 1
+
+# rank() returns [{'corpus_id': int, 'score': float}, ...] sorted best-first
+ranked = reranker.rank(query, candidates, top_k=5, return_documents=True)
+for r in ranked:
+    print(f"{r['score']:.3f}  {r['text']}")</code></pre>
+<p>The mental model: stage 1 answers "which 50 chunks are plausibly relevant?" and stage 2 answers "of these 50, which 5 actually answer the question?" Cross-encoders are slow — a few hundred pairs per second on GPU — which is exactly why you never run them across the full corpus, only across the shortlist. If your reranker is the latency bottleneck, cut <code>top_k</code> from stage 1 or batch the pairs; the <a href="/huggingface-reranking-job-support/">reranking job support</a> page has the full tuning playbook.</p>
+<hr />
+<h2>Hybrid search: sparse plus dense</h2>
+<p>Dense bi-encoders are great at meaning but weak at exact matches — product SKUs, error codes, rare names. Sparse lexical retrieval (BM25, or learned sparse models) is the opposite: great at exact tokens, blind to paraphrase. Hybrid search runs both and fuses the results, typically with Reciprocal Rank Fusion (RRF), so a chunk ranked highly by <em>either</em> method survives into the reranker.</p>
+<pre><code class="language-python">def rrf(dense_ids, sparse_ids, k=60):
+    scores = {}
+    for rank, cid in enumerate(dense_ids):
+        scores[cid] = scores.get(cid, 0) + 1 / (k + rank)
+    for rank, cid in enumerate(sparse_ids):
+        scores[cid] = scores.get(cid, 0) + 1 / (k + rank)
+    return sorted(scores, key=scores.get, reverse=True)</code></pre>
+<p>Sentence Transformers v5+ also ships <strong>sparse encoders</strong> and <strong>multi-vector/ColBERT-style</strong> models, giving you learned sparse and late-interaction retrieval inside the same library. Hybrid retrieval followed by a cross-encoder reranker is the most robust default for messy real-world corpora. For a decision framework on when hybrid actually helps, see <a href="/huggingface-semantic-search-job-support/">semantic search job support</a>.</p>
+<hr />
+<h2>Evaluating retrieval before you blame the LLM</h2>
+<p>You cannot improve what you do not measure, and "the answer looks wrong" is not a metric. Build a small labelled set — 50–200 real queries, each mapped to the chunk IDs that actually contain the answer — and compute retrieval metrics at each stage:</p>
+<ul>
+<li><strong>Recall@k</strong> — did the relevant chunk appear in the top-k retrieved? This is your stage 1 health check. If recall@50 is low, fix chunking or the embedding model; a reranker cannot rescue a chunk that was never retrieved.</li>
+<li><strong>MRR / nDCG</strong> — how highly is the relevant chunk ranked? This is your stage 2 health check. If recall is high but MRR is low, the reranker is earning its keep (or needs a better base model).</li>
+</ul>
+<pre><code class="language-python">def recall_at_k(retrieved_ids, gold_ids, k):
+    hits = sum(1 for g in gold_ids if g in retrieved_ids[:k])
+    return hits / len(gold_ids)
+
+# Measure BEFORE reranking (stage 1) and AFTER (stage 2) to isolate the win
+print("recall@50 (retrieval):", recall_at_k(stage1_ids, gold, 50))
+print("recall@5  (reranked):", recall_at_k(reranked_ids, gold, 5))</code></pre>
+<p>Measuring each stage separately turns vague "RAG is bad" complaints into a specific, fixable diagnosis. This staged evaluation mindset is exactly what strong candidates demonstrate in system-design rounds; our <a href="/hugging-face-proxy-interview-support/">Hugging Face proxy interview support</a> walks through framing it.</p>
+<hr />
+<h2>Serving embeddings and rerankers with TEI</h2>
+<p>Running <code>model.encode</code> inside your app process is fine for prototypes but wasteful in production — it competes with request handling for GPU and doesn't batch well across concurrent requests. <strong>Text Embeddings Inference (TEI)</strong> is Hugging Face's dedicated server for embedding <em>and</em> reranking models: it handles dynamic batching, token-based rate limiting, and low-latency GPU serving behind a simple HTTP API.</p>
+<pre><code class="language-python">import requests
+
+# Embedding endpoint (bi-encoder served by TEI)
+emb = requests.post("http://tei-embed:80/embed",
+                    json={"inputs": ["how long is the refund window?"]}).json()
+
+# Rerank endpoint (cross-encoder served by TEI)
+ranked = requests.post("http://tei-rerank:80/rerank",
+                       json={"query": "refund window?",
+                             "texts": candidates}).json()
+# -> [{"index": 3, "score": 0.98}, ...] sorted best-first</code></pre>
+<p>The typical topology: one TEI instance serving your bi-encoder for indexing and query embedding, and a second TEI instance serving your cross-encoder for reranking. Both scale independently of your LLM serving tier. If you serve the generation model on the same cluster, coordinate GPU allocation with your <a href="/huggingface-llm-serving-job-support/">LLM serving job support</a> plan and keep an eye on <a href="/huggingface-gpu-optimization-job-support/">GPU optimization</a> so embeddings and generation don't starve each other.</p>
+<hr />
+<h2>Putting it together</h2>
+<p>A reliable Hugging Face RAG pipeline is not one clever model — it is a disciplined funnel: structure-aware chunking, a domain-appropriate bi-encoder for wide recall, optional hybrid sparse+dense fusion, a cross-encoder reranker for precision, and staged evaluation so you always know which link is weak. Serve the embedding and reranking models on TEI, keep indexing and querying perfectly consistent, and measure recall before you ever touch the prompt. Do that and "the LLM is hallucinating" complaints quietly disappear, because the model finally receives context that actually contains the answer.</p>
+<p>If you are wiring this into a larger agentic system, the retrieve-then-rerank pattern slots directly into an <a href="/huggingface-agentic-rag-job-support/">agentic RAG</a> loop as a tool the agent calls. And if you would rather have an engineer pair with you on your specific corpus, latency budget, and eval set, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team is ready to jump on a call and get your retrieval quality where it needs to be.</p>

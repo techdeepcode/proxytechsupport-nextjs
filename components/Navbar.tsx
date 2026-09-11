@@ -302,6 +302,7 @@ export default function Navbar({ variant = 'light' }: Props) {
                             { label: 'SRE & Reliability Engineering', href: '/sre-job-support-usa/' },
                             { label: 'Cloud Technologies', href: '/cloud-technologies-job-support/' },
                             { label: 'AWS Job Support', href: '/aws-job-support/' },
+                            { label: 'Hugging Face & LLM Job Support', href: '/hugging-face-proxy-job-support/' },
                           ],
                         },
                         {
@@ -690,6 +691,7 @@ export default function Navbar({ variant = 'light' }: Props) {
                       { label: 'SRE & Reliability Engineering', href: '/sre-job-support-usa/' },
                       { label: 'Cloud Technologies', href: '/cloud-technologies-job-support/' },
                       { label: 'AWS Job Support', href: '/aws-job-support/' },
+                      { label: 'Hugging Face & LLM Job Support', href: '/hugging-face-proxy-job-support/' },
                     ],
                   },
                   {

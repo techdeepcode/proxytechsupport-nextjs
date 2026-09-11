@@ -128,6 +128,44 @@ const aiMlClusterLinks = [
   { label: 'AI/ML Interview Preparation Guide', href: '/ai-ml-interview-preparation-guide/' },
 ];
 
+const huggingFaceClusterLinks = [
+  { label: 'Hugging Face Job Support Hub', href: '/hugging-face-proxy-job-support/' },
+  { label: 'Hugging Face Proxy Interview', href: '/hugging-face-proxy-interview-support/' },
+  { label: 'Hugging Face Engineer Job Support', href: '/hugging-face-engineer-job-support/' },
+  { label: 'Hugging Face Production Support', href: '/hugging-face-production-support/' },
+  { label: 'Hugging Face Hub & hf CLI', href: '/huggingface-hub-job-support/' },
+  { label: 'Transformers Training', href: '/huggingface-transformers-training-job-support/' },
+  { label: 'Transformers Inference', href: '/huggingface-transformers-inference-job-support/' },
+  { label: 'PEFT / LoRA Fine-Tuning', href: '/peft-fine-tuning-job-support/' },
+  { label: 'QLoRA Fine-Tuning', href: '/qlora-fine-tuning-job-support/' },
+  { label: 'TRL Post-Training', href: '/trl-job-support/' },
+  { label: 'SFT Fine-Tuning', href: '/huggingface-sft-job-support/' },
+  { label: 'DPO Alignment', href: '/huggingface-dpo-job-support/' },
+  { label: 'GRPO Training', href: '/huggingface-grpo-job-support/' },
+  { label: 'Accelerate Distributed Training', href: '/accelerate-distributed-training-job-support/' },
+  { label: 'Inference Endpoints', href: '/huggingface-inference-endpoints-job-support/' },
+  { label: 'Inference Providers', href: '/huggingface-inference-providers-job-support/' },
+  { label: 'LLM Serving (vLLM / TGI)', href: '/huggingface-llm-serving-job-support/' },
+  { label: 'vLLM Inference', href: '/vllm-inference-job-support/' },
+  { label: 'TGI Serving', href: '/tgi-job-support/' },
+  { label: 'smolagents', href: '/smolagents-job-support/' },
+  { label: 'Code Agents', href: '/huggingface-code-agents-job-support/' },
+  { label: 'MCP Agents', href: '/huggingface-mcp-agents-job-support/' },
+  { label: 'Agentic RAG', href: '/huggingface-agentic-rag-job-support/' },
+  { label: 'Sentence Transformers & Semantic Search', href: '/huggingface-semantic-search-job-support/' },
+  { label: 'Reranking', href: '/huggingface-reranking-job-support/' },
+  { label: 'Embeddings', href: '/huggingface-embeddings-job-support/' },
+  { label: 'Diffusers', href: '/diffusers-job-support/' },
+  { label: 'Text-to-Image', href: '/huggingface-text-to-image-job-support/' },
+  { label: 'Gradio', href: '/gradio-job-support/' },
+  { label: 'Spaces', href: '/huggingface-spaces-job-support/' },
+  { label: 'Quantization', href: '/huggingface-quantization-job-support/' },
+  { label: 'GPU Optimization', href: '/huggingface-gpu-optimization-job-support/' },
+  { label: 'Hugging Face Job Support USA', href: '/hugging-face-proxy-job-support-usa/' },
+  { label: 'Hugging Face Job Support UK', href: '/hugging-face-proxy-job-support-uk/' },
+  { label: 'Hugging Face Job Support Canada', href: '/hugging-face-proxy-job-support-canada/' },
+];
+
 const candidateMarketingLinks = [
   { label: 'Job Application & Candidate Marketing', href: '/job-application-candidate-marketing/' },
   { label: 'Candidate Marketing USA', href: '/job-application-candidate-marketing-usa/' },
@@ -347,6 +385,20 @@ export default function Footer() {
           <FooterHeading>Global AI/ML Job Support</FooterHeading>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
             {aiMlClusterLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <hr style={{ border: 0, borderTop: '1px solid var(--pts-footer-border)', margin: '0 0 2rem' }} />
+
+        {/* ── Hugging Face & LLM Engineering Cluster section ─────────── */}
+        <div style={{ marginBottom: '2.5rem' }}>
+          <FooterHeading>Hugging Face &amp; LLM Engineering Job Support</FooterHeading>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
+            {huggingFaceClusterLinks.map((link) => (
               <Link key={link.href} href={link.href} className="footer-link" style={{ border: '1px solid var(--pts-footer-border)', borderRadius: 6, padding: '.2rem .55rem', fontSize: '.8rem' }}>
                 {link.label}
               </Link>

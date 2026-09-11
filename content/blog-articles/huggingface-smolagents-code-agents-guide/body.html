@@ -1,0 +1,112 @@
+<h2>Two ways an agent can act</h2>
+<p>Every LLM agent needs a way to <em>do</em> things — call an API, run a calculation, search a database. Hugging Face's <strong>smolagents</strong> library is a deliberately small framework built around a sharp question: how should the model express its actions? It offers two answers. A <code>CodeAgent</code> writes and executes Python code as its actions. A <code>ToolCallingAgent</code> emits structured JSON tool calls that your runtime dispatches. That single design choice cascades into everything — expressiveness, security, debuggability — so getting it right is the most important decision you make.</p>
+<p>This guide covers both agent types, defining tools, model backends, MCP integration, and the failure modes that bite in production. If you are wiring smolagents into a real product and something is looping or throwing, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team debugs agents live, and the <a href="/smolagents-job-support/">smolagents job support</a> page is the dedicated reference.</p>
+<hr />
+<h2>What smolagents is</h2>
+<p>smolagents is a minimalist agent framework from Hugging Face. Its philosophy is small surface area: an agent is a loop that, on each step, asks the model what to do next, executes that action, feeds the observation back, and repeats until the model calls a special <code>final_answer</code>. There is no sprawling abstraction layer — the whole point is that you can read the loop and understand exactly what your agent does.</p>
+<p>Because it is model-agnostic, smolagents runs on Hugging Face Inference Providers, local Transformers models, or a self-hosted vLLM endpoint. It ships first-class support for tools, multi-step reasoning, and the Model Context Protocol (MCP). What it does <em>not</em> do is hide the mechanics — which is exactly why it is a good framework to learn agents on and a common topic in <a href="/hugging-face-proxy-interview-support/">Hugging Face proxy interview support</a> sessions.</p>
+<hr />
+<h2>CodeAgent: actions as executable Python</h2>
+<p>A <code>CodeAgent</code> expresses each action by writing a snippet of Python and running it. Instead of emitting "call tool search with args X", the model writes <code>results = search("X")</code> and the agent executes it. This is surprisingly powerful: the model can compose tools, loop, branch, do arithmetic, and store intermediate variables — all in one step — because code is a more expressive action space than a single JSON call.</p>
+<pre><code class="language-python">from smolagents import CodeAgent, InferenceClientModel, WebSearchTool
+
+model = InferenceClientModel()   # uses HF Inference Providers by default
+
+agent = CodeAgent(
+    tools=[WebSearchTool()],
+    model=model,
+)
+
+agent.run("How many years passed between the first and last Apollo Moon landing?")</code></pre>
+<p>Under the hood the model might write code that searches, parses two dates, subtracts them, and calls <code>final_answer(...)</code> — several logical steps expressed as one program. The cost of this power is obvious: <strong>you are executing model-generated code</strong>. Read on to sandboxing, because that is not optional.</p>
+<hr />
+<h2>Sandboxing and security for CodeAgent</h2>
+<p>Running LLM-written Python on your host is a remote-code-execution vulnerability by design. smolagents mitigates this in layers, and you must choose the right one for your risk level:</p>
+<ul>
+<li><strong>Restricted local interpreter.</strong> By default CodeAgent uses a constrained Python executor that blocks dangerous builtins and only allows imports you explicitly authorize via <code>additional_authorized_imports</code>. Good for trusted internal use, not a hard security boundary.</li>
+<li><strong>Sandboxed executors.</strong> For untrusted input or production, run code in an isolated sandbox — a container or a remote sandboxed executor — so generated code cannot touch your host filesystem, secrets, or network beyond what you allow.</li>
+</ul>
+<pre><code class="language-python">agent = CodeAgent(
+    tools=[WebSearchTool()],
+    model=model,
+    additional_authorized_imports=["math", "datetime"],  # nothing else importable
+    # executor_type="e2b" / "docker"  # isolate execution off-host for real safety
+)</code></pre>
+<p>The rule of thumb: if any part of the task input comes from an untrusted user, the local interpreter is not enough — use a real sandbox. This is the single most important operational point for CodeAgent, and getting it wrong is the failure that turns an agent into an incident. Deeper patterns live on the <a href="/huggingface-code-agents-job-support/">code agents job support</a> page.</p>
+<hr />
+<h2>ToolCallingAgent: actions as JSON tool calls</h2>
+<p>A <code>ToolCallingAgent</code> takes the more conventional route: on each step the model emits a structured JSON tool call — a tool name plus arguments — which the runtime validates against the tool's schema and dispatches. This is the same paradigm as the tool-calling APIs you may know from hosted model providers.</p>
+<pre><code class="language-python">from smolagents import ToolCallingAgent, InferenceClientModel, WebSearchTool
+
+agent = ToolCallingAgent(
+    tools=[WebSearchTool()],
+    model=InferenceClientModel(),
+)
+
+agent.run("What is the current population of Tokyo?")
+# The model emits: {"name": "web_search", "arguments": {"query": "Tokyo population"}}</code></pre>
+<p>The advantage is safety and predictability: no arbitrary code runs, every action is a schema-validated call, and the action space is exactly the tools you exposed — nothing more. The cost is expressiveness: composing three tools or doing a calculation takes multiple round-trips instead of one program. For a side-by-side comparison of the two paradigms, see <a href="/huggingface-tool-calling-agents-job-support/">tool-calling agents job support</a>.</p>
+<hr />
+<h2>Defining tools with @tool</h2>
+<p>Both agent types share the same tool abstraction. The fastest way to define one is the <code>@tool</code> decorator: a plain Python function with a clear docstring and type hints becomes a tool the model can use. The docstring and argument descriptions <em>are</em> the schema the model reads — vague docstrings cause the model to call tools wrong.</p>
+<pre><code class="language-python">from smolagents import tool
+
+@tool
+def convert_currency(amount: float, from_ccy: str, to_ccy: str) -> float:
+    """Convert an amount between two currencies using live rates.
+
+    Args:
+        amount: The numeric amount to convert.
+        from_ccy: Source currency code, e.g. "USD".
+        to_ccy: Target currency code, e.g. "EUR".
+    """
+    rate = fetch_rate(from_ccy, to_ccy)
+    return amount * rate</code></pre>
+<p>For a CodeAgent the model calls this as <code>convert_currency(100, "USD", "EUR")</code> inside its Python; for a ToolCallingAgent it produces the equivalent JSON. Same tool, two invocation styles — which is why smolagents lets you swap agent types without rewriting tools.</p>
+<hr />
+<h2>Model backends: Inference Providers, local, and vLLM</h2>
+<p>smolagents does not ship a model; you plug one in. Three common backends cover most needs:</p>
+<ul>
+<li><strong>Inference Providers</strong> via <code>InferenceClientModel</code> — the zero-infra default; requests route through Hugging Face to a hosted model. Best for prototyping and low-to-moderate volume.</li>
+<li><strong>Local Transformers</strong> via <code>TransformersModel</code> — runs a model in-process on your own GPU. Full control, no per-token cost, but you own the serving.</li>
+<li><strong>Self-hosted vLLM (or any OpenAI-compatible endpoint)</strong> via <code>OpenAIServerModel</code> pointed at your vLLM server — the production path for high throughput.</li>
+</ul>
+<pre><code class="language-python">from smolagents import OpenAIServerModel, CodeAgent
+
+model = OpenAIServerModel(
+    model_id="meta-llama/Llama-3.1-8B-Instruct",
+    api_base="http://localhost:8000/v1",   # your vLLM server
+    api_key="EMPTY",
+)
+agent = CodeAgent(tools=[], model=model)</code></pre>
+<p>One practical caveat: CodeAgent leans on the model's ability to write correct Python, so a capable instruct model matters more here than for a ToolCallingAgent. If you serve the backend yourself, tune it with <a href="/vllm-inference-job-support/">vLLM inference job support</a>.</p>
+<hr />
+<h2>Multi-step reasoning and MCP</h2>
+<p>Both agents run a multi-step loop: think, act, observe, repeat. You cap it with <code>max_steps</code> so a confused agent cannot run forever. The observation from each action (a return value, or code stdout for CodeAgent) is fed back into the next prompt, letting the agent correct course — retry a failed search, reparse a bad response, refine a query.</p>
+<p>For connecting to external tools, smolagents supports the <strong>Model Context Protocol (MCP)</strong>. MCP is an open standard for exposing tools and data sources to agents over a uniform interface, so you can plug in an MCP server — a filesystem server, a database server, a company-internal tool server — and its tools become available to your agent without bespoke glue code.</p>
+<pre><code class="language-python">from smolagents import CodeAgent, InferenceClientModel, ToolCollection
+
+# Load tools exposed by an MCP server and hand them to the agent
+with ToolCollection.from_mcp({"url": "http://localhost:8080/sse"}) as tc:
+    agent = CodeAgent(tools=[*tc.tools], model=InferenceClientModel())
+    agent.run("Summarize today's new rows in the orders table.")</code></pre>
+<p>MCP is how you scale an agent from a handful of hand-written tools to a whole ecosystem of shared, reusable ones. The <a href="/huggingface-mcp-agents-job-support/">MCP agents job support</a> page covers wiring and debugging MCP servers end to end.</p>
+<hr />
+<h2>Common failures</h2>
+<p>The agents that break in production usually break in one of these ways:</p>
+<ul>
+<li><strong>Unsafe code execution.</strong> A CodeAgent given untrusted input without a sandbox can be prompt-injected into destructive or exfiltrating code. Always sandbox untrusted workloads; treat generated code as hostile.</li>
+<li><strong>Tool schema errors.</strong> Missing type hints or a thin docstring means the model guesses argument shapes and calls tools with wrong or malformed arguments. Rich docstrings and precise types are your schema — invest in them.</li>
+<li><strong>Infinite / wasteful loops.</strong> An agent that never emits <code>final_answer</code> keeps stepping until it burns budget. Set a sane <code>max_steps</code> and log each step so you can see where it got stuck.</li>
+<li><strong>Weak model, code path.</strong> A small model that cannot reliably write valid Python will fail as a CodeAgent while doing fine as a ToolCallingAgent. Match the paradigm to the model's real capability.</li>
+<li><strong>Silent tool exceptions.</strong> A tool that raises returns an error observation the model may ignore or misread. Return clear, structured error strings so the agent can recover instead of looping.</li>
+</ul>
+<hr />
+<h2>When to use code vs tool-calling agents</h2>
+<p>The decision comes down to expressiveness versus control:</p>
+<ul>
+<li><strong>Use CodeAgent</strong> when tasks require composing multiple tools, doing computation, or multi-step logic in a single action — data analysis, math-heavy workflows, orchestration — and you have a capable model plus a proper sandbox. It typically solves complex tasks in fewer steps.</li>
+<li><strong>Use ToolCallingAgent</strong> when safety and auditability dominate, when the model is smaller or you cannot sandbox, or when actions are simple discrete API calls. Every action is schema-validated and no arbitrary code runs, which is easier to lock down and reason about.</li>
+</ul>
+<p>A useful default: prototype with a CodeAgent to see how far expressiveness gets you, then move to a ToolCallingAgent for the parts that must be tightly controlled — or keep the CodeAgent behind a real sandbox. Either way, smolagents lets you switch with almost no code change because the tools are shared. This same reasoning powers <a href="/huggingface-agentic-rag-job-support/">agentic RAG</a> systems, where a retrieve-then-rerank step becomes just another tool the agent calls.</p>
+<p>If you are building on smolagents and hitting sandbox questions, schema bugs, runaway loops, or backend choices, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> engineers can pair with you on a call, review your agent loop, and get it reliable and safe before it ships.</p>

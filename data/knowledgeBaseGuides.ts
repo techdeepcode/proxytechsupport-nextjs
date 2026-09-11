@@ -333,6 +333,54 @@ export const knowledgeBaseGuides: KBGuide[] = [
     tags: ['technology', 'cybersecurity', 'devsecops'],
   },
 
+  // ── Hugging Face / LLM Engineering ───────────────────────────────────────────
+  {
+    title: 'Hugging Face Job Support Guide',
+    href: '/hugging-face-job-support-guide/',
+    category: 'Technology',
+    categoryKey: 'technology',
+    description:
+      'Real-time support across the Hugging Face stack — the Hub and hf CLI, Transformers v5, PEFT/TRL fine-tuning, Sentence Transformers RAG, agents, and deployment on Inference Endpoints, vLLM or TGI.',
+    tags: ['technology', 'ai-ml', 'hugging-face', 'llm'],
+    featured: true,
+  },
+  {
+    title: 'Hugging Face Fine-Tuning Job Support Guide',
+    href: '/hugging-face-fine-tuning-job-support-guide/',
+    category: 'Technology',
+    categoryKey: 'technology',
+    description:
+      'PEFT LoRA/QLoRA and full fine-tuning, TRL post-training (SFT, DPO, GRPO), chat templates, distributed training with Accelerate (FSDP/DeepSpeed), CUDA OOM mitigation, and merging adapters back to the Hub.',
+    tags: ['technology', 'ai-ml', 'hugging-face', 'fine-tuning'],
+  },
+  {
+    title: 'Hugging Face Inference & Deployment Guide',
+    href: '/hugging-face-inference-deployment-guide/',
+    category: 'Technology',
+    categoryKey: 'technology',
+    description:
+      'Choosing between Inference Providers, dedicated Inference Endpoints, and self-hosted vLLM/TGI — plus autoscaling, cold starts, quantization for serving, TEI embeddings, and throughput and cost tuning.',
+    tags: ['technology', 'ai-ml', 'hugging-face', 'inference'],
+  },
+  {
+    title: 'Hugging Face RAG & Embeddings Guide',
+    href: '/hugging-face-rag-embeddings-guide/',
+    category: 'Technology',
+    categoryKey: 'technology',
+    description:
+      'Embeddings with Sentence Transformers, bi-encoder retrieval with cross-encoder reranking, chunking, hybrid search, agentic RAG, serving embeddings with TEI, and debugging retrieval-quality collapse.',
+    tags: ['technology', 'ai-ml', 'hugging-face', 'rag'],
+  },
+  {
+    title: 'Hugging Face Interview Support Guide',
+    href: '/hugging-face-interview-support-guide/',
+    category: 'Technology',
+    categoryKey: 'technology',
+    description:
+      'What Hugging Face and LLM engineering interviews cover — Transformers internals, tokenization and attention, LoRA/QLoRA, RLHF/DPO/GRPO, RAG design, quantization trade-offs, and serving with vLLM.',
+    tags: ['technology', 'ai-ml', 'hugging-face', 'interview'],
+  },
+
   // ── Canada ─────────────────────────────────────────────────────────────────
   {
     title: 'Why Your Canada IT Resume Gets No Calls',

@@ -157,7 +157,7 @@ export const llmJobSupport = T(
   ],
   ['LLM application architecture', 'prompting, context, and evaluation'],
   'an LLM app with tangled prompts and no evaluation harness',
-  [L('Generative AI job support', '/generative-ai-job-support/'), L('RAG job support', '/rag-job-support/'), L('Prompt engineering job support', '/prompt-engineering-job-support/')],
+  [L('Generative AI job support', '/generative-ai-job-support/'), L('RAG job support', '/rag-job-support/'), L('Prompt engineering job support', '/prompt-engineering-job-support/'), L('Hugging Face job support hub', '/hugging-face-proxy-job-support/'), L('Transformers inference job support', '/huggingface-transformers-inference-job-support/')],
   { interviewLink: llmInterview },
 );
 
@@ -171,7 +171,7 @@ export const generativeAiJobSupport = T(
   ],
   ['GenAI system design', 'evaluation, safety, and cost control'],
   'a GenAI prototype that must become production-grade',
-  [L('LLM job support', '/llm-job-support/'), L('RAG job support', '/rag-job-support/'), L('Agentic AI job support', '/agentic-ai-job-support/')],
+  [L('LLM job support', '/llm-job-support/'), L('RAG job support', '/rag-job-support/'), L('Agentic AI job support', '/agentic-ai-job-support/'), L('Hugging Face job support hub', '/hugging-face-proxy-job-support/'), L('Diffusers job support', '/diffusers-job-support/')],
   { interviewLink: genaiInterview },
 );
 
@@ -185,7 +185,7 @@ export const ragJobSupport = T(
   ],
   ['RAG architecture and retrieval design', 'chunking, embeddings, and evaluation'],
   'an existing RAG system whose answer quality has degraded',
-  [L('Vector database job support', '/vector-database-job-support/'), L('LLM evaluation job support', '/llm-evaluation-job-support/'), L('LLM job support', '/llm-job-support/')],
+  [L('Vector database job support', '/vector-database-job-support/'), L('LLM evaluation job support', '/llm-evaluation-job-support/'), L('LLM job support', '/llm-job-support/'), L('Sentence Transformers & semantic search', '/huggingface-semantic-search-job-support/'), L('Reranking job support', '/huggingface-reranking-job-support/')],
   { interviewLink: ragInterview },
 );
 

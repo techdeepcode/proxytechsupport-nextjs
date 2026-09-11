@@ -1,0 +1,127 @@
+<h2>The Post-Training Ladder: From Base Model to Aligned Assistant</h2>
+<p>A pretrained language model is a fluent next-token predictor with no notion of instructions, formatting, or human preference. Turning it into a useful assistant is a staged process, and <a href="/hugging-face-proxy-job-support/">Hugging Face TRL</a> gives you a battle-tested trainer for every rung of the ladder. TRL v1 ships stable <strong>SFTTrainer</strong>, <strong>DPOTrainer</strong>, <strong>GRPOTrainer</strong>, <strong>RewardTrainer</strong>, and <strong>DistillationTrainer</strong> classes, all built on top of the Transformers v5 model definitions and the <code>Trainer</code> API you already know.</p>
+<p>The canonical sequence is: <strong>SFT</strong> (teach the model the task and chat format) &rarr; <strong>preference tuning</strong> (align outputs to what humans actually prefer) using either DPO or an online RL method like GRPO. Each stage narrows the model's behavior. Skipping SFT and jumping straight to RL almost always produces instability, because the policy has no sane starting distribution to stay close to.</p>
+<p>This guide walks the ladder in order, with realistic TRL code and the failure modes that send teams looking for <a href="/huggingface-sft-job-support/">structured post-training help</a>. We will cover packing and chat templates in SFT, the reference model and <code>beta</code> in DPO, reward functions and KL control in GRPO, and how to keep the whole pipeline from silently degrading via reward hacking.</p>
+<hr>
+<h2>Stage 1: Supervised Fine-Tuning with SFTTrainer</h2>
+<p>SFT is straightforward maximum-likelihood training on (prompt, response) pairs, but two details make or break it: the <strong>chat template</strong> and <strong>packing</strong>. The chat template is a Jinja string stored on the tokenizer that converts a list of role/content messages into the exact token sequence the model was trained on. Get it wrong and every downstream stage inherits a formatting mismatch.</p>
+<pre><code class="language-python">from datasets import load_dataset
+from trl import SFTTrainer, SFTConfig
+
+dataset = load_dataset("trl-lib/Capybara", split="train")
+
+config = SFTConfig(
+    output_dir="Qwen3-SFT",
+    max_length=4096,
+    packing=True,                 # concatenate samples to fill the context
+    packing_strategy="bfd",       # best-fit-decreasing bin packing
+    per_device_train_batch_size=4,
+    gradient_accumulation_steps=8,
+    learning_rate=2e-5,
+    bf16=True,
+    assistant_only_loss=True,     # mask loss on prompt tokens
+    logging_steps=10,
+)
+
+trainer = SFTTrainer(
+    model="Qwen/Qwen3-4B-Base",
+    args=config,
+    train_dataset=dataset,
+)
+trainer.train()
+</code></pre>
+<p>Two settings deserve emphasis. <code>packing=True</code> concatenates multiple short samples into full-length sequences so you stop wasting compute on padding — on chat data this often doubles throughput. <code>assistant_only_loss=True</code> masks the loss on the prompt and system tokens so the model learns to <em>generate</em> responses rather than memorize prompts; this relies on the chat template emitting the assistant-token boundaries correctly.</p>
+<p>When you pass a model string, SFTTrainer loads the tokenizer and applies its chat template automatically for conversational datasets. If you are fine-tuning a base model with no template, set one explicitly before training or your DPO/GRPO stages will drift. Teams doing this at scale usually pair SFT with <a href="/accelerate-distributed-training-job-support/">Accelerate for multi-GPU sharding</a> and FSDP so a 4B–70B run fits in memory.</p>
+<hr>
+<h2>Stage 2: Preference Tuning with DPOTrainer</h2>
+<p>Direct Preference Optimization skips the explicit reward model of classic RLHF. Instead it trains directly on triplets of <strong>(prompt, chosen, rejected)</strong>, optimizing the policy to raise the log-probability of chosen responses relative to rejected ones, while a frozen <strong>reference model</strong> anchors the policy so it does not collapse. The strength of that anchor is the single most important hyperparameter, <code>beta</code>.</p>
+<pre><code class="language-python">from datasets import load_dataset
+from trl import DPOTrainer, DPOConfig
+
+# Each row: {"prompt": ..., "chosen": ..., "rejected": ...}
+dataset = load_dataset("trl-lib/ultrafeedback_binarized", split="train")
+
+config = DPOConfig(
+    output_dir="Qwen3-DPO",
+    beta=0.1,                     # KL strength vs the reference model
+    learning_rate=5e-7,           # much smaller than SFT
+    max_length=2048,
+    max_prompt_length=1024,
+    per_device_train_batch_size=2,
+    gradient_accumulation_steps=16,
+    bf16=True,
+    loss_type="sigmoid",          # standard DPO; also ipo, robust, etc.
+)
+
+trainer = DPOTrainer(
+    model="Qwen3-SFT",            # start from your SFT checkpoint
+    args=config,
+    train_dataset=dataset,
+)
+trainer.train()
+</code></pre>
+<p><strong>Understanding beta.</strong> A low <code>beta</code> (0.01–0.05) lets the policy move far from the reference and learn strong preferences, but risks degenerate, repetitive, or over-optimized outputs. A high <code>beta</code> (0.3–0.5) keeps outputs close to the SFT model but barely shifts behavior. Most teams start at <code>0.1</code> and tune from validation win-rate. The learning rate must be dramatically lower than SFT — <code>5e-7</code> is typical — because DPO gradients are sharp.</p>
+<p><strong>The reference model.</strong> By default DPOTrainer creates a frozen copy of the initial policy as the reference, roughly doubling memory. With PEFT/LoRA you can drop the separate copy: TRL computes reference log-probs by disabling the adapter, so a single set of base weights serves both roles. That trick is what makes DPO on a single 80GB GPU practical for 7B–14B models. If your preference pairs are noisy, expect the win-rate to plateau; that is a data problem, not a hyperparameter one. Deeper diagnosis is exactly what our <a href="/huggingface-dpo-job-support/">DPO job support</a> and <a href="/trl-job-support/">broader TRL support</a> engagements focus on.</p>
+<hr>
+<h2>Stage 3: Online RL with GRPOTrainer</h2>
+<p>Group Relative Policy Optimization is where post-training gets both powerful and dangerous. Unlike DPO, which trains on a fixed offline dataset, GRPO is <strong>online RL</strong>: for each prompt the model <em>generates</em> a group of completions, each is scored by one or more <strong>reward functions</strong>, and the advantage of each completion is computed <em>relative to the group mean</em> — no separate value/critic network required. That group-relative baseline is what makes GRPO cheaper than PPO while still working well for reasoning and verifiable-reward tasks.</p>
+<pre><code class="language-python">from datasets import load_dataset
+from trl import GRPOTrainer, GRPOConfig
+
+dataset = load_dataset("trl-lib/tldr", split="train")
+
+# Reward functions receive completions and return one float per completion.
+def reward_len(completions, **kwargs):
+    target = 50
+    return [-abs(len(c.split()) - target) for c in completions]
+
+def reward_format(completions, **kwargs):
+    return [1.0 if c.strip().endswith(".") else 0.0 for c in completions]
+
+config = GRPOConfig(
+    output_dir="Qwen3-GRPO",
+    num_generations=8,            # group size G per prompt
+    max_completion_length=256,
+    per_device_train_batch_size=8,
+    gradient_accumulation_steps=4,
+    beta=0.04,                    # KL penalty toward the reference model
+    learning_rate=1e-6,
+    use_vllm=True,                # offload generation to vLLM for speed
+    bf16=True,
+)
+
+trainer = GRPOTrainer(
+    model="Qwen3-SFT",
+    args=config,
+    reward_funcs=[reward_len, reward_format],
+    train_dataset=dataset,
+)
+trainer.train()
+</code></pre>
+<p><strong>Reward functions</strong> are plain Python callables. They receive the decoded completions (plus prompts and any dataset columns as kwargs) and return a list of floats. You can stack several — a correctness check, a format check, a length penalty — and TRL sums them. For verifiable domains like math or code, the reward is often a unit-test pass or a regex match, which is far more robust than a learned reward model.</p>
+<p><strong>num_generations</strong> is the group size G. Larger groups give a lower-variance advantage estimate but multiply generation cost and memory linearly. Values of 4–16 are common; 8 is a sane default. <strong>beta</strong> here is the KL penalty pulling the policy back toward the reference model — set it too low and the policy exploits the reward; too high and it never learns.</p>
+<h3>Why GRPO runs out of memory</h3>
+<p>GRPO is memory-heavy because three things live at once: the trainable <strong>policy</strong>, the frozen <strong>reference model</strong> for the KL term, and a batch of <strong>generated sequences</strong> that scales with <code>num_generations &times; max_completion_length</code>. The usual OOM fixes: enable <code>use_vllm=True</code> to run generation in a dedicated vLLM process (colocated or on a separate GPU), lower <code>num_generations</code> or <code>max_completion_length</code>, use LoRA to drop the reference-model copy, and lean on <a href="/accelerate-distributed-training-job-support/">Accelerate + DeepSpeed ZeRO-3</a> to shard the policy. Generation, not the backward pass, is typically the bottleneck — which is why fast serving matters even during training.</p>
+<h3>Instability and reward hacking</h3>
+<p>The failure signature of GRPO is a reward curve that keeps climbing while sample quality falls off a cliff. This is <strong>reward hacking</strong>: the model finds a shortcut that satisfies the letter of your reward function while violating its intent. A length reward gets gamed with padding filler; a "contains the answer" reward gets gamed by dumping every possible answer. Mitigations: combine multiple orthogonal rewards, add a KL penalty (that is what <code>beta</code> is for), cap reward magnitudes, and always eyeball raw completions rather than trusting the scalar. If your KL suddenly spikes, the policy has bolted from the reference — lower the learning rate or raise <code>beta</code>. This class of debugging is the most common reason teams reach for <a href="/huggingface-grpo-job-support/">GRPO job support</a>.</p>
+<hr>
+<h2>When to Use Each Method</h2>
+<ul>
+<li><strong>SFT only</strong> — when you have high-quality demonstration data and need the model to learn a task or format. It is the cheapest, most stable stage and the foundation for everything else. Never skip it.</li>
+<li><strong>DPO</strong> — when you can collect or synthesize preference pairs cheaply and want a stable, offline, single-pass alignment step. It is the default for most instruction-following and tone/safety alignment because it is far easier to run than online RL.</li>
+<li><strong>GRPO</strong> — when the objective is <em>verifiable</em> (math, code, tool use, structured extraction) so you can write a programmatic reward, and when you have the GPU budget for online generation. It shines exactly where preference data is hard to author but correctness is checkable.</li>
+</ul>
+<p>A pragmatic pipeline for a reasoning model looks like: SFT on demonstrations &rarr; DPO to fix tone and format &rarr; GRPO with verifiable rewards to push accuracy. Each stage should be gated by evaluation, not vibes.</p>
+<hr>
+<h2>Evaluating Every Stage with Lighteval</h2>
+<p>Post-training without evaluation is guessing. <strong>Lighteval</strong> is Hugging Face's evaluation harness for running standardized benchmarks (MMLU, GSM8K, IFEval, and custom suites) against a checkpoint, and it plugs into the same ecosystem as TRL. Run it after every rung of the ladder so you can attribute regressions to a specific stage.</p>
+<pre><code class="language-bash"># Evaluate an SFT/DPO/GRPO checkpoint on a benchmark suite
+lighteval accelerate \
+  "model_name=Qwen3-GRPO,dtype=bfloat16" \
+  "leaderboard|gsm8k|0|0" \
+  --output-dir ./eval-results
+</code></pre>
+<p>The pattern that catches problems early: log training reward/loss AND an external benchmark. If GRPO reward rises but GSM8K accuracy falls, you have caught reward hacking before it ships. Pair that with a small held-out set of raw prompts you read by hand — automated metrics miss degeneration that a human spots in ten seconds. Teams moving these pipelines into production usually formalize this loop as a CI gate, which is a core part of <a href="/huggingface-production-support/">Hugging Face production support</a>.</p>
+<hr>
+<h2>Get Expert Help With Your TRL Pipeline</h2>
+<p>SFT, DPO, and GRPO each have their own failure modes — masked-loss bugs, mis-tuned <code>beta</code>, exploding KL, generation OOM, and reward hacking that only shows up at eval time. If you are building a post-training stack and want experienced engineers to review your configs, unblock a stuck run, or prep for an <a href="/hugging-face-proxy-interview-support/">ML engineering interview</a>, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team works alongside you in real time. Reach out and ship your aligned model with confidence.</p>

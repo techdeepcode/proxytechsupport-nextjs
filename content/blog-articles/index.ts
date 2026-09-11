@@ -143,7 +143,31 @@ import { meta as meta_what_happens_in_senior_technical_interview } from './what-
 import Article_how_to_explain_your_project_in_a_technical_interview from './how-to-explain-your-project-in-a-technical-interview/Article';
 import { meta as meta_how_to_explain_your_project_in_a_technical_interview } from './how-to-explain-your-project-in-a-technical-interview/meta';
 
+// ── Hugging Face / LLM engineering blog cluster (Sept 2026; additive) ──
+import Article_huggingface_cuda_out_of_memory_fine_tuning_fix from './huggingface-cuda-out-of-memory-fine-tuning-fix/Article';
+import { meta as meta_huggingface_cuda_out_of_memory_fine_tuning_fix } from './huggingface-cuda-out-of-memory-fine-tuning-fix/meta';
+import Article_huggingface_lora_qlora_adapter_loading_merging_guide from './huggingface-lora-qlora-adapter-loading-merging-guide/Article';
+import { meta as meta_huggingface_lora_qlora_adapter_loading_merging_guide } from './huggingface-lora-qlora-adapter-loading-merging-guide/meta';
+import Article_huggingface_trl_grpo_dpo_post_training_guide from './huggingface-trl-grpo-dpo-post-training-guide/Article';
+import { meta as meta_huggingface_trl_grpo_dpo_post_training_guide } from './huggingface-trl-grpo-dpo-post-training-guide/meta';
+import Article_huggingface_inference_endpoints_vs_providers_guide from './huggingface-inference-endpoints-vs-providers-guide/Article';
+import { meta as meta_huggingface_inference_endpoints_vs_providers_guide } from './huggingface-inference-endpoints-vs-providers-guide/meta';
+import Article_huggingface_rag_sentence_transformers_reranking_guide from './huggingface-rag-sentence-transformers-reranking-guide/Article';
+import { meta as meta_huggingface_rag_sentence_transformers_reranking_guide } from './huggingface-rag-sentence-transformers-reranking-guide/meta';
+import Article_huggingface_quantization_bitsandbytes_gptq_awq_guide from './huggingface-quantization-bitsandbytes-gptq-awq-guide/Article';
+import { meta as meta_huggingface_quantization_bitsandbytes_gptq_awq_guide } from './huggingface-quantization-bitsandbytes-gptq-awq-guide/meta';
+import Article_huggingface_smolagents_code_agents_guide from './huggingface-smolagents-code-agents-guide/Article';
+import { meta as meta_huggingface_smolagents_code_agents_guide } from './huggingface-smolagents-code-agents-guide/meta';
+
 export const blogArticleEntries = [
+  // ── Hugging Face / LLM engineering blog cluster (Sept 2026) ──
+  { meta: meta_huggingface_cuda_out_of_memory_fine_tuning_fix, Article: Article_huggingface_cuda_out_of_memory_fine_tuning_fix },
+  { meta: meta_huggingface_lora_qlora_adapter_loading_merging_guide, Article: Article_huggingface_lora_qlora_adapter_loading_merging_guide },
+  { meta: meta_huggingface_trl_grpo_dpo_post_training_guide, Article: Article_huggingface_trl_grpo_dpo_post_training_guide },
+  { meta: meta_huggingface_inference_endpoints_vs_providers_guide, Article: Article_huggingface_inference_endpoints_vs_providers_guide },
+  { meta: meta_huggingface_rag_sentence_transformers_reranking_guide, Article: Article_huggingface_rag_sentence_transformers_reranking_guide },
+  { meta: meta_huggingface_quantization_bitsandbytes_gptq_awq_guide, Article: Article_huggingface_quantization_bitsandbytes_gptq_awq_guide },
+  { meta: meta_huggingface_smolagents_code_agents_guide, Article: Article_huggingface_smolagents_code_agents_guide },
   // ── Knowledge Base engineering cluster (Sept 2026) ──
   { meta: meta_kubernetes_pod_pending_troubleshooting, Article: Article_kubernetes_pod_pending_troubleshooting },
   { meta: meta_kubernetes_oomkilled_troubleshooting, Article: Article_kubernetes_oomkilled_troubleshooting },

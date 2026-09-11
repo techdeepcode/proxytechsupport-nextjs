@@ -1,0 +1,109 @@
+<h2>Three Ways to Serve a Model on Hugging Face</h2>
+<p>Once a model is trained, the hard question is how to serve it. Hugging Face gives you three distinct paths, and choosing wrong costs you either money, latency, or engineering time. The options are <strong>Inference Providers</strong> (serverless, multi-provider routing behind one API), dedicated <strong>Inference Endpoints</strong> (managed autoscaling infrastructure you provision), and <strong>self-hosted vLLM or TGI</strong> (you own the box). This guide compares all three across cost, control, scale, and latency, with concrete <code>hf</code> CLI, curl, and Python snippets you can copy.</p>
+<p>The mental model: Inference Providers is a metered utility, Inference Endpoints is a managed apartment, self-hosting is owning the house. As you move down that list you gain control and lose convenience. Most teams end up using more than one — Providers for prototyping and spiky traffic, Endpoints or self-hosted vLLM for steady production load. If you want an engineer to help you make this call for a specific workload, that is a common <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> request.</p>
+<hr>
+<h2>Option 1: Inference Providers (Serverless)</h2>
+<p><strong>Inference Providers</strong> is a serverless routing layer. You send a request with a single Hugging Face token, and HF routes it to a partner provider (or its own infra) that hosts the model, billing you <strong>per token</strong> with no infrastructure to manage. There are no cold starts you control, no instance sizing, no scaling config — you just call an OpenAI-compatible endpoint.</p>
+<pre><code class="language-python">from huggingface_hub import InferenceClient
+
+client = InferenceClient(
+    model="meta-llama/Llama-3.3-70B-Instruct",
+    provider="auto",        # let HF pick an available provider
+    api_key="hf_...",
+)
+
+resp = client.chat.completions.create(
+    messages=[{"role": "user", "content": "Explain KV caching in one line."}],
+    max_tokens=128,
+)
+print(resp.choices[0].message.content)
+</code></pre>
+<p>The same route is reachable over plain HTTP with an OpenAI-compatible schema, which makes migration from other LLM APIs trivial:</p>
+<pre><code class="language-bash">curl https://router.huggingface.co/v1/chat/completions \
+  -H "Authorization: Bearer $HF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "meta-llama/Llama-3.3-70B-Instruct",
+    "messages": [{"role": "user", "content": "Hello"}],
+    "max_tokens": 64
+  }'
+</code></pre>
+<p><strong>Use it when:</strong> traffic is spiky or unknown, you are prototyping, you want access to many models without provisioning anything, or per-token economics beat a reserved GPU. <strong>Avoid it when:</strong> you need a private/custom model not on the catalog, strict data-residency, guaranteed latency SLAs, or very high sustained throughput where per-token cost exceeds a dedicated GPU. Details of provider routing and billing are covered in our <a href="/huggingface-inference-providers-job-support/">Inference Providers job support</a>.</p>
+<hr>
+<h2>Option 2: Dedicated Inference Endpoints</h2>
+<p><strong>Inference Endpoints</strong> is managed infrastructure you provision. You pick a model, a cloud (AWS/Azure/GCP), a region, and a GPU instance type; HF builds a container (backed by TGI, vLLM, or a custom image), gives you a private HTTPS URL, and handles autoscaling and monitoring. You pay for <strong>uptime of the instance</strong>, not per token — so this wins when you have steady, predictable load.</p>
+<pre><code class="language-bash"># Create a dedicated endpoint with the hf CLI
+hf endpoints deploy my-llama \
+  --repo meta-llama/Llama-3.3-70B-Instruct \
+  --instance-type nvidia-a100 \
+  --instance-size x2 \
+  --min-replica 0 \
+  --max-replica 4
+</code></pre>
+<p><strong>Instance and GPU sizing</strong> is the decision that drives both cost and latency. A 7B–8B model in bf16 fits comfortably on a single L4/A10 (24GB); a 70B model needs an A100-80GB &times;2 or an H100 node, or aggressive quantization. Undersize and you OOM on long contexts or large batches; oversize and you burn money on idle VRAM. Rule of thumb: weights in bytes &asymp; params &times; 2 for bf16, plus KV-cache headroom that grows with context length and concurrency.</p>
+<h3>Scale-to-zero and cold starts</h3>
+<p>Setting <code>--min-replica 0</code> enables <strong>scale-to-zero</strong>: after an idle window the endpoint spins down and stops billing. The trade-off is a <strong>cold start</strong> on the next request — the platform must schedule a GPU, pull the container, and load weights into VRAM, which for a 70B model can be several minutes. That is fine for internal tools and dev endpoints, unacceptable for user-facing latency SLAs. Mitigations: keep <code>--min-replica 1</code> for production, use smaller/quantized models that load faster, and rely on HF's Xet-backed storage plus warm container caching to shorten weight-pull time. If a warm replica is too expensive, a common pattern is scale-to-zero for off-hours and a scheduled scale-up before business hours.</p>
+<h3>Autoscaling and custom handlers</h3>
+<p>Autoscaling is driven by load — you set <code>min</code>/<code>max</code> replicas and the platform adds replicas under pressure and removes them when idle. For non-standard models or pre/post-processing you supply a <strong>custom handler</strong>: a <code>handler.py</code> exposing an <code>EndpointHandler</code> class that HF invokes per request, letting you run bespoke tokenization, RAG retrieval, or output parsing inside the container. Choosing between the built-in vLLM/TGI backend and a custom image is exactly the kind of tradeoff our <a href="/huggingface-inference-endpoints-job-support/">Inference Endpoints job support</a> and <a href="/huggingface-engineer-job-support/">HF engineer support</a> engagements help teams get right.</p>
+<hr>
+<h2>Option 3: Self-Hosted vLLM or TGI</h2>
+<p>If you own GPUs (on-prem or your own cloud account) you can run the serving engine yourself for maximum control and, at scale, the lowest per-request cost. The two mainstream engines both consume Transformers v5 model definitions. <strong>Important as of 2026: TGI is in maintenance mode</strong> — it still works and is patched, but it is no longer the recommended path for new deployments. For a fresh self-hosted stack, choose <strong>vLLM</strong> (or SGLang) instead.</p>
+<pre><code class="language-bash"># Self-host with vLLM's OpenAI-compatible server
+pip install vllm
+vllm serve meta-llama/Llama-3.3-70B-Instruct \
+  --tensor-parallel-size 2 \
+  --max-model-len 8192 \
+  --gpu-memory-utilization 0.90
+</code></pre>
+<p>vLLM's PagedAttention KV-cache manager and continuous batching give it excellent throughput, and it exposes the same <code>/v1/chat/completions</code> schema as the other two options, so your client code does not change:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(base_url="http://localhost:8000/v1", api_key="EMPTY")
+resp = client.chat.completions.create(
+    model="meta-llama/Llama-3.3-70B-Instruct",
+    messages=[{"role": "user", "content": "Ping"}],
+)
+print(resp.choices[0].message.content)
+</code></pre>
+<p><strong>Use it when:</strong> you have steady high throughput, need data to never leave your infrastructure, want to tune batching/quantization/tensor-parallelism, or already own GPUs. <strong>Avoid it when:</strong> you lack the ops capacity to run GPU nodes, autoscaling, and on-call — that operational burden is real. Engine selection, tensor-parallel layout, and throughput tuning are covered in our <a href="/vllm-inference-job-support/">vLLM inference support</a>, <a href="/tgi-job-support/">TGI support</a>, and general <a href="/huggingface-llm-serving-job-support/">LLM serving job support</a>.</p>
+<hr>
+<h2>Decision Matrix</h2>
+<ul>
+<li><strong>Cost model</strong> — Providers: per token, zero idle. Endpoints: per instance-hour, idle billed unless scale-to-zero. Self-hosted: fixed GPU cost, cheapest per request at high utilization.</li>
+<li><strong>Control</strong> — Providers: minimal. Endpoints: medium (instance, region, custom handler). Self-hosted: total.</li>
+<li><strong>Scale</strong> — Providers: elastic, managed. Endpoints: autoscaling with replica bounds. Self-hosted: whatever you build.</li>
+<li><strong>Latency floor</strong> — Providers: shared, variable. Endpoints: warm replica = low, cold start = minutes. Self-hosted: fully in your hands.</li>
+<li><strong>Ops burden</strong> — Providers: none. Endpoints: light. Self-hosted: heavy.</li>
+</ul>
+<p>A practical rollout: start on <strong>Inference Providers</strong> to validate the product with zero infra, graduate spiky-but-private workloads to <strong>Inference Endpoints</strong> with scale-to-zero on dev and a warm replica on prod, and move only your highest-volume steady traffic to <strong>self-hosted vLLM</strong> once utilization justifies owning the hardware.</p>
+<hr>
+<h2>Migrating an OpenAI-Style Client Between the Three</h2>
+<p>Because all three options expose the same OpenAI-compatible <code>/v1/chat/completions</code> schema, moving between them is mostly a change of <code>base_url</code> and credentials — not a rewrite. That portability is deliberate and it is what lets you start cheap and graduate without touching application code. A single environment-driven client covers all three:</p>
+<pre><code class="language-python">import os
+from openai import OpenAI
+
+# Providers:     https://router.huggingface.co/v1
+# Endpoint:      https://<id>.<region>.endpoints.huggingface.cloud/v1
+# Self-hosted:   http://localhost:8000/v1
+client = OpenAI(
+    base_url=os.environ["LLM_BASE_URL"],
+    api_key=os.environ.get("LLM_API_KEY", "EMPTY"),
+)
+
+resp = client.chat.completions.create(
+    model=os.environ["LLM_MODEL"],
+    messages=[{"role": "user", "content": "Summarize PagedAttention."}],
+    max_tokens=256,
+    stream=True,
+)
+for chunk in resp:
+    delta = chunk.choices[0].delta.content or ""
+    print(delta, end="", flush=True)
+</code></pre>
+<p>Keep the model name, base URL, and key in configuration rather than code, and your test suite can exercise a local vLLM server while production points at an Endpoint or Providers. The one caveat: sampling defaults, supported parameters, and streaming behavior differ slightly between backends, so pin and validate them per target rather than assuming parity. Getting that abstraction layer right early saves painful migrations later and is a frequent topic in our <a href="/huggingface-llm-serving-job-support/">LLM serving support</a>.</p>
+<hr>
+<h2>Cold-Start Mitigation and Observability</h2>
+<p>Cold starts dominate the perceived reliability of any autoscaled deployment. The levers: keep at least one warm replica for latency-sensitive paths, prefer quantized weights (AWQ/GPTQ/FP8) that load faster and fit smaller GPUs, exploit Xet-backed storage to speed weight pulls, and pre-warm before predictable traffic peaks. On the observability side, track <strong>time-to-first-token</strong>, tokens/sec, GPU utilization, and queue depth — not just request count. A cost surprise almost always traces to idle warm replicas or oversized instances, so alert on utilization, not just spend. Wiring this monitoring into production LLM systems is a core part of <a href="/huggingface-production-support/">Hugging Face production support</a>.</p>
+<hr>
+<h2>Get Help Choosing and Shipping Your Serving Stack</h2>
+<p>The right answer is rarely one option — it is a mix tuned to your traffic shape, latency budget, and data-residency constraints. If you want experienced engineers to size instances, configure autoscaling and scale-to-zero, migrate off maintenance-mode TGI to vLLM, or prep for a serving-focused <a href="/hugging-face-proxy-interview-support/">ML engineering interview</a>, our <a href="/hugging-face-proxy-job-support/">Hugging Face proxy job support</a> team can work alongside you in real time. Reach out and ship inference that is fast, reliable, and affordable.</p>

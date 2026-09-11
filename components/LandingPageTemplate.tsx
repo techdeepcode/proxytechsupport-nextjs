@@ -10,6 +10,7 @@ import { allDotnetClusterPages } from '@/data/dotnet-cluster-pages';
 import { allAiMlClusterPages } from '@/data/aiml';
 import { allAwsClusterPages } from '@/data/aws';
 import { allAmazonClusterPages } from '@/data/amazon';
+import { allHuggingFaceClusterPages } from '@/data/huggingface';
 import { jobSupportLinks } from '@/data/navigation';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 import USALegacyTrustBanner from '@/components/USALegacyTrustBanner';
@@ -84,6 +85,12 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
     return [home, { label: 'Amazon', href: '/amazon-interview-career-support/' }, { label: shortTitle }];
   }
 
+  // Hugging Face / GenAI / LLM cluster — under the Hugging Face proxy job support hub
+  if (HF_CLUSTER_SLUGS.has(slug)) {
+    if (slug === 'hugging-face-proxy-job-support') return [home, { label: 'Hugging Face' }];
+    return [home, { label: 'Hugging Face', href: '/hugging-face-proxy-job-support/' }, { label: shortTitle }];
+  }
+
   // Problem / catch-all pages
   return [home, { label: 'Developer Support' }, { label: shortTitle }];
 }
@@ -107,6 +114,7 @@ const DOTNET_CLUSTER_SLUGS = new Set(allDotnetClusterPages.map((p) => p.slug));
 const AIML_CLUSTER_SLUGS = new Set(allAiMlClusterPages.map((p) => p.slug));
 const AWS_CLUSTER_SLUGS = new Set(allAwsClusterPages.map((p) => p.slug));
 const AMAZON_CLUSTER_SLUGS = new Set(allAmazonClusterPages.map((p) => p.slug));
+const HF_CLUSTER_SLUGS = new Set(allHuggingFaceClusterPages.map((p) => p.slug));
 
 /** Geo pages + USA tech landings + country-specific proxy pages — same hero layout with metrics on the right (desktop). */
 function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
@@ -125,6 +133,8 @@ function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (AWS_CLUSTER_SLUGS.has(config.slug)) return true;
   // All Amazon global authority cluster landing pages — metrics aside on the right (desktop)
   if (AMAZON_CLUSTER_SLUGS.has(config.slug)) return true;
+  // All Hugging Face / GenAI / LLM cluster landing pages — metrics aside on the right (desktop)
+  if (HF_CLUSTER_SLUGS.has(config.slug)) return true;
   return false;
 }
 

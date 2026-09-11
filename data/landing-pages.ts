@@ -6,6 +6,7 @@ import { allAngularClusterPages } from './angular';
 import { allAwsClusterPages } from './aws';
 import { allAzureClusterPages } from './azure';
 import { allAmazonClusterPages } from './amazon';
+import { allHuggingFaceClusterPages } from './huggingface';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10470,4 +10471,6 @@ export const allLandingPages: LandingPageConfig[] = [
   ...allAzureClusterPages,
   // ── Amazon global authority cluster (hiring, interview, LP, proxy interview/job, get-scheduled, candidate marketing) (additive) ──
   ...allAmazonClusterPages,
+  // ── Hugging Face / Generative AI / LLM Engineering cluster (additive) ────────
+  ...allHuggingFaceClusterPages,
 ];

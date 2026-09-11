@@ -142,6 +142,11 @@ export const globalAiMlJobSupport: LandingPageConfig = aimlPage({
       { label: 'GenAI interview proxy support', href: '/genai-interview-proxy-support/' },
       { label: 'RAG interview proxy support', href: '/rag-interview-proxy-support/' },
       { label: 'MLOps interview proxy support', href: '/mlops-interview-proxy-support/' },
+      // Hugging Face / LLM engineering cluster
+      { label: 'Hugging Face job support hub', href: '/hugging-face-proxy-job-support/' },
+      { label: 'Hugging Face proxy interview support', href: '/hugging-face-proxy-interview-support/' },
+      { label: 'PEFT / LoRA fine-tuning job support', href: '/peft-fine-tuning-job-support/' },
+      { label: 'Sentence Transformers & semantic search', href: '/huggingface-semantic-search-job-support/' },
       // Existing anchors
       EXISTING.aimlGuide, EXISTING.mlopsGuide, EXISTING.ragGuide, EXISTING.genaiGuide,
       EXISTING.candidateMarketing, EXISTING.production, EXISTING.dotnetAiml,
