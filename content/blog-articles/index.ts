@@ -122,6 +122,8 @@ import Article_indian_masters_graduates_canada_it_career_breakthrough_2026 from 
 import { meta as meta_indian_masters_graduates_canada_it_career_breakthrough_2026 } from './indian-masters-graduates-canada-it-career-breakthrough-2026/meta';
 
 // ─── Knowledge Base engineering cluster (Sept 2026; additive) ─────────────────
+import Article_sre_interview_production_reliability_2026 from './sre-interview-production-reliability-2026/Article';
+import { meta as meta_sre_interview_production_reliability_2026 } from './sre-interview-production-reliability-2026/meta';
 import Article_kubernetes_pod_pending_troubleshooting from './kubernetes-pod-pending-troubleshooting/Article';
 import { meta as meta_kubernetes_pod_pending_troubleshooting } from './kubernetes-pod-pending-troubleshooting/meta';
 import Article_kubernetes_oomkilled_troubleshooting from './kubernetes-oomkilled-troubleshooting/Article';
@@ -177,6 +179,7 @@ export const blogArticleEntries = [
   { meta: meta_huggingface_quantization_bitsandbytes_gptq_awq_guide, Article: Article_huggingface_quantization_bitsandbytes_gptq_awq_guide },
   { meta: meta_huggingface_smolagents_code_agents_guide, Article: Article_huggingface_smolagents_code_agents_guide },
   // ── Knowledge Base engineering cluster (Sept 2026) ──
+  { meta: meta_sre_interview_production_reliability_2026, Article: Article_sre_interview_production_reliability_2026 },
   { meta: meta_kubernetes_pod_pending_troubleshooting, Article: Article_kubernetes_pod_pending_troubleshooting },
   { meta: meta_kubernetes_oomkilled_troubleshooting, Article: Article_kubernetes_oomkilled_troubleshooting },
   { meta: meta_terraform_state_locking_drift_troubleshooting, Article: Article_terraform_state_locking_drift_troubleshooting },

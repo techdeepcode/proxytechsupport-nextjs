@@ -1,0 +1,512 @@
+<p>The SRE interview and the SRE production job have quietly converged. A few years ago you could clear a Site Reliability Engineering loop by knowing Prometheus query syntax and reciting the four golden signals. In 2026 that is table stakes. Interviewers — and the on-call rotations you join afterwards — now want someone who can reason about failure: measurable reliability, error budgets, capacity, Kubernetes resource behaviour, distributed telemetry, and the judgment to decide whether to mitigate first or diagnose first while users are hurting.</p>
+
+<p>This is a field guide to that shift, written for September 2026. It covers what actually changed for SREs this year — including the parts of <strong>Kubernetes 1.37</strong> and <strong>OpenTelemetry</strong> that matter operationally — how <strong>SLOs, error budgets and incident response</strong> are expected to work in practice, and what senior SRE interviews are really testing underneath the questions. The technical material here stands on its own; the reliability reasoning is the same whether you are debugging a live incident, answering a system-design question, or working through <a href="/sre-job-support-usa/">real-time SRE job support</a> on a production platform you have just inherited.</p>
+
+<div style="margin:1.75rem 0;padding:1.25rem 1.4rem;border:1px solid rgba(0,223,130,0.28);border-left:4px solid var(--pts-accent);border-radius:10px;background:rgba(0,223,130,0.05)">
+  <p style="margin:0 0 0.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--pts-forest)">September 2026 SRE snapshot</p>
+  <ul style="margin:0;padding-left:1.1rem">
+    <li><strong>Kubernetes 1.37 &ldquo;Garhwal&rdquo;</strong> shipped on 26 August 2026 with 67 enhancements (16 Stable, 23 Beta, 27 Alpha, 1 removal).</li>
+    <li><strong>HPA scale-to-zero</strong> is Beta and on by default; the <strong>Resource Metrics API</strong> (metrics.k8s.io) reached GA.</li>
+    <li><strong>etcd RangeStream</strong> (Beta, default-on) bounds API-server memory on large LIST reads; <strong>Memory QoS</strong> graduated to Beta on cgroup v2.</li>
+    <li><strong>OpenTelemetry</strong> is standardising environment-variable context propagation (release candidate) for CI/CD and subprocess traces; the Collector ships on a roughly biweekly cadence (v0.161.0 in mid-September).</li>
+    <li>Interviews increasingly test <strong>reasoning about failure</strong> over tool recall.</li>
+  </ul>
+</div>
+
+<p style="font-size:0.9rem;color:var(--pts-text-subtle)"><em>Updated September 2026. Roughly a 20-minute read.</em></p>
+
+<hr>
+
+<h2 id="contents">What this guide covers</h2>
+<ul>
+  <li><a href="#what-changed">What changed for SREs in 2026</a></li>
+  <li><a href="#k8s-137">Kubernetes 1.37 changes that actually matter to an SRE</a></li>
+  <li><a href="#otel">OpenTelemetry in September 2026: why SRE observability is changing</a></li>
+  <li><a href="#slos">SLOs in 2026: stop treating availability as the only metric</a></li>
+  <li><a href="#incident">What a real production incident looks like</a></li>
+  <li><a href="#framework">A troubleshooting framework you can reuse</a></li>
+  <li><a href="#interview">The 2026 SRE interview has changed</a></li>
+  <li><a href="#example">A senior SRE interview example, worked through</a></li>
+  <li><a href="#job-support">Where SRE job support becomes useful in real work</a></li>
+  <li><a href="#interview-support">SRE proxy interview and interview support</a></li>
+  <li><a href="#faq">Frequently asked questions</a></li>
+</ul>
+
+<hr>
+
+<h2 id="what-changed">What changed for SREs in 2026?</h2>
+
+<p>Nothing about reliability engineering was reinvented this year. What shifted is the <em>surface area</em> an SRE is expected to reason about, and how much of it is now measured in user outcomes rather than host health. A few themes run through everything below:</p>
+
+<p><strong>Kubernetes became more operationally expressive.</strong> The control plane now exposes more of what it is doing in machine-readable form — node lifecycle conditions, a stable resource-metrics API, autoscaling that can genuinely reach zero — which means more of your automation can react to first-class signals instead of scraping logs and guessing.</p>
+
+<p><strong>Platform engineering and SRE keep merging.</strong> The question is no longer &ldquo;can you run this service?&rdquo; but &ldquo;can you give 200 engineering teams a paved road to run their own services reliably?&rdquo; SLOs, golden-signal dashboards, and safe deploy tooling are increasingly delivered as a platform, not hand-built per team.</p>
+
+<p><strong>Telemetry became infrastructure, not a bolt-on.</strong> OpenTelemetry is now the default assumption for new instrumentation, and the Collector is a piece of production infrastructure with its own capacity, backpressure and failure modes. When telemetry is infrastructure, losing it silently is an incident of its own.</p>
+
+<p><strong>Resource management got more workload-aware.</strong> Memory QoS, pod-level resource management, and Dynamic Resource Allocation reflect a world where a &ldquo;pod&rdquo; might be a latency-critical service, a batch job, or a GPU-bound model server — and the platform is expected to treat them differently.</p>
+
+<p><strong>AI and GPU workloads changed the capacity conversation.</strong> Accelerators are expensive, bursty and scarce. Scaling GPU-backed inference to zero when idle, and back up under load, is now a real reliability-and-cost trade-off SREs are asked to design for.</p>
+
+<p><strong>Reliability is measured in user experience.</strong> &ldquo;The nodes are healthy&rdquo; is not an answer. The bar is a request-level or journey-level SLI that reflects what a user actually got. Every section that follows assumes that framing.</p>
+
+<hr>
+
+<h2 id="k8s-137">Kubernetes 1.37 changes that actually matter to an SRE</h2>
+
+<p>Kubernetes 1.37, codenamed &ldquo;Garhwal&rdquo;, was released on 26 August 2026 with 67 enhancements. Most of them will never touch your day. A handful genuinely change how you reason about reliability, autoscaling, capacity and the control plane&rsquo;s own resilience — and those are exactly the ones a good interviewer will probe, because they reveal whether you understand the trade-offs or just the headline. For each one below: what changed, why it exists, what it fixes, what new failure mode it introduces, and how you would observe and validate it.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>1.37 capability</th>
+      <th>Why it matters</th>
+      <th>Production signal to watch</th>
+      <th>Interview angle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HPA scale-to-zero (Beta, default-on)</td>
+      <td>Idle queue/batch/GPU workloads can drop to zero replicas and save real money</td>
+      <td>Cold-start latency; time from metric to first ready pod; queue age at wake-up</td>
+      <td>&ldquo;What happens to a request that arrives while the deployment is at zero?&rdquo;</td>
+    </tr>
+    <tr>
+      <td>Resource Metrics API GA (metrics.k8s.io)</td>
+      <td>Stable contract behind <code>kubectl top</code> and resource-based HPA</td>
+      <td>metrics-server availability; missing metrics stalling HPA decisions</td>
+      <td>&ldquo;Is this your observability stack? Why not?&rdquo;</td>
+    </tr>
+    <tr>
+      <td>etcd RangeStream (Beta, default-on)</td>
+      <td>Bounds API-server memory on large LIST/range reads in big clusters</td>
+      <td>apiserver memory spikes correlated with large LISTs / watch-cache init</td>
+      <td>&ldquo;Why does a wide <code>kubectl get pods -A</code> risk a big control plane?&rdquo;</td>
+    </tr>
+    <tr>
+      <td>Memory QoS (Beta, cgroup v2)</td>
+      <td>Proactive memory throttling and protection instead of only hard OOM kills</td>
+      <td>OOMKilled rate; memory.high throttling events; working-set vs limit</td>
+      <td>&ldquo;Why doesn&rsquo;t raising the memory limit fix the OOMKills?&rdquo;</td>
+    </tr>
+    <tr>
+      <td>Node lifecycle conditions (Alpha)</td>
+      <td>Machine-readable drain/maintenance/shutdown states for automation</td>
+      <td>Node conditions during maintenance windows; controller reactions</td>
+      <td>&ldquo;How would you coordinate a rolling node maintenance safely?&rdquo;</td>
+    </tr>
+    <tr>
+      <td>Pod-level resource managers (Beta)</td>
+      <td>NUMA/topology-aware placement from pod-level resources, even with sidecars</td>
+      <td>Cross-NUMA memory access; tail latency on latency-critical pods</td>
+      <td>&ldquo;A sidecar broke your guaranteed CPU pinning — why?&rdquo;</td>
+    </tr>
+    <tr>
+      <td>DRA extended-resource support (GA)</td>
+      <td>Legacy <code>example.com/gpu</code> requests satisfied through Dynamic Resource Allocation</td>
+      <td>GPU scheduling latency; device-class matching; accelerator utilisation</td>
+      <td>&ldquo;How do you schedule and share GPUs reliably for inference?&rdquo;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>HPA scale-to-zero: the cold-start trade-off</h3>
+
+<p>Horizontal Pod Autoscaler scale-to-zero graduated to Beta in 1.37 and is now enabled by default (feature gate <code>HPAScaleToZero</code>). An HPA driven by an <strong>external or object metric</strong> — a queue depth, a Pub/Sub backlog, an inference request count — can now set <code>minReplicas: 0</code>, letting the last idle pod be removed entirely and brought back when work appears. For queue consumers, nightly batch, and expensive GPU inference that sits idle for hours, this is a direct cost win.</p>
+
+<p>The important nuance, and the one interviewers reach for: the API server <strong>rejects</strong> an HPA that scales to zero using only resource metrics like CPU or memory. That is not an arbitrary rule — when there are no pods, there is no CPU or memory signal to scale <em>up</em> from, so the autoscaler would be blind. Scale-to-zero therefore only makes sense with a metric that exists independently of the workload, such as the depth of the queue feeding it.</p>
+
+<p>The new failure mode is <strong>cold start</strong>. When a deployment is at zero, a request or job that arrives must wait for the metric to be observed, a pod to be scheduled, the image to be present, and the container to become ready. Crucially, a Kubernetes Service does not buffer requests — so an HTTP workload pointed straight at a scaled-to-zero deployment will fail or hang, not queue. The correct pattern is to put an actual buffer in front (a message queue, or an event-driven gateway that can hold the request), scale on <em>its</em> depth, and design alerts around wake-up latency rather than around raw error rate during the cold-start window.</p>
+
+<p>How you would observe it: <code>kubectl get hpa</code> shows current and desired replicas and, in recent versions, a scaled-to-zero status condition; pair that with a dashboard of &ldquo;time from first queued item to first ready pod&rdquo;. How you would validate it before trusting it in production: drain the queue, confirm the deployment reaches zero, then inject one item and measure the end-to-end wake-up time against your SLO for that path.</p>
+
+<h3>The Resource Metrics API reached GA — and what it still is not</h3>
+
+<p>The Kubernetes Resource Metrics API (<code>metrics.k8s.io</code>) graduated to a stable v1 in 1.37 after years in beta. This is the API behind <code>kubectl top nodes</code>, <code>kubectl top pods</code>, and resource-based HPA decisions, served by metrics-server. GA means the contract is stable and you can build against it without churn.</p>
+
+<p>The trap — and it is a common interview probe — is to treat this as an observability platform. It is not. It exposes only <em>current</em> CPU and memory usage for autoscaling and quick inspection. There is no history, no percentiles, no custom metrics, no alerting, no tracing. If metrics-server is down, <code>kubectl top</code> and resource HPAs go blind, but your real dashboards should be coming from Prometheus, an OpenTelemetry pipeline, or a vendor backend. A candidate who answers &ldquo;we use <code>metrics.k8s.io</code> for monitoring&rdquo; has just revealed the gap; the right answer is &ldquo;we use it for autoscaling and spot checks, and Prometheus/OTel for observability.&rdquo;</p>
+
+<h3>etcd RangeStream: protecting the control plane from large reads</h3>
+
+<p>Historically, a large LIST or range read — the watch cache initialising, or a cache-miss list of every pod in a very large cluster — forced the API server to assemble the entire response in memory before sending it. On big fleets, a few concurrent large LISTs of large objects could spike API-server memory and, in the worst case, take the control plane down. etcd RangeStream, Beta and default-on in 1.37 (feature gate <code>EtcdRangeStream</code>, requiring etcd v3.7+), replaces that with a streaming range read: etcd returns the range in byte-sized chunks, and the API server decodes and releases each chunk before pulling the next. Peak memory becomes bounded and predictable instead of proportional to the whole result set.</p>
+
+<p>For an SRE running large clusters this changes a real operational risk. The signal to watch is API-server memory correlated with large LIST activity and watch-cache rebuilds after a restart. The interview version — &ldquo;why can a wide <code>kubectl get</code> endanger the control plane?&rdquo; — is really asking whether you understand that the API server is a stateful, memory-bound service, not an infinite proxy in front of etcd.</p>
+
+<h3>Memory QoS: why raising the limit does not fix OOMKills</h3>
+
+<p>Memory QoS graduated to Beta in 1.37 (feature gate <code>MemoryQoS</code>) and builds on cgroup v2&rsquo;s memory controller. Instead of the kernel only having a hard ceiling to kill against, Memory QoS lets the kubelet guide the kernel with soft targets (<code>memory.high</code> for proactive throttling) and protection tiers (<code>memory.min</code>/<code>memory.low</code>) so that guaranteed and burstable pods behave better under node memory pressure. It is safe as a default because the kubelet writes none of these knobs unless you opt in (for example via <code>memoryThrottlingFactor</code>).</p>
+
+<p>The reliability lesson this surfaces is one every SRE eventually learns the hard way: <strong>OOMKilled (exit code 137) is not automatically solved by raising <code>limits.memory</code></strong>. If the container has a genuine leak or a runtime heap sized above the cgroup limit, a bigger limit just delays the kill and wastes capacity. Memory QoS gives you throttling and protection as tools, but the diagnosis still comes first: is the working set flat at peak (limit too low) or climbing monotonically (a leak)? That distinction is the heart of our deeper walkthrough in <a href="/blog/kubernetes-oomkilled-troubleshooting/">Kubernetes OOMKilled root-cause troubleshooting</a>, and it is a favourite interview follow-up precisely because the naive answer is so tempting.</p>
+
+<h3>Node lifecycle conditions: maintenance you can automate against</h3>
+
+<p>New in 1.37 as an Alpha feature, node lifecycle conditions add standardised, Kubernetes-owned Node conditions such as <code>DrainInProgress</code>, <code>Drained</code>, <code>MaintenancePlanned</code>, <code>MaintenanceInProgress</code> and <code>GracefulNodeShutdownInProgress</code>. Before this, teams signalled maintenance with ad-hoc taints, labels and annotations that every controller had to interpret differently. Machine-readable conditions let schedulers, DaemonSets, PodDisruptionBudget logic and your own automation react to the same authoritative signal.</p>
+
+<p>Because it is Alpha, treat it as a direction rather than something to build production automation on yet — but it is worth understanding, because the interview question behind it (&ldquo;how would you coordinate rolling node maintenance without breaking SLOs?&rdquo;) is really testing whether you know that draining, disruption budgets, and graceful shutdown all need to agree on <em>when</em> a node is leaving.</p>
+
+<h3>Pod-level resource managers and DRA: workload-aware placement</h3>
+
+<p>Two 1.37 changes reflect the same trend — the platform treating different workloads differently. <strong>Pod-level resource managers</strong> (Beta) let the kubelet&rsquo;s Topology, CPU and Memory managers make NUMA-aware placement decisions from pod-level resources rather than requiring integer requests on every container. In practice this means a latency-critical pod can get exclusive, NUMA-aligned CPUs and memory even when it carries lightweight sidecars (a logging or telemetry agent) that do not declare their own guaranteed requests — a subtle failure that previously broke CPU pinning and quietly raised tail latency.</p>
+
+<p><strong>Dynamic Resource Allocation</strong> continued to mature, with extended-resource support reaching GA in 1.37. This lets a DRA driver satisfy a request written in the familiar extended-resource form (for example <code>example.com/gpu</code>) without a separate device plugin or ResourceClaim, bridging legacy GPU syntax to DRA&rsquo;s richer device model. For anyone running AI inference on Kubernetes, this makes accelerator scheduling more reliable and easier to adopt incrementally.</p>
+
+<p>Two more graduations are worth a mention for the security-and-reliability boundary: <strong>Pod Certificates and Cluster Trust Bundles both reached Stable in 1.37</strong>, giving workloads a native, auto-refreshing identity path for mTLS without bolt-on certificate tooling; and <strong>scheduler preemption for in-place pod resize</strong> landed as Alpha, letting a running pod&rsquo;s vertical resize succeed under node pressure instead of stalling (core in-place resize itself has been GA since 1.35).</p>
+
+<p>You do not need to memorise all of this for an interview. You need to be able to pick one change, explain the production problem it solves, and name the new trade-off it introduces. That pattern — capability, problem, trade-off — is what separates a candidate who reads release notes from one who has run the systems. If you want the primary sources, the <a href="https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/" target="_blank" rel="noopener noreferrer">Kubernetes 1.37 release announcement</a> links out to the individual feature blogs.</p>
+
+<hr>
+
+<h2 id="otel">OpenTelemetry in September 2026: why SRE observability is changing</h2>
+
+<p>Modern observability is a pipeline, and an SRE is expected to reason about every hop of it:</p>
+
+<pre><code>application  →  SDK / auto-instrumentation  →  OpenTelemetry Collector
+            →  processing (batch, sampling, filtering)  →  backend(s)</code></pre>
+
+<p>Traces, metrics and logs travel that path, and the value comes from <strong>correlation</strong> — being able to pivot from a spiking error metric to the exact traces behind it, and from a trace span to the logs emitted during it. In 2026, OpenTelemetry is the default assumption for new instrumentation: the trace and metric data models are stable, the logs data model and OTLP are stable (though the per-language SDK maturity still varies — Go is a release candidate, Python is earlier), and semantic conventions like HTTP attributes are stable, so dashboards and SLO queries built on <code>http.response.status_code</code> or <code>http.request.method</code> will not churn under you.</p>
+
+<h3>The September 2026 change worth knowing: context across process boundaries</h3>
+
+<p>The OpenTelemetry project spent part of 2026 standardising how trace context propagates through <strong>environment variables</strong> across process and subprocess boundaries. As of September 2026 the specification is a release candidate — directionally safe to follow, not yet stable — but the problem it solves is one every SRE has hit.</p>
+
+<p>Consider a CI/CD pipeline:</p>
+
+<pre><code>workflow runner  →  shell  →  build tool  →  test process(es)</code></pre>
+
+<p>None of those hops is an HTTP call, so there is no <code>traceparent</code> header to carry the trace. Historically each process shows up as an unrelated, disconnected trace, and &ldquo;why did this pipeline take 40 minutes?&rdquo; becomes log archaeology across four tools. By writing W3C trace context (and baggage) into environment variables before a child process starts, and reading it during the child&rsquo;s initialisation, the whole chain joins one distributed trace. The same idea covers batch systems, data-processing DAGs, and CLI tooling. For an SRE, the payoff is that pipeline and job latency become as debuggable as request latency already is. It also connects directly to the delivery-side failures we cover in <a href="/blog/cicd-pipeline-failure-troubleshooting/">CI/CD pipeline failure triage</a> — a slow or flaky pipeline is far easier to localise when it is one trace instead of four.</p>
+
+<h3>The Collector is production infrastructure — treat it like it</h3>
+
+<p>The OpenTelemetry Collector ships on a roughly biweekly cadence (v0.161.0 landed in mid-September 2026) and its components carry mixed stability, so you pin versions and read changelogs before upgrading rather than tracking &ldquo;latest.&rdquo; More importantly, the Collector has its own capacity and its own failure modes, and &ldquo;the Collector was up&rdquo; is not the same as &ldquo;no telemetry was lost.&rdquo; The failures an SRE is expected to recognise:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Collector failure mode</th>
+      <th>What actually happens</th>
+      <th>How you diagnose it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>memory_limiter refusing data</td>
+      <td>Above its soft limit the Collector refuses incoming data and relies on the <em>upstream</em> to retry; misconfigure the sender and that data is lost permanently</td>
+      <td>Watch refused-data counters and Collector memory; put memory_limiter first so backpressure reaches receivers</td>
+    </tr>
+    <tr>
+      <td>Sending-queue saturation</td>
+      <td>When the export queue is full, the default is to drop immediately — those drops are <em>not</em> retried unless you enable backpressure (<code>block_on_overflow</code>)</td>
+      <td>Alert on queue size and dropped-spans counters, not just exporter errors</td>
+    </tr>
+    <tr>
+      <td>Exporter failure / backpressure</td>
+      <td>Retry logic (<code>retry_on_failure</code>) only covers data that made it into the queue and then failed to export</td>
+      <td>Correlate backend 429/5xx with exporter retry and queue metrics</td>
+    </tr>
+    <tr>
+      <td>Cardinality explosion</td>
+      <td>A high-cardinality attribute (user id, full URL) on a metric multiplies time series, blowing up cost and Collector/backends</td>
+      <td>Audit label sets; drop or aggregate offending attributes in a processor</td>
+    </tr>
+    <tr>
+      <td>Incorrect sampling</td>
+      <td>Head or tail sampling misconfigured so the error traces you needed were discarded</td>
+      <td>Verify sampling keeps error and high-latency traces; test with a known-bad request</td>
+    </tr>
+    <tr>
+      <td>Monitoring the monitor</td>
+      <td>If the Collector dies silently, every downstream signal vanishes at once</td>
+      <td>Export the Collector&rsquo;s own internal metrics to a backend it does not depend on</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Beyond the three core signals, <strong>profiling</strong> entered public alpha in 2026 as an emerging fourth signal, with an eBPF-based profiler running as a Collector receiver — whole-fleet, always-on flame graphs tied to the same OTLP pipeline. It is alpha, so treat it as evaluation-grade rather than something to build retention and alerting contracts on. The interview-relevant point is simply that the observability surface is still expanding, and an SRE&rsquo;s job is to know which parts are stable enough to depend on. When you can explain the pipeline <em>and</em> how it fails, you are reasoning like someone who has operated it — which is exactly what an <a href="/blog/golden-signals-dashboard-sre-datadog-success-rate-availability/">SRE golden-signals dashboard</a> is meant to make visible.</p>
+
+<hr>
+
+<h2 id="slos">SLOs in 2026: stop treating availability as the only reliability metric</h2>
+
+<p>&ldquo;Is the service up?&rdquo; is the wrong question. A checkout API can be 100% reachable and still be failing 40% of purchases. The right question is always about what a user actually got, and that is what an SLI measures. Take a concrete service — a <strong>checkout API</strong> — and its candidate SLIs:</p>
+
+<ul>
+  <li><strong>Successful request rate</strong> — proportion of checkout requests that returned a correct 2xx result (the primary SLI for most request-driven services).</li>
+  <li><strong>Latency</strong> — proportion of requests served under a threshold, expressed at a percentile: p99 &lt; 800ms, not &ldquo;average latency.&rdquo; Averages hide the tail; the p99 is where SLA risk lives.</li>
+  <li><strong>Correctness</strong> — for checkout, a request that returns 200 but charges the wrong amount is a failure, even though it looks healthy at the HTTP layer.</li>
+  <li><strong>Freshness</strong> — where relevant (a price or inventory read), how stale the served data is.</li>
+</ul>
+
+<h3>SLO, error budget and the 30-day arithmetic</h3>
+
+<p>An SLO is your target for an SLI over a window. Say the checkout success SLO is <strong>99.9% over 30 days</strong>. The error budget is the failure the SLO permits — the 0.1%. The arithmetic every SRE should be able to do on a whiteboard:</p>
+
+<pre><code>30 days            = 30 × 24 × 60      = 43,200 minutes
+error budget (0.1%) = 0.001 × 43,200    = 43.2 minutes / 30 days</code></pre>
+
+<p>So a 99.9% monthly SLO gives you about <strong>43.2 minutes</strong> of total unavailability (or equivalent request failures) per 30-day window. That single number reframes the reliability conversation from &ldquo;never fail&rdquo; to &ldquo;fail no more than this, and spend the budget deliberately.&rdquo;</p>
+
+<div style="margin:1.5rem 0;padding:1.1rem 1.3rem;border:1px solid var(--pts-border);border-radius:10px;background:var(--pts-card-bg)">
+  <p style="margin:0 0 0.6rem;font-weight:700;color:var(--pts-text)">Error-budget quick reference (30-day window)</p>
+  <table style="margin:0">
+    <thead><tr><th>SLO</th><th>Allowed failure</th><th>Budget / 30 days</th></tr></thead>
+    <tbody>
+      <tr><td>99.0%</td><td>1%</td><td>~7.2 hours</td></tr>
+      <tr><td>99.9%</td><td>0.1%</td><td>~43.2 minutes</td></tr>
+      <tr><td>99.95%</td><td>0.05%</td><td>~21.6 minutes</td></tr>
+      <tr><td>99.99%</td><td>0.01%</td><td>~4.32 minutes</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Why &ldquo;43 minutes remaining&rdquo; is not enough</h3>
+
+<p>A single budget number tells you how much room is left; it does not tell you how fast you are using it, and that rate is what determines whether you page someone at 3am. This is where <strong>burn rate</strong> comes in — how fast you are consuming the budget relative to the sustainable pace. A burn rate of 1 means you will exhaust the budget exactly at the end of the window. A burn rate of 14.4 means you are spending it 14.4x too fast, and a month&rsquo;s budget would be gone in about two days.</p>
+
+<p>Mature teams alert on <strong>multiple windows and multiple burn rates at once</strong> rather than a fixed error-rate threshold:</p>
+
+<ul>
+  <li><strong>Fast burn</strong> — a high burn rate (roughly 14x) sustained over a short window (about an hour) pages immediately. This catches acute outages: a bad deploy, a dependency down.</li>
+  <li><strong>Slow burn</strong> — a lower burn rate (say 3x) over a much longer window (6 hours or a day) opens a ticket rather than a page. This catches the steady, low-grade degradation that a one-hour window would dismiss as noise but that will quietly eat your whole budget by month-end.</li>
+</ul>
+
+<p>The reason to combine them is precision: a single short window over-pages on brief blips, and a single long window is too slow to catch a real outage. Requiring a short <em>and</em> a long window to agree before paging cuts false alarms without missing genuine fast-burning incidents. A common interview miss is to propose &ldquo;alert when error rate &gt; 1%&rdquo; — which pages on a harmless 90-second spike and stays silent through a 0.5% leak that burns the entire budget over a week.</p>
+
+<p>One more distinction interviewers listen for: <strong>infrastructure metrics, service metrics and user-experience SLIs are not interchangeable.</strong> CPU at 80% is an infrastructure metric — interesting, not an SLO. Request success rate is a service metric — closer. &ldquo;Percentage of checkout journeys that completed a purchase&rdquo; is a user-experience SLI — that is what you commit to, and what should drive the error budget.</p>
+
+<p>Note that the golden-signals mechanics and burn-rate widgets are covered in depth in our <a href="/blog/golden-signals-dashboard-sre-datadog-success-rate-availability/">Datadog golden-signals dashboard guide</a>, so this section stays on the reasoning rather than the dashboard build.</p>
+
+<hr>
+
+<h2 id="incident">What a real production incident looks like</h2>
+
+<p>Textbook incidents identify root cause on slide two. Real ones do not. Here is a realistic one, walked through the way it actually unfolds — with wrong turns left in, because the wrong turns are the point.</p>
+
+<p><strong>The system.</strong> A checkout platform on AWS EKS: an ALB in front of a Gateway API, a handful of microservices (checkout, pricing, payments), a PostgreSQL primary with a read replica, Redis for session and cart, and Kafka for order events. Observability is Prometheus and Grafana with an OpenTelemetry tracing pipeline; PagerDuty handles alerting.</p>
+
+<p><strong>1. Detect.</strong> At 14:32 the multi-window burn-rate alert fires: checkout success-rate budget is burning at ~15x over the last hour. p99 latency on <code>/api/checkout</code> has climbed from 180ms to 2.4s, and 5xx is up. The single most useful early observation: it is <em>not</em> everything — one availability zone&rsquo;s pods look far worse than the others.</p>
+
+<p><strong>2. Declare.</strong> You declare a SEV2 and open an incident channel. Declaring early is a reliability behaviour, not an admission of failure — it gets a scribe and a comms owner in place before things escalate.</p>
+
+<p><strong>3. Scope.</strong> Who is affected, and how much? Errors concentrate on checkout; pricing and payments look healthy on their own dashboards. Blast radius is one journey, skewed to one AZ. That skew is a strong hint but not a diagnosis yet.</p>
+
+<p><strong>4. Stabilise vs diagnose.</strong> The first real judgment call: is mitigation safer than understanding right now? The budget is burning fast, so you look for a safe, reversible mitigation in parallel with diagnosis rather than fully rooting-cause first.</p>
+
+<p><strong>5. What changed?</strong> The highest-yield question in any incident. Deploys, feature flags, config, infrastructure, dependency versions, traffic. There was a checkout deploy at 14:05 — suspicious timing, but 27 minutes is a long gap, so you hold it as a hypothesis, not a conclusion.</p>
+
+<p><strong>6. Golden signals.</strong> Traffic is normal (rules out a load spike). Errors are almost all 5xx on checkout. Saturation is the tell: checkout pods in the bad AZ show a database connection pool pinned at 100% with growing wait time — while CPU and memory are unremarkable. This is why starting at CPU wastes time; the bottleneck is a pool, not the processor.</p>
+
+<pre><code># error rate on checkout, by status class
+sum(rate(http_requests_total{service="checkout",status=~"5.."}[5m]))
+  / sum(rate(http_requests_total{service="checkout"}[5m]))
+
+# connection-pool saturation, by availability zone
+max by (zone) (db_pool_in_use / db_pool_max)</code></pre>
+
+<p><strong>7. Traces.</strong> Sampled checkout traces show the time is spent waiting to acquire a database connection, then on a slow query against the orders table. The span waterfall points at the database tier, not at checkout&rsquo;s own code — which starts to weaken the &ldquo;the 14:05 deploy broke checkout logic&rdquo; hypothesis.</p>
+
+<p><strong>8. Kubernetes and infra.</strong> You check the obvious platform causes:</p>
+
+<pre><code>kubectl get events -n checkout --sort-by=.lastTimestamp | tail
+kubectl top pods -n checkout
+kubectl describe pod &lt;checkout-pod&gt; -n checkout   # restarts? OOMKilled? probe failures?</code></pre>
+
+<p>No OOMKills, no crash loops, no probe failures. Pods are healthy — yet users get errors. That combination (healthy pods, failing requests) is the exact pattern that separates infrastructure health from service health: the failure is downstream of the pod, in the database connection path.</p>
+
+<p><strong>9. The hypothesis firms up.</strong> The read replica in the affected AZ is lagging badly; a slow analytics query has been running against it, and checkout&rsquo;s replica-routed reads are queuing behind it, holding connections, exhausting the pool, and turning into 5xx. The 14:05 deploy was a red herring — correlation, not cause. This is the moment most junior responders would have wasted 20 minutes rolling back the deploy.</p>
+
+<p><strong>10. Mitigate.</strong> The safe, reversible action: route checkout&rsquo;s reads to the primary (or a healthy replica), and kill the runaway analytics query. Success rate recovers within minutes. You have stabilised without yet having the full story of why the analytics query ran there.</p>
+
+<p><strong>11. Verify recovery.</strong> Confirm p99 back under threshold, 5xx back to baseline, pool utilisation normal in every AZ — then downgrade the incident. &ldquo;It looks better&rdquo; is not verification; the SLI back under target is.</p>
+
+<p><strong>12. Account for the budget.</strong> The incident consumed a chunk of the month&rsquo;s 43.2-minute budget. That number now informs whether the team keeps shipping or pauses risky changes — the error budget is a decision input, not a report.</p>
+
+<p><strong>13. Postmortem and prevention.</strong> Blameless, and focused on the system: why could an ad-hoc analytics query reach the replica checkout depends on? The durable fixes are structural — isolate analytics traffic from serving replicas, add a pool-saturation SLI and alert, cap query runtime, and make replica lag a first-class signal. &ldquo;Be more careful&rdquo; is not a fix. If your team hits exactly this kind of tangled, multi-tier incident and wants a second experienced pair of eyes on the bridge, that is a textbook case for <a href="/production-issue-support-for-it-professionals/">production issue support</a>.</p>
+
+<hr>
+
+<h2 id="framework">A troubleshooting framework you can reuse</h2>
+
+<p>The incident above followed a mental model you can apply to almost any production problem. It works top-down, from what the user experiences toward the machinery, because that is the order that keeps you honest about impact:</p>
+
+<pre><code>USER IMPACT      what did the user actually get? (the SLI)
+   ↓
+SERVICE          is this service returning errors / slow itself?
+   ↓
+DEPENDENCIES     database, cache, queue, downstream APIs
+   ↓
+PLATFORM         Kubernetes: scheduling, pods, networking, control plane
+   ↓
+INFRASTRUCTURE   nodes, disk, network, cloud provider
+   ↓
+RECENT CHANGE    deploy, flag, config, infra change (checked at every layer)</code></pre>
+
+<p>Starting at CPU utilisation is the classic time-waster: high CPU is often a <em>symptom</em> of a downstream stall (threads blocked on a slow dependency look busy), and low CPU tells you nothing when the bottleneck is a connection pool or a lock. Start with impact, then walk down until the evidence stops the descent.</p>
+
+<p>The questions that structure the walk:</p>
+
+<ul>
+  <li><strong>What changed?</strong> — deploy, flag, config, dependency, traffic. Ask it at every layer, not once.</li>
+  <li><strong>Who is affected, and how much?</strong> — one endpoint, one AZ, one tenant, everyone? Blast radius scopes both urgency and cause.</li>
+  <li><strong>When did it begin?</strong> — line the start time up against the change log.</li>
+  <li><strong>What class of failure is this?</strong> — saturation, a dependency, network, code, resource pressure, or control-plane behaviour? Naming the class narrows the search.</li>
+  <li><strong>Is mitigation safer than diagnosis right now?</strong> — when the budget is burning, a safe rollback or failover often beats a perfect root cause.</li>
+</ul>
+
+<p>A compact version, the kind of table worth keeping in a runbook:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symptom</th>
+      <th>First evidence to pull</th>
+      <th>Common false assumption</th>
+      <th>Next check</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5xx after a deploy</td>
+      <td>Success rate by version; deploy timeline</td>
+      <td>&ldquo;The deploy broke it&rdquo; (correlation)</td>
+      <td>Compare healthy vs new version traces before rolling back</td>
+    </tr>
+    <tr>
+      <td>Latency up, CPU normal</td>
+      <td>Traces; connection-pool and lock waits</td>
+      <td>&ldquo;We need more CPU/replicas&rdquo;</td>
+      <td>Look for a saturated pool or slow dependency, not saturation of the processor</td>
+    </tr>
+    <tr>
+      <td>Pods healthy, users see errors</td>
+      <td>Traces to downstream; dependency health</td>
+      <td>&ldquo;Kubernetes is fine, so we&rsquo;re fine&rdquo;</td>
+      <td>Follow the request past the pod into the dependency tier</td>
+    </tr>
+    <tr>
+      <td>One AZ / subset worse</td>
+      <td>Error and saturation grouped by zone/node</td>
+      <td>&ldquo;It&rsquo;s global&rdquo;</td>
+      <td>Isolate the bad zone/replica; consider shifting traffic away</td>
+    </tr>
+    <tr>
+      <td>Pod stuck Pending</td>
+      <td><code>kubectl describe pod</code> events</td>
+      <td>&ldquo;Image or crash problem&rdquo;</td>
+      <td>Scheduling/quota/PVC — see the <a href="/blog/kubernetes-pod-pending-troubleshooting/">Pending decision tree</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="interview">The 2026 SRE interview has changed</h2>
+
+<p>Senior SRE loops in 2026 test reasoning, not definitions. &ldquo;What is an SLO?&rdquo; is a screening question; the real rounds hand you an ambiguous situation and watch how you think. The categories below, with what a strong answer actually contains:</p>
+
+<p><strong>Reliability &mdash; &ldquo;Design the SLO for this service.&rdquo;</strong> A strong answer starts from the user journey, not the tech. Pick an SLI that reflects what the user got (success rate, latency at a percentile, correctness), justify the target and window against business need, derive the error budget, and state the policy the budget drives (when do you freeze deploys?). Weak answers jump straight to &ldquo;99.99%&rdquo; without asking what the service does or what failure costs.</p>
+
+<p><strong>Incident &mdash; &ldquo;p99 jumped from 180ms to 2.4s after a deploy. Walk me through the first ten minutes.&rdquo;</strong> They want structure under pressure: detect, declare, scope, decide mitigate-vs-diagnose, ask what changed, read golden signals, follow traces. The tell of a strong candidate is that they resist the obvious &ldquo;roll back the deploy&rdquo; reflex and treat the deploy as one hypothesis among several.</p>
+
+<p><strong>Kubernetes &mdash; &ldquo;Pods are healthy but users get errors. Where do you look?&rdquo;</strong> The point is that pod health and service health are different. Strong answers follow the request past the pod: readiness vs liveness semantics, Service/endpoint routing, downstream dependency latency, connection pools, DNS. Naming <code>kubectl describe</code>, events, and traces as the tools is good; explaining <em>why the request can fail after a healthy pod</em> is better.</p>
+
+<p><strong>Observability &mdash; &ldquo;We have metrics and logs but cannot explain cross-service latency.&rdquo;</strong> The gap is distributed tracing and context propagation. A strong answer explains correlation (metric → trace → log), where context breaks (across process boundaries, async hops, queues), and how you would instrument to close it.</p>
+
+<p><strong>Capacity &mdash; &ldquo;Traffic will triple during a launch.&rdquo;</strong> Look for headroom analysis (what is the current bottleneck — CPU, pool, downstream, quota?), load testing to find the real limit, autoscaling policy and its cold-start behaviour, and dependency limits that will not scale with you (a database connection cap, a third-party rate limit).</p>
+
+<p><strong>Architecture &mdash; &ldquo;Design a multi-region service with RTO/RPO constraints.&rdquo;</strong> Strong answers make the trade-off explicit: active-active vs active-passive, data replication and its lag, failover mechanics and how they are tested, and the RTO/RPO numbers driving the design rather than a generic &ldquo;two regions.&rdquo;</p>
+
+<p><strong>Automation &mdash; &ldquo;What toil would you automate first?&rdquo;</strong> The answer is to measure toil, target the highest-frequency-times-effort item, and prefer eliminating the need over scripting the pain. &ldquo;Automate everything&rdquo; is a weak answer; &ldquo;here is how I&rsquo;d decide what is worth automating&rdquo; is strong.</p>
+
+<p><strong>Platform &mdash; &ldquo;How would you give SLO capability to 200 engineering teams?&rdquo;</strong> This is the platform-engineering crossover: self-service SLO definitions, golden dashboards generated from a template, sane alerting defaults, and guardrails — reliability as a paved road, not 200 bespoke setups.</p>
+
+<h3 id="example">A senior SRE interview example, worked through</h3>
+
+<p><strong>Prompt:</strong> &ldquo;Checkout error rate rises from 0.1% to 3% after a deployment, while CPU and memory stay normal. Walk me through it.&rdquo;</p>
+
+<p>The trap is baked in: the deploy correlation and the normal CPU/memory are both there to see whether you jump to conclusions. A strong walkthrough sounds like this:</p>
+
+<ol>
+  <li><strong>Confirm user impact first.</strong> Is 3% real and user-facing? Which endpoint, which users, which region? Quantify against the SLO — 3% on high traffic is burning the budget fast.</li>
+  <li><strong>Note the deploy, but hold it loosely.</strong> The timing is suggestive; I would not roll back on correlation alone. I would compare the new version against the previous one on success rate and latency by version.</li>
+  <li><strong>Read service-level metrics.</strong> CPU and memory normal already tells me this is probably not the app&rsquo;s own compute — I&rsquo;m looking at a dependency, a pool, a lock, or a downstream. I check error breakdown by status and endpoint.</li>
+  <li><strong>Go to traces.</strong> Where is the time or the failure? If the new version&rsquo;s traces show a slow or failing downstream call the old version did not make, that reframes the deploy as the trigger of a dependency problem, not a code crash.</li>
+  <li><strong>Check the dependency.</strong> Connection pool saturation, downstream latency, a query plan change, a rate limit. Normal CPU with rising errors very often means waiting, not working.</li>
+  <li><strong>Decide: rollback or fix forward.</strong> If the new version clearly introduced the regression and rollback is safe, roll back to stop the burn — mitigation over diagnosis while the budget bleeds. If rollback is risky (a migration ran), a targeted fix or feature-flag disable may be safer.</li>
+  <li><strong>Account for the error budget.</strong> State how much of the budget this spent and what that implies for the deploy freeze policy.</li>
+  <li><strong>Verify, then prevent.</strong> Confirm the SLI is back under target, then make the fix structural — a canary that would have caught this on 1% of traffic, a dependency SLI, a pool-saturation alert.</li>
+</ol>
+
+<p>The candidate who says &ldquo;error rate went up after a deploy, so roll it back&rdquo; has answered a different, easier question. The one who treats the deploy as a hypothesis, uses traces to separate a code failure from a dependency failure, and reasons about the budget is demonstrating exactly the production judgment the role needs. That combined reasoning — application behaviour, Kubernetes, telemetry, reliability math and incident judgment in one coherent answer — is genuinely hard to produce under interview pressure, which is why candidates prepare for it deliberately.</p>
+
+<hr>
+
+<h2 id="job-support">Where SRE job support becomes useful in real work</h2>
+
+<p>Everything above assumes you have done it before. The reality for a lot of capable engineers is that reliability work arrives faster than the experience to handle it — you are competent, but you are facing a specific situation for the first time, on a real production system, with a real deadline. That is the honest use case for <a href="/sre-job-support-usa/">SRE job support in the USA</a>: a senior Site Reliability Engineer alongside you, on the same screen, while you do the actual work.</p>
+
+<p>The situations where a second experienced SRE genuinely changes the outcome are specific:</p>
+
+<ul>
+  <li><strong>You inherited an undocumented production platform</strong> and need to build a mental model fast before something breaks.</li>
+  <li><strong>You are implementing your first SLO</strong> and want the SLI choice, target and error-budget policy to be right the first time.</li>
+  <li><strong>A difficult EKS or Kubernetes incident</strong> is live and you want a calm second opinion on the bridge rather than trial and error.</li>
+  <li><strong>An OpenTelemetry or observability rollout</strong> — getting context propagation, the Collector pipeline, and sampling right instead of discovering the gaps during the next outage.</li>
+  <li><strong>Alert-noise reduction</strong> — moving from threshold spam to multi-window burn-rate alerts that page for real problems.</li>
+  <li><strong>Grafana and error-budget dashboards</strong>, a production-readiness review, capacity planning ahead of a launch, a Kubernetes version upgrade, a postmortem that needs to produce structural fixes, a multi-region failover, or stepping into a new on-call rotation.</li>
+</ul>
+
+<p>This is deliberately not a sales pitch dressed as a section. The technical reasoning in this article is the same reasoning a good support session applies to your specific system. If you are working through one of the situations above, <a href="/sre-job-support-usa/">real-time SRE job support</a> exists to shorten the gap between &ldquo;I understand the theory&rdquo; and &ldquo;I fixed this in production&rdquo; — and the same team covers the delivery-side problems in the <a href="/kubernetes-job-support-guide/">Kubernetes job support guide</a> and <a href="/blog/terraform-state-locking-drift-troubleshooting/">Terraform state and drift</a>.</p>
+
+<hr>
+
+<h2 id="interview-support">SRE proxy interview and interview support</h2>
+
+<p>SRE interviews are hard for a structural reason, not a knowledge reason. You may know Prometheus, Kubernetes, tracing and reliability math individually — but the interview demands you fuse application behaviour, Kubernetes, networking, telemetry, reliability arithmetic, architecture and incident judgment into a single coherent answer, in real time, while someone probes each seam. That synthesis is a different skill from knowing the parts, and it is the one that breaks otherwise-strong candidates.</p>
+
+<p>That is the gap <a href="/sre-proxy-interview-support/">SRE proxy interview support</a> is built to close: structured practice on the kinds of ambiguous, multi-layer scenarios in this article, so the reasoning you already have comes out in the shape senior interviewers expect. It pairs naturally with <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a> when the role straddles both, and with the broader <a href="/sre-job-support-guide/">SRE job support guide</a> for on-the-job depth. To be clear about what it is not: no honest interview support guarantees an offer or &ldquo;clears&rdquo; an interview for you. What it does is help you present real reasoning under pressure — which is the thing the pressure tends to hide.</p>
+
+<hr>
+
+<h2 id="faq">Frequently asked questions</h2>
+
+<h3>What does an SRE interview cover in 2026?</h3>
+<p>A 2026 senior SRE interview tests reasoning under uncertainty far more than tool trivia. Expect reliability design (define an SLO and error-budget policy for a given service), an incident walkthrough (a latency or error-rate regression after a deploy, and what you do in the first ten minutes), Kubernetes debugging where pods look healthy but users get errors, an observability question about correlating cross-service latency with traces, a capacity/scaling question, and a multi-region architecture question with RTO/RPO constraints. Interviewers want to see how you localise a problem and decide between mitigation and diagnosis — not whether you can recite Prometheus flags.</p>
+
+<h3>What Kubernetes topics should an SRE know in 2026?</h3>
+<p>Beyond the fundamentals (scheduling, requests vs limits, probes, QoS classes, HPA), 2026 interviews and production work increasingly touch the operational changes in Kubernetes 1.37 (&ldquo;Garhwal&rdquo;, released 26 August 2026): HPA scale-to-zero for queue and batch workloads and its cold-start trade-off, the Resource Metrics API (metrics.k8s.io) reaching GA and what it does not do, etcd RangeStream reducing API-server memory spikes on large LIST operations, Memory QoS on cgroup v2, machine-readable Node lifecycle conditions, and Dynamic Resource Allocation for GPU/accelerator workloads. The point is not to memorise release notes but to explain what production problem each change addresses and what new failure mode it introduces.</p>
+
+<h3>How are SLOs different from SLAs?</h3>
+<p>An SLI is a measured signal (for example, the proportion of successful requests). An SLO is your internal reliability target for that SLI over a window (for example, 99.9% of checkout requests succeed over 30 days). An SLA is an external, usually contractual promise with financial or business consequences if you miss it. SLOs are almost always stricter than SLAs, because you want internal alerts to fire and give you room to react before you breach a customer commitment. The error budget — the small fraction of failure the SLO permits — is what turns the SLO into a decision tool for balancing reliability work against feature velocity.</p>
+
+<h3>What is an error-budget burn rate?</h3>
+<p>Burn rate is how fast you are consuming your error budget relative to the sustainable pace. A burn rate of 1 means you will exactly exhaust the budget by the end of the window; a burn rate of 14.4 means you are spending it 14.4x too fast. Mature teams alert on multiple windows at once — a fast-burn alert (for example, roughly 14x over one hour) pages immediately for acute outages, while a slow-burn alert (a lower multiple over many hours) catches steady degradations that a single short window would miss. This multi-window, multi-burn-rate approach reduces both false pages and missed incidents compared with a fixed error-rate threshold.</p>
+
+<h3>What OpenTelemetry knowledge is expected from an SRE in 2026?</h3>
+<p>SREs are expected to understand the full telemetry path — instrumentation (SDK or auto-instrumentation) to the OpenTelemetry Collector to processing to a backend — and to reason about where it breaks. That means context propagation across service and process boundaries (including the September 2026 release-candidate work on carrying trace context through environment variables for CI/CD and subprocess chains), correlating traces with metrics and logs, and Collector reliability: the memory_limiter refusing data and relying on upstream retry, sending-queue drops that are silent unless backpressure is enabled, cardinality explosion in metrics, and sampling that discards the error traces you needed. Knowing the signals is table stakes; knowing how the pipeline fails is what interviewers probe.</p>
+
+<h3>How does SRE differ from DevOps in production?</h3>
+<p>In practice the roles overlap, but the emphasis differs. DevOps work centres on the delivery path — CI/CD pipelines, infrastructure as code, build and release automation, environment provisioning. SRE work centres on the reliability of what is already running — SLOs and error budgets, incident command, on-call, capacity planning, toil reduction, and the observability that makes all of that measurable. A DevOps engineer asks &ldquo;how do we ship this safely and repeatably?&rdquo;; an SRE asks &ldquo;is this service meeting its reliability target, and if not, where is the failure and how do we bound its blast radius?&rdquo; Strong candidates can operate on both sides of that line.</p>
+
+<h3>What does SRE job support cover?</h3>
+<p>SRE job support pairs you with a senior Site Reliability Engineer in real time while you handle actual production work — an incident bridge, a first SLO rollout, an OpenTelemetry or Prometheus/Grafana instrumentation task, alert-noise reduction, a difficult EKS or Kubernetes upgrade, a capacity-planning exercise, a postmortem, or a multi-region failover. It is most valuable when you have inherited an undocumented platform, are on-call for a system you did not build, or are implementing a reliability practice for the first time and want a second experienced pair of eyes rather than trial and error under pressure.</p>
+
+<h3>What is SRE interview support and proxy interview support?</h3>
+<p>SRE interview support is live or preparatory help for Site Reliability Engineering interviews, where the difficulty is rarely a single tool and almost always the need to combine application behaviour, Kubernetes, networking, telemetry, reliability math, architecture and incident judgment into one coherent answer under time pressure. Support ranges from structured mock scenarios and system-design rehearsal to real-time proxy interview support during the interview itself. It does not and cannot guarantee an outcome; what it does is help you present the reasoning you already have in the way senior interviewers expect to hear it.</p>
+
+<hr>
+
+<div style="margin:2rem 0 0.5rem;padding:1.5rem 1.5rem;border:1px solid rgba(0,223,130,0.28);border-radius:12px;background:linear-gradient(135deg,rgba(0,223,130,0.08),rgba(0,223,130,0.02))">
+  <p style="margin:0 0 0.4rem;font-size:1.1rem;font-weight:700;color:var(--pts-text)">Working through an SRE incident, SLO rollout or a hard interview?</p>
+  <p style="margin:0 0 1rem;color:var(--pts-text-subtle);line-height:1.6">If you are mid-incident, standing up your first error budget, or preparing for a senior SRE loop, you do not have to do it alone. Explore <a href="/sre-job-support-usa/">real-time SRE job support</a> for production work, or <a href="/sre-proxy-interview-support/">SRE interview support</a> for the interview itself.</p>
+  <p style="margin:0;font-size:0.92rem;color:var(--pts-text)">Talk to a senior SRE: <a href="tel:+919660614469" style="font-weight:700;color:var(--pts-forest)">+91 96606 14469</a> &nbsp;·&nbsp; <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20SRE%20job%20support%20or%20interview%20help" target="_blank" rel="noopener noreferrer" style="font-weight:700;color:var(--pts-forest)">WhatsApp us</a></p>
+</div>
+
+<h3>Related reading</h3>
+<ul>
+  <li><a href="/blog/golden-signals-dashboard-sre-datadog-success-rate-availability/">Golden Signals Dashboard for SRE (Datadog)</a> — the dashboard build behind the SLO and burn-rate reasoning here.</li>
+  <li><a href="/blog/kubernetes-oomkilled-troubleshooting/">Kubernetes OOMKilled: Root-Cause Troubleshooting</a> — why raising the memory limit is rarely the fix.</li>
+  <li><a href="/blog/kubernetes-pod-pending-troubleshooting/">Kubernetes Pod Pending: A Production Decision Tree</a> — scheduling, quota and PVC causes, in order.</li>
+  <li><a href="/blog/cicd-pipeline-failure-troubleshooting/">CI/CD Pipeline Failures: App vs Infrastructure vs Runner</a> — localising a red pipeline to the right layer.</li>
+  <li><a href="/sre-job-support-guide/">SRE Job Support Guide</a> and <a href="/kubernetes-job-support-guide/">Kubernetes Job Support Guide</a> — deeper, task-by-task reliability help.</li>
+</ul>

@@ -115,7 +115,9 @@
       "WebFetch(domain:snyk.io)",
       "WebFetch(domain:incidentdatabase.ai)",
       "WebFetch(domain:socradar.io)",
-      "WebFetch(domain:red.anthropic.com)"
+      "WebFetch(domain:red.anthropic.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:opentelemetry.io)"
     ]
   }
 }
