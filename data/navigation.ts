@@ -168,7 +168,6 @@ export const mainNavLinks = [
   { label: 'Job Support', href: '#', dropdownType: 'jobSupport' as const },
   { label: 'Locations', href: '#', dropdownType: 'locations' as const },
   { label: 'Interview', href: '#', dropdownType: 'interview' as const },
-  { label: 'Tech Companies', href: '/tech-companies/' },
   { label: 'Technologies', href: '/#tech' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/#contact' },

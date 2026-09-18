@@ -68,5 +68,3 @@ All proposed new hub slugs (`{company}-career-support`, `{company}-proxy-intervi
 - **Orphans** → every hub is linked from `/tech-companies/`; dashboard linked from homepage,
   navbar and footer.
 - **Amazon** → `locked: true`, excluded from generation, card points to existing cluster.
-</content>
-</invoke>
