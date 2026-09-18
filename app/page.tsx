@@ -14,6 +14,7 @@ import ContactCTA from '@/components/ContactCTA';
 import FearUrgencySection from '@/components/FearUrgencySection';
 import GetInterviewScheduledSection from '@/components/GetInterviewScheduledSection';
 import CandidateMarketingHomeSection from '@/components/CandidateMarketingHomeSection';
+import TechCompaniesHomeSection from '@/components/TechCompaniesHomeSection';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import HomeStructuredData from '@/components/HomeStructuredData';
@@ -70,6 +71,7 @@ export default function HomePage() {
         <WhatWeOfferSection />
         <TechSection />
         <ServicesSection />
+        <TechCompaniesHomeSection />
         <HowItWorks />
         <Stats />
         <USALegacySection />

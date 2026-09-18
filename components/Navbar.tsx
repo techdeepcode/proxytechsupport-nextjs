@@ -893,6 +893,7 @@ export default function Navbar({ variant = 'light' }: Props) {
 
           {/* Remaining plain links */}
           {[
+            { label: 'Tech Companies', href: '/tech-companies/' },
             { label: 'Technologies', href: '/#tech' },
             { label: 'Blog', href: '/blog/' },
             { label: 'Contact', href: '/#contact' },

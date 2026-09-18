@@ -26,6 +26,512 @@
 - [React Native Job Support](/react-native-job-support/): React Native, Expo, mobile CI/CD, performance, native modules.
 - [Digital Analytics & Marketing Tech Job Support](/digital-analytics-job-support/): Google Analytics 4, Google Tag Manager, conversion tracking, funnel analytics.
 
+## Tech Companies — Interview & Job Support for 500+ Employers
+
+> Technical interview support, proxy interview support and real-time job support for candidates interviewing at — or working for — 500+ major technology and technology-driven employers. Every company has a support page (flat /{company}-career-support/ URLs) and all 500 are listed below. Not listed? Support is based on your technology, stack and role — share a job description and we match you with the right expert. ProxyTechSupport is independent and not affiliated with any listed employer; candidates attend their own interviews.
+
+- [Tech Companies Directory (500+ employers)](/tech-companies/): Search, filter by industry and support type, and browse A–Z across 500+ employers for technical interview, proxy interview and job support.
+- [Amazon Interview & Job Support](/amazon-interview-career-support/): Full existing Amazon & AWS cluster — hiring, interview process, Leadership Principles, roles, proxy interview and proxy job support.
+- [Alphabet (Google) Interview & Job Support](/google-career-support/): Google SWE, SRE, ML and Cloud interviews — coding, system design and Google Cloud/Vertex AI depth, plus proxy interview and job support.
+- [Microsoft Interview & Job Support](/microsoft-career-support/): Microsoft SWE, Azure, .NET, Foundry and AI/ML interviews and job support — cross-linked to our deep Azure and .NET clusters.
+- [Apple Interview & Job Support](/apple-career-support/): Apple software, systems, embedded and ML interviews — Swift/Objective-C, low-level systems, and Apple-scale services, with proxy support.
+- [Meta Platforms Interview & Job Support](/meta-career-support/): Meta E-series SWE, ML and infra interviews — coding, system design at social scale, PyTorch/Llama AI depth, with proxy interview and job support.
+- [NVIDIA Interview & Job Support](/nvidia-career-support/): NVIDIA CUDA, GPU systems, deep-learning and inference (TensorRT) interviews and job support — C++, distributed AI and MLOps.
+- [Netflix Interview & Job Support](/netflix-career-support/): Netflix senior-SWE, data and platform interviews — microservices, streaming scale, JVM and AWS-native systems, with proxy support.
+- [Mozilla Interview & Job Support](/mozilla-career-support/): Mozilla / Firefox web-platform, Rust systems and open-source engineering interview and job support.
+- [Oracle Interview & Job Support](/oracle-career-support/): Oracle Cloud (OCI), database, Java and enterprise-apps interviews and job support — SQL, distributed systems and migrations.
+- [IBM Interview & Job Support](/ibm-career-support/): IBM hybrid-cloud, watsonx AI, Red Hat/OpenShift and consulting-engineering interviews and job support.
+- [Salesforce Interview & Job Support](/salesforce-career-support/): Salesforce Apex, Lightning, Data Cloud and Agentforce interviews and job support — platform, integration and SWE tracks.
+- [Adobe Interview & Job Support](/adobe-career-support/): Adobe SWE, Experience Cloud and GenAI (Firefly) interviews and job support — C++/Java, cloud services and ML.
+- [Cisco Interview & Job Support](/cisco-career-support/): Cisco networking, security, and platform-software interviews and job support — protocols, distributed systems and cloud.
+- [Intel Interview & Job Support](/intel-career-support/): Intel silicon, firmware, systems and software interviews and job support — C/C++, verification and performance.
+- [AMD Interview & Job Support](/amd-career-support/): AMD CPU/GPU, ROCm and systems-software interviews and job support — C++, HPC and accelerated computing.
+- [Broadcom Interview & Job Support](/broadcom-career-support/): Broadcom / VMware semiconductor and infrastructure-software interview and job support.
+- [Qualcomm Interview & Job Support](/qualcomm-career-support/): Qualcomm Snapdragon, embedded, wireless and on-device AI interview and job support — C/C++ and DSP.
+- [Dell Technologies Interview & Job Support](/dell-technologies-career-support/): Dell infrastructure, storage and platform-software interview and job support.
+- [HP Inc. Interview & Job Support](/hp-career-support/): HP devices, firmware and software-services interview and job support.
+- [Hewlett Packard Enterprise Interview & Job Support](/hpe-career-support/): HPE hybrid-cloud (GreenLake), storage and enterprise-software interview and job support.
+- [ServiceNow Interview & Job Support](/servicenow-career-support/): ServiceNow platform, scripting, integration and Now Assist AI interviews and job support — plus core SWE tracks.
+- [Workday Interview & Job Support](/workday-job-support/): Full existing Workday cluster — HCM, integrations, Extend, Studio, reporting, proxy interview and job support.
+- [Snowflake Interview & Job Support](/snowflake-career-support/): Snowflake data-engineering, SQL, Snowpark and Cortex AI interviews and job support — modeling, performance and pipelines.
+- [Datadog Interview & Job Support](/datadog-career-support/): Datadog observability, SRE and platform-engineering interview and job support — metrics, logs, traces and OpenTelemetry.
+- [Cloudflare Interview & Job Support](/cloudflare-career-support/): Cloudflare edge, Workers, networking and security interviews and job support — Rust/Go, distributed systems at the edge.
+- [MongoDB Interview & Job Support](/mongodb-career-support/): MongoDB Atlas, data-modeling, vector search and platform-SWE interviews and job support.
+- [Confluent Interview & Job Support](/confluent-career-support/): Confluent / Apache Kafka streaming, data-engineering and platform interview and job support.
+- [Elastic Interview & Job Support](/elastic-career-support/): Elastic (Elasticsearch) search, observability and platform-engineering interview and job support.
+- [Palantir Technologies Interview & Job Support](/palantir-career-support/): Palantir Foundry/AIP forward-deployed and software-engineering interviews and job support — data integration and applied AI.
+- [Atlassian Interview & Job Support](/atlassian-career-support/): Atlassian (Jira, Confluence) SWE and platform interviews and job support — Java/Kotlin, distributed cloud services.
+- [Twilio Interview & Job Support](/twilio-career-support/): Twilio communications-API, backend and platform interview and job support.
+- [Okta Interview & Job Support](/okta-career-support/): Okta / Auth0 identity, IAM and security-platform interview and job support.
+- [CrowdStrike Interview & Job Support](/crowdstrike-career-support/): CrowdStrike Falcon endpoint/cloud-security and detection-engineering interviews and job support — Go, big-data and threat detection.
+- [Zscaler Interview & Job Support](/zscaler-career-support/): Zscaler zero-trust, cloud-security and platform-engineering interview and job support.
+- [Palo Alto Networks Interview & Job Support](/palo-alto-networks-career-support/): Palo Alto Networks (Prisma, Cortex) network- and cloud-security engineering interviews and job support.
+- [Fortinet Interview & Job Support](/fortinet-career-support/): Fortinet network-security, firmware and platform interview and job support.
+- [CyberArk Interview & Job Support](/cyberark-career-support/): CyberArk privileged-access and identity-security engineering interview and job support.
+- [SentinelOne Interview & Job Support](/sentinelone-career-support/): SentinelOne AI-endpoint-security and detection-engineering interview and job support.
+- [Rapid7 Interview & Job Support](/rapid7-career-support/): Rapid7 vulnerability-management and security-platform interview and job support.
+- [Tenable Interview & Job Support](/tenable-career-support/): Tenable exposure-management and security-engineering interview and job support.
+- [Splunk Interview & Job Support](/splunk-career-support/): Splunk data-platform, SPL, observability and SIEM engineering interview and job support.
+- [F5 Interview & Job Support](/f5-career-support/): F5 / NGINX application-delivery, networking and security-software interview and job support.
+- [Akamai Technologies Interview & Job Support](/akamai-technologies-career-support/): Akamai CDN, edge and cloud-security engineering interview and job support.
+- [Fastly Interview & Job Support](/fastly-career-support/): Fastly edge-compute and CDN platform-engineering interview and job support.
+- [HashiCorp Interview & Job Support](/hashicorp-career-support/): HashiCorp Terraform, Vault, Consul and IaC/DevOps interview and job support — Go and cloud infrastructure.
+- [GitLab Interview & Job Support](/gitlab-career-support/): GitLab DevSecOps-platform, CI/CD and Ruby/Go engineering interview and job support.
+- [GitHub Interview & Job Support](/github-career-support/): GitHub platform, Actions, and Copilot AI engineering interviews and job support — Ruby/Go, distributed systems at developer scale.
+- [Docker Interview & Job Support](/docker-career-support/): Docker containers, developer-tooling and platform-engineering interview and job support.
+- [Red Hat Interview & Job Support](/red-hat-career-support/): Red Hat OpenShift, RHEL, Ansible and Kubernetes engineering interview and job support.
+- [Canonical Interview & Job Support](/canonical-career-support/): Canonical / Ubuntu Linux, cloud and open-source systems interview and job support.
+- [VMware Interview & Job Support](/vmware-career-support/): VMware (Broadcom) virtualization, Tanzu/Kubernetes and infrastructure-software interview and job support.
+- [Nutanix Interview & Job Support](/nutanix-career-support/): Nutanix hyperconverged-infrastructure and hybrid-cloud engineering interview and job support.
+- [Pure Storage Interview & Job Support](/pure-storage-career-support/): Pure Storage all-flash storage and data-platform engineering interview and job support.
+- [NetApp Interview & Job Support](/netapp-career-support/): NetApp storage and hybrid-cloud data-services engineering interview and job support.
+- [Seagate Technology Interview & Job Support](/seagate-technology-career-support/): Seagate storage-systems, firmware and platform-software interview and job support.
+- [Western Digital Interview & Job Support](/western-digital-career-support/): Western Digital storage, flash and embedded-firmware interview and job support.
+- [Micron Technology Interview & Job Support](/micron-technology-career-support/): Micron memory/DRAM/NAND, firmware and systems engineering interview and job support.
+- [Marvell Technology Interview & Job Support](/marvell-technology-career-support/): Marvell data-infrastructure silicon and embedded-software interview and job support.
+- [Arm Interview & Job Support](/arm-career-support/): Arm CPU architecture, low-level systems and compiler/toolchain interview and job support.
+- [Synopsys Interview & Job Support](/synopsys-career-support/): Synopsys EDA, chip-design-software and verification engineering interview and job support.
+- [Cadence Design Systems Interview & Job Support](/cadence-design-systems-career-support/): Cadence EDA, simulation and design-software engineering interview and job support.
+- [KLA Interview & Job Support](/kla-career-support/): KLA process-control, metrology-software and systems engineering interview and job support.
+- [Applied Materials Interview & Job Support](/applied-materials-career-support/): Applied Materials semiconductor-equipment, controls and software engineering interview and job support.
+- [Lam Research Interview & Job Support](/lam-research-career-support/): Lam Research fabrication-equipment, controls and software engineering interview and job support.
+- [Teradyne Interview & Job Support](/teradyne-career-support/): Teradyne automated-test and industrial-robotics software interview and job support.
+- [Keysight Technologies Interview & Job Support](/cloud-job-support-usa/): Keysight test-and-measurement software and embedded engineering interview and job support.
+- [Analog Devices Interview & Job Support](/analog-devices-career-support/): Analog Devices mixed-signal, DSP and embedded-firmware interview and job support.
+- [Texas Instruments Interview & Job Support](/texas-instruments-career-support/): Texas Instruments analog/embedded silicon and firmware engineering interview and job support.
+- [ON Semiconductor Interview & Job Support](/proxy-interview-support/): onsemi power and sensing silicon, firmware and systems interview and job support.
+- [GlobalFoundries Interview & Job Support](/globalfoundries-career-support/): GlobalFoundries fab process, automation and software engineering interview and job support.
+- [Skyworks Solutions Interview & Job Support](/proxy-interview-support/): Skyworks RF-semiconductor and embedded engineering interview and job support.
+- [Qorvo Interview & Job Support](/proxy-interview-support/): Qorvo RF-solutions and embedded-systems engineering interview and job support.
+- [Monolithic Power Systems Interview & Job Support](/proxy-interview-support/): Monolithic Power Systems power-management silicon and firmware interview and job support.
+- [Microchip Technology Interview & Job Support](/microchip-technology-career-support/): Microchip microcontroller, embedded and firmware engineering interview and job support.
+- [Lattice Semiconductor Interview & Job Support](/proxy-interview-support/): Lattice FPGA, HDL and embedded-tooling engineering interview and job support.
+- [Cirrus Logic Interview & Job Support](/proxy-interview-support/): Cirrus Logic audio/mixed-signal silicon and DSP-firmware interview and job support.
+- [Wolfspeed Interview & Job Support](/proxy-interview-support/): Wolfspeed silicon-carbide power-semiconductor and systems interview and job support.
+- [Coherent Corp. Interview & Job Support](/cloud-job-support-usa/): Coherent photonics, lasers and embedded-controls engineering interview and job support.
+- [Amphenol Interview & Job Support](/cloud-job-support-usa/): Amphenol interconnect, sensor and embedded-systems engineering interview and job support.
+- [Jabil Interview & Job Support](/cloud-job-support-usa/): Jabil manufacturing-technology, automation and embedded-software interview and job support.
+- [Flex Interview & Job Support](/cloud-job-support-usa/): Flex electronics-manufacturing, IoT and embedded-software engineering interview and job support.
+- [Super Micro Computer Interview & Job Support](/super-micro-computer-career-support/): Supermicro server, firmware and AI-infrastructure engineering interview and job support.
+- [Arista Networks Interview & Job Support](/arista-networks-career-support/): Arista data-center networking, EOS software and distributed-systems interview and job support — C++/Python and routing.
+- [Juniper Networks Interview & Job Support](/juniper-networks-career-support/): Juniper networking, Junos and AIOps engineering interview and job support.
+- [Motorola Solutions Interview & Job Support](/motorola-solutions-career-support/): Motorola Solutions mission-critical-communications and video-security software interview and job support.
+- [Ubiquiti Interview & Job Support](/proxy-interview-support/): Ubiquiti / UniFi networking, firmware and platform-software interview and job support.
+- [CommScope Interview & Job Support](/proxy-interview-support/): CommScope network-infrastructure and embedded-software engineering interview and job support.
+- [Ciena Interview & Job Support](/proxy-interview-support/): Ciena optical-networking, control-plane and embedded-software interview and job support.
+- [Lumentum Interview & Job Support](/cloud-job-support-usa/): Lumentum photonics and optical-systems firmware engineering interview and job support.
+- [Corning Interview & Job Support](/cloud-job-support-usa/): Corning materials-science software, automation and controls engineering interview and job support.
+- [Verizon Interview & Job Support](/verizon-career-support/): Verizon 5G/network, backend and platform-engineering interview and job support.
+- [AT&T Interview & Job Support](/att-career-support/): AT&T network, 5G and enterprise-software engineering interview and job support.
+- [T-Mobile US Interview & Job Support](/t-mobile-career-support/): T-Mobile 5G/network, digital and platform-engineering interview and job support.
+- [Comcast Interview & Job Support](/comcast-career-support/): Comcast broadband, streaming and platform-engineering interview and job support.
+- [Charter Communications Interview & Job Support](/charter-communications-career-support/): Charter / Spectrum broadband and platform-software engineering interview and job support.
+- [Lumen Technologies Interview & Job Support](/lumen-technologies-career-support/): Lumen networking, edge and platform-engineering interview and job support.
+- [Cogent Communications Interview & Job Support](/proxy-interview-support/): Cogent internet-backbone and network-software engineering interview and job support.
+- [EchoStar Interview & Job Support](/proxy-interview-support/): EchoStar / Dish satellite and 5G-network software engineering interview and job support.
+- [Viasat Interview & Job Support](/proxy-interview-support/): Viasat satellite-communications and embedded/network software interview and job support.
+- [Iridium Communications Interview & Job Support](/proxy-interview-support/): Iridium satellite-network and embedded-systems software engineering interview and job support.
+- [SpaceX Interview & Job Support](/spacex-career-support/): SpaceX / Starlink flight-software, embedded and full-stack interview and job support — C++/Python, real-time and distributed systems.
+- [Blue Origin Interview & Job Support](/blue-origin-career-support/): Blue Origin flight-software, embedded and systems engineering interview and job support.
+- [Rocket Lab Interview & Job Support](/rocket-lab-career-support/): Rocket Lab avionics, flight-software and systems engineering interview and job support.
+- [Sierra Space Interview & Job Support](/proxy-interview-support/): Sierra Space spacecraft-software and systems engineering interview and job support.
+- [Planet Labs Interview & Job Support](/proxy-interview-support/): Planet Labs satellite-imagery, geospatial-data and platform-engineering interview and job support.
+- [Maxar Intelligence Interview & Job Support](/proxy-interview-support/): Maxar geospatial-intelligence and data-platform engineering interview and job support.
+- [AST SpaceMobile Interview & Job Support](/proxy-interview-support/): AST SpaceMobile satellite-to-cell network and embedded software interview and job support.
+- [Intuitive Machines Interview & Job Support](/proxy-interview-support/): Intuitive Machines spacecraft-software and systems engineering interview and job support.
+- [Axiom Space Interview & Job Support](/proxy-interview-support/): Axiom Space human-spaceflight software and systems engineering interview and job support.
+- [Relativity Space Interview & Job Support](/proxy-interview-support/): Relativity Space manufacturing-software, flight-software and systems interview and job support.
+- [Tesla Interview & Job Support](/tesla-career-support/): Tesla Autopilot/AI, vehicle-software, embedded and full-stack interviews and job support — C++/Python, real-time and computer vision.
+- [Rivian Interview & Job Support](/rivian-career-support/): Rivian vehicle-software, embedded and cloud-platform engineering interview and job support.
+- [Lucid Motors Interview & Job Support](/proxy-interview-support/): Lucid Motors EV embedded and vehicle-software engineering interview and job support.
+- [Waymo Interview & Job Support](/waymo-career-support/): Waymo autonomous-driving, perception/ML and robotics-software interview and job support — C++, computer vision and planning.
+- [Zoox Interview & Job Support](/zoox-career-support/): Zoox autonomous-vehicle, robotics and ML-software engineering interview and job support.
+- [Aurora Innovation Interview & Job Support](/proxy-interview-support/): Aurora autonomous-driving, ML and systems-software engineering interview and job support.
+- [Cruise Interview & Job Support](/proxy-interview-support/): Cruise self-driving, robotics and ML-software engineering interview and job support.
+- [Motional Interview & Job Support](/proxy-interview-support/): Motional autonomous-vehicle software and ML engineering interview and job support.
+- [Nuro Interview & Job Support](/proxy-interview-support/): Nuro autonomous-delivery robotics and ML-software engineering interview and job support.
+- [Kodiak Robotics Interview & Job Support](/proxy-interview-support/): Kodiak autonomous-trucking software and systems engineering interview and job support.
+- [Uber Interview & Job Support](/uber-career-support/): Uber SWE, data and ML interviews and job support — microservices, marketplace systems, Go/Java and large-scale data.
+- [Lyft Interview & Job Support](/lyft-career-support/): Lyft backend, data and ML-platform engineering interview and job support.
+- [DoorDash Interview & Job Support](/doordash-career-support/): DoorDash SWE, backend, data and ML interview and job support — marketplace, logistics optimization and microservices.
+- [Instacart Interview & Job Support](/instacart-career-support/): Instacart backend, data and ML-platform engineering interview and job support.
+- [Airbnb Interview & Job Support](/airbnb-career-support/): Airbnb full-stack, backend and ML interviews and job support — services, React, and marketplace data at scale.
+- [Booking Holdings Interview & Job Support](/booking-holdings-career-support/): Booking.com backend, data and platform-engineering interview and job support.
+- [Expedia Group Interview & Job Support](/expedia-group-career-support/): Expedia travel-platform, backend and data-engineering interview and job support.
+- [Tripadvisor Interview & Job Support](/proxy-interview-support/): Tripadvisor web-platform, backend and data engineering interview and job support.
+- [Turo Interview & Job Support](/proxy-interview-support/): Turo marketplace backend and platform-engineering interview and job support.
+- [Getaround Interview & Job Support](/proxy-interview-support/): Getaround connected-car IoT and marketplace-software interview and job support.
+- [PayPal Interview & Job Support](/paypal-career-support/): PayPal / Venmo payments, backend and platform-engineering interview and job support — Java, distributed systems and risk.
+- [Block Interview & Job Support](/block-career-support/): Block (Square, Cash App) payments and platform-engineering interview and job support.
+- [Stripe Interview & Job Support](/stripe-career-support/): Stripe API, payments-infrastructure and backend interviews and job support — Ruby/Scala/Go, reliability and financial systems.
+- [Plaid Interview & Job Support](/plaid-career-support/): Plaid open-banking API and backend-engineering interview and job support.
+- [Affirm Interview & Job Support](/affirm-career-support/): Affirm lending-platform, backend and data-engineering interview and job support.
+- [SoFi Interview & Job Support](/sofi-career-support/): SoFi digital-banking backend and platform-engineering interview and job support.
+- [Robinhood Interview & Job Support](/robinhood-career-support/): Robinhood trading-platform, backend and data-engineering interview and job support.
+- [Coinbase Interview & Job Support](/coinbase-career-support/): Coinbase crypto-exchange, blockchain and backend engineering interview and job support — reliability and security at scale.
+- [Kraken Interview & Job Support](/proxy-interview-support/): Kraken crypto-exchange backend and security-engineering interview and job support.
+- [Circle Interview & Job Support](/proxy-interview-support/): Circle stablecoin-infrastructure and blockchain-engineering interview and job support.
+- [Chime Interview & Job Support](/proxy-interview-support/): Chime neobank backend and platform-engineering interview and job support.
+- [Brex Interview & Job Support](/proxy-interview-support/): Brex corporate-fintech backend and platform-engineering interview and job support.
+- [Ramp Interview & Job Support](/proxy-interview-support/): Ramp spend-management platform and backend-engineering interview and job support.
+- [Bill.com Interview & Job Support](/proxy-interview-support/): BILL (Bill.com) AP/AR-automation backend and platform-engineering interview and job support.
+- [Marqeta Interview & Job Support](/proxy-interview-support/): Marqeta card-issuing API and backend-engineering interview and job support.
+- [Toast Interview & Job Support](/proxy-interview-support/): Toast restaurant-POS platform and backend-engineering interview and job support.
+- [Fiserv Interview & Job Support](/fiserv-career-support/): Fiserv / Clover payments and banking-platform engineering interview and job support.
+- [Fidelity National Information Services Interview & Job Support](/fis-career-support/): FIS banking- and payments-technology backend engineering interview and job support.
+- [Global Payments Interview & Job Support](/proxy-interview-support/): Global Payments processing-platform and backend-engineering interview and job support.
+- [Jack Henry & Associates Interview & Job Support](/proxy-interview-support/): Jack Henry community-banking software engineering interview and job support.
+- [Visa Interview & Job Support](/visa-career-support/): Visa payments-network, backend and platform-engineering interview and job support — Java, distributed systems and reliability.
+- [Mastercard Interview & Job Support](/mastercard-career-support/): Mastercard payments, data and platform-engineering interview and job support.
+- [American Express Interview & Job Support](/american-express-career-support/): American Express payments and platform-engineering interview and job support.
+- [Discover Financial Services Interview & Job Support](/proxy-interview-support/): Discover banking- and payments-platform engineering interview and job support.
+- [Capital One Interview & Job Support](/capital-one-career-support/): Capital One cloud-native (AWS), backend, data and ML engineering interviews and job support — a leading all-in AWS bank.
+- [JPMorgan Chase Interview & Job Support](/jpmorgan-chase-career-support/): JPMorgan Chase software, data and platform-engineering interview and job support — Java, cloud and large-scale systems.
+- [Bank of America Interview & Job Support](/bank-of-america-career-support/): Bank of America software and platform-engineering interview and job support.
+- [Wells Fargo Interview & Job Support](/wells-fargo-career-support/): Wells Fargo software and platform-engineering interview and job support.
+- [Citigroup Interview & Job Support](/citigroup-career-support/): Citi software, markets-technology and platform-engineering interview and job support.
+- [Goldman Sachs Interview & Job Support](/goldman-sachs-career-support/): Goldman Sachs engineering interviews and job support — Java/Slang, low-latency, markets and platform systems.
+- [Morgan Stanley Interview & Job Support](/morgan-stanley-career-support/): Morgan Stanley software and platform-engineering interview and job support.
+- [Charles Schwab Interview & Job Support](/proxy-interview-support/): Charles Schwab brokerage-platform and software-engineering interview and job support.
+- [Fidelity Investments Interview & Job Support](/fidelity-investments-career-support/): Fidelity Investments software and platform-engineering interview and job support.
+- [Vanguard Interview & Job Support](/proxy-interview-support/): Vanguard investment-platform and software-engineering interview and job support.
+- [BlackRock Interview & Job Support](/blackrock-career-support/): BlackRock / Aladdin fintech-platform and software-engineering interview and job support — analytics and risk systems.
+- [State Street Interview & Job Support](/proxy-interview-support/): State Street financial-platform and software-engineering interview and job support.
+- [BNY Interview & Job Support](/proxy-interview-support/): BNY financial-platform and software-engineering interview and job support.
+- [Northern Trust Interview & Job Support](/proxy-interview-support/): Northern Trust financial-platform and software-engineering interview and job support.
+- [Nasdaq Interview & Job Support](/proxy-interview-support/): Nasdaq exchange- and market-technology, low-latency engineering interview and job support.
+- [Intercontinental Exchange Interview & Job Support](/proxy-interview-support/): ICE exchange- and market-data platform engineering interview and job support.
+- [CME Group Interview & Job Support](/proxy-interview-support/): CME Group exchange-technology and low-latency engineering interview and job support.
+- [S&P Global Interview & Job Support](/data-engineering-job-support-guide/): S&P Global financial-data, analytics and platform-engineering interview and job support.
+- [Moody's Interview & Job Support](/data-engineering-job-support-guide/): Moody's risk-analytics, data and platform-engineering interview and job support.
+- [FactSet Interview & Job Support](/data-engineering-job-support-guide/): FactSet financial-data platform and software-engineering interview and job support.
+- [Morningstar Interview & Job Support](/data-engineering-job-support-guide/): Morningstar investment-data platform and software-engineering interview and job support.
+- [Bloomberg Interview & Job Support](/bloomberg-career-support/): Bloomberg engineering interviews and job support — C++/Python, low-latency data systems and the Terminal at scale.
+- [Klarna Interview & Job Support](/proxy-interview-support/): Klarna payments-platform and backend-engineering interview and job support.
+- [Wise Interview & Job Support](/proxy-interview-support/): Wise cross-border-payments platform and backend-engineering interview and job support.
+- [Revolut Interview & Job Support](/proxy-interview-support/): Revolut neobank backend and platform-engineering interview and job support.
+- [Adyen Interview & Job Support](/proxy-interview-support/): Adyen payments-platform and backend-engineering interview and job support.
+- [Intuit Interview & Job Support](/intuit-career-support/): Intuit (TurboTax, QuickBooks) SWE, data and AI interviews and job support — cloud services and financial platforms.
+- [Shopify Interview & Job Support](/shopify-career-support/): Shopify commerce-platform interviews and job support — Ruby/Rails, React and large-scale backend systems.
+- [eBay Interview & Job Support](/ebay-career-support/): eBay marketplace backend, search and platform-engineering interview and job support.
+- [Etsy Interview & Job Support](/proxy-interview-support/): Etsy marketplace, search and platform-engineering interview and job support.
+- [Wayfair Interview & Job Support](/proxy-interview-support/): Wayfair e-commerce backend, data and platform-engineering interview and job support.
+- [Chewy Interview & Job Support](/proxy-interview-support/): Chewy e-commerce backend and platform-engineering interview and job support.
+- [Walmart Interview & Job Support](/walmart-career-support/): Walmart Global Tech SWE, data and ML interviews and job support — cloud-native commerce and supply-chain systems at scale.
+- [Target Interview & Job Support](/target-career-support/): Target retail-technology backend and platform-engineering interview and job support.
+- [Costco Interview & Job Support](/proxy-interview-support/): Costco retail-technology and platform-engineering interview and job support.
+- [Home Depot Interview & Job Support](/home-depot-career-support/): The Home Depot retail-technology, cloud and platform-engineering interview and job support.
+- [Lowe's Interview & Job Support](/proxy-interview-support/): Lowe's retail-technology and platform-engineering interview and job support.
+- [Best Buy Interview & Job Support](/proxy-interview-support/): Best Buy retail-technology and platform-engineering interview and job support.
+- [Kroger Interview & Job Support](/proxy-interview-support/): Kroger digital-commerce and platform-engineering interview and job support.
+- [CVS Health Interview & Job Support](/cvs-health-career-support/): CVS Health digital-health and platform-engineering interview and job support.
+- [Walgreens Boots Alliance Interview & Job Support](/proxy-interview-support/): Walgreens digital-health and platform-engineering interview and job support.
+- [Nike Interview & Job Support](/nike-career-support/): Nike digital-commerce, apps and platform-engineering interview and job support.
+- [Starbucks Interview & Job Support](/proxy-interview-support/): Starbucks digital, mobile and platform-engineering interview and job support.
+- [McDonald's Interview & Job Support](/proxy-interview-support/): McDonald's digital, mobile and platform-engineering interview and job support.
+- [Chipotle Interview & Job Support](/proxy-interview-support/): Chipotle digital-ordering and platform-engineering interview and job support.
+- [Disney Interview & Job Support](/disney-career-support/): Disney streaming (Disney+), media and platform-engineering interview and job support — video, personalization and scale.
+- [Warner Bros. Discovery Interview & Job Support](/warner-bros-discovery-career-support/): Warner Bros. Discovery / Max streaming and platform-engineering interview and job support.
+- [Paramount Global Interview & Job Support](/proxy-interview-support/): Paramount streaming and platform-engineering interview and job support.
+- [NBCUniversal Interview & Job Support](/proxy-interview-support/): NBCUniversal / Peacock streaming and platform-engineering interview and job support.
+- [Fox Corporation Interview & Job Support](/proxy-interview-support/): Fox media, streaming (Tubi) and platform-engineering interview and job support.
+- [Spotify Interview & Job Support](/spotify-career-support/): Spotify backend, data and ML interviews and job support — Java/Scala, recommendations and streaming at scale.
+- [Roku Interview & Job Support](/proxy-interview-support/): Roku streaming-platform, devices and ads-engineering interview and job support.
+- [Pinterest Interview & Job Support](/pinterest-career-support/): Pinterest backend, ML and data-engineering interview and job support — recommendations and visual discovery.
+- [Snap Interview & Job Support](/snap-career-support/): Snap backend, AR and ML-engineering interview and job support.
+- [Reddit Interview & Job Support](/reddit-career-support/): Reddit backend, data and ML interviews and job support — high-scale social systems and recommendations.
+- [X Corp. Interview & Job Support](/x-career-support/): X (formerly Twitter) backend, real-time and ML-engineering interview and job support.
+- [Discord Interview & Job Support](/discord-career-support/): Discord real-time, voice and backend-engineering interview and job support — Elixir/Rust/Python at chat scale.
+- [Roblox Interview & Job Support](/roblox-career-support/): Roblox game-platform, engine and backend-engineering interview and job support — C++, distributed systems and real-time.
+- [Epic Games Interview & Job Support](/epic-games-career-support/): Epic Games / Unreal Engine and Fortnite backend interviews and job support — C++, graphics, engine and live-service systems.
+- [Electronic Arts Interview & Job Support](/electronic-arts-career-support/): Electronic Arts game and live-service backend engineering interview and job support.
+- [Take-Two Interactive Interview & Job Support](/proxy-interview-support/): Take-Two / Rockstar game and backend engineering interview and job support.
+- [Unity Interview & Job Support](/unity-career-support/): Unity engine, graphics and platform-engineering interview and job support — C++/C#.
+- [Niantic Interview & Job Support](/proxy-interview-support/): Niantic AR-gaming, geospatial and backend-engineering interview and job support.
+- [Valve Interview & Job Support](/proxy-interview-support/): Valve / Steam game-platform and backend-engineering interview and job support.
+- [Zynga Interview & Job Support](/proxy-interview-support/): Zynga mobile-gaming and backend-engineering interview and job support.
+- [Activision Blizzard Interview & Job Support](/activision-blizzard-career-support/): Activision Blizzard game and live-service backend engineering interview and job support.
+- [Bungie Interview & Job Support](/proxy-interview-support/): Bungie / Destiny live-service and backend engineering interview and job support.
+- [Riot Games Interview & Job Support](/riot-games-career-support/): Riot Games live-service and backend interviews and job support — high-scale multiplayer, anti-cheat and platform systems.
+- [Twitch Interview & Job Support](/twitch-career-support/): Twitch live-video, streaming and backend-engineering interview and job support.
+- [Fandom Interview & Job Support](/proxy-interview-support/): Fandom web-platform and backend-engineering interview and job support.
+- [Vimeo Interview & Job Support](/proxy-interview-support/): Vimeo video-platform and backend-engineering interview and job support.
+- [Dropbox Interview & Job Support](/dropbox-career-support/): Dropbox distributed-storage, backend and platform-engineering interview and job support.
+- [Box Interview & Job Support](/proxy-interview-support/): Box content-cloud and backend-engineering interview and job support.
+- [DocuSign Interview & Job Support](/proxy-interview-support/): DocuSign agreements-platform and backend-engineering interview and job support.
+- [Zoom Interview & Job Support](/zoom-career-support/): Zoom real-time-video, backend and AI-engineering interview and job support.
+- [Slack Interview & Job Support](/slack-career-support/): Slack messaging-platform and backend-engineering interview and job support (Salesforce).
+- [HubSpot Interview & Job Support](/hubspot-career-support/): HubSpot CRM/marketing-platform and backend-engineering interview and job support.
+- [Zendesk Interview & Job Support](/proxy-interview-support/): Zendesk customer-service platform and backend-engineering interview and job support.
+- [Freshworks Interview & Job Support](/proxy-interview-support/): Freshworks CX/ITSM platform and backend-engineering interview and job support.
+- [Asana Interview & Job Support](/proxy-interview-support/): Asana work-management platform and backend-engineering interview and job support.
+- [Monday.com Interview & Job Support](/proxy-interview-support/): monday.com Work-OS platform and backend-engineering interview and job support.
+- [Smartsheet Interview & Job Support](/proxy-interview-support/): Smartsheet work-management platform and backend-engineering interview and job support.
+- [Notion Interview & Job Support](/notion-career-support/): Notion productivity-platform, backend and AI-engineering interview and job support.
+- [Airtable Interview & Job Support](/proxy-interview-support/): Airtable low-code database platform and backend-engineering interview and job support.
+- [Miro Interview & Job Support](/proxy-interview-support/): Miro real-time-collaboration platform and frontend/backend engineering interview and job support.
+- [Canva Interview & Job Support](/canva-career-support/): Canva design-platform, frontend/backend and AI-engineering interview and job support at scale.
+- [Figma Interview & Job Support](/figma-career-support/): Figma design-tools interviews and job support — C++/WebGL, real-time collaboration and high-performance frontend.
+- [Grammarly Interview & Job Support](/ai-ml-proxy-interview-support/): Grammarly NLP, ML and backend-engineering interview and job support.
+- [Calendly Interview & Job Support](/proxy-interview-support/): Calendly scheduling-platform and backend-engineering interview and job support.
+- [Zapier Interview & Job Support](/proxy-job-support/): Zapier integration/automation platform and backend-engineering interview and job support.
+- [Intercom Interview & Job Support](/proxy-interview-support/): Intercom customer-communications, AI and backend-engineering interview and job support.
+- [Braze Interview & Job Support](/proxy-interview-support/): Braze customer-engagement platform and backend-engineering interview and job support.
+- [Klaviyo Interview & Job Support](/proxy-interview-support/): Klaviyo marketing-data platform and backend-engineering interview and job support.
+- [Amplitude Interview & Job Support](/data-engineering-job-support-guide/): Amplitude product-analytics platform and data-engineering interview and job support.
+- [Mixpanel Interview & Job Support](/data-engineering-job-support-guide/): Mixpanel product-analytics platform and data-engineering interview and job support.
+- [New Relic Interview & Job Support](/new-relic-career-support/): New Relic observability/APM platform and SRE/platform-engineering interview and job support.
+- [Dynatrace Interview & Job Support](/dynatrace-career-support/): Dynatrace observability/AIOps platform and SRE/platform-engineering interview and job support.
+- [Grafana Labs Interview & Job Support](/grafana-labs-career-support/): Grafana Labs observability (metrics/logs/traces) and Go platform-engineering interview and job support.
+- [Sentry Interview & Job Support](/proxy-job-support/): Sentry error-monitoring platform and backend-engineering interview and job support.
+- [PagerDuty Interview & Job Support](/proxy-job-support/): PagerDuty incident-response platform and SRE/backend-engineering interview and job support.
+- [LogicMonitor Interview & Job Support](/proxy-job-support/): LogicMonitor monitoring-platform and backend-engineering interview and job support.
+- [Sumo Logic Interview & Job Support](/data-engineering-job-support-guide/): Sumo Logic log-analytics and data-platform engineering interview and job support.
+- [AppDynamics Interview & Job Support](/proxy-job-support/): AppDynamics APM platform and backend-engineering interview and job support.
+- [SolarWinds Interview & Job Support](/proxy-job-support/): SolarWinds IT-operations/observability platform and backend-engineering interview and job support.
+- [ManageEngine Interview & Job Support](/proxy-job-support/): ManageEngine IT-management platform and backend-engineering interview and job support.
+- [UiPath Interview & Job Support](/uipath-job-support/): Full existing UiPath/RPA cluster — Studio, Orchestrator, REFramework, agentic automation, proxy interview and job support.
+- [Automation Anywhere Interview & Job Support](/proxy-interview-support/): Automation Anywhere RPA and automation-engineering interview and job support.
+- [Celonis Interview & Job Support](/data-engineering-job-support-guide/): Celonis process-mining and data-engineering interview and job support.
+- [Alteryx Interview & Job Support](/data-engineering-job-support-guide/): Alteryx analytics-automation and data-engineering interview and job support.
+- [Informatica Interview & Job Support](/informatica-career-support/): Informatica data-integration, governance and platform-engineering interview and job support.
+- [Boomi Interview & Job Support](/data-engineering-job-support-guide/): Boomi integration-platform (iPaaS) and backend-engineering interview and job support.
+- [MuleSoft Interview & Job Support](/mulesoft-career-support/): MuleSoft API-integration platform and backend-engineering interview and job support.
+- [dbt Labs Interview & Job Support](/dbt-labs-career-support/): dbt Labs analytics-engineering, data-transformation and platform interview and job support.
+- [Fivetran Interview & Job Support](/data-engineering-job-support-guide/): Fivetran data-movement/ELT platform and data-engineering interview and job support.
+- [Matillion Interview & Job Support](/data-engineering-job-support-guide/): Matillion data-integration/ELT platform and data-engineering interview and job support.
+- [Cloudera Interview & Job Support](/data-engineering-job-support-guide/): Cloudera big-data/lakehouse platform and data-engineering interview and job support.
+- [Databricks Interview & Job Support](/databricks-career-support/): Databricks lakehouse, Spark, MLflow, Unity Catalog and Mosaic AI interviews and job support — data engineering and applied ML.
+- [Dataiku Interview & Job Support](/data-engineering-job-support-guide/): Dataiku data-science/ML platform and data-engineering interview and job support.
+- [Dremio Interview & Job Support](/data-engineering-job-support-guide/): Dremio lakehouse-query engine and data-engineering interview and job support.
+- [Starburst Interview & Job Support](/data-engineering-job-support-guide/): Starburst / Trino query-engine and data-engineering interview and job support.
+- [SingleStore Interview & Job Support](/data-engineering-job-support-guide/): SingleStore distributed-database and data-engineering interview and job support.
+- [Cockroach Labs Interview & Job Support](/data-engineering-job-support-guide/): Cockroach Labs distributed-SQL (CockroachDB) and Go systems-engineering interview and job support.
+- [Redis Interview & Job Support](/redis-career-support/): Redis in-memory-database/cache and systems-engineering interview and job support — C, data structures and performance.
+- [Neo4j Interview & Job Support](/data-engineering-job-support-guide/): Neo4j graph-database and data-engineering interview and job support.
+- [Couchbase Interview & Job Support](/data-engineering-job-support-guide/): Couchbase NoSQL-database and systems-engineering interview and job support.
+- [Teradata Interview & Job Support](/data-engineering-job-support-guide/): Teradata data-warehouse and data-engineering interview and job support.
+- [Alation Interview & Job Support](/data-engineering-job-support-guide/): Alation data-catalog/governance platform and data-engineering interview and job support.
+- [Collibra Interview & Job Support](/data-engineering-job-support-guide/): Collibra data-governance platform and data-engineering interview and job support.
+- [Denodo Interview & Job Support](/data-engineering-job-support-guide/): Denodo data-virtualization platform and data-engineering interview and job support.
+- [ThoughtSpot Interview & Job Support](/data-engineering-job-support-guide/): ThoughtSpot search-analytics/BI platform and data-engineering interview and job support.
+- [Sigma Computing Interview & Job Support](/data-engineering-job-support-guide/): Sigma Computing cloud-BI platform and data-engineering interview and job support.
+- [Looker Interview & Job Support](/data-engineering-job-support-guide/): Looker BI/analytics platform and data-engineering interview and job support.
+- [Tableau Interview & Job Support](/tableau-career-support/): Tableau BI/visualization platform and data-engineering interview and job support.
+- [Qlik Interview & Job Support](/data-engineering-job-support-guide/): Qlik BI and data-integration platform engineering interview and job support.
+- [MicroStrategy Interview & Job Support](/data-engineering-job-support-guide/): MicroStrategy BI/analytics platform and data-engineering interview and job support.
+- [OpenAI Interview & Job Support](/openai-career-support/): OpenAI applied-AI, LLM-application, backend and ML-systems interviews and job support — model APIs, agents, RAG and evals.
+- [Anthropic Interview & Job Support](/anthropic-career-support/): Anthropic applied-AI and LLM-systems interviews and job support — Claude APIs, agents, tool use, MCP, RAG and evaluation.
+- [xAI Interview & Job Support](/xai-career-support/): xAI / Grok LLM-systems, backend and ML-infrastructure interview and job support.
+- [Cohere Interview & Job Support](/cohere-career-support/): Cohere enterprise-LLM, RAG and ML-platform engineering interview and job support.
+- [Mistral AI Interview & Job Support](/mistral-ai-career-support/): Mistral AI open-weight-LLM, inference and ML-systems interview and job support.
+- [Hugging Face Interview & Job Support](/hugging-face-job-support-guide/): Existing Hugging Face / LLM-engineering cluster — Transformers, fine-tuning, inference, RAG and interview support.
+- [Scale AI Interview & Job Support](/scale-ai-career-support/): Scale AI data-engine, ML-platform and backend-engineering interview and job support.
+- [Perplexity AI Interview & Job Support](/perplexity-ai-career-support/): Perplexity answer-engine, RAG, search and ML-systems interview and job support.
+- [Together AI Interview & Job Support](/ai-ml-proxy-interview-support/): Together AI inference-cloud and ML-infrastructure engineering interview and job support.
+- [Anyscale Interview & Job Support](/ai-ml-proxy-interview-support/): Anyscale / Ray distributed-ML and platform-engineering interview and job support.
+- [CoreWeave Interview & Job Support](/coreweave-career-support/): CoreWeave GPU-cloud, Kubernetes and ML-infrastructure interview and job support — large-scale accelerated computing.
+- [Lambda Interview & Job Support](/ai-ml-proxy-interview-support/): Lambda GPU-cloud and ML-infrastructure engineering interview and job support.
+- [Cerebras Systems Interview & Job Support](/cerebras-systems-career-support/): Cerebras wafer-scale AI-hardware, systems-software and ML interview and job support.
+- [SambaNova Systems Interview & Job Support](/proxy-interview-support/): SambaNova AI-hardware, systems-software and ML interview and job support.
+- [Groq Interview & Job Support](/groq-career-support/): Groq LPU inference-hardware, compiler and ML-systems interview and job support — low-latency inference.
+- [Tenstorrent Interview & Job Support](/proxy-interview-support/): Tenstorrent AI-hardware, RISC-V and systems-software interview and job support.
+- [Runway Interview & Job Support](/ai-ml-proxy-interview-support/): Runway generative-video, ML and backend-engineering interview and job support.
+- [ElevenLabs Interview & Job Support](/ai-ml-proxy-interview-support/): ElevenLabs generative-audio, ML and backend-engineering interview and job support.
+- [Character.AI Interview & Job Support](/ai-ml-proxy-interview-support/): Character.AI conversational-AI, ML-serving and backend-engineering interview and job support.
+- [Glean Interview & Job Support](/ai-ml-proxy-interview-support/): Glean enterprise-search, RAG and backend-engineering interview and job support.
+- [Writer Interview & Job Support](/ai-ml-proxy-interview-support/): Writer enterprise-GenAI platform and ML/backend-engineering interview and job support.
+- [Jasper Interview & Job Support](/ai-ml-proxy-interview-support/): Jasper marketing-GenAI platform and backend-engineering interview and job support.
+- [DataRobot Interview & Job Support](/ai-ml-proxy-interview-support/): DataRobot AutoML/MLOps platform and ML-engineering interview and job support.
+- [H2O.ai Interview & Job Support](/ai-ml-proxy-interview-support/): H2O.ai ML-platform, AutoML and ML-engineering interview and job support.
+- [Weights & Biases Interview & Job Support](/ai-ml-proxy-interview-support/): Weights & Biases MLOps/experiment-tracking platform and ML-engineering interview and job support.
+- [Pinecone Interview & Job Support](/pinecone-career-support/): Pinecone vector-database, retrieval and backend-engineering interview and job support — RAG infrastructure.
+- [Weaviate Interview & Job Support](/ai-ml-proxy-interview-support/): Weaviate open-source vector-database and backend-engineering interview and job support.
+- [Zilliz Interview & Job Support](/ai-ml-proxy-interview-support/): Zilliz / Milvus vector-database and systems-engineering interview and job support.
+- [Vercel Interview & Job Support](/vercel-career-support/): Vercel / Next.js frontend-cloud, edge and AI-SDK interviews and job support — React, serverless and DX platforms.
+- [Netlify Interview & Job Support](/proxy-job-support/): Netlify frontend-cloud/Jamstack platform and engineering interview and job support.
+- [Cloudinary Interview & Job Support](/proxy-interview-support/): Cloudinary media-management API and backend-engineering interview and job support.
+- [DigitalOcean Interview & Job Support](/digitalocean-career-support/): DigitalOcean cloud-infrastructure and platform-engineering interview and job support.
+- [OVHcloud US Interview & Job Support](/cloud-job-support-usa/): OVHcloud cloud-infrastructure and platform-engineering interview and job support.
+- [Rackspace Technology Interview & Job Support](/cloud-job-support-usa/): Rackspace multicloud managed-services and platform-engineering interview and job support.
+- [Equinix Interview & Job Support](/equinix-career-support/): Equinix data-center, interconnection and platform-engineering interview and job support.
+- [Digital Realty Interview & Job Support](/cloud-job-support-usa/): Digital Realty data-center and platform-engineering interview and job support.
+- [A10 Networks Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): A10 Networks application-networking/security and embedded-software interview and job support.
+- [Citrix Interview & Job Support](/proxy-interview-support/): Citrix virtualization/workspace platform and software-engineering interview and job support.
+- [Rubrik Interview & Job Support](/rubrik-career-support/): Rubrik cyber-resilience/data-security platform and distributed-systems interview and job support.
+- [Cohesity Interview & Job Support](/data-engineering-job-support-guide/): Cohesity data-security/management platform and systems-engineering interview and job support.
+- [Veeam Interview & Job Support](/data-engineering-job-support-guide/): Veeam data-protection/backup platform and software-engineering interview and job support.
+- [Commvault Interview & Job Support](/data-engineering-job-support-guide/): Commvault data-protection platform and software-engineering interview and job support.
+- [Veritas Technologies Interview & Job Support](/data-engineering-job-support-guide/): Veritas data-management/backup platform and software-engineering interview and job support.
+- [Wasabi Technologies Interview & Job Support](/cloud-job-support-usa/): Wasabi cloud-object-storage and platform-engineering interview and job support.
+- [Backblaze Interview & Job Support](/cloud-job-support-usa/): Backblaze cloud-storage and distributed-systems interview and job support.
+- [Egnyte Interview & Job Support](/proxy-interview-support/): Egnyte content-collaboration/governance platform and backend-engineering interview and job support.
+- [Druva Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Druva cloud-data-resilience platform and backend-engineering interview and job support.
+- [Acronis Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Acronis cyber-protection/backup platform and software-engineering interview and job support.
+- [N-able Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): N-able MSP IT-management/security platform and backend-engineering interview and job support.
+- [Kaseya Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Kaseya IT-management/security platform and backend-engineering interview and job support.
+- [Proofpoint Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Proofpoint email- and data-security platform and backend-engineering interview and job support.
+- [Mimecast Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Mimecast email-security platform and backend-engineering interview and job support.
+- [Varonis Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Varonis data-security platform and backend-engineering interview and job support.
+- [SailPoint Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): SailPoint identity-governance platform and backend-engineering interview and job support.
+- [Netskope Interview & Job Support](/netskope-career-support/): Netskope SASE/cloud-security platform and backend-engineering interview and job support.
+- [Wiz Interview & Job Support](/wiz-career-support/): Wiz cloud-security (CNAPP) platform and backend/cloud-engineering interview and job support — fast-growing security scale.
+- [Orca Security Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Orca Security cloud-security platform and backend-engineering interview and job support.
+- [Lacework Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Lacework cloud-security platform and data/backend-engineering interview and job support.
+- [Illumio Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Illumio zero-trust-segmentation platform and backend-engineering interview and job support.
+- [Snyk Interview & Job Support](/snyk-career-support/): Snyk developer-security/AppSec platform and backend-engineering interview and job support — DevSecOps at scale.
+- [Check Point Software Interview & Job Support](/check-point-software-career-support/): Check Point network- and cloud-security platform and engineering interview and job support.
+- [Sophos Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Sophos endpoint/network-security platform and backend-engineering interview and job support.
+- [Trend Micro Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Trend Micro cloud/endpoint-security platform and backend-engineering interview and job support.
+- [Trellix Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Trellix XDR/endpoint-security platform and backend-engineering interview and job support.
+- [Mandiant Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Mandiant threat-intelligence/IR platform and security-engineering interview and job support.
+- [Recorded Future Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Recorded Future threat-intelligence, data and backend-engineering interview and job support.
+- [Arctic Wolf Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Arctic Wolf MDR/security-operations platform and backend-engineering interview and job support.
+- [Abnormal Security Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Abnormal Security AI-email-security platform and ML/backend-engineering interview and job support.
+- [Huntress Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Huntress managed-security platform and backend-engineering interview and job support.
+- [Expel Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Expel MDR/SecOps platform and backend-engineering interview and job support.
+- [KnowBe4 Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): KnowBe4 security-awareness platform and backend-engineering interview and job support.
+- [Darktrace Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Darktrace AI-threat-detection platform and ML/backend-engineering interview and job support.
+- [OneTrust Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): OneTrust privacy/governance platform and backend-engineering interview and job support.
+- [BigID Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): BigID data-security/privacy platform and data/backend-engineering interview and job support.
+- [Drata Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Drata compliance-automation platform and backend-engineering interview and job support.
+- [Vanta Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Vanta compliance-automation platform and backend-engineering interview and job support.
+- [Secureworks Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Secureworks MDR/security-analytics platform and backend-engineering interview and job support.
+- [BeyondTrust Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): BeyondTrust privileged-access/identity-security platform and backend-engineering interview and job support.
+- [Delinea Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Delinea privileged-access-management platform and backend-engineering interview and job support.
+- [Ping Identity Interview & Job Support](/cybersecurity-devsecops-job-support-guide/): Ping Identity IAM platform and backend-engineering interview and job support.
+- [Accenture Interview & Job Support](/accenture-career-support/): Accenture technology-consulting interviews and job support — cloud, data, AI/ML, full-stack and enterprise delivery.
+- [Deloitte Interview & Job Support](/deloitte-career-support/): Deloitte technology-consulting and engineering interview and job support — cloud, data and enterprise platforms.
+- [PwC Interview & Job Support](/pwc-career-support/): PwC technology-consulting and engineering interview and job support.
+- [EY Interview & Job Support](/proxy-interview-support/): EY technology-consulting and engineering interview and job support.
+- [KPMG Interview & Job Support](/proxy-interview-support/): KPMG technology-consulting and engineering interview and job support.
+- [Capgemini Interview & Job Support](/capgemini-career-support/): Capgemini technology-consulting and engineering interview and job support — cloud, data and full-stack.
+- [Cognizant Interview & Job Support](/cognizant-career-support/): Cognizant digital-engineering and IT-services interview and job support — cloud, data and full-stack.
+- [Infosys Interview & Job Support](/infosys-career-support/): Infosys IT-services and digital-engineering interviews and job support — Java, cloud, data and full-stack delivery.
+- [Tata Consultancy Services Interview & Job Support](/tcs-career-support/): TCS IT-services and digital-engineering interviews and job support — enterprise, cloud, data and full-stack.
+- [Wipro Interview & Job Support](/wipro-career-support/): Wipro IT-services and digital-engineering interview and job support.
+- [HCLTech Interview & Job Support](/hcltech-career-support/): HCLTech IT-services and engineering interview and job support — cloud, data and platforms.
+- [Tech Mahindra Interview & Job Support](/proxy-interview-support/): Tech Mahindra IT-services and engineering interview and job support.
+- [LTIMindtree Interview & Job Support](/proxy-interview-support/): LTIMindtree IT-services and engineering interview and job support.
+- [EPAM Systems Interview & Job Support](/epam-systems-career-support/): EPAM digital-product engineering interview and job support — full-stack, cloud and data.
+- [Globant Interview & Job Support](/proxy-interview-support/): Globant digital-engineering and AI interview and job support.
+- [Thoughtworks Interview & Job Support](/proxy-interview-support/): Thoughtworks software-engineering consulting interview and job support — modern delivery and architecture.
+- [Slalom Interview & Job Support](/proxy-interview-support/): Slalom technology/cloud/data consulting interview and job support.
+- [Perficient Interview & Job Support](/proxy-interview-support/): Perficient digital-engineering consulting interview and job support.
+- [CGI Interview & Job Support](/proxy-interview-support/): CGI IT-consulting and engineering interview and job support.
+- [NTT DATA Interview & Job Support](/proxy-interview-support/): NTT DATA IT-services and engineering interview and job support.
+- [Booz Allen Hamilton Interview & Job Support](/booz-allen-hamilton-career-support/): Booz Allen technology/data/AI consulting interview and job support (government & commercial).
+- [Leidos Interview & Job Support](/leidos-career-support/): Leidos defense-IT, systems and software-engineering interview and job support.
+- [SAIC Interview & Job Support](/proxy-interview-support/): SAIC government-IT and systems-engineering interview and job support.
+- [General Dynamics Information Technology Interview & Job Support](/proxy-interview-support/): GDIT government-IT and systems-engineering interview and job support.
+- [CACI Interview & Job Support](/proxy-interview-support/): CACI defense-IT and systems-engineering interview and job support.
+- [ManTech Interview & Job Support](/proxy-interview-support/): ManTech defense-IT/cyber and systems-engineering interview and job support.
+- [Jacobs Interview & Job Support](/proxy-interview-support/): Jacobs engineering/systems and software interview and job support.
+- [AECOM Interview & Job Support](/proxy-interview-support/): AECOM infrastructure-engineering software and digital interview and job support.
+- [Parsons Interview & Job Support](/proxy-interview-support/): Parsons defense/infrastructure and cyber-software interview and job support.
+- [KBR Interview & Job Support](/proxy-interview-support/): KBR government/engineering and systems-software interview and job support.
+- [Lockheed Martin Interview & Job Support](/lockheed-martin-career-support/): Lockheed Martin aerospace/defense software, embedded and systems-engineering interview and job support — C++, real-time and mission systems.
+- [Northrop Grumman Interview & Job Support](/northrop-grumman-career-support/): Northrop Grumman defense software, embedded and systems-engineering interview and job support.
+- [RTX Interview & Job Support](/rtx-career-support/): RTX (Raytheon) aerospace/defense software and systems-engineering interview and job support.
+- [Boeing Interview & Job Support](/boeing-career-support/): Boeing avionics, embedded and systems-software engineering interview and job support.
+- [General Dynamics Interview & Job Support](/proxy-interview-support/): General Dynamics defense software and systems-engineering interview and job support.
+- [L3Harris Technologies Interview & Job Support](/proxy-interview-support/): L3Harris defense-communications and embedded-software engineering interview and job support.
+- [BAE Systems Inc. Interview & Job Support](/proxy-interview-support/): BAE Systems defense-electronics, embedded and systems-software interview and job support.
+- [Huntington Ingalls Industries Interview & Job Support](/proxy-interview-support/): Huntington Ingalls defense-systems and software engineering interview and job support.
+- [Anduril Industries Interview & Job Support](/anduril-industries-career-support/): Anduril defense-tech, autonomy and AI (Lattice) interview and job support — C++, robotics, computer vision and real-time systems.
+- [Palantir USG Interview & Job Support](/palantir-career-support/): Palantir's US-government business — data-integration and applied-AI engineering; see the Palantir hub for interview & job support.
+- [Johnson & Johnson Interview & Job Support](/johnson-and-johnson-career-support/): Johnson & Johnson pharma/medtech software, data and platform-engineering interview and job support.
+- [Pfizer Interview & Job Support](/pfizer-career-support/): Pfizer digital-health, data and platform-engineering interview and job support.
+- [Merck Interview & Job Support](/proxy-interview-support/): Merck research-technology, data and platform-engineering interview and job support.
+- [Eli Lilly Interview & Job Support](/eli-lilly-career-support/): Eli Lilly digital, data and AI/ML engineering interview and job support.
+- [AbbVie Interview & Job Support](/proxy-interview-support/): AbbVie digital, data and platform-engineering interview and job support.
+- [Bristol Myers Squibb Interview & Job Support](/proxy-interview-support/): Bristol Myers Squibb research-data and platform-engineering interview and job support.
+- [Amgen Interview & Job Support](/proxy-interview-support/): Amgen biotech-data, AI/ML and platform-engineering interview and job support.
+- [Gilead Sciences Interview & Job Support](/proxy-interview-support/): Gilead Sciences data and platform-engineering interview and job support.
+- [Biogen Interview & Job Support](/proxy-interview-support/): Biogen research-data and platform-engineering interview and job support.
+- [Moderna Interview & Job Support](/moderna-career-support/): Moderna digital/AI-first biotech, data and platform-engineering interview and job support.
+- [Regeneron Pharmaceuticals Interview & Job Support](/proxy-interview-support/): Regeneron genomics-data and platform-engineering interview and job support.
+- [Vertex Pharmaceuticals Interview & Job Support](/proxy-interview-support/): Vertex Pharmaceuticals research-data and platform-engineering interview and job support.
+- [Illumina Interview & Job Support](/illumina-career-support/): Illumina genomics, bioinformatics and platform-software engineering interview and job support.
+- [Thermo Fisher Scientific Interview & Job Support](/thermo-fisher-scientific-career-support/): Thermo Fisher life-sciences software, data and embedded-engineering interview and job support.
+- [Danaher Interview & Job Support](/proxy-interview-support/): Danaher life-sciences software and platform-engineering interview and job support.
+- [Abbott Laboratories Interview & Job Support](/abbott-laboratories-career-support/): Abbott medical-device, embedded and platform-software engineering interview and job support.
+- [Medtronic Interview & Job Support](/medtronic-career-support/): Medtronic medical-device, embedded and platform-software engineering interview and job support.
+- [Boston Scientific Interview & Job Support](/proxy-interview-support/): Boston Scientific medical-device embedded and software engineering interview and job support.
+- [Stryker Interview & Job Support](/stryker-career-support/): Stryker medical-device, robotics and embedded-software engineering interview and job support.
+- [Intuitive Surgical Interview & Job Support](/intuitive-surgical-career-support/): Intuitive Surgical surgical-robotics, real-time and embedded-software engineering interview and job support.
+- [UnitedHealth Group Interview & Job Support](/unitedhealth-group-career-support/): UnitedHealth Group healthcare-data and platform-engineering interview and job support.
+- [Optum Interview & Job Support](/optum-career-support/): Optum health-data, AI/ML and platform-engineering interview and job support.
+- [CVS Health / Aetna Interview & Job Support](/proxy-interview-support/): Aetna / CVS Health payer-data and platform-engineering interview and job support.
+- [Cigna Interview & Job Support](/proxy-interview-support/): Cigna / Evernorth health-data and platform-engineering interview and job support.
+- [Elevance Health Interview & Job Support](/proxy-interview-support/): Elevance Health (Anthem) health-data and platform-engineering interview and job support.
+- [Humana Interview & Job Support](/proxy-interview-support/): Humana health-data and platform-engineering interview and job support.
+- [Centene Interview & Job Support](/proxy-interview-support/): Centene health-data and platform-engineering interview and job support.
+- [Molina Healthcare Interview & Job Support](/proxy-interview-support/): Molina Healthcare data and platform-engineering interview and job support.
+- [Kaiser Permanente Interview & Job Support](/proxy-interview-support/): Kaiser Permanente healthcare-data and platform-engineering interview and job support.
+- [HCA Healthcare Interview & Job Support](/proxy-interview-support/): HCA Healthcare clinical-data and platform-engineering interview and job support.
+- [Epic Systems Interview & Job Support](/epic-systems-career-support/): Epic Systems EHR software engineering interview and job support — C#/M, healthcare integration and interoperability.
+- [Oracle Health Interview & Job Support](/proxy-interview-support/): Oracle Health (Cerner) EHR/health-cloud engineering interview and job support.
+- [athenahealth Interview & Job Support](/proxy-interview-support/): athenahealth cloud-EHR/health-SaaS backend engineering interview and job support.
+- [Teladoc Health Interview & Job Support](/proxy-interview-support/): Teladoc telehealth-platform and backend-engineering interview and job support.
+- [Doximity Interview & Job Support](/proxy-interview-support/): Doximity healthcare-network platform and backend-engineering interview and job support.
+- [Tempus AI Interview & Job Support](/tempus-ai-career-support/): Tempus AI precision-medicine, ML and data-engineering interview and job support.
+- [Veeva Systems Interview & Job Support](/veeva-systems-career-support/): Veeva life-sciences-cloud SaaS backend engineering interview and job support.
+- [IQVIA Interview & Job Support](/proxy-interview-support/): IQVIA healthcare-data/analytics platform and data-engineering interview and job support.
+- [Labcorp Interview & Job Support](/proxy-interview-support/): Labcorp diagnostics-data and platform-engineering interview and job support.
+- [Quest Diagnostics Interview & Job Support](/proxy-interview-support/): Quest Diagnostics data and platform-engineering interview and job support.
+- [GE HealthCare Interview & Job Support](/ge-healthcare-career-support/): GE HealthCare medical-imaging, embedded and AI-software engineering interview and job support.
+- [Philips North America Interview & Job Support](/proxy-interview-support/): Philips health-technology, imaging and embedded-software engineering interview and job support.
+- [Siemens Healthineers USA Interview & Job Support](/proxy-interview-support/): Siemens Healthineers medical-imaging and embedded/software engineering interview and job support.
+- [ResMed Interview & Job Support](/proxy-interview-support/): ResMed connected-medical-device, cloud and embedded-software engineering interview and job support.
+- [Dexcom Interview & Job Support](/proxy-interview-support/): Dexcom continuous-glucose-monitoring embedded, mobile and cloud engineering interview and job support.
+- [Insulet Interview & Job Support](/proxy-interview-support/): Insulet (Omnipod) medical-device embedded and software engineering interview and job support.
+- [iRhythm Interview & Job Support](/proxy-interview-support/): iRhythm cardiac-monitoring, ML and platform-engineering interview and job support.
+- [Align Technology Interview & Job Support](/proxy-interview-support/): Align Technology (Invisalign) 3D-imaging and platform-software engineering interview and job support.
+- [Exact Sciences Interview & Job Support](/proxy-interview-support/): Exact Sciences diagnostics, genomics-data and platform-engineering interview and job support.
+- [Guardant Health Interview & Job Support](/proxy-interview-support/): Guardant Health precision-oncology data and platform-engineering interview and job support.
+- [Procter & Gamble Interview & Job Support](/procter-and-gamble-career-support/): Procter & Gamble digital, data and platform-engineering interview and job support.
+- [PepsiCo Interview & Job Support](/pepsico-career-support/): PepsiCo digital, data and platform-engineering interview and job support.
+- [Coca-Cola Interview & Job Support](/coca-cola-career-support/): Coca-Cola digital, data and platform-engineering interview and job support.
+- [Mondelez International Interview & Job Support](/proxy-interview-support/): Mondelez digital and platform-engineering interview and job support.
+- [Kraft Heinz Interview & Job Support](/proxy-interview-support/): Kraft Heinz digital and platform-engineering interview and job support.
+- [General Mills Interview & Job Support](/proxy-interview-support/): General Mills digital and platform-engineering interview and job support.
+- [Mars Interview & Job Support](/proxy-interview-support/): Mars digital, data and platform-engineering interview and job support.
+- [Nestlé USA Interview & Job Support](/proxy-interview-support/): Nestlé digital and platform-engineering interview and job support.
+- [Unilever USA Interview & Job Support](/proxy-interview-support/): Unilever digital and platform-engineering interview and job support.
+- [Colgate-Palmolive Interview & Job Support](/proxy-interview-support/): Colgate-Palmolive digital and platform-engineering interview and job support.
+- [Ford Motor Interview & Job Support](/ford-motor-career-support/): Ford software-defined-vehicle, embedded, cloud and connected-car engineering interview and job support.
+- [General Motors Interview & Job Support](/general-motors-career-support/): General Motors software-defined-vehicle, embedded, autonomy and cloud engineering interview and job support.
+- [Stellantis North America Interview & Job Support](/stellantis-north-america-career-support/): Stellantis software-defined-vehicle, embedded and connected-car engineering interview and job support.
+- [Toyota Motor North America Interview & Job Support](/toyota-motor-north-america-career-support/): Toyota connected-vehicle, embedded and platform-software engineering interview and job support.
+- [Honda Development & Manufacturing of America Interview & Job Support](/proxy-interview-support/): Honda embedded, connected-vehicle and software engineering interview and job support.
+- [Hyundai Motor America Interview & Job Support](/proxy-interview-support/): Hyundai software-defined-vehicle, embedded and connected-car engineering interview and job support.
+- [Mercedes-Benz USA Interview & Job Support](/proxy-interview-support/): Mercedes-Benz software-defined-vehicle, infotainment and embedded engineering interview and job support.
+- [BMW of North America Interview & Job Support](/proxy-interview-support/): BMW software-defined-vehicle, connected and embedded engineering interview and job support.
+- [Volkswagen Group of America Interview & Job Support](/proxy-interview-support/): Volkswagen software-defined-vehicle, embedded and platform engineering interview and job support.
+- [Nissan North America Interview & Job Support](/proxy-interview-support/): Nissan embedded, connected-vehicle and software engineering interview and job support.
+- [FedEx Interview & Job Support](/fedex-career-support/): FedEx logistics-platform, backend, cloud and data-engineering interview and job support — supply-chain systems at scale.
+- [UPS Interview & Job Support](/ups-career-support/): UPS logistics-platform, backend and data-engineering interview and job support.
+- [DHL Supply Chain USA Interview & Job Support](/proxy-interview-support/): DHL supply-chain software and platform-engineering interview and job support.
+- [XPO Interview & Job Support](/proxy-interview-support/): XPO freight-technology and platform-engineering interview and job support.
+- [GXO Logistics Interview & Job Support](/proxy-interview-support/): GXO warehouse-automation and platform-engineering interview and job support.
+- [J.B. Hunt Interview & Job Support](/proxy-interview-support/): J.B. Hunt freight-marketplace and platform-engineering interview and job support.
+- [Schneider National Interview & Job Support](/proxy-interview-support/): Schneider National logistics-technology and platform-engineering interview and job support.
+- [C.H. Robinson Interview & Job Support](/proxy-interview-support/): C.H. Robinson freight-platform (Navisphere) and backend-engineering interview and job support.
+- [Union Pacific Interview & Job Support](/proxy-interview-support/): Union Pacific rail-logistics systems and platform-engineering interview and job support.
+- [CSX Interview & Job Support](/proxy-interview-support/): CSX rail-logistics systems and platform-engineering interview and job support.
+- [Delta Air Lines Interview & Job Support](/delta-air-lines-career-support/): Delta Air Lines digital, operations and platform-engineering interview and job support.
+- [American Airlines Interview & Job Support](/american-airlines-career-support/): American Airlines digital, operations and platform-engineering interview and job support.
+- [United Airlines Interview & Job Support](/united-airlines-career-support/): United Airlines digital, operations and platform-engineering interview and job support.
+- [Southwest Airlines Interview & Job Support](/proxy-interview-support/): Southwest Airlines digital and operations-platform engineering interview and job support.
+- [JetBlue Interview & Job Support](/proxy-interview-support/): JetBlue digital and platform-engineering interview and job support.
+- [Alaska Airlines Interview & Job Support](/proxy-interview-support/): Alaska Airlines digital and platform-engineering interview and job support.
+- [Breeze Airways Interview & Job Support](/proxy-interview-support/): Breeze Airways digital and platform-engineering interview and job support.
+- [Frontier Airlines Interview & Job Support](/proxy-interview-support/): Frontier Airlines digital and platform-engineering interview and job support.
+- [Spirit Airlines Interview & Job Support](/proxy-interview-support/): Spirit Airlines digital and platform-engineering interview and job support.
+- [Hawaiian Airlines Interview & Job Support](/proxy-interview-support/): Hawaiian Airlines digital and platform-engineering interview and job support.
+- [Marriott International Interview & Job Support](/marriott-career-support/): Marriott hospitality-digital, booking-platform and data-engineering interview and job support at global scale.
+
 ## USA Location Landing Pages
 
 - [IT Job Support USA](/job-support-usa/): Real-time IT job support and proxy interview assistance for developers on US projects. All US time zones — EST, CST, MST, PST.

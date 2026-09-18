@@ -1,0 +1,17 @@
+
+> proxytechsupport-nextjs@0.1.0 build
+> node scripts/verify-content-urls.mjs && next build
+
+OK: 80 blog articles, 19 interviews
+OK: 86 landing canonicals → app/*/page.tsx
+OK: folder === meta.slug, no slug overlap / duplicates
+▲ Next.js 16.2.3 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.7min
+  Running TypeScript ...
+  Finished TypeScript in 24.9s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/2195) ...
+  Generating static pages using 11 workers (548/2195) 
+  Generating static pages using 11 workers (865/2195) 

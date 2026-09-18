@@ -2,6 +2,7 @@
 // Items with hidden: true are kept for SEO / direct linking but excluded from menus.
 
 export const jobSupportLinks = [
+  { label: 'Tech Companies — 500+ Employer Directory', href: '/tech-companies/' },
   { label: 'Agentic AI & Machine Learning Job Support', href: '/agentic-ai-ml-job-support/' },
   { label: 'AI Workflow Automation & Pipeline Engineering', href: '/ai-workflow-automation-pipeline-job-support/' },
   { label: 'Data Science Job Support', href: '/data-science-job-support/' },
@@ -167,6 +168,7 @@ export const mainNavLinks = [
   { label: 'Job Support', href: '#', dropdownType: 'jobSupport' as const },
   { label: 'Locations', href: '#', dropdownType: 'locations' as const },
   { label: 'Interview', href: '#', dropdownType: 'interview' as const },
+  { label: 'Tech Companies', href: '/tech-companies/' },
   { label: 'Technologies', href: '/#tech' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/#contact' },
