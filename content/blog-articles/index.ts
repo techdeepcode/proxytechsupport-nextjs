@@ -161,6 +161,10 @@ import { meta as meta_huggingface_quantization_bitsandbytes_gptq_awq_guide } fro
 import Article_huggingface_smolagents_code_agents_guide from './huggingface-smolagents-code-agents-guide/Article';
 import { meta as meta_huggingface_smolagents_code_agents_guide } from './huggingface-smolagents-code-agents-guide/meta';
 
+// ─── AI Platform Engineering pillar (Sept 2026; additive) ─────────────────────
+import Article_managing_production_ai_ml_cloud_platforms_2026 from './managing-production-ai-ml-cloud-platforms-2026/Article';
+import { meta as meta_managing_production_ai_ml_cloud_platforms_2026 } from './managing-production-ai-ml-cloud-platforms-2026/meta';
+
 // ─── ProxyTech Research: Autonomous AI Agent Security funnel blogs (Sept 2026) ──
 import Article_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons from './gtg-1002-ai-orchestrated-cyberattack-engineering-lessons/Article';
 import { meta as meta_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons } from './gtg-1002-ai-orchestrated-cyberattack-engineering-lessons/meta';
@@ -170,6 +174,8 @@ import Article_securing_ai_agents_production_checklist_2026 from './securing-ai-
 import { meta as meta_securing_ai_agents_production_checklist_2026 } from './securing-ai-agents-production-checklist-2026/meta';
 
 export const blogArticleEntries = [
+  // ── AI Platform Engineering pillar (Sept 2026) ──
+  { meta: meta_managing_production_ai_ml_cloud_platforms_2026, Article: Article_managing_production_ai_ml_cloud_platforms_2026 },
   // ── Hugging Face / LLM engineering blog cluster (Sept 2026) ──
   { meta: meta_huggingface_cuda_out_of_memory_fine_tuning_fix, Article: Article_huggingface_cuda_out_of_memory_fine_tuning_fix },
   { meta: meta_huggingface_lora_qlora_adapter_loading_merging_guide, Article: Article_huggingface_lora_qlora_adapter_loading_merging_guide },

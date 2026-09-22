@@ -1,0 +1,348 @@
+<p>Enterprises spent the first stage of the AI boom building things: models, copilots, RAG assistants and agents. The harder problem in 2026 is <strong>operating</strong> them. A prototype that answers well in a notebook becomes, in production, a distributed system that has to schedule scarce GPUs, route requests to the right cache, stay fast under load, prove it is still <em>correct</em>, and do all of it at a defensible cost per task. That operational layer — the platform that surrounds the models — is where most of the real 2026 engineering work now lives.</p>
+
+<p>This guide is about that layer. Not what a transformer is, not how to write a prompt, but how to <strong>build, run, scale, observe, secure and control</strong> production AI/ML and agentic workloads on cloud infrastructure. It is an AI platform engineering, cloud infrastructure, MLOps/LLMOps, DevOps/SRE, FinOps and security article — written for the people who get paged when the dashboards are green but the agent is quietly choosing the wrong tool.</p>
+
+<div style="border:1px solid rgba(0,223,130,0.3);border-left:4px solid #00df82;border-radius:8px;padding:1rem 1.25rem;margin:1.75rem 0;background:rgba(0,223,130,0.04);">
+<p style="margin:0;font-size:0.95rem;line-height:1.6;color:var(--pts-text);"><strong>The one-sentence version:</strong> production AI is no longer a model you call — it is an operational platform (GPU scheduling, distributed inference, evaluation, observability, governance and FinOps) that happens to have models inside it, and running that platform is a distinct engineering discipline.</p>
+</div>
+
+<hr>
+
+<h2>Why AI Infrastructure Became Its Own Platform Engineering Discipline</h2>
+
+<p>AI platform engineering is the discipline of building and operating the shared, self-service infrastructure that lets teams deploy, run, scale, observe, secure and pay for AI/ML and agentic workloads in production. It sits <em>below</em> application and model-development work and <em>above</em> raw cloud compute — the same relationship a Kubernetes platform team has to product teams, but with a very different set of resources to manage.</p>
+
+<p>The reason it splits off from ordinary cloud operations is that the control signals are different. A normal web service is managed around a handful of dimensions: CPU, memory, request rate, latency and error rate. When those are healthy, the service is healthy. A production AI platform keeps those <em>and</em> adds a second, unfamiliar set of signals that can degrade badly while every traditional metric stays green.</p>
+
+<table>
+<thead><tr><th>A normal web service cares about</th><th>A production AI platform <em>also</em> cares about</th></tr></thead>
+<tbody>
+<tr><td>CPU utilization</td><td>GPU type, availability and topology (NVLink/PCIe locality)</td></tr>
+<tr><td>Memory</td><td>HBM / GPU memory and where model weights are placed</td></tr>
+<tr><td>Requests per second</td><td>Prompt/context length, batch composition and queue depth</td></tr>
+<tr><td>Latency (p50/p95/p99)</td><td>Time-to-first-token (TTFT) and inter-token latency</td></tr>
+<tr><td>Error rate (HTTP 5xx)</td><td>KV-cache hit rate, tokens/sec throughput, cold-start time</td></tr>
+<tr><td>&mdash;</td><td>Model quality, hallucination/eval scores, tool success, agent task completion</td></tr>
+<tr><td>Cost per instance-hour</td><td>Cost per token, per request, and per <em>successful</em> task</td></tr>
+</tbody>
+</table>
+
+<p>That right-hand column is the whole job. None of it is visible to a standard APM setup, none of it fails as an HTTP 500, and most of it is expensive. This is why "just put it behind the same load balancer as the rest of the API" stops working, and why platform teams are standing up an AI-specific paved road.</p>
+
+<div style="border:1px solid var(--pts-border);border-left:4px solid var(--pts-accent);border-radius:8px;padding:1rem 1.25rem;margin:1.75rem 0;background:var(--pts-card-bg);">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--pts-text);">Operational question a platform team must answer</p>
+<p style="margin:0;font-size:0.94rem;line-height:1.6;color:var(--pts-text);">"What should an SRE alert on when an LLM becomes slower but does not return HTTP errors?" &mdash; the honest answer is rising TTFT and inter-token latency, KV-cache utilization approaching saturation, and growing queue depth. A rise in tail latency with a flat error rate is the <em>normal</em> failure signature of an overloaded inference tier; if your alerts only watch 5xx and CPU, you will find out from users first.</p>
+</div>
+
+<hr>
+
+<h2>The Production AI Platform Stack in 2026</h2>
+
+<p>Most enterprise AI platforms converge on the same layered shape, whether the workload is a chatbot, a document assistant or a fleet of agents. Requests flow down through the stack; a set of cross-cutting concerns wraps every layer.</p>
+
+<pre><code>Users / applications
+      │
+API gateway  ·  model gateway (routing, auth, rate limits, quotas)
+      │
+Agent / application orchestration (tools, memory, workflow)
+      │
+Inference routing (KV-cache-aware, capacity-aware, multi-cluster)
+      │
+Model-serving layer (vLLM · SGLang · TensorRT-LLM · managed endpoints)
+      │
+GPU / accelerator scheduling (Kubernetes DRA, gang scheduling, autoscaling)
+      │
+Kubernetes / cloud compute (EKS · AKS · GKE · managed AI services)
+      │
+Storage · model registry · vector store · data layer
+
+Cross-cutting (every layer):
+  Identity  ·  Security  ·  Observability  ·  Evaluation
+  Governance  ·  CI/CD  ·  FinOps</code></pre>
+
+<p>The important idea is that the <strong>model gateway</strong> and <strong>inference routing</strong> layers are new relative to a classic web stack, and the cross-cutting concerns are heavier: evaluation and FinOps are not afterthoughts here, they are load-bearing. The rest of this article walks the layers where 2026 changed the most.</p>
+
+<hr>
+
+<h2>GPU Infrastructure Is Now an Operations Problem</h2>
+
+<p>GPUs are scarce, expensive, and — unlike CPU and memory — not natively divisible or fungible. That combination turns capacity into a scheduling problem rather than a purchasing one. The three failure modes platform teams fight are <strong>fragmentation</strong> (a node has 30&nbsp;GB of GPU memory free but your pod needs 40, so it sits idle), <strong>topology ignorance</strong> (a distributed job lands on GPUs that are not NVLink-connected and spends its life waiting on the interconnect), and <strong>idle burn</strong> (an accelerator reserved for a workload that is serving no traffic is still on the invoice).</p>
+
+<p>Kubernetes has spent several releases closing this gap, and by v1.37 (released 26 August 2026, the current stable line) the primitives an AI platform needs are largely in place:</p>
+
+<ul>
+<li><strong>Dynamic Resource Allocation (DRA)</strong> — the framework for expressing rich device requirements ("a GPU with at least 80&nbsp;GB HBM, this compute capability, on this topology") went <strong>stable in Kubernetes v1.34</strong> (September 2025). v1.37 promoted <em>DRA Extended Resource</em> support to GA, so a DRA driver can satisfy classic <code>example.com/gpu</code> requests without a separate device plugin, and <em>DRA Device Taints and Tolerations</em> to GA, so a degraded or under-maintenance accelerator can cordon workloads off the device the way node taints do. Related work — <em>Partitionable Devices</em> (native MIG-style slicing) and <em>Prioritized List</em> ("give me an H100, else an A100") — lets the scheduler share and fall back across accelerators instead of leaving them idle. NVIDIA has donated its DRA driver for GPUs to the community.</li>
+<li><strong>Gang scheduling</strong> — distributed training and multi-node inference need all-or-nothing placement: either every pod in the group is scheduled together, or none is, so half a job cannot squat on GPUs while waiting for the other half. The <code>Workload</code>/<code>PodGroup</code> API (KEP-4671) reached <strong>beta in v1.37</strong>, bringing gang scheduling and workload-aware preemption into core Kubernetes rather than an add-on.</li>
+<li><strong>Scale-to-zero</strong> — HPA <em>scale to zero</em> (KEP-2021, feature gate <code>HPAScaleToZero</code>) reached <strong>beta and is enabled by default in v1.37</strong>. It only accepts <code>minReplicas: 0</code> when the HPA is driven by an object or external metric (a queue depth, a request count) rather than CPU/memory, because those in-pod signals vanish at zero replicas. For expensive inference pools this is the difference between paying for idle GPUs overnight and paying for none.</li>
+</ul>
+
+<p>The ecosystem tools — Kueue for job queueing and quota, JobSet for multi-job orchestration, Karpenter/Cluster Autoscaler and the cloud providers' GPU provisioners — sit on top of these primitives. But the shift worth internalizing is that <em>accelerator scheduling is now first-class in the kernel of the platform</em>, not something bolted on with node labels and taints.</p>
+
+<div style="border:1px solid var(--pts-border);border-left:4px solid var(--pts-accent);border-radius:8px;padding:1rem 1.25rem;margin:1.75rem 0;background:var(--pts-card-bg);">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--pts-text);">Operational question</p>
+<p style="margin:0;font-size:0.94rem;line-height:1.6;color:var(--pts-text);">"What happens when a model needs 100+&nbsp;GB of weights and a GPU node fails?" &mdash; on a well-run platform, the serving replica is a gang-scheduled group with an anti-affinity spread; the scheduler either finds an equivalent topology-compatible node group or the workload stays <code>Pending</code> with a clear reason rather than partially rescheduling. This is exactly the class of failure covered in our guide to <a href="/blog/kubernetes-pod-pending-troubleshooting/">why Kubernetes pods stay Pending</a> — on GPU nodes the usual cause is insufficient allocatable accelerators or an unsatisfiable topology constraint, not CPU.</p>
+</div>
+<hr>
+
+<h2>Inference Is Becoming a Distributed Systems Problem</h2>
+
+<p>Serving an LLM used to mean putting model weights in a container behind an autoscaler. In 2026 a high-volume inference tier is a distributed system with its own scheduler, memory hierarchy and routing logic. Three ideas drive that change.</p>
+
+<h3>The KV cache is the thing you are actually managing</h3>
+<p>During generation, the model keeps a key-value (KV) cache of the attention state for every token in the context. That cache — not the weights — is what fills GPU memory during serving, and reusing it is the single biggest lever on latency. Inference engines built the substrate for this: <strong>vLLM</strong>'s V1 engine ships automatic prefix caching on by default, and <strong>SGLang</strong>'s <em>RadixAttention</em> holds the KV cache in a radix tree so shared prefixes are reused across requests. If two requests share a system prompt or a document, the second should never re-compute the first's prefill.</p>
+
+<h3>KV-cache-aware routing</h3>
+<p>Once the cache matters, blind load-balancing is actively harmful: it scatters requests that share a prefix across replicas, so each one recomputes work another replica already holds. <strong>KV-cache-aware routing</strong> sends each request to the replica that already has its prefix cached, raising hit rate and cutting TTFT on multi-turn chat, agents and RAG. This is now a productized feature: NVIDIA <strong>Dynamo</strong>'s Smart Router tracks KV cache across a GPU fleet and routes by cache locality plus load; Google's <strong>GKE Inference Gateway</strong> (GA September 2025) does prefix-aware, model-aware load balancing; and AWS added <strong>prefix-aware routing</strong> to SageMaker inference in 2026.</p>
+
+<h3>Prefill/decode disaggregation</h3>
+<p>LLM inference has two phases with opposite hardware appetites. <strong>Prefill</strong> — processing the prompt in one forward pass — is compute-bound (it saturates GPU FLOPs). <strong>Decode</strong> — emitting tokens one at a time — is memory-bandwidth-bound (it streams the KV cache through the GPU). Run them on the same replica and prefill spikes stall decode, so TTFT and inter-token latency fight each other. <strong>Prefill/decode (P/D) disaggregation</strong> puts them on separate GPU pools you can size and tune independently, moving the KV cache between them over a fast transfer path. NVIDIA Dynamo (whose 1.0 production milestone landed in 2026, with v1.5.0 released 21 September 2026) coordinates this with a Planner for autoscaling and the NIXL transfer library; vLLM ships disaggregated prefilling (still marked experimental) through a KV-connector API; SGLang has a production P/D path. For multimodal models, vLLM extended the idea to <strong>encode-prefill-decode (EPD)</strong>, giving the image/audio encoder its own stage so it does not interfere with text decode.</p>
+
+<h3>Multi-cluster and global routing</h3>
+<p>GPU capacity is rarely in one place. When a region runs out of a given accelerator, or a workload needs to fail over, inference has to route across clusters and regions. Google's <strong>multi-cluster GKE Inference Gateway</strong> (announced March 2026, in preview) pools GPU/TPU capacity across a fleet from a single config cluster with automatic failover; AWS SageMaker HyperPod runs training and inference on shared clusters with task governance for capacity. The design question mirrors classic multi-region web serving — capacity-aware routing, health checks, failover — but the unit being balanced is accelerator capacity and cache locality, not stateless CPU.</p>
+
+<div style="border:1px solid var(--pts-border);border-left:4px solid var(--pts-accent);border-radius:8px;padding:1rem 1.25rem;margin:1.75rem 0;background:var(--pts-card-bg);">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--pts-text);">Operational question</p>
+<p style="margin:0;font-size:0.94rem;line-height:1.6;color:var(--pts-text);">"How do you route requests when GPU capacity is split across clusters or regions?" &mdash; prefer a two-tier router: a global tier that picks a cluster on capacity, health and locality, and a per-cluster tier that picks a replica on KV-cache affinity and queue depth. Keep sticky routing for multi-turn sessions so you keep cache hits, and fail over on capacity signals (queue depth, admission rejection) rather than only on hard errors.</p>
+</div>
+
+<hr>
+
+<h2>The New Battle Is Cold Start vs Cost</h2>
+
+<p>Scale-to-zero and cold start are the two ends of one trade-off. Drop an idle model to zero replicas and you stop paying for the GPU; but the next request has to wait for tens or hundreds of gigabytes of weights to load, the engine to initialize, and the cache to warm. On a large model that first-request penalty can be minutes. The 2026 platform work is about shrinking cold start enough that scale-to-zero becomes safe for more workloads.</p>
+
+<p>Three families of technique are in play, and the cloud providers shipped concrete versions of each in 2026:</p>
+
+<ul>
+<li><strong>Faster model loading (stream the weights).</strong> Instead of pulling weights to disk then into the GPU, stream them straight from object storage. AWS documented this for <strong>Amazon EKS</strong> in a September 2026 engineering post (tuning the Run:ai Model Streamer's S3 chunk size and concurrency, plus caching <code>torch.compile</code> artifacts on local NVMe), reporting a 203&nbsp;GiB model's load time dropping from ~423&nbsp;s to ~25&nbsp;s in their test. SageMaker's <em>Fast Model Loader</em> (streaming weights from S3 to GPU) is the managed equivalent.</li>
+<li><strong>Cache the artifacts.</strong> Pre-stage container images and weights so scale-out skips the download. SageMaker added <strong>Container Caching</strong> and <strong>HyperPod Model Caching</strong> in 2026 to cut scale-out latency, and a managed tiered KV cache to preserve cache across events.</li>
+<li><strong>Snapshot a warm process.</strong> Checkpoint a fully initialized pod — including GPU memory — and restore it, skipping load and warm-up entirely. <strong>GKE Pod snapshots</strong> reached GA in May 2026 (on GKE 1.35.3+ with GKE Sandbox/gVisor, using NVIDIA <code>cuda-checkpoint</code> for GPU state), targeting exactly the "load a large model into memory" cold start.</li>
+</ul>
+
+<table>
+<thead><tr><th>Strategy</th><th>Idle cost</th><th>Cold-start latency</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>Always-warm minimum replicas</td><td>Highest</td><td>None</td><td>Latency-critical, steady traffic</td></tr>
+<tr><td>Scale-to-zero + streamed loading</td><td>Low</td><td>Seconds&ndash;minutes (first request)</td><td>Bursty or business-hours traffic</td></tr>
+<tr><td>Scale-to-zero + snapshot/restore</td><td>Low</td><td>Reduced (skip init)</td><td>Large models with heavy warm-up</td></tr>
+<tr><td>Spot/preemptible + fast reload</td><td>Lowest</td><td>Variable (reclaim risk)</td><td>Batch, async, retry-tolerant work</td></tr>
+</tbody>
+</table>
+
+<p>There is no universal answer. A customer-facing assistant with a sub-second TTFT SLO keeps a warm floor; an internal batch summarizer scales to zero and eats the cold start; a large model with a long warm-up leans on snapshots. The platform's job is to make all of these a configuration choice, not a re-architecture.</p>
+
+<div style="border:1px solid var(--pts-border);border-left:4px solid var(--pts-accent);border-radius:8px;padding:1rem 1.25rem;margin:1.75rem 0;background:var(--pts-card-bg);">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--pts-text);">Operational question</p>
+<p style="margin:0;font-size:0.94rem;line-height:1.6;color:var(--pts-text);">"Should unused inference capacity remain warm or scale to zero?" &mdash; decide per workload from its latency SLO and its traffic shape, not as a global policy. If a cold start would violate the TTFT SLO and traffic is continuous, keep a warm floor; if traffic is bursty or off-hours and the workload tolerates a slow first request, scale to zero and invest in load-time reduction. The metric that settles the argument is cost per successful request including the cold-start penalty, not GPU-hours alone.</p>
+</div>
+<hr>
+
+<h2>MLOps Expands Into LLMOps and Platform Operations</h2>
+
+<p>Classic MLOps optimized one lifecycle: data → training → experiment tracking → model registry → deployment → drift monitoring. That loop still runs for the traditional ML models most enterprises depend on. But GenAI and agents stretch it, because the thing you ship is no longer just a set of weights — it is a <em>composed system</em>: a base model plus a prompt, plus a retrieval configuration, plus tool definitions, plus an agent policy. The platform now has to version, deploy and roll back all of those, and evaluate the whole composition rather than a single accuracy number.</p>
+
+<p>The lifecycle a 2026 platform runs looks like: <strong>code → data → model → evaluation → registry → deployment → traffic → tracing → quality evaluation → rollback/redeploy</strong>. The two boxes that got heavier are <em>evaluation</em> (it now gates releases and runs continuously in production) and <em>rollback</em> (because there are more independent things that can regress).</p>
+
+<div style="border:1px solid var(--pts-border);border-left:4px solid var(--pts-accent);border-radius:8px;padding:1rem 1.25rem;margin:1.75rem 0;background:var(--pts-card-bg);">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--pts-text);">Operational question</p>
+<p style="margin:0;font-size:0.94rem;line-height:1.6;color:var(--pts-text);">"What is the rollback unit: application code, prompt, model, retrieval configuration, agent policy — or all of them?" &mdash; on a mature platform each of these is versioned and deployable independently, so a quality regression can be traced to <em>which</em> layer changed and rolled back in isolation. If a prompt tweak and a model upgrade ship as one opaque bundle, you lose the ability to bisect a regression, and every incident becomes a full redeploy. Treat prompt, model, retrieval config and agent policy as first-class versioned artifacts.</p>
+</div>
+
+<hr>
+
+<h2>Observability Must Measure Whether the AI Actually Worked</h2>
+
+<p>Traditional observability answers "is the service up and fast?" AI observability has to also answer "did the model give a good answer, and did the agent do the right thing?" Those are different questions, and a green infrastructure dashboard says nothing about either. Structure AI observability in four layers, from the machine outward to the business.</p>
+
+<table>
+<thead><tr><th>Layer</th><th>What it answers</th><th>Representative signals</th></tr></thead>
+<tbody>
+<tr><td><strong>Infrastructure health</strong></td><td>Is the serving tier healthy and fast?</td><td>GPU utilization &amp; memory, TTFT, inter-token latency, tokens/sec, request queue depth, KV-cache utilization, error rate</td></tr>
+<tr><td><strong>Model health</strong></td><td>Is the model producing good output?</td><td>Output quality / eval score, hallucination rate, refusal rate, context length distribution, drift vs baseline</td></tr>
+<tr><td><strong>Agent health</strong></td><td>Is the agent making good decisions?</td><td>Tool-call success, reasoning/tool trajectory, task completion rate, routing decisions, loop/failure rate, policy violations</td></tr>
+<tr><td><strong>Business health</strong></td><td>Is it creating value?</td><td>Successful tasks, cost per completed task, user acceptance/thumbs-up, conversion or productivity impact</td></tr>
+</tbody>
+</table>
+
+<p>The infrastructure signals now have standard names. vLLM exposes them directly — <code>vllm:time_to_first_token_seconds</code>, <code>vllm:inter_token_latency_seconds</code>, <code>vllm:kv_cache_usage_perc</code>, <code>vllm:num_requests_running</code> and <code>vllm:request_queue_time_seconds</code> — and NVIDIA's benchmarking guidance treats TTFT, inter-token latency and output throughput as the canonical triad. For traces, <strong>OpenTelemetry's GenAI semantic conventions</strong> (experimental, but widely adopted and moving toward stability; OpenTelemetry itself graduated in CNCF in May 2026) define the span attributes — <code>gen_ai.request.model</code>, <code>gen_ai.usage.input_tokens</code>/<code>output_tokens</code> — and operation names for agent and tool spans such as <code>invoke_agent</code> and <code>execute_tool</code>. That means a single distributed trace can now span the API request, the agent's reasoning steps, each tool call and the underlying model calls with token accounting attached.</p>
+
+<p>Model and agent health need a different mechanism: <strong>evaluation</strong>. Offline evals gate releases (a quality suite that must pass before a new prompt or model reaches traffic); continuous production evals — often LLM-as-a-judge scoring a sample of live traffic against a rubric — catch regressions that only appear on real inputs. The methodology is well established: combine deterministic checks, LLM-judge scores, human annotation and user feedback rather than trusting any one. This connects observability to the failure modes we cover elsewhere — <a href="/blog/llm-hallucination-root-cause-analysis/">the root causes of LLM hallucination</a> and <a href="/blog/why-rag-retrieval-quality-drops-in-production/">why RAG retrieval quality drops in production</a> are exactly what continuous evals are meant to surface before users do.</p>
+
+<p><strong>Designing AI alerts.</strong> Because the interesting failures are not HTTP errors, alert on the AI-specific signals: TTFT and inter-token latency breaching SLO, KV-cache utilization sustained near saturation, queue depth/time growing, a drop in eval score or tool-success rate, and a spike in policy violations or refusals. The classic four golden signals still apply to the serving tier — our walkthrough of a <a href="/blog/golden-signals-dashboard-sre-datadog-success-rate-availability/">golden-signals SRE dashboard</a> maps cleanly onto latency, traffic, errors and saturation here — but for AI you extend "saturation" to KV cache and GPU memory and add a quality signal that has no equivalent in a stateless web service.</p>
+
+<hr>
+
+<h2>AI FinOps: Optimizing Intelligence per Dollar</h2>
+
+<p>AI FinOps applies cloud financial management to AI-specific cost drivers, and it is now a recognized practice rather than a spreadsheet: the <strong>FinOps Foundation</strong> added AI as a first-class <em>scope</em> in its 2025 Framework and publishes a FinOps-for-AI technology category with KPIs including cost per inference, cost per token and cost per API call. The maturity direction is to move past raw cost-per-token toward <strong>unit economics</strong> — cost per successful task, and "intelligence per dollar" — because a model that is cheap per token but needs more retries can cost more per completed job than a pricier, more reliable one.</p>
+
+<p>Generic "reduce your cloud bill" advice does not help here. The levers that move AI cost are specific, and most of them are utilization and routing rather than discounts:</p>
+
+<table>
+<thead><tr><th>Lever</th><th>Mechanism</th><th>Watch-out</th></tr></thead>
+<tbody>
+<tr><td>Raise GPU utilization</td><td>Continuous batching, higher KV-cache hit rate, right-sized replicas</td><td>Batching too aggressively hurts TTFT</td></tr>
+<tr><td>Model routing</td><td>Small model for easy requests, large model for hard ones</td><td>Needs a reliable difficulty/quality signal</td></tr>
+<tr><td>Prompt/prefix caching</td><td>Reuse KV cache for shared context</td><td>Cache isolation for multi-tenant privacy</td></tr>
+<tr><td>Quantization</td><td>Lower-precision weights cut memory &amp; cost</td><td>Validate quality per task before shipping</td></tr>
+<tr><td>Scale-to-zero &amp; spot</td><td>Stop paying for idle; use preemptible capacity</td><td>Cold start and reclaim risk (see above)</td></tr>
+<tr><td>Managed API vs dedicated GPUs</td><td>Token billing for spiky/low volume; owned GPUs at scale</td><td>Cross-over point depends on sustained utilization</td></tr>
+</tbody>
+</table>
+
+<p>Model routing and quantization are worth their own tuning effort; our guide to <a href="/huggingface-quantization-bitsandbytes-gptq-awq-guide/">quantization with bitsandbytes, GPTQ and AWQ</a> covers how far you can push precision before quality degrades. The FinOps point is to attribute cost to a team, a model and ideally a task, then optimize the ratio of useful output to spend — not the raw invoice.</p>
+<hr>
+
+<h2>Agentic AI Creates a New Runtime Layer</h2>
+
+<p>A single model call is stateless and short-lived. An agent is neither: it runs for minutes, holds memory across steps, calls tools, executes code, touches networks and credentials, and may run thousands of concurrent sessions. That is a workload lifecycle much closer to a serverless function platform than to a model endpoint, and it needs its own runtime layer with properties the inference tier does not provide:</p>
+
+<ul>
+<li><strong>Isolated execution</strong> — each agent session (especially one that runs generated code or browses) needs a sandbox, ideally a microVM or gVisor-class boundary, so one session cannot reach another's data or the host.</li>
+<li><strong>Session state and memory</strong> — short-term working memory and longer-term persistent state have to live somewhere durable and be scoped to the session, not shared globally.</li>
+<li><strong>Identity and credentials</strong> — the agent acts as a workload identity with short-lived, task-scoped credentials, not a static API key with broad scope.</li>
+<li><strong>Tool permissions</strong> — which tools an agent may call, and with what arguments, is a policy decision that belongs outside the model, enforced deterministically.</li>
+<li><strong>Networking and concurrency</strong> — deny-by-default egress, plus the ability to spin many sessions up and down cheaply and reclaim their state.</li>
+</ul>
+
+<p>The cloud providers are shipping this as managed runtime (for example, agent-runtime services with session isolation, memory and identity built in), and the Kubernetes-native equivalent composes sandboxes, workload identity and a policy engine. Either way, the agent runtime is a distinct platform concern — you would not run untrusted, long-lived, credential-bearing code on your model endpoint, and an agent is exactly that.</p>
+
+<hr>
+
+<h2>Security and Governance Have to Sit Inside the Platform</h2>
+
+<p>Security for AI cannot be a gateway you put in front of the model, because the model is not the only attack surface — the agent, its tools, its context and its supply chain all are. The controls have to live inside the platform, applied at every layer. The load-bearing ones in 2026:</p>
+
+<ul>
+<li><strong>Workload identity and least privilege</strong> — every model, agent and tool runs as a scoped non-human identity with short-lived credentials, so a compromised component has a small blast radius.</li>
+<li><strong>Deny-by-default egress and data boundaries</strong> — an agent should only reach the endpoints and data its task requires; everything else is blocked, which caps exfiltration.</li>
+<li><strong>Prompt and tool injection defense</strong> — untrusted content (a retrieved document, a web page, a tool result) can carry instructions; authorization for sensitive actions must be enforced deterministically outside the model, not left to the model's judgement.</li>
+<li><strong>Supply-chain and model provenance</strong> — know where weights, adapters and container images came from, and verify them; a poisoned model or dependency is a platform-level risk.</li>
+<li><strong>Auditability and policy</strong> — log every proposed and executed action to an out-of-band trail, and gate high-impact actions behind human approval.</li>
+</ul>
+
+<p>This is a deep enough topic to have its own playbook; our <a href="/blog/securing-ai-agents-production-checklist-2026/">2026 checklist for securing AI agents in production</a> and the <a href="/rag-agentic-ai-job-support-guide/">RAG &amp; agentic AI engineering guide</a> go layer by layer. The platform-engineering point is that these controls are <em>infrastructure</em>, not application features — they belong in the paved road so every workload inherits them.</p>
+
+<div style="border:1px solid var(--pts-border);border-left:4px solid var(--pts-accent);border-radius:8px;padding:1rem 1.25rem;margin:1.75rem 0;background:var(--pts-card-bg);">
+<p style="margin:0 0 0.4rem;font-weight:700;color:var(--pts-text);">Operational question</p>
+<p style="margin:0;font-size:0.94rem;line-height:1.6;color:var(--pts-text);">"What happens when infrastructure dashboards are green but an agent starts choosing the wrong tools?" &mdash; this is the failure the four observability layers exist to catch. Infrastructure health is fine; agent health is not. You need tool-success and task-completion metrics, trajectory traces (which tools, in what order, with what results), and continuous evals scoring live decisions — plus a policy layer that would have blocked a dangerous tool call regardless of what the model decided.</p>
+</div>
+
+<hr>
+
+<h2>Managed AI Services vs Kubernetes-Native AI Platforms</h2>
+
+<p>The build-vs-buy question is real but rarely all-or-nothing. Managed services reduce operational burden; Kubernetes-native infrastructure buys control. Most enterprises run both.</p>
+
+<table>
+<thead><tr><th>Dimension</th><th>Managed AI services</th><th>Kubernetes-native inference</th></tr></thead>
+<tbody>
+<tr><td>Examples</td><td>Amazon SageMaker &amp; Bedrock, Azure/Microsoft Foundry, Google Vertex AI</td><td>EKS/AKS/GKE + vLLM/SGLang/TensorRT-LLM, NVIDIA Dynamo, GKE Inference Gateway, KAITO (AKS)</td></tr>
+<tr><td>Operational burden</td><td>Low — provider runs scheduling, scaling, patching</td><td>Higher — you own the cluster and serving stack</td></tr>
+<tr><td>Control</td><td>Constrained to provider's knobs</td><td>Full — engines, topology, routing, custom kernels</td></tr>
+<tr><td>Portability</td><td>Provider-coupled</td><td>Portable across clouds and on-prem</td></tr>
+<tr><td>Best fit</td><td>Standard workloads, fast time-to-value, spiky traffic</td><td>High volume, specialized models, cost control at scale, multi-cluster routing</td></tr>
+</tbody>
+</table>
+
+<p>The providers themselves have blurred the line: SageMaker HyperPod, GKE Inference Gateway and AKS's KAITO operator are managed products that expose Kubernetes-native primitives, and Azure/Microsoft Foundry's model router (GA November 2025, expanded through 2026) is a managed version of the model-gateway pattern. The practical rule: start on the managed paved road, and move a workload to Kubernetes-native serving when its volume, specialization or control requirements justify owning the stack. Our <a href="/blog/amazon-bedrock-vs-sagemaker-ai-architecture-guide/">Bedrock vs SageMaker architecture guide</a> and <a href="/blog/amazon-sagemaker-production-architecture-2026/">SageMaker production architecture</a> walk the managed side in depth.</p>
+
+<hr>
+
+<h2>A Reference Production AI Platform Architecture for 2026</h2>
+
+<p>Putting the layers together, a defensible production architecture looks like this — application and agent layers on top, a model gateway and inference routing in the middle, serving and GPU scheduling below, storage at the base, and the cross-cutting concerns wrapping everything:</p>
+
+<div style="border:1px solid var(--pts-border);border-radius:10px;padding:1.1rem 1rem;margin:1.5rem 0;background:linear-gradient(180deg,var(--pts-tech-header) 0%,var(--pts-card-bg) 40%);overflow-x:auto;">
+<pre style="margin:0;background:transparent;border:0;padding:0;font-size:0.82rem;line-height:1.5;"><code>┌──────────────────────────────────────────────────────────────┐
+│  APPLICATION LAYER   web · mobile · internal tools · APIs      │
+├──────────────────────────────────────────────────────────────┤
+│  AGENT / ORCHESTRATION   tools · memory · workflow · sessions  │
+├──────────────────────────────────────────────────────────────┤
+│  MODEL GATEWAY   routing · auth · rate limits · quotas         │
+├──────────────────────────────────────────────────────────────┤
+│  INFERENCE ROUTING   KV-cache-aware · capacity-aware · multi-  │
+│                      cluster failover                          │
+├──────────────────────────────────────────────────────────────┤
+│  MODEL SERVING   vLLM · SGLang · TensorRT-LLM · managed        │
+│                  endpoints · prefill/decode disaggregation     │
+├──────────────────────────────────────────────────────────────┤
+│  GPU SCHEDULING   DRA · gang scheduling · autoscaling ·        │
+│                   scale-to-zero · bin-packing · topology       │
+├──────────────────────────────────────────────────────────────┤
+│  KUBERNETES / CLOUD COMPUTE   EKS · AKS · GKE · managed AI     │
+├──────────────────────────────────────────────────────────────┤
+│  STORAGE   model registry · vector store · object · data lake  │
+└──────────────────────────────────────────────────────────────┘
+   ╎ cross-cutting, every layer ╎
+   Observability · Security · Governance · CI/CD · Evaluation · FinOps</code></pre>
+</div>
+
+<p>Nothing in this diagram is exotic; the discipline is in owning the interfaces between layers — the gateway contract, the routing signals, the scheduling primitives, the evaluation gates — so teams can ship onto it without re-solving each one.</p>
+
+<hr>
+
+<h2>From AI Prototype to Governed Enterprise Platform</h2>
+
+<p>Organizations move through the same four stages, and most pain comes from skipping one:</p>
+
+<ol>
+<li><strong>Experiment</strong> — a notebook or a single container calling a model. Fine for proving value; wrong for production.</li>
+<li><strong>Production service</strong> — one workload with real serving, autoscaling, observability and evals. The first time inference-as-a-distributed-system bites.</li>
+<li><strong>Shared platform</strong> — multiple teams on common GPU scheduling, a model gateway, shared observability and cost attribution. Multi-tenancy and self-service appear here.</li>
+<li><strong>Governed enterprise platform</strong> — the shared platform plus policy enforcement, workload identity, provenance, audit and human-approval gates baked in. Security and governance are inherited, not re-implemented per team.</li>
+</ol>
+
+<hr>
+
+<h2>Where AI Cloud Operations Are Heading Next</h2>
+
+<p>Reading the 2026 evidence rather than the hype, a few directions are clear. Accelerator scheduling is consolidating into Kubernetes core (DRA, gang scheduling, workload-aware preemption) rather than living in bespoke operators. Inference is settling into a disaggregated, cache-aware, multi-cluster shape, with the router — not the model container — as the interesting component. Observability is converging on OpenTelemetry's GenAI conventions, so traces span app, agent, tools and model uniformly. FinOps is standardizing AI cost as a first-class scope and pushing toward per-task unit economics. And the agent runtime is emerging as a separate platform concern with its own isolation, identity and lifecycle. The through-line: the operational platform around the models is where the durable engineering — and the durable advantage — now sits.</p>
+
+<hr>
+
+<h3>Frequently asked questions</h3>
+
+<p><strong>What is AI platform engineering?</strong><br>It is the discipline of building and operating the shared, self-service infrastructure that lets teams deploy, run, scale, observe, secure and pay for AI/ML and agentic workloads in production. It sits below application/model work and above raw cloud compute, covering GPU scheduling, model serving and inference routing, observability, evaluation gates, governance and FinOps — so a product team can ship a model or agent onto a paved road without re-solving those each time.</p>
+
+<p><strong>How is AI platform engineering different from MLOps?</strong><br>MLOps owns the model lifecycle (data, training, registry, deployment, drift). AI platform engineering is broader: it treats inference as a distributed system and owns everything around every model and agent — GPU capacity and fragmentation, inference engines and routing, KV cache, multi-cluster serving, cold-start-vs-cost, LLM/agent tracing, quality gates, agent runtime isolation and cost per successful task. MLOps is a subset of what an AI platform runs.</p>
+
+<p><strong>Why are GPUs difficult to operate in Kubernetes?</strong><br>They are scarce, expensive and not natively divisible or fungible, so a default scheduler fragments memory and cannot place distributed jobs atomically. Kubernetes has closed much of this: DRA went stable in v1.34, gang scheduling (Workload/PodGroup) reached beta in v1.37, and HPA scale-to-zero reached beta and default-on in v1.37 for external-metric-driven pools.</p>
+
+<p><strong>What is LLM inference infrastructure?</strong><br>The serving layer that turns weights into a reliable, low-latency API. In 2026 it is a distributed system: an inference engine (vLLM, SGLang, TensorRT-LLM) manages batching and the KV cache, a router sends each request to the replica holding its cache prefix, and heavy deployments split compute-bound prefill from memory-bandwidth-bound decode onto separate GPU pools, coordinated by frameworks such as NVIDIA Dynamo.</p>
+
+<p><strong>What metrics should teams monitor for production LLMs?</strong><br>Beyond CPU/latency/errors: TTFT, inter-token latency, tokens/sec, request queue depth, KV-cache utilization and GPU memory for infrastructure health; plus eval scores, tool-call success and agent task completion for whether the AI worked. vLLM exposes most infrastructure signals directly and OpenTelemetry's GenAI conventions standardize the trace attributes.</p>
+
+<p><strong>What is KV-cache-aware routing?</strong><br>Routing each request to the replica that already holds its prompt prefix's KV cache, so the engine skips re-computing that prefill. It raises cache-hit rate and cuts TTFT on shared-context workloads (multi-turn chat, agents, RAG). NVIDIA Dynamo's Smart Router, GKE Inference Gateway's prefix-aware load balancing and SageMaker's prefix-aware routing all implement it.</p>
+
+<p><strong>How does scale-to-zero affect AI inference?</strong><br>It removes idle accelerator cost by dropping replicas to zero, at the price of a cold start when traffic returns — a large model can take minutes to reload and warm its cache. Teams reconcile this with streamed model loading, snapshot/checkpoint-restore, and a warm minimum for latency-sensitive paths while bursty workloads scale to zero.</p>
+
+<p><strong>What is AI FinOps?</strong><br>Applying cloud financial management to AI-specific drivers: GPU-hours and idle time, token consumption, and model choice. The FinOps Foundation made AI a first-class scope in its 2025 Framework with KPIs like cost per inference, per token and per API call. Mature teams optimize cost per successful task and intelligence per dollar, not sticker price per token.</p>
+
+<p><strong>Do AI platforms need Kubernetes?</strong><br>No — managed services (SageMaker, Bedrock, Foundry, Vertex AI) serve models without a cluster and are often the fastest path. Kubernetes-native inference is chosen for control over topology, custom engines, multi-cluster routing or portability. Most enterprises run a hybrid: managed endpoints for standard workloads, Kubernetes-native serving for high-volume or specialized ones.</p>
+
+<hr>
+
+<h3>Sources &amp; further reading</h3>
+<ul>
+<li>Kubernetes v1.37 release (26 Aug 2026), HPA scale-to-zero (KEP-2021), workload-aware/gang scheduling (KEP-4671) and DRA updates — <a href="https://kubernetes.io/blog/" target="_blank" rel="noopener noreferrer">kubernetes.io/blog</a></li>
+<li>NVIDIA Dynamo — distributed inference, Smart Router, prefill/decode disaggregation, NIXL — <a href="https://developer.nvidia.com/blog/introducing-nvidia-dynamo-a-low-latency-distributed-inference-framework-for-scaling-reasoning-ai-models/" target="_blank" rel="noopener noreferrer">NVIDIA Technical Blog</a> and <a href="https://github.com/ai-dynamo/dynamo/releases" target="_blank" rel="noopener noreferrer">Dynamo releases</a></li>
+<li>vLLM metrics, prefix caching and disaggregated prefilling — <a href="https://docs.vllm.ai/en/stable/design/metrics/" target="_blank" rel="noopener noreferrer">vLLM docs</a>; SGLang RadixAttention — <a href="https://lmsys.org/blog/2024-01-17-sglang/" target="_blank" rel="noopener noreferrer">LMSYS</a></li>
+<li>GKE Inference Gateway (GA) and multi-cluster inference; GKE Pod snapshots (GA May 2026) — <a href="https://cloud.google.com/blog/products/ai-machine-learning/" target="_blank" rel="noopener noreferrer">Google Cloud blog</a></li>
+<li>Amazon SageMaker inference 2026 launches and EKS fast model loading — <a href="https://aws.amazon.com/blogs/machine-learning/" target="_blank" rel="noopener noreferrer">AWS ML blog</a> / <a href="https://aws.amazon.com/blogs/containers/fast-model-loading-for-ai-inference-on-amazon-eks/" target="_blank" rel="noopener noreferrer">AWS Containers blog</a></li>
+<li>Azure/Microsoft Foundry model router and AKS KAITO operator — <a href="https://learn.microsoft.com/en-us/azure/" target="_blank" rel="noopener noreferrer">Microsoft Learn</a></li>
+<li>OpenTelemetry GenAI semantic conventions — <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/" target="_blank" rel="noopener noreferrer">opentelemetry.io</a>; FinOps for AI — <a href="https://www.finops.org/framework/technology-categories/ai/" target="_blank" rel="noopener noreferrer">FinOps Foundation</a></li>
+</ul>
+<p style="font-size:0.82rem;color:var(--pts-text-subtle);">Version, date and status claims reflect information available as of 22 September 2026. Vendor-published benchmark figures are attributed to the vendor and are not independent measurements.</p>
+
+<hr>
+
+<h3>Related engineering guides</h3>
+<ul>
+<li>Platform foundations: <a href="/kubernetes-job-support-guide/">Kubernetes engineering support</a> · <a href="/sre-job-support-guide/">SRE &amp; reliability support</a> · <a href="/devops-job-support-guide/">DevOps support</a></li>
+<li>AI/ML operations: <a href="/mlops-job-support-guide/">MLOps support</a> · <a href="/rag-agentic-ai-job-support-guide/">RAG &amp; agentic AI support</a> · <a href="/ai-ml-job-support-guide/">AI/ML engineering support</a></li>
+<li>Deep dives: <a href="/blog/kubernetes-oomkilled-troubleshooting/">Kubernetes OOMKilled troubleshooting</a> · <a href="/blog/securing-ai-agents-production-checklist-2026/">Securing AI agents in production</a></li>
+</ul>
+
+<h3>Running production AI and need engineers who understand this stack?</h3>
+<p>Proxy Tech Support's in-house engineers work on exactly these problems — GPU scheduling, distributed inference, LLM/agent observability, evaluation and cost — alongside your team, live on your real workloads. If you are standing up or stabilizing a production AI platform and want senior help on a specific issue, explore <a href="/mlops-job-support-guide/">MLOps &amp; AI platform support</a> or message us directly: <a href="https://wa.me/919660614469?text=Hi%2C%20I%20need%20help%20with%20a%20production%20AI%2FML%20platform%20issue" target="_blank" rel="noopener noreferrer">WhatsApp +91 96606 14469</a>.</p>

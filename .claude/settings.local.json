@@ -117,7 +117,18 @@
       "WebFetch(domain:socradar.io)",
       "WebFetch(domain:red.anthropic.com)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:opentelemetry.io)"
+      "WebFetch(domain:opentelemetry.io)",
+      "WebFetch(domain:investor.nvidia.com)",
+      "Skill(deep-research)",
+      "WebFetch(domain:vllm.ai)",
+      "WebFetch(domain:www.kubernetes.dev)",
+      "WebFetch(domain:docs.vllm.ai)",
+      "WebFetch(domain:docs.nvidia.com)",
+      "WebFetch(domain:aws.amazon.com)",
+      "WebFetch(domain:www.cncf.io)",
+      "WebFetch(domain:www.finops.org)",
+      "WebFetch(domain:focus.finops.org)",
+      "WebFetch(domain:siliconangle.com)"
     ]
   }
 }
