@@ -8,6 +8,7 @@ import { allAzureClusterPages } from './azure';
 import { allAmazonClusterPages } from './amazon';
 import { allHuggingFaceClusterPages } from './huggingface';
 import { allCompanyClusterPages } from './companies';
+import { allKubernetesClusterPages } from './kubernetes';
 
 // ─── Interfaces ────────────────────────────────────────────────────────────
 
@@ -10476,4 +10477,6 @@ export const allLandingPages: LandingPageConfig[] = [
   ...allHuggingFaceClusterPages,
   // ── 500-Company employer cluster — Tier A/B/C company authority hubs (additive) ──
   ...allCompanyClusterPages,
+  // ── Kubernetes + Agentic AI + AI Infrastructure global authority cluster (additive) ──
+  ...allKubernetesClusterPages,
 ];

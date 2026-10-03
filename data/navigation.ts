@@ -4,6 +4,7 @@
 export const jobSupportLinks = [
   { label: 'Tech Companies — 500+ Employer Directory', href: '/tech-companies/' },
   { label: 'Agentic AI & Machine Learning Job Support', href: '/agentic-ai-ml-job-support/' },
+  { label: 'Kubernetes AI — Agents, GPU & Inference Hub', href: '/kubernetes-ai-job-support/' },
   { label: 'AI Workflow Automation & Pipeline Engineering', href: '/ai-workflow-automation-pipeline-job-support/' },
   { label: 'Data Science Job Support', href: '/data-science-job-support/' },
   { label: 'AI / Machine Learning & Data', href: '/ai-ml-job-support/', hidden: true },

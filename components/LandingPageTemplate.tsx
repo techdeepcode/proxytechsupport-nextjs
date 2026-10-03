@@ -11,6 +11,7 @@ import { allAiMlClusterPages } from '@/data/aiml';
 import { allAwsClusterPages } from '@/data/aws';
 import { allAmazonClusterPages } from '@/data/amazon';
 import { allHuggingFaceClusterPages } from '@/data/huggingface';
+import { allKubernetesClusterPages, kubernetesCityBreadcrumbMap } from '@/data/kubernetes';
 import { jobSupportLinks } from '@/data/navigation';
 import { WHATSAPP_ME_URL } from '@/lib/whatsapp';
 import USALegacyTrustBanner from '@/components/USALegacyTrustBanner';
@@ -58,7 +59,9 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
   }
 
   // Tech pages: java-job-support-usa, nodejs-job-support-usa …
-  if (!slug.startsWith('job-support-') && slug.includes('-job-support-')) {
+  // (Kubernetes AI cluster slugs are excluded so suffix-geo pages like
+  // kubernetes-ai-job-support-germany reach their dedicated branch below.)
+  if (!slug.startsWith('job-support-') && slug.includes('-job-support-') && !K8S_CLUSTER_SLUGS.has(slug)) {
     const tech = shortTitle.replace(/ Job Support.*/, '').trim();
     return [home, { label: 'Job Support', href: '/#services' }, { label: `${tech} Job Support` }];
   }
@@ -91,6 +94,33 @@ function deriveBreadcrumbs(config: LandingPageConfig): BreadcrumbItem[] {
     return [home, { label: 'Hugging Face', href: '/hugging-face-proxy-job-support/' }, { label: shortTitle }];
   }
 
+  // Kubernetes + Agentic AI + AI Infrastructure cluster — under the Kubernetes AI hub.
+  // Titles use an em-dash separator, so derive a clean leaf label from that.
+  if (K8S_CLUSTER_SLUGS.has(slug)) {
+    const k8sLeaf = title.split(' — ')[0].trim();
+    if (slug === 'kubernetes-ai-job-support') return [home, { label: 'Kubernetes AI' }];
+    // City pages nest under their country (and Europe for EU cities):
+    // Home > Kubernetes AI > [Europe >] Country > City.
+    const cityMeta = kubernetesCityBreadcrumbMap[slug];
+    if (cityMeta) {
+      const trail: BreadcrumbItem[] = [home, { label: 'Kubernetes AI', href: '/kubernetes-ai-job-support/' }];
+      if (cityMeta.europe) trail.push({ label: 'Europe', href: '/kubernetes-ai-job-support-europe/' });
+      trail.push({ label: cityMeta.country, href: `/${cityMeta.countrySlug}/` });
+      trail.push({ label: cityMeta.city });
+      return trail;
+    }
+    // European country pages nest under the Europe hub for a Home > Kubernetes AI > Europe > Country trail.
+    if (K8S_EUROPE_COUNTRY_SLUGS.has(slug)) {
+      return [
+        home,
+        { label: 'Kubernetes AI', href: '/kubernetes-ai-job-support/' },
+        { label: 'Europe', href: '/kubernetes-ai-job-support-europe/' },
+        { label: k8sLeaf },
+      ];
+    }
+    return [home, { label: 'Kubernetes AI', href: '/kubernetes-ai-job-support/' }, { label: k8sLeaf }];
+  }
+
   // Problem / catch-all pages
   return [home, { label: 'Developer Support' }, { label: shortTitle }];
 }
@@ -115,6 +145,15 @@ const AIML_CLUSTER_SLUGS = new Set(allAiMlClusterPages.map((p) => p.slug));
 const AWS_CLUSTER_SLUGS = new Set(allAwsClusterPages.map((p) => p.slug));
 const AMAZON_CLUSTER_SLUGS = new Set(allAmazonClusterPages.map((p) => p.slug));
 const HF_CLUSTER_SLUGS = new Set(allHuggingFaceClusterPages.map((p) => p.slug));
+const K8S_CLUSTER_SLUGS = new Set(allKubernetesClusterPages.map((p) => p.slug));
+// European country pages in the Kubernetes AI cluster — nested under the Europe hub in breadcrumbs.
+const K8S_EUROPE_COUNTRY_SLUGS = new Set([
+  'kubernetes-ai-job-support-ireland', 'kubernetes-ai-job-support-germany', 'kubernetes-ai-job-support-netherlands',
+  'kubernetes-ai-job-support-france', 'kubernetes-ai-job-support-sweden', 'kubernetes-ai-job-support-switzerland',
+  'kubernetes-ai-job-support-denmark', 'kubernetes-ai-job-support-finland', 'kubernetes-ai-job-support-norway',
+  'kubernetes-ai-job-support-belgium', 'kubernetes-ai-job-support-austria', 'kubernetes-ai-job-support-spain',
+  'kubernetes-ai-job-support-portugal',
+]);
 
 /** Geo pages + USA tech landings + country-specific proxy pages — same hero layout with metrics on the right (desktop). */
 function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
@@ -135,6 +174,8 @@ function useLocationHeroMetricsAside(config: LandingPageConfig): boolean {
   if (AMAZON_CLUSTER_SLUGS.has(config.slug)) return true;
   // All Hugging Face / GenAI / LLM cluster landing pages — metrics aside on the right (desktop)
   if (HF_CLUSTER_SLUGS.has(config.slug)) return true;
+  // All Kubernetes + Agentic AI + AI Infrastructure cluster landing pages — metrics aside on the right (desktop)
+  if (K8S_CLUSTER_SLUGS.has(config.slug)) return true;
   return false;
 }
 
