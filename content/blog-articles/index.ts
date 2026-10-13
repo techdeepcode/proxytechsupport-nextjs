@@ -173,6 +173,10 @@ import { meta as meta_ai_agent_prompt_injection_echoleak_camoleak_explained } fr
 import Article_securing_ai_agents_production_checklist_2026 from './securing-ai-agents-production-checklist-2026/Article';
 import { meta as meta_securing_ai_agents_production_checklist_2026 } from './securing-ai-agents-production-checklist-2026/meta';
 
+// ─── USA Interview Proxy + Proxy Job Support authority guide (Oct 2026; additive) ──
+import Article_interview_proxy_usa_proxy_job_support_2026 from './interview-proxy-usa-proxy-job-support-2026/Article';
+import { meta as meta_interview_proxy_usa_proxy_job_support_2026 } from './interview-proxy-usa-proxy-job-support-2026/meta';
+
 export const blogArticleEntries = [
   // ── AI Platform Engineering pillar (Sept 2026) ──
   { meta: meta_managing_production_ai_ml_cloud_platforms_2026, Article: Article_managing_production_ai_ml_cloud_platforms_2026 },
@@ -259,4 +263,6 @@ export const blogArticleEntries = [
   { meta: meta_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons, Article: Article_gtg_1002_ai_orchestrated_cyberattack_engineering_lessons },
   { meta: meta_ai_agent_prompt_injection_echoleak_camoleak_explained, Article: Article_ai_agent_prompt_injection_echoleak_camoleak_explained },
   { meta: meta_securing_ai_agents_production_checklist_2026, Article: Article_securing_ai_agents_production_checklist_2026 },
+  // ── USA Interview Proxy + Proxy Job Support authority guide (Oct 2026) ──
+  { meta: meta_interview_proxy_usa_proxy_job_support_2026, Article: Article_interview_proxy_usa_proxy_job_support_2026 },
 ] as const;
