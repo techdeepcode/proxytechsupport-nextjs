@@ -176,6 +176,8 @@ import { meta as meta_securing_ai_agents_production_checklist_2026 } from './sec
 // ─── USA Interview Proxy + Proxy Job Support authority guide (Oct 2026; additive) ──
 import Article_interview_proxy_usa_proxy_job_support_2026 from './interview-proxy-usa-proxy-job-support-2026/Article';
 import { meta as meta_interview_proxy_usa_proxy_job_support_2026 } from './interview-proxy-usa-proxy-job-support-2026/meta';
+import Article_devops_interview_proxy_usa_aws_kubernetes_2026 from './devops-interview-proxy-usa-aws-kubernetes-2026/Article';
+import { meta as meta_devops_interview_proxy_usa_aws_kubernetes_2026 } from './devops-interview-proxy-usa-aws-kubernetes-2026/meta';
 
 export const blogArticleEntries = [
   // ── AI Platform Engineering pillar (Sept 2026) ──
@@ -265,4 +267,5 @@ export const blogArticleEntries = [
   { meta: meta_securing_ai_agents_production_checklist_2026, Article: Article_securing_ai_agents_production_checklist_2026 },
   // ── USA Interview Proxy + Proxy Job Support authority guide (Oct 2026) ──
   { meta: meta_interview_proxy_usa_proxy_job_support_2026, Article: Article_interview_proxy_usa_proxy_job_support_2026 },
+  { meta: meta_devops_interview_proxy_usa_aws_kubernetes_2026, Article: Article_devops_interview_proxy_usa_aws_kubernetes_2026 },
 ] as const;

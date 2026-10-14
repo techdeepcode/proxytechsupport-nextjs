@@ -1,0 +1,467 @@
+<p>Ask any hiring manager what separates the DevOps engineers who clear a U.S. loop from the ones who stall, and you will rarely hear &ldquo;they knew more commands.&rdquo; You hear something closer to: <em>they could reason about a live system under pressure.</em> In 2026 the DevOps interview has quietly become an operations exam — less trivia about what a Kubernetes Service is, more &ldquo;here is a Deployment that is Running but returning 503s, talk me through it.&rdquo; That shift is exactly what this guide is built around, and it is why <strong>DevOps Interview Proxy USA</strong> and <strong>DevOps Proxy Job Support</strong> exist as distinct, specialist services.</p>
+
+<p>This is the second article in our U.S. authority series. The first, <a href="/blog/interview-proxy-usa-proxy-job-support-2026/">Interview Proxy USA &amp; Proxy Job Support: the complete 2026 guide</a>, is the broad map across every technical profession — read it for the overall market picture, the ethics of the service, and the coding/system-design patterns common to all stacks. <strong>This guide goes deep on one track:</strong> DevOps, cloud and platform engineering, with AWS, Kubernetes, Terraform and CI/CD at the centre. It is a working reference, not a sales page — the three detailed walkthroughs near the end are genuinely useful whether or not you ever contact anyone.</p>
+
+<div style="margin:1.75rem 0;padding:1.25rem 1.4rem;border:1px solid rgba(0,223,130,0.28);border-left:4px solid var(--pts-accent);border-radius:10px;background:rgba(0,223,130,0.05)">
+  <p style="margin:0 0 0.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--pts-forest)">DevOps stack snapshot &mdash; verified October 2026</p>
+  <ul style="margin:0;padding-left:1.1rem">
+    <li><strong>Kubernetes v1.37 &ldquo;Garhwal&rdquo;</strong> is the current minor release (upstream, 26 Aug 2026); the project maintains the three most recent minors &mdash; 1.37, 1.36 and 1.35 &mdash; under community support (kubernetes.io).</li>
+    <li><strong>Amazon EKS</strong> added Kubernetes 1.37 on 1 Oct 2026, and offers standard support across 1.34&ndash;1.37; <strong>EKS Auto Mode</strong> (GA since Dec 2024) runs on clusters 1.29+ (AWS What&rsquo;s New).</li>
+    <li><strong>Terraform</strong> sits in the 1.1x line in 2026; the CNCF-hosted fork <strong>OpenTofu</strong> shipped <strong>1.13.0 on 30 Sep 2026</strong> with built-in state encryption and OCI registry support (opentofu.org).</li>
+    <li><strong>Argo CD 3.x</strong> (v3.5.5, 12 Oct 2026) signs images with cosign and publishes SLSA Level 3 provenance; <strong>Prometheus 3.0</strong> (Nov 2024) ingests OpenTelemetry (OTLP) natively (argo-cd / prometheus.io).</li>
+  </ul>
+  <p style="margin:0.75rem 0 0;font-size:0.82rem;color:var(--pts-text-subtle)">Versions move fast; always confirm against the official release notes for your target employer&rsquo;s environment before an interview. Every figure above is sourced in the footer.</p>
+</div>
+
+<p style="font-size:0.9rem;color:var(--pts-text-subtle)"><em>Published 15 October 2026. Roughly a 24-minute read. A specialist companion to our <a href="/blog/interview-proxy-usa-proxy-job-support-2026/">general USA Interview Proxy guide</a>.</em></p>
+
+<hr>
+
+<h2 id="contents">What this guide covers</h2>
+<ul>
+  <li><a href="#landscape">DevOps Interview Proxy USA in October 2026</a></li>
+  <li><a href="#what-is">What is DevOps Interview Proxy?</a></li>
+  <li><a href="#aws">AWS DevOps Interview Proxy USA</a></li>
+  <li><a href="#kubernetes">Kubernetes Interview Proxy &mdash; EKS, AKS and GKE</a></li>
+  <li><a href="#terraform">Terraform and Infrastructure-as-Code interviews</a></li>
+  <li><a href="#cicd">CI/CD and DevSecOps Interview Proxy</a></li>
+  <li><a href="#system-design">DevOps system-design interview scenarios</a></li>
+  <li><a href="#job-support">DevOps Proxy Job Support USA</a></li>
+  <li><a href="#walkthroughs">Three deep technical walkthroughs</a></li>
+  <li><a href="#cities">DevOps Interview Proxy across U.S. cities</a></li>
+  <li><a href="#vs">DevOps Interview Proxy vs DevOps Proxy Job Support</a></li>
+  <li><a href="#faq">Frequently asked questions</a></li>
+</ul>
+
+<hr>
+
+<h2 id="landscape">DevOps Interview Proxy USA in October 2026</h2>
+
+<p>The U.S. hiring market in late 2026 is selective rather than frozen. Our <a href="/blog/interview-proxy-usa-proxy-job-support-2026/">companion guide</a> covers the macro numbers in depth; the short version for DevOps engineers is that demand for operational skill is concentrated and strong even while overall hiring is cautious. When employers are careful with headcount, the interview bar rises and each loop gets more skeptical — and for infrastructure roles, &ldquo;skeptical&rdquo; means <em>hands-on</em>. Companies have learned that a candidate can recite the difference between a readiness and a liveness probe and still cause a self-inflicted outage in week two, so they test the behaviour, not the definition.</p>
+
+<p>Three things make DevOps loops distinctively hard in 2026:</p>
+
+<p><strong>1. The surface area keeps expanding.</strong> A single &ldquo;DevOps&rdquo; title now spans cloud (usually AWS, often Azure or GCP), containers and Kubernetes, infrastructure-as-code, CI/CD, observability, and an increasing amount of security and FinOps. No one is expert in all of it, so interviewers probe <em>depth in your lane plus judgment everywhere else.</em></p>
+
+<p><strong>2. The tools moved under everyone&rsquo;s feet.</strong> Kubernetes shipped three releases in the last year and is on v1.37; EKS added 1.37 in October; Terraform&rsquo;s licensing split birthed OpenTofu, now a CNCF project on its 1.13 line; supply-chain security went from nice-to-have to table stakes with signed artifacts and SLSA provenance. An engineer who stopped reading release notes in 2024 will sound dated in a 2026 loop.</p>
+
+<p><strong>3. Interviews are increasingly operational simulations.</strong> The strongest signal a company can get is watching you debug. Expect a shared terminal or a described incident, and expect to be judged on method: do you establish impact first, read the right signal, form one hypothesis at a time, and decide whether to mitigate or diagnose? That is a learnable, rehearsable skill — and it is precisely what matched preparation through <a href="/devops-proxy-interview-support/">DevOps proxy interview support</a> drills.</p>
+
+<p>That is the gap <strong>DevOps Interview Proxy USA</strong> closes: not teaching you DevOps from scratch, but compressing the distance between what you can already do and what an interviewer can observe of it in forty-five pressured minutes.</p>
+
+<hr>
+
+<h2 id="what-is">What is DevOps Interview Proxy?</h2>
+
+<p><strong>DevOps Interview Proxy is professional, interview-focused technical assistance for engineers pursuing DevOps, cloud, platform and SRE roles in the United States.</strong> An experienced engineer who works in your target stack helps you prepare for and reason through the specific rounds a U.S. employer runs: the hands-on troubleshooting screen, the infrastructure system-design conversation, the AWS or Kubernetes deep dive, and the behavioural panel about how you handle on-call and change. The term <em>proxy</em> reflects that the support stands alongside you for a process that is opaque and high-stakes — it does not stand <em>in</em> for you.</p>
+
+<p>Because the phrase is sometimes misread, the boundary is worth stating plainly, since it is the ethical core of the service:</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0">
+  <div style="padding:1rem 1.2rem;border:1px solid rgba(0,223,130,0.3);border-radius:10px;background:rgba(0,223,130,0.05)">
+    <p style="margin:0 0 0.5rem;font-weight:700;color:var(--pts-forest)">What legitimate DevOps Interview Proxy is</p>
+    <ul style="margin:0;padding-left:1.1rem;font-size:0.92rem">
+      <li>Mock troubleshooting and design rounds in your real stack</li>
+      <li>Question-pattern analysis for a target company&rsquo;s format</li>
+      <li>Coaching on how to narrate <em>your own</em> infra projects</li>
+      <li>Closing specific AWS/K8s/Terraform knowledge gaps</li>
+      <li>Rehearsing incident reasoning out loud under time pressure</li>
+    </ul>
+  </div>
+  <div style="padding:1rem 1.2rem;border:1px solid rgba(255,120,120,0.35);border-radius:10px;background:rgba(255,120,120,0.06)">
+    <p style="margin:0 0 0.5rem;font-weight:700;color:#d35454">What it is not</p>
+    <ul style="margin:0;padding-left:1.1rem;font-size:0.92rem">
+      <li>Someone impersonating you in an interview</li>
+      <li>A hidden person secretly answering live on your behalf</li>
+      <li>Identity substitution or deceiving the employer</li>
+      <li>Any misrepresentation of your identity or experience</li>
+      <li>Unauthorized access to a company&rsquo;s systems</li>
+    </ul>
+  </div>
+</div>
+
+<p>The distinction is not pedantry. Identity substitution and deceptive live participation breach interview-integrity rules and, once discovered, typically end both the process and the relationship. A credible service is built on the opposite premise: <strong>you answer for yourself in the real interview, and the value is that you are better prepared to do so.</strong> If a provider pitches secret live assistance, treat it as a red flag — that is the misuse of the term, not the service. Our page on <a href="/what-is-interview-proxy-support/">what interview proxy support actually is</a> sets out the same expectations and limits.</p>
+
+<p><strong>Who reaches for DevOps Interview Proxy?</strong> Usually one of four situations: an engineer re-entering interviews after years heads-down on one platform and facing live-troubleshooting formats that did not exist in 2019; a strong sysadmin or backend engineer crossing into cloud-native and not yet fluent in the interview idioms; someone with a single high-stakes onsite at a company they want and a format they have never seen; or an excellent operator whose gap is communication, not competence — they fix the incident but cannot narrate the reasoning aloud. In every case the job is the same: make what you know visible to the interviewer.</p>
+
+<hr>
+
+<h2 id="aws">AWS DevOps Interview Proxy USA</h2>
+
+<p>AWS is the centre of gravity for most U.S. DevOps loops. The interviews that go well are rarely trivia quizzes (&ldquo;what port does RDS use?&rdquo;); they are judgment conversations where you defend choices against failure, blast radius and cost. <a href="/aws-job-support-guide/">AWS job support</a> and matched <a href="/aws-ai-solutions-architect-interview-proxy-support/">AWS interview proxy support</a> rehearse exactly these decisions. Here is the terrain, and how strong candidates handle it.</p>
+
+<h3>IAM and least privilege</h3>
+<p>IAM is where many AWS interviews start, because it reveals how you think about security. Be fluent in the difference between <em>identity</em> policies and <em>resource</em> policies, how a trust policy lets a role be assumed, and why <code>Condition</code> keys (such as <code>aws:SourceArn</code> or <code>aws:PrincipalOrgID</code>) are what actually scope a permission down. The senior move is to reason about the confused-deputy problem and to prefer short-lived credentials (role assumption, IRSA/Pod Identity for EKS) over long-lived access keys. A common prompt: &ldquo;a Lambda needs to read one S3 prefix and write to one DynamoDB table — write the policy.&rdquo; The weak answer grants <code>s3:*</code>; the strong answer scopes actions and resources precisely and explains why.</p>
+
+<h3>VPC networking, routing and security groups</h3>
+<p>Expect to reason about public versus private subnets, the role of route tables, NAT gateways for egress, and the difference between stateful security groups and stateless network ACLs. A frequent design question is how a private workload reaches AWS APIs without traversing the internet — the answer is VPC endpoints (interface/Gateway), and the follow-up is the cost and DNS implications. If you can draw a three-tier VPC and explain where a packet goes and what could silently drop it, you are ahead of most candidates.</p>
+
+<h3>EKS, ECS and the container decision</h3>
+<p>You will be asked when to choose EKS versus ECS/Fargate. The honest answer is a trade-off: ECS/Fargate is lower operational overhead and great when you want AWS to own the control plane and node lifecycle; EKS is the right call when you need the Kubernetes ecosystem (Helm, operators, portability, a platform team&rsquo;s existing tooling). Know that <strong>EKS Auto Mode</strong> now manages compute, scaling and core add-ons for you, and that from Kubernetes 1.37 new Auto Mode node pools default their consolidation policy to <em>Balanced</em>, trading a little cost for fewer pod evictions. Being able to name that nuance signals you are current. Deep-dive help is available via the <a href="/aws-eks-ai-ml-job-support/">AWS EKS job support</a> and <a href="/aws-ecs-fargate-ai-job-support/">ECS/Fargate</a> pages.</p>
+
+<h3>Lambda and event-driven infrastructure</h3>
+<p>For serverless, interviewers probe cold starts, concurrency limits and the cost model, plus event sources (SQS, EventBridge, S3 notifications) and idempotency. The reasoning they want: when is event-driven the right shape (spiky, decoupled, bursty) and when does it become a distributed-debugging nightmare? Strong candidates mention dead-letter queues, partial-batch failures from SQS, and the importance of idempotent consumers because at-least-once delivery means duplicates are normal, not exceptional.</p>
+
+<h3>Load balancing, high availability and scaling</h3>
+<p>Know the ALB/NLB distinction (layer 7 vs layer 4), how target groups and health checks work, and how to design for an Availability Zone failure — spread across at least two or three AZs, and make sure your data tier and your autoscaling both tolerate losing one. On scaling, be ready to compare reactive scaling (target-tracking on CPU or a custom metric) with scheduled scaling for known patterns, and to discuss why scaling on the <em>wrong</em> metric (CPU when the bottleneck is a downstream queue) makes things worse.</p>
+
+<h3>Infrastructure as code, observability and cost</h3>
+<p>IaC is assumed, not optional — you will be expected to describe your Terraform or CloudFormation/CDK workflow. On observability, CloudWatch metrics, logs and alarms are the baseline; the senior signal is talking about the <em>right</em> signals (latency, errors, saturation) rather than a wall of dashboards. On cost, show awareness of the obvious levers (right-sizing, Graviton, Savings Plans, S3 lifecycle, NAT-gateway and cross-AZ data charges) and the judgment to trade cost against reliability deliberately rather than by accident. See <a href="/cloud-job-support-usa/">cloud job support</a> for the production equivalents.</p>
+
+<div style="margin:1.5rem 0;padding:1.1rem 1.3rem;border:1px solid var(--pts-border);border-left:4px solid var(--pts-forest);border-radius:8px;background:var(--pts-section-alt)">
+  <p style="margin:0 0 0.5rem;font-weight:700">Worked AWS scenario &mdash; a resilient, cost-sane ingestion pipeline</p>
+  <p style="margin:0 0 0.6rem;font-size:0.93rem"><em>Prompt:</em> &ldquo;Ingest millions of device events per hour, process them, and store results durably. Defend every managed-service choice on reliability and cost.&rdquo;</p>
+  <pre><code>Edge:     API Gateway or an NLB  -&gt; buffer, don't couple producers to consumers
+Buffer:   Kinesis Data Streams OR SQS
+            - Kinesis: ordered, replayable, multiple consumers, shard math &amp; cost
+            - SQS: simpler, cheaper, at-least-once, no ordering guarantee
+Compute:  Lambda (spiky, low-ops) vs ECS/Fargate (steady, long tasks, cheaper at scale)
+Store:    S3 (raw, cheap, lifecycle to Glacier) + DynamoDB/Aurora for queryable state
+Fail-safe: DLQ on every async hop; idempotent writes; multi-AZ by default
+Cost trap: cross-AZ + NAT data charges and over-provisioned Kinesis shards</code></pre>
+  <p style="margin:0.6rem 0 0;font-size:0.9rem">The interviewer does not care whether you pick Kinesis or SQS. They care that you <em>named the real trade-off</em> (ordering/replay vs simplicity/cost), designed for at-least-once delivery, and put a dead-letter path on every async hop. That reasoning is the muscle these rounds exist to test.</p>
+</div>
+
+<hr>
+
+<h2 id="kubernetes">Kubernetes Interview Proxy &mdash; EKS, AKS and GKE</h2>
+
+<p>Kubernetes is the single most interviewed DevOps technology in 2026, and the questions have matured past &ldquo;what is a pod.&rdquo; Managed control planes — <strong>EKS</strong> on AWS, <strong>AKS</strong> on Azure, <strong>GKE</strong> on Google Cloud — mean the interview focus has shifted to workload behaviour, reliability and troubleshooting. Matched practice is available through <a href="/kubernetes-ai-interview-support/">Kubernetes interview support</a> and the <a href="/kubernetes-job-support-guide/">Kubernetes job support guide</a>.</p>
+
+<h3>Pod scheduling, requests and limits</h3>
+<p>Understand how the scheduler places pods: requests drive scheduling and the Quality-of-Service class (Guaranteed, Burstable, BestEffort), while limits drive throttling and OOM-kills. The classic trap: set no requests and pods pack onto a node until it is starved; set limits too low and your container is OOMKilled under load. Kubernetes 1.37 made <strong>in-place pod resize GA for init and sidecar containers</strong>, so you can now adjust CPU/memory of a running sidecar without recreating the pod — a genuinely useful, current detail to mention.</p>
+
+<h3>Readiness, liveness and startup probes</h3>
+<p>This is the most commonly mishandled topic and therefore a favourite interview filter. A <em>liveness</em> probe failing restarts the container; a <em>readiness</em> probe failing removes the pod from Service endpoints but does <em>not</em> restart it; a <em>startup</em> probe protects slow-booting apps from premature liveness kills. The single most important thing to say: a misconfigured readiness probe (passing before the app is truly ready, or failing transiently) causes self-inflicted 503s during rollouts — which is exactly Walkthrough A below.</p>
+
+<h3>Deployments, rollouts and Services/Ingress</h3>
+<p>Know what a rolling update actually does (<code>maxSurge</code>/<code>maxUnavailable</code>), how to roll back (<code>kubectl rollout undo</code>), and why a bad image plus an aggressive rollout can take down 100% of traffic without a canary step. On networking, be clear on ClusterIP vs NodePort vs LoadBalancer Services, how Ingress (or the newer Gateway API) routes external traffic, and how DNS resolves inside the cluster.</p>
+
+<h3>HPA, cluster autoscaling, RBAC and workload identity</h3>
+<p>Explain the Horizontal Pod Autoscaler (scaling on CPU, memory or custom/external metrics) and how it interacts with the Cluster Autoscaler or Karpenter adding nodes — and the failure mode where pods are Pending because HPA wants more replicas but no node has room. On security, RBAC (Roles/RoleBindings, least privilege for service accounts) and <strong>workload identity</strong> — IRSA or EKS Pod Identity on AWS, workload identity federation on GKE/AKS — let pods assume cloud permissions without static secrets. That is a frequent senior question.</p>
+
+<h3>Helm, GitOps and production troubleshooting</h3>
+<p>Helm for templating and release management; <strong>GitOps</strong> (Argo CD or Flux) for declarative, auditable delivery where Git is the source of truth and the cluster continuously reconciles to it. Expect to debug live. The commands below are the ones you will actually type — know what each output <em>means</em> and where it misleads:</p>
+
+<pre><code># Is the rollout healthy, and are "Running" pods actually serving?
+kubectl rollout status deploy/web -n prod
+kubectl get pods -n prod -l app=web -o wide     # READY (e.g. 0/1) is truer than STATUS=Running
+
+# Why is a pod not Ready? Read the probe and recent events.
+kubectl describe pod &lt;pod&gt; -n prod | grep -A4 -E 'Readiness|Liveness|Events'
+kubectl get events -n prod --sort-by=.lastTimestamp | tail -20
+
+# Why Pending? Almost always scheduling: resources, taints, or no node room.
+kubectl describe pod &lt;pod&gt; -n prod | grep -A6 Events   # look for "0/3 nodes are available"
+
+# What changed, and can I roll back fast?
+kubectl rollout history deploy/web -n prod
+kubectl rollout undo deploy/web -n prod</code></pre>
+
+<p><strong>The limitation to state out loud:</strong> <code>kubectl get pods</code> showing <code>Running</code> tells you the kubelet started the container, not that your application is healthy — the <code>READY</code> column and the readiness probe are the real signal. Candidates who know that one nuance consistently out-perform candidates who know ten more commands. Related deep dives: <a href="/blog/kubernetes-pod-pending-troubleshooting/">pod Pending troubleshooting</a> and <a href="/blog/kubernetes-oomkilled-troubleshooting/">OOMKilled troubleshooting</a>.</p>
+
+<hr>
+
+<h2 id="terraform">Terraform and Infrastructure-as-Code interviews</h2>
+
+<p>Infrastructure-as-code interviews test whether you can change production infrastructure <em>safely</em>. The tooling landscape is itself a current talking point: HashiCorp relicensed Terraform to the BUSL in 2023, which prompted the community fork <strong>OpenTofu</strong> — now a CNCF project that shipped 1.13.0 on 30 September 2026 with built-in state encryption, early variable evaluation, provider <code>for_each</code>, an <code>-exclude</code> flag and OCI registry support. Terraform itself continues in the 1.1x line. Knowing this split (and being neutral about it) signals you follow the ecosystem. Matched help: <a href="/aws-ai-terraform-job-support/">AWS Terraform job support</a> and the troubleshooting walk-through at <a href="/blog/terraform-state-locking-drift-troubleshooting/">Terraform state locking &amp; drift</a>.</p>
+
+<h3>State management, remote state and locking</h3>
+<p>State is the heart of every Terraform interview. Explain why state exists (mapping config to real resources), why it must live in <em>remote</em> storage (an S3 bucket or equivalent) for any team, and why <strong>state locking</strong> (via DynamoDB, or S3-native locking in newer setups) prevents two applies from corrupting it. Be ready to discuss what a stuck lock looks like and how to release it safely with <code>force-unlock</code> — and why you only do that when you are <em>certain</em> no apply is running.</p>
+
+<h3>Modules, environment separation and dependencies</h3>
+<p>Good answers describe reusable modules with clear inputs/outputs and separate state per environment (dev/staging/prod) via workspaces or, more commonly at scale, separate state backends and directories. Interviewers like to probe dependency management: how Terraform builds its dependency graph, when you genuinely need <code>depends_on</code> versus relying on implicit references, and why over-using <code>depends_on</code> creates brittle plans.</p>
+
+<h3>Drift, plan/apply discipline and secrets</h3>
+<p>Drift — when the real world diverges from state because someone changed something in the console — is a favourite. The method: <code>terraform plan</code> (or a drift-detection run) surfaces it; you then decide to reconcile by importing/updating config or by reverting the manual change. On secrets, the strong answer is to keep them <em>out</em> of state where possible (use a secrets manager and data sources, or OpenTofu&rsquo;s state encryption) and never to commit <code>terraform.tfstate</code> to Git, because state can contain plaintext secrets.</p>
+
+<div style="margin:1.5rem 0;padding:1.1rem 1.3rem;border:1px solid var(--pts-border);border-left:4px solid var(--pts-forest);border-radius:8px;background:var(--pts-section-alt)">
+  <p style="margin:0 0 0.5rem;font-weight:700">Worked IaC failure &mdash; a destructive plan after a provider upgrade</p>
+  <p style="margin:0 0 0.6rem;font-size:0.93rem"><em>Scenario:</em> you bump the AWS provider major version, run <code>plan</code>, and Terraform now wants to <strong>destroy and recreate</strong> a database and several security groups. Applying blindly would cause an outage and data loss.</p>
+  <pre><code># 1. NEVER apply a plan you don't understand. Read WHY each change is forced.
+terraform plan -out tfplan
+terraform show -json tfplan | jq '.resource_changes[]
+  | select(.change.actions | index("delete"))
+  | {addr:.address, actions:.change.actions}'
+
+# 2. Isolate the blast radius with a targeted plan while you investigate.
+terraform plan -target=aws_db_instance.main
+
+# 3. Common root causes:
+#    - a renamed/changed attribute in the new provider forces replacement
+#    - a resource was recreated out-of-band; state no longer matches
+#    - a default changed upstream (e.g. an argument became ForceNew)
+
+# 4. Safe recovery, depending on cause:
+#    - move/rename in state instead of recreating:  terraform state mv ...
+#    - import the real resource so state matches:     terraform import ...
+#    - pin the provider, upgrade deliberately, read the provider CHANGELOG</code></pre>
+  <p style="margin:0.6rem 0 0;font-size:0.9rem">The interview (and the real job) reward the same instinct: a forced <em>destroy/recreate</em> of a stateful resource is a stop-the-line event. You read the plan, pin the provider, and reach for <code>state mv</code>/<code>import</code> before you ever type <code>apply</code>.</p>
+</div>
+
+<h3>Migration and disaster recovery of state</h3>
+<p>Round this out with state-level DR: your state backend should be versioned and backed up (S3 versioning), because a lost or corrupted state file is far more painful than lost infrastructure — you can rebuild resources, but reconstructing the mapping is slow. Be able to describe migrating state between backends with <code>terraform init -migrate-state</code> and recovering a prior state version from backup.</p>
+
+<hr>
+
+<h2 id="cicd">CI/CD and DevSecOps Interview Proxy</h2>
+
+<p>CI/CD rounds test whether you can ship safely and prove what you shipped. The 2026 twist is <strong>supply-chain security</strong>: it is no longer enough to build and deploy; you must be able to show the artifact is the one you built and nobody tampered with it. <a href="/devops-job-support-usa/">DevOps job support</a> and <a href="/blog/cicd-pipeline-failure-troubleshooting/">CI/CD pipeline failure troubleshooting</a> cover the production side in depth.</p>
+
+<h3>The tools: GitHub Actions, Jenkins, GitLab CI and Argo CD</h3>
+<p>Know the model behind each. <strong>GitHub Actions</strong> — workflows, jobs, runners, reusable/composite actions, and OIDC to assume a cloud role instead of storing long-lived keys. <strong>Jenkins</strong> — declarative pipelines, agents, and why many teams are migrating off it but still run it at scale. <strong>GitLab CI</strong> — stages, the <code>.gitlab-ci.yml</code> model, and integrated registry. <strong>Argo CD</strong> — pull-based GitOps delivery that continuously reconciles the cluster to Git; Argo CD 3.x signs its own images with cosign and ships SLSA L3 provenance, a good example to cite when asked about trusting your tools.</p>
+
+<h3>Deployment strategies and rollback</h3>
+<p>Be fluent in rolling, blue/green and canary, and — more importantly — in the <em>rollback criteria</em> you define <strong>before</strong> you deploy: roll back automatically if the post-deploy health gate fails for N minutes, if error rate burns the error budget past a threshold, or if a critical-path smoke test fails. &ldquo;We watch it and roll back if it looks bad&rdquo; is a junior answer; naming objective, pre-agreed triggers is a senior one.</p>
+
+<h3>Supply-chain security, secrets and image vulnerabilities</h3>
+<p>This is the fastest-rising CI/CD interview area. The concepts to hold:</p>
+<ul>
+  <li><strong>Provenance &amp; signing.</strong> Sign build artifacts and container images (cosign/Sigstore) and generate provenance to the <strong>SLSA</strong> framework so a deployer can verify <em>how</em> an artifact was built. GitHub&rsquo;s <code>attest-build-provenance</code> action produces this via Sigstore.</li>
+  <li><strong>SBOMs.</strong> A software bill of materials lists what is in your image, so when the next critical CVE lands you can answer &ldquo;are we affected?&rdquo; in minutes, not days.</li>
+  <li><strong>Secrets.</strong> No secrets in code or image layers; use OIDC-issued short-lived cloud credentials in CI, and a secrets manager at runtime. A leaked long-lived key in a public image is a classic post-mortem.</li>
+  <li><strong>Image scanning &amp; admission control.</strong> Scan images in the pipeline (Trivy/Grype) and enforce policy at the cluster edge with an admission controller (e.g. an OPA Gatekeeper or Kyverno policy) so an unsigned or critically-vulnerable image never gets scheduled.</li>
+</ul>
+
+<div style="margin:1.5rem 0;padding:1.1rem 1.3rem;border:1px solid var(--pts-border);border-left:4px solid var(--pts-forest);border-radius:8px;background:var(--pts-section-alt)">
+  <p style="margin:0 0 0.5rem;font-weight:700">Worked scenario &mdash; a failed production release</p>
+  <p style="margin:0 0 0.6rem;font-size:0.93rem"><em>Scenario:</em> the pipeline is green on every PR and the build passes, but the production deploy fails at the final gate with a non-obvious error. What is different between where it passes and where it fails?</p>
+  <pre><code>Interrogate the ENVIRONMENT, not the code, in order of likelihood:
+  1. Credentials: OIDC token / registry auth / cloud role present in CI
+     but missing or expired in the prod deploy context.
+  2. Artifact identity: is the pipeline deploying the image it just
+     built, or a cached/older tag? (immutable, digest-pinned tags fix this)
+  3. Config: a variable set in staging but unset in prod.
+  4. Permissions: the CI principal can build+push but lacks deploy rights.
+  5. Health gate: deploy waits on a readiness gate that never goes green
+     -> the APP is the real failure, surfaced by the pipeline (see Walkthrough A).</code></pre>
+  <p style="margin:0.6rem 0 0;font-size:0.9rem">The judgment call the interviewer is listening for: distinguishing a <em>pipeline</em> failure (infra/auth/config) from an <em>application</em> failure merely surfaced by the pipeline. The fixes are completely different, and conflating them wastes an outage.</p>
+</div>
+
+<hr>
+
+<h2 id="system-design">DevOps system-design interview scenarios</h2>
+
+<p>DevOps system design is less about drawing boxes and more about defending trade-offs. The interviewer gives you an open-ended prompt and watches how you handle scale, failure, security and cost. Below are the scenario types that recur in U.S. senior loops, with the trade-off each is really testing. For matched practice at this level, see <a href="/ai-platform-engineer-interview-proxy-support/">platform engineer interview proxy support</a> and the SRE-flavoured reasoning in our <a href="/blog/sre-interview-production-reliability-2026/">SRE interview &amp; production reliability</a> guide.</p>
+
+<table>
+  <thead>
+    <tr><th>Scenario</th><th>The core trade-off it tests</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Multi-region application deployment</strong></td><td>Active-active vs active-passive: lower latency and higher availability against the real cost of data replication, consistency and failover complexity. Name your RTO/RPO before you pick.</td></tr>
+    <tr><td><strong>Kubernetes platform architecture</strong></td><td>One big multi-tenant cluster (cheaper, shared blast radius) vs many clusters (isolation, operational overhead). Namespaces + RBAC + policy vs hard cluster boundaries.</td></tr>
+    <tr><td><strong>Highly available CI/CD</strong></td><td>A pipeline that cannot deploy is an availability problem too: redundant runners, no single credential/secret SPOF, and the ability to ship a fix when your own CI is degraded.</td></tr>
+    <tr><td><strong>Disaster recovery</strong></td><td>Backup/restore vs warm standby vs multi-region active-active — a straight cost-versus-RTO curve. The senior move is to tie the choice to a business RTO/RPO, not to pick the fanciest option.</td></tr>
+    <tr><td><strong>Autoscaling &amp; capacity planning</strong></td><td>Reactive (HPA/Karpenter) vs predictive/scheduled scaling; headroom for spikes vs steady-state cost; scaling on the <em>correct</em> signal rather than CPU-by-default.</td></tr>
+    <tr><td><strong>Logging, metrics and traces</strong></td><td>Completeness vs cost and cardinality. High-cardinality labels and verbose logs are where observability bills explode; sampling and retention tiers are the levers.</td></tr>
+    <tr><td><strong>Security &amp; identity boundaries</strong></td><td>Workload identity and least privilege vs developer velocity; where to put the trust boundary; how blast radius is contained when (not if) a credential leaks.</td></tr>
+    <tr><td><strong>Cost vs reliability</strong></td><td>The meta-trade-off behind all the others. Every nine of availability costs money; the skill is making that trade <em>deliberately</em> and tying it to what the business actually needs.</td></tr>
+  </tbody>
+</table>
+
+<p>A concrete example worth rehearsing out loud: <em>&ldquo;design a highly available deployment pipeline for a service that must be releasable 24/7, even during a regional cloud incident.&rdquo;</em> A strong answer reasons about where the pipeline&rsquo;s own single points of failure are (the runner fleet, the artifact registry, the one person who holds the deploy credential), keeps the artifact registry and state replicated, uses digest-pinned immutable images so a degraded registry cannot serve the wrong bits, and defines a &ldquo;break-glass&rdquo; manual path for when the automated system itself is down. The technology names matter far less than showing you thought about failing <em>the pipeline</em>, not just the app.</p>
+
+<hr>
+
+<h2 id="job-support">DevOps Proxy Job Support USA &mdash; real-world technical assistance</h2>
+
+<p><strong>DevOps Proxy Job Support USA is real-time technical guidance for engineers who are already employed but need help delivering on an unfamiliar cloud environment, pipeline or production system.</strong> Where interview support ends when you sign the offer, job support begins on day one of a hard assignment — the inherited Terraform nobody documented, the 2 a.m. EKS incident, the release that will not go out, the pipeline that fails only in production. It sits alongside the stack-specific pages: <a href="/devops-job-support-usa/">DevOps</a>, <a href="/cloud-job-support-usa/">cloud</a>, <a href="/sre-job-support-usa/">SRE</a> and the broader <a href="/job-support-usa/">IT job support across the U.S.</a></p>
+
+<p>The areas engineers most often need authorized external help with:</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem 1.5rem;margin:1.25rem 0;font-size:0.94rem">
+  <ul style="margin:0;padding-left:1.1rem">
+    <li>New-project onboarding and reading an inherited IaC codebase</li>
+    <li>AWS and Azure environment and permission issues</li>
+    <li>Terraform deployment and state errors</li>
+    <li>Kubernetes production incidents (EKS/AKS/GKE)</li>
+    <li>CI/CD pipeline failures and flaky builds</li>
+  </ul>
+  <ul style="margin:0;padding-left:1.1rem">
+    <li>Docker and Helm configuration problems</li>
+    <li>Observability gaps (metrics, logs, traces)</li>
+    <li>Infrastructure migrations and upgrades</li>
+    <li>Production deployment debugging and rollback</li>
+    <li>Security configuration and cloud networking</li>
+  </ul>
+</div>
+
+<p><strong>The diagnostic workflow</strong> is the real product. Good job support does not just hand you a fix; it teaches a repeatable method you can run yourself next time. For almost any infrastructure incident the shape is the same: <em>(1) establish impact and scope</em> — who/what is affected and how badly; <em>(2) read the signals</em> — the right metric, the recent change, the events and logs, not a random dashboard; <em>(3) form one hypothesis at a time</em> and test the cheapest-to-check first; <em>(4) decide mitigate-vs-diagnose</em> — while users are hurting, mitigation (roll back, shift traffic, scale out) usually wins and diagnosis follows on a non-serving replica; <em>(5) prevent recurrence</em> — the better probe, the canary step, the alert on the correct signal.</p>
+
+<div style="margin:1.5rem 0;padding:1rem 1.25rem;border:1px solid var(--pts-border);border-left:4px solid var(--pts-forest);border-radius:8px;background:var(--pts-section-alt)">
+  <p style="margin:0 0 0.4rem;font-weight:700">Confidentiality and authorization come first</p>
+  <p style="margin:0;font-size:0.92rem">Legitimate job support operates inside your employer&rsquo;s rules. That means no sharing of cloud credentials, state files, kubeconfigs or proprietary source beyond what policy permits, no unauthorized system access, and respect for employment and client agreements that may restrict third-party involvement. The safest, most durable pattern is guidance on <em>method and reasoning</em> — how to approach the problem on your own authorized environment — rather than handing over confidential material. Redact account IDs and secrets from any shared logs. If your contract prohibits outside help, that boundary is absolute.</p>
+</div>
+
+<hr>
+
+<h2 id="walkthroughs">Three deep technical walkthroughs</h2>
+
+<p>The three scenarios below are <strong>hypothetical teaching examples</strong> — they are not accounts of real Proxy Tech Support clients, and the numbers in them are illustrative, not measured incident statistics. Each contains real technical substance you can apply directly, and each maps to both an interview round and a real job-support case. Read them even if you never contact anyone; they are the useful core of this guide.</p>
+
+<h3>Walkthrough A &mdash; A Kubernetes Deployment is Running but returning HTTP 503</h3>
+<p><strong>Business/technical impact.</strong> A checkout service begins intermittently returning 503s during a routine deploy. Some requests succeed, some fail — the worst kind of outage, because dashboards look &ldquo;mostly green&rdquo; while revenue leaks.</p>
+<p><strong>System context.</strong> A Deployment behind a Service and an Ingress, rolling out a new image with <code>maxSurge=25%</code>, <code>maxUnavailable=25%</code>. Pods show <code>STATUS=Running</code>.</p>
+<p><strong>Symptoms.</strong> 503s correlate with the rollout window; they are intermittent, not total; <code>kubectl get pods</code> shows pods Running but some with <code>READY 0/1</code>.</p>
+<p><strong>Investigation sequence.</strong></p>
+<pre><code># 1. Running != Ready. Check the READY column first.
+kubectl get pods -n shop -l app=checkout -o wide
+
+# 2. Why aren't they Ready? Read the readiness probe and events.
+kubectl describe pod &lt;pod&gt; -n shop | grep -A4 -E 'Readiness|Events'
+kubectl get events -n shop --sort-by=.lastTimestamp | tail -20
+
+# 3. Does the Service actually have healthy endpoints?
+kubectl get endpoints checkout -n shop        # are addresses present, or empty?
+
+# 4. Correlate with the rollout timeline.
+kubectl rollout history deploy/checkout -n shop</code></pre>
+<p><strong>Evidence &amp; root-cause possibilities.</strong> The most likely cause is a <strong>readiness-probe misconfiguration</strong>: the new pods pass readiness <em>too early</em> — before the app has warmed its connection pool or reached a dependency — so the Service routes traffic to pods that are not truly ready, producing intermittent 503s. Other candidates to rule out: the probe path/port is wrong after a config change; the app genuinely fails to start a dependency (DB, cache) and readiness correctly stays false while the rollout drains the old, working pods; or <code>maxUnavailable</code> is too aggressive, removing healthy pods faster than new ones become ready.</p>
+<p><strong>Safe recovery.</strong> <em>Mitigate first.</em> Roll back to restore users (<code>kubectl rollout undo deploy/checkout -n shop</code>), then diagnose on a non-serving replica. Do not keep debugging while the checkout path bleeds.</p>
+<p><strong>Prevention.</strong> A readiness probe that reflects <em>true</em> readiness (dependencies reachable, pool warmed); a conservative <code>maxUnavailable</code> and a canary step so a bad image never meets 100% of traffic; and an alert on Service 5xx rate, not just pod status.</p>
+<p><strong>Interviewer evaluation criteria.</strong> Did you distinguish Running from Ready immediately? Did you check endpoints? Did you choose to mitigate before diagnosing? Did you name the readiness-probe nuance? Those four moves separate senior from mid-level.</p>
+<p><strong>How this applies to real project work.</strong> This exact pattern is one of the most common EKS/AKS job-support calls. The method — Running≠Ready, check endpoints, mitigate-then-diagnose — is identical whether you are in an interview or on-call. See <a href="/kubernetes-ai-sre-observability-job-support/">Kubernetes SRE &amp; observability job support</a>.</p>
+
+<h3>Walkthrough B &mdash; terraform apply fails after a state or provider change</h3>
+<p><strong>Business/technical impact.</strong> An infrastructure change is blocked: <code>terraform apply</code> errors out, and because this stack manages networking and a database, nothing downstream can ship until it is resolved.</p>
+<p><strong>System context.</strong> Remote state in S3 with DynamoDB (or S3-native) locking; a recent AWS provider major-version bump and a teammate who &ldquo;fixed something in the console last week.&rdquo;</p>
+<p><strong>Symptoms.</strong> One of: an <code>Error acquiring the state lock</code>; a plan that wants to destroy/recreate live resources; or an apply that fails mid-way leaving state partially updated.</p>
+<p><strong>Investigation sequence.</strong></p>
+<pre><code># 1. Is it a lock problem? Who holds it, and is an apply really running?
+#    Only force-unlock when you are CERTAIN nothing is applying.
+terraform force-unlock &lt;LOCK_ID&gt;          # last resort, not first
+
+# 2. Is the plan destructive? Read WHY before doing anything.
+terraform plan -out tfplan
+terraform show -json tfplan | jq '.resource_changes[]
+  | select(.change.actions | index("delete")) | .address'
+
+# 3. Did reality drift from state? Refresh-only to see.
+terraform plan -refresh-only
+
+# 4. Scope your investigation; don't apply the whole thing.
+terraform plan -target=aws_db_instance.main</code></pre>
+<p><strong>Evidence &amp; root-cause possibilities.</strong> Three common roots: (a) the provider upgrade changed a default or made an argument <code>ForceNew</code>, so Terraform now wants to replace a resource that did not actually change; (b) the out-of-band console edit created <strong>drift</strong>, so state no longer matches reality and Terraform plans to &ldquo;correct&rdquo; it destructively; (c) a half-applied change left a stuck lock or a tainted resource.</p>
+<p><strong>Safe recovery.</strong> Never apply a destructive plan you do not understand. Depending on cause: pin the provider back, read its CHANGELOG, and upgrade deliberately; reconcile drift with <code>terraform import</code> (bring the real resource into state) or <code>terraform state mv</code> (fix an address change) instead of recreating; release a stale lock only after confirming no apply is live; and always have a versioned state backup to roll back to.</p>
+<p><strong>Prevention.</strong> Pin provider versions and bump them intentionally; forbid console changes to Terraform-managed resources (or run scheduled drift detection and alert on it); enable S3 versioning on state; and gate <code>apply</code> behind a reviewed plan in CI so a destructive diff is caught by a human.</p>
+<p><strong>Interviewer evaluation criteria.</strong> Do you refuse to apply a destructive plan blindly? Do you reach for <code>import</code>/<code>state mv</code> rather than recreate? Do you understand <em>why</em> state and locking exist? This round is really testing discipline under pressure.</p>
+<p><strong>How this applies to real project work.</strong> This is the archetypal Terraform job-support case — see <a href="/aws-ai-terraform-job-support/">AWS Terraform job support</a> and the full method in <a href="/blog/terraform-state-locking-drift-troubleshooting/">Terraform state locking &amp; drift troubleshooting</a>.</p>
+
+<h3>Walkthrough C &mdash; a GitHub Actions pipeline succeeds, but the production deployment fails</h3>
+<p><strong>Business/technical impact.</strong> CI is green, the team believes the release went out, but production is still running the old version — or worse, is now partially broken. The gap between &ldquo;pipeline passed&rdquo; and &ldquo;change is live and healthy&rdquo; is where silent failures hide.</p>
+<p><strong>System context.</strong> A GitHub Actions workflow builds an image, pushes it, and triggers a deploy (a <code>kubectl apply</code>/Helm upgrade, or an Argo CD sync) to an EKS cluster using OIDC to assume a deploy role.</p>
+<p><strong>Symptoms.</strong> The workflow reports success; production shows the old image digest, or new pods are not Ready, or the Argo CD app is <code>OutOfSync</code>/<code>Degraded</code>.</p>
+<p><strong>Investigation sequence.</strong></p>
+<pre><code># 1. What did CI actually deploy? Compare the built digest to what's running.
+#    "latest" tags lie; compare immutable digests.
+kubectl get deploy web -n prod -o jsonpath='{.spec.template.spec.containers[0].image}'
+
+# 2. Did the deploy step really wait for health, or fire-and-forget?
+#    A missing `kubectl rollout status` makes a broken deploy look "successful".
+
+# 3. If GitOps: is Argo CD synced and healthy, or stuck?
+argocd app get web          # Sync status + Health status
+kubectl describe pod &lt;new-pod&gt; -n prod | grep -A6 Events   # ImagePullBackOff? CreateContainerConfigError?
+
+# 4. Permissions &amp; identity: did the OIDC role have deploy rights in prod?
+#    Build+push rights != deploy rights.</code></pre>
+<p><strong>Evidence &amp; root-cause possibilities.</strong> Likely roots: (a) the pipeline deployed a <em>mutable</em> tag and the cluster pulled a cached/older layer — the build and the deploy disagree on what &ldquo;this version&rdquo; is; (b) the deploy step did not <code>rollout status</code>/wait, so a failing rollout never failed the job; (c) <code>ImagePullBackOff</code> because the cluster&rsquo;s node role cannot pull from the registry, or <code>CreateContainerConfigError</code> from a missing secret/config in prod only; (d) the OIDC-assumed role can push images but lacks permission to update the Deployment.</p>
+<p><strong>Safe recovery.</strong> Confirm the running digest vs the intended one; if the new version is unhealthy, roll back (previous Helm revision, <code>kubectl rollout undo</code>, or Argo CD rollback) before investigating. Then fix the real gap — pin immutable digests, add a real health gate, or correct the IAM/registry permission.</p>
+<p><strong>Prevention.</strong> Deploy by immutable digest, never a floating tag; make the deploy job <em>wait</em> on rollout health and fail if it is not green; separate and least-privilege the push vs deploy identities; and for GitOps, alert on Argo CD <code>OutOfSync</code>/<code>Degraded</code> rather than trusting the CI checkmark.</p>
+<p><strong>Interviewer evaluation criteria.</strong> Do you understand that &ldquo;green pipeline&rdquo; ≠ &ldquo;healthy production&rdquo;? Do you compare digests rather than tags? Do you know a deploy step must wait for health to be meaningful? This is a senior-signal round precisely because juniors trust the checkmark.</p>
+<p><strong>How this applies to real project work.</strong> Pipeline-vs-production gaps are a frequent job-support request — see <a href="/devops-job-support-usa/">DevOps job support</a> and <a href="/blog/cicd-pipeline-failure-troubleshooting/">CI/CD pipeline failure troubleshooting</a>.</p>
+
+<hr>
+
+<h2 id="cities">DevOps Interview Proxy across U.S. cities</h2>
+
+<p>Preparation and job support are delivered remotely over video and screen share, so coverage is nationwide. There are no physical offices in these cities — what matters is time-zone alignment and matching you to an engineer who knows the stacks local employers interview on. The notes below describe market <em>character</em>, not a claim of local presence, and only where there is a genuine distinction worth making.</p>
+
+<p><strong>Texas — Dallas, Irving, Plano, Austin, Houston.</strong> The Dallas&ndash;Fort Worth metroplex (Dallas, Irving, Plano) is one of the deepest non-coastal enterprise-IT markets in the country, with heavy financial-services, telecom and cloud-migration work — DevOps loops here skew toward enterprise AWS/Azure, Terraform at scale and regulated-industry change control. Austin adds a startup-and-chip cluster with a higher proportion of Kubernetes-native shops; Houston blends energy and enterprise. We maintain dedicated pages for <a href="/job-support-texas/">job support in Texas</a>, <a href="/it-job-support-dallas/">Dallas</a>, <a href="/it-job-support-irving/">Irving</a> and <a href="/it-job-support-plano/">Plano</a>, plus <a href="/devops-job-support-dallas/">DevOps job support in Dallas</a>, <a href="/interview-proxy-support-dallas/">interview proxy support in Dallas</a> and <a href="/ai-ml-devops-sre-job-support-texas/">AI/ML, DevOps &amp; SRE job support in Texas</a>.</p>
+
+<p><strong>Seattle &amp; Bellevue.</strong> Cloud-infrastructure country, with a strong &ldquo;you build it, you run it&rdquo; culture — expect the heaviest emphasis on operational excellence, on-call reasoning and large-scale distributed systems. Kubernetes and deep AWS internals carry weight here. See <a href="/kubernetes-ai-job-support-seattle/">Kubernetes job support in Seattle</a>.</p>
+
+<p><strong>San Francisco Bay Area &amp; San Jose.</strong> The highest bar on system-design and platform reasoning, and increasingly on running AI/ML infrastructure on Kubernetes. Loops lean toward scale, multi-tenancy and cost-at-scale trade-offs. See <a href="/kubernetes-ai-job-support-san-francisco/">Kubernetes job support in San Francisco</a>.</p>
+
+<p><strong>New York &amp; Jersey City.</strong> Financial services and fintech dominate, so interviews emphasise low-latency delivery, change control, auditability and security/compliance. Jersey City in particular hosts major banking-technology operations. See <a href="/kubernetes-ai-job-support-new-york/">Kubernetes job support in New York</a>.</p>
+
+<p><strong>Other major markets.</strong> <strong>Chicago</strong> — trading, logistics and enterprise IT. <strong>Boston</strong> — biotech, robotics and enterprise software with a research tilt. <strong>Atlanta</strong> — payments and fintech. <strong>Raleigh &amp; Charlotte</strong> — the Research Triangle&rsquo;s software base and Charlotte&rsquo;s banking-tech hub. <strong>Washington DC &amp; Northern Virginia</strong> — cloud, security and public-sector-adjacent engineering, where compliance and clearances shape many loops. <strong>Phoenix &amp; Denver</strong> — fast-growing, cost-competitive hubs for cloud and platform roles. Because support is remote, an engineer in Denver preparing for a Seattle cloud loop and a Jersey City contractor needing <a href="/cloud-job-support-usa/">cloud job support</a> on a late-night deploy are served the same way: matched expertise, aligned to your schedule. Natural searches like <em>AWS Interview Proxy Austin</em>, <em>Kubernetes Job Support Seattle</em> or <em>DevOps Job Support Dallas</em> all resolve to the same remote-delivery model.</p>
+
+<hr>
+
+<h2 id="vs">DevOps Interview Proxy vs DevOps Proxy Job Support</h2>
+
+<p>These are two distinct services, and matching the right one to your situation matters.</p>
+
+<table>
+  <thead>
+    <tr><th></th><th>DevOps Interview Proxy</th><th>DevOps Proxy Job Support</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>When</strong></td><td>Before you join — the interview journey</td><td>After you join — day-to-day delivery</td></tr>
+    <tr><td><strong>Goal</strong></td><td>Win the role: pass the technical rounds</td><td>Keep &amp; succeed in the role: ship real work</td></tr>
+    <tr><td><strong>Focus</strong></td><td>Mock troubleshooting, system design, AWS/K8s/Terraform deep dives, narrating your projects</td><td>Onboarding, production incidents, pipeline fixes, migrations, releases</td></tr>
+    <tr><td><strong>Typical ask</strong></td><td>&ldquo;Prep me for a live K8s debugging round next week&rdquo;</td><td>&ldquo;Help me resolve this EKS incident / Terraform apply failure safely&rdquo;</td></tr>
+  </tbody>
+</table>
+
+<p><a href="/proxy-interview-usa/">Interview Proxy USA</a> targets the interview; <a href="/proxy-job-support/">Proxy Job Support</a> targets delivery once you are in the seat. Many engineers use interview support to land a demanding offer, then job support through the first ninety days — the period where new hires either prove themselves or quietly struggle.</p>
+
+<p>There is also a third, upstream category worth naming: <strong>Profile Engineering</strong> and <strong>Get Interviews Scheduled</strong>. All the interview skill in the world is wasted if the interview never gets booked. Profile engineering sharpens how your real DevOps experience maps to target roles — quantified impact (&ldquo;cut deploy lead time from days to hours,&rdquo; &ldquo;reduced cloud spend 30% via right-sizing&rdquo;), the right keywords, a clear specialization rather than a generic &ldquo;full-stack everything&rdquo; pitch — so recruiters searching your stack actually find you. A critical honesty note: <strong>no legitimate service can guarantee interviews, offers or a specific salary.</strong> Profile work improves discoverability and response rates; outcomes still depend on your real skills and the market. If getting <em>seen</em> is your bottleneck, see <a href="/get-interview-scheduled-usa/">get interviews scheduled in the USA</a>.</p>
+
+<p>For the full cross-profession picture — the market analysis, the ethics, and the coding/system-design patterns common to every stack — read the first article in this series: <a href="/blog/interview-proxy-usa-proxy-job-support-2026/">Interview Proxy USA &amp; Proxy Job Support: the complete 2026 guide</a>. This DevOps guide is the specialist companion to it.</p>
+
+<hr>
+
+<h2 id="faq">Frequently asked questions</h2>
+
+<h3>What is DevOps Interview Proxy USA?</h3>
+<p>DevOps Interview Proxy USA is professional, interview-focused technical assistance for engineers pursuing DevOps, cloud, platform and SRE roles in the United States. An experienced engineer who works in your target stack — AWS, Kubernetes, Terraform, CI/CD — helps you prepare for and reason through the specific technical rounds a U.S. employer runs: the hands-on troubleshooting screen, the system-design conversation, the infrastructure deep dive. In its legitimate form it is preparation, mock interviews and gap-closing coaching. It is not someone impersonating you, secretly answering live on your behalf, or deceiving an employer about who is interviewing. You still answer for yourself; the value is that you are better prepared to do so.</p>
+
+<h3>How does AWS Interview Proxy work?</h3>
+<p>AWS Interview Proxy matches you with an engineer who builds on AWS daily, then rehearses the judgment calls AWS interviews actually test: IAM least-privilege and trust policies, VPC routing and security groups, EKS versus ECS/Fargate trade-offs, Lambda and event-driven design, multi-AZ high availability, and cost-versus-reliability decisions. Rather than memorising service names, you practise defending architecture choices — blast radius, failure modes and the bill — the way a senior AWS interviewer expects. Preparation mirrors the format of your specific loop, whether it is a live troubleshooting screen or an open-ended design round.</p>
+
+<h3>Does Interview Proxy cover Kubernetes and Terraform?</h3>
+<p>Yes. Kubernetes and Terraform are two of the most heavily probed DevOps interview areas. Kubernetes preparation covers pod scheduling, readiness versus liveness probes, Deployments and rollout strategy, Services and Ingress, RBAC and workload identity, HPA and cluster autoscaling, Helm and GitOps, and live production troubleshooting. Terraform preparation covers remote state and locking, module design, environment separation, drift detection, plan/apply safety, and disaster recovery of state. Both are rehearsed with an engineer who has run them in production, because interviewers in these areas test reasoning, not recall.</p>
+
+<h3>What topics are common in senior DevOps interviews in 2026?</h3>
+<p>Senior DevOps loops in 2026 concentrate on operational judgment: Kubernetes rollout and probe behaviour, autoscaling and capacity planning, Terraform state safety and drift, CI/CD supply-chain security (signed artifacts, SLSA provenance), progressive delivery and rollback criteria, observability with Prometheus and OpenTelemetry, and cost-versus-reliability trade-offs. Expect at least one live or semi-live troubleshooting scenario — a failing deployment, a broken pipeline, a drifted Terraform state — where the interviewer watches how you form a hypothesis and decide whether to mitigate first or diagnose first.</p>
+
+<h3>What is DevOps Proxy Job Support?</h3>
+<p>DevOps Proxy Job Support is real-time technical guidance for engineers who are already employed but need help delivering on an unfamiliar cloud environment, pipeline or production system. A senior engineer helps you onboard to an inherited Terraform codebase, debug a failing GitHub Actions or Jenkins pipeline, investigate an EKS production incident, or untangle a Helm or networking misconfiguration — working strictly inside your employer&rsquo;s access, confidentiality and authorization rules. It is mentorship and problem-solving on method and reasoning, not unauthorized system access or someone doing your job in secret.</p>
+
+<h3>Can engineers get help troubleshooting EKS issues?</h3>
+<p>Yes — EKS troubleshooting is one of the most common job-support requests. Typical cases include pods stuck Pending on scheduling or capacity, CrashLoopBackOff, OOMKilled containers, readiness-probe misconfiguration causing intermittent 503s during rollouts, IAM Roles for Service Accounts (IRSA) or EKS Pod Identity permission errors, and autoscaling that will not scale. Support focuses on teaching a repeatable diagnostic method — read the signals, form a hypothesis, decide mitigate-versus-diagnose — on your own authorized environment, so you can run the next incident yourself.</p>
+
+<h3>Can Terraform production issues be investigated remotely?</h3>
+<p>Yes. Most Terraform production problems are diagnosable through method rather than access: a failed apply after a provider upgrade, drift between real infrastructure and state, a stuck state lock, or a destructive plan that must never be applied. A senior engineer walks you through reading the plan diff carefully, using targeted plans and state inspection, recovering a lock safely, and importing or moving resources without data loss — all on your own authorized environment. The emphasis is on safe, reversible changes and never applying a plan you do not fully understand.</p>
+
+<h3>What is the difference between DevOps Interview Proxy and SRE Interview Proxy?</h3>
+<p>They overlap but emphasise different muscles. DevOps Interview Proxy centres on delivery infrastructure — CI/CD pipelines, Kubernetes deployments, Terraform/IaC, release strategy and build security — the flow from commit to production. SRE Interview Proxy centres on running what is already in production — SLIs/SLOs and error budgets, the four golden signals, incident command, capacity and load-shedding, and reliability math. A DevOps loop is more likely to ask you to design a pipeline or fix a broken rollout; an SRE loop is more likely to ask how you would mitigate a live incident while users are hurting. Many 2026 platform roles blend both. See <a href="/sre-proxy-interview-support/">SRE proxy interview support</a>.</p>
+
+<h3>Is DevOps Interview Proxy available in Dallas, Seattle and other U.S. cities?</h3>
+<p>Yes. Preparation and job support are delivered remotely over video and screen share, so coverage is nationwide — Dallas, Irving and Plano; Austin and Houston; Seattle and Bellevue; New York and Jersey City; San Francisco and San Jose; Chicago, Boston, Atlanta, Washington DC and Northern Virginia, Raleigh and Charlotte, Phoenix and Denver. There are no physical offices in these cities; what matters is time-zone alignment and matching you to an engineer who knows the stacks local employers interview on. Regional notes reflect market character, not a claim of local presence.</p>
+
+<h3>What security precautions are needed for external DevOps job support?</h3>
+<p>External job support must operate inside your employer&rsquo;s rules: no sharing of cloud credentials, state files, kubeconfigs or proprietary source beyond what policy permits; no unauthorized access to systems; and awareness that many employment and client agreements restrict third-party involvement. The safest and most durable pattern is guidance on method and reasoning — how to approach the problem on your own authorized environment — rather than handing over secrets. Redact account IDs and secrets before sharing logs, use least-privilege throwaway scopes for any demo, and treat the boundary as absolute if your contract prohibits outside help.</p>
+
+<h3>Which technical topics matter most for platform engineering interviews?</h3>
+<p>Platform engineering loops test whether you can build a paved road other engineers actually use. Expect internal developer platform design (self-service provisioning, golden paths), Kubernetes as a platform (multi-tenancy, RBAC, policy with admission controllers), GitOps delivery with Argo CD, Terraform/OpenTofu module design and a reusable module registry, CI/CD standardisation and supply-chain security, observability defaults (Prometheus, OpenTelemetry), and the product mindset of measuring developer experience. The strongest answers treat the platform as a product with users, SLOs and a backlog — not a pile of YAML.</p>
+
+<h3>How should engineers prepare for DevOps incident-response interview scenarios?</h3>
+<p>Rehearse a repeatable method rather than memorising fixes. For any incident prompt: establish impact and scope first, read the signals (metrics, events, logs, recent changes), form one hypothesis at a time, and decide explicitly whether to mitigate first (roll back, shift traffic) or diagnose first — mitigation usually wins while users are hurting. Narrate the trade-offs out loud, name what you would check next and why, and close with prevention (better probes, canary steps, guardrails, alerts on the right signal). Interviewers score the reasoning and communication, not whether you guess the exact root cause.</p>
+
+<hr>
+
+<div style="margin:1.75rem 0 0.5rem;padding:1.4rem 1.5rem;border:1px solid rgba(0,223,130,0.3);border-radius:12px;background:linear-gradient(135deg,rgba(0,223,130,0.07),rgba(0,223,130,0.02))">
+  <p style="margin:0 0 0.75rem;font-weight:700;font-size:1.05rem;color:var(--pts-text)">Match the help to your DevOps bottleneck</p>
+  <p style="margin:0 0 1rem;font-size:0.95rem;color:var(--pts-text-subtle)">Interviewing for a cloud/DevOps role, employed and firefighting an unfamiliar system, or not getting enough interviews? Start with the service that fits.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:0.6rem">
+    <a href="/devops-proxy-interview-support/" style="display:inline-block;padding:0.55rem 1.1rem;border-radius:8px;background:var(--pts-forest);color:#fff;font-weight:700;font-size:0.9rem;text-decoration:none">DevOps Interview Proxy &rarr;</a>
+    <a href="/devops-job-support-usa/" style="display:inline-block;padding:0.55rem 1.1rem;border-radius:8px;border:1px solid var(--pts-forest);color:var(--pts-forest);font-weight:700;font-size:0.9rem;text-decoration:none">DevOps Proxy Job Support USA &rarr;</a>
+    <a href="/get-interview-scheduled-usa/" style="display:inline-block;padding:0.55rem 1.1rem;border-radius:8px;border:1px solid var(--pts-border);color:var(--pts-text);font-weight:700;font-size:0.9rem;text-decoration:none">Get Interviews Scheduled USA &rarr;</a>
+  </div>
+</div>
+
+<p style="margin-top:1.5rem;font-size:0.82rem;color:var(--pts-text-subtle)"><strong>Sources &amp; dates.</strong> Kubernetes v1.37 &ldquo;Garhwal&rdquo; release announcement, kubernetes.io (26 August 2026) and the Kubernetes version-skew/support policy; Amazon EKS &mdash; AWS What&rsquo;s New, &ldquo;Amazon EKS now supports Kubernetes version 1.37&rdquo; (1 October 2026) and &ldquo;Announcing Amazon EKS Auto Mode&rdquo; (December 2024); OpenTofu 1.13.0 release notes, opentofu.org (30 September 2026) and CNCF project acceptance (April 2025); HashiCorp Terraform licensing change to BUSL (August 2023); Argo CD release notes &amp; signed-release-assets documentation, argo-cd.readthedocs.io (v3.x, October 2026); Prometheus 3.0 announcement, prometheus.io (November 2024, native OTLP ingestion). All versions and dates describe the sources as published on or before 15 October 2026; confirm against the official release notes for your target environment before relying on them. The three walkthroughs are hypothetical teaching examples, not accounts of real clients, and contain no measured incident statistics.</p>
